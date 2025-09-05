@@ -2,6 +2,7 @@ import React from "react";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
 import { fetchQcmFile } from "../utils/fetchQcmFile";
 import { useNavigate } from "react-router-dom";
+import type { QcmQuestion, QcmChapter } from "../types/qcmFile";
 
 // import { Link } from "react-router-dom"; // plus utilisé
 import Layout from "../layout/Layout";
@@ -89,12 +90,24 @@ const LoadQcmPage: React.FC = () => {
             try {
               const qcmData = await fetchQcmFile(customUrl);
               const chapters = (qcmData.chapters || []).map(
-                (ch: { id?: string; title?: string }, idx: number) => ({
+                (ch: Partial<QcmChapter>, idx: number) => ({
                   id: ch.id || String(idx),
                   title: ch.title || `Chapitre ${idx + 1}`,
+                  questions: Array.isArray(ch.questions)
+                    ? (ch.questions as QcmQuestion[])
+                    : [],
                 }),
               );
-              setConfig({ chapters, qcmTitle: qcmData.title });
+              setConfig({
+                chapters,
+                qcmTitle: qcmData.title,
+                questions:
+                  qcmData.chapters?.flatMap((ch: Partial<QcmChapter>) =>
+                    Array.isArray(ch.questions)
+                      ? (ch.questions as QcmQuestion[])
+                      : [],
+                  ) || [],
+              });
               navigate("/config");
             } catch (err) {
               console.log("err: ", err);

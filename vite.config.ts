@@ -6,4 +6,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   base: "/squizzer/", // ← Ajouté pour GitHub Pages
   plugins: [react(), tailwindcss()],
+  build: {
+    chunkSizeWarningLimit: 1600,
+  },
 });
