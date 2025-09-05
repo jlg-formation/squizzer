@@ -3,9 +3,12 @@ import { useQcmProgressStore } from "../store/qcmProgressStore";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
+import { useNavigate } from "react-router-dom";
 
 const QcmPassPage: React.FC = () => {
-  const { currentQuestion, totalQuestions } = useQcmProgressStore();
+  const { currentQuestion, totalQuestions, setCurrentQuestion } =
+    useQcmProgressStore();
+  const navigate = useNavigate();
   const { config } = useQcmConfigStore();
   const [selected, setSelected] = React.useState<number | null>(null);
   // Removed hovered state, use TailwindCSS hover: classes instead
@@ -14,6 +17,14 @@ const QcmPassPage: React.FC = () => {
   const currentQ = questions[currentQuestion - 1];
   console.log("currentQ: ", currentQ);
   const handleChoice = (choice: number) => setSelected(choice);
+  const handleValidate = () => {
+    if (currentQuestion < totalQuestions) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelected(null);
+    } else {
+      navigate("/results");
+    }
+  };
   return (
     <Layout>
       <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
@@ -48,7 +59,9 @@ const QcmPassPage: React.FC = () => {
             </div>
           </>
         )}
-        <ButtonPrimary className="w-full text-lg">Valider &rarr;</ButtonPrimary>
+        <ButtonPrimary className="w-full text-lg" onClick={handleValidate}>
+          Valider &rarr;
+        </ButtonPrimary>
       </div>
     </Layout>
   );
