@@ -1,9 +1,5 @@
 import { create } from "zustand";
-
-export interface QcmChapter {
-  id: string;
-  title: string;
-}
+import type { QcmChapter } from "../types/qcmFile";
 
 export interface QcmConfig {
   qcmTitle: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
-import yaml from "yaml";
+import { fetchQcmFile } from "../utils/fetchQcmFile";
 import { useNavigate } from "react-router-dom";
 
 // import { Link } from "react-router-dom"; // plus utilisé
@@ -83,27 +83,14 @@ const LoadQcmPage: React.FC = () => {
             e.preventDefault();
             if (!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)) return;
             try {
-              const res = await fetch(customUrl);
-              const text = await res.text();
-              let chapters = [];
-              if (customUrl.endsWith(".yaml")) {
-                const data = yaml.parse(text);
-                chapters = (data.chapters || []).map(
-                  (ch: { id?: string; title?: string }, idx: number) => ({
-                    id: ch.id || String(idx),
-                    title: ch.title || `Chapitre ${idx + 1}`,
-                  }),
-                );
-              } else if (customUrl.endsWith(".json")) {
-                const data = JSON.parse(text);
-                chapters = (data.chapters || []).map(
-                  (ch: { id?: string; title?: string }, idx: number) => ({
-                    id: ch.id || String(idx),
-                    title: ch.title || `Chapitre ${idx + 1}`,
-                  }),
-                );
-              }
-              setConfig({ chapters });
+              const qcmData = await fetchQcmFile(customUrl);
+              const chapters = (qcmData.chapters || []).map(
+                (ch: { id?: string; title?: string }, idx: number) => ({
+                  id: ch.id || String(idx),
+                  title: ch.title || `Chapitre ${idx + 1}`,
+                }),
+              );
+              setConfig({ chapters, qcmTitle: qcmData.title });
               navigate("/config");
             } catch (err) {
               console.log("err: ", err);

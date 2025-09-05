@@ -3,11 +3,13 @@
 ## Pages principales (`/pages`)
 
 ### ConfigPage
+
 - `FileLoader`
 - `ConfigForm`
 - `StartButton`
 
 ### QcmPage
+
 - `QuestionCard`
   - `QuestionText`
   - `AnswerList`
@@ -16,6 +18,7 @@
   - (optionnel) `Timer`
 
 ### ResultsPage
+
 - `ScoreDisplay`
 - `ChartContainer`
   - `PieChartResults`
@@ -27,6 +30,7 @@
 ---
 
 ## Composants UI réutilisables (`/components`)
+
 - `Button`
 - `Input`
 - `Select`
@@ -39,12 +43,14 @@
 ---
 
 ## Routing & Layout
+
 - `AppRouter` : centralise `/config`, `/qcm`, `/results`
 - `Layout` : enveloppe global avec `NotificationBanner`
 
 ---
 
 ## Gestion d’état (Zustand, global pour tout)
+
 - `configSlice` (URL, chapitre, nb questions, seed)
 - `qcmSlice` (questions, progression, réponses)
 - `resultsSlice` (score, explications, graphiques)
@@ -53,6 +59,7 @@
 ---
 
 ## Utils (`/utils`)
+
 - `parsing.ts`
 - `random.ts`
 - `validation.ts`

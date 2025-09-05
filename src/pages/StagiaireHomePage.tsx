@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
+import { fetchQcmFile } from "../utils/fetchQcmFile";
 
 const StagiaireHomePage: React.FC = () => {
   const { config, setConfig } = useQcmConfigStore();
@@ -13,26 +14,16 @@ const StagiaireHomePage: React.FC = () => {
     const seed = params.get("seed") || "";
     const url = params.get("fileUrl") || "";
 
-    // Fetch le fichier QCM pour récupérer le titre
+    // Utilise l'utilitaire pour charger le titre
     const fetchTitle = async () => {
-      let qcmTitle = "QCM";
-      if (url) {
-        try {
-          const res = await fetch(url);
-          const text = await res.text();
-          if (url.endsWith(".yaml")) {
-            const yamlModule = await import("yaml");
-            const data = yamlModule.default.parse(text);
-            qcmTitle = data.title || qcmTitle;
-          } else if (url.endsWith(".json")) {
-            const data = JSON.parse(text);
-            qcmTitle = data.title || qcmTitle;
-          }
-        } catch {
-          // ignore fetch error, fallback to default title
-        }
-      }
-      setConfig({ chapter, questionCount: Number(count), seed, url, qcmTitle });
+      const qcmData = await fetchQcmFile(url);
+      setConfig({
+        chapter,
+        questionCount: Number(count),
+        seed,
+        url,
+        qcmTitle: qcmData.title || "QCM",
+      });
     };
     fetchTitle();
   }, [setConfig]);

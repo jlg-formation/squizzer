@@ -3,22 +3,31 @@
 ## Définition du format
 
 ### Racine du fichier
-- **`title`** *(string, optionnel)* : Titre global du QCM
-- **`chapters`** *(array, obligatoire)* : Liste des chapitres contenant les questions
+
+- **`title`** _(string, optionnel)_ : Titre global du QCM
+- **`chapters`** _(array, obligatoire)_ : Liste des chapitres contenant les
+  questions
 
 ### Chapitre
+
 Chaque élément de `chapters` contient :
-- **`id`** *(string, obligatoire)* : Identifiant unique du chapitre
-- **`title`** *(string, obligatoire)* : Nom du chapitre
-- **`questions`** *(array, obligatoire)* : Liste des questions
+
+- **`id`** _(string, obligatoire)_ : Identifiant unique du chapitre
+- **`title`** _(string, obligatoire)_ : Nom du chapitre
+- **`questions`** _(array, obligatoire)_ : Liste des questions
 
 ### Question
+
 Chaque élément de `questions` contient :
-- **`id`** *(string, obligatoire)* : Identifiant unique de la question
-- **`question`** *(string, obligatoire)* : Énoncé de la question
-- **`answers`** *(array of strings, obligatoire)* : Liste des propositions de réponses
-- **`correct`** *(integer, obligatoire)* : Index (0-based) de la bonne réponse dans `answers`
-- **`explanation`** *(string, obligatoire)* : Texte d’explication affiché à la fin
+
+- **`id`** _(string, obligatoire)_ : Identifiant unique de la question
+- **`question`** _(string, obligatoire)_ : Énoncé de la question
+- **`answers`** _(array of strings, obligatoire)_ : Liste des propositions de
+  réponses
+- **`correct`** _(integer, obligatoire)_ : Index (0-based) de la bonne réponse
+  dans `answers`
+- **`explanation`** _(string, obligatoire)_ : Texte d’explication affiché à la
+  fin
 
 ---
 
@@ -35,24 +44,14 @@ Chaque élément de `questions` contient :
         {
           "id": "q1",
           "question": "Quelle est la sortie de `typeof null` en JavaScript ?",
-          "answers": [
-            "object",
-            "null",
-            "undefined",
-            "number"
-          ],
+          "answers": ["object", "null", "undefined", "number"],
           "correct": 0,
           "explanation": "En JavaScript, `typeof null` renvoie 'object'."
         },
         {
           "id": "q2",
           "question": "Quelle méthode transforme une chaîne en majuscules ?",
-          "answers": [
-            "toUpper()",
-            "toUpperCase()",
-            "upper()",
-            "capitalize()"
-          ],
+          "answers": ["toUpper()", "toUpperCase()", "upper()", "capitalize()"],
           "correct": 1,
           "explanation": "`toUpperCase()` est la bonne méthode."
         }
