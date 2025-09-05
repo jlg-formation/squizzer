@@ -62,7 +62,12 @@ const LoadQcmPage: React.FC = () => {
         />
         <div className="my-6" />
         <Link to="/config" className="block w-full">
-          <ButtonPrimary className="w-full">Continuer</ButtonPrimary>
+          <ButtonPrimary
+            className="w-full"
+            disabled={!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)}
+          >
+            Continuer
+          </ButtonPrimary>
         </Link>
       </div>
     </Layout>
