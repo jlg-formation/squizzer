@@ -4,7 +4,7 @@
 
 - [x] Initialiser projet avec **Vite + React + TypeScript**
 - [x] Installer **TailwindCSS**
-- [ ] Installer **Zustand** (state management)
+- [x] Installer **Zustand** (state management)
 - [ ] Installer **React Router**
 - [ ] Installer **Recharts** (graphique résultats)
 - [ ] Installer **yaml** et **seedrandom** (utils parsing + aléatoire)
