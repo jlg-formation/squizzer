@@ -1,0 +1,21 @@
+# QCM Linux
+questions:
+  - id: 1
+    chapter: "Commandes"
+    question: "Quelle commande affiche le contenu d’un dossier ?"
+    answers:
+      - "ls"
+      - "cd"
+      - "cat"
+    correct: 0
+    explanation: "La commande ls liste les fichiers et dossiers."
+  - id: 2
+    chapter: "Permissions"
+    question: "Que signifie chmod 755 ?"
+    answers:
+      - "Lecture seule pour tous"
+      - "Lecture/écriture pour le propriétaire, lecture/exécution pour les
+        autres"
+      - "Exécution uniquement pour le propriétaire"
+    correct: 1
+    explanation: "755 = rwx pour owner, rx pour groupe et autres."

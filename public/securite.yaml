@@ -1,0 +1,21 @@
+# QCM Sécurité
+questions:
+  - id: 1
+    chapter: "Sécurité Web"
+    question: "Qu’est-ce qu’une attaque XSS ?"
+    answers:
+      - "Injection de code malicieux dans une page web"
+      - "Vol de mot de passe par phishing"
+      - "Déni de service distribué"
+    correct: 0
+    explanation:
+      "XSS = Cross Site Scripting, injection de scripts dans le navigateur."
+  - id: 2
+    chapter: "Sécurité réseau"
+    question: "Quel protocole chiffre les échanges sur Internet ?"
+    answers:
+      - "HTTP"
+      - "FTP"
+      - "TLS/SSL"
+    correct: 2
+    explanation: "TLS/SSL permet de sécuriser les communications."

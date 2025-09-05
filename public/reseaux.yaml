@@ -1,0 +1,20 @@
+# QCM Réseaux
+questions:
+  - id: 1
+    chapter: "TCP/IP"
+    question: "Quel est le rôle du protocole TCP ?"
+    answers:
+      - "Assurer la fiabilité des échanges"
+      - "Attribuer des adresses IP"
+      - "Gérer le routage"
+    correct: 0
+    explanation: "TCP garantit la fiabilité et l’ordre des paquets."
+  - id: 2
+    chapter: "Réseaux"
+    question: "Qu’est-ce qu’un masque de sous-réseau ?"
+    answers:
+      - "Un identifiant de machine"
+      - "Un moyen de segmenter un réseau"
+      - "Un protocole de sécurité"
+    correct: 1
+    explanation: "Le masque permet de définir la partie réseau/adresse d’un IP."
