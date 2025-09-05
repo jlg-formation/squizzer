@@ -1,21 +1,373 @@
-# QCM Sécurité
-questions:
-  - id: 1
-    chapter: "Sécurité Web"
-    question: "Qu’est-ce qu’une attaque XSS ?"
-    answers:
-      - "Injection de code malicieux dans une page web"
-      - "Vol de mot de passe par phishing"
-      - "Déni de service distribué"
-    correct: 0
-    explanation:
-      "XSS = Cross Site Scripting, injection de scripts dans le navigateur."
-  - id: 2
-    chapter: "Sécurité réseau"
-    question: "Quel protocole chiffre les échanges sur Internet ?"
-    answers:
-      - "HTTP"
-      - "FTP"
-      - "TLS/SSL"
-    correct: 2
-    explanation: "TLS/SSL permet de sécuriser les communications."
+title: QCM Sécurité
+chapters:
+  - id: web
+    title: Sécurité Web
+    questions:
+      - id: web-q1
+        question: "Qu’est-ce qu’une attaque XSS ?"
+        answers:
+          - Injection de code malicieux dans une page web
+          - Vol de mot de passe par phishing
+          - Déni de service distribué
+          - Usurpation d’identité
+        correct: 0
+        explanation:
+          "XSS = Cross Site Scripting, injection de scripts dans le navigateur."
+      - id: web-q2
+        question: "Qu’est-ce qu’un cookie ?"
+        answers:
+          - Un fichier stocké par le navigateur
+          - Un virus informatique
+          - Un protocole de sécurité
+          - Un type de mot de passe
+        correct: 0
+        explanation: "Un cookie est un fichier stocké par le navigateur."
+      - id: web-q3
+        question: "Quel est le but du protocole HTTPS ?"
+        answers:
+          - Chiffrer les échanges web
+          - Accélérer le chargement des pages
+          - Gérer les cookies
+          - Bloquer les publicités
+        correct: 0
+        explanation: "HTTPS chiffre les échanges entre client et serveur."
+      - id: web-q4
+        question: "Qu’est-ce qu’un CSRF ?"
+        answers:
+          - Une attaque par usurpation de requête
+          - Un type de cookie
+          - Un protocole de chiffrement
+          - Un virus réseau
+        correct: 0
+        explanation: "CSRF = Cross Site Request Forgery."
+      - id: web-q5
+        question: "Quel en-tête HTTP protège contre le XSS ?"
+        answers:
+          - Content-Security-Policy
+          - Set-Cookie
+          - Accept
+          - Host
+        correct: 0
+        explanation: "Content-Security-Policy limite l’exécution de scripts."
+      - id: web-q6
+        question: "Qu’est-ce qu’une attaque de phishing ?"
+        answers:
+          - Usurpation d’identité pour voler des informations
+          - Saturation d’un serveur
+          - Injection SQL
+          - Chiffrement des données
+        correct: 0
+        explanation: "Le phishing vise à voler des informations par tromperie."
+      - id: web-q7
+        question: "Quel est le rôle d’un captcha ?"
+        answers:
+          - Protéger contre les robots
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les publicités
+        correct: 0
+        explanation: "Le captcha protège contre les robots."
+      - id: web-q8
+        question: "Qu’est-ce qu’une session ?"
+        answers:
+          - Un espace mémoire pour stocker des données utilisateur
+          - Un type de cookie
+          - Un protocole de sécurité
+          - Un virus
+        correct: 0
+        explanation: "La session stocke des données utilisateur côté serveur."
+      - id: web-q9
+        question: "Quel est le risque principal des formulaires non protégés ?"
+        answers:
+          - Injection de code
+          - Perte de données
+          - Saturation du serveur
+          - Chiffrement faible
+        correct: 0
+        explanation:
+          "Les formulaires non protégés sont vulnérables à l’injection."
+      - id: web-q10
+        question: "Qu’est-ce qu’une attaque brute force ?"
+        answers:
+          - Test de toutes les combinaisons possibles
+          - Usurpation d’identité
+          - Injection SQL
+          - Saturation du serveur
+        correct: 0
+        explanation:
+          "Le brute force teste toutes les combinaisons de mots de passe."
+      - id: web-q11
+        question: "Quel est le rôle du header SameSite sur les cookies ?"
+        answers:
+          - Limiter l’envoi des cookies entre sites
+          - Chiffrer les cookies
+          - Bloquer les robots
+          - Gérer les sessions
+        correct: 0
+        explanation: "SameSite limite l’envoi des cookies cross-site."
+      - id: web-q12
+        question: "Qu’est-ce qu’une attaque de type clickjacking ?"
+        answers:
+          - Détourner l’interface utilisateur
+          - Vol de mot de passe
+          - Injection SQL
+          - Saturation du serveur
+        correct: 0
+        explanation:
+          "Le clickjacking détourne l’interface pour piéger l’utilisateur."
+      - id: web-q13
+        question: "Quel est le rôle d’un token CSRF ?"
+        answers:
+          - Protéger contre les requêtes frauduleuses
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Le token CSRF protège contre les requêtes non autorisées."
+      - id: web-q14
+        question: "Qu’est-ce qu’une faille de redirection ouverte ?"
+        answers:
+          - Permettre à un attaquant de rediriger l’utilisateur
+          - Vol de mot de passe
+          - Injection SQL
+          - Saturation du serveur
+        correct: 0
+        explanation: "La redirection ouverte permet de piéger l’utilisateur."
+      - id: web-q15
+        question: "Quel est le risque d’un mot de passe faible ?"
+        answers:
+          - Facile à deviner
+          - Chiffrement faible
+          - Saturation du serveur
+          - Injection SQL
+        correct: 0
+        explanation: "Un mot de passe faible est facile à deviner."
+      - id: web-q16
+        question: "Qu’est-ce qu’une attaque par dictionnaire ?"
+        answers:
+          - Test de mots de passe courants
+          - Injection SQL
+          - Saturation du serveur
+          - Usurpation d’identité
+        correct: 0
+        explanation: "Le dictionnaire teste des mots de passe courants."
+      - id: web-q17
+        question: "Quel est le rôle du header X-Frame-Options ?"
+        answers:
+          - Protéger contre le clickjacking
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "X-Frame-Options protège contre le clickjacking."
+      - id: web-q18
+        question: "Qu’est-ce qu’une attaque de type man-in-the-middle ?"
+        answers:
+          - Interception des communications
+          - Injection SQL
+          - Saturation du serveur
+          - Usurpation d’identité
+        correct: 0
+        explanation: "Le man-in-the-middle intercepte les communications."
+      - id: web-q19
+        question: "Quel est le rôle d’un mot de passe fort ?"
+        answers:
+          - Difficile à deviner
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Un mot de passe fort est difficile à deviner."
+      - id: web-q20
+        question: "Qu’est-ce qu’une faille de sécurité ?"
+        answers:
+          - Une vulnérabilité exploitable
+          - Un virus
+          - Un protocole de chiffrement
+          - Un cookie
+        correct: 0
+        explanation: "Une faille est une vulnérabilité exploitable."
+  - id: reseau
+    title: Sécurité réseau
+    questions:
+      - id: reseau-q1
+        question: "Quel protocole chiffre les échanges sur Internet ?"
+        answers:
+          - HTTP
+          - FTP
+          - TLS/SSL
+          - SMTP
+        correct: 2
+        explanation: "TLS/SSL permet de sécuriser les communications."
+      - id: reseau-q2
+        question: "Qu’est-ce qu’un firewall ?"
+        answers:
+          - Un logiciel de sauvegarde
+          - Un dispositif de filtrage du trafic réseau
+          - Un protocole de routage
+          - Un serveur web
+        correct: 1
+        explanation: "Le firewall filtre le trafic réseau."
+      - id: reseau-q3
+        question: "Qu’est-ce qu’une attaque DDoS ?"
+        answers:
+          - Déni de service distribué
+          - Vol de mot de passe
+          - Injection SQL
+          - Usurpation d’adresse IP
+        correct: 0
+        explanation: "DDoS = attaque par saturation du service."
+      - id: reseau-q4
+        question: "Quel outil analyse le trafic réseau ?"
+        answers:
+          - Wireshark
+          - Nmap
+          - Ping
+          - SSH
+        correct: 0
+        explanation: "Wireshark analyse le trafic réseau."
+      - id: reseau-q5
+        question: "Qu’est-ce qu’un VPN ?"
+        answers:
+          - Un réseau privé virtuel
+          - Un protocole de routage
+          - Un serveur web
+          - Un logiciel de sauvegarde
+        correct: 0
+        explanation: "Le VPN crée un tunnel sécurisé."
+      - id: reseau-q6
+        question: "Quel est le rôle d’un proxy ?"
+        answers:
+          - Relayer les requêtes réseau
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Le proxy relaie les requêtes réseau."
+      - id: reseau-q7
+        question: "Qu’est-ce qu’une attaque par spoofing ?"
+        answers:
+          - Usurpation d’adresse IP
+          - Injection SQL
+          - Saturation du serveur
+          - Vol de mot de passe
+        correct: 0
+        explanation: "Le spoofing usurpe une adresse IP."
+      - id: reseau-q8
+        question: "Quel est le rôle d’un IDS ?"
+        answers:
+          - Détecter les intrusions
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "L’IDS détecte les intrusions réseau."
+      - id: reseau-q9
+        question: "Qu’est-ce qu’un honeypot ?"
+        answers:
+          - Un leurre pour attirer les attaquants
+          - Un protocole de sécurité
+          - Un serveur web
+          - Un logiciel de sauvegarde
+        correct: 0
+        explanation: "Le honeypot attire les attaquants pour les étudier."
+      - id: reseau-q10
+        question: "Quel est le rôle du chiffrement ?"
+        answers:
+          - Protéger les données
+          - Gérer les sessions
+          - Bloquer les robots
+          - Relayer les requêtes réseau
+        correct: 0
+        explanation: "Le chiffrement protège les données."
+      - id: reseau-q11
+        question: "Qu’est-ce qu’un port réseau ?"
+        answers:
+          - Un point d’accès pour les communications
+          - Un protocole de sécurité
+          - Un serveur web
+          - Un logiciel de sauvegarde
+        correct: 0
+        explanation:
+          "Le port réseau est un point d’accès pour les communications."
+      - id: reseau-q12
+        question: "Quel est le rôle d’un routeur ?"
+        answers:
+          - Relier plusieurs réseaux
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Le routeur relie plusieurs réseaux."
+      - id: reseau-q13
+        question: "Qu’est-ce qu’une attaque par sniffing ?"
+        answers:
+          - Interception du trafic réseau
+          - Injection SQL
+          - Saturation du serveur
+          - Vol de mot de passe
+        correct: 0
+        explanation: "Le sniffing intercepte le trafic réseau."
+      - id: reseau-q14
+        question: "Quel est le rôle d’un switch ?"
+        answers:
+          - Segmenter un réseau local
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Le switch segmente le réseau local."
+      - id: reseau-q15
+        question: "Qu’est-ce qu’une attaque par flooding ?"
+        answers:
+          - Saturation du réseau par envoi massif de données
+          - Injection SQL
+          - Vol de mot de passe
+          - Usurpation d’identité
+        correct: 0
+        explanation: "Le flooding sature le réseau."
+      - id: reseau-q16
+        question: "Quel est le rôle d’un serveur DNS ?"
+        answers:
+          - Résoudre les noms de domaine
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Le DNS résout les noms de domaine."
+      - id: reseau-q17
+        question: "Qu’est-ce qu’une attaque par ARP poisoning ?"
+        answers:
+          - Usurpation d’adresse MAC
+          - Injection SQL
+          - Saturation du serveur
+          - Vol de mot de passe
+        correct: 0
+        explanation: "L’ARP poisoning usurpe une adresse MAC."
+      - id: reseau-q18
+        question: "Quel est le rôle d’un serveur DHCP ?"
+        answers:
+          - Attribuer des adresses IP
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Le DHCP attribue des adresses IP."
+      - id: reseau-q19
+        question: "Qu’est-ce qu’une attaque par MITM ?"
+        answers:
+          - Interception des communications
+          - Injection SQL
+          - Saturation du serveur
+          - Vol de mot de passe
+        correct: 0
+        explanation: "Le MITM intercepte les communications."
+      - id: reseau-q20
+        question: "Quel est le rôle d’un serveur proxy ?"
+        answers:
+          - Relayer les requêtes réseau
+          - Chiffrer les données
+          - Gérer les sessions
+          - Bloquer les robots
+        correct: 0
+        explanation: "Le proxy relaie les requêtes réseau."

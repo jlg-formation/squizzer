@@ -1,21 +1,30 @@
-# QCM Linux
-questions:
-  - id: 1
-    chapter: "Commandes"
-    question: "Quelle commande affiche le contenu d’un dossier ?"
-    answers:
-      - "ls"
-      - "cd"
-      - "cat"
-    correct: 0
-    explanation: "La commande ls liste les fichiers et dossiers."
-  - id: 2
-    chapter: "Permissions"
-    question: "Que signifie chmod 755 ?"
-    answers:
-      - "Lecture seule pour tous"
-      - "Lecture/écriture pour le propriétaire, lecture/exécution pour les
-        autres"
-      - "Exécution uniquement pour le propriétaire"
-    correct: 1
-    explanation: "755 = rwx pour owner, rx pour groupe et autres."
+title: QCM Linux
+chapters:
+  - id: commandes
+    title: Commandes de base
+    questions:
+      - id: commandes-q1
+        question: "Quelle commande affiche le contenu d’un dossier ?"
+        answers: [ls, cd, cat, pwd]
+        correct: 0
+        explanation: "La commande ls liste les fichiers et dossiers."
+      - id: commandes-q2
+        question: "Quelle commande affiche le chemin courant ?"
+        answers: [ls, pwd, cd, echo]
+        correct: 1
+        explanation: "pwd affiche le chemin du dossier courant."
+      # ... 18 autres questions similaires ...
+  - id: permissions
+    title: Permissions et sécurité
+    questions:
+      - id: permissions-q1
+        question: "Que signifie chmod 755 ?"
+        answers:
+          - Lecture seule pour tous
+          - Lecture/écriture pour le propriétaire, lecture/exécution pour les
+            autres
+          - Exécution uniquement pour le propriétaire
+          - Aucune permission
+        correct: 1
+        explanation: "755 = rwx pour owner, rx pour groupe et autres."
+      # ... 19 autres questions similaires ...
