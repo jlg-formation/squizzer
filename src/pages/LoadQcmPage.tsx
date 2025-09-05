@@ -1,6 +1,7 @@
 import React from "react";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
 import yaml from "yaml";
+import { useNavigate } from "react-router-dom";
 
 // import { Link } from "react-router-dom"; // plus utilisé
 import Layout from "../layout/Layout";
@@ -26,8 +27,8 @@ const PREDEFINED_QCMS = [
 const LoadQcmPage: React.FC = () => {
   const [selectedQcm, setSelectedQcm] = React.useState<string>("");
   const [customUrl, setCustomUrl] = React.useState<string>("");
-
   const setConfig = useQcmConfigStore((s) => s.setConfig);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     // Met à jour la config QCM à chaque changement d'URL ou de sélection
@@ -103,7 +104,7 @@ const LoadQcmPage: React.FC = () => {
                 );
               }
               setConfig({ chapters });
-              window.location.href = "/squizzer/config";
+              navigate("/config");
             } catch (err) {
               console.log("err: ", err);
               alert("Erreur lors du chargement du QCM");
