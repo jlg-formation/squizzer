@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import ButtonPrimary from "../components/ButtonPrimary";
 import Layout from "../layout/Layout";
 
 const HomePage: React.FC = () => (
@@ -11,11 +12,8 @@ const HomePage: React.FC = () => (
         Bienvenue sur Squizzer ! Commence par configurer ton QCM pour la
         formation.
       </p>
-      <Link
-        to="/load-qcm"
-        className="block w-full rounded border border-black bg-white px-4 py-2 text-center font-mono hover:bg-gray-100"
-      >
-        Commencer
+      <Link to="/load-qcm" className="block w-full">
+        <ButtonPrimary className="w-full">Commencer</ButtonPrimary>
       </Link>
     </div>
   </Layout>
