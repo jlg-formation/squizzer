@@ -5,7 +5,6 @@
 - L’utilisateur (formateur) peut charger un fichier QCM depuis :
   - Une **URL libre** (champ texte)
   - Un **catalogue prédéfini** (liste proposée par l’application)
-  - Un **fichier local** importé depuis son ordinateur
 - Formats supportés : **JSON** et **YAML**
 - En cas de fichier invalide → afficher un **message d’erreur détaillé**
   indiquant la source de l’erreur.
