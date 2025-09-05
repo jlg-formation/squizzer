@@ -1,4 +1,5 @@
 import React from "react";
+import { QRCodeSVG } from "qrcode.react";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
@@ -23,7 +24,7 @@ const QrcodePage: React.FC = () => {
       <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
         <h2 className="mb-4 text-xl font-bold">QR Code d'accès au QCM</h2>
         <div className="mb-4 flex h-40 w-full items-center justify-center border border-black bg-gray-50">
-          [QR CODE]
+          <QRCodeSVG value={qcmUrl} size={120} />
         </div>
         <input
           type="text"
