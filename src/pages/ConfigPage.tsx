@@ -11,10 +11,16 @@ const ConfigPage: React.FC = () => {
     navigate("/qrcode");
   };
 
+  // TODO: Remplacer par le vrai titre du QCM sélectionné (ex: via contexte ou props)
+  const qcmTitle = "Titre du QCM choisi";
+
   return (
     <Layout>
       <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8">
         <h2 className="mb-4 text-xl font-bold">Configuration du QCM</h2>
+        <div className="mb-4 text-center font-mono text-lg font-semibold">
+          QCM sélectionné : {qcmTitle}
+        </div>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
