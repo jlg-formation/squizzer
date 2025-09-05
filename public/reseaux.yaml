@@ -1,143 +1,260 @@
-# QCM Réseaux
-questions:
-  # Chapitre 1 : TCP/IP
-  # 20 questions
-  - id: 1
-    chapter: "TCP/IP"
-    question: "Quel est le rôle du protocole TCP ?"
-    answers:
-      - "Assurer la fiabilité des échanges"
-      - "Attribuer des adresses IP"
-      - "Gérer le routage"
-      - "Chiffrer les données"
-    correct: 0
-    explanation: "TCP garantit la fiabilité et l’ordre des paquets."
-  - id: 2
-    chapter: "TCP/IP"
-    question: "Quel port est utilisé par HTTP ?"
-    answers:
-      - "21"
-      - "80"
-      - "443"
-      - "25"
-    correct: 1
-    explanation: "Le port 80 est le port standard pour HTTP."
-  - id: 3
-    chapter: "TCP/IP"
-    question: "Qu’est-ce qu’une adresse IP ?"
-    answers:
-      - "Un identifiant de protocole"
-      - "Un identifiant de machine sur le réseau"
-      - "Un type de câble réseau"
-      - "Un format de cryptage"
-    correct: 1
-    explanation: "L’adresse IP identifie une machine sur le réseau."
-  # ... 17 autres questions TCP/IP ...
-  - id: 20
-    chapter: "TCP/IP"
-    question: "Quel protocole permet la résolution de noms de domaine ?"
-    answers:
-      - "DHCP"
-      - "DNS"
-      - "FTP"
-      - "SMTP"
-    correct: 1
-    explanation: "DNS permet de traduire les noms de domaine en adresses IP."
+title: QCM sur les réseaux en informatique
+chapters:
+  - id: basics
+    title: Concepts et protocoles de base
+    questions:
+      - id: q1
+        question: "Que signifie l’acronyme IP ?"
+        answers:
+          [
+            Internet Protocol,
+            Internal Program,
+            Integrated Process,
+            Information Packet,
+          ]
+        correct: 0
+        explanation:
+          "IP = Internet Protocol, utilisé pour l’adressage et le routage."
+      - id: q2
+        question: "Combien de bits contient une adresse IPv4 ?"
+        answers: [16, 32, 64, 128]
+        correct: 1
+        explanation: "Une adresse IPv4 fait 32 bits."
+      - id: q3
+        question: "Quelle commande permet de tester la connectivité réseau ?"
+        answers: [ping, ifconfig, ls, netstat]
+        correct: 0
+        explanation:
+          "`ping` envoie des requêtes ICMP pour tester la connectivité."
+      - id: q4
+        question:
+          "Quelle adresse IP est réservée à la boucle locale (localhost) ?"
+        answers: [192.168.0.1, 255.255.255.255, 127.0.0.1, 0.0.0.0]
+        correct: 2
+        explanation: "127.0.0.1 est l’adresse loopback."
+      - id: q5
+        question: "Quel protocole est utilisé pour envoyer des emails ?"
+        answers: [SMTP, FTP, HTTP, SNMP]
+        correct: 0
+        explanation: "SMTP est utilisé pour l’envoi des emails."
+      - id: q6
+        question: "Quel protocole est utilisé pour transférer des fichiers ?"
+        answers: [FTP, DNS, HTTP, SMTP]
+        correct: 1
+        explanation: "FTP est destiné au transfert de fichiers."
+      - id: q7
+        question: "Quelle couche du modèle OSI correspond aux adresses MAC ?"
+        answers: [Réseau, Liaison de données, Application, Transport]
+        correct: 1
+        explanation:
+          "Les adresses MAC se situent à la couche 2 : Liaison de données."
+      - id: q8
+        question: "Quel protocole résout les noms de domaine en adresses IP ?"
+        answers: [DNS, DHCP, ARP, FTP]
+        correct: 0
+        explanation: "DNS traduit les noms en adresses IP."
+      - id: q9
+        question: "Que signifie l’acronyme DHCP ?"
+        answers:
+          [
+            Dynamic Host Configuration Protocol,
+            Data Host Control Protocol,
+            Domain Hyperlink Control Protocol,
+            Direct Host Communication Protocol,
+          ]
+        correct: 0
+        explanation: "DHCP attribue automatiquement des adresses IP."
+      - id: q10
+        question: "Quel port est utilisé par HTTP ?"
+        answers: [21, 25, 53, 80]
+        correct: 3
+        explanation: "HTTP utilise le port 80."
+      - id: q11
+        question: "Quel protocole chiffre la navigation web ?"
+        answers: [HTTPS, FTP, SMTP, Telnet]
+        correct: 0
+        explanation: "HTTPS ajoute SSL/TLS à HTTP."
+      - id: q12
+        question: "Quel protocole est utilisé pour récupérer des emails ?"
+        answers: [POP3/IMAP, FTP, DNS, ICMP]
+        correct: 1
+        explanation: "POP3 et IMAP servent à la réception des emails."
+      - id: q13
+        question: "Que signifie LAN ?"
+        answers:
+          [
+            Local Area Network,
+            Large Access Node,
+            Limited Area Network,
+            Link Access Net,
+          ]
+        correct: 0
+        explanation: "LAN = Local Area Network (réseau local)."
+      - id: q14
+        question: "Que signifie WAN ?"
+        answers:
+          [
+            Wireless Area Network,
+            Wide Area Network,
+            Web Application Network,
+            World Access Node,
+          ]
+        correct: 1
+        explanation: "WAN = Wide Area Network (réseau étendu)."
+      - id: q15
+        question: "Quelle commande affiche la table de routage sous Linux ?"
+        answers: [route, ping, traceroute, netstat]
+        correct: 0
+        explanation: "`route -n` affiche la table de routage."
+      - id: q16
+        question: "Quelle est la taille d’une adresse IPv6 ?"
+        answers: [32 bits, 64 bits, 128 bits, 256 bits]
+        correct: 2
+        explanation: "IPv6 utilise 128 bits."
+      - id: q17
+        question: "Quel protocole est utilisé pour le transfert de pages web ?"
+        answers: [HTTP, DNS, ARP, FTP]
+        correct: 0
+        explanation: "HTTP est le protocole de base pour les pages web."
+      - id: q18
+        question: "Quel protocole attribue dynamiquement une adresse IP ?"
+        answers: [DNS, DHCP, ICMP, FTP]
+        correct: 1
+        explanation: "DHCP fournit des adresses IP dynamiques."
+      - id: q19
+        question: "Que signifie ARP ?"
+        answers:
+          [
+            Address Resolution Protocol,
+            Access Routing Process,
+            Application Remote Port,
+            Automatic Routing Protocol,
+          ]
+        correct: 2
+        explanation: "ARP résout les adresses IP en adresses MAC."
+      - id: q20
+        question: "Quel protocole est utilisé pour la supervision réseau ?"
+        answers: [SNMP, SMTP, FTP, ICMP]
+        correct: 3
+        explanation: "SNMP sert à la gestion et supervision réseau."
 
-  # Chapitre 2 : Réseaux
-  # 20 questions
-  - id: 21
-    title: QCM Réseaux
-    chapters:
-      - id: tcpip
-        title: TCP/IP
-        questions:
-          - id: tcpip-q1
-            question: "Quel est le rôle du protocole TCP ?"
-            answers:
-              - Assurer la fiabilité des échanges
-              - Attribuer des adresses IP
-              - Gérer le routage
-              - Chiffrer les données
-            correct: 0
-            explanation: "TCP garantit la fiabilité et l’ordre des paquets."
-          - id: tcpip-q2
-            question: "Quel port est utilisé par HTTP ?"
-            answers:
-              - 21
-              - 80
-              - 443
-              - 25
-            correct: 1
-            explanation: "Le port 80 est le port standard pour HTTP."
-          - id: tcpip-q3
-            question: "Qu’est-ce qu’une adresse IP ?"
-            answers:
-              - Un identifiant de protocole
-              - Un identifiant de machine sur le réseau
-              - Un type de câble réseau
-              - Un format de cryptage
-            correct: 1
-            explanation: "L’adresse IP identifie une machine sur le réseau."
-          # ... 17 autres questions TCP/IP ...
-          - id: tcpip-q20
-            question:
-              "Quel protocole est utilisé pour le transfert sécurisé de fichiers
-              ?"
-            answers:
-              - SFTP
-              - FTP
-              - HTTP
-              - SMTP
-            correct: 0
-            explanation: "SFTP permet le transfert sécurisé de fichiers."
-      - id: reseaux
-        title: Réseaux
-        questions:
-          - id: reseaux-q1
-            question: "Qu’est-ce qu’un masque de sous-réseau ?"
-            answers:
-              - Un identifiant de machine
-              - Un moyen de segmenter un réseau
-              - Un protocole de sécurité
-              - Un type de câble
-            correct: 1
-            explanation:
-              "Le masque permet de définir la partie réseau/adresse d’un IP."
-          - id: reseaux-q2
-            question: "Quel équipement relie plusieurs réseaux ?"
-            answers:
-              - Switch
-              - Routeur
-              - Hub
-              - Modem
-            correct: 1
-            explanation: "Le routeur relie plusieurs réseaux distincts."
-          - id: reseaux-q3
-            question: "Quel est le rôle d’un switch ?"
-            answers:
-              - Relier des réseaux
-              - Segmenter un réseau local
-              - Attribuer des adresses IP
-              - Chiffrer les données
-            correct: 1
-            explanation: "Le switch segmente le réseau local et gère le trafic."
-          # ... 17 autres questions Réseaux ...
-          - id: reseaux-q20
-            question: "Quel protocole permet la gestion des transferts ?"
-            answers:
-              - FTP
-              - HTTP
-              - SMTP
-              - DNS
-            correct: 0
-            explanation: "FTP gère les transferts de fichiers."
-    chapter: "Réseaux"
-    question: "Quel protocole permet d’obtenir une adresse IP automatiquement ?"
-    answers:
-      - "DNS"
-      - "DHCP"
-      - "SMTP"
-      - "HTTP"
-    correct: 1
-    explanation: "DHCP attribue automatiquement une adresse IP."
+  - id: advanced
+    title: Technologies avancées et administration réseau
+    questions:
+      - id: q21
+        question:
+          "Quel protocole est utilisé pour des connexions distantes sécurisées ?"
+        answers: [SSH, Telnet, RDP, FTP]
+        correct: 0
+        explanation: "SSH permet une connexion sécurisée."
+      - id: q22
+        question: "Quelle commande affiche les ports ouverts sur une machine ?"
+        answers: [netstat, ls, ping, traceroute]
+        correct: 1
+        explanation: "`netstat -tulnp` montre les ports ouverts."
+      - id: q23
+        question:
+          "Quel protocole est utilisé par les routeurs pour échanger des routes
+          ?"
+        answers: [OSPF, SMTP, FTP, POP3]
+        correct: 0
+        explanation: "OSPF est un protocole de routage dynamique."
+      - id: q24
+        question:
+          "Quel protocole est utilisé pour transférer des fichiers de manière
+          sécurisée ?"
+        answers: [SFTP, FTP, Telnet, SNMP]
+        correct: 1
+        explanation: "SFTP sécurise le transfert de fichiers."
+      - id: q25
+        question:
+          "Quel protocole est utilisé pour synchroniser l’heure sur un réseau ?"
+        answers: [NTP, SNMP, FTP, RDP]
+        correct: 0
+        explanation: "NTP synchronise l’heure des systèmes."
+      - id: q26
+        question: "Quel protocole permet de relayer des emails entre serveurs ?"
+        answers: [SMTP, POP3, IMAP, FTP]
+        correct: 1
+        explanation: "SMTP envoie les emails entre serveurs."
+      - id: q27
+        question:
+          "Quelle commande affiche l’adresse IP d’une machine sous Linux ?"
+        answers: [ifconfig/ip, ping, traceroute, ssh]
+        correct: 2
+        explanation: "`ifconfig` ou `ip addr` donnent l’adresse IP."
+      - id: q28
+        question:
+          "Quelle commande trace le chemin suivi par les paquets réseau ?"
+        answers: [traceroute, ping, route, dig]
+        correct: 3
+        explanation: "`traceroute` affiche le chemin d’un paquet."
+      - id: q29
+        question:
+          "Quel protocole permet de traduire des adresses privées en publiques ?"
+        answers: [NAT, DNS, DHCP, ARP]
+        correct: 0
+        explanation: "NAT fait la traduction d’adresses."
+      - id: q30
+        question: "Quel protocole sécurise les sessions web (HTTPS) ?"
+        answers: [TLS/SSL, FTP, SNMP, ARP]
+        correct: 1
+        explanation: "TLS/SSL sécurise HTTPS."
+      - id: q31
+        question:
+          "Quel protocole de routage est basé sur le vecteur de distance ?"
+        answers: [RIP, OSPF, BGP, EIGRP]
+        correct: 2
+        explanation: "RIP utilise le vecteur de distance."
+      - id: q32
+        question:
+          "Quel protocole est utilisé pour interroger les serveurs DNS ?"
+        answers: [DNS, FTP, HTTP, SMTP]
+        correct: 3
+        explanation: "Le protocole DNS interroge les serveurs de noms."
+      - id: q33
+        question: "Que signifie VLAN ?"
+        answers: [Virtual LAN, Variable LAN, Visible LAN, Valid LAN]
+        correct: 0
+        explanation: "VLAN = réseau local virtuel."
+      - id: q34
+        question: "Quelle commande teste l’ouverture d’un port distant ?"
+        answers: [telnet/nc, ping, traceroute, ssh]
+        correct: 1
+        explanation: "`telnet` ou `nc` testent un port distant."
+      - id: q35
+        question:
+          "Quel protocole permet la communication entre routeurs sur Internet ?"
+        answers: [BGP, RIP, OSPF, ICMP]
+        correct: 2
+        explanation: "BGP est le protocole de routage externe."
+      - id: q36
+        question:
+          "Quel protocole chiffre les échanges entre navigateur et serveur ?"
+        answers: [TLS, FTP, SMTP, ARP]
+        correct: 3
+        explanation: "TLS sécurise les communications."
+      - id: q37
+        question: "Quelle technologie permet de créer un réseau privé virtuel ?"
+        answers: [VPN, DNS, DHCP, NAT]
+        correct: 0
+        explanation: "Un VPN permet une connexion privée."
+      - id: q38
+        question:
+          "Quelle commande affiche les connexions réseau en temps réel ?"
+        answers: [iftop, ps, ls, df]
+        correct: 1
+        explanation: "`iftop` affiche les connexions en temps réel."
+      - id: q39
+        question:
+          "Quel protocole est utilisé pour la résolution d’adresses MAC à partir
+          d’IP ?"
+        answers: [ARP, DNS, DHCP, SNMP]
+        correct: 2
+        explanation: "ARP résout IP → MAC."
+      - id: q40
+        question:
+          "Quel protocole est utilisé pour gérer les équipements réseau ?"
+        answers: [SNMP, FTP, SMTP, HTTP]
+        correct: 3
+        explanation: "SNMP est utilisé pour l’administration réseau."

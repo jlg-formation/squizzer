@@ -1,240 +1,216 @@
-title: QCM Linux
+title: QCM sur les commandes Linux
 chapters:
-  - id: commandes
+  - id: basics
     title: Commandes de base
     questions:
-      - id: commandes-q1
-        question: "Quelle commande affiche le contenu d’un dossier ?"
-        answers: [ls, cd, cat, pwd]
+      - id: q1
+        question: "Quelle commande affiche le répertoire courant ?"
+        answers: [pwd, ls, cd, path]
         correct: 0
-        explanation: "La commande ls liste les fichiers et dossiers."
-      - id: commandes-q2
-        question: "Quelle commande affiche le chemin courant ?"
-        answers: [ls, pwd, cd, echo]
+        explanation:
+          "La commande `pwd` (print working directory) affiche le répertoire
+          courant."
+      - id: q2
+        question: "Quelle commande permet de lister les fichiers d’un dossier ?"
+        answers: [ls, cat, show, list]
         correct: 1
-        explanation: "pwd affiche le chemin du dossier courant."
-      # ... 18 autres questions similaires ...
-  - id: permissions
-    title: QCM Linux
-    chapters:
-      - id: commandes
-        title: Commandes de base
-        questions:
-          - id: commandes-q1
-            question: "Quelle commande affiche le contenu d’un dossier ?"
-            answers: [ls, cd, cat, pwd]
-            correct: 0
-            explanation: "La commande ls liste les fichiers et dossiers."
-          - id: commandes-q2
-            question: "Quelle commande affiche le chemin courant ?"
-            answers: [ls, pwd, cd, echo]
-            correct: 1
-            explanation: "pwd affiche le chemin du dossier courant."
-          - id: commandes-q3
-            question: "Quelle commande permet de changer de dossier ?"
-            answers: [cd, ls, mv, rm]
-            correct: 0
-            explanation: "cd permet de changer de dossier."
-          - id: commandes-q4
-            question: "Quelle commande crée un nouveau dossier ?"
-            answers: [mkdir, touch, rm, mv]
-            correct: 0
-            explanation: "mkdir crée un dossier."
-          - id: commandes-q5
-            question: "Quelle commande supprime un fichier ?"
-            answers: [rm, mv, cp, ls]
-            correct: 0
-            explanation: "rm supprime un fichier."
-          - id: commandes-q6
-            question: "Quelle commande copie un fichier ?"
-            answers: [cp, mv, rm, ls]
-            correct: 0
-            explanation: "cp copie un fichier."
-          - id: commandes-q7
-            question: "Quelle commande déplace un fichier ?"
-            answers: [mv, cp, rm, ls]
-            correct: 0
-            explanation: "mv déplace ou renomme un fichier."
-          - id: commandes-q8
-            question: "Quelle commande affiche le contenu d’un fichier texte ?"
-            answers: [cat, ls, cd, touch]
-            correct: 0
-            explanation: "cat affiche le contenu d’un fichier."
-          - id: commandes-q9
-            question: "Quelle commande affiche les processus en cours ?"
-            answers: [ps, top, ls, cd]
-            correct: 0
-            explanation: "ps affiche les processus."
-          - id: commandes-q10
-            question: "Quelle commande affiche l’espace disque utilisé ?"
-            answers: [df, du, ls, cd]
-            correct: 0
-            explanation: "df affiche l’espace disque."
-          - id: commandes-q11
-            question: "Quelle commande affiche la mémoire utilisée ?"
-            answers: [free, top, ps, ls]
-            correct: 0
-            explanation: "free affiche la mémoire utilisée."
-          - id: commandes-q12
-            question: "Quelle commande affiche le contenu paginé d’un fichier ?"
-            answers: [less, cat, ls, cd]
-            correct: 0
-            explanation: "less affiche le contenu paginé."
-          - id: commandes-q13
-            question: "Quelle commande recherche un mot dans un fichier ?"
-            answers: [grep, find, ls, cd]
-            correct: 0
-            explanation: "grep recherche dans un fichier."
-          - id: commandes-q14
-            question: "Quelle commande affiche l’historique des commandes ?"
-            answers: [history, ls, cd, cat]
-            correct: 0
-            explanation: "history affiche l’historique."
-          - id: commandes-q15
-            question: "Quelle commande affiche l’adresse IP de la machine ?"
-            answers: [ip, ifconfig, ls, cd]
-            correct: 0
-            explanation: "ip affiche l’adresse IP."
-          - id: commandes-q16
-            question: "Quelle commande affiche le contenu d’un dossier caché ?"
-            answers: [ls -a, cd, cat, touch]
-            correct: 0
-            explanation: "ls -a affiche les fichiers cachés."
-          - id: commandes-q17
-            question: "Quelle commande affiche la date et l’heure ?"
-            answers: [date, ls, cd, cat]
-            correct: 0
-            explanation: "date affiche la date et l’heure."
-          - id: commandes-q18
-            question: "Quelle commande affiche le chemin absolu d’un fichier ?"
-            answers: [realpath, ls, cd, cat]
-            correct: 0
-            explanation: "realpath affiche le chemin absolu."
-          - id: commandes-q19
-            question: "Quelle commande affiche le manuel d’une commande ?"
-            answers: [man, help, ls, cd]
-            correct: 0
-            explanation: "man affiche le manuel."
-          - id: commandes-q20
-            question:
-              "Quelle commande affiche le contenu d’un fichier ligne par ligne ?"
-            answers: [less, cat, ls, cd]
-            correct: 0
-            explanation: "less affiche le contenu ligne par ligne."
-      - id: permissions
-        title: Permissions et sécurité
-        questions:
-          - id: permissions-q1
-            question: "Que signifie chmod 755 ?"
-            answers:
-              - Lecture seule pour tous
-              - Lecture/écriture pour le propriétaire, lecture/exécution pour
-                les autres
-              - Exécution uniquement pour le propriétaire
-              - Aucune permission
-            correct: 1
-            explanation: "755 = rwx pour owner, rx pour groupe et autres."
-          - id: permissions-q2
-            question: "Quelle commande modifie les permissions d’un fichier ?"
-            answers: [chmod, chown, ls, mv]
-            correct: 0
-            explanation: "chmod modifie les permissions."
-          - id: permissions-q3
-            question: "Que signifie le bit 'x' dans les permissions ?"
-            answers: [Lecture, Écriture, Exécution, Suppression]
-            correct: 2
-            explanation: "x = exécution du fichier ou dossier."
-          - id: permissions-q4
-            question: "Quelle commande change le propriétaire d’un fichier ?"
-            answers: [chown, chmod, ls, cat]
-            correct: 0
-            explanation: "chown change le propriétaire d’un fichier."
-          - id: permissions-q5
-            question: "Quelle commande affiche les permissions d’un fichier ?"
-            answers: [ls -l, chmod, chown, cat]
-            correct: 0
-            explanation: "ls -l affiche les permissions."
-          - id: permissions-q6
-            question: "Quelle commande donne tous les droits à un fichier ?"
-            answers: [chmod 777, chmod 755, chmod 644, chmod 600]
-            correct: 0
-            explanation: "chmod 777 donne tous les droits."
-          - id: permissions-q7
-            question: "Quelle commande retire tous les droits à un fichier ?"
-            answers: [chmod 000, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod 000 retire tous les droits."
-          - id: permissions-q8
-            question: "Quelle commande donne les droits d’exécution à tous ?"
-            answers: [chmod a+x, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod a+x donne les droits d’exécution à tous."
-          - id: permissions-q9
-            question:
-              "Quelle commande donne les droits d’écriture au propriétaire ?"
-            answers: [chmod u+w, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation:
-              "chmod u+w donne les droits d’écriture au propriétaire."
-          - id: permissions-q10
-            question: "Quelle commande donne les droits de lecture à tous ?"
-            answers: [chmod a+r, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod a+r donne les droits de lecture à tous."
-          - id: permissions-q11
-            question: "Quelle commande donne les droits d’exécution au groupe ?"
-            answers: [chmod g+x, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod g+x donne les droits d’exécution au groupe."
-          - id: permissions-q12
-            question: "Quelle commande donne les droits d’écriture au groupe ?"
-            answers: [chmod g+w, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod g+w donne les droits d’écriture au groupe."
-          - id: permissions-q13
-            question: "Quelle commande donne les droits de lecture au groupe ?"
-            answers: [chmod g+r, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod g+r donne les droits de lecture au groupe."
-          - id: permissions-q14
-            question:
-              "Quelle commande donne les droits d’exécution aux autres ?"
-            answers: [chmod o+x, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod o+x donne les droits d’exécution aux autres."
-          - id: permissions-q15
-            question: "Quelle commande donne les droits d’écriture aux autres ?"
-            answers: [chmod o+w, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod o+w donne les droits d’écriture aux autres."
-          - id: permissions-q16
-            question: "Quelle commande donne les droits de lecture aux autres ?"
-            answers: [chmod o+r, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod o+r donne les droits de lecture aux autres."
-          - id: permissions-q17
-            question:
-              "Quelle commande donne les droits d’exécution au propriétaire ?"
-            answers: [chmod u+x, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation:
-              "chmod u+x donne les droits d’exécution au propriétaire."
-          - id: permissions-q18
-            question:
-              "Quelle commande donne les droits d’écriture au propriétaire ?"
-            answers: [chmod u+w, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation:
-              "chmod u+w donne les droits d’écriture au propriétaire."
-          - id: permissions-q19
-            question:
-              "Quelle commande donne les droits de lecture au propriétaire ?"
-            answers: [chmod u+r, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation:
-              "chmod u+r donne les droits de lecture au propriétaire."
-          - id: permissions-q20
-            question: "Quelle commande retire tous les droits au propriétaire ?"
-            answers: [chmod u-rwx, chmod 777, chmod 755, chmod 644]
-            correct: 0
-            explanation: "chmod u-rwx retire tous les droits au propriétaire."
+        explanation: "`ls` affiche le contenu d’un répertoire."
+      - id: q3
+        question: "Quelle commande affiche le contenu d’un fichier texte ?"
+        answers: [cat, less, nano, more]
+        correct: 2
+        explanation: "`cat` concatène et affiche le contenu d’un fichier."
+      - id: q4
+        question: "Quelle commande permet de changer de répertoire ?"
+        answers: [cd, mv, dir, goto]
+        correct: 3
+        explanation:
+          "`cd` (change directory) permet de naviguer entre répertoires."
+      - id: q5
+        question: "Quelle commande crée un nouveau dossier ?"
+        answers: [mkdir, rmdir, touch, newdir]
+        correct: 0
+        explanation: "`mkdir` crée un répertoire."
+      - id: q6
+        question: "Quelle commande crée un fichier vide ?"
+        answers: [touch, cat, mkfile, echo]
+        correct: 1
+        explanation: "`touch` crée un fichier vide ou met à jour sa date."
+      - id: q7
+        question: "Quelle commande copie un fichier ?"
+        answers: [cp, mv, copy, duplicate]
+        correct: 2
+        explanation: "`cp` copie des fichiers ou dossiers."
+      - id: q8
+        question: "Quelle commande déplace ou renomme un fichier ?"
+        answers: [mv, cp, rename, move]
+        correct: 3
+        explanation: "`mv` permet de déplacer ou renommer un fichier."
+      - id: q9
+        question: "Quelle commande supprime un fichier ?"
+        answers: [rm, del, erase, unlink]
+        correct: 0
+        explanation: "`rm` supprime des fichiers."
+      - id: q10
+        question: "Quelle commande supprime un dossier vide ?"
+        answers: [rmdir, rm, deldir, erasedir]
+        correct: 1
+        explanation: "`rmdir` supprime un dossier vide."
+      - id: q11
+        question: "Quelle commande affiche les premières lignes d’un fichier ?"
+        answers: [head, cat, top, less]
+        correct: 2
+        explanation: "`head` affiche les premières lignes."
+      - id: q12
+        question: "Quelle commande affiche les dernières lignes d’un fichier ?"
+        answers: [tail, bottom, cat, last]
+        correct: 3
+        explanation: "`tail` affiche les dernières lignes."
+      - id: q13
+        question:
+          "Quelle commande permet de rechercher un mot dans un fichier ?"
+        answers: [grep, find, search, look]
+        correct: 0
+        explanation: "`grep` filtre les lignes contenant un motif."
+      - id: q14
+        question: "Quelle commande affiche l’arborescence d’un dossier ?"
+        answers: [tree, ls, dir, view]
+        correct: 1
+        explanation: "`tree` affiche graphiquement l’arborescence."
+      - id: q15
+        question: "Quelle commande donne le chemin d’un exécutable ?"
+        answers: [which, where, path, locate]
+        correct: 2
+        explanation: "`which` retourne le chemin d’un binaire."
+      - id: q16
+        question: "Quelle commande cherche un fichier dans l’index système ?"
+        answers: [locate, find, grep, search]
+        correct: 3
+        explanation: "`locate` recherche via une base mise à jour."
+      - id: q17
+        question: "Quelle commande recherche récursivement un fichier ?"
+        answers: [find, locate, grep, search]
+        correct: 0
+        explanation: "`find` explore récursivement l’arborescence."
+      - id: q18
+        question: "Quelle commande affiche la date et l’heure ?"
+        answers: [date, time, now, clock]
+        correct: 1
+        explanation: "`date` affiche la date et l’heure courante."
+      - id: q19
+        question: "Quelle commande affiche le manuel d’une commande ?"
+        answers: [man, help, info, doc]
+        correct: 2
+        explanation: "`man` affiche le manuel associé à une commande."
+      - id: q20
+        question: "Quelle commande nettoie l’écran du terminal ?"
+        answers: [clear, reset, cls, clean]
+        correct: 3
+        explanation: "`clear` efface le contenu affiché à l’écran."
+
+  - id: advanced
+    title: Commandes avancées et administration
+    questions:
+      - id: q21
+        question: "Quelle commande affiche les processus en cours ?"
+        answers: [ps, top, jobs, proc]
+        correct: 0
+        explanation: "`ps` liste les processus actifs."
+      - id: q22
+        question: "Quelle commande affiche les processus en temps réel ?"
+        answers: [top, ps, htop, monitor]
+        correct: 1
+        explanation: "`top` affiche les processus en temps réel."
+      - id: q23
+        question:
+          "Quelle commande affiche l’utilisation disque par répertoire ?"
+        answers: [du, df, ls, disk]
+        correct: 2
+        explanation:
+          "`du` montre l’utilisation de l’espace disque par répertoire."
+      - id: q24
+        question: "Quelle commande affiche l’espace disque disponible ?"
+        answers: [df, du, ls, diskfree]
+        correct: 3
+        explanation: "`df` affiche l’espace libre."
+      - id: q25
+        question: "Quelle commande affiche les variables d’environnement ?"
+        answers: [env, printenv, set, export]
+        correct: 0
+        explanation: "`env` liste les variables d’environnement."
+      - id: q26
+        question:
+          "Quelle commande permet de changer les permissions d’un fichier ?"
+        answers: [chmod, chown, perm, access]
+        correct: 1
+        explanation: "`chmod` modifie les permissions."
+      - id: q27
+        question: "Quelle commande change le propriétaire d’un fichier ?"
+        answers: [chown, chmod, owner, setowner]
+        correct: 2
+        explanation: "`chown` change l’utilisateur ou le groupe propriétaire."
+      - id: q28
+        question: "Quelle commande affiche l’adresse IP et réseau ?"
+        answers: [ifconfig, ip, netstat, ping]
+        correct: 3
+        explanation: "`ifconfig` ou `ip addr` affichent les interfaces réseau."
+      - id: q29
+        question: "Quelle commande teste la connectivité réseau ?"
+        answers: [ping, curl, netcat, traceroute]
+        correct: 0
+        explanation: "`ping` teste la connectivité avec une adresse."
+      - id: q30
+        question: "Quelle commande affiche les ports ouverts ?"
+        answers: [netstat, ss, lsof, ports]
+        correct: 1
+        explanation: "`netstat -tulnp` ou `ss` montrent les ports ouverts."
+      - id: q31
+        question: "Quelle commande télécharge un fichier depuis Internet ?"
+        answers: [wget, curl, fetch, http]
+        correct: 2
+        explanation: "`wget` télécharge des fichiers via HTTP/FTP."
+      - id: q32
+        question: "Quelle commande exécute un fichier en superutilisateur ?"
+        answers: [sudo, root, su, admin]
+        correct: 3
+        explanation: "`sudo` exécute une commande avec privilèges root."
+      - id: q33
+        question: "Quelle commande ouvre un shell root ?"
+        answers: [su, sudo, login, root]
+        correct: 0
+        explanation: "`su` permet de changer d’utilisateur, souvent root."
+      - id: q34
+        question: "Quelle commande affiche les derniers journaux système ?"
+        answers: [dmesg, journalctl, log, syslog]
+        correct: 1
+        explanation: "`dmesg` affiche les messages du noyau."
+      - id: q35
+        question: "Quelle commande affiche les journaux systemd ?"
+        answers: [journalctl, dmesg, syslog, logs]
+        correct: 2
+        explanation: "`journalctl` lit les journaux systemd."
+      - id: q36
+        question: "Quelle commande arrête un processus avec son PID ?"
+        answers: [kill, stop, end, terminate]
+        correct: 3
+        explanation: "`kill` envoie un signal pour arrêter un processus."
+      - id: q37
+        question: "Quelle commande redémarre le système ?"
+        answers: [reboot, shutdown, restart, init]
+        correct: 0
+        explanation: "`reboot` redémarre la machine."
+      - id: q38
+        question: "Quelle commande éteint le système ?"
+        answers: [shutdown, poweroff, halt, off]
+        correct: 1
+        explanation: "`shutdown -h now` arrête le système."
+      - id: q39
+        question: "Quelle commande compresse un fichier en .tar.gz ?"
+        answers: [tar, gzip, zip, compress]
+        correct: 2
+        explanation: "`tar -czf` crée une archive compressée."
+      - id: q40
+        question: "Quelle commande décompresse un fichier .tar.gz ?"
+        answers: [tar, gunzip, unzip, extract]
+        correct: 3
+        explanation: "`tar -xzf` extrait une archive compressée."
