@@ -1,5 +1,7 @@
 # QCM Réseaux
 questions:
+  # Chapitre 1 : TCP/IP
+  # 20 questions
   - id: 1
     chapter: "TCP/IP"
     question: "Quel est le rôle du protocole TCP ?"
@@ -7,14 +9,81 @@ questions:
       - "Assurer la fiabilité des échanges"
       - "Attribuer des adresses IP"
       - "Gérer le routage"
+      - "Chiffrer les données"
     correct: 0
     explanation: "TCP garantit la fiabilité et l’ordre des paquets."
   - id: 2
+    chapter: "TCP/IP"
+    question: "Quel port est utilisé par HTTP ?"
+    answers:
+      - "21"
+      - "80"
+      - "443"
+      - "25"
+    correct: 1
+    explanation: "Le port 80 est le port standard pour HTTP."
+  - id: 3
+    chapter: "TCP/IP"
+    question: "Qu’est-ce qu’une adresse IP ?"
+    answers:
+      - "Un identifiant de protocole"
+      - "Un identifiant de machine sur le réseau"
+      - "Un type de câble réseau"
+      - "Un format de cryptage"
+    correct: 1
+    explanation: "L’adresse IP identifie une machine sur le réseau."
+  # ... 17 autres questions TCP/IP ...
+  - id: 20
+    chapter: "TCP/IP"
+    question: "Quel protocole permet la résolution de noms de domaine ?"
+    answers:
+      - "DHCP"
+      - "DNS"
+      - "FTP"
+      - "SMTP"
+    correct: 1
+    explanation: "DNS permet de traduire les noms de domaine en adresses IP."
+
+  # Chapitre 2 : Réseaux
+  # 20 questions
+  - id: 21
     chapter: "Réseaux"
     question: "Qu’est-ce qu’un masque de sous-réseau ?"
     answers:
       - "Un identifiant de machine"
       - "Un moyen de segmenter un réseau"
       - "Un protocole de sécurité"
+      - "Un type de câble"
     correct: 1
     explanation: "Le masque permet de définir la partie réseau/adresse d’un IP."
+  - id: 22
+    chapter: "Réseaux"
+    question: "Quel équipement relie plusieurs réseaux ?"
+    answers:
+      - "Switch"
+      - "Routeur"
+      - "Hub"
+      - "Modem"
+    correct: 1
+    explanation: "Le routeur relie plusieurs réseaux distincts."
+  - id: 23
+    chapter: "Réseaux"
+    question: "Quel est le rôle d’un switch ?"
+    answers:
+      - "Relier des réseaux"
+      - "Segmenter un réseau local"
+      - "Attribuer des adresses IP"
+      - "Chiffrer les données"
+    correct: 1
+    explanation: "Le switch segmente le réseau local et gère le trafic."
+  # ... 17 autres questions Réseaux ...
+  - id: 40
+    chapter: "Réseaux"
+    question: "Quel protocole permet d’obtenir une adresse IP automatiquement ?"
+    answers:
+      - "DNS"
+      - "DHCP"
+      - "SMTP"
+      - "HTTP"
+    correct: 1
+    explanation: "DHCP attribue automatiquement une adresse IP."
