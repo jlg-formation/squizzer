@@ -35,12 +35,12 @@ const LoadQcmPage: React.FC = () => {
           ))}
         </select>
         <input
-          type="text"
-          placeholder="URL du QCM (JSON ou YAML)"
-          className="mb-4 block w-full rounded border border-black px-2 py-1"
-          value={customUrl}
-          onChange={(e) => setCustomUrl(e.target.value)}
+          type="url"
+          placeholder="URL du QCM (YAML)"
+          defaultValue="https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/linux.yaml"
+          className="block w-full rounded border border-black px-2 py-1"
         />
+        <div className="my-6" />
         <Link to="/config" className="block w-full">
           <ButtonPrimary className="w-full">Continuer</ButtonPrimary>
         </Link>
