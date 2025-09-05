@@ -8,6 +8,7 @@ export interface QcmConfig {
   seed: string;
   url: string;
   chapters?: QcmChapter[];
+  questions?: import("../types/qcmFile").QcmQuestion[];
 }
 
 interface QcmConfigState {

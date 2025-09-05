@@ -4,12 +4,12 @@
 export interface QcmFile {
   title: string;
   chapters: QcmChapter[];
-  questions: QcmQuestion[];
 }
 
 export interface QcmChapter {
   id: string;
   title: string;
+  questions: QcmQuestion[];
 }
 
 export interface QcmQuestion {
