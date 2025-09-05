@@ -1,6 +1,8 @@
 import React from "react";
+import { useQcmConfigStore } from "../store/qcmConfigStore";
+import yaml from "yaml";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom"; // plus utilisé
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 
@@ -8,7 +10,7 @@ import ButtonPrimary from "../components/ButtonPrimary";
 const PREDEFINED_QCMS = [
   {
     name: "QCM Réseaux",
-    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/reseaux.json",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/reseaux.yaml",
   },
   {
     name: "QCM Linux",
@@ -24,6 +26,20 @@ const PREDEFINED_QCMS = [
 const LoadQcmPage: React.FC = () => {
   const [selectedQcm, setSelectedQcm] = React.useState<string>("");
   const [customUrl, setCustomUrl] = React.useState<string>("");
+
+  const setConfig = useQcmConfigStore((s) => s.setConfig);
+
+  React.useEffect(() => {
+    // Met à jour la config QCM à chaque changement d'URL ou de sélection
+    const selected = PREDEFINED_QCMS.find((qcm) => qcm.url === customUrl);
+    setConfig({
+      url: customUrl,
+      qcmTitle:
+        selected && selected.name !== "Autre"
+          ? selected.name
+          : "QCM personnalisé",
+    });
+  }, [customUrl, setConfig]);
 
   return (
     <Layout>
@@ -61,14 +77,48 @@ const LoadQcmPage: React.FC = () => {
           className="block w-full rounded border border-black px-2 py-1"
         />
         <div className="my-6" />
-        <Link to="/config" className="block w-full">
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            if (!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)) return;
+            try {
+              const res = await fetch(customUrl);
+              const text = await res.text();
+              let chapters = [];
+              if (customUrl.endsWith(".yaml")) {
+                const data = yaml.parse(text);
+                chapters = (data.chapters || []).map(
+                  (ch: { id?: string; title?: string }, idx: number) => ({
+                    id: ch.id || String(idx),
+                    title: ch.title || `Chapitre ${idx + 1}`,
+                  }),
+                );
+              } else if (customUrl.endsWith(".json")) {
+                const data = JSON.parse(text);
+                chapters = (data.chapters || []).map(
+                  (ch: { id?: string; title?: string }, idx: number) => ({
+                    id: ch.id || String(idx),
+                    title: ch.title || `Chapitre ${idx + 1}`,
+                  }),
+                );
+              }
+              setConfig({ chapters });
+              window.location.href = "/squizzer/config";
+            } catch (err) {
+              console.log("err: ", err);
+              alert("Erreur lors du chargement du QCM");
+            }
+          }}
+          className="block w-full"
+        >
           <ButtonPrimary
             className="w-full"
             disabled={!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)}
+            type="submit"
           >
             Continuer
           </ButtonPrimary>
-        </Link>
+        </form>
       </div>
     </Layout>
   );

@@ -15,9 +15,9 @@
 
 ## 2. Base du projet
 
-- [ ] Créer structure dossiers (`components`, `pages`, `store`, `utils`)
-- [ ] Ajouter `Layout` global avec `NotificationBanner`
-- [ ] Implémenter `AppRouter` avec routes `/config`, `/qcm`, `/results`
+- [x] Créer structure dossiers (`components`, `pages`, `store`, `utils`)
+- [x] Ajouter `Layout` global avec `NotificationBanner`
+- [x] Implémenter `AppRouter` avec routes `/config`, `/qcm`, `/results`
 
 ---
 
