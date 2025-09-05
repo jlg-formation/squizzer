@@ -15,13 +15,15 @@ export async function fetchQcmFile(
     if (url.endsWith(".yaml")) {
       const yamlModule = await import("yaml");
       const data = yamlModule.default.parse(text) as QcmFile;
+      console.log("data: ", data);
       return { title: data.title, chapters: data.chapters, raw: data };
     } else if (url.endsWith(".json")) {
       const data = JSON.parse(text) as QcmFile;
       return { title: data.title, chapters: data.chapters, raw: data };
     }
     return {};
-  } catch {
+  } catch (e) {
+    console.error("Error fetching QCM file:", e);
     return {};
   }
 }

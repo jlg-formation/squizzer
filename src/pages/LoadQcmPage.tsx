@@ -89,6 +89,7 @@ const LoadQcmPage: React.FC = () => {
             if (!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)) return;
             try {
               const qcmData = await fetchQcmFile(customUrl);
+              console.log("qcmData: ", qcmData);
               const chapters = (qcmData.chapters || []).map(
                 (ch: Partial<QcmChapter>, idx: number) => ({
                   id: ch.id || String(idx),
