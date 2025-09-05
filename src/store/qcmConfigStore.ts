@@ -9,6 +9,7 @@ export interface QcmConfig {
   url: string;
   chapters?: QcmChapter[];
   questions?: import("../types/qcmFile").QcmQuestion[];
+  userAnswers?: number[];
 }
 
 interface QcmConfigState {
