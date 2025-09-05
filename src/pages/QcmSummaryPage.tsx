@@ -44,18 +44,34 @@ const QcmSummaryPage: React.FC = () => {
           Score final : {correctCount}/{totalQuestions}
         </div>
         <div className="mb-8 flex justify-center">
-          <ResponsiveContainer width={200} height={200}>
+          <ResponsiveContainer width={300} height={300}>
             <PieChart>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={60}
-                outerRadius={80}
+                innerRadius={90}
+                outerRadius={120}
                 dataKey="value"
-                label={({ name, percent }) =>
-                  `${name}: ${percent !== undefined ? (percent * 100).toFixed(0) : 0}%`
-                }
+                label={({ name, percent, x, y, fill }) => {
+                  // Affiche un label court et coloré, bien positionné
+                  const short =
+                    name === "Bonnes réponses" ? "Bonnes" : "Mauvaises";
+                  return (
+                    <text
+                      x={x}
+                      y={y}
+                      fill={fill}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      fontSize={18}
+                      fontWeight="bold"
+                    >
+                      {short}:{" "}
+                      {percent !== undefined ? (percent * 100).toFixed(0) : 0}%
+                    </text>
+                  );
+                }}
               >
                 {data.map((_, idx) => (
                   <Cell key={`cell-${idx}`} fill={COLORS[idx]} />
