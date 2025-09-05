@@ -8,7 +8,7 @@ import Body from "./Body";
  * @param children React children
  */
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="flex min-h-screen flex-col">
+  <div className="flex min-h-screen flex-col bg-gray-50">
     <Header />
     <Body>{children}</Body>
     <Footer />
