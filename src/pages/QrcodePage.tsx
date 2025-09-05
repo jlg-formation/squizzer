@@ -10,7 +10,7 @@ const QrcodePage: React.FC = () => {
   // Combine le domaine + protocole + base Vite
   const origin = typeof window !== "undefined" ? window.location.origin : "";
   const baseUrl = import.meta.env.BASE_URL || "/";
-  const qcmUrl = `${origin}${baseUrl}start?chapter=${encodeURIComponent(config.chapter)}&count=${config.questionCount}&seed=${encodeURIComponent(config.seed)}`;
+  const qcmUrl = `${origin}${baseUrl}start?chapter=${encodeURIComponent(config.chapter)}&count=${config.questionCount}&seed=${encodeURIComponent(config.seed)}&fileUrl=${encodeURIComponent(config.url || "")}`;
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(qcmUrl);
