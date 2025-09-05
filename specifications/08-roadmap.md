@@ -7,8 +7,8 @@
 - [x] Installer **Zustand** (state management)
 - [x] Installer **React Router**
 - [x] Installer **Recharts** (graphique résultats)
-- [ ] Installer **yaml** et **seedrandom** (utils parsing + aléatoire)
-- [ ] Configurer **ESLint + Prettier**
+- [x] Installer **yaml** et **seedrandom** (utils parsing + aléatoire)
+- [x] Configurer **ESLint + Prettier**
 - [ ] Setup **GitHub Actions** pour déploiement GitHub Pages
 
 ---

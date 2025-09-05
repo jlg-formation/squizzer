@@ -5,6 +5,15 @@
 Les specifications sont dans le répertoire `specifications/`. Lire les
 specifications avant de générer du code.
 
+## Avant de commiter
+
+Lancer les commandes suivantes pour vérifier la qualité du code :
+
+```bash
+npm run format
+npm run lint
+```
+
 ## Conventions de code
 
 - Utiliser TypeScript pour tous les fichiers `.tsx` et `.ts`.
