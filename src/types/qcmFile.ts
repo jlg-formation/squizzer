@@ -14,10 +14,9 @@ export interface QcmChapter {
 
 export interface QcmQuestion {
   id: string;
-  chapterId: string;
-  text: string;
-  choices: QcmChoice[];
-  answer: string; // id de la bonne réponse
+  question: string;
+  answers: string[];
+  correct: number;
   explanation?: string;
 }
 

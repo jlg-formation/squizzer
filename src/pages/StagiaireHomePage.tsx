@@ -31,7 +31,7 @@ const StagiaireHomePage: React.FC = () => {
     const url = params.get("fileUrl") || "";
 
     (async () => {
-      await sleep(2000);
+      await sleep(300);
       const qcmData = await fetchQcmFile(url);
       const totalQuestions = Number(count);
       // Récupère les questions du chapitre sélectionné
