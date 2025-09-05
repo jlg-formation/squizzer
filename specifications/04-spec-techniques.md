@@ -1,5 +1,24 @@
 # Spécifications Techniques – Projet QCM en ligne
 
+## Stack Technique
+
+L’application repose sur une stack moderne et performante :
+
+- **Bun** : gestionnaire de paquets, exécution des scripts, et serveur de
+  développement ultra-rapide.
+- **React** : framework principal pour la création d’interfaces utilisateur
+  dynamiques.
+- **Vite** : outil de build et de développement rapide, compatible Bun.
+- **Zustand** : gestion de l’état global via des slices modulaires.
+- **React Router** : gestion des routes et navigation entre les différentes
+  pages de l’application.
+- **TailwindCSS** : framework CSS utilitaire pour un design cohérent et réactif.
+- **Recharts** : visualisation graphique des résultats du QCM.
+- **ESLint & Prettier** : qualité et formatage du code, vérification automatique
+  au commit.
+- **GitHub Actions** : CI/CD pour automatiser les tests, le build et le
+  déploiement sur GitHub Pages.
+
 ## 1. Structure du projet
 
 Organisation du code source en dossiers modulaires :
