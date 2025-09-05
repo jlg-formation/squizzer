@@ -9,7 +9,7 @@
 - [x] Installer **Recharts** (graphique résultats)
 - [x] Installer **yaml** et **seedrandom** (utils parsing + aléatoire)
 - [x] Configurer **ESLint + Prettier**
-- [ ] Setup **GitHub Actions** pour déploiement GitHub Pages
+- [x] Setup **GitHub Actions** pour déploiement GitHub Pages
 
 ---
 
