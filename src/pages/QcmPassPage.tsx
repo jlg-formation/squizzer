@@ -8,10 +8,9 @@ const QcmPassPage: React.FC = () => {
   const { currentQuestion, totalQuestions } = useQcmProgressStore();
   const { config } = useQcmConfigStore();
   const [selected, setSelected] = React.useState<number | null>(null);
-  const [hovered, setHovered] = React.useState<number | null>(null);
+  // Removed hovered state, use TailwindCSS hover: classes instead
   // Utilise directement les questions sélectionnées depuis le store config
   const questions = config.questions || [];
-  console.log("questions: ", questions);
   const currentQ = questions[currentQuestion - 1];
   console.log("currentQ: ", currentQ);
   const handleChoice = (choice: number) => setSelected(choice);
@@ -29,16 +28,10 @@ const QcmPassPage: React.FC = () => {
             <div className="mb-8 flex flex-col items-start justify-center gap-4">
               {currentQ.answers.map((answer, idx) => {
                 const isSelected = selected === idx;
-                const isHovered = hovered === idx;
-                let bg = "bg-white";
-                if (isSelected) bg = "bg-gray-300";
-                else if (isHovered) bg = "bg-gray-100";
                 return (
                   <label
                     key={idx}
-                    className={`flex cursor-pointer items-center rounded-md border border-gray-300 px-4 py-2 text-lg transition-colors duration-150 ${bg}`}
-                    onMouseEnter={() => setHovered(idx)}
-                    onMouseLeave={() => setHovered(null)}
+                    className={`flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-lg transition-colors duration-150 hover:bg-gray-100 ${isSelected ? "bg-gray-300" : ""}`}
                   >
                     <input
                       type="radio"
