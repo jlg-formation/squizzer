@@ -4,40 +4,68 @@ chapters:
     title: Introduction au Deep Learning
     questions:
       - id: q1
-        question: "Qui est considéré comme un pionnier du perceptron dans les années 1950 ?"
+        question:
+          "Qui est considéré comme un pionnier du perceptron dans les années
+          1950 ?"
         answers: [Frank Rosenblatt, Geoffrey Hinton, Yann LeCun, Marvin Minsky]
         correct: 0
         explanation: "Frank Rosenblatt a introduit le perceptron en 1958."
       - id: q2
-        question: "Quel domaine a fortement bénéficié du deep learning dans les années 2010 ?"
-        answers: [Bases de données, Vision par ordinateur, Réseaux sans fil, Compilation]
+        question:
+          "Quel domaine a fortement bénéficié du deep learning dans les années
+          2010 ?"
+        answers:
+          [
+            Bases de données,
+            Vision par ordinateur,
+            Réseaux sans fil,
+            Compilation,
+          ]
         correct: 1
         explanation: "La vision par ordinateur a explosé grâce aux CNN."
       - id: q3
-        question: "Qu’est-ce qui distingue le Deep Learning du Machine Learning classique ?"
-        answers: [Utilisation de k-means, Utilisation de règles logiques, Utilisation de réseaux profonds, Utilisation de bases relationnelles]
+        question:
+          "Qu’est-ce qui distingue le Deep Learning du Machine Learning
+          classique ?"
+        answers:
+          [
+            Utilisation de k-means,
+            Utilisation de règles logiques,
+            Utilisation de réseaux profonds,
+            Utilisation de bases relationnelles,
+          ]
         correct: 2
-        explanation: "Le deep learning s’appuie sur des réseaux à plusieurs couches."
+        explanation:
+          "Le deep learning s’appuie sur des réseaux à plusieurs couches."
       - id: q4
-        question: "Quelle avancée matérielle a permis l’essor du deep learning ?"
+        question:
+          "Quelle avancée matérielle a permis l’essor du deep learning ?"
         answers: [CPU, FPGA, ASIC, GPU]
         correct: 3
         explanation: "Les GPU ont rendu possible l’entraînement rapide."
       - id: q5
-        question: "Quel concours d’images a été révolutionné par AlexNet en 2012 ?"
+        question:
+          "Quel concours d’images a été révolutionné par AlexNet en 2012 ?"
         answers: [ImageNet, MNIST, CIFAR-10, COCO]
         correct: 0
-        explanation: "AlexNet a largement surpassé les autres en 2012 sur ImageNet."
+        explanation:
+          "AlexNet a largement surpassé les autres en 2012 sur ImageNet."
       - id: q6
-        question: "Quel type de données le deep learning traite-t-il le plus souvent ?"
-        answers: [Structurées, Non structurées, Relations SQL, Métadonnées uniquement]
+        question:
+          "Quel type de données le deep learning traite-t-il le plus souvent ?"
+        answers:
+          [Structurées, Non structurées, Relations SQL, Métadonnées uniquement]
         correct: 1
         explanation: "Texte, images, audio sont des données non structurées."
       - id: q7
-        question: "Parmi ces chercheurs, qui est souvent appelé ‘parrain du deep learning’ ?"
+        question:
+          "Parmi ces chercheurs, qui est souvent appelé ‘parrain du deep
+          learning’ ?"
         answers: [Alan Turing, Judea Pearl, Geoffrey Hinton, Yoshua Bengio]
         correct: 2
-        explanation: "Geoffrey Hinton est considéré comme l’un des parrains du deep learning."
+        explanation:
+          "Geoffrey Hinton est considéré comme l’un des parrains du deep
+          learning."
       - id: q8
         question: "Quelle est la relation entre IA, ML et DL ?"
         answers: [IA = DL, IA ⊂ ML ⊂ DL, ML ⊂ DL ⊂ IA, DL ⊂ ML ⊂ IA]
@@ -45,52 +73,108 @@ chapters:
         explanation: "Le Deep Learning est une sous-partie du Machine Learning."
       - id: q9
         question: "Quel est le rôle principal d’un réseau de neurones ?"
-        answers: [Apprendre des représentations, Stocker des données, Trier des fichiers, Exécuter du code système]
+        answers:
+          [
+            Apprendre des représentations,
+            Stocker des données,
+            Trier des fichiers,
+            Exécuter du code système,
+          ]
         correct: 0
         explanation: "Les réseaux apprennent des représentations hiérarchiques."
       - id: q10
-        question: "Quelle société a contribué au succès pratique du deep learning via ses GPUs ?"
+        question:
+          "Quelle société a contribué au succès pratique du deep learning via
+          ses GPUs ?"
         answers: [Intel, NVIDIA, ARM, AMD]
         correct: 1
         explanation: "NVIDIA a fortement soutenu la recherche DL."
       - id: q11
         question: "Quel type de problème ImageNet adresse-t-il ?"
-        answers: [Traduction, Séries temporelles, Classification d’images, Audio]
+        answers:
+          [Traduction, Séries temporelles, Classification d’images, Audio]
         correct: 2
-        explanation: "ImageNet est un dataset massif de classification d’images."
+        explanation:
+          "ImageNet est un dataset massif de classification d’images."
       - id: q12
-        question: "Quel secteur utilise le deep learning pour la reconnaissance vocale ?"
+        question:
+          "Quel secteur utilise le deep learning pour la reconnaissance vocale ?"
         answers: [Robotique, Génétique, Astronomie, NLP]
         correct: 3
-        explanation: "Le traitement du langage naturel intègre la reconnaissance vocale."
+        explanation:
+          "Le traitement du langage naturel intègre la reconnaissance vocale."
       - id: q13
-        question: "Quelle caractéristique a permis aux CNN d’être efficaces sur les images ?"
-        answers: [Partage de poids, Répétition de données, Surapprentissage, Clustering]
+        question:
+          "Quelle caractéristique a permis aux CNN d’être efficaces sur les
+          images ?"
+        answers:
+          [
+            Partage de poids,
+            Répétition de données,
+            Surapprentissage,
+            Clustering,
+          ]
         correct: 0
-        explanation: "Le partage de poids réduit drastiquement le nombre de paramètres."
+        explanation:
+          "Le partage de poids réduit drastiquement le nombre de paramètres."
       - id: q14
         question: "Quel problème limitait les réseaux dans les années 1980 ?"
-        answers: [Surparamétrisation, Manque de puissance de calcul, Excès de GPU, Biais de sélection]
+        answers:
+          [
+            Surparamétrisation,
+            Manque de puissance de calcul,
+            Excès de GPU,
+            Biais de sélection,
+          ]
         correct: 1
         explanation: "Le manque de puissance et de données limitait le DL."
       - id: q15
-        question: "Qui a introduit le concept de backpropagation appliqué aux réseaux ?"
-        answers: [Knuth et Turing, Newton et Leibniz, Rumelhart et Hinton, Shannon et Weaver]
+        question:
+          "Qui a introduit le concept de backpropagation appliqué aux réseaux ?"
+        answers:
+          [
+            Knuth et Turing,
+            Newton et Leibniz,
+            Rumelhart et Hinton,
+            Shannon et Weaver,
+          ]
         correct: 2
-        explanation: "David Rumelhart et Geoffrey Hinton ont popularisé le backpropagation."
+        explanation:
+          "David Rumelhart et Geoffrey Hinton ont popularisé le backpropagation."
       - id: q16
-        question: "Quel est l’intérêt du deep learning par rapport à la feature engineering manuelle ?"
-        answers: [Plus de mémoire, Moins de stockage, Compression de fichiers, Extraction automatique des caractéristiques]
+        question:
+          "Quel est l’intérêt du deep learning par rapport à la feature
+          engineering manuelle ?"
+        answers:
+          [
+            Plus de mémoire,
+            Moins de stockage,
+            Compression de fichiers,
+            Extraction automatique des caractéristiques,
+          ]
         correct: 3
-        explanation: "Le DL apprend automatiquement des représentations pertinentes."
+        explanation:
+          "Le DL apprend automatiquement des représentations pertinentes."
       - id: q17
         question: "Quel domaine a bénéficié des RNN ?"
-        answers: [Traduction automatique, Vision par ordinateur, Bases de données, Simulation 3D]
+        answers:
+          [
+            Traduction automatique,
+            Vision par ordinateur,
+            Bases de données,
+            Simulation 3D,
+          ]
         correct: 0
         explanation: "Les RNN sont utilisés en traduction et NLP."
       - id: q18
         question: "Quel est un problème majeur du DL ?"
-        answers: [Trop de simplicité, Besoins massifs en données, Trop peu de paramètres, Pas d’explicabilité nécessaire]
+        answers:
+          [
+            Trop de simplicité,
+            Besoins massifs en données,
+            Trop peu de paramètres,
+            Pas d’explicabilité nécessaire,
+          ]
         correct: 1
         explanation: "Le DL nécessite de très grandes quantités de données."
       - id: q19
@@ -102,7 +186,8 @@ chapters:
         question: "Quelle notion philosophique questionne le DL ?"
         answers: [Débogage, Compilation, Virtualisation, AGI]
         correct: 3
-        explanation: "L’AGI (Artificial General Intelligence) est une perspective."
+        explanation:
+          "L’AGI (Artificial General Intelligence) est une perspective."
 
   - id: fundamentals
     title: Fondamentaux des réseaux de neurones
@@ -113,7 +198,9 @@ chapters:
         correct: 0
         explanation: "ReLU est une fonction non-linéaire essentielle."
       - id: q22
-        question: "Quelle fonction est souvent utilisée en sortie pour la classification multi-classes ?"
+        question:
+          "Quelle fonction est souvent utilisée en sortie pour la classification
+          multi-classes ?"
         answers: [Sigmoïde, Softmax, Tangente hyperbolique, ReLU]
         correct: 1
         explanation: "Softmax convertit les scores en probabilités."
@@ -121,12 +208,20 @@ chapters:
         question: "Quel algorithme ajuste les poids du réseau ?"
         answers: [Monte Carlo, Recuit simulé, Gradient descent, K-means]
         correct: 2
-        explanation: "La descente de gradient ajuste les poids par rétropropagation."
+        explanation:
+          "La descente de gradient ajuste les poids par rétropropagation."
       - id: q24
         question: "Quel est le rôle de la fonction de coût ?"
-        answers: [Calculer des moyennes, Trier les données, Initialiser les poids, Mesurer l’erreur]
+        answers:
+          [
+            Calculer des moyennes,
+            Trier les données,
+            Initialiser les poids,
+            Mesurer l’erreur,
+          ]
         correct: 3
-        explanation: "La fonction de coût mesure l’écart entre prédiction et réalité."
+        explanation:
+          "La fonction de coût mesure l’écart entre prédiction et réalité."
       - id: q25
         question: "Quel problème résout le perceptron multicouche (MLP) ?"
         answers: [Non-linéarité, Addition, Moyenne, Statistiques]
@@ -134,27 +229,43 @@ chapters:
         explanation: "Un MLP permet d’apprendre des fonctions non-linéaires."
       - id: q26
         question: "Quelle est une difficulté du gradient descent ?"
-        answers: [Trop rapide, Pas d’itérations, Pièges dans des minima locaux, Pas de données]
+        answers:
+          [
+            Trop rapide,
+            Pas d’itérations,
+            Pièges dans des minima locaux,
+            Pas de données,
+          ]
         correct: 2
-        explanation: "Le gradient descent peut se bloquer dans des minima locaux."
+        explanation:
+          "Le gradient descent peut se bloquer dans des minima locaux."
       - id: q27
         question: "Quelle variante de gradient descent utilise des mini-lots ?"
         answers: [Full Batch, Newton, SGD, Adam]
         correct: 2
-        explanation: "Le Stochastic Gradient Descent travaille sur des lots réduits."
+        explanation:
+          "Le Stochastic Gradient Descent travaille sur des lots réduits."
       - id: q28
         question: "Quelle régularisation évite le surapprentissage ?"
         answers: [Multiplication, Addition, Normalisation de colonnes, Dropout]
         correct: 3
         explanation: "Le dropout désactive aléatoirement des neurones."
       - id: q29
-        question: "Quelle initialisation des poids aide à éviter les problèmes de gradient ?"
+        question:
+          "Quelle initialisation des poids aide à éviter les problèmes de
+          gradient ?"
         answers: [Xavier/He, Zéro, Un, Aléatoire uniforme simpliste]
         correct: 0
         explanation: "Xavier et He initialisent les poids de manière adaptée."
       - id: q30
         question: "Que représente un neurone artificiel ?"
-        answers: [Une base de données, Une mémoire, Une fonction de transformation, Un fichier]
+        answers:
+          [
+            Une base de données,
+            Une mémoire,
+            Une fonction de transformation,
+            Un fichier,
+          ]
         correct: 2
         explanation: "Un neurone combine entrées, poids, biais, activation."
       - id: q31
@@ -164,17 +275,35 @@ chapters:
         explanation: "La tangente hyperbolique sort entre -1 et 1."
       - id: q32
         question: "Que fait la rétropropagation ?"
-        answers: [Calcule des moyennes, Trie les données, Supprime des neurones, Calcule les gradients]
+        answers:
+          [
+            Calcule des moyennes,
+            Trie les données,
+            Supprime des neurones,
+            Calcule les gradients,
+          ]
         correct: 3
         explanation: "Elle calcule les gradients via la règle de la chaîne."
       - id: q33
         question: "Quel est le rôle d’une couche cachée ?"
-        answers: [Apprendre des représentations intermédiaires, Stocker des fichiers, Compresser des données, Normaliser des vecteurs]
+        answers:
+          [
+            Apprendre des représentations intermédiaires,
+            Stocker des fichiers,
+            Compresser des données,
+            Normaliser des vecteurs,
+          ]
         correct: 0
         explanation: "Les couches cachées transforment l’espace des données."
       - id: q34
         question: "Quel problème est typique lors d’un réseau profond ?"
-        answers: [Compilation, Manque de GPU, Vanishing gradient, Surabondance de données]
+        answers:
+          [
+            Compilation,
+            Manque de GPU,
+            Vanishing gradient,
+            Surabondance de données,
+          ]
         correct: 2
         explanation: "Le gradient peut disparaître dans des réseaux profonds."
       - id: q35
@@ -183,7 +312,8 @@ chapters:
         correct: 2
         explanation: "Adam combine momentum et adaptation du learning rate."
       - id: q36
-        question: "Quel paramètre contrôle l’amplitude des mises à jour des poids ?"
+        question:
+          "Quel paramètre contrôle l’amplitude des mises à jour des poids ?"
         answers: [Batch size, Nombre d’époques, Momentum, Learning rate]
         correct: 3
         explanation: "Le learning rate règle la taille des pas."
@@ -194,12 +324,19 @@ chapters:
         explanation: "La sortie linéaire est courante en régression."
       - id: q38
         question: "Quelle technique aide à stabiliser l’entraînement ?"
-        answers: [Data Augmentation, Clustering, Batch Normalization, Random Forest]
+        answers:
+          [Data Augmentation, Clustering, Batch Normalization, Random Forest]
         correct: 2
         explanation: "La batch norm réduit le covariate shift."
       - id: q39
         question: "Quel est l’effet d’un trop grand learning rate ?"
-        answers: [Convergence lente, Pas d’effet, Divergence de l’entraînement, Blocage]
+        answers:
+          [
+            Convergence lente,
+            Pas d’effet,
+            Divergence de l’entraînement,
+            Blocage,
+          ]
         correct: 2
         explanation: "Un pas trop grand empêche la convergence."
       - id: q40
@@ -212,14 +349,22 @@ chapters:
     questions:
       - id: q41
         question: "Quel est le rôle principal d’une convolution dans un CNN ?"
-        answers: [Extraction de caractéristiques locales, Stockage de données, Normalisation de vecteurs, Compression de fichiers]
+        answers:
+          [
+            Extraction de caractéristiques locales,
+            Stockage de données,
+            Normalisation de vecteurs,
+            Compression de fichiers,
+          ]
         correct: 0
-        explanation: "La convolution extrait des motifs locaux (bords, textures)."
+        explanation:
+          "La convolution extrait des motifs locaux (bords, textures)."
       - id: q42
         question: "Quel type de couche réduit la dimension spatiale ?"
         answers: [Dropout, Pooling, Dense, Normalization]
         correct: 1
-        explanation: "Le pooling réduit la taille tout en gardant l’information."
+        explanation:
+          "Le pooling réduit la taille tout en gardant l’information."
       - id: q43
         question: "Quelle architecture a popularisé les CNN en 1998 ?"
         answers: [AlexNet, VGG, LeNet, ResNet]
@@ -231,10 +376,18 @@ chapters:
         correct: 1
         explanation: "AlexNet a révolutionné ImageNet en 2012."
       - id: q45
-        question: "Quelle technique permet de réduire le surapprentissage dans un CNN ?"
-        answers: [Data augmentation, Surcharge mémoire, Sur-apprentissage volontaire, Normalisation de colonnes]
+        question:
+          "Quelle technique permet de réduire le surapprentissage dans un CNN ?"
+        answers:
+          [
+            Data augmentation,
+            Surcharge mémoire,
+            Sur-apprentissage volontaire,
+            Normalisation de colonnes,
+          ]
         correct: 0
-        explanation: "La data augmentation enrichit artificiellement les données."
+        explanation:
+          "La data augmentation enrichit artificiellement les données."
       - id: q46
         question: "Quel type de couche suit souvent une convolution ?"
         answers: [Pooling, Dense, Dropout, Normalization]
@@ -246,13 +399,22 @@ chapters:
         correct: 1
         explanation: "ResNet utilise des connexions résiduelles."
       - id: q48
-        question: "Quelle est l’utilité d’une couche fully connected dans un CNN ?"
-        answers: [Décision finale, Extraire des bords, Réduire dimension, Pooling]
+        question:
+          "Quelle est l’utilité d’une couche fully connected dans un CNN ?"
+        answers:
+          [Décision finale, Extraire des bords, Réduire dimension, Pooling]
         correct: 0
-        explanation: "Les couches fully connected servent à la classification finale."
+        explanation:
+          "Les couches fully connected servent à la classification finale."
       - id: q49
         question: "Quelle opération fait le max pooling ?"
-        answers: [Prend la valeur maximale, Moyenne les valeurs, Supprime un pixel, Normalise les pixels]
+        answers:
+          [
+            Prend la valeur maximale,
+            Moyenne les valeurs,
+            Supprime un pixel,
+            Normalise les pixels,
+          ]
         correct: 0
         explanation: "Le max pooling conserve le maximum d’une région."
       - id: q50
@@ -264,26 +426,40 @@ chapters:
         question: "Quelle activation est la plus courante dans les CNN ?"
         answers: [Sigmoïde, ReLU, Tanh, Softmax]
         correct: 1
-        explanation: "ReLU est largement utilisée pour sa simplicité et efficacité."
+        explanation:
+          "ReLU est largement utilisée pour sa simplicité et efficacité."
       - id: q52
-        question: "Quel dataset est souvent utilisé pour tester des CNN simples ?"
+        question:
+          "Quel dataset est souvent utilisé pour tester des CNN simples ?"
         answers: [MNIST, CIFAR-10, ImageNet, COCO]
         correct: 1
         explanation: "CIFAR-10 est un dataset standard d’images colorées."
       - id: q53
         question: "Quelle architecture introduit la batch normalization ?"
-        answers: [AlexNet, ResNet, VGG, GoogLeNet]
         answers: [AlexNet, VGG, GoogLeNet, ResNet]
         correct: 3
         explanation: "ResNet a popularisé l’usage de la batch normalization."
       - id: q54
         question: "Quel type de filtre détecte les bords horizontaux ?"
-        answers: [Filtre Sobel horizontal, Filtre Sobel vertical, Filtre gaussien, Filtre moyenneur]
+        answers:
+          [
+            Filtre Sobel horizontal,
+            Filtre Sobel vertical,
+            Filtre gaussien,
+            Filtre moyenneur,
+          ]
         correct: 0
         explanation: "Un Sobel horizontal capte les variations horizontales."
       - id: q55
-        question: "Quel est l’effet d’augmenter le nombre de filtres d’une couche conv ?"
-        answers: [Capacité d’extraire plus de motifs, Réduction des données, Compression, Normalisation]
+        question:
+          "Quel est l’effet d’augmenter le nombre de filtres d’une couche conv ?"
+        answers:
+          [
+            Capacité d’extraire plus de motifs,
+            Réduction des données,
+            Compression,
+            Normalisation,
+          ]
         correct: 0
         explanation: "Plus de filtres = plus de représentations extraites."
       - id: q56
@@ -298,9 +474,16 @@ chapters:
         explanation: "ImageNet contient 1000 classes."
       - id: q58
         question: "Quel est le rôle des couches convolutionnelles initiales ?"
-        answers: [Détecter des motifs simples, Prendre une décision, Pooling, Réduction dimensionnelle]
+        answers:
+          [
+            Détecter des motifs simples,
+            Prendre une décision,
+            Pooling,
+            Réduction dimensionnelle,
+          ]
         correct: 0
-        explanation: "Les premières couches détectent bords et textures simples."
+        explanation:
+          "Les premières couches détectent bords et textures simples."
       - id: q59
         question: "Quelle architecture est adaptée aux mobiles et embarqués ?"
         answers: [ResNet, MobileNet, VGG, LeNet]
@@ -308,21 +491,36 @@ chapters:
         explanation: "MobileNet est optimisé pour embarqué."
       - id: q60
         question: "Quel est l’avantage des convolutions 1x1 ?"
-        answers: [Réduction de dimension, Détection de bords, Augmentation du bruit, Clustering]
+        answers:
+          [
+            Réduction de dimension,
+            Détection de bords,
+            Augmentation du bruit,
+            Clustering,
+          ]
         correct: 0
-        explanation: "Les convolutions 1x1 réduisent la dimension tout en combinant canaux."
+        explanation:
+          "Les convolutions 1x1 réduisent la dimension tout en combinant canaux."
 
   - id: rnn
     title: Réseaux de neurones récurrents (RNN)
     questions:
       - id: q61
         question: "Quel est l’avantage principal des RNN ?"
-        answers: [Prendre en compte les dépendances temporelles, Stocker des données, Réduire la taille d’un dataset, Classer des images]
+        answers:
+          [
+            Prendre en compte les dépendances temporelles,
+            Stocker des données,
+            Réduire la taille d’un dataset,
+            Classer des images,
+          ]
         correct: 0
-        explanation: "Les RNN traitent des séquences avec dépendances temporelles."
+        explanation:
+          "Les RNN traitent des séquences avec dépendances temporelles."
       - id: q62
         question: "Quel problème affecte les RNN classiques ?"
-        answers: [Vanishing gradient, Surapprentissage, Manque de données, Trop de GPU]
+        answers:
+          [Vanishing gradient, Surapprentissage, Manque de données, Trop de GPU]
         correct: 0
         explanation: "Les RNN souffrent du vanishing gradient."
       - id: q63
@@ -337,22 +535,46 @@ chapters:
         explanation: "Les GRU sont une version simplifiée des LSTM."
       - id: q65
         question: "Quelle application courante des RNN ?"
-        answers: [Traduction automatique, Classification d’images, Compression, Tri de fichiers]
+        answers:
+          [
+            Traduction automatique,
+            Classification d’images,
+            Compression,
+            Tri de fichiers,
+          ]
         correct: 0
         explanation: "La traduction automatique est une application phare."
       - id: q66
         question: "Quel est le rôle de la cellule mémoire d’un LSTM ?"
-        answers: [Stocker des informations à long terme, Normaliser les données, Supprimer le bruit, Trier des séquences]
+        answers:
+          [
+            Stocker des informations à long terme,
+            Normaliser les données,
+            Supprimer le bruit,
+            Trier des séquences,
+          ]
         correct: 0
         explanation: "La cellule mémoire conserve des infos sur le long terme."
       - id: q67
         question: "Quel est le rôle des portes dans un LSTM ?"
-        answers: [Contrôler le flux d’informations, Ajouter du bruit, Stocker des données, Réduire la taille]
+        answers:
+          [
+            Contrôler le flux d’informations,
+            Ajouter du bruit,
+            Stocker des données,
+            Réduire la taille,
+          ]
         correct: 0
         explanation: "Les portes régulent quelles informations sont conservées."
       - id: q68
         question: "Quelle application n’utilise pas les RNN ?"
-        answers: [Analyse de séries temporelles, Traduction, Classification d’images, Reconnaissance vocale]
+        answers:
+          [
+            Analyse de séries temporelles,
+            Traduction,
+            Classification d’images,
+            Reconnaissance vocale,
+          ]
         correct: 2
         explanation: "Les RNN ne sont pas adaptés aux images."
       - id: q69
@@ -362,7 +584,13 @@ chapters:
         explanation: "Jürgen Schmidhuber a co-développé les LSTM."
       - id: q70
         question: "Quelle est la principale différence entre LSTM et GRU ?"
-        answers: [Nombre de portes, Taille du dataset, Fonction d’activation, Type de pooling]
+        answers:
+          [
+            Nombre de portes,
+            Taille du dataset,
+            Fonction d’activation,
+            Type de pooling,
+          ]
         correct: 0
         explanation: "Les GRU utilisent moins de portes que les LSTM."
       - id: q71
@@ -372,65 +600,120 @@ chapters:
         explanation: "Les RNN traitent des séquences textuelles et temporelles."
       - id: q72
         question: "Que signifie l’acronyme LSTM ?"
-        answers: [Linear Short Term Memory, Long Short-Term Memory, Local Sequential Time Memory, Long Sequence Training Model]
+        answers:
+          [
+            Linear Short Term Memory,
+            Long Short-Term Memory,
+            Local Sequential Time Memory,
+            Long Sequence Training Model,
+          ]
         correct: 1
         explanation: "LSTM signifie Long Short-Term Memory."
       - id: q73
         question: "Que signifie l’acronyme GRU ?"
-        answers: [Gated Recurrent Unit, General Recurrent Update, Gradient Reuse Unit, Generalized Reset Unit]
+        answers:
+          [
+            Gated Recurrent Unit,
+            General Recurrent Update,
+            Gradient Reuse Unit,
+            Generalized Reset Unit,
+          ]
         correct: 0
         explanation: "GRU = Gated Recurrent Unit."
       - id: q74
         question: "Quel est l’effet du vanishing gradient ?"
-        answers: [Empêche l’apprentissage à long terme, Améliore la généralisation, Réduit le surapprentissage, Augmente la précision]
+        answers:
+          [
+            Empêche l’apprentissage à long terme,
+            Améliore la généralisation,
+            Réduit le surapprentissage,
+            Augmente la précision,
+          ]
         correct: 0
         explanation: "Il bloque la propagation de l’information dans le temps."
       - id: q75
         question: "Quelle est une application des RNN bidirectionnels ?"
-        answers: [Analyse de texte, Classification d’images, Compression vidéo, Détection d’anomalies réseau]
+        answers:
+          [
+            Analyse de texte,
+            Classification d’images,
+            Compression vidéo,
+            Détection d’anomalies réseau,
+          ]
         correct: 0
         explanation: "Les RNN bidirectionnels améliorent le NLP."
       - id: q76
-        question: "Quelle activation est souvent utilisée dans les portes LSTM ?"
+        question:
+          "Quelle activation est souvent utilisée dans les portes LSTM ?"
         answers: [ReLU, Tanh, Softmax, Sigmoïde]
         correct: 3
         explanation: "La sigmoïde contrôle l’ouverture des portes."
       - id: q77
-        question: "Quelle activation est utilisée pour la cellule mémoire LSTM ?"
+        question:
+          "Quelle activation est utilisée pour la cellule mémoire LSTM ?"
         answers: [Softmax, ReLU, Tanh, Sigmoïde]
         correct: 2
         explanation: "La tangente hyperbolique est utilisée dans la cellule."
       - id: q78
-        question: "Quel est un inconvénient des RNN par rapport aux Transformers ?"
-        answers: [Difficulté à paralléliser, Manque de données, Peu de paramètres, Manque de profondeur]
+        question:
+          "Quel est un inconvénient des RNN par rapport aux Transformers ?"
+        answers:
+          [
+            Difficulté à paralléliser,
+            Manque de données,
+            Peu de paramètres,
+            Manque de profondeur,
+          ]
         correct: 0
         explanation: "Les RNN sont difficiles à paralléliser."
       - id: q79
-        question: "Quel framework propose des implémentations prêtes à l’emploi des RNN ?"
+        question:
+          "Quel framework propose des implémentations prêtes à l’emploi des RNN
+          ?"
         answers: [PyTorch, NumPy, Pandas, Matplotlib]
         correct: 0
         explanation: "PyTorch propose des modules RNN, LSTM, GRU."
       - id: q80
         question: "Quel est un cas d’usage industriel des RNN ?"
-        answers: [Prédiction de séries temporelles, Compression d’images, Génération de graphes, Détection d’objets]
+        answers:
+          [
+            Prédiction de séries temporelles,
+            Compression d’images,
+            Génération de graphes,
+            Détection d’objets,
+          ]
         correct: 0
-        explanation: "Les RNN servent à prédire des séries financières, météo, etc."
+        explanation:
+          "Les RNN servent à prédire des séries financières, météo, etc."
   - id: drl
     title: Apprentissage par renforcement et Deep RL
     questions:
       - id: q81
-        question: "Quel élément reçoit des récompenses dans un environnement RL ?"
+        question:
+          "Quel élément reçoit des récompenses dans un environnement RL ?"
         answers: [Agent, Environnement, Récompense, Politique]
         correct: 0
         explanation: "C’est l’agent qui agit et reçoit les récompenses."
       - id: q82
         question: "Que signifie RL ?"
-        answers: [Random Learning, Reinforcement Learning, Regression Learning, Recursive Learning]
+        answers:
+          [
+            Random Learning,
+            Reinforcement Learning,
+            Regression Learning,
+            Recursive Learning,
+          ]
         correct: 1
         explanation: "RL = Reinforcement Learning."
       - id: q83
         question: "Quel est le rôle de la fonction de récompense ?"
-        answers: [Donner un signal de performance, Normaliser les données, Réduire le bruit, Supprimer les actions inutiles]
+        answers:
+          [
+            Donner un signal de performance,
+            Normaliser les données,
+            Réduire le bruit,
+            Supprimer les actions inutiles,
+          ]
         correct: 0
         explanation: "Elle définit l’objectif de l’agent."
       - id: q84
@@ -440,17 +723,35 @@ chapters:
         explanation: "Q représente la qualité d’une action dans un état."
       - id: q85
         question: "Quelle est la stratégie epsilon-greedy ?"
-        answers: [Choisir parfois aléatoirement, Optimiser toujours, Arrêter le RL, Supprimer les états]
+        answers:
+          [
+            Choisir parfois aléatoirement,
+            Optimiser toujours,
+            Arrêter le RL,
+            Supprimer les états,
+          ]
         correct: 0
         explanation: "Epsilon-greedy équilibre exploration et exploitation."
       - id: q86
         question: "Quelle équation est centrale en RL ?"
-        answers: [Equation de Bellman, Equation de Poisson, Equation de Laplace, Equation de Newton]
+        answers:
+          [
+            Equation de Bellman,
+            Equation de Poisson,
+            Equation de Laplace,
+            Equation de Newton,
+          ]
         correct: 1
         explanation: "La Bellman equation définit la valeur optimale."
       - id: q87
         question: "Quel est un défi du Q-Learning classique ?"
-        answers: [Curse of dimensionality, Facilité d’optimisation, Manque d’actions, Pas de politique]
+        answers:
+          [
+            Curse of dimensionality,
+            Facilité d’optimisation,
+            Manque d’actions,
+            Pas de politique,
+          ]
         correct: 0
         explanation: "La table Q explose en taille avec les états/actions."
       - id: q88
@@ -465,26 +766,52 @@ chapters:
         explanation: "Le RL a battu des records sur Atari Breakout."
       - id: q90
         question: "Quelle victoire d’AlphaGo a marqué l’histoire ?"
-        answers: [Victoire sur Lee Sedol, Victoire en football, Victoire sur Deep Blue, Victoire sur Kasparov]
+        answers:
+          [
+            Victoire sur Lee Sedol,
+            Victoire en football,
+            Victoire sur Deep Blue,
+            Victoire sur Kasparov,
+          ]
         correct: 0
         explanation: "AlphaGo a battu Lee Sedol en 2016."
       - id: q91
         question: "Quelle tension existe en RL ?"
-        answers: [Exploration vs exploitation, Surapprentissage vs biais, Data vs GPU, CNN vs RNN]
+        answers:
+          [
+            Exploration vs exploitation,
+            Surapprentissage vs biais,
+            Data vs GPU,
+            CNN vs RNN,
+          ]
         correct: 0
         explanation: "Il faut explorer tout en exploitant les connaissances."
       - id: q92
-        question: "Quelle politique choisit toujours la meilleure action connue ?"
-        answers: [Politique aléatoire, Politique déterministe, Politique stochastique, Politique adaptative]
+        question:
+          "Quelle politique choisit toujours la meilleure action connue ?"
+        answers:
+          [
+            Politique aléatoire,
+            Politique déterministe,
+            Politique stochastique,
+            Politique adaptative,
+          ]
         correct: 1
         explanation: "La politique déterministe choisit l’action max Q."
       - id: q93
         question: "Quel est un problème du RL profond ?"
-        answers: [Instabilité de convergence, Manque de données, Sur-apprentissage, Manque de GPU]
+        answers:
+          [
+            Instabilité de convergence,
+            Manque de données,
+            Sur-apprentissage,
+            Manque de GPU,
+          ]
         correct: 0
         explanation: "Les réseaux rendent l’entraînement instable."
       - id: q94
-        question: "Quel algorithme améliore le Q-Learning avec des cibles différées ?"
+        question:
+          "Quel algorithme améliore le Q-Learning avec des cibles différées ?"
         answers: [Double DQN, Policy Gradient, Actor-Critic, Monte Carlo]
         correct: 0
         explanation: "Le Double DQN corrige la surestimation."
@@ -500,7 +827,13 @@ chapters:
         explanation: "Actor-Critic sépare décision et évaluation."
       - id: q97
         question: "Quelle application utilise le RL en robotique ?"
-        answers: [Apprentissage de locomotion, Classification d’images, Traduction automatique, Compression audio]
+        answers:
+          [
+            Apprentissage de locomotion,
+            Classification d’images,
+            Traduction automatique,
+            Compression audio,
+          ]
         correct: 0
         explanation: "RL est utilisé pour entraîner des robots marcheurs."
       - id: q98
@@ -510,12 +843,24 @@ chapters:
         explanation: "Les jeux Atari servent de benchmark au RL."
       - id: q99
         question: "Quelle est une limite du RL industriel ?"
-        answers: [Coût des essais, Facilité d’implémentation, Peu de données, Débogage simple]
+        answers:
+          [
+            Coût des essais,
+            Facilité d’implémentation,
+            Peu de données,
+            Débogage simple,
+          ]
         correct: 0
         explanation: "Les essais réels coûtent cher en industrie."
       - id: q100
         question: "Quel champ combine Deep Learning et RL ?"
-        answers: [Deep Reinforcement Learning, Machine Learning supervisé, Génétique, Réseaux bayésiens]
+        answers:
+          [
+            Deep Reinforcement Learning,
+            Machine Learning supervisé,
+            Génétique,
+            Réseaux bayésiens,
+          ]
         correct: 0
         explanation: "Le DRL associe réseaux et apprentissage par renforcement."
 
@@ -524,22 +869,46 @@ chapters:
     questions:
       - id: q101
         question: "Quelle est une force du Deep Learning ?"
-        answers: [Capacité à extraire automatiquement des caractéristiques, Simplicité des modèles, Peu de paramètres, Peu de données nécessaires]
+        answers:
+          [
+            Capacité à extraire automatiquement des caractéristiques,
+            Simplicité des modèles,
+            Peu de paramètres,
+            Peu de données nécessaires,
+          ]
         correct: 0
         explanation: "Le DL apprend directement des représentations complexes."
       - id: q102
         question: "Quelle est une limite du Deep Learning ?"
-        answers: [Besoins massifs en données, Faible précision, Peu d’applications, Peu de chercheurs]
+        answers:
+          [
+            Besoins massifs en données,
+            Faible précision,
+            Peu d’applications,
+            Peu de chercheurs,
+          ]
         correct: 0
         explanation: "Le DL exige énormément de données."
       - id: q103
         question: "Quel problème éthique est central dans le DL ?"
-        answers: [Biais algorithmiques, Compilation, Mémoire cache, Vitesse d’exécution]
+        answers:
+          [
+            Biais algorithmiques,
+            Compilation,
+            Mémoire cache,
+            Vitesse d’exécution,
+          ]
         correct: 0
         explanation: "Les biais sont une limite éthique majeure."
       - id: q104
         question: "Quel défi majeur pose l’explicabilité ?"
-        answers: [Comprendre les décisions du modèle, Réduire la RAM, Augmenter la vitesse, Améliorer le GPU]
+        answers:
+          [
+            Comprendre les décisions du modèle,
+            Réduire la RAM,
+            Augmenter la vitesse,
+            Améliorer le GPU,
+          ]
         correct: 0
         explanation: "Les réseaux sont souvent des boîtes noires."
       - id: q105
@@ -549,7 +918,8 @@ chapters:
         explanation: "Les Transformers dominent le NLP."
       - id: q106
         question: "Quelle est une tendance actuelle du DL ?"
-        answers: [IA générative, Bases relationnelles, Arbres de décision, K-means]
+        answers:
+          [IA générative, Bases relationnelles, Arbres de décision, K-means]
         correct: 0
         explanation: "L’IA générative est en plein essor."
       - id: q107
@@ -589,7 +959,13 @@ chapters:
         explanation: "L’IA symbolique peut améliorer l’explicabilité."
       - id: q114
         question: "Quel est un défi environnemental du DL ?"
-        answers: [Consommation énergétique, Compilation, Stockage de RAM, GPU plus rapides]
+        answers:
+          [
+            Consommation énergétique,
+            Compilation,
+            Stockage de RAM,
+            GPU plus rapides,
+          ]
         correct: 0
         explanation: "Les gros modèles consomment beaucoup d’énergie."
       - id: q115
@@ -598,12 +974,14 @@ chapters:
         correct: 0
         explanation: "Le DL est très prometteur en santé."
       - id: q116
-        question: "Quelle ressource est souvent limitée pour entraîner les modèles ?"
+        question:
+          "Quelle ressource est souvent limitée pour entraîner les modèles ?"
         answers: [Données annotées, Compilation, RAM, Interfaces graphiques]
         correct: 0
         explanation: "L’annotation manuelle est coûteuse."
       - id: q117
-        question: "Quelle est une tendance vers des modèles plus petits et rapides ?"
+        question:
+          "Quelle est une tendance vers des modèles plus petits et rapides ?"
         answers: [Distillation de modèles, Compilation, RAM, GPU]
         correct: 0
         explanation: "La distillation réduit la taille des modèles."
@@ -619,6 +997,12 @@ chapters:
         explanation: "GPT-4 est basé sur une architecture Transformer."
       - id: q120
         question: "Quelle conclusion pédagogique retenir ?"
-        answers: [Le DL est puissant mais exigeant, Le DL est inutile, Le DL n’évolue plus, Le DL est simple et peu coûteux]
+        answers:
+          [
+            Le DL est puissant mais exigeant,
+            Le DL est inutile,
+            Le DL n’évolue plus,
+            Le DL est simple et peu coûteux,
+          ]
         correct: 0
         explanation: "Puissant, mais avec des limites et défis ouverts."
