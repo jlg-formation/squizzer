@@ -18,7 +18,7 @@ const PREDEFINED_QCMS = [
   },
   {
     name: "QCM Sécurité",
-    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/securite.json",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/securite.yaml",
   },
   { name: "Autre", url: "" },
 ];
