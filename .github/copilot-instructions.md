@@ -14,6 +14,12 @@ npm run format
 npm run lint
 ```
 
+## Commit
+
+Utiliser le conventional commit suivant :
+
+<https://www.conventionalcommits.org/en/v1.0.0/>
+
 ## Conventions de code
 
 - Utiliser TypeScript pour tous les fichiers `.tsx` et `.ts`.
