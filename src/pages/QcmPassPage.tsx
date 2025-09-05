@@ -59,7 +59,11 @@ const QcmPassPage: React.FC = () => {
             </div>
           </>
         )}
-        <ButtonPrimary className="w-full text-lg" onClick={handleValidate}>
+        <ButtonPrimary
+          className="w-full text-lg"
+          onClick={handleValidate}
+          disabled={selected === null}
+        >
           Valider &rarr;
         </ButtonPrimary>
       </div>

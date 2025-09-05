@@ -1,5 +1,6 @@
 import React from "react";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
+import { useQcmProgressStore } from "../store/qcmProgressStore";
 import type { QcmQuestion } from "../types/qcmFile";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { useNavigate } from "react-router-dom";
@@ -29,9 +30,11 @@ const QcmSummaryPage: React.FC = () => {
   const handleShowExplanation = () => {
     navigate("/explications");
   };
+  // ...existing code...
+  const { resetProgress } = useQcmProgressStore();
   const handleRetry = () => {
-    // Reset la progression et les réponses utilisateur
-    window.location.href = "/qcm";
+    resetProgress();
+    navigate("/qcm");
   };
   return (
     <Layout>
