@@ -6,9 +6,19 @@ import ButtonPrimary from "../components/ButtonPrimary";
 
 // ...existing code...
 const PREDEFINED_QCMS = [
-  { name: "QCM Réseaux", url: "https://squizzer.com/qcm/reseaux.json" },
-  { name: "QCM Linux", url: "https://squizzer.com/qcm/linux.yaml" },
-  { name: "QCM Sécurité", url: "https://squizzer.com/qcm/securite.json" },
+  {
+    name: "QCM Réseaux",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/reseaux.json",
+  },
+  {
+    name: "QCM Linux",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/linux.yaml",
+  },
+  {
+    name: "QCM Sécurité",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/securite.json",
+  },
+  { name: "Autre", url: "" },
 ];
 
 const LoadQcmPage: React.FC = () => {
@@ -25,7 +35,16 @@ const LoadQcmPage: React.FC = () => {
         <select
           className="mb-4 block w-full rounded border border-black px-2 py-1"
           value={selectedQcm}
-          onChange={(e) => setSelectedQcm(e.target.value)}
+          onChange={(e) => {
+            setSelectedQcm(e.target.value);
+
+            const selected = PREDEFINED_QCMS.find(
+              (qcm) => qcm.url === e.target.value,
+            );
+            if (selected) {
+              setCustomUrl(selected.url);
+            }
+          }}
         >
           <option value="">-- Choisir dans le catalogue --</option>
           {PREDEFINED_QCMS.map((qcm) => (
@@ -37,7 +56,8 @@ const LoadQcmPage: React.FC = () => {
         <input
           type="url"
           placeholder="URL du QCM (YAML)"
-          defaultValue="https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/linux.yaml"
+          value={customUrl}
+          onChange={(e) => setCustomUrl(e.target.value)}
           className="block w-full rounded border border-black px-2 py-1"
         />
         <div className="my-6" />
