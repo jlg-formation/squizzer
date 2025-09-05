@@ -4,6 +4,10 @@ import HomePage from "./pages/HomePage";
 import LoadQcmPage from "./pages/LoadQcmPage";
 import ConfigPage from "./pages/ConfigPage";
 import QrcodePage from "./pages/QrcodePage";
+import StagiaireHomePage from "./pages/StagiaireHomePage";
+import QcmPassPage from "./pages/QcmPassPage";
+import QcmSummaryPage from "./pages/QcmSummaryPage";
+import QcmExplanationPage from "./pages/QcmExplanationPage";
 
 const AppRouter: React.FC = () => (
   <BrowserRouter basename="/squizzer/">
@@ -12,7 +16,11 @@ const AppRouter: React.FC = () => (
       <Route path="/load-qcm" element={<LoadQcmPage />} />
       <Route path="/config" element={<ConfigPage />} />
       <Route path="/qrcode" element={<QrcodePage />} />
-      {/* Ajout des routes stagiaire plus tard */}
+      {/* Routes stagiaire */}
+      <Route path="/start" element={<StagiaireHomePage />} />
+      <Route path="/qcm" element={<QcmPassPage />} />
+      <Route path="/results" element={<QcmSummaryPage />} />
+      <Route path="/explications" element={<QcmExplanationPage />} />
     </Routes>
   </BrowserRouter>
 );
