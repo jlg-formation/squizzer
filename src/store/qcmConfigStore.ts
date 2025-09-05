@@ -24,7 +24,7 @@ const defaultConfig: QcmConfig = {
   qcmTitle: "",
   chapter: "",
   questionCount: 10,
-  seed: "",
+  seed: "hello",
   url: "",
   chapters: [],
 };
