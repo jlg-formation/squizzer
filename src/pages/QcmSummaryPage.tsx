@@ -22,10 +22,13 @@ const QcmSummaryPage: React.FC = () => {
     (acc, q, idx) => acc + (userAnswers[idx] === q.correct ? 1 : 0),
     0,
   );
-  const data = [
-    { name: "Bonnes réponses", value: correctCount },
-    { name: "Mauvaises réponses", value: totalQuestions - correctCount },
-  ];
+  const data = [{ name: "Bonnes réponses", value: correctCount }];
+  if (correctCount < totalQuestions) {
+    data.push({
+      name: "Mauvaises réponses",
+      value: totalQuestions - correctCount,
+    });
+  }
   const COLORS = ["#22c55e", "#ef4444"];
   const handleShowExplanation = () => {
     navigate("/explications");
@@ -53,25 +56,7 @@ const QcmSummaryPage: React.FC = () => {
                 innerRadius={90}
                 outerRadius={120}
                 dataKey="value"
-                label={({ name, percent, x, y, fill }) => {
-                  // Affiche un label court et coloré, bien positionné
-                  const short =
-                    name === "Bonnes réponses" ? "Bonnes" : "Mauvaises";
-                  return (
-                    <text
-                      x={x}
-                      y={y}
-                      fill={fill}
-                      textAnchor="middle"
-                      dominantBaseline="central"
-                      fontSize={18}
-                      fontWeight="bold"
-                    >
-                      {short}:{" "}
-                      {percent !== undefined ? (percent * 100).toFixed(0) : 0}%
-                    </text>
-                  );
-                }}
+                // Pas de label texte dans le camembert
               >
                 {data.map((_, idx) => (
                   <Cell key={`cell-${idx}`} fill={COLORS[idx]} />
@@ -79,45 +64,6 @@ const QcmSummaryPage: React.FC = () => {
               </Pie>
             </PieChart>
           </ResponsiveContainer>
-        </div>
-        <div className="mb-8 text-left">
-          <h3 className="mb-2 text-lg font-bold">Explications détaillées :</h3>
-          <ul className="list-disc pl-6">
-            {questions.map((q, idx) => (
-              <li key={q.id} className="mb-2">
-                <span className="font-semibold">
-                  Q{idx + 1} : {q.question}
-                </span>
-                <br />
-                <span>
-                  <span
-                    className={
-                      userAnswers[idx] === q.correct
-                        ? "text-green-600"
-                        : "text-red-600"
-                    }
-                  >
-                    Votre réponse :{" "}
-                    {typeof userAnswers[idx] === "number"
-                      ? q.answers[userAnswers[idx]]
-                      : "-"}
-                  </span>
-                  <br />
-                  <span className="text-gray-700">
-                    Bonne réponse : {q.answers[q.correct]}
-                  </span>
-                  {q.explanation && (
-                    <>
-                      <br />
-                      <span className="text-gray-500">
-                        Explication : {q.explanation}
-                      </span>
-                    </>
-                  )}
-                </span>
-              </li>
-            ))}
-          </ul>
         </div>
         <ButtonPrimary className="mb-2 w-full" onClick={handleShowExplanation}>
           Explications

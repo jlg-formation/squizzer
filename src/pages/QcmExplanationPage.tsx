@@ -1,17 +1,67 @@
 import React from "react";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
+import { useQcmConfigStore } from "../store/qcmConfigStore";
+import type { QcmQuestion } from "../types/qcmFile";
+import { useNavigate } from "react-router-dom";
+import { useQcmProgressStore } from "../store/qcmProgressStore";
 
 const QcmExplanationPage: React.FC = () => {
-  // TODO: Afficher le tableau récapitulatif des questions/réponses/explications
+  const { resetProgress } = useQcmProgressStore();
+  const navigate = useNavigate();
+  // Affiche le tableau récapitulatif des questions/réponses/explications
+  const { config } = useQcmConfigStore();
+  const questions: QcmQuestion[] = config.questions || [];
+  const userAnswers: number[] = Array.isArray(config.userAnswers)
+    ? (config.userAnswers as number[])
+    : [];
   const handleRetry = () => {
-    // TODO: Relancer le QCM avec la même config
+    resetProgress();
+    navigate("/qcm");
   };
   return (
     <Layout>
       <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
         <h2 className="mb-4 text-xl font-bold">Explications du QCM</h2>
-        {/* TODO: Tableau récapitulatif */}
+        <div className="mb-8 text-left">
+          <h3 className="mb-2 text-lg font-bold">Explications détaillées :</h3>
+          <ul className="list-disc pl-6">
+            {questions.map((q: QcmQuestion, idx: number) => (
+              <li key={q.id} className="mb-2">
+                <span className="font-semibold">
+                  Q{idx + 1} : {q.question}
+                </span>
+                <br />
+                <span>
+                  <span
+                    className={
+                      userAnswers[idx] === q.correct
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }
+                  >
+                    Votre réponse :{" "}
+                    {typeof userAnswers[idx] === "number"
+                      ? q.answers[userAnswers[idx]]
+                      : "-"}
+                  </span>
+                  <br />
+                  <span className="text-gray-700">
+                    Bonne réponse : {q.answers[q.correct]}
+                  </span>
+                  {q.explanation && (
+                    <>
+                      <br />
+                      <span className="text-gray-500">
+                        Explication : {q.explanation}
+                      </span>
+                    </>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
         <ButtonPrimary className="mt-4 w-full" onClick={handleRetry}>
           Refaire le QCM
         </ButtonPrimary>
