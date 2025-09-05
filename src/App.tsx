@@ -1,12 +1,8 @@
 import "./App.css";
-import Layout from "./layout/Layout";
+import AppRouter from "./AppRouter";
 
 const App = () => {
-  return (
-    <Layout>
-      <div className="font-bold text-blue-600">Hello World</div>
-    </Layout>
-  );
+  return <AppRouter />;
 };
 
 export default App;

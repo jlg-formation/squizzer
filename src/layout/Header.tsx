@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 /**
  * Global header for the application
@@ -9,7 +9,9 @@ const Header: React.FC = () => (
       className="font-mono text-3xl font-extrabold tracking-wide"
       style={{ fontFamily: "Oswald, Montserrat, Inter, monospace" }}
     >
-      Squizzer !!!
+      <Link to="/" className="hover:underline">
+        Squizzer !!!
+      </Link>
     </h1>
   </header>
 );
