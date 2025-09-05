@@ -9,7 +9,7 @@ const QcmPassPage: React.FC = () => {
   const { currentQuestion, totalQuestions, setCurrentQuestion } =
     useQcmProgressStore();
   const navigate = useNavigate();
-  const { config } = useQcmConfigStore();
+  const { config, setConfig } = useQcmConfigStore();
   const [selected, setSelected] = React.useState<number | null>(null);
   // Removed hovered state, use TailwindCSS hover: classes instead
   // Utilise directement les questions sélectionnées depuis le store config
@@ -18,6 +18,14 @@ const QcmPassPage: React.FC = () => {
   console.log("currentQ: ", currentQ);
   const handleChoice = (choice: number) => setSelected(choice);
   const handleValidate = () => {
+    // Enregistre la réponse dans userAnswers (selected est toujours un number ici)
+    if (typeof selected === "number") {
+      const prevAnswers = Array.isArray(config.userAnswers)
+        ? [...config.userAnswers]
+        : [];
+      prevAnswers[currentQuestion - 1] = selected;
+      setConfig({ userAnswers: prevAnswers });
+    }
     if (currentQuestion < totalQuestions) {
       setCurrentQuestion(currentQuestion + 1);
       setSelected(null);
