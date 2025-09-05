@@ -5,8 +5,8 @@
 - [x] Initialiser projet avec **Vite + React + TypeScript**
 - [x] Installer **TailwindCSS**
 - [x] Installer **Zustand** (state management)
-- [ ] Installer **React Router**
-- [ ] Installer **Recharts** (graphique résultats)
+- [x] Installer **React Router**
+- [x] Installer **Recharts** (graphique résultats)
 - [ ] Installer **yaml** et **seedrandom** (utils parsing + aléatoire)
 - [ ] Configurer **ESLint + Prettier**
 - [ ] Setup **GitHub Actions** pour déploiement GitHub Pages
