@@ -55,7 +55,7 @@ const QcmSummaryPage: React.FC = () => {
   };
   return (
     <Layout>
-      {showConfetti && (
+      {showConfetti && correctCount / totalQuestions >= 0.8 && (
         <Confetti
           width={window.innerWidth}
           height={window.innerHeight}
