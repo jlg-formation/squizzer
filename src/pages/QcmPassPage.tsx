@@ -3,6 +3,7 @@ import { useQcmProgressStore } from "../store/qcmProgressStore";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
+import ButtonSecondary from "../components/ButtonSecondary";
 import { useNavigate } from "react-router-dom";
 
 const QcmPassPage: React.FC = () => {
@@ -33,9 +34,25 @@ const QcmPassPage: React.FC = () => {
       navigate("/results");
     }
   };
+  const handlePrevious = () => {
+    if (currentQuestion > 1) {
+      setCurrentQuestion(currentQuestion - 1);
+      setSelected(null);
+    }
+  };
+
   return (
     <Layout>
       <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
+        <div className="mb-2 text-left">
+          <ButtonSecondary
+            className="text-base"
+            onClick={handlePrevious}
+            disabled={currentQuestion === 1}
+          >
+            &larr; Précédent
+          </ButtonSecondary>
+        </div>
         <h2 className="mb-4 text-xl font-bold">
           Question {currentQuestion}/{totalQuestions}
         </h2>
@@ -67,13 +84,15 @@ const QcmPassPage: React.FC = () => {
             </div>
           </>
         )}
-        <ButtonPrimary
-          className="w-full text-lg"
-          onClick={handleValidate}
-          disabled={selected === null}
-        >
-          Valider &rarr;
-        </ButtonPrimary>
+        <div className="flex gap-4">
+          <ButtonPrimary
+            className="w-full text-lg"
+            onClick={handleValidate}
+            disabled={selected === null}
+          >
+            Valider &rarr;
+          </ButtonPrimary>
+        </div>
       </div>
     </Layout>
   );
