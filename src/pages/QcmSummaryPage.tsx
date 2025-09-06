@@ -59,7 +59,7 @@ const QcmSummaryPage: React.FC = () => {
         <Confetti
           width={window.innerWidth}
           height={window.innerHeight}
-          numberOfPieces={200}
+          numberOfPieces={1200}
           recycle={false}
           colors={["#22c55e", "#8b5cf6", "#06b6d4", "#f59e0b", "#ef4444"]}
           gravity={0.3}
