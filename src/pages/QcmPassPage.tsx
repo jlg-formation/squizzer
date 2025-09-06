@@ -16,7 +16,6 @@ const QcmPassPage: React.FC = () => {
   // Utilise directement les questions sélectionnées depuis le store config
   const questions = config.questions || [];
   const currentQ = questions[currentQuestion - 1];
-  console.log("currentQ: ", currentQ);
   const handleChoice = (choice: number) => setSelected(choice);
   const handleValidate = () => {
     // Enregistre la réponse dans userAnswers (selected est toujours un number ici)

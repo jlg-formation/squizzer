@@ -26,40 +26,56 @@ const QcmExplanationPage: React.FC = () => {
         <div className="mb-8 text-left">
           <h3 className="mb-2 text-lg font-bold">Explications détaillées :</h3>
           <ul className="list-disc pl-6">
-            {questions.map((q: QcmQuestion, idx: number) => (
-              <li key={q.id} className="mb-2">
-                <span className="font-semibold">
-                  Q{idx + 1} : {q.question}
-                </span>
-                <br />
-                <span>
-                  <span
-                    className={
-                      userAnswers[idx] === q.correct
-                        ? "text-green-600"
-                        : "text-red-600"
-                    }
-                  >
-                    Votre réponse :{" "}
-                    {typeof userAnswers[idx] === "number"
-                      ? q.answers[userAnswers[idx]]
-                      : "-"}
+            {questions.map((q: QcmQuestion, idx: number) => {
+              const isWrong = userAnswers[idx] !== q.correct;
+              return (
+                <li
+                  key={q.id}
+                  className="mb-2"
+                  style={
+                    isWrong
+                      ? {
+                          border: "2px solid #dc2626", // rouge-600
+                          borderRadius: "0.5rem",
+                          padding: "0.75rem",
+                          background: "#fff1f1",
+                        }
+                      : {}
+                  }
+                >
+                  <span className="font-semibold">
+                    Q{idx + 1} : {q.question}
                   </span>
                   <br />
-                  <span className="text-gray-700">
-                    Bonne réponse : {q.answers[q.correct]}
+                  <span>
+                    <span
+                      className={
+                        userAnswers[idx] === q.correct
+                          ? "text-green-600"
+                          : "text-red-600"
+                      }
+                    >
+                      Votre réponse :{" "}
+                      {typeof userAnswers[idx] === "number"
+                        ? q.answers[userAnswers[idx]]
+                        : "-"}
+                    </span>
+                    <br />
+                    <span className="text-gray-700">
+                      Bonne réponse : {q.answers[q.correct]}
+                    </span>
+                    {q.explanation && (
+                      <>
+                        <br />
+                        <span className="text-gray-500">
+                          Explication : {q.explanation}
+                        </span>
+                      </>
+                    )}
                   </span>
-                  {q.explanation && (
-                    <>
-                      <br />
-                      <span className="text-gray-500">
-                        Explication : {q.explanation}
-                      </span>
-                    </>
-                  )}
-                </span>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
         </div>
         <ButtonPrimary className="mt-4 w-full" onClick={handleRetry}>
