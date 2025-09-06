@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
 import { useQcmProgressStore } from "../store/qcmProgressStore";
 import type { QcmQuestion } from "../types/qcmFile";
@@ -8,9 +8,21 @@ import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 import ButtonSecondary from "../components/ButtonSecondary";
 import { FileText, RotateCcw } from "lucide-react";
+import Confetti from "react-confetti";
 
 const QcmSummaryPage: React.FC = () => {
   const navigate = useNavigate();
+  const [showConfetti, setShowConfetti] = useState(true);
+
+  // Arrêter les confettis après 5 secondes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowConfetti(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const { config } = useQcmConfigStore();
   // On suppose que les réponses de l'utilisateur sont stockées dans config.userAnswers: number[]
   // et que config.questions contient les questions tirées
@@ -43,6 +55,16 @@ const QcmSummaryPage: React.FC = () => {
   };
   return (
     <Layout>
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={200}
+          recycle={false}
+          colors={["#22c55e", "#8b5cf6", "#06b6d4", "#f59e0b", "#ef4444"]}
+          gravity={0.3}
+        />
+      )}
       <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
         <h2 className="mb-4 text-xl font-bold">Résumé du QCM</h2>
         <div className="mb-6 text-lg font-semibold">
