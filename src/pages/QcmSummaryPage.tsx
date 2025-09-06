@@ -6,6 +6,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { useNavigate } from "react-router-dom";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
+import ButtonSecondary from "../components/ButtonSecondary";
 
 const QcmSummaryPage: React.FC = () => {
   const navigate = useNavigate();
@@ -68,9 +69,9 @@ const QcmSummaryPage: React.FC = () => {
         <ButtonPrimary className="mb-2 w-full" onClick={handleShowExplanation}>
           Explications
         </ButtonPrimary>
-        <ButtonPrimary className="w-full" onClick={handleRetry}>
+        <ButtonSecondary className="w-full" onClick={handleRetry}>
           Refaire le QCM
-        </ButtonPrimary>
+        </ButtonSecondary>
       </div>
     </Layout>
   );
