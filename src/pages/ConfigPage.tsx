@@ -8,20 +8,24 @@ import { QrCode } from "lucide-react";
 const ConfigPage: React.FC = () => {
   const navigate = useNavigate();
   const { config, setConfig } = useQcmConfigStore();
+  const [formData, setFormData] = React.useState({
+    chapter: config.chapter || "",
+    questionCount: config.questionCount || 10,
+    seed: config.seed || "",
+  });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const chapter = (form.elements[0] as HTMLInputElement).value;
-    const questionCount = Number((form.elements[1] as HTMLInputElement).value);
-    const seed = (form.elements[2] as HTMLInputElement).value;
-    setConfig({ chapter, questionCount, seed });
+    setConfig(formData);
     navigate("/qrcode");
   };
 
   // Exemple d'accès aux chapitres du QCM (à adapter selon la logique de chargement réelle)
   // On suppose que la store contient un tableau config.chapters: { id: string, title: string }[]
   const chapters = config.chapters || [];
+
+  // Vérifier si tous les champs requis sont remplis
+  const isFormValid = formData.chapter !== "" && formData.questionCount > 0;
 
   return (
     <Layout>
@@ -33,8 +37,11 @@ const ConfigPage: React.FC = () => {
         <form className="space-y-4" onSubmit={handleSubmit}>
           <select
             className="block w-full rounded border border-black px-2 py-1"
-            defaultValue={config.chapter}
+            value={formData.chapter}
             name="chapter"
+            onChange={(e) =>
+              setFormData({ ...formData, chapter: e.target.value })
+            }
           >
             <option value="">-- Choisir un chapitre --</option>
             {chapters.map((ch: { id: string; title: string }) => (
@@ -47,15 +54,27 @@ const ConfigPage: React.FC = () => {
             type="number"
             placeholder="Nombre de questions"
             className="block w-full rounded border border-black px-2 py-1"
-            defaultValue={config.questionCount}
+            value={formData.questionCount}
+            min="1"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                questionCount: Number(e.target.value),
+              })
+            }
           />
           <input
             type="text"
             placeholder="Seed (aléatoire)"
             className="block w-full rounded border border-black px-2 py-1"
-            defaultValue={config.seed}
+            value={formData.seed}
+            onChange={(e) => setFormData({ ...formData, seed: e.target.value })}
           />
-          <ButtonPrimary type="submit" className="w-full">
+          <ButtonPrimary
+            type="submit"
+            className="w-full"
+            disabled={!isFormValid}
+          >
             <QrCode className="mr-2 h-4 w-4" />
             Générer le QRCode
           </ButtonPrimary>
