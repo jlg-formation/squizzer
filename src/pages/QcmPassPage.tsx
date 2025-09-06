@@ -5,6 +5,7 @@ import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 import ButtonSecondary from "../components/ButtonSecondary";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const QcmPassPage: React.FC = () => {
   const { currentQuestion, totalQuestions, setCurrentQuestion } =
@@ -49,7 +50,8 @@ const QcmPassPage: React.FC = () => {
             onClick={handlePrevious}
             disabled={currentQuestion === 1}
           >
-            &larr; Précédent
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Précédent
           </ButtonSecondary>
         </div>
         <h2 className="mb-4 text-xl font-bold">
@@ -89,7 +91,8 @@ const QcmPassPage: React.FC = () => {
             onClick={handleValidate}
             disabled={selected === null}
           >
-            Valider &rarr;
+            Valider
+            <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonPrimary>
         </div>
       </div>

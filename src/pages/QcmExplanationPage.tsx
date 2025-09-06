@@ -5,6 +5,7 @@ import { useQcmConfigStore } from "../store/qcmConfigStore";
 import type { QcmQuestion } from "../types/qcmFile";
 import { useNavigate } from "react-router-dom";
 import { useQcmProgressStore } from "../store/qcmProgressStore";
+import { RotateCcw } from "lucide-react";
 
 const QcmExplanationPage: React.FC = () => {
   const { resetProgress } = useQcmProgressStore();
@@ -79,6 +80,7 @@ const QcmExplanationPage: React.FC = () => {
           </ul>
         </div>
         <ButtonPrimary className="mt-4 w-full" onClick={handleRetry}>
+          <RotateCcw className="mr-2 h-4 w-4" />
           Refaire le QCM
         </ButtonPrimary>
       </div>

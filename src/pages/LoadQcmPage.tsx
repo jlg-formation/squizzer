@@ -7,6 +7,7 @@ import type { QcmQuestion, QcmChapter } from "../types/qcmFile";
 // import { Link } from "react-router-dom"; // plus utilisé
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
+import { ArrowRight } from "lucide-react";
 
 // ...existing code...
 const PREDEFINED_QCMS = [
@@ -122,6 +123,7 @@ const LoadQcmPage: React.FC = () => {
             disabled={!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)}
             type="submit"
           >
+            <ArrowRight className="mr-2 h-4 w-4" />
             Continuer
           </ButtonPrimary>
         </form>

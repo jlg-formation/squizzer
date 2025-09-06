@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 import ButtonSecondary from "../components/ButtonSecondary";
+import { FileText, RotateCcw } from "lucide-react";
 
 const QcmSummaryPage: React.FC = () => {
   const navigate = useNavigate();
@@ -67,9 +68,11 @@ const QcmSummaryPage: React.FC = () => {
           </ResponsiveContainer>
         </div>
         <ButtonPrimary className="mb-2 w-full" onClick={handleShowExplanation}>
+          <FileText className="mr-2 h-4 w-4" />
           Explications
         </ButtonPrimary>
         <ButtonSecondary className="w-full" onClick={handleRetry}>
+          <RotateCcw className="mr-2 h-4 w-4" />
           Refaire le QCM
         </ButtonSecondary>
       </div>

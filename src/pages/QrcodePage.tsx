@@ -3,6 +3,7 @@ import { QRCodeSVG } from "qrcode.react";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
+import { Copy } from "lucide-react";
 
 const QrcodePage: React.FC = () => {
   const { config } = useQcmConfigStore();
@@ -52,6 +53,7 @@ const QrcodePage: React.FC = () => {
           className="mb-4 block w-full rounded border border-black px-2 py-1 font-mono"
         />
         <ButtonPrimary className="w-full" onClick={handleCopy}>
+          <Copy className="mr-2 h-4 w-4" />
           Copier le lien
         </ButtonPrimary>
       </div>

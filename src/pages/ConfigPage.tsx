@@ -3,6 +3,7 @@ import { useQcmConfigStore } from "../store/qcmConfigStore";
 import { useNavigate } from "react-router-dom";
 import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
+import { QrCode } from "lucide-react";
 
 const ConfigPage: React.FC = () => {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ const ConfigPage: React.FC = () => {
             defaultValue={config.seed}
           />
           <ButtonPrimary type="submit" className="w-full">
+            <QrCode className="mr-2 h-4 w-4" />
             Générer le QRCode
           </ButtonPrimary>
         </form>

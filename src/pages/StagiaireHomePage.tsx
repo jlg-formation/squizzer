@@ -8,6 +8,7 @@ import { selectQuestionsBySeed } from "../utils/selectQuestionsBySeed";
 import { useQcmProgressStore } from "../store/qcmProgressStore";
 import type { QcmQuestion } from "../types/qcmFile";
 import { sleep } from "../utils/sleep";
+import { Play } from "lucide-react";
 
 const StagiaireHomePage: React.FC = () => {
   const hasFetched = React.useRef(false);
@@ -92,6 +93,7 @@ const StagiaireHomePage: React.FC = () => {
             Chapitre : {config.chapter || ""}
           </div>
           <ButtonPrimary className="w-full" onClick={handleStart}>
+            <Play className="mr-2 h-4 w-4" />
             Commencer
           </ButtonPrimary>
         </div>
