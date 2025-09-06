@@ -1,7 +1,8 @@
 import type { QcmQuestion } from "../types/qcmFile";
 
 /**
- * Sélectionne de façon déterministe {count} questions d'un chapitre donné, selon un seed.
+ * Sélectionne de façon déterministe {count} questions aléatoire d'un chapitre donné, selon un seed.
+ *
  * @param questions Toutes les questions du QCM
  * @param chapterId L'id du chapitre
  * @param count Nombre de questions à sélectionner
@@ -15,12 +16,16 @@ export function selectQuestionsBySeed(
 ): QcmQuestion[] {
   // Shuffle déterministe
   const seededRandom = mulberry32(hashCode(seed));
-  const shuffled = [...questions];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(seededRandom() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  const result: QcmQuestion[] = [];
+  const usedIndices = new Set<number>();
+  while (result.length < Math.min(count, questions.length)) {
+    const idx = Math.floor(seededRandom() * questions.length);
+    if (!usedIndices.has(idx)) {
+      usedIndices.add(idx);
+      result.push(questions[idx]);
+    }
   }
-  return shuffled.slice(0, count);
+  return result;
 }
 
 // Hash simple pour seed string -> number
