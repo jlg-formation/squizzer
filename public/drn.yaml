@@ -741,7 +741,7 @@ chapters:
             Equation de Laplace,
             Equation de Newton,
           ]
-        correct: 1
+        correct: 0
         explanation: "La Bellman equation définit la valeur optimale."
       - id: q87
         question: "Quel est un défi du Q-Learning classique ?"
@@ -1006,3 +1006,264 @@ chapters:
           ]
         correct: 0
         explanation: "Puissant, mais avec des limites et défis ouverts."
+  - id: generative_ai
+    title: IA Génératives
+    questions:
+      - id: q1
+        question: "Que signifie 'IA générative' ?"
+        answers:
+          - Une IA qui classe les données existantes
+          - Une IA qui génère de nouveaux contenus à partir de données apprises
+          - Une IA qui supprime les biais des données
+          - Une IA qui exécute des calculs plus rapidement
+        correct: 1
+        explanation:
+          "L’IA générative vise à produire de nouveaux contenus (texte, images,
+          audio, etc.) à partir d’un modèle entraîné."
+
+      - id: q2
+        question: "Quel modèle est emblématique des IA génératives récentes ?"
+        answers:
+          - CNN
+          - Transformer
+          - Perceptron simple
+          - SVM
+        correct: 2
+        explanation:
+          "Les Transformers (GPT, BERT, etc.) sont au cœur des IA génératives
+          modernes."
+
+      - id: q3
+        question:
+          "Quelle technique est utilisée pour entraîner un modèle génératif sur
+          du texte ?"
+        answers:
+          - Régression linéaire
+          - Apprentissage supervisé avec prédiction du token suivant
+          - Apprentissage par renforcement uniquement
+          - Clustering non supervisé
+        correct: 0
+        explanation:
+          "Les modèles de langage sont souvent entraînés à prédire le prochain
+          token d’une séquence."
+
+      - id: q4
+        question:
+          "Quel acronyme désigne les modèles génératifs utilisés pour la
+          génération d’images ?"
+        answers:
+          - GAN
+          - CNN
+          - RNN
+          - SVM
+        correct: 3
+        explanation:
+          "Les GAN (Generative Adversarial Networks) sont largement utilisés
+          pour la génération d’images."
+
+      - id: q5
+        question:
+          "Que signifie 'diffusion' dans les modèles génératifs modernes ?"
+        answers:
+          - Un protocole réseau
+          - Une technique de génération par ajout puis suppression progressive
+            de bruit
+          - Une méthode de clustering
+          - Une méthode de compression
+        correct: 1
+        explanation:
+          "Les modèles de diffusion génèrent des images en partant de bruit
+          aléatoire, qu’ils débruitent progressivement."
+
+      - id: q6
+        question:
+          "Quel est l’avantage principal des Transformers sur les RNN pour la
+          génération de texte ?"
+        answers:
+          - Ils consomment moins de mémoire
+          - Ils traitent les séquences en parallèle grâce au mécanisme
+            d’attention
+          - Ils nécessitent moins de données
+          - Ils n’ont pas besoin de GPU
+        correct: 2
+        explanation:
+          "Le mécanisme d’attention permet de traiter les séquences en parallèle
+          et de capturer des dépendances longues."
+
+      - id: q7
+        question: "Quel modèle est un exemple d’IA générative multimodale ?"
+        answers:
+          - GPT-4
+          - Word2Vec
+          - AlexNet
+          - ResNet
+        correct: 0
+        explanation: "GPT-4 peut gérer plusieurs modalités (texte, image)."
+
+      - id: q8
+        question: "Que produit une IA générative entraînée sur du code source ?"
+        answers:
+          - Des images
+          - Des programmes ou fragments de code
+          - Des signaux sonores
+          - Des vidéos
+        correct: 3
+        explanation:
+          "Une IA générative comme Codex peut générer du code informatique."
+
+      - id: q9
+        question: "Quel est un risque éthique lié aux IA génératives ?"
+        answers:
+          - Création de deepfakes
+          - Réduction des coûts de calcul
+          - Amélioration de la qualité des données
+          - Suppression des biais
+        correct: 0
+        explanation:
+          "Les IA génératives peuvent être utilisées pour créer des contenus
+          trompeurs (deepfakes)."
+
+      - id: q10
+        question: "Quelle application est typique des GAN ?"
+        answers:
+          - Traduction automatique
+          - Génération d’images réalistes
+          - Prédiction de séries temporelles
+          - Recherche d’information
+        correct: 2
+        explanation:
+          "Les GAN sont utilisés pour générer des images réalistes, comme des
+          visages synthétiques."
+
+      - id: q11
+        question:
+          "Quel est l’enjeu principal des modèles génératifs pour l’industrie
+          créative ?"
+        answers:
+          - Automatiser la comptabilité
+          - Augmenter la créativité humaine
+          - Réduire le stockage
+          - Remplacer les serveurs
+        correct: 1
+        explanation:
+          "Les IA génératives peuvent assister et stimuler la créativité
+          artistique et industrielle."
+
+      - id: q12
+        question:
+          "Comment appelle-t-on l’entraînement d’un modèle génératif à partir de
+          données spécifiques d’une entreprise ?"
+        answers:
+          - Fine-tuning
+          - Regularization
+          - Normalization
+          - Pooling
+        correct: 0
+        explanation:
+          "Le fine-tuning permet d’adapter un modèle pré-entraîné à un domaine
+          particulier."
+
+      - id: q13
+        question:
+          "Qu’est-ce que l’apprentissage par renforcement avec feedback humain
+          (RLHF) ?"
+        answers:
+          - Une technique pour améliorer la sécurité et la pertinence des
+            réponses générées
+          - Une méthode de classification supervisée
+          - Une technique de clustering
+          - Une méthode de compression
+        correct: 3
+        explanation:
+          "Le RLHF est utilisé pour ajuster un modèle génératif selon des
+          retours humains."
+
+      - id: q14
+        question: "Quel est un exemple d’outil basé sur l’IA générative ?"
+        answers:
+          - Stable Diffusion
+          - Hadoop
+          - MySQL
+          - Apache Spark
+        correct: 0
+        explanation:
+          "Stable Diffusion est un modèle génératif pour la création d’images."
+
+      - id: q15
+        question: "Quelle problématique est fréquente dans les IA génératives ?"
+        answers:
+          - Le surapprentissage
+          - La difficulté à générer de nouveaux contenus
+          - L’absence de biais
+          - Le manque de données d’entraînement
+        correct: 2
+        explanation:
+          "Comme tous les modèles, les IA génératives peuvent souffrir de
+          surapprentissage."
+
+      - id: q16
+        question:
+          "Quel terme désigne la génération de faux contenus réalistes avec l’IA
+          ?"
+        answers:
+          - Deepfake
+          - Upscaling
+          - Compression
+          - Embedding
+        correct: 1
+        explanation:
+          "Un deepfake est un contenu (souvent vidéo) généré artificiellement
+          pour imiter une personne."
+
+      - id: q17
+        question:
+          "Quelle technologie est clé dans la génération de musique avec l’IA ?"
+        answers:
+          - Transformers appliqués aux séquences audio
+          - Algorithmes de tri
+          - Compression Huffman
+          - Réseaux Bayésiens
+        correct: 0
+        explanation:
+          "Les Transformers appliqués aux données audio permettent la génération
+          musicale."
+
+      - id: q18
+        question:
+          "Quel est un défi majeur pour les modèles génératifs de grande taille
+          ?"
+        answers:
+          - Le coût computationnel et énergétique
+          - La simplicité d’implémentation
+          - Le manque de parallélisation
+          - La rareté des GPUs
+        correct: 1
+        explanation:
+          "Les grands modèles génératifs nécessitent d’énormes ressources de
+          calcul et d’énergie."
+
+      - id: q19
+        question:
+          "Quelle approche combine génération de contenu et recherche dans une
+          base de connaissances ?"
+        answers:
+          - Retrieval-Augmented Generation (RAG)
+          - Pooling
+          - Dropout
+          - Normalization
+        correct: 2
+        explanation:
+          "Le RAG combine recherche documentaire et génération pour des réponses
+          plus fiables."
+
+      - id: q20
+        question: "Quel est un axe de recherche futur pour les IA génératives ?"
+        answers:
+          - Explicabilité et réduction des biais
+          - Remplacement des réseaux de neurones
+          - Abandon de l’apprentissage profond
+          - Suppression de toutes les données
+        correct: 3
+        explanation:
+          "Un axe majeur est de rendre les IA génératives plus transparentes et
+          équitables."
