@@ -1,0 +1,151 @@
+/* Styles pour le logo avec animations de bulles */
+.logo-container {
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.logo-container:hover {
+  opacity: 0.9;
+}
+
+/* Animation de base pour toutes les bulles */
+.bubble {
+  transform-origin: center;
+  animation: bubbleRise 4s infinite linear;
+  animation-play-state: paused;
+  animation-fill-mode: both;
+}
+
+/* Animation des bulles au hover */
+.logo-container:hover .bubble {
+  animation-play-state: running;
+}
+
+/* Délais d'animation échelonnés pour chaque bulle */
+.bubble-1 {
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  animation-delay: 0.3s;
+}
+
+.bubble-3 {
+  animation-delay: 0.6s;
+}
+
+.bubble-4 {
+  animation-delay: 0.9s;
+}
+
+.bubble-5 {
+  animation-delay: 1.2s;
+}
+
+.bubble-6 {
+  animation-delay: 1.5s;
+}
+
+.bubble-7 {
+  animation-delay: 1.8s;
+}
+
+.bubble-8 {
+  animation-delay: 2.1s;
+}
+
+.bubble-9 {
+  animation-delay: 2.4s;
+}
+
+.bubble-10 {
+  animation-delay: 2.7s;
+}
+
+.bubble-11 {
+  animation-delay: 3s;
+}
+
+.bubble-12 {
+  animation-delay: 3.3s;
+}
+
+.bubble-13 {
+  animation-delay: 0.4s;
+}
+
+.bubble-14 {
+  animation-delay: 0.8s;
+}
+
+.bubble-15 {
+  animation-delay: 1.6s;
+}
+
+.bubble-16 {
+  animation-delay: 2.8s;
+}
+
+/* Animation principale des bulles de champagne */
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-8px) scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-16px) scale(0.7);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-24px) scale(0.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-32px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+/* Animation alternative pour certaines bulles (mouvement légèrement ondulant) */
+.bubble-2,
+.bubble-5,
+.bubble-8,
+.bubble-11,
+.bubble-14 {
+  animation-name: bubbleRiseWobble;
+}
+
+.logo-container:hover .bubble-2,
+.logo-container:hover .bubble-5,
+.logo-container:hover .bubble-8,
+.logo-container:hover .bubble-11,
+.logo-container:hover .bubble-14 {
+  animation-play-state: running;
+}
+
+@keyframes bubbleRiseWobble {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-8px) translateX(1px) scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-16px) translateX(-1px) scale(0.7);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-24px) translateX(0.5px) scale(0.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-32px) translateX(0px) scale(0.2);
+    opacity: 0;
+  }
+}
