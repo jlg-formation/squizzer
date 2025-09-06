@@ -23,8 +23,27 @@ const QrcodePage: React.FC = () => {
     <Layout>
       <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
         <h2 className="mb-4 text-xl font-bold">QR Code d'accès au QCM</h2>
-        <div className="mb-4 flex h-40 w-full items-center justify-center border border-black bg-gray-50">
-          <QRCodeSVG value={qcmUrl} size={120} />
+        <div
+          className="mb-4 flex w-full items-center justify-center border border-black bg-gray-50"
+          style={{ minHeight: 240 }}
+        >
+          <div
+            style={{
+              width: "100%",
+              maxWidth: 320,
+              aspectRatio: "1 / 1",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <QRCodeSVG
+              value={qcmUrl}
+              width="100%"
+              height="100%"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
         </div>
         <input
           type="text"
