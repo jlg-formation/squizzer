@@ -14,15 +14,6 @@ const QcmSummaryPage: React.FC = () => {
   const navigate = useNavigate();
   const [showConfetti, setShowConfetti] = useState(true);
 
-  // Arrêter les confettis après 5 secondes
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowConfetti(false);
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   const { config } = useQcmConfigStore();
   // On suppose que les réponses de l'utilisateur sont stockées dans config.userAnswers: number[]
   // et que config.questions contient les questions tirées
@@ -36,6 +27,24 @@ const QcmSummaryPage: React.FC = () => {
     (acc, q, idx) => acc + (userAnswers[idx] === q.correct ? 1 : 0),
     0,
   );
+  // Arrêter les confettis après 5 secondes et jouer le son selon la tranche de score
+  useEffect(() => {
+    const scorePercent =
+      totalQuestions > 0 ? (correctCount / totalQuestions) * 100 : 0;
+    let soundFile = "audio/score-low.mp3";
+    if (scorePercent === 100) soundFile = "audio/score-perfect.mp3";
+    else if (scorePercent >= 80) soundFile = "audio/score-high.mp3";
+    else if (scorePercent >= 50) soundFile = "audio/score-medium.mp3";
+    // Joue le son correspondant
+    const audio = new Audio(soundFile);
+    audio.play();
+
+    const timer = setTimeout(() => {
+      setShowConfetti(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [correctCount, totalQuestions]);
   const data = [{ name: "Bonnes réponses", value: correctCount }];
   if (correctCount < totalQuestions) {
     data.push({
