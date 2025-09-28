@@ -27,6 +27,10 @@ const PREDEFINED_QCMS = [
     name: "QCM Deep Learning",
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/drn.yaml",
   },
+  {
+    name: "QCM DFR",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/dfr.yaml",
+  },
   { name: "Autre", url: "" },
 ];
 

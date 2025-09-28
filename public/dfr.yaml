@@ -1,0 +1,231 @@
+title: QCM Datavisualisation — concepts et enjeux
+chapters:
+  - id: introduction
+    title: Introduction et concepts de la datavisualisation
+    questions:
+      - id: q1
+        question: "La datavisualisation a pour but principal de :"
+        answers:
+          - "rendre les données esthétiques"
+          - "faciliter la compréhension des données"
+          - "augmenter le volume de données"
+          - "remplacer l’analyse statistique"
+        correct: 1
+        explanation:
+          "La visualisation vise à rendre l’information claire et interprétable."
+      - id: q2
+        question:
+          "Quel domaine est historiquement lié à la naissance de la
+          datavisualisation ?"
+        answers:
+          - "cartographie"
+          - "peinture"
+          - "architecture"
+          - "sculpture"
+        correct: 0
+        explanation:
+          "La cartographie est l’un des premiers usages de la datavisualisation."
+      - id: q3
+        question: "Un bon graphique doit avant tout être :"
+        answers:
+          - "lisible et pertinent"
+          - "coloré et artistique"
+          - "complexe et détaillé"
+          - "interactif et animé"
+        correct: 0
+        explanation:
+          "La priorité est la lisibilité et la pertinence de l’information."
+      - id: q4
+        question:
+          "Quel terme désigne la capacité d’un graphique à révéler rapidement
+          une tendance ?"
+        answers:
+          - "efficacité visuelle"
+          - "rapidité cognitive"
+          - "impact statistique"
+          - "compression des données"
+        correct: 0
+        explanation:
+          "L’efficacité visuelle consiste à mettre en évidence les patterns
+          immédiatement."
+      - id: q5
+        question:
+          "Quelle est la différence majeure entre tableau et graphique ?"
+        answers:
+          - "le tableau est plus esthétique"
+          - "le graphique synthétise visuellement les données"
+          - "le tableau cache les erreurs"
+          - "le graphique supprime les détails"
+        correct: 1
+        explanation: "Le graphique met en avant les relations et tendances."
+
+  - id: biais
+    title: Les biais cognitifs et statistiques en datavisualisation
+    questions:
+      - id: q6
+        question: "Confondre corrélation et causalité est :"
+        answers:
+          - "un biais fréquent"
+          - "une bonne pratique"
+          - "une preuve scientifique"
+          - "une technique de visualisation"
+        correct: 0
+        explanation:
+          "Beaucoup de graphiques induisent en erreur en confondant corrélation
+          et causalité."
+      - id: q7
+        question:
+          "Quel biais consiste à ne retenir que les données qui confirment nos
+          croyances ?"
+        answers:
+          - "biais d’ancrage"
+          - "biais de confirmation"
+          - "biais de sélection"
+          - "biais d’échelle"
+        correct: 1
+        explanation:
+          "Le biais de confirmation filtre l’information en fonction de nos
+          attentes."
+      - id: q8
+        question: "Tronquer un axe Y dans un graphique peut :"
+        answers:
+          - "améliorer la précision"
+          - "induire une perception exagérée des écarts"
+          - "ne rien changer"
+          - "supprimer les biais"
+        correct: 1
+        explanation:
+          "Un axe tronqué peut amplifier artificiellement des différences."
+      - id: q9
+        question:
+          "Quel biais peut résulter d’un échantillon non représentatif ?"
+        answers:
+          - "biais de sélection"
+          - "biais de présentation"
+          - "biais de causalité"
+          - "biais de lisibilité"
+        correct: 0
+        explanation: "Un échantillon biaisé ne reflète pas la réalité globale."
+      - id: q10
+        question:
+          "Quel est le risque d’utiliser trop de couleurs dans un graphique ?"
+        answers:
+          - "mieux distinguer les données"
+          - "brouiller la lecture"
+          - "renforcer la mémoire"
+          - "supprimer les biais"
+        correct: 1
+        explanation:
+          "Un excès de couleurs surcharge la perception et brouille le message."
+
+  - id: collecte_traitement
+    title: Collecte, nettoyage et exploration des données
+    questions:
+      - id: q11
+        question: "Qu’appelle-t-on le nettoyage des données ?"
+        answers:
+          - "ajouter des données artificielles"
+          - "corriger, uniformiser et supprimer les incohérences"
+          - "convertir toutes les données en texte"
+          - "changer les données pour obtenir les résultats attendus"
+        correct: 1
+        explanation:
+          "Nettoyer signifie préparer les données pour l’analyse fiable."
+      - id: q12
+        question:
+          "Quelle est une source courante de données pour la datavisualisation ?"
+        answers:
+          - "API et bases de données"
+          - "dessins à la main"
+          - "tableaux papier uniquement"
+          - "graphiques sans données"
+        correct: 0
+        explanation:
+          "Les API, fichiers et bases de données sont les sources principales."
+      - id: q13
+        question: "Que faire face à une valeur manquante ?"
+        answers:
+          - "l’ignorer systématiquement"
+          - "l’imputer ou la supprimer selon le contexte"
+          - "la remplacer par zéro"
+          - "la convertir en texte"
+        correct: 1
+        explanation:
+          "Selon le cas, on supprime ou on impute pour garder la cohérence."
+      - id: q14
+        question:
+          "Quel outil statistique visualise la distribution d’une variable ?"
+        answers:
+          - "histogramme"
+          - "camembert"
+          - "nuage de points"
+          - "ligne"
+        correct: 0
+        explanation:
+          "L’histogramme permet de représenter la distribution d’une variable."
+      - id: q15
+        question: "Lors d’une jointure de tables, quel problème peut survenir ?"
+        answers:
+          - "doublons et valeurs manquantes"
+          - "graphiques trop complexes"
+          - "changements de couleurs"
+          - "erreurs de présentation"
+        correct: 0
+        explanation:
+          "Une jointure mal gérée entraîne doublons ou pertes de données."
+
+  - id: representation
+    title: Représentation graphique et outils
+    questions:
+      - id: q16
+        question:
+          "Quel graphique est le plus adapté pour visualiser une série
+          temporelle ?"
+        answers:
+          - "camembert"
+          - "diagramme en barres"
+          - "courbe (line chart)"
+          - "boxplot"
+        correct: 2
+        explanation: "La courbe permet de montrer l’évolution dans le temps."
+      - id: q17
+        question: "Le diagramme en barres est utilisé pour :"
+        answers:
+          - "comparer des catégories"
+          - "montrer une distribution continue"
+          - "afficher une proportion"
+          - "représenter des corrélations"
+        correct: 0
+        explanation:
+          "Les barres comparent efficacement des catégories distinctes."
+      - id: q18
+        question:
+          "Quel graphique montre la relation entre deux variables quantitatives
+          ?"
+        answers:
+          - "histogramme"
+          - "nuage de points (scatter plot)"
+          - "camembert"
+          - "barres empilées"
+        correct: 1
+        explanation:
+          "Le scatter plot met en évidence les corrélations potentielles."
+      - id: q19
+        question:
+          "Quel outil est reconnu pour la datavisualisation interactive ?"
+        answers:
+          - "Word"
+          - "Excel"
+          - "Tableau"
+          - "PowerPoint"
+        correct: 2
+        explanation: "Tableau est spécialisé dans la visualisation interactive."
+      - id: q20
+        question: "Quel principe graphique améliore la lisibilité ?"
+        answers:
+          - "palette cohérente"
+          - "multiplier les couleurs"
+          - "supprimer les axes"
+          - "utiliser la 3D systématiquement"
+        correct: 0
+        explanation: "Une palette cohérente et sobre facilite la lecture."
