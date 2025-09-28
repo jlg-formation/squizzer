@@ -5,227 +5,776 @@ chapters:
     questions:
       - id: q1
         question: "La datavisualisation a pour but principal de :"
-        answers:
-          - "rendre les données esthétiques"
-          - "faciliter la compréhension des données"
-          - "augmenter le volume de données"
-          - "remplacer l’analyse statistique"
+        answers: [esthétique, compréhension, volume, remplacement analyse]
         correct: 1
-        explanation:
-          "La visualisation vise à rendre l’information claire et interprétable."
+        explanation: "Son objectif est de faciliter la compréhension." # B
       - id: q2
-        question:
-          "Quel domaine est historiquement lié à la naissance de la
-          datavisualisation ?"
-        answers:
-          - "cartographie"
-          - "peinture"
-          - "architecture"
-          - "sculpture"
-        correct: 0
-        explanation:
-          "La cartographie est l’un des premiers usages de la datavisualisation."
+        question: "Quel domaine est historiquement lié à la datavisualisation ?"
+        answers: [peinture, architecture, sculpture, cartographie]
+        correct: 3
+        explanation: "La cartographie est un usage fondateur." # D
       - id: q3
         question: "Un bon graphique doit avant tout être :"
-        answers:
-          - "lisible et pertinent"
-          - "coloré et artistique"
-          - "complexe et détaillé"
-          - "interactif et animé"
-        correct: 0
-        explanation:
-          "La priorité est la lisibilité et la pertinence de l’information."
+        answers: [artistique, complexe, lisible et pertinent, animé]
+        correct: 2
+        explanation: "La lisibilité prime sur l’esthétique." # C
       - id: q4
         question:
           "Quel terme désigne la capacité d’un graphique à révéler rapidement
           une tendance ?"
         answers:
-          - "efficacité visuelle"
-          - "rapidité cognitive"
-          - "impact statistique"
-          - "compression des données"
-        correct: 0
-        explanation:
-          "L’efficacité visuelle consiste à mettre en évidence les patterns
-          immédiatement."
+          [
+            impact statistique,
+            efficacité visuelle,
+            compression,
+            rapidité cognitive,
+          ]
+        correct: 1
+        explanation: "On parle d’efficacité visuelle." # B
       - id: q5
         question:
           "Quelle est la différence majeure entre tableau et graphique ?"
         answers:
-          - "le tableau est plus esthétique"
-          - "le graphique synthétise visuellement les données"
-          - "le tableau cache les erreurs"
-          - "le graphique supprime les détails"
+          [supprime détails, cache erreurs, synthèse visuelle, esthétique]
+        correct: 2
+        explanation: "Le graphique synthétise visuellement les données." # C
+
+      - id: q6
+        question:
+          "Quel est l’un des premiers objectifs de la datavisualisation ?"
+        answers:
+          [artistique, supprimer chiffres, remplacer IA, faciliter décision]
+        correct: 3
+        explanation: "Elle aide à la prise de décision." # D
+      - id: q7
+        question: "Quel auteur est connu pour ses travaux fondateurs ?"
+        answers: [Newton, Descartes, Turing, William Playfair]
+        correct: 3
+        explanation: "Playfair a introduit graphiques en barres et courbes." # D
+      - id: q8
+        question: "Quelle dimension n’est PAS un critère de qualité ?"
+        answers: [clarté, pertinence, longueur, esthétisme]
+        correct: 2
+        explanation: "La longueur n’est pas un critère." # C
+      - id: q9
+        question: "Quel est le rôle principal de la perception visuelle ?"
+        answers:
+          [ralentir l’analyse, décorer, ajouter biais, identifier patterns]
+        correct: 3
+        explanation: "Elle permet d’identifier rapidement formes et tendances." # D
+      - id: q10
+        question: "Une visualisation efficace doit être :"
+        answers: [surchargée, abstraite, simple, trompeuse]
+        correct: 2
+        explanation: "La simplicité est essentielle." # C
+
+      - id: q11
+        question: "Quel est le lien entre datavisualisation et storytelling ?"
+        answers: [aucun, interdit, remplace graphiques, support narratif]
+        correct: 3
+        explanation: "La datavisualisation soutient le récit des données." # D
+      - id: q12
+        question:
+          "Quel graphique est le plus adapté pour montrer une proportion ?"
+        answers: [histogramme, scatter, camembert, courbe]
+        correct: 2
+        explanation: "Le camembert illustre les proportions." # C
+      - id: q13
+        question:
+          "Quel terme désigne la simplification visuelle de données complexes ?"
+        answers: [visualisation, abstraction, modélisation, agrégation]
+        correct: 3
+        explanation: "On parle d’agrégation des données." # D
+      - id: q14
+        question:
+          "Quel outil est couramment utilisé pour créer des graphiques simples ?"
+        answers: [Word, Excel, Photoshop, PowerPoint]
         correct: 1
-        explanation: "Le graphique met en avant les relations et tendances."
+        explanation: "Excel est le plus utilisé pour des graphiques basiques." # B
+      - id: q15
+        question: "Un graphique en 3D est déconseillé car :"
+        answers: [obligatoire, réduit précision, moderne, augmente lisibilité]
+        correct: 1
+        explanation: "La 3D réduit la précision visuelle." # B
+
+      - id: q16
+        question: "Quelle est une limite de la datavisualisation ?"
+        answers:
+          [
+            supprime biais,
+            inutile stats,
+            fonctionne sans données,
+            peut induire erreur,
+          ]
+        correct: 3
+        explanation: "Mal conçue, elle peut tromper." # D
+      - id: q17
+        question:
+          "Quel concept désigne la transformation des données en actions ?"
+        answers: [storytelling, big data, data-driven decision, IA]
+        correct: 2
+        explanation: "On parle de décisions guidées par la donnée." # C
+      - id: q18
+        question: "Pourquoi la couleur est-elle importante ?"
+        answers:
+          [
+            supprimer erreurs,
+            augmenter volume,
+            guide attention,
+            remplace données,
+          ]
+        correct: 2
+        explanation: "Elle attire l’œil et hiérarchise." # C
+      - id: q19
+        question: "Laquelle de ces pratiques est recommandée ?"
+        answers:
+          [
+            multiplier couleurs,
+            limiter effets,
+            supprimer légendes,
+            ajouter animations,
+          ]
+        correct: 1
+        explanation: "Limiter les effets visuels améliore la clarté." # B
+      - id: q20
+        question: "Quel est le premier réflexe avant de choisir un graphique ?"
+        answers:
+          [
+            choisir esthétique,
+            nature données,
+            utiliser camembert,
+            copier internet,
+          ]
+        correct: 1
+        explanation: "La nature des données guide le choix du graphique." # B
 
   - id: biais
     title: Les biais cognitifs et statistiques en datavisualisation
     questions:
-      - id: q6
+      - id: q21
+        question:
+          "Quel biais consiste à ne retenir que ce qui confirme nos croyances ?"
+        answers:
+          [
+            biais de confirmation,
+            biais de sélection,
+            biais d’ancrage,
+            biais de disponibilité,
+          ]
+        correct: 0
+        explanation: "Le biais de confirmation filtre les infos qui confortent
+          nos convictions." # A
+      - id: q22
         question: "Confondre corrélation et causalité est :"
         answers:
-          - "un biais fréquent"
-          - "une bonne pratique"
-          - "une preuve scientifique"
-          - "une technique de visualisation"
+          [
+            preuve scientifique,
+            biais fréquent,
+            bonne pratique,
+            technique avancée,
+          ]
+        correct: 1
+        explanation: "Confondre corrélation et causalité est un biais fréquent." # B
+      - id: q23
+        question: "Un échantillon non représentatif introduit :"
+        answers:
+          [
+            biais de sélection,
+            biais de confirmation,
+            biais d’échelle,
+            biais temporel,
+          ]
         correct: 0
-        explanation:
-          "Beaucoup de graphiques induisent en erreur en confondant corrélation
-          et causalité."
-      - id: q7
+        explanation: "Le biais de sélection provient d’un échantillon biaisé." # A
+      - id: q24
         question:
-          "Quel biais consiste à ne retenir que les données qui confirment nos
-          croyances ?"
+          "Quel biais survient lorsqu’on donne plus de poids aux infos récentes
+          ?"
         answers:
-          - "biais d’ancrage"
-          - "biais de confirmation"
-          - "biais de sélection"
-          - "biais d’échelle"
-        correct: 1
-        explanation:
-          "Le biais de confirmation filtre l’information en fonction de nos
-          attentes."
-      - id: q8
-        question: "Tronquer un axe Y dans un graphique peut :"
-        answers:
-          - "améliorer la précision"
-          - "induire une perception exagérée des écarts"
-          - "ne rien changer"
-          - "supprimer les biais"
-        correct: 1
-        explanation:
-          "Un axe tronqué peut amplifier artificiellement des différences."
-      - id: q9
+          [
+            biais d’autorité,
+            biais de confirmation,
+            biais d’ancrage,
+            biais d’actualité,
+          ]
+        correct: 3
+        explanation: "Le biais d’actualité valorise les données récentes." # D
+      - id: q25
         question:
-          "Quel biais peut résulter d’un échantillon non représentatif ?"
+          "Quel biais peut amplifier des différences en tronquant l’axe d’un
+          graphique ?"
         answers:
-          - "biais de sélection"
-          - "biais de présentation"
-          - "biais de causalité"
-          - "biais de lisibilité"
+          [
+            aucun,
+            biais de perception visuelle,
+            biais de confirmation,
+            biais de sélection,
+          ]
+        correct: 1
+        explanation: "Modifier l’échelle ou tronquer l’axe crée un biais visuel." # B
+
+      - id: q26
+        question: "Croire qu’un chiffre officiel est toujours juste relève du :"
+        answers:
+          [
+            biais d’ancrage,
+            biais de confirmation,
+            biais de disponibilité,
+            biais d’autorité,
+          ]
+        correct: 3
+        explanation: "Le biais d’autorité = accorder une confiance excessive aux
+          sources reconnues." # D
+      - id: q27
+        question:
+          "Quel biais consiste à se fier à la première information reçue ?"
+        answers:
+          [
+            biais de confirmation,
+            biais d’ancrage,
+            biais de disponibilité,
+            biais de perception,
+          ]
+        correct: 1
+        explanation: "Le biais d’ancrage donne un poids excessif à la première
+          info." # B
+      - id: q28
+        question:
+          "Quel biais fait croire qu’un événement est plus prévisible après coup
+          ?"
+        answers:
+          [
+            biais rétrospectif,
+            biais de corrélation,
+            biais de sélection,
+            biais temporel,
+          ]
         correct: 0
-        explanation: "Un échantillon biaisé ne reflète pas la réalité globale."
-      - id: q10
+        explanation: "Le biais rétrospectif donne l’illusion que c’était
+          prévisible." # A
+      - id: q29
         question:
-          "Quel est le risque d’utiliser trop de couleurs dans un graphique ?"
+          "Quand on confond la taille de l’échantillon avec sa représentativité
+          :"
         answers:
-          - "mieux distinguer les données"
-          - "brouiller la lecture"
-          - "renforcer la mémoire"
-          - "supprimer les biais"
+          [
+            aucun biais,
+            biais statistique,
+            biais cognitif,
+            biais de disponibilité,
+          ]
         correct: 1
-        explanation:
-          "Un excès de couleurs surcharge la perception et brouille le message."
+        explanation: "C’est un biais statistique : taille ≠ représentativité." # B
+      - id: q30
+        question:
+          "Quel biais survient si l’on ignore les cas non observés (ex. avions
+          non revenus) ?"
+        answers:
+          [
+            biais de confirmation,
+            biais de disponibilité,
+            biais temporel,
+            biais du survivant,
+          ]
+        correct: 3
+        explanation: "Le biais du survivant néglige ceux qui disparaissent de
+          l’échantillon." # D
+
+      - id: q31
+        question:
+          "Quel biais fait croire que deux variables liées impliquent une
+          relation causale ?"
+        answers:
+          [
+            biais de corrélation,
+            biais de sélection,
+            biais de perception,
+            biais d’autorité,
+          ]
+        correct: 0
+        explanation: "C’est la confusion corrélation/causalité." # A
+      - id: q32
+        question:
+          "Quand un graphique volontairement trompeur renforce une idée reçue,
+          on parle :"
+        answers:
+          [
+            biais visuel,
+            biais de confirmation,
+            biais de causalité,
+            biais d’ancrage,
+          ]
+        correct: 1
+        explanation: "C’est du biais de confirmation renforcé par une
+          représentation visuelle." # B
+      - id: q33
+        question:
+          "Quel biais rend une information plus crédible car elle est répétée
+          souvent ?"
+        answers:
+          [
+            biais d’actualité,
+            biais d’autorité,
+            biais d’ancrage,
+            biais de répétition,
+          ]
+        correct: 3
+        explanation: "La répétition crée une illusion de vérité." # D
+      - id: q34
+        question:
+          "Lorsqu’un graphique utilise trop de couleurs, cela introduit :"
+        answers:
+          [
+            surcharge cognitive,
+            biais esthétique,
+            biais d’ancrage,
+            biais de sélection,
+          ]
+        correct: 0
+        explanation: "Une surcharge cognitive nuit à la lisibilité." # A
+      - id: q35
+        question:
+          "Quel biais survient si l’on privilégie les données faciles à obtenir
+          ?"
+        answers:
+          [
+            biais de confirmation,
+            biais de sélection,
+            biais d’accessibilité,
+            biais rétrospectif,
+          ]
+        correct: 2
+        explanation: "On parle de biais d’accessibilité." # C
+
+      - id: q36
+        question:
+          "Quand un graphique met en avant une relation inexistante, il
+          introduit :"
+        answers:
+          [
+            biais statistique,
+            biais de confirmation,
+            biais visuel,
+            biais de causalité,
+          ]
+        correct: 3
+        explanation: "On crée un biais de causalité sans fondement." # D
+      - id: q37
+        question:
+          "Si un graphique masque volontairement certaines données, on parle :"
+        answers:
+          [
+            biais de sélection,
+            biais visuel,
+            biais de confirmation,
+            biais d’ancrage,
+          ]
+        correct: 0
+        explanation: "C’est une sélection partiale des données." # A
+      - id: q38
+        question:
+          "Quel biais survient quand on accorde plus d’importance à des données
+          simples à comprendre ?"
+        answers:
+          [
+            biais de disponibilité,
+            biais de simplicité,
+            biais de corrélation,
+            biais d’ancrage,
+          ]
+        correct: 0
+        explanation: "On privilégie ce qui est simple à interpréter : biais de
+          disponibilité." # A
+      - id: q39
+        question:
+          "Quel biais peut survenir avec une mauvaise échelle temporelle ?"
+        answers:
+          [
+            biais rétrospectif,
+            biais de sélection,
+            biais de confirmation,
+            biais temporel,
+          ]
+        correct: 3
+        explanation: "Un axe temporel mal choisi induit un biais temporel." # D
+      - id: q40
+        question:
+          "Quand on choisit uniquement les résultats positifs pour publication,
+          c’est :"
+        answers:
+          [
+            biais d’ancrage,
+            biais de perception,
+            biais de sélection,
+            biais de publication,
+          ]
+        correct: 3
+        explanation: "Le biais de publication écarte les résultats non
+          significatifs." # D
 
   - id: collecte_traitement
     title: Collecte, nettoyage et exploration des données
     questions:
-      - id: q11
+      - id: q41
         question: "Qu’appelle-t-on le nettoyage des données ?"
         answers:
-          - "ajouter des données artificielles"
-          - "corriger, uniformiser et supprimer les incohérences"
-          - "convertir toutes les données en texte"
-          - "changer les données pour obtenir les résultats attendus"
-        correct: 1
-        explanation:
-          "Nettoyer signifie préparer les données pour l’analyse fiable."
-      - id: q12
-        question:
-          "Quelle est une source courante de données pour la datavisualisation ?"
-        answers:
-          - "API et bases de données"
-          - "dessins à la main"
-          - "tableaux papier uniquement"
-          - "graphiques sans données"
+          [
+            corriger incohérences,
+            supprimer graphiques,
+            changer le sens,
+            inventer données,
+          ]
         correct: 0
-        explanation:
-          "Les API, fichiers et bases de données sont les sources principales."
-      - id: q13
+        explanation: "Le nettoyage corrige erreurs, incohérences et doublons." # A
+      - id: q42
+        question:
+          "Quelle est une source courante de données en datavisualisation ?"
+        answers:
+          [
+            dessins papier,
+            API et bases,
+            graphiques sans données,
+            tableaux manuscrits,
+          ]
+        correct: 1
+        explanation: "Les API et bases de données sont des sources classiques." # B
+      - id: q43
         question: "Que faire face à une valeur manquante ?"
         answers:
-          - "l’ignorer systématiquement"
-          - "l’imputer ou la supprimer selon le contexte"
-          - "la remplacer par zéro"
-          - "la convertir en texte"
+          [
+            la convertir en texte,
+            l’imputer ou supprimer selon contexte,
+            la remplacer par zéro uniquement,
+            l’ignorer toujours,
+          ]
         correct: 1
-        explanation:
-          "Selon le cas, on supprime ou on impute pour garder la cohérence."
-      - id: q14
+        explanation: "Selon le cas, on supprime ou impute pour garder la
+          cohérence." # B
+      - id: q44
         question:
-          "Quel outil statistique visualise la distribution d’une variable ?"
-        answers:
-          - "histogramme"
-          - "camembert"
-          - "nuage de points"
-          - "ligne"
-        correct: 0
-        explanation:
-          "L’histogramme permet de représenter la distribution d’une variable."
-      - id: q15
+          "Quel outil visualise la distribution d’une variable continue ?"
+        answers: [camembert, scatter plot, histogramme, courbe]
+        correct: 2
+        explanation: "L’histogramme montre la distribution d’une variable." # C
+      - id: q45
         question: "Lors d’une jointure de tables, quel problème peut survenir ?"
         answers:
-          - "doublons et valeurs manquantes"
-          - "graphiques trop complexes"
-          - "changements de couleurs"
-          - "erreurs de présentation"
+          [
+            erreurs de présentation,
+            changement de couleurs,
+            doublons et valeurs manquantes,
+            surreprésentation,
+          ]
+        correct: 2
+        explanation: "Une jointure mal gérée peut créer doublons ou pertes." # C
+
+      - id: q46
+        question: "Une donnée aberrante (outlier) peut :"
+        answers:
+          [
+            fausser les analyses,
+            corriger les biais,
+            améliorer la précision,
+            n’avoir aucun effet,
+          ]
         correct: 0
-        explanation:
-          "Une jointure mal gérée entraîne doublons ou pertes de données."
+        explanation: "Les valeurs aberrantes influencent fortement les moyennes." # A
+      - id: q47
+        question: "Quel graphique aide à détecter des outliers ?"
+        answers: [camembert, histogramme circulaire, diagramme de flux, boxplot]
+        correct: 3
+        explanation: "Un boxplot met en évidence les valeurs aberrantes." # D
+      - id: q48
+        question: "Que signifie la normalisation des données ?"
+        answers:
+          [
+            mettre à la même échelle,
+            supprimer des colonnes,
+            corriger les doublons,
+            traduire en texte,
+          ]
+        correct: 0
+        explanation: "La normalisation met toutes les valeurs sur une même
+          échelle." # A
+      - id: q49
+        question:
+          "Une corrélation explorée à l’aide d’un scatter plot permet de :"
+        answers:
+          [
+            remplacer la causalité,
+            supprimer les biais,
+            voir une relation entre deux variables,
+            nettoyer les données,
+          ]
+        correct: 2
+        explanation: "Un scatter plot met en évidence la corrélation entre deux
+          variables." # C
+      - id: q50
+        question:
+          "Quel indicateur statistique est utile pour résumer la tendance
+          centrale ?"
+        answers: [écart-type, variance, moyenne, étendue]
+        correct: 2
+        explanation: "La moyenne résume la tendance centrale." # C
+
+      - id: q51
+        question: "Quel indicateur mesure la dispersion des données ?"
+        answers: [médiane, variance, fréquence, corrélation]
+        correct: 1
+        explanation: "La variance mesure la dispersion autour de la moyenne." # B
+      - id: q52
+        question:
+          "Lorsqu’on réduit un grand jeu de données en un échantillon, il faut :"
+        answers:
+          [
+            choisir aléatoirement,
+            garder les premiers enregistrements,
+            supprimer les doublons,
+            n’importe quelle méthode,
+          ]
+        correct: 0
+        explanation: "Un échantillonnage aléatoire préserve la représentativité." # A
+      - id: q53
+        question:
+          "Quel format est le plus répandu pour échanger des données tabulaires
+          ?"
+        answers: [JSON, CSV, XML, PDF]
+        correct: 1
+        explanation: "Le format CSV est le plus répandu pour les tables simples." # B
+      - id: q54
+        question: "Quel processus consiste à supprimer les colonnes inutiles ?"
+        answers: [agrégation, normalisation, échantillonnage, feature selection]
+        correct: 3
+        explanation: "La feature selection réduit le nombre de variables." # D
+      - id: q55
+        question: "Quelle opération permet de détecter des valeurs manquantes ?"
+        answers: [visualisation, duplication, test de nullité, jointure]
+        correct: 2
+        explanation: "Un test de nullité identifie les valeurs absentes." # C
+
+      - id: q56
+        question:
+          "Quelle méthode est adaptée pour réduire la dimensionnalité d’un jeu
+          de données ?"
+        answers: [PCA, régression, histogramme, jointure]
+        correct: 0
+        explanation: "L’ACP (PCA) est une méthode classique de réduction de
+          dimension." # A
+      - id: q57
+        question: "Explorer des données qualitatives passe souvent par :"
+        answers:
+          [
+            nuage de points,
+            courbe de tendance,
+            histogramme,
+            diagramme en barres,
+          ]
+        correct: 3
+        explanation: "Les barres permettent de comparer des catégories." # D
+      - id: q58
+        question: "Lors d’une analyse exploratoire, quel est l’objectif ?"
+        answers:
+          [
+            créer un modèle prédictif,
+            valider une hypothèse,
+            publier un rapport,
+            détecter motifs et anomalies,
+          ]
+        correct: 3
+        explanation: "L’exploration vise à détecter tendances et anomalies." # D
+      - id: q59
+        question:
+          "Quel type de graphique est utile pour représenter une distribution
+          cumulative ?"
+        answers: [boxplot, histogramme, diagramme de Pareto, courbe cumulative]
+        correct: 3
+        explanation: "La courbe cumulative montre la distribution cumulée." # D
+      - id: q60
+        question: "Pourquoi la préparation des données est-elle essentielle ?"
+        answers:
+          [
+            pour réduire le volume,
+            car les données brutes sont rarement exploitables,
+            pour supprimer toutes les variables,
+            pour la beauté des graphiques,
+          ]
+        correct: 1
+        explanation: "Les données brutes nécessitent préparation avant analyse." # B
 
   - id: representation
     title: Représentation graphique et outils
     questions:
-      - id: q16
+      - id: q61
         question:
-          "Quel graphique est le plus adapté pour visualiser une série
+          "Quel graphique est le plus adapté pour représenter une série
           temporelle ?"
-        answers:
-          - "camembert"
-          - "diagramme en barres"
-          - "courbe (line chart)"
-          - "boxplot"
-        correct: 2
-        explanation: "La courbe permet de montrer l’évolution dans le temps."
-      - id: q17
-        question: "Le diagramme en barres est utilisé pour :"
-        answers:
-          - "comparer des catégories"
-          - "montrer une distribution continue"
-          - "afficher une proportion"
-          - "représenter des corrélations"
-        correct: 0
-        explanation:
-          "Les barres comparent efficacement des catégories distinctes."
-      - id: q18
-        question:
-          "Quel graphique montre la relation entre deux variables quantitatives
-          ?"
-        answers:
-          - "histogramme"
-          - "nuage de points (scatter plot)"
-          - "camembert"
-          - "barres empilées"
+        answers: [camembert, courbe (line chart), histogramme, boxplot]
         correct: 1
-        explanation:
-          "Le scatter plot met en évidence les corrélations potentielles."
-      - id: q19
+        explanation: "Les courbes montrent bien l’évolution dans le temps." # B
+      - id: q62
+        question: "Un diagramme en barres est utilisé pour :"
+        answers:
+          [
+            comparer des catégories,
+            représenter des proportions,
+            montrer une distribution continue,
+            illustrer une série temporelle,
+          ]
+        correct: 0
+        explanation: "Les barres permettent de comparer des catégories
+          distinctes." # A
+      - id: q63
+        question: "Un scatter plot (nuage de points) est adapté pour :"
+        answers:
+          [
+            tendances temporelles,
+            répartition géographique,
+            proportions d’un ensemble,
+            relations entre deux variables quantitatives,
+          ]
+        correct: 3
+        explanation: "Le scatter plot met en évidence les corrélations." # D
+      - id: q64
+        question: "Quel graphique représente des proportions d’ensemble ?"
+        answers: [camembert, histogramme, boxplot, courbe]
+        correct: 0
+        explanation: "Le camembert illustre la répartition en parts d’un tout." # A
+      - id: q65
+        question:
+          "Quel graphique permet de représenter la distribution d’une variable
+          par classes ?"
+        answers: [camembert, courbe, histogramme, carte]
+        correct: 2
+        explanation: "L’histogramme regroupe les données en classes de valeurs." # C
+
+      - id: q66
+        question:
+          "Quel type de graphique met en avant la hiérarchie des données ?"
+        answers: [treemap, barres empilées, courbe, scatter plot]
+        correct: 0
+        explanation: "Le treemap représente la hiérarchie via des zones
+          proportionnelles." # A
+      - id: q67
+        question:
+          "Quelle visualisation est adaptée pour représenter un réseau social ?"
+        answers: [camembert, histogramme, courbe, graphe de nœuds]
+        correct: 3
+        explanation: "Les graphes de nœuds montrent les relations entre
+          individus." # D
+      - id: q68
+        question:
+          "Quelle représentation permet de suivre un processus étape par étape ?"
+        answers: [scatter plot, histogramme, diagramme de flux, boxplot]
+        correct: 2
+        explanation: "Le diagramme de flux illustre les étapes successives." # C
+      - id: q69
+        question:
+          "Quel graphique est utile pour représenter une distribution
+          statistique et ses outliers ?"
+        answers: [camembert, histogramme, boxplot, courbe cumulative]
+        correct: 2
+        explanation: "Le boxplot montre médiane, quartiles et valeurs
+          aberrantes." # C
+      - id: q70
+        question:
+          "Quelle représentation montre la part cumulée des valeurs classées ?"
+        answers:
+          [barres horizontales, scatter plot, camembert, diagramme de Pareto]
+        correct: 3
+        explanation: "Le Pareto illustre la répartition cumulée en ordre
+          décroissant." # D
+
+      - id: q71
         question:
           "Quel outil est reconnu pour la datavisualisation interactive ?"
-        answers:
-          - "Word"
-          - "Excel"
-          - "Tableau"
-          - "PowerPoint"
-        correct: 2
-        explanation: "Tableau est spécialisé dans la visualisation interactive."
-      - id: q20
+        answers: [Word, Tableau, Excel, PowerPoint]
+        correct: 1
+        explanation: "Tableau est un logiciel de référence pour la visualisation
+          interactive." # B
+      - id: q72
+        question:
+          "Quel outil de Microsoft est le plus utilisé pour créer des graphiques
+          simples ?"
+        answers: [Excel, PowerPoint, Word, Outlook]
+        correct: 0
+        explanation: "Excel reste l’outil de base le plus utilisé." # A
+      - id: q73
+        question:
+          "Quel langage JavaScript est utilisé pour créer des visualisations
+          personnalisées sur le web ?"
+        answers: [React, Vue, Angular, D3.js]
+        correct: 3
+        explanation: "D3.js est la librairie phare pour la datavisualisation
+          web." # D
+      - id: q74
+        question:
+          "Quel outil open source basé sur Vega permet de construire des
+          visualisations déclaratives ?"
+        answers: [Matplotlib, Vega-Lite, ggplot2, Power BI]
+        correct: 1
+        explanation: "Vega-Lite facilite les visualisations déclaratives
+          interactives." # B
+      - id: q75
+        question: "Quel outil est orienté BI (Business Intelligence) ?"
+        answers: [D3.js, Power BI, Vega, Leaflet]
+        correct: 1
+        explanation: "Power BI est centré sur la BI et l’analyse décisionnelle." # B
+
+      - id: q76
         question: "Quel principe graphique améliore la lisibilité ?"
         answers:
-          - "palette cohérente"
-          - "multiplier les couleurs"
-          - "supprimer les axes"
-          - "utiliser la 3D systématiquement"
+          [
+            palette cohérente,
+            supprimer axes,
+            ajouter effets 3D,
+            multiplier couleurs,
+          ]
         correct: 0
-        explanation: "Une palette cohérente et sobre facilite la lecture."
+        explanation: "Une palette cohérente facilite la lecture." # A
+      - id: q77
+        question: "Pourquoi éviter les effets 3D inutiles ?"
+        answers:
+          [
+            parce qu’ils sont obsolètes,
+            parce qu’ils réduisent la précision,
+            parce qu’ils sont coûteux,
+            parce qu’ils sont interdits,
+          ]
+        correct: 1
+        explanation: "La 3D ajoute de la confusion et réduit la précision
+          visuelle." # B
+      - id: q78
+        question:
+          "Quelle règle recommande Edward Tufte pour concevoir des graphiques ?"
+        answers:
+          [
+            toujours utiliser la couleur,
+            maximiser le data-ink ratio,
+            privilégier la 3D,
+            supprimer la légende,
+          ]
+        correct: 1
+        explanation: "Tufte recommande de maximiser le ratio data-ink." # B
+      - id: q79
+        question: "Quelle pratique rend un graphique trompeur ?"
+        answers:
+          [
+            choisir des couleurs neutres,
+            afficher la source,
+            utiliser une échelle tronquée,
+            simplifier les axes,
+          ]
+        correct: 2
+        explanation: "Une échelle tronquée peut exagérer artificiellement des
+          écarts." # C
+      - id: q80
+        question: "Quel est le premier réflexe avant de choisir un graphique ?"
+        answers:
+          [
+            copier un exemple,
+            nature des données,
+            tendance esthétique,
+            utiliser camembert,
+          ]
+        correct: 1
+        explanation: "La nature des données conditionne le choix du graphique." # B
