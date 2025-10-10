@@ -271,3 +271,802 @@ chapters:
         correct: 0
         explanation:
           "Des binaires/outils typiques signalent une compromission de l’OS."
+  - id: chap2
+    title: Sécurisation des systèmes d’exploitation mobiles (BYOD & MDM)
+    questions:
+      - id: q21
+        question: "Que signifie l’acronyme BYOD ?"
+        answers:
+          [
+            "Bring Your Own Device",
+            "Buy Your Own Domain",
+            "Backup Your Official Data",
+            "Block Your Old Devices",
+          ]
+        correct: 0
+        explanation:
+          "BYOD = Bring Your Own Device, politique qui autorise l’usage
+          d’appareils personnels en entreprise."
+      - id: q22
+        question: "Le principal risque du BYOD est :"
+        answers:
+          [
+            "Une perte de productivité",
+            "La fuite de données sensibles",
+            "Une hausse de la consommation électrique",
+            "Un ralentissement du Wi-Fi",
+          ]
+        correct: 1
+        explanation:
+          "Le BYOD expose aux risques de fuite de données si l’appareil n’est
+          pas correctement sécurisé."
+      - id: q23
+        question:
+          "Quel est l’objectif principal d’un MDM (Mobile Device Management) ?"
+        answers:
+          [
+            "Augmenter la vitesse des appareils",
+            "Assurer la gestion centralisée et la sécurité des terminaux",
+            "Installer des applications ludiques",
+            "Améliorer la durée de vie de la batterie",
+          ]
+        correct: 1
+        explanation:
+          "Le MDM permet de gérer et sécuriser les terminaux mobiles à distance."
+      - id: q24
+        question: "Quelle mesure est courante avec un MDM ?"
+        answers:
+          [
+            "Effacement à distance",
+            "Augmentation automatique du volume sonore",
+            "Blocage des notifications",
+            "Surcadençage du processeur",
+          ]
+        correct: 0
+        explanation:
+          "Le MDM offre la possibilité d’effacer à distance les données en cas
+          de perte ou vol."
+      - id: q25
+        question: "Le 'container applicatif' dans le BYOD sert à :"
+        answers:
+          [
+            "Isoler les données professionnelles",
+            "Doubler la vitesse du téléphone",
+            "Partager les photos personnelles",
+            "Optimiser le GPS",
+          ]
+        correct: 0
+        explanation:
+          "Le container sépare les données pro/perso pour limiter les risques."
+      - id: q26
+        question: "Une entreprise qui ne met pas en place de MDM risque :"
+        answers:
+          [
+            "Une consommation excessive de SMS",
+            "Une perte de contrôle sur les données professionnelles",
+            "Une baisse des performances graphiques",
+            "Un blocage du Bluetooth",
+          ]
+        correct: 1
+        explanation:
+          "Sans MDM, l’entreprise ne peut ni contrôler ni protéger les données
+          sensibles sur les mobiles."
+      - id: q27
+        question: "Quel standard de sécurité est souvent intégré aux MDM ?"
+        answers: ["OWASP MASVS", "ISO 27001", "PCI DSS", "COBIT"]
+        correct: 1
+        explanation:
+          "Les solutions MDM s’appuient sur ISO 27001 pour le management de la
+          sécurité."
+      - id: q28
+        question: "Dans une politique BYOD, la charte informatique doit :"
+        answers:
+          [
+            "Autoriser le piratage si nécessaire",
+            "Préciser les usages et les responsabilités",
+            "Donner le mot de passe admin aux employés",
+            "Limiter les appels téléphoniques",
+          ]
+        correct: 1
+        explanation:
+          "La charte définit les règles d’usage et les responsabilités liées au
+          BYOD."
+      - id: q29
+        question:
+          "Le chiffrement complet du disque (Full Disk Encryption) est :"
+        answers:
+          [
+            "Obligatoire pour protéger les données en cas de vol",
+            "Une option ludique",
+            "Sans impact sur la sécurité",
+            "Réservé aux ordinateurs de bureau",
+          ]
+        correct: 0
+        explanation:
+          "Le FDE protège les données si l’appareil est perdu ou volé."
+      - id: q30
+        question:
+          "Quel protocole est privilégié pour sécuriser les communications des
+          mobiles ?"
+        answers: ["HTTP", "FTP", "TLS", "Telnet"]
+        correct: 2
+        explanation: "TLS est la norme pour chiffrer les communications réseau."
+      - id: q31
+        question: "L’authentification multi-facteurs (MFA) sur mobile permet :"
+        answers:
+          [
+            "D’accélérer la navigation",
+            "De renforcer la sécurité en combinant plusieurs facteurs",
+            "De supprimer le besoin de mot de passe",
+            "De désactiver le chiffrement",
+          ]
+        correct: 1
+        explanation:
+          "MFA combine mot de passe, biométrie, ou OTP pour renforcer la
+          sécurité."
+      - id: q32
+        question:
+          "Une faille dans le système d’exploitation mobile peut être exploitée
+          par :"
+        answers:
+          [
+            "Un jailbreak ou un root",
+            "Un simple redémarrage",
+            "Un changement de fond d’écran",
+            "Une mise à jour de batterie",
+          ]
+        correct: 0
+        explanation:
+          "Le jailbreak/root exploite des failles pour élever les privilèges."
+      - id: q33
+        question:
+          "Les mises à jour régulières d’OS mobiles sont importantes car :"
+        answers:
+          [
+            "Elles ajoutent des fonds d’écran",
+            "Elles corrigent des vulnérabilités",
+            "Elles suppriment les SMS",
+            "Elles augmentent la taille de l’écran",
+          ]
+        correct: 1
+        explanation:
+          "Les correctifs corrigent des vulnérabilités exploitées activement."
+      - id: q34
+        question: "L’utilisation d’un 'store' d’applications officiel limite :"
+        answers:
+          [
+            "Les risques liés aux applications malveillantes",
+            "La vitesse d’installation",
+            "La durée de vie de la batterie",
+            "Les frais de roaming",
+          ]
+        correct: 0
+        explanation:
+          "Les stores officiels filtrent les applis malveillantes, même si le
+          risque n’est pas nul."
+      - id: q35
+        question: "Les VPN sont utilisés pour :"
+        answers:
+          [
+            "Masquer les contacts",
+            "Sécuriser les communications sur réseaux non fiables",
+            "Doubler la capacité de stockage",
+            "Augmenter le nombre d’applications installables",
+          ]
+        correct: 1
+        explanation:
+          "Un VPN chiffre les communications et sécurise l’accès distant."
+      - id: q36
+        question: "Le 'remote wipe' permet :"
+        answers:
+          [
+            "De bloquer une caméra",
+            "D’effacer les données à distance",
+            "D’augmenter la luminosité",
+            "De désactiver le Bluetooth",
+          ]
+        correct: 1
+        explanation:
+          "Remote wipe supprime les données sensibles en cas de vol ou perte."
+      - id: q37
+        question: "Quel est un exemple de contrôle d’accès fort ?"
+        answers:
+          [
+            "Mot de passe simple",
+            "Empreinte digitale + mot de passe",
+            "Code PIN '0000'",
+            "Pas de verrouillage",
+          ]
+        correct: 1
+        explanation: "Combiner biométrie et secret renforce la sécurité."
+      - id: q38
+        question: "Le principal inconvénient du BYOD pour l’employé est :"
+        answers:
+          [
+            "Un risque d’intrusion dans la sphère privée",
+            "Une hausse du salaire",
+            "Une diminution du poids du téléphone",
+            "Une garantie prolongée",
+          ]
+        correct: 0
+        explanation:
+          "Les outils de MDM peuvent surveiller ou restreindre l’usage de
+          l’appareil personnel."
+      - id: q39
+        question: "La séparation pro/perso via un container vise :"
+        answers:
+          [
+            "À cloisonner les données",
+            "À augmenter la RAM",
+            "À libérer le CPU",
+            "À réduire la taille de l’écran",
+          ]
+        correct: 0
+        explanation: "Le cloisonnement réduit les risques de fuite de données."
+      - id: q40
+        question: "Un MDM peut restreindre :"
+        answers:
+          [
+            "Les applications installées",
+            "La taille de l’écran",
+            "Le nombre de SMS envoyés",
+            "La vitesse du processeur",
+          ]
+        correct: 0
+        explanation:
+          "Le MDM contrôle et restreint l’installation d’applications non
+          approuvées."
+  - id: chap3
+    title: Sécurisation des applications mobiles
+    questions:
+      - id: q41
+        question:
+          "Quel est l’un des principaux risques des applications mobiles ?"
+        answers:
+          [
+            "La fuite de données sensibles",
+            "Une baisse de luminosité",
+            "Une perte de batterie",
+            "Une baisse de volume sonore",
+          ]
+        correct: 0
+        explanation:
+          "Les applis mal sécurisées peuvent exposer des données personnelles ou
+          professionnelles."
+
+      - id: q42
+        question: "Que signifie l’acronyme OWASP ?"
+        answers:
+          [
+            "Open Web Application Security Project",
+            "Official Wireless App Security Protocol",
+            "Open Worldwide App Store Platform",
+            "Over Web And Secure Programs",
+          ]
+        correct: 0
+        explanation:
+          "L’OWASP est une communauté de référence en sécurité applicative."
+
+      - id: q43
+        question: "Le top 10 OWASP Mobile concerne :"
+        answers:
+          [
+            "Les vulnérabilités des applications mobiles",
+            "La vitesse des processeurs",
+            "La compatibilité des batteries",
+            "La connectivité 5G",
+          ]
+        correct: 0
+        explanation:
+          "Le Mobile Top 10 de l’OWASP liste les vulnérabilités critiques dans
+          les applis mobiles."
+
+      - id: q44
+        question: "Un exemple de mauvaise gestion des données sensibles est :"
+        answers:
+          [
+            "Stocker les mots de passe en clair",
+            "Utiliser TLS",
+            "Chiffrer la base locale",
+            "Employer une authentification forte",
+          ]
+        correct: 0
+        explanation:
+          "Stocker des secrets en clair dans l’appli ou sur l’appareil est une
+          erreur critique."
+
+      - id: q45
+        question: "L’obfuscation du code d’une application sert à :"
+        answers:
+          [
+            "Rendre la rétro-ingénierie plus difficile",
+            "Accélérer le CPU",
+            "Réduire la taille de l’écran",
+            "Améliorer le Wi-Fi",
+          ]
+        correct: 0
+        explanation:
+          "L’obfuscation complique l’analyse du code par un attaquant."
+
+      - id: q46
+        question:
+          "Quel risque est lié aux API utilisées par une application mobile ?"
+        answers:
+          [
+            "Exposition de données si l’API n’est pas sécurisée",
+            "Baisse de la batterie",
+            "Perte du signal GPS",
+            "Blocage de l’écran tactile",
+          ]
+        correct: 0
+        explanation:
+          "Des API mal sécurisées peuvent permettre des attaques par injection
+          ou vol de données."
+
+      - id: q47
+        question: "Le 'man-in-the-middle' (MITM) consiste à :"
+        answers:
+          [
+            "Intercepter et modifier des communications",
+            "Installer une mise à jour",
+            "Changer le fond d’écran",
+            "Effacer les SMS",
+          ]
+        correct: 0
+        explanation:
+          "MITM intercepte les échanges entre le mobile et le serveur."
+
+      - id: q48
+        question: "Quel mécanisme réduit les risques de MITM ?"
+        answers:
+          [
+            "Le certificate pinning",
+            "L’USB Debugging",
+            "Le Bluetooth",
+            "Un écran plus lumineux",
+          ]
+        correct: 0
+        explanation:
+          "Le certificate pinning vérifie que le certificat attendu est bien
+          celui du serveur légitime."
+
+      - id: q49
+        question:
+          "Le MASVS (Mobile Application Security Verification Standard) est :"
+        answers:
+          [
+            "Un référentiel de bonnes pratiques OWASP",
+            "Un antivirus mobile",
+            "Un système d’exploitation",
+            "Un protocole réseau",
+          ]
+        correct: 0
+        explanation:
+          "Le MASVS fournit des critères de sécurité pour auditer des applis
+          mobiles."
+
+      - id: q50
+        question: "L’accès excessif aux permissions d’un smartphone est :"
+        answers:
+          [
+            "Un risque de sécurité et de confidentialité",
+            "Utile pour économiser la batterie",
+            "Obligatoire pour les applis fiables",
+            "Nécessaire pour augmenter le volume",
+          ]
+        correct: 0
+        explanation:
+          "Demander plus de permissions que nécessaire expose à des abus de
+          données."
+
+      - id: q51
+        question: "Le 'reverse engineering' d’une appli consiste à :"
+        answers:
+          [
+            "Analyser le code et son fonctionnement",
+            "Changer l’écran tactile",
+            "Modifier la batterie",
+            "Bloquer le Wi-Fi",
+          ]
+        correct: 0
+        explanation:
+          "Le reverse engineering permet à un attaquant de comprendre et
+          exploiter l’application."
+
+      - id: q52
+        question: "Quel type de vulnérabilité est fréquent sur mobile ?"
+        answers:
+          [
+            "Injection SQL dans une base locale",
+            "Erreur de luminosité",
+            "Surcadençage du CPU",
+            "Défaut de chargeur secteur",
+          ]
+        correct: 0
+        explanation:
+          "Les applis peuvent mal valider les entrées et être vulnérables aux
+          injections."
+
+      - id: q53
+        question: "L’utilisation de librairies tierces non vérifiées :"
+        answers:
+          [
+            "Peut introduire des vulnérabilités",
+            "Augmente la durée de vie de la batterie",
+            "Réduit le poids de l’appareil",
+            "Améliore le Bluetooth",
+          ]
+        correct: 0
+        explanation:
+          "Une dépendance non maintenue ou compromise est une source majeure de
+          failles."
+
+      - id: q54
+        question:
+          "Les tests de sécurité d’une application mobile doivent inclure :"
+        answers:
+          [
+            "Des tests d’intrusion (pentests)",
+            "Un contrôle de luminosité",
+            "La vitesse de chargement",
+            "La taille des icônes",
+          ]
+        correct: 0
+        explanation:
+          "Les pentests détectent les vulnérabilités exploitables par un
+          attaquant."
+
+      - id: q55
+        question: "La protection des données locales doit reposer sur :"
+        answers:
+          [
+            "Un chiffrement robuste",
+            "Un mot de passe faible",
+            "Un stockage en clair",
+            "Un partage libre",
+          ]
+        correct: 0
+        explanation:
+          "Les données locales sensibles doivent toujours être chiffrées."
+
+      - id: q56
+        question: "Le Secure Coding consiste à :"
+        answers:
+          [
+            "Respecter des règles de développement pour éviter les failles",
+            "Utiliser un écran sécurisé",
+            "Doubler la batterie",
+            "Installer un VPN personnel",
+          ]
+        correct: 0
+        explanation:
+          "Le code doit être écrit selon des bonnes pratiques de sécurité."
+
+      - id: q57
+        question: "Les tests automatisés de sécurité (SAST/DAST) permettent :"
+        answers:
+          [
+            "D’identifier des vulnérabilités dans le code et le comportement",
+            "D’augmenter la vitesse du CPU",
+            "D’améliorer la luminosité",
+            "De réduire la taille de l’écran",
+          ]
+        correct: 0
+        explanation:
+          "SAST et DAST complètent les audits manuels en détectant des failles
+          connues."
+
+      - id: q58
+        question:
+          "L’authentification biométrique dans une appli mobile doit être :"
+        answers:
+          [
+            "Combinée à d’autres mécanismes",
+            "Utilisée seule pour tout",
+            "Ignorée car trop lente",
+            "Remplacée par un code PIN '1234'",
+          ]
+        correct: 0
+        explanation: "La biométrie doit être renforcée par d’autres facteurs."
+
+      - id: q59
+        question:
+          "Une application qui envoie des données sans chiffrement est
+          vulnérable à :"
+        answers:
+          [
+            "L’interception",
+            "Un bug graphique",
+            "Une surcharge batterie",
+            "Une baisse de luminosité",
+          ]
+        correct: 0
+        explanation:
+          "Sans chiffrement, les données peuvent être interceptées facilement."
+
+      - id: q60
+        question: "La validation côté serveur est essentielle car :"
+        answers:
+          [
+            "Les contrôles côté client peuvent être contournés",
+            "Elle accélère le CPU",
+            "Elle supprime les logs",
+            "Elle désactive le Wi-Fi",
+          ]
+        correct: 0
+        explanation:
+          "Un attaquant peut modifier le client, seule la validation serveur est
+          fiable."
+  - id: chap4
+    title: Gouvernance et bonnes pratiques
+    questions:
+      - id: q61
+        question:
+          "Pourquoi une politique de sécurité mobile est-elle nécessaire ?"
+        answers:
+          [
+            "Pour cadrer les usages et réduire les risques",
+            "Pour augmenter la luminosité",
+            "Pour améliorer la vitesse du processeur",
+            "Pour économiser la batterie",
+          ]
+        correct: 0
+        explanation:
+          "Une politique de sécurité définit les règles et responsabilités pour
+          limiter les risques."
+
+      - id: q62
+        question: "La sensibilisation des utilisateurs vise à :"
+        answers:
+          [
+            "Éduquer sur les bonnes pratiques de sécurité",
+            "Réparer le Wi-Fi",
+            "Changer la batterie",
+            "Mettre à jour le fond d’écran",
+          ]
+        correct: 0
+        explanation:
+          "Former les utilisateurs est essentiel pour réduire les comportements
+          à risque."
+
+      - id: q63
+        question:
+          "Un exemple de bonne pratique pour sécuriser un appareil mobile est :"
+        answers:
+          [
+            "Mettre à jour régulièrement l’OS",
+            "Désactiver les mises à jour",
+            "Installer des applis non vérifiées",
+            "Partager son mot de passe",
+          ]
+        correct: 0
+        explanation: "Les mises à jour corrigent les vulnérabilités connues."
+
+      - id: q64
+        question: "La norme ISO 27001 concerne :"
+        answers:
+          [
+            "Le management de la sécurité de l’information",
+            "La vitesse des réseaux",
+            "La taille des écrans",
+            "La durée de vie des batteries",
+          ]
+        correct: 0
+        explanation: "ISO 27001 définit un cadre de management de la sécurité."
+
+      - id: q65
+        question: "Quel est le rôle du RSSI ?"
+        answers:
+          [
+            "Piloter la sécurité de l’information",
+            "Réparer les smartphones",
+            "Installer des applications",
+            "Optimiser la batterie",
+          ]
+        correct: 0
+        explanation:
+          "Le Responsable de la Sécurité des Systèmes d’Information définit et
+          pilote la stratégie sécurité."
+
+      - id: q66
+        question: "L’analyse de risques sert à :"
+        answers:
+          [
+            "Identifier menaces, vulnérabilités et impacts",
+            "Changer le mot de passe Wi-Fi",
+            "Mesurer la batterie",
+            "Optimiser l’écran tactile",
+          ]
+        correct: 0
+        explanation:
+          "L’analyse de risques est le socle pour mettre en place des mesures
+          adaptées."
+
+      - id: q67
+        question: "Une charte d’usage des mobiles doit :"
+        answers:
+          [
+            "Définir les règles d’utilisation et les sanctions",
+            "Changer la luminosité",
+            "Interdire la recharge",
+            "Bloquer la caméra",
+          ]
+        correct: 0
+        explanation:
+          "La charte encadre les comportements attendus et les responsabilités."
+
+      - id: q68
+        question: "Le RGPD impose notamment :"
+        answers:
+          [
+            "La protection des données personnelles",
+            "La mise à jour des écrans",
+            "La limitation du Bluetooth",
+            "La suppression des SMS",
+          ]
+        correct: 0
+        explanation:
+          "Le RGPD encadre la collecte et le traitement des données
+          personnelles."
+
+      - id: q69
+        question: "La classification des données permet :"
+        answers:
+          [
+            "D’adapter les mesures de sécurité selon la sensibilité",
+            "D’accélérer le réseau",
+            "D’économiser la batterie",
+            "D’améliorer la qualité des photos",
+          ]
+        correct: 0
+        explanation: "Les données sensibles nécessitent des mesures renforcées."
+
+      - id: q70
+        question: "Le principe du moindre privilège consiste à :"
+        answers:
+          [
+            "Limiter les droits aux besoins stricts",
+            "Donner tous les droits par défaut",
+            "Supprimer les mises à jour",
+            "Partager tous les accès",
+          ]
+        correct: 0
+        explanation:
+          "Chaque utilisateur ou appli doit avoir uniquement les droits
+          nécessaires."
+
+      - id: q71
+        question: "Quel est l’objectif d’un audit de sécurité mobile ?"
+        answers:
+          [
+            "Vérifier la conformité et détecter les failles",
+            "Améliorer la luminosité",
+            "Changer la batterie",
+            "Réduire la taille des applis",
+          ]
+        correct: 0
+        explanation:
+          "Les audits permettent de mesurer l’efficacité des mesures en place."
+
+      - id: q72
+        question: "La gestion des incidents de sécurité comprend :"
+        answers:
+          [
+            "Détection, réponse, communication et retour d’expérience",
+            "Changer le mot de passe Wi-Fi",
+            "Mesurer la batterie",
+            "Réinitialiser l’écran tactile",
+          ]
+        correct: 0
+        explanation:
+          "Un processus structuré de gestion d’incidents limite les impacts et
+          améliore la résilience."
+
+      - id: q73
+        question: "Une bonne pratique pour les mots de passe mobiles est :"
+        answers:
+          [
+            "Utiliser un gestionnaire de mots de passe",
+            "Employer '123456'",
+            "Ne jamais les changer",
+            "Les noter sur l’écran",
+          ]
+        correct: 0
+        explanation:
+          "Un gestionnaire permet des mots de passe forts et uniques."
+
+      - id: q74
+        question: "Le BYOD doit toujours être encadré par :"
+        answers:
+          [
+            "Une politique claire et un MDM",
+            "Une interdiction de chargeur",
+            "Une suppression des photos",
+            "Un blocage du GPS",
+          ]
+        correct: 0
+        explanation:
+          "Sans politique ni MDM, le BYOD expose l’entreprise à de forts
+          risques."
+
+      - id: q75
+        question: "Les sauvegardes régulières servent à :"
+        answers:
+          [
+            "Récupérer les données après incident",
+            "Éviter les mises à jour",
+            "Augmenter le stockage",
+            "Changer la luminosité",
+          ]
+        correct: 0
+        explanation:
+          "Les sauvegardes sont essentielles en cas de perte, vol ou ransomware."
+
+      - id: q76
+        question: "Une formation à la sécurité mobile doit inclure :"
+        answers:
+          [
+            "Les risques, les menaces et les réflexes à adopter",
+            "Le changement de batterie",
+            "L’utilisation du Bluetooth",
+            "L’installation de fonds d’écran",
+          ]
+        correct: 0
+        explanation:
+          "La sensibilisation des utilisateurs est un maillon essentiel de la
+          défense."
+
+      - id: q77
+        question: "La gouvernance de la sécurité implique :"
+        answers:
+          [
+            "Des responsabilités claires, des processus et un suivi",
+            "Un changement d’écran tactile",
+            "Une amélioration des caméras",
+            "Une extension du stockage",
+          ]
+        correct: 0
+        explanation:
+          "Une bonne gouvernance organise la sécurité dans l’entreprise."
+
+      - id: q78
+        question: "Une politique de mise à jour doit :"
+        answers:
+          [
+            "Imposer l’application rapide des correctifs",
+            "Bloquer les notifications",
+            "Limiter le Wi-Fi",
+            "Réduire la taille des applis",
+          ]
+        correct: 0
+        explanation:
+          "Les patchs doivent être appliqués sans délai pour limiter les failles
+          exploitées."
+
+      - id: q79
+        question: "Un indicateur clé de la sécurité mobile est :"
+        answers:
+          [
+            "Le nombre d’incidents détectés et traités",
+            "La taille de l’écran",
+            "La capacité de la batterie",
+            "Le nombre d’applications installées",
+          ]
+        correct: 0
+        explanation:
+          "Les indicateurs permettent de mesurer l’efficacité du dispositif
+          sécurité."
+
+      - id: q80
+        question: "Le 'Security by Design' signifie :"
+        answers:
+          [
+            "Intégrer la sécurité dès la conception",
+            "Ajouter la sécurité à la fin",
+            "Ignorer la sécurité",
+            "Augmenter la RAM",
+          ]
+        correct: 0
+        explanation:
+          "La sécurité doit être prise en compte dès la conception des applis et
+          des systèmes."
