@@ -40,7 +40,7 @@ chapters:
       - id: q6
         question: "Quel protocole est utilisé pour transférer des fichiers ?"
         answers: [FTP, DNS, HTTP, SMTP]
-        correct: 1
+        correct: 0
         explanation: "FTP est destiné au transfert de fichiers."
       - id: q7
         question: "Quelle couche du modèle OSI correspond aux adresses MAC ?"
@@ -77,7 +77,7 @@ chapters:
       - id: q12
         question: "Quel protocole est utilisé pour récupérer des emails ?"
         answers: [POP3/IMAP, FTP, DNS, ICMP]
-        correct: 1
+        correct: 0
         explanation: "POP3 et IMAP servent à la réception des emails."
       - id: q13
         question: "Que signifie LAN ?"
@@ -130,12 +130,12 @@ chapters:
             Application Remote Port,
             Automatic Routing Protocol,
           ]
-        correct: 2
+        correct: 0
         explanation: "ARP résout les adresses IP en adresses MAC."
       - id: q20
         question: "Quel protocole est utilisé pour la supervision réseau ?"
         answers: [SNMP, SMTP, FTP, ICMP]
-        correct: 3
+        correct: 0
         explanation: "SNMP sert à la gestion et supervision réseau."
 
   - id: advanced
@@ -150,7 +150,7 @@ chapters:
       - id: q22
         question: "Quelle commande affiche les ports ouverts sur une machine ?"
         answers: [netstat, ls, ping, traceroute]
-        correct: 1
+        correct: 0
         explanation: "`netstat -tulnp` montre les ports ouverts."
       - id: q23
         question:
@@ -164,7 +164,7 @@ chapters:
           "Quel protocole est utilisé pour transférer des fichiers de manière
           sécurisée ?"
         answers: [SFTP, FTP, Telnet, SNMP]
-        correct: 1
+        correct: 0
         explanation: "SFTP sécurise le transfert de fichiers."
       - id: q25
         question:
@@ -175,19 +175,19 @@ chapters:
       - id: q26
         question: "Quel protocole permet de relayer des emails entre serveurs ?"
         answers: [SMTP, POP3, IMAP, FTP]
-        correct: 1
+        correct: 0
         explanation: "SMTP envoie les emails entre serveurs."
       - id: q27
         question:
           "Quelle commande affiche l’adresse IP d’une machine sous Linux ?"
         answers: [ifconfig/ip, ping, traceroute, ssh]
-        correct: 2
+        correct: 0
         explanation: "`ifconfig` ou `ip addr` donnent l’adresse IP."
       - id: q28
         question:
           "Quelle commande trace le chemin suivi par les paquets réseau ?"
         answers: [traceroute, ping, route, dig]
-        correct: 3
+        correct: 0
         explanation: "`traceroute` affiche le chemin d’un paquet."
       - id: q29
         question:
@@ -198,19 +198,19 @@ chapters:
       - id: q30
         question: "Quel protocole sécurise les sessions web (HTTPS) ?"
         answers: [TLS/SSL, FTP, SNMP, ARP]
-        correct: 1
+        correct: 0
         explanation: "TLS/SSL sécurise HTTPS."
       - id: q31
         question:
           "Quel protocole de routage est basé sur le vecteur de distance ?"
         answers: [RIP, OSPF, BGP, EIGRP]
-        correct: 2
+        correct: 0
         explanation: "RIP utilise le vecteur de distance."
       - id: q32
         question:
           "Quel protocole est utilisé pour interroger les serveurs DNS ?"
         answers: [DNS, FTP, HTTP, SMTP]
-        correct: 3
+        correct: 0
         explanation: "Le protocole DNS interroge les serveurs de noms."
       - id: q33
         question: "Que signifie VLAN ?"
@@ -220,19 +220,19 @@ chapters:
       - id: q34
         question: "Quelle commande teste l’ouverture d’un port distant ?"
         answers: [telnet/nc, ping, traceroute, ssh]
-        correct: 1
+        correct: 0
         explanation: "`telnet` ou `nc` testent un port distant."
       - id: q35
         question:
           "Quel protocole permet la communication entre routeurs sur Internet ?"
         answers: [BGP, RIP, OSPF, ICMP]
-        correct: 2
+        correct: 0
         explanation: "BGP est le protocole de routage externe."
       - id: q36
         question:
           "Quel protocole chiffre les échanges entre navigateur et serveur ?"
         answers: [TLS, FTP, SMTP, ARP]
-        correct: 3
+        correct: 0
         explanation: "TLS sécurise les communications."
       - id: q37
         question: "Quelle technologie permet de créer un réseau privé virtuel ?"
@@ -243,18 +243,18 @@ chapters:
         question:
           "Quelle commande affiche les connexions réseau en temps réel ?"
         answers: [iftop, ps, ls, df]
-        correct: 1
+        correct: 0
         explanation: "`iftop` affiche les connexions en temps réel."
       - id: q39
         question:
           "Quel protocole est utilisé pour la résolution d’adresses MAC à partir
           d’IP ?"
         answers: [ARP, DNS, DHCP, SNMP]
-        correct: 2
+        correct: 0
         explanation: "ARP résout IP → MAC."
       - id: q40
         question:
           "Quel protocole est utilisé pour gérer les équipements réseau ?"
         answers: [SNMP, FTP, SMTP, HTTP]
-        correct: 3
+        correct: 0
         explanation: "SNMP est utilisé pour l’administration réseau."

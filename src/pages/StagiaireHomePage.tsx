@@ -4,7 +4,7 @@ import Layout from "../layout/Layout";
 import ButtonPrimary from "../components/ButtonPrimary";
 import { useQcmConfigStore } from "../store/qcmConfigStore";
 import { fetchQcmFile } from "../utils/fetchQcmFile";
-import { selectQuestionsBySeed } from "../utils/selectQuestionsBySeed";
+import { selectAndShuffleQuestions } from "../utils/selectQuestionsBySeed";
 import { useQcmProgressStore } from "../store/qcmProgressStore";
 import type { QcmQuestion } from "../types/qcmFile";
 import { sleep } from "../utils/sleep";
@@ -43,7 +43,7 @@ const StagiaireHomePage: React.FC = () => {
         );
         const chapterQuestions = chapterObj?.questions || [];
 
-        selectedQuestions = selectQuestionsBySeed(
+        selectedQuestions = selectAndShuffleQuestions(
           chapterQuestions,
           totalQuestions,
           seed,

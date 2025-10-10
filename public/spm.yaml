@@ -1,0 +1,273 @@
+title: QCM Sécurité mobile — synthèse ORSYS (SPM)
+chapters:
+  - id: terminaux
+    title: Les terminaux (OS mobiles, sandbox, navigateur, USB)
+    questions:
+      - id: q1
+        question:
+          "Quel est l’objectif principal de la sandbox applicative sur mobile ?"
+        answers:
+          [
+            isoler les applications du système et entre elles,
+            accélérer le CPU,
+            économiser la batterie,
+            améliorer l’ergonomie,
+          ]
+        correct: 0
+        explanation:
+          "La sandbox limite la portée d’une compromission et cloisonne
+          données/permissions."
+
+      - id: q2
+        question: "Sur iOS, la signature du code est :"
+        answers:
+          [
+            obligatoire pour exécuter une app,
+            optionnelle en développement,
+            réservée aux apps payantes,
+            un remplaçant des tests,
+          ]
+        correct: 0
+        explanation:
+          "iOS n’exécute que du code signé/provisionné, contrôlé par la chaîne
+          de confiance."
+
+      - id: q3
+        question:
+          "Quel composant applique des politiques de sécurité au niveau noyau
+          sur Android ?"
+        answers: [SELinux (mode enforcing), AppArmor, Gatekeeper, Keystore]
+        correct: 0
+        explanation:
+          "SELinux, en mode enforcing, restreint finement ce que chaque
+          processus peut faire."
+
+      - id: q4
+        question:
+          "À partir d’Android 6+, les permissions sensibles sont principalement
+          :"
+        answers:
+          [
+            accordées à l’installation,
+            accordées au runtime par l’utilisateur,
+            non révocables,
+            gérées par l’opérateur mobile,
+          ]
+        correct: 1
+        explanation:
+          "Les permissions dangereuses se demandent au moment de l’usage et sont
+          révocables."
+
+      - id: q5
+        question: "À quoi sert App Transport Security (ATS) sur iOS ?"
+        answers:
+          [
+            forcer l’usage de TLS par défaut,
+            chiffrer le stockage local,
+            isoler les processus,
+            empêcher le jailbreak,
+          ]
+        correct: 0
+        explanation:
+          "ATS impose des connexions réseau sûres (TLS) sauf exemptions
+          explicites."
+
+      - id: q6
+        question: "Le « Keychain » iOS est principalement :"
+        answers:
+          [
+            un coffre-fort pour secrets/identifiants,
+            un module réseau,
+            une sandbox graphique,
+            un DRM,
+          ]
+        correct: 0
+        explanation:
+          "Keychain stocke de façon sécurisée clés, tokens et mots de passe."
+
+      - id: q7
+        question: "Activer le débogage USB sur un terminal peut permettre :"
+        answers:
+          [
+            l’extraction de journaux/données dev,
+            l’écriture du bootloader par défaut,
+            l’interception TLS automatique,
+            un root instantané,
+          ]
+        correct: 0
+        explanation:
+          "Le debug USB accroît la surface d’attaque (logs/ADB) et doit être
+          maîtrisé."
+
+      - id: q8
+        question:
+          "Laquelle caractérise Android par rapport à iOS pour l’installation
+          d’apps ?"
+        answers:
+          [
+            autorise le sideloading par l’utilisateur,
+            interdit les stores tiers,
+            exige un compte développeur Apple,
+            n’autorise que le store d’entreprise,
+          ]
+        correct: 0
+        explanation:
+          "Android permet l’installation hors store (avec réglages), iOS la
+          restreint fortement."
+
+      - id: q9
+        question:
+          "Quel mécanisme protège contre l’exécution de charge utile en mémoire
+          non prévue ?"
+        answers: [ASLR/DEP, Garbage collector, Compilation de shaders, NFC]
+        correct: 0
+        explanation:
+          "ASLR + DEP rendent l’exploitation mémoire nettement plus difficile."
+
+      - id: q10
+        question:
+          "La vérification d’amorçage (Verified Boot/AVB) sur Android vise à :"
+        answers:
+          [
+            garantir l’intégrité de la chaîne de démarrage,
+            chiffrer les données utilisateur,
+            activer la biométrie,
+            accélérer l’installation des APK,
+          ]
+        correct: 0
+        explanation:
+          "Le système refuse de démarrer si l’image n’est pas intègre/signée."
+
+      - id: q11
+        question: "Un risque typique d’une WebView mal configurée est :"
+        answers:
+          [
+            injection via JavaScript bridge/XSS,
+            hausse de consommation batterie uniquement,
+            perte du GPS,
+            gel d’écran,
+          ]
+        correct: 0
+        explanation:
+          "Une WebView exposée peut permettre exécution JS arbitraire ou accès
+          natif via ponts mal filtrés."
+
+      - id: q12
+        question: "Sur iOS, un « entitlement » sert à :"
+        answers:
+          [
+            déclarer des privilèges signés spécifiques,
+            gérer l’économie d’énergie,
+            optimiser l’ASO,
+            chiffrer la base locale,
+          ]
+        correct: 0
+        explanation:
+          "Les entitlements ouvrent des capacités système (ex. accès iCloud)
+          contrôlées par signature."
+
+      - id: q13
+        question:
+          "En environnement public non maîtrisé, le canal le plus risqué est
+          souvent :"
+        answers: [Wi-Fi ouvert, Bluetooth Low Energy, LTE/5G, NFC passif]
+        correct: 0
+        explanation:
+          "Les Wi-Fi ouverts exposent aux attaques de type MITM/ARP spoofing et
+          captation."
+
+      - id: q14
+        question: "À propos des navigateurs mobiles, l’assertion correcte est :"
+        answers:
+          [
+            ils s’exécutent en sandbox limitant l’accès au système,
+            ils ont un accès root par défaut,
+            ils exécutent les apps natives,
+            ils désactivent HTTPS,
+          ]
+        correct: 0
+        explanation:
+          "Le navigateur isole l’exécution et restreint l’accès au système."
+
+      - id: q15
+        question: "La protection « Data Execution Prevention » (DEP) :"
+        answers:
+          [
+            empêche d’exécuter du code en pages non-exécutables,
+            chiffre les données au repos,
+            supprime les logs système,
+            bloque le débogage USB,
+          ]
+        correct: 0
+        explanation:
+          "DEP rend non exécutables les pages de données, freinant les
+          shellcodes."
+
+      - id: q16
+        question: "Où stocker de préférence une clé symétrique sur Android ?"
+        answers:
+          [
+            Android Keystore,
+            SharedPreferences en clair,
+            un fichier assets,
+            le presse-papiers,
+          ]
+        correct: 0
+        explanation:
+          "Le Keystore protège les clés (souvent adossé au matériel/TEE)."
+
+      - id: q17
+        question: "En entreprise, activer le débogage USB implique :"
+        answers:
+          [
+            une surface d’attaque accrue et des exigences MDM renforcées,
+            l’annulation du chiffrement disque,
+            la désactivation du certificate pinning,
+            la suppression des profils MDM,
+          ]
+        correct: 0
+        explanation:
+          "Souvent interdit par politique ; sinon, journalisation/contrôles
+          additionnels."
+
+      - id: q18
+        question: "La « sandbox d’application » désigne :"
+        answers:
+          [
+            un cloisonnement des données/permissions par app,
+            le chiffrement intégral du disque,
+            une VM hyperviseur,
+            un conteneur Docker mobile,
+          ]
+        correct: 0
+        explanation:
+          "Chaque app opère dans un périmètre restreint avec UID et stockage
+          dédiés."
+
+      - id: q19
+        question: "Quelle pratique limite les fuites via capture d’écran ?"
+        answers:
+          [
+            FLAG_SECURE/équivalents,
+            journaliser davantage,
+            activer l’auto-remplissage,
+            augmenter la luminosité,
+          ]
+        correct: 0
+        explanation:
+          "FLAG_SECURE (Android) et mesures équivalentes empêchent la capture
+          d’écran."
+
+      - id: q20
+        question:
+          "Quel indicateur peut révéler un appareil compromis (root/jailbreak) ?"
+        answers:
+          [
+            présence de « su »/Cydia/outils de hooking,
+            batterie faible,
+            IMEI non connu,
+            Bluetooth désactivé,
+          ]
+        correct: 0
+        explanation:
+          "Des binaires/outils typiques signalent une compromission de l’OS."
