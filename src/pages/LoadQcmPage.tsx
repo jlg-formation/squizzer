@@ -35,6 +35,10 @@ const PREDEFINED_QCMS = [
     name: "QCM DFR",
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/dfr.yaml",
   },
+  {
+    name: "QCM DTV",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/dataviz.yaml",
+  },
   { name: "Autre", url: "" },
 ];
 
