@@ -37,7 +37,7 @@ const PREDEFINED_QCMS = [
   },
   {
     name: "QCM DTV",
-    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/dataviz.yaml",
+    url: "https://jlg-consulting.com/orsys/DTV/dataviz.yml",
   },
   { name: "Autre", url: "" },
 ];
