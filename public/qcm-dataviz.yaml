@@ -1,840 +1,467 @@
 # FILE: dist/qcm-dataviz.yaml
 title: "QCM sur Créer des datavisualisations esthétiques, ergonomiques et percutantes"
 chapters:
-  - id: "jour_1_matin_auditer_et_diagnostiquer_ses_dashboards"
+  - id: "jour1-matin-audit"
     title: "Jour 1 – Matin : Auditer et diagnostiquer ses dashboards"
     questions:
-      - id: "jour_1_matin_1"
-        question: "Lequel des éléments suivants n'est pas un critère d’une dataviz réussie ?"
-        answers: ["Lisibilité", "Cohérence", "Esthétique", "Complexité"]
-        correct: 3
-        explanation: "La complexité n'est pas souhaitable ; au contraire, la simplicité est préférée."
-      - id: "jour_1_matin_2"
-        question: "Quelle est une erreur fréquente dans les dataviz ?"
-        answers:
-          [
-            "Biais visuels",
-            "Utilisation de couleurs perceptuelles",
-            "Lisibilité parfaite",
-            "Cohérence graphique",
-          ]
+      - id: "jour1-matin-audit-1"
+        question: "Quel est l'un des critères principaux d'une dataviz réussie ?"
+        answers: ["Lisibilité", "Incohérence", "Laideur", "Faible impact"]
         correct: 0
-        explanation: "Les biais visuels peuvent tromper l'interprétation des données."
-      - id: "jour_1_matin_3"
+        explanation: "La lisibilité est essentielle pour que les informations soient facilement compréhensibles par l'utilisateur."
+      - id: "jour1-matin-audit-2"
+        question: "Qu'est-ce que la détection des biais visuels permet d'éviter ?"
+        answers:
+          ["Les erreurs fréquentes", "La cohérence", "L'esthétique", "L'impact"]
+        correct: 0
+        explanation: "Identifier les biais visuels aide à corriger les erreurs fréquentes dans les datavisualisations."
+      - id: "jour1-matin-audit-3"
         question: "Pourquoi est-il important d'identifier les messages clés dans un dashboard ?"
         answers:
           [
-            "Pour ajouter plus de données",
-            "Pour rendre le dashboard plus complexe",
-            "Pour se concentrer sur les indicateurs utiles",
-            "Pour ignorer les détails",
-          ]
-        correct: 2
-        explanation: "Identifier les messages clés permet de mettre en avant les informations essentielles."
-      - id: "jour_1_matin_4"
-        question: "Que permet d'analyser la structure et la hiérarchie d’un tableau de bord ?"
-        answers:
-          [
-            "L'organisation logique des informations",
-            "La couleur dominante",
-            "Le nombre de visuels",
-            "La taille des polices",
+            "Pour rendre le dashboard réellement utile",
+            "Pour ajouter plus de couleurs",
+            "Pour compliquer la structure",
+            "Pour ignorer les indicateurs",
           ]
         correct: 0
-        explanation: "Analyser la structure aide à comprendre comment les informations sont organisées."
-      - id: "jour_1_matin_5"
-        question: "Quel est l'objectif d'une méthodologie d’audit ergonomique ?"
+        explanation: "Les messages clés guident la prise de décision et rendent le dashboard pertinent."
+      - id: "jour1-matin-audit-4"
+        question: "Que permet l'analyse de la structure et de la hiérarchie d’un tableau de bord ?"
         answers:
           [
-            "Évaluer la facilité d'utilisation du dashboard",
-            "Ajouter des animations",
-            "Changer les couleurs",
-            "Augmenter la quantité de données",
+            "Comprendre l'organisation de l'information",
+            "Augmenter les erreurs",
+            "Réduire l'impact",
+            "Ignorer l'esthétique",
           ]
         correct: 0
-        explanation: "L'audit ergonomique vise à améliorer l'usabilité."
-      - id: "jour_1_matin_6"
-        question: "Dans les travaux pratiques, que font les participants avec leurs dashboards Power BI ?"
+        explanation: "Analyser la hiérarchie aide à organiser l'information de manière logique et efficace."
+      - id: "jour1-matin-audit-5"
+        question: "Qu'est-ce que la méthodologie d'audit ergonomique ?"
         answers:
           [
-            "Ils les vendent",
-            "Ils les auditent collectivement",
-            "Ils les suppriment",
-            "Ils les cachent",
-          ]
-        correct: 1
-        explanation: "Les travaux pratiques consistent en un audit collectif et bienveillant."
-      - id: "jour_1_matin_7"
-        question: "Quelle compétence est développée lors de l'audit des dashboards ?"
-        answers:
-          [
-            "La capacité à critiquer positivement",
-            "La programmation",
-            "La gestion de base de données",
-            "Le design web",
+            "Une façon d'évaluer l'usabilité et la facilité d'utilisation",
+            "Un outil pour ajouter des visuels inutiles",
+            "Une méthode pour ignorer les critères",
+            "Un processus pour réduire la lisibilité",
           ]
         correct: 0
-        explanation: "L'audit permet d'identifier les points forts et axes d'amélioration."
-      - id: "jour_1_matin_8"
-        question: "Quel est le rôle de la lisibilité dans une dataviz ?"
+        explanation: "L'audit ergonomique vérifie que le dashboard est intuitif et facile à utiliser."
+      - id: "jour1-matin-audit-6"
+        question: "Dans les travaux pratiques d'audit, que font les participants ?"
         answers:
           [
-            "Rendre les données incompréhensibles",
-            "Faciliter la compréhension",
-            "Ajouter de la confusion",
-            "Ignorer les détails",
+            "Auditer collectivement les dashboards Power BI",
+            "Créer de nouveaux visuels sans analyse",
+            "Ignorer les erreurs existantes",
+            "Ajouter des biais visuels",
           ]
-        correct: 1
-        explanation: "La lisibilité est essentielle pour que les utilisateurs comprennent les données."
-      - id: "jour_1_matin_9"
-        question: "Pourquoi détecter les biais visuels ?"
+        correct: 0
+        explanation: "L'audit collectif permet d'identifier et d'améliorer les points faibles des dashboards."
+      - id: "jour1-matin-audit-7"
+        question: "Quel est le but de l'audit collectif et bienveillant ?"
         answers:
           [
-            "Pour les amplifier",
-            "Pour les corriger et éviter les erreurs d'interprétation",
-            "Pour les ignorer",
-            "Pour les ajouter",
+            "Fournir des retours constructifs pour améliorer",
+            "Critiquer négativement sans solution",
+            "Ignorer les problèmes identifiés",
+            "Ajouter des erreurs supplémentaires",
           ]
-        correct: 1
-        explanation: "Les biais visuels peuvent mener à des conclusions erronées."
-      - id: "jour_1_matin_10"
-        question: "Que permet l'analyse de la hiérarchie d’un tableau de bord ?"
+        correct: 0
+        explanation: "La bienveillance favorise un environnement d'amélioration continue."
+      - id: "jour1-matin-audit-8"
+        question: "Qu'est-ce que l'impact dans le contexte d'une dataviz réussie ?"
         answers:
           [
-            "De désorganiser l'information",
-            "De structurer l'information de manière logique",
-            "De supprimer des sections",
-            "De changer les titres",
+            "La capacité à influencer les décisions des utilisateurs",
+            "La quantité de couleurs utilisées",
+            "La complexité des visuels",
+            "L'absence de lisibilité",
           ]
-        correct: 1
-        explanation: "La hiérarchie aide à prioriser les informations importantes."
-      - id: "jour_1_matin_11"
-        question: "Quel est l'impact d'une dataviz réussie ?"
+        correct: 0
+        explanation: "Un impact fort rend la dataviz percutante et mémorable."
+      - id: "jour1-matin-audit-9"
+        question: "Pourquoi détecter les erreurs fréquentes dans les datavisualisations ?"
         answers:
           [
-            "Confondre l'utilisateur",
-            "Avoir un effet percutant",
-            "Rendre les données invisibles",
-            "Augmenter la complexité",
+            "Pour améliorer la qualité globale du dashboard",
+            "Pour les laisser en place sans correction",
+            "Pour ajouter plus d'erreurs",
+            "Pour réduire la cohérence",
           ]
-        correct: 1
-        explanation: "L'impact permet de rendre la dataviz percutante et mémorable."
-      - id: "jour_1_matin_12"
-        question: "Qu'est-ce qu'un biais visuel ?"
+        correct: 0
+        explanation: "Corriger les erreurs fréquentes augmente la réussite et l'efficacité de la dataviz."
+      - id: "jour1-matin-audit-10"
+        question: "Quel type d'indicateur est considéré comme réellement utile ?"
         answers:
           [
-            "Une erreur de calcul",
-            "Une distorsion dans la perception des données",
-            "Une couleur vive",
-            "Un texte trop long",
+            "Celui qui apporte de l'insight et aide à la décision",
+            "Celui qui est simplement coloré",
+            "Celui qui est excessivement complexe",
+            "Celui qui est systématiquement ignoré",
           ]
-        correct: 1
-        explanation: "Les biais visuels trompent l'interprétation des informations."
-      - id: "jour_1_matin_13"
-        question: "Pourquoi identifier les indicateurs utiles ?"
-        answers:
-          [
-            "Pour surcharger le dashboard",
-            "Pour se focaliser sur l'essentiel",
-            "Pour ajouter du bruit",
-            "Pour compliquer l'analyse",
-          ]
-        correct: 1
-        explanation: "Cela permet de ne montrer que les données pertinentes."
-      - id: "jour_1_matin_14"
-        question: "Que signifie analyser la hiérarchie ?"
-        answers:
-          [
-            "Changer l'ordre des éléments",
-            "Comprendre l'importance relative des informations",
-            "Supprimer des visuels",
-            "Ajouter des couleurs",
-          ]
-        correct: 1
-        explanation: "La hiérarchie organise les informations par priorité."
-      - id: "jour_1_matin_15"
-        question: "Quel est le but d'un audit ergonomique ?"
-        answers:
-          [
-            "Rendre le dashboard plus beau",
-            "Améliorer l'utilisation et la compréhension",
-            "Ajouter des animations inutiles",
-            "Complexifier l'interface",
-          ]
-        correct: 1
-        explanation: "L'ergonomie vise à faciliter l'interaction utilisateur."
-      - id: "jour_1_matin_16"
-        question: "Dans les travaux pratiques, l'audit est-il individuel ?"
-        answers:
-          [
-            "Oui, chacun audite seul",
-            "Non, il est collectif et bienveillant",
-            "Seulement pour les experts",
-            "Uniquement en ligne",
-          ]
-        correct: 1
-        explanation: "L'audit est collectif pour bénéficier des retours des pairs."
-      - id: "jour_1_matin_17"
-        question: "Quelle erreur fréquente est détectée lors de l'audit ?"
-        answers:
-          [
-            "Utilisation de couleurs perceptuelles",
-            "Présence de biais visuels",
-            "Lisibilité excessive",
-            "Trop de simplicité",
-          ]
-        correct: 1
-        explanation: "Les biais visuels sont une erreur courante à corriger."
-      - id: "jour_1_matin_18"
-        question: "Que permet la lisibilité dans une dataviz ?"
-        answers:
-          [
-            "De cacher les données",
-            "De rendre les informations accessibles",
-            "D'ajouter de la confusion",
-            "De réduire l'impact",
-          ]
-        correct: 1
-        explanation: "La lisibilité assure que les données sont faciles à lire."
-      - id: "jour_1_matin_19"
-        question: "Pourquoi corriger les biais visuels ?"
-        answers:
-          [
-            "Pour les rendre plus visibles",
-            "Pour éviter les interprétations erronées",
-            "Pour les ignorer",
-            "Pour les amplifier",
-          ]
-        correct: 1
-        explanation: "Corriger les biais assure une analyse correcte."
-      - id: "jour_1_matin_20"
-        question: "Que favorise une bonne hiérarchie ?"
-        answers:
-          [
-            "Le désordre",
-            "Une navigation logique",
-            "La suppression d'informations",
-            "L'ajout de distractions",
-          ]
-        correct: 1
-        explanation: "Une hiérarchie claire guide l'utilisateur efficacement."
-  - id: "jour_1_apres_midi_améliorer_la_lisibilité_et_la_cohérence_visuelle"
+        correct: 0
+        explanation: "Les indicateurs utiles fournissent des informations actionnables pour les utilisateurs."
+      - id: "jour1-matin-audit-11"
+        question: "Comment appliquer la lisibilité dans l'audit d'un dashboard ?"
+        answers: ["En vérifiant que les textes sont lisibles et les visuels clairs", "En ajoutant plus de couleurs vives", "En réduisant la taille des polices", "En utilisant des contrastes faibles"]
+        correct: 0
+        explanation: "La lisibilité assure que l'utilisateur peut facilement interpréter les données sans effort."
+      - id: "jour1-matin-audit-12"
+        question: "Quel biais visuel est fréquent dans les datavisualisations ?"
+        answers: ["L'utilisation incorrecte des couleurs pour représenter des valeurs", "La cohérence parfaite", "L'absence totale de visuels", "La simplicité excessive"]
+        correct: 0
+        explanation: "Les biais comme les mauvaises palettes de couleurs peuvent induire en erreur."
+      - id: "jour1-matin-audit-13"
+        question: "Dans un audit, comment identifier un indicateur inutile ?"
+        answers: ["Il ne contribue pas à l'insight ou à la décision", "Il est coloré et visible", "Il est placé en haut du dashboard", "Il utilise des graphiques complexes"]
+        correct: 0
+        explanation: "Les indicateurs inutiles n'apportent pas de valeur ajoutée à l'utilisateur."
+      - id: "jour1-matin-audit-14"
+        question: "Que révèle l'analyse de la hiérarchie dans un tableau de bord ?"
+        answers: ["L'importance relative des éléments", "Le nombre total de visuels", "La couleur dominante", "La taille des marges"]
+        correct: 0
+        explanation: "La hiérarchie guide l'attention de l'utilisateur vers les informations clés."
+      - id: "jour1-matin-audit-15"
+        question: "Pourquoi l'audit ergonomique est-il essentiel ?"
+        answers: ["Pour améliorer l'expérience utilisateur", "Pour ajouter des éléments décoratifs", "Pour compliquer l'interface", "Pour réduire la fonctionnalité"]
+        correct: 0
+        explanation: "Un audit ergonomique assure que le dashboard est intuitif et efficace."
+      - id: "jour1-matin-audit-16"
+        question: "Quel est l'objectif des travaux pratiques d'audit ?"
+        answers: ["Apprendre à identifier et corriger les problèmes", "Créer de nouveaux dashboards sans feedback", "Ignorer les retours des pairs", "Ajouter des erreurs intentionnelles"]
+        correct: 0
+        explanation: "Les travaux pratiques permettent d'appliquer la théorie à des cas réels."
+      - id: "jour1-matin-audit-17"
+        question: "Comment l'audit collectif favorise-t-il l'amélioration ?"
+        answers: ["Par des retours diversifiés et constructifs", "Par des critiques destructives", "Par l'absence de discussion", "Par la suppression des visuels"]
+        correct: 0
+        explanation: "Les retours collectifs enrichissent la perspective sur les améliorations possibles."
+      - id: "jour1-matin-audit-18"
+        question: "Quel rôle joue l'impact dans l'évaluation d'une dataviz ?"
+        answers: ["Il mesure la capacité à engager l'utilisateur", "Il compte le nombre de clics", "Il évalue la vitesse de chargement", "Il vérifie la compatibilité des navigateurs"]
+        correct: 0
+        explanation: "Un impact élevé rend la dataviz mémorable et influente."
+      - id: "jour1-matin-audit-19"
+        question: "Quelles erreurs fréquentes faut-il éviter dans les datavisualisations ?"
+        answers: ["Les graphiques 3D trompeurs et les échelles non linéaires", "Les couleurs cohérentes", "Les légendes claires", "Les données précises"]
+        correct: 0
+        explanation: "Ces erreurs peuvent fausser l'interprétation des données."
+      - id: "jour1-matin-audit-20"
+        question: "Comment un indicateur utile influence-t-il la prise de décision ?"
+        answers: ["En fournissant des insights actionnables", "En ajoutant de la confusion", "En ignorant les tendances", "En utilisant des métaphores complexes"]
+        correct: 0
+        explanation: "Les indicateurs utiles aident les décideurs à agir efficacement."
+  - id: "jour1-apres-midi-ameliorer"
     title: "Jour 1 – Après-midi : Améliorer la lisibilité et la cohérence visuelle"
     questions:
-      - id: "jour_1_apres_midi_1"
-        question: "Pourquoi utiliser des palettes perceptuelles ?"
-        answers:
-          [
-            "Pour rendre les couleurs plus vives",
-            "Pour assurer une perception correcte des données",
-            "Pour ajouter de la variété",
-            "Pour compliquer la lecture",
-          ]
-        correct: 1
-        explanation: "Les palettes perceptuelles aident à une interprétation fidèle des données."
-      - id: "jour_1_apres_midi_2"
-        question: "Que permet la typographie dans une dataviz ?"
-        answers:
-          [
-            "De rendre le texte illisible",
-            "D'améliorer la lisibilité et la hiérarchie",
-            "D'ajouter du bruit",
-            "De réduire l'espace",
-          ]
-        correct: 1
-        explanation: "La typographie organise et clarifie l'information textuelle."
-      - id: "jour_1_apres_midi_3"
-        question: "Quel rôle joue l'alignement dans le design graphique ?"
-        answers:
-          [
-            "Créer du désordre",
-            "Assurer une cohérence visuelle",
-            "Ignorer les marges",
-            "Ajouter des couleurs aléatoires",
-          ]
-        correct: 1
-        explanation: "L'alignement crée une structure ordonnée et professionnelle."
-      - id: "jour_1_apres_midi_4"
-        question: "Que favorisent les marges et l'équilibre graphique ?"
-        answers:
-          [
-            "La confusion",
-            "Une présentation harmonieuse",
-            "Le surchargement",
-            "L'asymétrie",
-          ]
-        correct: 1
-        explanation: "Les marges et l'équilibre assurent une disposition équilibrée."
-      - id: "jour_1_apres_midi_5"
-        question: "Comment le guidage visuel aide-t-il ?"
-        answers:
-          [
-            "À perdre l'utilisateur",
-            "À diriger l'attention vers les éléments importants",
-            "À ajouter des distractions",
-            "À cacher les données",
-          ]
-        correct: 1
-        explanation: "Le guidage visuel oriente l'œil vers les informations clés."
-      - id: "jour_1_apres_midi_6"
-        question: "Que permet le storytelling par la mise en page ?"
-        answers:
-          [
-            "De rendre l'histoire confuse",
-            "De transformer les données en récit visuel",
-            "D'ajouter du texte inutile",
-            "De supprimer les visuels",
-          ]
-        correct: 1
-        explanation: "Le storytelling structure les données en une histoire cohérente."
-      - id: "jour_1_apres_midi_7"
-        question: "Pourquoi uniformiser les thèmes dans Power BI ?"
-        answers:
-          [
-            "Pour varier les styles",
-            "Pour maintenir une cohérence graphique",
-            "Pour compliquer l'utilisation",
-            "Pour ajouter des gabarits différents",
-          ]
-        correct: 1
-        explanation: "L'uniformisation assure une identité visuelle cohérente."
-      - id: "jour_1_apres_midi_8"
-        question: "Dans les travaux pratiques, que appliquent les participants ?"
-        answers:
-          [
-            "Des règles aléatoires",
-            "Les règles ergonomiques à des visuels réels",
-            "Des couleurs vives",
-            "Des textes longs",
-          ]
-        correct: 1
-        explanation: "Les participants appliquent les principes appris à leurs visuels."
-      - id: "jour_1_apres_midi_9"
-        question: "Quel est l'objectif de l'équilibre graphique ?"
-        answers:
-          [
-            "Créer un déséquilibre",
-            "Répartir harmonieusement les éléments",
-            "Ajouter des poids inutiles",
-            "Ignorer les proportions",
-          ]
-        correct: 1
-        explanation: "L'équilibre graphique crée une composition visuellement stable."
-      - id: "jour_1_apres_midi_10"
-        question: "Comment les contrastes améliorent-ils la dataviz ?"
-        answers:
-          [
-            "En rendant tout uniforme",
-            "En distinguant clairement les éléments",
-            "En ajoutant de la confusion",
-            "En réduisant la visibilité",
-          ]
-        correct: 1
-        explanation: "Les contrastes mettent en évidence les différences importantes."
-      - id: "jour_1_apres_midi_11"
-        question: "Quel est le rôle des principes de design visuel ?"
-        answers:
-          [
-            "Rendre les données confuses",
-            "Appliquer des règles esthétiques à la donnée",
-            "Ajouter du chaos",
-            "Ignorer l'ergonomie",
-          ]
-        correct: 1
-        explanation: "Les principes de design visuel structurent et embellissent la présentation des données."
-      - id: "jour_1_apres_midi_12"
-        question: "Pourquoi les contrastes sont-ils importants ?"
-        answers:
-          [
-            "Pour uniformiser",
-            "Pour différencier les éléments",
-            "Pour rendre tout identique",
-            "Pour réduire la visibilité",
-          ]
-        correct: 1
-        explanation: "Les contrastes permettent de distinguer les informations clés."
-      - id: "jour_1_apres_midi_13"
-        question: "Que permet l'alignement des éléments ?"
-        answers:
-          [
-            "De créer du désordre",
-            "D'assurer une cohérence visuelle",
-            "D'ignorer les proportions",
-            "D'ajouter des couleurs aléatoires",
-          ]
-        correct: 1
-        explanation: "L'alignement crée une structure ordonnée et professionnelle."
-      - id: "jour_1_apres_midi_14"
-        question: "Comment les marges contribuent-elles à l'équilibre ?"
-        answers:
-          [
-            "En supprimant l'espace",
-            "En créant des respirations visuelles",
-            "En surchargant la page",
-            "En rendant asymétrique",
-          ]
-        correct: 1
-        explanation: "Les marges équilibrent la composition en ajoutant de l'espace."
-      - id: "jour_1_apres_midi_15"
-        question: "Que guide le guidage visuel ?"
-        answers:
-          [
-            "Vers les distractions",
-            "Vers les informations importantes",
-            "Vers les éléments secondaires",
-            "Vers le chaos",
-          ]
-        correct: 1
-        explanation: "Le guidage visuel oriente l'attention de l'utilisateur."
-      - id: "jour_1_apres_midi_16"
-        question: "Quel est l'effet du storytelling visuel ?"
-        answers:
-          [
-            "Rendre l'histoire incompréhensible",
-            "Transformer les données en récit",
-            "Ajouter de la confusion",
-            "Supprimer le contexte",
-          ]
-        correct: 1
-        explanation: "Le storytelling visuel rend les données narratives et engageantes."
-      - id: "jour_1_apres_midi_17"
+      - id: "jour1-apres-midi-ameliorer-1"
+        question: "Quel est un principe de base du design visuel appliqué à la donnée ?"
+        answers: ["Utiliser des couleurs appropriées pour différencier les catégories", "Ajouter des couleurs aléatoirement", "Ignorer les contrastes", "Utiliser une seule couleur pour tout"]
+        correct: 0
+        explanation: "Les couleurs aident à distinguer les éléments sans induire en erreur."
+      - id: "jour1-apres-midi-ameliorer-2"
+        question: "Pourquoi les palettes perceptuelles sont-elles importantes ?"
+        answers: ["Elles respectent la perception humaine des couleurs", "Elles rendent tout monochrome", "Elles ignorent les daltoniens", "Elles utilisent des couleurs vives uniquement"]
+        correct: 0
+        explanation: "Les palettes perceptuelles assurent une interprétation correcte des données."
+      - id: "jour1-apres-midi-ameliorer-3"
+        question: "Comment la typographie améliore-t-elle la lisibilité ?"
+        answers: ["En choisissant des polices lisibles et cohérentes", "En utilisant des polices décoratives partout", "En réduisant la taille des textes", "En mélangeant plusieurs polices sans raison"]
+        correct: 0
+        explanation: "Une bonne typographie facilite la lecture et l'interprétation."
+      - id: "jour1-apres-midi-ameliorer-4"
+        question: "Que permet l'alignement dans la mise en page ?"
+        answers: ["Créer un ordre visuel et une harmonie", "Désorganiser l'espace", "Ignorer les marges", "Ajouter du chaos"]
+        correct: 0
+        explanation: "L'alignement guide l'œil et améliore la compréhension."
+      - id: "jour1-apres-midi-ameliorer-5"
+        question: "Pourquoi équilibrer graphiquement un dashboard ?"
+        answers: ["Pour éviter la surcharge visuelle et favoriser la concentration", "Pour remplir l'espace sans logique", "Pour ajouter des éléments inutiles", "Pour réduire la lisibilité"]
+        correct: 0
+        explanation: "L'équilibre graphique rend le dashboard agréable et efficace."
+      - id: "jour1-apres-midi-ameliorer-6"
+        question: "Comment le guidage visuel aide-t-il l'utilisateur ?"
+        answers: ["En dirigeant l'attention vers les informations importantes", "En dispersant l'attention", "En cachant les données clés", "En utilisant des couleurs confuses"]
+        correct: 0
+        explanation: "Le guidage visuel améliore la navigation et l'interprétation."
+      - id: "jour1-apres-midi-ameliorer-7"
+        question: "Qu'est-ce que le storytelling par la mise en page ?"
+        answers: ["Organiser les visuels pour raconter une histoire cohérente", "Placer les éléments au hasard", "Ignorer la séquence logique", "Ajouter des interruptions"]
+        correct: 0
+        explanation: "Le storytelling visuel transforme les données en récit engageant."
+      - id: "jour1-apres-midi-ameliorer-8"
+        question: "Pourquoi uniformiser graphique dans Power BI ?"
+        answers: ["Pour maintenir une cohérence à travers les rapports", "Pour varier les styles sans raison", "Pour compliquer la maintenance", "Pour ignorer les thèmes"]
+        correct: 0
+        explanation: "L'uniformisation renforce la marque et la lisibilité."
+      - id: "jour1-apres-midi-ameliorer-9"
+        question: "Dans les travaux pratiques, comment appliquer les règles ergonomiques ?"
+        answers: ["En modifiant des visuels réels selon les principes appris", "En créant des visuels sans analyse", "En ignorant les retours", "En ajoutant des erreurs"]
+        correct: 0
+        explanation: "L'application pratique consolide l'apprentissage."
+      - id: "jour1-apres-midi-ameliorer-10"
+        question: "Quel impact a un mauvais contraste sur la lisibilité ?"
+        answers: ["Il rend les textes difficiles à lire", "Il améliore la visibilité", "Il simplifie l'interface", "Il ajoute de l'esthétique"]
+        correct: 0
+        explanation: "Un contraste insuffisant fatigue les yeux et réduit l'efficacité."
+      - id: "jour1-apres-midi-ameliorer-11"
+        question: "Comment choisir une palette de couleurs pour des données quantitatives ?"
+        answers: ["Utiliser des dégradés séquentiels pour montrer les variations", "Utiliser des couleurs aléatoires", "Ignorer les valeurs", "Utiliser une seule teinte"]
+        correct: 0
+        explanation: "Les dégradés séquentiels représentent fidèlement les échelles numériques."
+      - id: "jour1-apres-midi-ameliorer-12"
+        question: "Pourquoi la typographie doit-elle être cohérente ?"
+        answers: ["Pour renforcer la hiérarchie et l'identité visuelle", "Pour varier sans logique", "Pour compliquer la lecture", "Pour utiliser des polices illisibles"]
+        correct: 0
+        explanation: "La cohérence typographique améliore la professionnalité."
+      - id: "jour1-apres-midi-ameliorer-13"
+        question: "Que signifie équilibrer les marges dans un dashboard ?"
+        answers: ["Laisser de l'espace autour des éléments pour respirer", "Remplir tout l'espace disponible", "Ignorer l'espacement", "Ajouter des bordures épaisses"]
+        correct: 0
+        explanation: "Les marges équilibrées évitent la surcharge et améliorent la lisibilité."
+      - id: "jour1-apres-midi-ameliorer-14"
+        question: "Comment le guidage visuel utilise-t-il les lignes ?"
+        answers: ["Pour connecter les éléments et guider l'œil", "Pour séparer sans logique", "Pour cacher les données", "Pour ajouter du désordre"]
+        correct: 0
+        explanation: "Les lignes guident l'attention de manière naturelle."
+      - id: "jour1-apres-midi-ameliorer-15"
+        question: "Quel est le rôle du storytelling dans la dataviz ?"
+        answers: ["Transformer les données en histoire persuasive", "Rendre les données ennuyeuses", "Ignorer la séquence", "Ajouter des éléments non liés"]
+        correct: 0
+        explanation: "Le storytelling engage l'utilisateur émotionnellement."
+      - id: "jour1-apres-midi-ameliorer-16"
         question: "Pourquoi utiliser des thèmes dans Power BI ?"
-        answers:
-          [
-            "Pour varier constamment",
-            "Pour uniformiser l'apparence",
-            "Pour compliquer la navigation",
-            "Pour ajouter des gabarits différents",
-          ]
-        correct: 1
-        explanation: "Les thèmes assurent une cohérence visuelle globale."
-      - id: "jour_1_apres_midi_18"
-        question: "Dans les ateliers, que pratiquent les participants ?"
-        answers:
-          [
-            "Des exercices théoriques",
-            "L'application pratique des règles",
-            "Des discussions sans action",
-            "Des critiques négatives",
-          ]
-        correct: 1
-        explanation: "Les ateliers permettent une mise en pratique directe."
-      - id: "jour_1_apres_midi_19"
-        question: "Que favorise une bonne typographie ?"
-        answers:
-          [
-            "L'illisibilité",
-            "La clarté et la hiérarchie",
-            "Le bruit visuel",
-            "La réduction de l'espace",
-          ]
-        correct: 1
-        explanation: "La typographie améliore la lisibilité et l'organisation."
-      - id: "jour_1_apres_midi_20"
-        question: "Comment les palettes perceptuelles aident-elles ?"
-        answers:
-          [
-            "En trompant la perception",
-            "En assurant une interprétation fidèle",
-            "En ajoutant des couleurs vives inutiles",
-            "En compliquant la lecture",
-          ]
-        correct: 1
-        explanation: "Les palettes perceptuelles respectent la perception humaine des couleurs."
-  - id: "jour_2_matin_concevoir_des_tableaux_de_bord_orientés_insight"
+        answers: ["Pour appliquer une charte graphique uniforme", "Pour changer de style à chaque page", "Pour compliquer l'export", "Pour ignorer la cohérence"]
+        correct: 0
+        explanation: "Les thèmes assurent une présentation professionnelle."
+      - id: "jour1-apres-midi-ameliorer-17"
+        question: "Dans l'application des règles ergonomiques, que faut-il prioriser ?"
+        answers: ["La facilité d'utilisation et la clarté", "La complexité technique", "L'ajout de décorations", "La réduction des fonctionnalités"]
+        correct: 0
+        explanation: "L'ergonomie se concentre sur l'expérience utilisateur."
+      - id: "jour1-apres-midi-ameliorer-18"
+        question: "Comment évaluer l'équilibre graphique ?"
+        answers: ["En vérifiant la distribution visuelle des éléments", "En comptant les couleurs", "En mesurant la vitesse", "En ignorant la composition"]
+        correct: 0
+        explanation: "L'équilibre graphique assure une composition harmonieuse."
+      - id: "jour1-apres-midi-ameliorer-19"
+        question: "Pourquoi adapter les visuels selon le public ?"
+        answers: ["Pour maximiser l'impact et la compréhension", "Pour utiliser les mêmes pour tous", "Pour compliquer l'accès", "Pour réduire l'engagement"]
+        correct: 0
+        explanation: "L'adaptation personnalise la communication visuelle."
+      - id: "jour1-apres-midi-ameliorer-20"
+        question: "Quel outil permet de prototyper le design dans Power BI ?"
+        answers: ["Les gabarits et thèmes intégrés", "Des outils externes uniquement", "L'absence de prototypes", "Des visuels statiques"]
+        correct: 0
+        explanation: "Les gabarits aident à tester et affiner le design."
+  - id: "jour2-matin-concevoir"
     title: "Jour 2 – Matin : Concevoir des tableaux de bord orientés insight"
     questions:
-      - id: "jour_2_matin_1"
-        question: "Quel est l'objectif de transformer la donnée en message ?"
-        answers:
-          [
-            "Rendre confuse",
-            "Rendre clair et actionnable",
-            "Ajouter du bruit",
-            "Ignorer l'action",
-          ]
-        correct: 1
-        explanation: "Transformer la donnée permet de la rendre compréhensible et utile pour la décision."
-      - id: "jour_2_matin_2"
-        question: "Que permet le storytelling visuel ?"
-        answers:
-          [
-            "De laisser brute",
-            "De créer une histoire",
-            "De supprimer le contexte",
-            "D'ajouter de la confusion",
-          ]
-        correct: 1
-        explanation: "Le storytelling visuel transforme les données en un récit engageant."
-      - id: "jour_2_matin_3"
-        question: "Pourquoi structurer l'information ?"
-        answers:
-          [
-            "Pour désorganiser",
-            "Pour hiérarchiser",
-            "Pour mélanger",
-            "Pour réduire",
-          ]
-        correct: 1
-        explanation: "La structuration organise l'information de manière logique."
-      - id: "jour_2_matin_4"
-        question: "Quel rôle jouent les interactions comme filtres ?"
-        answers:
-          [
-            "Rendre statique",
-            "Permettre l'exploration",
-            "Bloquer l'accès",
-            "Ajouter des bugs",
-          ]
-        correct: 1
-        explanation: "Les filtres permettent d'explorer dynamiquement les données."
-      - id: "jour_2_matin_5"
-        question: "Que signifie maintenir la cohérence organisationnelle ?"
-        answers:
-          [
-            "Varier les styles",
-            "Uniformiser à l'échelle",
-            "Ignorer les standards",
-            "Ajouter des variations",
-          ]
-        correct: 1
-        explanation: "La cohérence organisationnelle assure une identité visuelle uniforme."
-      - id: "jour_2_matin_6"
-        question: "Dans les travaux pratiques, que créent les participants ?"
-        answers:
-          [
-            "Des rapports vides",
-            "Un mini-dashboard",
-            "Des critiques",
-            "Des théories",
-          ]
-        correct: 1
-        explanation: "Les participants créent un mini-dashboard basé sur un brief métier."
-      - id: "jour_2_matin_7"
-        question: "Comment rendre un message actionnable ?"
-        answers:
-          [
-            "En le rendant vague",
-            "En suggérant des actions",
-            "En ajoutant de l'ambiguïté",
-            "En supprimant les détails",
-          ]
-        correct: 1
-        explanation: "Un message actionnable guide vers des décisions concrètes."
-      - id: "jour_2_matin_8"
-        question: "Quel est l'effet de la hiérarchisation ?"
-        answers:
-          [
-            "Égaliser tout",
-            "Prioriser les infos",
-            "Mélanger les niveaux",
-            "Ignorer l'importance",
-          ]
-        correct: 1
-        explanation: "La hiérarchisation met en avant les informations clés."
-      - id: "jour_2_matin_9"
-        question: "Pourquoi utiliser des drill-down ?"
-        answers:
-          [
-            "Pour rester superficiel",
-            "Pour explorer en profondeur",
-            "Pour limiter l'accès",
-            "Pour ajouter de la complexité inutile",
-          ]
-        correct: 1
-        explanation: "Les drill-down permettent une analyse détaillée."
-      - id: "jour_2_matin_10"
-        question: "Que permettent les tooltips ?"
-        answers:
-          [
-            "Cacher les infos",
-            "Fournir des détails au survol",
-            "Ajouter des distractions",
-            "Rendre opaque",
-          ]
-        correct: 1
-        explanation: "Les tooltips offrent des informations supplémentaires sans surcharger."
-      - id: "jour_2_matin_11"
-        question: "Comment assurer la cohérence organisationnelle ?"
-        answers:
-          [
-            "En variant les designs",
-            "En appliquant des standards",
-            "En ignorant les guidelines",
-            "En créant des exceptions",
-          ]
-        correct: 1
-        explanation: "Appliquer des standards assure une cohérence globale."
-      - id: "jour_2_matin_12"
-        question: "Quel brief utilisent les participants ?"
-        answers: ["Personnel", "Métier", "Technique", "Aléatoire"]
-        correct: 1
-        explanation: "Le brief métier oriente la création du dashboard."
-      - id: "jour_2_matin_13"
-        question: "Que transforme le storytelling visuel ?"
-        answers:
-          [
-            "Les histoires en données",
-            "Les données en histoires",
-            "Les actions en passivité",
-            "Les messages en bruit",
-          ]
-        correct: 1
-        explanation: "Le storytelling visuel narrative les données."
-      - id: "jour_2_matin_14"
-        question: "Pourquoi hiérarchiser l'information ?"
-        answers:
-          [
-            "Pour tout égaliser",
-            "Pour guider l'attention",
-            "Pour désorienter",
-            "Pour réduire l'impact",
-          ]
-        correct: 1
-        explanation: "La hiérarchisation dirige l'attention vers l'essentiel."
-      - id: "jour_2_matin_15"
-        question: "Quel type d'interactions est utile ?"
-        answers: ["Statiques", "Utiles comme filtres", "Inutiles", "Bloquantes"]
-        correct: 1
-        explanation: "Les interactions utiles améliorent l'expérience utilisateur."
-      - id: "jour_2_matin_16"
-        question: "Que maintient la cohérence à l'échelle ?"
-        answers: ["La variété", "L'uniformité", "Le chaos", "L'isolement"]
-        correct: 1
-        explanation: "La cohérence maintient une apparence uniforme."
-      - id: "jour_2_matin_17"
-        question: "Dans les ateliers, que pratiquent-ils ?"
-        answers:
-          [
-            "Des discussions",
-            "La création pratique",
-            "Des lectures",
-            "Des pauses",
-          ]
-        correct: 1
-        explanation: "Les ateliers impliquent une création pratique."
-      - id: "jour_2_matin_18"
-        question: "Comment rendre la donnée actionnable ?"
-        answers:
-          [
-            "En la laissant brute",
-            "En la liant à des décisions",
-            "En l'ignorant",
-            "En la compliquant",
-          ]
-        correct: 1
-        explanation: "Lier à des décisions rend la donnée utile."
-      - id: "jour_2_matin_19"
-        question: "Quel est le rôle du storytelling ?"
-        answers: ["Confondre", "Engager", "Éloigner", "Neutraliser"]
-        correct: 1
-        explanation: "Le storytelling engage l'utilisateur émotionnellement."
-      - id: "jour_2_matin_20"
-        question: "Pourquoi structurer les tableaux de bord ?"
-        answers:
-          [
-            "Pour le désordre",
-            "Pour l'insight",
-            "Pour la confusion",
-            "Pour la stagnation",
-          ]
-        correct: 1
-        explanation: "La structuration favorise les insights et décisions."
-  - id: "jour_2_apres_midi_outils_web_et_ia_pour_sublimer_la_dataviz"
+      - id: "jour2-matin-concevoir-1"
+        question: "Comment transformer la donnée brute en message clair ?"
+        answers: ["En utilisant des visuels simples et des annotations", "En laissant les données brutes", "En ajoutant de la complexité inutile", "En ignorant les tendances"]
+        correct: 0
+        explanation: "La transformation clarifie les insights pour l'utilisateur."
+      - id: "jour2-matin-concevoir-2"
+        question: "Qu'est-ce que le storytelling visuel ?"
+        answers: ["Guider l'utilisateur à travers une narration logique", "Présenter les données sans ordre", "Ajouter des éléments distracteurs", "Ignorer la séquence temporelle"]
+        correct: 0
+        explanation: "Le storytelling rend les données engageantes et mémorables."
+      - id: "jour2-matin-concevoir-3"
+        question: "Pourquoi structurer l'information dans un dashboard ?"
+        answers: ["Pour faciliter la navigation et la compréhension", "Pour désorganiser l'espace", "Pour cacher les données importantes", "Pour ajouter du chaos"]
+        correct: 0
+        explanation: "Une structure claire améliore l'efficacité."
+      - id: "jour2-matin-concevoir-4"
+        question: "Que permet la hiérarchisation de l’information ?"
+        answers: ["Mettre en avant les éléments les plus importants", "Traiter toutes les données de manière égale", "Ignorer les priorités", "Ajouter des distractions"]
+        correct: 0
+        explanation: "La hiérarchisation guide l'attention vers les insights clés."
+      - id: "jour2-matin-concevoir-5"
+        question: "Comment les filtres améliorent-ils l'interaction ?"
+        answers: ["En permettant à l'utilisateur de personnaliser la vue", "En bloquant l'accès aux données", "En rendant tout statique", "En compliquant la navigation"]
+        correct: 0
+        explanation: "Les filtres rendent le dashboard interactif et utile."
+      - id: "jour2-matin-concevoir-6"
+        question: "Qu'est-ce que le drill-down dans Power BI ?"
+        answers: ["Explorer les détails d'une donnée en cliquant", "Réduire la vue globale", "Ignorer les niveaux inférieurs", "Ajouter des données non liées"]
+        correct: 0
+        explanation: "Le drill-down permet une analyse approfondie."
+      - id: "jour2-matin-concevoir-7"
+        question: "Pourquoi utiliser des tooltips informatifs ?"
+        answers: ["Pour fournir des détails supplémentaires sans surcharger", "Pour cacher les informations", "Pour ajouter de la confusion", "Pour réduire l'interactivité"]
+        correct: 0
+        explanation: "Les tooltips enrichissent l'expérience sans complexité."
+      - id: "jour2-matin-concevoir-8"
+        question: "Comment maintenir la cohérence à l'échelle d'une organisation ?"
+        answers: ["En appliquant des standards visuels uniformes", "En variant les styles librement", "En ignorant les guidelines", "En compliquant les rapports"]
+        correct: 0
+        explanation: "La cohérence renforce la confiance et la marque."
+      - id: "jour2-matin-concevoir-9"
+        question: "Dans les travaux pratiques, que crée le participant ?"
+        answers: ["Un mini-dashboard basé sur un brief métier", "Un dashboard vide", "Des visuels sans contexte", "Des rapports non liés"]
+        correct: 0
+        explanation: "La création pratique applique les concepts appris."
+      - id: "jour2-matin-concevoir-10"
+        question: "Quel est l'objectif d'un dashboard orienté insight ?"
+        answers: ["Fournir des insights actionnables pour la décision", "Afficher des données brutes sans analyse", "Ignorer les tendances", "Ajouter des éléments décoratifs"]
+        correct: 0
+        explanation: "L'orientation insight maximise la valeur des données."
+      - id: "jour2-matin-concevoir-11"
+        question: "Quel est le rôle principal du storytelling visuel dans un dashboard ?"
+        answers: ["Guider l'utilisateur à travers une séquence logique d'insights", "Ajouter des éléments décoratifs sans lien", "Rendre les données plus complexes", "Ignorer la chronologie"]
+        correct: 0
+        explanation: "Le storytelling visuel transforme les données en une histoire cohérente et engageante."
+      - id: "jour2-matin-concevoir-12"
+        question: "Comment la structuration de l'information améliore-t-elle un tableau de bord ?"
+        answers: ["En organisant les données de manière hiérarchique pour faciliter la navigation", "En plaçant les éléments au hasard", "En cachant les informations importantes", "En ajoutant du désordre visuel"]
+        correct: 0
+        explanation: "Une bonne structuration permet à l'utilisateur de trouver rapidement les insights pertinents."
+      - id: "jour2-matin-concevoir-13"
+        question: "Pourquoi est-il important de hiérarchiser l’information dans un dashboard ?"
+        answers: ["Pour mettre en évidence les données les plus critiques en premier", "Pour traiter toutes les données de la même manière", "Pour compliquer l'accès aux insights", "Pour réduire la lisibilité"]
+        correct: 0
+        explanation: "La hiérarchisation guide l'attention de l'utilisateur vers les éléments décisionnels clés."
+      - id: "jour2-matin-concevoir-14"
+        question: "Quel avantage apporte l'utilisation de filtres dans un dashboard orienté insight ?"
+        answers: ["Permettre à l'utilisateur de personnaliser l'analyse selon ses besoins", "Bloquer l'accès à certaines données", "Rendre le dashboard statique", "Ajouter des distractions"]
+        correct: 0
+        explanation: "Les filtres rendent le dashboard interactif et adapté à différents scénarios."
+      - id: "jour2-matin-concevoir-15"
+        question: "Qu'est-ce que le drill-down permet dans Power BI ?"
+        answers: ["D'explorer les niveaux de détail d'une donnée en profondeur", "De réduire la vue d'ensemble", "D'ignorer les sous-catégories", "De simplifier excessivement"]
+        correct: 0
+        explanation: "Le drill-down offre une analyse granulaire sans perdre le contexte global."
+      - id: "jour2-matin-concevoir-16"
+        question: "Comment les tooltips contribuent-ils à l'efficacité d'un dashboard ?"
+        answers: ["En fournissant des détails contextuels au survol sans surcharger l'interface", "En cachant les informations essentielles", "En ajoutant de la confusion", "En réduisant l'interactivité"]
+        correct: 0
+        explanation: "Les tooltips enrichissent l'expérience utilisateur de manière discrète."
+      - id: "jour2-matin-concevoir-17"
+        question: "Pourquoi maintenir une cohérence visuelle à l'échelle d'une organisation ?"
+        answers: ["Pour renforcer la confiance et la reconnaissance de la marque", "Pour varier les styles librement", "Pour compliquer la maintenance", "Pour ignorer les standards"]
+        correct: 0
+        explanation: "La cohérence assure une expérience uniforme et professionnelle."
+      - id: "jour2-matin-concevoir-18"
+        question: "Dans les travaux pratiques de création d'un mini-dashboard, quel est l'objectif principal ?"
+        answers: ["Appliquer les principes d'insight à un scénario métier concret", "Créer un dashboard vide", "Ignorer le brief fourni", "Ajouter des éléments non pertinents"]
+        correct: 0
+        explanation: "Les travaux pratiques consolident l'apprentissage par l'application pratique."
+      - id: "jour2-matin-concevoir-19"
+        question: "Comment transformer une donnée brute en message actionnable ?"
+        answers: ["En la contextualisant avec des annotations et des comparaisons pertinentes", "En la laissant sans interprétation", "En ajoutant des graphiques inutiles", "En ignorant les tendances"]
+        correct: 0
+        explanation: "La transformation aide l'utilisateur à prendre des décisions basées sur les données."
+      - id: "jour2-matin-concevoir-20"
+        question: "Quel est l'impact d'un dashboard orienté insight sur la prise de décision ?"
+        answers: ["Il fournit des recommandations claires basées sur les données", "Il complique l'analyse", "Il ignore les insights", "Il ajoute des biais"]
+        correct: 0
+        explanation: "Un tel dashboard maximise la valeur des données pour des actions efficaces."
+  - id: "jour2-apres-midi-outils"
     title: "Jour 2 – Après-midi : Outils web et IA pour sublimer la dataviz"
     questions:
-      - id: "jour_2_apres_midi_1"
-        question: "Que permettent Figma et Penpot ?"
-        answers:
-          [
-            "Coder des applications",
-            "Prototyper le design",
-            "Analyser des données",
-            "Gérer des bases de données",
-          ]
-        correct: 1
-        explanation: "Figma et Penpot sont utilisés pour prototyper le design et organiser la hiérarchie."
-      - id: "jour_2_apres_midi_2"
-        question: "Quels outils sont utilisés pour des dataviz communicantes ?"
-        answers:
-          [
-            "Power BI seulement",
-            "Datawrapper, Flourish, RAWGraphs",
-            "Excel",
-            "Word",
-          ]
-        correct: 1
-        explanation: "Datawrapper, Flourish et RAWGraphs créent des dataviz pour le web et rapports publics."
-      - id: "jour_2_apres_midi_3"
-        question: "Que fait l'IA générative comme DALL·E ?"
-        answers:
-          [
-            "Calculer des statistiques",
-            "Enrichir la communication visuelle",
-            "Stocker des données",
-            "Créer des rapports texte",
-          ]
-        correct: 1
-        explanation: "L'IA générative enrichit la communication par des éléments visuels créatifs."
-      - id: "jour_2_apres_midi_4"
+      - id: "jour2-apres-midi-outils-1"
+        question: "Comment Figma facilite-t-il le prototypage pour la dataviz ?"
+        answers: ["En permettant de créer des maquettes interactives et organiser la hiérarchie visuelle", "En analysant automatiquement les données", "En remplaçant les outils de BI", "En générant des rapports PDF"]
+        correct: 0
+        explanation: "Figma est idéal pour prototyper le design avant l'implémentation."
+      - id: "jour2-apres-midi-outils-2"
+        question: "Quel est l'avantage principal de Datawrapper pour les dataviz communicantes ?"
+        answers: ["Créer des graphiques interactifs et partageables sur le web sans codage", "Intégrer des analyses complexes", "Remplacer Power BI entièrement", "Générer des bases de données"]
+        correct: 0
+        explanation: "Datawrapper simplifie la création de visuels pour le public web."
+      - id: "jour2-apres-midi-outils-3"
+        question: "Comment l'IA générative comme DALL·E peut-elle enrichir la communication visuelle ?"
+        answers: ["En générant des images ou illustrations personnalisées pour accompagner les données", "En analysant les tendances automatiquement", "En créant des dashboards complets", "En remplaçant les designers"]
+        correct: 0
+        explanation: "L'IA générative aide à visualiser des concepts abstraits."
+      - id: "jour2-apres-midi-outils-4"
         question: "Pourquoi adapter les visuels selon le public ?"
-        answers:
-          [
-            "Pour compliquer",
-            "Pour rendre pertinent",
-            "Pour uniformiser",
-            "Pour ignorer les différences",
-          ]
-        correct: 1
-        explanation: "Adapter les visuels assure leur pertinence pour décideurs, collaborateurs ou grand public."
-      - id: "jour_2_apres_midi_5"
-        question: "Que évalue la grille d’évaluation finale ?"
-        answers:
-          [
-            "La vitesse de création",
-            "Lisibilité, esthétique, impact et cohérence",
-            "Le coût",
-            "La taille des fichiers",
-          ]
-        correct: 1
-        explanation: "La grille évalue les aspects visuels et ergonomiques de la dataviz."
-      - id: "jour_2_apres_midi_6"
-        question: "Dans les travaux pratiques, que font les participants ?"
-        answers:
-          [
-            "Des calculs",
-            "Amélioration visuelle et création complémentaire",
-            "Des présentations orales",
-            "Des tests de performance",
-          ]
-        correct: 1
-        explanation: "Ils améliorent visuellement un dashboard et créent un visuel via Figma ou Penpot."
-      - id: "jour_2_apres_midi_7"
-        question: "Quel rôle de Figma dans la BI ?"
-        answers:
-          [
-            "Créer des chartes graphiques BI",
-            "Analyser des données",
-            "Stocker des fichiers",
-            "Gérer des utilisateurs",
-          ]
+        answers: ["Pour maximiser l'impact en tenant compte des besoins et du niveau de connaissance", "Pour utiliser les mêmes visuels partout", "Pour compliquer la compréhension", "Pour réduire l'esthétique"]
         correct: 0
-        explanation: "Figma permet de créer et organiser des chartes graphiques pour la BI."
-      - id: "jour_2_apres_midi_8"
-        question: "Que permettent Datawrapper et similaires ?"
-        answers:
-          [
-            "Créer des dataviz pour le web",
-            "Prototyper",
-            "Gérer des bases",
-            "Coder",
-          ]
+        explanation: "L'adaptation assure que le message est reçu efficacement."
+      - id: "jour2-apres-midi-outils-5"
+        question: "Quel critère de la grille d'évaluation finale concerne l'impact ?"
+        answers: ["La capacité du visuel à influencer les décisions ou les perceptions", "La vitesse de chargement", "Le nombre de couleurs", "La taille du fichier"]
         correct: 0
-        explanation: "Ces outils créent des visualisations communicantes pour le web."
-      - id: "jour_2_apres_midi_9"
-        question: "Comment l'IA enrichit-elle la communication ?"
-        answers:
-          [
-            "Par des images générées",
-            "Par des calculs",
-            "Par du stockage",
-            "Par des rapports",
-          ]
+        explanation: "L'impact mesure l'efficacité communicative."
+      - id: "jour2-apres-midi-outils-6"
+        question: "Dans les travaux pratiques, que crée le participant via Figma ?"
+        answers: ["Un visuel complémentaire au dashboard Power BI", "Un nouveau dashboard complet", "Une analyse de données", "Un rapport texte"]
         correct: 0
-        explanation: "L'IA génère des images et éléments visuels pour enrichir la communication."
-      - id: "jour_2_apres_midi_10"
-        question: "Quel public nécessite des adaptations ?"
-        answers:
-          [
-            "Décideurs, collaborateurs, grand public",
-            "Seulement les experts",
-            "Les machines",
-            "Les développeurs",
-          ]
+        explanation: "Les travaux pratiques combinent amélioration et création complémentaire."
+      - id: "jour2-apres-midi-outils-7"
+        question: "Comment Penpot diffère-t-il de Figma pour la charte graphique BI ?"
+        answers: ["Il est open-source et gratuit, tout en offrant des fonctionnalités similaires", "Il est exclusivement pour le code", "Il remplace Power BI", "Il ne permet pas de prototypage"]
         correct: 0
-        explanation: "Les visuels doivent être adaptés à différents publics pour une meilleure compréhension."
-      - id: "jour_2_apres_midi_11"
-        question: "Que mesure la grille d’évaluation ?"
-        answers:
-          [
-            "Lisibilité, esthétique, impact et cohérence",
-            "Vitesse",
-            "Coût",
-            "Taille",
-          ]
+        explanation: "Penpot est une alternative open-source à Figma."
+      - id: "jour2-apres-midi-outils-8"
+        question: "Quel outil comme RAWGraphs est utile pour les rapports publics ?"
+        answers: ["Pour créer des dataviz à partir de données brutes sans programmation avancée", "Pour analyser des bases de données complexes", "Pour remplacer les BI tools", "Pour générer du texte"]
         correct: 0
-        explanation: "La grille mesure les qualités visuelles et fonctionnelles de la dataviz."
-      - id: "jour_2_apres_midi_12"
-        question: "Que créent-ils via Figma ?"
-        answers:
-          [
-            "Des visuels complémentaires",
-            "Des analyses",
-            "Des bases de données",
-            "Des codes",
-          ]
+        explanation: "RAWGraphs permet de visualiser des données de manière accessible."
+      - id: "jour2-apres-midi-outils-9"
+        question: "Comment ChatGPT Canvas peut-il aider dans la dataviz ?"
+        answers: ["En générant des idées de design ou des descriptions visuelles", "En créant des graphiques directement", "En analysant des datasets", "En remplaçant les outils de design"]
         correct: 0
-        explanation: "Ils créent des visuels complémentaires pour améliorer la dataviz."
-      - id: "jour_2_apres_midi_13"
-        question: "Pourquoi prototyper avec Penpot ?"
-        answers:
-          [
-            "Pour organiser la hiérarchie",
-            "Pour calculer",
-            "Pour stocker",
-            "Pour gérer",
-          ]
+        explanation: "Il enrichit la créativité dans la communication visuelle."
+      - id: "jour2-apres-midi-outils-10"
+        question: "Quel est l'objectif des travaux pratiques d'amélioration visuelle ?"
+        answers: ["Améliorer un dashboard existant et créer un complément via Figma", "Créer un dashboard from scratch", "Analyser des données sans visuels", "Écrire un rapport"]
         correct: 0
-        explanation: "Penpot permet de prototyper et organiser la hiérarchie visuelle."
-      - id: "jour_2_apres_midi_14"
-        question: "Quels outils pour rapports publics ?"
-        answers:
-          ["Datawrapper, Flourish, RAWGraphs", "Power BI seul", "Excel", "Word"]
+        explanation: "Les travaux pratiques appliquent les outils appris à des cas réels."
+      - id: "jour2-apres-midi-outils-11"
+        question: "Comment Figma contribue-t-il à la création d'une charte graphique BI ?"
+        answers: ["En permettant de définir et tester des styles visuels cohérents", "En générant automatiquement des rapports", "En remplaçant les analyses de données", "En créant des bases de données"]
         correct: 0
-        explanation: "Ces outils sont spécialisés dans les dataviz pour rapports publics."
-      - id: "jour_2_apres_midi_15"
-        question: "Que fait ChatGPT Canvas ?"
-        answers: ["Enrichir visuellement", "Calculer", "Stocker", "Coder"]
+        explanation: "Figma aide à établir une identité visuelle uniforme pour les BI."
+      - id: "jour2-apres-midi-outils-12"
+        question: "Quel avantage offre Flourish pour les dataviz communicantes ?"
+        answers: ["Des templates interactifs et animés pour des présentations engageantes", "Une intégration directe avec Power BI", "Des analyses statistiques avancées", "La génération de code source"]
         correct: 0
-        explanation: "ChatGPT Canvas enrichit la communication par des éléments visuels générés."
-      - id: "jour_2_apres_midi_16"
-        question: "Comment adapter selon le public ?"
-        answers:
-          [
-            "En variant les visuels",
-            "En uniformisant",
-            "En compliquant",
-            "En ignorant",
-          ]
+        explanation: "Flourish excelle dans les visuels dynamiques et narratifs."
+      - id: "jour2-apres-midi-outils-13"
+        question: "Comment l'IA générative peut-elle adapter les visuels au public ?"
+        answers: ["En créant des illustrations sur mesure pour différents niveaux de compréhension", "En analysant les données en temps réel", "En remplaçant les outils de BI", "En générant des textes uniquement"]
         correct: 0
-        explanation: "Adapter signifie varier les visuels pour répondre aux besoins du public."
-      - id: "jour_2_apres_midi_17"
-        question: "Que évalue la cohérence dans la grille ?"
-        answers: ["L'uniformité visuelle", "La vitesse", "Le coût", "La taille"]
+        explanation: "L'IA personnalise la communication visuelle selon l'audience."
+      - id: "jour2-apres-midi-outils-14"
+        question: "Quel critère de la grille d'évaluation concerne la cohérence ?"
+        answers: ["L'uniformité des éléments visuels à travers le dashboard", "La vitesse d'exécution", "Le volume de données", "La complexité technique"]
         correct: 0
-        explanation: "La cohérence évalue l'uniformité et la logique visuelle."
-      - id: "jour_2_apres_midi_18"
-        question: "Que améliorent-ils dans les ateliers ?"
-        answers:
-          ["Les tableaux de bord", "Les calculs", "Les bases", "Les codes"]
+        explanation: "La cohérence assure une expérience visuelle harmonieuse."
+      - id: "jour2-apres-midi-outils-15"
+        question: "Dans les travaux pratiques, pourquoi améliorer un dashboard Power BI avec Figma ?"
+        answers: ["Pour combiner les forces de l'analyse de données et du design pur", "Pour remplacer Power BI", "Pour éviter l'interactivité", "Pour simplifier les données"]
         correct: 0
-        explanation: "Ils améliorent visuellement les tableaux de bord existants."
-      - id: "jour_2_apres_midi_19"
-        question: "Quel outil pour charte graphique BI ?"
-        answers: ["Figma", "Excel", "Word", "PowerPoint"]
+        explanation: "Cette combinaison optimise l'impact visuel et fonctionnel."
+      - id: "jour2-apres-midi-outils-16"
+        question: "Comment Penpot facilite-t-il le prototypage open-source ?"
+        answers: ["En offrant des outils de design similaires à Figma sans coût", "En intégrant des analyses de données", "En générant des rapports automatiques", "En remplaçant les BI tools"]
         correct: 0
-        explanation: "Figma est utilisé pour créer des chartes graphiques BI."
-      - id: "jour_2_apres_midi_20"
-        question: "Pourquoi utiliser RAWGraphs ?"
-        answers:
-          [
-            "Pour dataviz communicantes",
-            "Pour calculs",
-            "Pour stockage",
-            "Pour gestion",
-          ]
+        explanation: "Penpot démocratise l'accès aux outils de prototypage."
+      - id: "jour2-apres-midi-outils-17"
+        question: "Quel rôle joue RAWGraphs dans les rapports publics ?"
+        answers: ["Transformer des données CSV en visuels vectoriels accessibles", "Analyser des datasets complexes", "Créer des dashboards interactifs", "Générer du contenu textuel"]
         correct: 0
-        explanation: "RAWGraphs crée des visualisations communicantes pour le web."
+        explanation: "RAWGraphs est idéal pour des visuels simples et partageables."
+      - id: "jour2-apres-midi-outils-18"
+        question: "Comment ChatGPT Canvas enrichit-il la communication visuelle ?"
+        answers: ["En fournissant des idées créatives et des descriptions pour les designs", "En créant des graphiques directement", "En analysant les performances", "En remplaçant les designers humains"]
+        correct: 0
+        explanation: "Il stimule l'innovation dans la conception visuelle."
+      - id: "jour2-apres-midi-outils-19"
+        question: "Quel est l'intérêt d'adapter les visuels aux décideurs ?"
+        answers: ["Fournir des insights clairs et stratégiques pour la prise de décision", "Ajouter des détails techniques inutiles", "Rendre les visuels plus complexes", "Ignorer les tendances"]
+        correct: 0
+        explanation: "L'adaptation maximise l'efficacité pour les hauts dirigeants."
+      - id: "jour2-apres-midi-outils-20"
+        question: "Comment la grille d'évaluation finale aide-t-elle à améliorer la dataviz ?"
+        answers: ["En fournissant des critères objectifs pour mesurer et optimiser la qualité", "En générant des visuels automatiquement", "En analysant les données", "En créant des rapports texte"]
+        correct: 0
+        explanation: "Elle guide l'amélioration continue des datavisualisations."
 meta:
   formation_title: "Créer des datavisualisations esthétiques, ergonomiques et percutantes"
   qcm_title: "QCM sur Créer des datavisualisations esthétiques, ergonomiques et percutantes"
@@ -855,10 +482,10 @@ meta:
     difficulty: "progressive"
     qcm_title: "QCM sur Créer des datavisualisations esthétiques, ergonomiques et percutantes"
     output_file: "qcm-dataviz.yaml"
-    new_questions: 25
+    new_questions: 10
 plan:
   plan_chapters:
-    - id: "jour_1_matin_auditer_et_diagnostiquer_ses_dashboards"
+    - id: "jour1-matin-audit"
       title: "Jour 1 – Matin : Auditer et diagnostiquer ses dashboards"
       notions:
         - "Les critères d’une dataviz réussie : lisibilité, cohérence, esthétique, impact"
@@ -867,7 +494,7 @@ plan:
         - "Analyser la structure et la hiérarchie d’un tableau de bord"
         - "Méthodologie d’audit ergonomique"
         - "Travaux pratiques : Audit collectif et bienveillant des dashboards Power BI des participants"
-    - id: "jour_1_apres_midi_améliorer_la_lisibilité_et_la_cohérence_visuelle"
+    - id: "jour1-apres-midi-ameliorer"
       title: "Jour 1 – Après-midi : Améliorer la lisibilité et la cohérence visuelle"
       notions:
         - "Principes de design visuel appliqués à la donnée"
@@ -876,16 +503,16 @@ plan:
         - "Guidage visuel et storytelling par la mise en page"
         - "Uniformisation graphique dans Power BI (thèmes, gabarits)"
         - "Travaux pratiques : Application des règles ergonomiques à des visuels Power BI réels"
-    - id: "jour_2_matin_concevoir_des_tableaux_de_bord_orientés_insight"
+    - id: "jour2-matin-concevoir"
       title: "Jour 2 – Matin : Concevoir des tableaux de bord orientés insight"
       notions:
         - "Transformer la donnée en message clair et actionnable"
         - "Storytelling visuel : de la donnée brute à l’histoire"
         - "Structuration et hiérarchisation de l’information"
-        - "Design d’interactions utiles : filtres, drill-down, tooltips"
+        "Design d’interactions utiles : filtres, drill-down, tooltips"
         - "Maintenir une cohérence à l’échelle d’une organisation"
         - "Travaux pratiques : Création d’un mini-dashboard Power BI à partir d’un brief métier"
-    - id: "jour_2_apres_midi_outils_web_et_ia_pour_sublimer_la_dataviz"
+    - id: "jour2-apres-midi-outils"
       title: "Jour 2 – Après-midi : Outils web et IA pour sublimer la dataviz"
       notions:
         - "Figma et Penpot : prototyper le design, organiser la hiérarchie, créer une charte graphique BI"
@@ -900,15 +527,15 @@ progress:
   completed_chapters: 4
   questions_per_chapter: 20
   chapters:
-    - id: "jour_1_matin_auditer_et_diagnostiquer_ses_dashboards"
+    - id: "jour1-matin-audit"
       questions_generated: 20
       questions_remaining: 0
-    - id: "jour_1_apres_midi_améliorer_la_lisibilité_et_la_cohérence_visuelle"
+    - id: "jour1-apres-midi-ameliorer"
       questions_generated: 20
       questions_remaining: 0
-    - id: "jour_2_matin_concevoir_des_tableaux_de_bord_orientés_insight"
+    - id: "jour2-matin-concevoir"
       questions_generated: 20
       questions_remaining: 0
-    - id: "jour_2_apres_midi_outils_web_et_ia_pour_sublimer_la_dataviz"
+    - id: "jour2-apres-midi-outils"
       questions_generated: 20
       questions_remaining: 0
