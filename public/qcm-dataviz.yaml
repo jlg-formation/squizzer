@@ -345,7 +345,7 @@ plan:
           correct: 0
           explanation: "Le guidage aide à naviguer dans l'information."
         - id: "qcm_dataviz_j1a_015"
-        question: "Pourquoi l'équilibre est-il essentiel ?"
+          question: "Pourquoi l'équilibre est-il essentiel ?"
           answers:
             - "Pour une composition visuelle stable"
             - "Pour créer du déséquilibre"
