@@ -103,7 +103,7 @@ const LoadQcmPage: React.FC = () => {
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            if (!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)) return;
+            if (!/^https?:\/\/.+\.(yaml|yml|json)$/.test(customUrl)) return;
             try {
               const qcmData = await fetchQcmFile(customUrl);
               console.log("qcmData: ", qcmData);
@@ -136,7 +136,7 @@ const LoadQcmPage: React.FC = () => {
         >
           <ButtonPrimary
             className="w-full"
-            disabled={!/^https?:\/\/.+\.(yaml|json)$/.test(customUrl)}
+            disabled={!/^https?:\/\/.+\.(yaml|yml|json)$/.test(customUrl)}
             type="submit"
           >
             <ArrowRight className="mr-2 h-4 w-4" />

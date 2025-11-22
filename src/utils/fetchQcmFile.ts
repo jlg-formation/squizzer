@@ -12,7 +12,7 @@ export async function fetchQcmFile(
   try {
     const res = await fetch(url);
     const text = await res.text();
-    if (url.endsWith(".yaml")) {
+    if (url.endsWith(".yaml") || url.endsWith(".yml")) {
       const yamlModule = await import("yaml");
       const data = yamlModule.default.parse(text) as QcmFile;
       console.log("data: ", data);
