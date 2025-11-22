@@ -1,10 +1,14 @@
-title: QCM sur la formation ORSYS DTV - Développer des applications de data visualisation
+title:
+  QCM sur la formation ORSYS DTV - Développer des applications de data
+  visualisation
 chapters:
   - id: intro
     title: Introduction à la visualisation d’information
     questions:
       - id: q1
-        question: "Quel est l’objectif principal de la visualisation d’information présenté dans la formation DTV ?"
+        question:
+          "Quel est l’objectif principal de la visualisation d’information
+          présenté dans la formation DTV ?"
         answers:
           [
             "Faciliter la compréhension et l’analyse des données",
@@ -13,10 +17,14 @@ chapters:
             "Réduire la taille des bases de données",
           ]
         correct: 0
-        explanation: "La visualisation d’information vise à faciliter la compréhension, l’analyse et la restitution des données."
+        explanation:
+          "La visualisation d’information vise à faciliter la compréhension,
+          l’analyse et la restitution des données."
 
       - id: q2
-        question: "Quel rôle joue l’utilisateur dans une application de visualisation d’information, selon le programme ?"
+        question:
+          "Quel rôle joue l’utilisateur dans une application de visualisation
+          d’information, selon le programme ?"
         answers:
           [
             "Observer passivement un graphique statique",
@@ -25,10 +33,14 @@ chapters:
             "Configurer uniquement le stockage des données",
           ]
         correct: 1
-        explanation: "Le programme insiste sur le rôle de l’utilisateur et de l’interaction dans la visualisation."
+        explanation:
+          "Le programme insiste sur le rôle de l’utilisateur et de l’interaction
+          dans la visualisation."
 
       - id: q3
-        question: "Quel type de diagramme fait partie des diagrammes courants cités dans le programme ?"
+        question:
+          "Quel type de diagramme fait partie des diagrammes courants cités dans
+          le programme ?"
         answers:
           [
             "Histogramme",
@@ -37,10 +49,14 @@ chapters:
             "Sankey",
           ]
         correct: 0
-        explanation: "Le programme mentionne explicitement les histogrammes parmi les diagrammes courants."
+        explanation:
+          "Le programme mentionne explicitement les histogrammes parmi les
+          diagrammes courants."
 
       - id: q4
-        question: "Parmi les propositions suivantes, laquelle correspond à une visualisation multidimensionnelle citée dans le programme ?"
+        question:
+          "Parmi les propositions suivantes, laquelle correspond à une
+          visualisation multidimensionnelle citée dans le programme ?"
         answers:
           [
             "Diagramme d’Inselberg",
@@ -49,10 +65,14 @@ chapters:
             "Diagramme en barres empilées",
           ]
         correct: 0
-        explanation: "Les diagrammes d’Inselberg sont cités comme exemple de visualisation multidimensionnelle."
+        explanation:
+          "Les diagrammes d’Inselberg sont cités comme exemple de visualisation
+          multidimensionnelle."
 
       - id: q5
-        question: "Quel type de données est typiquement associé aux visualisations multiniveaux dans le programme ?"
+        question:
+          "Quel type de données est typiquement associé aux visualisations
+          multiniveaux dans le programme ?"
         answers:
           [
             "Données hiérarchiques",
@@ -61,10 +81,14 @@ chapters:
             "Données audio",
           ]
         correct: 0
-        explanation: "Les visualisations multiniveaux sont associées aux données hiérarchiques dans le programme."
+        explanation:
+          "Les visualisations multiniveaux sont associées aux données
+          hiérarchiques dans le programme."
 
       - id: q6
-        question: "Quelle technique de visualisation est citée pour gérer le focus et le contexte dans des représentations complexes ?"
+        question:
+          "Quelle technique de visualisation est citée pour gérer le focus et le
+          contexte dans des représentations complexes ?"
         answers:
           [
             "Vue fisheye",
@@ -73,10 +97,14 @@ chapters:
             "Tableau croisé dynamique",
           ]
         correct: 0
-        explanation: "La vue fisheye fait partie des techniques évoquées pour la visualisation."
+        explanation:
+          "La vue fisheye fait partie des techniques évoquées pour la
+          visualisation."
 
       - id: q7
-        question: "À quoi correspond une visualisation par modèle de force dans le contexte du programme ?"
+        question:
+          "À quoi correspond une visualisation par modèle de force dans le
+          contexte du programme ?"
         answers:
           [
             "Une simulation physique de déplacements de nœuds",
@@ -85,10 +113,14 @@ chapters:
             "Une analyse statistique classique",
           ]
         correct: 0
-        explanation: "La visualisation par modèle de force repose sur un modèle énergie/ressort simulant des forces entre nœuds."
+        explanation:
+          "La visualisation par modèle de force repose sur un modèle
+          énergie/ressort simulant des forces entre nœuds."
 
       - id: q8
-        question: "Quel type de structure est typiquement représenté par des visualisations de réseaux hiérarchiques ou radiales ?"
+        question:
+          "Quel type de structure est typiquement représenté par des
+          visualisations de réseaux hiérarchiques ou radiales ?"
         answers:
           [
             "Des relations entre entités connectées",
@@ -97,10 +129,14 @@ chapters:
             "Une simple liste ordonnée",
           ]
         correct: 0
-        explanation: "Les visualisations de réseaux hiérarchiques ou radiales représentent des relations dans un réseau."
+        explanation:
+          "Les visualisations de réseaux hiérarchiques ou radiales représentent
+          des relations dans un réseau."
 
       - id: q9
-        question: "Pourquoi le programme aborde-t-il le cadre juridique du stockage et de l’analyse de données ?"
+        question:
+          "Pourquoi le programme aborde-t-il le cadre juridique du stockage et
+          de l’analyse de données ?"
         answers:
           [
             "Pour assurer la conformité de l’usage des données",
@@ -109,25 +145,34 @@ chapters:
             "Pour interdire l’utilisation de données externes",
           ]
         correct: 0
-        explanation: "Le cadre juridique est abordé pour garantir un usage conforme des données analysées et visualisées."
+        explanation:
+          "Le cadre juridique est abordé pour garantir un usage conforme des
+          données analysées et visualisées."
 
       - id: q10
-        question: "Quel énoncé décrit le mieux la visualisation d’information telle qu’introduite dans le cours ?"
+        question:
+          "Quel énoncé décrit le mieux la visualisation d’information telle
+          qu’introduite dans le cours ?"
         answers:
           [
-            "Un moyen de transformer des données en représentations graphiques utiles à la décision",
+            "Un moyen de transformer des données en représentations graphiques
+            utiles à la décision",
             "Un simple embellissement des tableaux de données",
             "Une méthode pour compresser les données",
             "Une technique réservée uniquement aux data scientists",
           ]
         correct: 0
-        explanation: "La visualisation d’information sert à transformer des données en représentations graphiques utiles à l’analyse et à la décision."
+        explanation:
+          "La visualisation d’information sert à transformer des données en
+          représentations graphiques utiles à l’analyse et à la décision."
 
   - id: semiology
     title: Sémiologie graphique et perception visuelle
     questions:
       - id: q11
-        question: "Quel est l’objectif principal de la sémiologie graphique dans le cadre de la visualisation de données ?"
+        question:
+          "Quel est l’objectif principal de la sémiologie graphique dans le
+          cadre de la visualisation de données ?"
         answers:
           [
             "Choisir des symboles visuels adaptés pour représenter les données",
@@ -136,10 +181,14 @@ chapters:
             "Automatiser la collecte de données brutes",
           ]
         correct: 0
-        explanation: "La sémiologie graphique traite du choix et de l’usage des variables visuelles pour représenter des données."
+        explanation:
+          "La sémiologie graphique traite du choix et de l’usage des variables
+          visuelles pour représenter des données."
 
       - id: q12
-        question: "Laquelle des propositions suivantes est une variable visuelle classique ?"
+        question:
+          "Laquelle des propositions suivantes est une variable visuelle
+          classique ?"
         answers:
           [
             "La couleur",
@@ -148,22 +197,30 @@ chapters:
             "Le système d’exploitation",
           ]
         correct: 0
-        explanation: "Les variables visuelles incluent notamment la couleur, la forme, la taille, la position, etc."
+        explanation:
+          "Les variables visuelles incluent notamment la couleur, la forme, la
+          taille, la position, etc."
 
       - id: q13
-        question: "Qu’étudie le « système visuel humain » dans le cadre du cours ?"
+        question:
+          "Qu’étudie le « système visuel humain » dans le cadre du cours ?"
         answers:
           [
-            "La manière dont l’œil et le cerveau perçoivent les formes et les couleurs",
+            "La manière dont l’œil et le cerveau perçoivent les formes et les
+            couleurs",
             "Uniquement la résolution des écrans",
             "Uniquement la définition des polices de caractères",
             "La structure interne des bases de données",
           ]
         correct: 0
-        explanation: "Le système visuel humain renvoie à la façon dont nous percevons et interprétons les signaux visuels."
+        explanation:
+          "Le système visuel humain renvoie à la façon dont nous percevons et
+          interprétons les signaux visuels."
 
       - id: q14
-        question: "Quelle propriété perceptive est particulièrement importante pour comparer rapidement des valeurs dans un graphique ?"
+        question:
+          "Quelle propriété perceptive est particulièrement importante pour
+          comparer rapidement des valeurs dans un graphique ?"
         answers:
           [
             "La capacité à distinguer des différences de longueur ou de position",
@@ -172,19 +229,26 @@ chapters:
             "Le nombre de décimales stockées en base",
           ]
         correct: 0
-        explanation: "La comparaison visuelle de longueurs ou de positions est une propriété perceptive clé pour lire un graphique."
+        explanation:
+          "La comparaison visuelle de longueurs ou de positions est une
+          propriété perceptive clé pour lire un graphique."
 
       - id: q15
-        question: "Pourquoi le choix d’une variable visuelle inadaptée peut-il nuire à la visualisation ?"
+        question:
+          "Pourquoi le choix d’une variable visuelle inadaptée peut-il nuire à
+          la visualisation ?"
         answers:
           [
             "Parce qu’il peut rendre le message difficile à percevoir ou ambigu",
-            "Parce qu’il augmente systématiquement la taille de la base de données",
+            "Parce qu’il augmente systématiquement la taille de la base de
+            données",
             "Parce qu’il empêche l’exportation au format PDF",
             "Parce qu’il interdit l’usage de diagrammes 3D",
           ]
         correct: 0
-        explanation: "Une variable mal choisie peut brouiller le message et rendre l’interprétation plus difficile."
+        explanation:
+          "Une variable mal choisie peut brouiller le message et rendre
+          l’interprétation plus difficile."
 
       - id: q16
         question: "Dans le programme, le mouvement est mentionné comme :"
@@ -196,10 +260,14 @@ chapters:
             "Un format particulier de fichier vidéo",
           ]
         correct: 0
-        explanation: "Le mouvement est présenté comme une extension de la sémiologie graphique, utilisable avec prudence."
+        explanation:
+          "Le mouvement est présenté comme une extension de la sémiologie
+          graphique, utilisable avec prudence."
 
       - id: q17
-        question: "Quel choix de variable visuelle est généralement le plus adapté pour distinguer des catégories qualitatives ?"
+        question:
+          "Quel choix de variable visuelle est généralement le plus adapté pour
+          distinguer des catégories qualitatives ?"
         answers:
           [
             "La couleur ou la forme",
@@ -208,49 +276,68 @@ chapters:
             "Le type de base de données sous-jacente",
           ]
         correct: 0
-        explanation: "Pour des catégories qualitatives, couleur et forme sont souvent les variables visuelles les plus pertinentes."
+        explanation:
+          "Pour des catégories qualitatives, couleur et forme sont souvent les
+          variables visuelles les plus pertinentes."
 
       - id: q18
-        question: "Pourquoi est-il important de connaître les limites du système visuel humain ?"
+        question:
+          "Pourquoi est-il important de connaître les limites du système visuel
+          humain ?"
         answers:
           [
-            "Pour éviter de surcharger la visualisation en informations difficiles à distinguer",
+            "Pour éviter de surcharger la visualisation en informations
+            difficiles à distinguer",
             "Pour dimensionner les serveurs de bases de données",
             "Pour choisir la bonne licence logicielle",
             "Pour définir la fréquence de sauvegarde",
           ]
         correct: 0
-        explanation: "Connaître ces limites aide à concevoir des visuels lisibles et non surchargés."
+        explanation:
+          "Connaître ces limites aide à concevoir des visuels lisibles et non
+          surchargés."
 
       - id: q19
-        question: "Quel est l’intérêt d’une étude de cas sur les variables visuelles, telle que prévue dans le programme ?"
+        question:
+          "Quel est l’intérêt d’une étude de cas sur les variables visuelles,
+          telle que prévue dans le programme ?"
         answers:
           [
-            "Mettre en pratique le choix et la combinaison de variables visuelles adaptées",
+            "Mettre en pratique le choix et la combinaison de variables
+            visuelles adaptées",
             "Tester uniquement la vitesse d’affichage des graphiques",
             "Vérifier la compatibilité avec différents navigateurs",
             "Mesurer la taille maximale d’un dataset",
           ]
         correct: 0
-        explanation: "L’étude de cas permet d’appliquer concrètement les principes de sémiologie graphique."
+        explanation:
+          "L’étude de cas permet d’appliquer concrètement les principes de
+          sémiologie graphique."
 
       - id: q20
-        question: "Parmi les propositions suivantes, quelle erreur de sémiologie graphique est typique ?"
+        question:
+          "Parmi les propositions suivantes, quelle erreur de sémiologie
+          graphique est typique ?"
         answers:
           [
-            "Utiliser une palette de couleurs rendant certaines catégories difficilement distinguables",
+            "Utiliser une palette de couleurs rendant certaines catégories
+            difficilement distinguables",
             "Stocker les données dans plusieurs tables",
             "Exécuter trop de requêtes SQL",
             "Sauvegarder les graphiques au format vectoriel",
           ]
         correct: 0
-        explanation: "Une palette de couleurs mal choisie peut rendre des catégories quasi indiscernables visuellement."
+        explanation:
+          "Une palette de couleurs mal choisie peut rendre des catégories quasi
+          indiscernables visuellement."
 
   - id: interactions
     title: Transitions animées, légendes interactives et interaction
     questions:
       - id: q21
-        question: "Quel est l’un des objectifs des transitions animées dans une visualisation, selon le programme ?"
+        question:
+          "Quel est l’un des objectifs des transitions animées dans une
+          visualisation, selon le programme ?"
         answers:
           [
             "Aider l’utilisateur à suivre l’évolution d’un état à un autre",
@@ -259,10 +346,14 @@ chapters:
             "Supprimer le besoin d’axes et d’échelles",
           ]
         correct: 0
-        explanation: "Les transitions animées permettent de suivre l’évolution d’une représentation vers une autre."
+        explanation:
+          "Les transitions animées permettent de suivre l’évolution d’une
+          représentation vers une autre."
 
       - id: q22
-        question: "À quoi servent principalement les légendes interactives dans une visualisation ?"
+        question:
+          "À quoi servent principalement les légendes interactives dans une
+          visualisation ?"
         answers:
           [
             "Filtrer ou mettre en évidence certaines séries de données",
@@ -271,34 +362,48 @@ chapters:
             "Augmenter automatiquement la résolution de l’écran",
           ]
         correct: 0
-        explanation: "Les légendes interactives permettent souvent d’activer/désactiver ou mettre en évidence des séries."
+        explanation:
+          "Les légendes interactives permettent souvent d’activer/désactiver ou
+          mettre en évidence des séries."
 
       - id: q23
-        question: "Quelle manipulation des variables visuelles est typiquement réalisée dans les travaux pratiques du module transitions animées ?"
+        question:
+          "Quelle manipulation des variables visuelles est typiquement réalisée
+          dans les travaux pratiques du module transitions animées ?"
         answers:
           [
-            "Faire varier progressivement taille, position ou couleur pour illustrer un changement",
+            "Faire varier progressivement taille, position ou couleur pour
+            illustrer un changement",
             "Modifier le moteur de base de données",
             "Changer le langage de programmation du backend",
             "Optimiser le temps d’accès disque",
           ]
         correct: 0
-        explanation: "Les travaux pratiques portent sur la manipulation des variables visuelles via des transitions."
+        explanation:
+          "Les travaux pratiques portent sur la manipulation des variables
+          visuelles via des transitions."
 
       - id: q24
-        question: "Quelle règle générale doit être respectée pour l’usage des animations dans les visualisations ?"
+        question:
+          "Quelle règle générale doit être respectée pour l’usage des animations
+          dans les visualisations ?"
         answers:
           [
-            "Elles doivent rester au service de la compréhension et non du simple décor",
-            "Elles doivent être systématiquement activées pour tous les graphiques",
+            "Elles doivent rester au service de la compréhension et non du
+            simple décor",
+            "Elles doivent être systématiquement activées pour tous les
+            graphiques",
             "Elles doivent toujours durer plus de 10 secondes",
             "Elles doivent remplacer toute interaction utilisateur",
           ]
         correct: 0
-        explanation: "Les animations doivent aider à la compréhension, pas distraire ou gêner l’utilisateur."
+        explanation:
+          "Les animations doivent aider à la compréhension, pas distraire ou
+          gêner l’utilisateur."
 
       - id: q25
-        question: "Quel risque est associé à un usage excessif des transitions animées ?"
+        question:
+          "Quel risque est associé à un usage excessif des transitions animées ?"
         answers:
           [
             "Rendre la lecture fatigante ou confusante pour l’utilisateur",
@@ -307,10 +412,14 @@ chapters:
             "Supprimer les légendes existantes",
           ]
         correct: 0
-        explanation: "Des animations trop nombreuses ou mal conçues peuvent nuire à la lisibilité."
+        explanation:
+          "Des animations trop nombreuses ou mal conçues peuvent nuire à la
+          lisibilité."
 
       - id: q26
-        question: "Quel bénéfice majeur une légende interactive apporte-t-elle à l’exploration de données ?"
+        question:
+          "Quel bénéfice majeur une légende interactive apporte-t-elle à
+          l’exploration de données ?"
         answers:
           [
             "Permettre à l’utilisateur de contrôler ce qui est visible ou non",
@@ -319,109 +428,152 @@ chapters:
             "Changer le type de stockage des données",
           ]
         correct: 0
-        explanation: "La légende interactive donne à l’utilisateur un contrôle direct sur les séries ou catégories affichées."
+        explanation:
+          "La légende interactive donne à l’utilisateur un contrôle direct sur
+          les séries ou catégories affichées."
 
       - id: q27
-        question: "Pourquoi l’interaction est-elle mise en avant dans le programme pour la visualisation d’information ?"
+        question:
+          "Pourquoi l’interaction est-elle mise en avant dans le programme pour
+          la visualisation d’information ?"
         answers:
           [
-            "Parce qu’elle permet à l’utilisateur d’explorer les données selon ses propres questions",
+            "Parce qu’elle permet à l’utilisateur d’explorer les données selon
+            ses propres questions",
             "Parce qu’elle remplace la phase de préparation des données",
             "Parce qu’elle supprime la nécessité de documenter les graphiques",
             "Parce qu’elle réduit le besoin de puissance serveur",
           ]
         correct: 0
-        explanation: "L’interaction donne à l’utilisateur la possibilité d’explorer les données de façon adaptée à ses besoins."
+        explanation:
+          "L’interaction donne à l’utilisateur la possibilité d’explorer les
+          données de façon adaptée à ses besoins."
 
       - id: q28
-        question: "Quelle combinaison illustre correctement l’usage des transitions animées et des légendes interactives ?"
+        question:
+          "Quelle combinaison illustre correctement l’usage des transitions
+          animées et des légendes interactives ?"
         answers:
           [
-            "Animer la transition entre deux états d’un graphique et permettre d’activer/désactiver les séries via la légende",
+            "Animer la transition entre deux états d’un graphique et permettre
+            d’activer/désactiver les séries via la légende",
             "Utiliser des animations sans aucune légende",
             "Utiliser uniquement des légendes statiques sans interaction",
             "Remplacer axes et échelles par des animations",
           ]
         correct: 0
-        explanation: "Le programme met l’accent sur l’usage conjoint des animations et des légendes interactives pour l’exploration."
+        explanation:
+          "Le programme met l’accent sur l’usage conjoint des animations et des
+          légendes interactives pour l’exploration."
 
       - id: q29
-        question: "Dans quel cas une transition animée est particulièrement pertinente ?"
+        question:
+          "Dans quel cas une transition animée est particulièrement pertinente ?"
         answers:
           [
-            "Lorsqu’on passe d’un type de diagramme à un autre tout en suivant les mêmes données",
+            "Lorsqu’on passe d’un type de diagramme à un autre tout en suivant
+            les mêmes données",
             "Pour masquer complètement un changement de données",
             "Pour décorer un écran d’attente sans lien avec les données",
             "Pour remplacer les contrôles de filtrage",
           ]
         correct: 0
-        explanation: "Les transitions sont utiles pour accompagner un changement de représentation d’un même jeu de données."
+        explanation:
+          "Les transitions sont utiles pour accompagner un changement de
+          représentation d’un même jeu de données."
 
       - id: q30
-        question: "Que visent les travaux pratiques du module transitions animées selon le programme ?"
+        question:
+          "Que visent les travaux pratiques du module transitions animées selon
+          le programme ?"
         answers:
           [
-            "Manipuler les variables visuelles et créer des transitions animées pertinentes",
+            "Manipuler les variables visuelles et créer des transitions animées
+            pertinentes",
             "Configurer un serveur de bases de données",
             "Écrire des scripts d’import en masse",
             "Optimiser le système de fichiers",
           ]
         correct: 0
-        explanation: "Les travaux pratiques portent explicitement sur la manipulation des variables visuelles et la création de transitions."
+        explanation:
+          "Les travaux pratiques portent explicitement sur la manipulation des
+          variables visuelles et la création de transitions."
 
   - id: tools_networks
     title: Outils, visualisation de réseaux, diagrammes et OpenData
     questions:
       - id: q31
-        question: "Que recouvre le thème « Frameworks JavaScript de data visualisation » dans le programme ?"
+        question:
+          "Que recouvre le thème « Frameworks JavaScript de data visualisation »
+          dans le programme ?"
         answers:
           [
-            "Des bibliothèques permettant de créer des visualisations interactives côté navigateur",
+            "Des bibliothèques permettant de créer des visualisations
+            interactives côté navigateur",
             "Des outils pour administrer des bases de données SQL",
             "Des frameworks dédiés uniquement au traitement de texte",
             "Des systèmes de gestion de versions de code",
           ]
         correct: 0
-        explanation: "Les frameworks JavaScript de data visualisation servent à produire des visualisations interactives dans le navigateur."
+        explanation:
+          "Les frameworks JavaScript de data visualisation servent à produire
+          des visualisations interactives dans le navigateur."
 
       - id: q32
-        question: "Pourquoi le programme mentionne-t-il aussi des frameworks basés sur d’autres langages (Java, Python, etc.) ?"
+        question:
+          "Pourquoi le programme mentionne-t-il aussi des frameworks basés sur
+          d’autres langages (Java, Python, etc.) ?"
         answers:
           [
-            "Pour montrer que la data visualisation peut être intégrée dans différents environnements techniques",
+            "Pour montrer que la data visualisation peut être intégrée dans
+            différents environnements techniques",
             "Pour remplacer entièrement JavaScript",
             "Pour éviter l’usage du web dans les visualisations",
             "Pour imposer un langage unique dans tous les projets",
           ]
         correct: 0
-        explanation: "Le programme souligne la diversité des environnements possibles pour la data visualisation."
+        explanation:
+          "Le programme souligne la diversité des environnements possibles pour
+          la data visualisation."
 
       - id: q33
-        question: "Quel est l’objectif principal des travaux pratiques sur les frameworks de visualisation ?"
+        question:
+          "Quel est l’objectif principal des travaux pratiques sur les
+          frameworks de visualisation ?"
         answers:
           [
-            "Prendre en main concrètement un ou plusieurs frameworks de data visualisation",
+            "Prendre en main concrètement un ou plusieurs frameworks de data
+            visualisation",
             "Configurer un cluster de bases de données",
             "Écrire un moteur d’indexation full-text",
             "Mettre en place un système de sauvegarde automatique",
           ]
         correct: 0
-        explanation: "Les travaux pratiques se concentrent sur la prise en main de frameworks de visualisation."
+        explanation:
+          "Les travaux pratiques se concentrent sur la prise en main de
+          frameworks de visualisation."
 
       - id: q34
-        question: "Dans le module « Visualisation de réseaux », que signifie l’étude de types de réseaux comme « petit monde » ?"
+        question:
+          "Dans le module « Visualisation de réseaux », que signifie l’étude de
+          types de réseaux comme « petit monde » ?"
         answers:
           [
-            "Analyser des structures de graphes présentant des propriétés particulières de connectivité",
+            "Analyser des structures de graphes présentant des propriétés
+            particulières de connectivité",
             "Étudier uniquement les réseaux locaux d’entreprise",
             "Optimiser la bande passante d’un réseau physique",
             "Supprimer les liens faibles dans un schéma relationnel",
           ]
         correct: 0
-        explanation: "Les réseaux « petit monde » sont des types de graphes étudiés pour leurs propriétés structurelles."
+        explanation:
+          "Les réseaux « petit monde » sont des types de graphes étudiés pour
+          leurs propriétés structurelles."
 
       - id: q35
-        question: "Quel type de données peut être analysé dans le cadre de la visualisation de réseaux mentionnée dans le programme ?"
+        question:
+          "Quel type de données peut être analysé dans le cadre de la
+          visualisation de réseaux mentionnée dans le programme ?"
         answers:
           [
             "Un réseau social ou un corpus de textes",
@@ -430,22 +582,31 @@ chapters:
             "Uniquement des séries temporelles météo",
           ]
         correct: 0
-        explanation: "Le programme cite notamment les réseaux lexicaux, réseaux sociaux et corpus de textes."
+        explanation:
+          "Le programme cite notamment les réseaux lexicaux, réseaux sociaux et
+          corpus de textes."
 
       - id: q36
-        question: "Quel est l’objectif d’une visualisation orientée réseaux réalisée en JavaScript dans le cours ?"
+        question:
+          "Quel est l’objectif d’une visualisation orientée réseaux réalisée en
+          JavaScript dans le cours ?"
         answers:
           [
-            "Représenter graphiquement des entités et leurs liens pour faciliter l’analyse",
+            "Représenter graphiquement des entités et leurs liens pour faciliter
+            l’analyse",
             "Remplacer une base de données relationnelle",
             "Compresser des fichiers texte",
             "Simuler le trafic réseau physique",
           ]
         correct: 0
-        explanation: "Ces visualisations permettent de représenter et explorer des relations entre entités."
+        explanation:
+          "Ces visualisations permettent de représenter et explorer des
+          relations entre entités."
 
       - id: q37
-        question: "Dans le module « Visualisation de diagrammes », quelle est la première étape mentionnée dans le programme ?"
+        question:
+          "Dans le module « Visualisation de diagrammes », quelle est la
+          première étape mentionnée dans le programme ?"
         answers:
           [
             "Étudier un jeu de données",
@@ -454,10 +615,14 @@ chapters:
             "Concevoir un schéma de base de données",
           ]
         correct: 0
-        explanation: "Le programme commence par l’étude d’un jeu de données avant de réaliser des visualisations."
+        explanation:
+          "Le programme commence par l’étude d’un jeu de données avant de
+          réaliser des visualisations."
 
       - id: q38
-        question: "Quel type de visualisations est réalisé dans le module « Visualisation de diagrammes » ?"
+        question:
+          "Quel type de visualisations est réalisé dans le module «
+          Visualisation de diagrammes » ?"
         answers:
           [
             "Des visualisations interactives orientées diagrammes en JavaScript",
@@ -466,22 +631,31 @@ chapters:
             "Des fichiers journaux bruts",
           ]
         correct: 0
-        explanation: "Le module prévoit la réalisation de visualisations interactives de type diagramme, en JavaScript."
+        explanation:
+          "Le module prévoit la réalisation de visualisations interactives de
+          type diagramme, en JavaScript."
 
       - id: q39
-        question: "Que couvre le module « Visualisation de l’OpenData et Cartographie » ?"
+        question:
+          "Que couvre le module « Visualisation de l’OpenData et Cartographie »
+          ?"
         answers:
           [
-            "La visualisation de données publiques (OpenData) avec des frameworks de visualisation et de cartographie",
+            "La visualisation de données publiques (OpenData) avec des
+            frameworks de visualisation et de cartographie",
             "La configuration des pare-feu d’entreprise",
             "L’optimisation de la compression d’images",
             "La mise en place de serveurs de messagerie",
           ]
         correct: 0
-        explanation: "Le module traite de la visualisation de l’OpenData et de la cartographie via des frameworks JavaScript."
+        explanation:
+          "Le module traite de la visualisation de l’OpenData et de la
+          cartographie via des frameworks JavaScript."
 
       - id: q40
-        question: "Quel est l’objectif des travaux pratiques sur l’OpenData selon le programme ?"
+        question:
+          "Quel est l’objectif des travaux pratiques sur l’OpenData selon le
+          programme ?"
         answers:
           [
             "Réaliser des visualisations de données basées sur l’OpenData",
@@ -490,4 +664,6 @@ chapters:
             "Créer un entrepôt de données sans visualisation",
           ]
         correct: 0
-        explanation: "Les travaux pratiques portent sur des visualisations construites à partir de jeux de données OpenData."
+        explanation:
+          "Les travaux pratiques portent sur des visualisations construites à
+          partir de jeux de données OpenData."

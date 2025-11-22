@@ -27,18 +27,8 @@ const QcmSummaryPage: React.FC = () => {
     (acc, q, idx) => acc + (userAnswers[idx] === q.correct ? 1 : 0),
     0,
   );
-  // Arrêter les confettis après 5 secondes et jouer le son selon la tranche de score
+  // Arrêter les confettis après 5 secondes
   useEffect(() => {
-    const scorePercent =
-      totalQuestions > 0 ? (correctCount / totalQuestions) * 100 : 0;
-    let soundFile = "audio/score-low.mp3";
-    if (scorePercent === 100) soundFile = "audio/score-perfect.mp3";
-    else if (scorePercent >= 80) soundFile = "audio/score-high.mp3";
-    else if (scorePercent >= 50) soundFile = "audio/score-medium.mp3";
-    // Joue le son correspondant
-    const audio = new Audio(soundFile);
-    audio.play();
-
     const timer = setTimeout(() => {
       setShowConfetti(false);
     }, 5000);
