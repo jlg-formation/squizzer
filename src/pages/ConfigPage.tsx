@@ -29,14 +29,14 @@ const ConfigPage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8">
-        <h2 className="mb-4 text-xl font-bold">Configuration du QCM</h2>
-        <div className="mb-4 text-center font-mono text-lg font-semibold">
+      <div className="mx-auto max-w-xl rounded-md border border-gray-200 bg-white p-8 shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
+        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Configuration du QCM</h2>
+        <div className="mb-4 text-center font-mono text-lg font-semibold text-gray-900 dark:text-gray-100">
           QCM sélectionné : {config.qcmTitle}
         </div>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <select
-            className="block w-full rounded border border-black px-2 py-1"
+            className="block w-full rounded border border-gray-300 bg-white px-2 py-1 text-gray-900 transition-colors duration-150 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
             value={formData.chapter}
             name="chapter"
             onChange={(e) =>
@@ -53,7 +53,7 @@ const ConfigPage: React.FC = () => {
           <input
             type="number"
             placeholder="Nombre de questions"
-            className="block w-full rounded border border-black px-2 py-1"
+            className="block w-full rounded border border-gray-300 bg-white px-2 py-1 text-gray-900 transition-colors duration-150 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
             value={formData.questionCount}
             min="1"
             onChange={(e) =>
@@ -66,7 +66,7 @@ const ConfigPage: React.FC = () => {
           <input
             type="text"
             placeholder="Seed (aléatoire)"
-            className="block w-full rounded border border-black px-2 py-1"
+            className="block w-full rounded border border-gray-300 bg-white px-2 py-1 text-gray-900 transition-colors duration-150 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
             value={formData.seed}
             onChange={(e) => setFormData({ ...formData, seed: e.target.value })}
           />

@@ -5,7 +5,7 @@ import React from "react";
  * @param children React children
  */
 const Body: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <main className="flex w-full flex-1 items-center justify-center bg-white px-4 py-6">
+  <main className="flex w-full flex-1 items-center justify-center bg-white px-4 py-6 transition-colors duration-150 dark:bg-gray-900">
     {children}
   </main>
 );

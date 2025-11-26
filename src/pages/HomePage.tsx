@@ -7,8 +7,8 @@ import { Play } from "lucide-react";
 
 const HomePage: React.FC = () => (
   <Layout>
-    <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8">
-      <h2 className="mb-4 text-2xl font-bold">Configure ton QCM</h2>
+    <div className="mx-auto max-w-xl rounded-md border border-gray-200 bg-white p-8 shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
+      <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">Configure ton QCM</h2>
       <p className="mb-6">
         Bienvenue sur Squizzer ! Commence par configurer ton QCM pour la
         formation.

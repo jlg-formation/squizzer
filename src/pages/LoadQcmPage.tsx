@@ -66,13 +66,13 @@ const LoadQcmPage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8">
-        <h2 className="mb-4 text-xl font-bold">Choisis un QCM</h2>
+      <div className="mx-auto max-w-xl rounded-md border border-gray-200 bg-white p-8 shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
+        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Choisis un QCM</h2>
         <p className="mb-4">
           Sélectionne un QCM prédéfini ou indique une URL :
         </p>
         <select
-          className="mb-4 block w-full rounded border border-black px-2 py-1"
+          className="mb-4 block w-full rounded border border-gray-300 bg-white px-2 py-1 text-gray-900 transition-colors duration-150 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
           value={selectedQcm}
           onChange={(e) => {
             setSelectedQcm(e.target.value);
@@ -97,7 +97,7 @@ const LoadQcmPage: React.FC = () => {
           placeholder="URL du QCM (YAML)"
           value={customUrl}
           onChange={(e) => setCustomUrl(e.target.value)}
-          className="block w-full rounded border border-black px-2 py-1"
+          className="block w-full rounded border border-gray-300 bg-white px-2 py-1 text-gray-900 transition-colors duration-150 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
         />
         <div className="my-6" />
         <form

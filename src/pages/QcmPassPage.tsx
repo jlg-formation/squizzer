@@ -43,7 +43,7 @@ const QcmPassPage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
+      <div className="mx-auto max-w-xl rounded-md border border-gray-200 bg-white p-8 text-center shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
         <div className="mb-2 text-left">
           <ButtonSecondary
             className="text-base"
@@ -54,12 +54,12 @@ const QcmPassPage: React.FC = () => {
             Précédent
           </ButtonSecondary>
         </div>
-        <h2 className="mb-4 text-xl font-bold">
+        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">
           Question {currentQuestion}/{totalQuestions}
         </h2>
         {currentQ && Array.isArray(currentQ.answers) && (
           <>
-            <div className="mb-6 text-lg font-semibold">
+            <div className="mb-6 text-lg font-semibold text-gray-900 dark:text-gray-100">
               {currentQ.question}
             </div>
             <div className="mb-8 flex flex-col items-start justify-center gap-4">
@@ -68,7 +68,7 @@ const QcmPassPage: React.FC = () => {
                 return (
                   <label
                     key={idx}
-                    className={`flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-lg transition-colors duration-150 hover:bg-gray-100 ${isSelected ? "bg-gray-300" : ""}`}
+                    className={`flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-lg transition-colors duration-150 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-800 ${isSelected ? "bg-gray-200 dark:bg-gray-700" : ""}`}
                   >
                     <input
                       type="radio"
@@ -76,7 +76,7 @@ const QcmPassPage: React.FC = () => {
                       value={idx}
                       checked={isSelected}
                       onChange={() => handleChoice(idx)}
-                      className="mr-3 h-5 w-5 accent-gray-800"
+                      className="mr-3 h-5 w-5 accent-gray-800 dark:accent-gray-200"
                     />
                     {answer}
                   </label>

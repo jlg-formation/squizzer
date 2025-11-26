@@ -22,10 +22,10 @@ const QrcodePage: React.FC = () => {
   };
   return (
     <Layout>
-      <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
-        <h2 className="mb-4 text-xl font-bold">QR Code d'accès au QCM</h2>
+      <div className="mx-auto max-w-xl rounded-md border border-gray-200 bg-white p-8 text-center shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
+        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">QR Code d'accès au QCM</h2>
         <div
-          className="mb-4 flex w-full items-center justify-center border border-black bg-gray-50"
+          className="mb-4 flex w-full items-center justify-center rounded border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900"
           style={{ minHeight: 240 }}
         >
           <div
@@ -50,7 +50,7 @@ const QrcodePage: React.FC = () => {
           type="text"
           value={qcmUrl}
           readOnly
-          className="mb-4 block w-full rounded border border-black px-2 py-1 font-mono"
+          className="mb-4 block w-full rounded border border-gray-300 bg-white px-2 py-1 font-mono text-gray-900 transition-colors duration-150 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
         />
         <ButtonPrimary className="w-full" onClick={handleCopy}>
           <Copy className="mr-2 h-4 w-4" />

@@ -64,9 +64,9 @@ const QcmSummaryPage: React.FC = () => {
           gravity={0.3}
         />
       )}
-      <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
-        <h2 className="mb-4 text-xl font-bold">Résumé du QCM</h2>
-        <div className="mb-6 text-lg font-semibold">
+      <div className="mx-auto max-w-xl rounded-md border border-gray-200 bg-white p-8 text-center shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
+        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Résumé du QCM</h2>
+        <div className="mb-6 text-lg font-semibold text-gray-900 dark:text-gray-100">
           Score final : {correctCount}/{totalQuestions}
         </div>
         <div className="mb-8 flex justify-center">

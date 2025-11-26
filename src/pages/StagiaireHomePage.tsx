@@ -78,18 +78,18 @@ const StagiaireHomePage: React.FC = () => {
   return (
     <Layout>
       {loading ? (
-        <div className="mx-auto max-w-xl animate-pulse rounded-md border border-black bg-white p-8 text-center">
-          <div className="mb-6 text-xl font-bold text-gray-700">
+        <div className="mx-auto max-w-xl animate-pulse rounded-md border border-gray-200 bg-white p-8 text-center shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
+          <div className="mb-6 text-xl font-bold text-gray-700 dark:text-gray-200">
             Chargement...
           </div>
-          <div className="mx-auto mb-4 h-8 w-1/2 rounded bg-gray-200" />
-          <div className="mx-auto mb-2 h-6 w-1/3 rounded bg-gray-100" />
-          <div className="mt-8 h-12 w-full rounded bg-gray-100" />
+          <div className="mx-auto mb-4 h-8 w-1/2 rounded bg-gray-200 dark:bg-gray-700" />
+          <div className="mx-auto mb-2 h-6 w-1/3 rounded bg-gray-100 dark:bg-gray-700" />
+          <div className="mt-8 h-12 w-full rounded bg-gray-100 dark:bg-gray-700" />
         </div>
       ) : (
-        <div className="mx-auto max-w-xl rounded-md border border-black bg-white p-8 text-center">
-          <h2 className="mb-4 text-xl font-bold">{config.qcmTitle || "QCM"}</h2>
-          <div className="mb-2 text-lg font-semibold">
+        <div className="mx-auto max-w-xl rounded-md border border-gray-200 bg-white p-8 text-center shadow-sm transition-colors duration-150 dark:border-gray-700 dark:bg-gray-800">
+          <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">{config.qcmTitle || "QCM"}</h2>
+          <div className="mb-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
             Chapitre : {config.chapter || ""}
           </div>
           <ButtonPrimary className="w-full" onClick={handleStart}>
