@@ -1,0 +1,1320 @@
+# FILE: /dist/qcm-cyber-ia.yaml
+
+title: "QCM sur Cybersécurité et Intelligence Artificielle pour DSI territoriale"
+
+chapters:
+  - id: chap1_ia_moderne
+    title: "Chapitre 1 — Comprendre l'intelligence artificielle moderne : concepts, technologies et enjeux éthiques"
+    questions:
+      - id: q1_1
+        question: "Dans l'architecture générale d'un système d'IA, quel élément est indispensable pour permettre à un modèle d'apprendre des patterns pertinents ?"
+        answers:
+          - "Un processeur graphique de dernière génération"
+          - "Un jeu de données d'entraînement représentatif et de qualité"
+          - "Une connexion Internet haut débit permanente"
+          - "Un système d'exploitation certifié par l'ANSSI"
+        correct: 1
+        explanation: "L'entraînement d'un modèle d'IA repose fondamentalement sur la qualité et la représentativité des données utilisées. Sans données pertinentes, le modèle ne peut pas apprendre les patterns nécessaires à ses prédictions."
+
+      - id: q1_2
+        question: "Quelle est la principale différence entre une IA générative et un modèle prédictif classique ?"
+        answers:
+          - "L'IA générative nécessite obligatoirement un GPU alors que le modèle prédictif fonctionne sur CPU"
+          - "L'IA générative crée du nouveau contenu tandis que le modèle prédictif estime des valeurs futures"
+          - "L'IA générative est toujours open source contrairement aux modèles prédictifs propriétaires"
+          - "L'IA générative fonctionne uniquement en ligne alors que le prédictif fonctionne hors ligne"
+        correct: 1
+        explanation: "L'IA générative (comme les LLM) produit du contenu nouveau (texte, images, code) tandis qu'un modèle prédictif analyse des données pour estimer des valeurs ou probabilités futures sans créer de contenu original."
+
+      - id: q1_3
+        question: "Concernant les grands modèles de langage (LLM), quelle affirmation reflète une limite importante pour une DSI ?"
+        answers:
+          - "Ils ne peuvent pas traiter de documents au format PDF ou Word"
+          - "Ils peuvent produire des réponses plausibles mais factuellement incorrectes"
+          - "Ils sont incapables de générer du texte en langue française"
+          - "Ils nécessitent obligatoirement un hébergement dans le cloud public"
+        correct: 1
+        explanation: "Les LLM peuvent produire des hallucinations, c'est-à-dire des réponses qui semblent correctes mais contiennent des erreurs factuelles. Cette limite est critique pour une DSI qui doit garantir la fiabilité des informations."
+
+      - id: q1_4
+        question: "Dans le cadre de la souveraineté numérique, quel enjeu éthique est prioritaire pour une collectivité territoriale utilisant l'IA ?"
+        answers:
+          - "Maximiser la performance des algorithmes quel que soit leur lieu d'hébergement"
+          - "Garantir que les données des citoyens ne transitent pas par des serveurs extra-européens"
+          - "Utiliser uniquement des solutions développées par des entreprises françaises"
+          - "Privilégier les modèles les plus récents disponibles sur le marché international"
+        correct: 1
+        explanation: "La souveraineté numérique implique de maîtriser la localisation et le traitement des données. Pour une collectivité, s'assurer que les données citoyennes restent sous juridiction européenne est un enjeu majeur de conformité et de confiance."
+
+      - id: q1_5
+        question: "Quel biais algorithmique représente un risque concret pour une DSI territoriale déployant une IA d'aide à la décision ?"
+        answers:
+          - "Un biais de sélection dans les données d'entraînement reproduisant des discriminations historiques"
+          - "Un biais de calcul lié à l'utilisation de processeurs de marques différentes"
+          - "Un biais de réseau causé par la latence des connexions Internet"
+          - "Un biais de stockage dû à l'utilisation de disques SSD plutôt que HDD"
+        correct: 0
+        explanation: "Si les données d'entraînement contiennent des biais historiques (discrimination, sous-représentation), l'IA les reproduira dans ses décisions. C'est un risque majeur pour les services publics qui doivent garantir l'équité de traitement."
+
+      - id: q1_6
+        question: "Concernant l'empreinte énergétique de l'IA, quelle pratique contribue à la sobriété numérique dans une DSI ?"
+        answers:
+          - "Utiliser systématiquement le modèle le plus puissant disponible pour garantir la qualité"
+          - "Entraîner quotidiennement de nouveaux modèles pour maintenir leur pertinence"
+          - "Choisir des modèles adaptés à la complexité réelle de la tâche à accomplir"
+          - "Dupliquer les requêtes sur plusieurs fournisseurs pour comparer les réponses"
+        correct: 2
+        explanation: "La sobriété numérique consiste à utiliser des ressources proportionnées au besoin. Un modèle léger suffit souvent pour des tâches simples, réduisant ainsi la consommation énergétique sans sacrifier la qualité du résultat."
+
+      - id: q1_7
+        question: "Qu'est-ce qui caractérise principalement la phase d'entraînement d'un modèle d'IA par rapport à son utilisation en production ?"
+        answers:
+          - "L'entraînement est instantané alors que la production demande du temps de calcul"
+          - "L'entraînement nécessite des ressources de calcul intensives et un corpus de données conséquent"
+          - "L'entraînement se fait uniquement en local alors que la production nécessite le cloud"
+          - "L'entraînement est gratuit alors que la production génère des coûts importants"
+        correct: 1
+        explanation: "La phase d'entraînement est très gourmande en ressources (GPU, temps, données). Une fois le modèle entraîné, son utilisation en inférence (production) est beaucoup moins coûteuse en ressources par requête."
+
+      - id: q1_8
+        question: "Dans le contexte d'une DSI publique, pourquoi la transparence algorithmique est-elle un enjeu éthique majeur ?"
+        answers:
+          - "Parce que les algorithmes transparents sont toujours plus performants que les opaques"
+          - "Parce que les citoyens ont le droit de comprendre les décisions automatisées qui les concernent"
+          - "Parce que la loi impose de publier le code source de tous les algorithmes utilisés"
+          - "Parce que les algorithmes transparents ne nécessitent pas de maintenance régulière"
+        correct: 1
+        explanation: "Le RGPD et les principes de l'administration numérique imposent que les citoyens puissent obtenir des explications sur les décisions automatisées les concernant. La transparence algorithmique est donc une obligation légale et éthique."
+
+      - id: q1_9
+        question: "Quelle est la principale limite des algorithmes de détection automatique par rapport aux modèles génératifs ?"
+        answers:
+          - "Ils ne peuvent pas fonctionner sur des données structurées en bases de données"
+          - "Ils nécessitent des données étiquetées pour apprendre à distinguer les catégories cibles"
+          - "Ils sont incapables de traiter plus de mille enregistrements simultanément"
+          - "Ils doivent obligatoirement être hébergés sur des infrastructures dédiées"
+        correct: 1
+        explanation: "Les algorithmes de détection supervisés nécessitent des données étiquetées (exemples annotés) pour apprendre. Cette étape de labellisation est coûteuse et peut introduire des biais si elle est mal réalisée."
+
+      - id: q1_10
+        question: "Concernant la minimisation des données dans un projet IA, quelle pratique est recommandée pour une collectivité ?"
+        answers:
+          - "Collecter un maximum de données pour améliorer la précision future des modèles"
+          - "Conserver toutes les données brutes indéfiniment pour permettre de futurs entraînements"
+          - "Limiter la collecte aux données strictement nécessaires à l'objectif défini du traitement"
+          - "Anonymiser les données uniquement lors de leur archivage en fin de projet"
+        correct: 2
+        explanation: "Le principe de minimisation (RGPD) impose de ne collecter que les données nécessaires à la finalité déclarée. Pour une collectivité, cela réduit les risques de fuite et simplifie la conformité réglementaire."
+
+      - id: q1_11
+        question: "Lors de l'évaluation d'un modèle d'IA pour une DSI, quel indicateur permet de mesurer sa capacité à généraliser sur des données inconnues ?"
+        answers:
+          - "Le temps de réponse moyen lors des requêtes utilisateurs en production"
+          - "La performance mesurée sur un jeu de test distinct du jeu d'entraînement"
+          - "Le nombre total de paramètres contenus dans l'architecture du modèle"
+          - "La consommation mémoire RAM pendant la phase d'inférence du modèle"
+        correct: 1
+        explanation: "La capacité de généralisation se mesure sur un jeu de test séparé, jamais vu pendant l'entraînement. C'est le seul moyen fiable d'évaluer si le modèle performera correctement sur de nouvelles données en production."
+
+      - id: q1_12
+        question: "Quelle caractéristique distingue fondamentalement un algorithme de détection d'anomalies non supervisé d'un supervisé ?"
+        answers:
+          - "L'algorithme non supervisé fonctionne uniquement sur des données numériques structurées"
+          - "L'algorithme non supervisé apprend à identifier les anomalies sans exemples étiquetés préalables"
+          - "L'algorithme non supervisé nécessite une connexion réseau permanente pour fonctionner"
+          - "L'algorithme non supervisé produit des résultats plus précis que l'approche supervisée"
+        correct: 1
+        explanation: "L'approche non supervisée détecte les anomalies en identifiant les écarts par rapport au comportement normal appris, sans nécessiter d'exemples d'anomalies étiquetées. C'est utile quand les anomalies sont rares ou inconnues."
+
+      - id: q1_13
+        question: "Dans le contexte d'une DSI territoriale, quel risque majeur est lié à l'utilisation d'un LLM hébergé par un fournisseur cloud américain ?"
+        answers:
+          - "L'impossibilité technique de traiter des documents rédigés en langue française"
+          - "L'exposition potentielle des données aux législations extra-européennes comme le Cloud Act"
+          - "L'obligation légale de publier toutes les requêtes envoyées au modèle sur un portail public"
+          - "L'incompatibilité totale avec les formats de fichiers utilisés dans l'administration française"
+        correct: 1
+        explanation: "Le Cloud Act permet aux autorités américaines d'accéder aux données hébergées par des entreprises US, même si elles sont stockées en Europe. C'est un risque majeur de conformité pour les données sensibles des collectivités."
+
+      - id: q1_14
+        question: "Quelle approche permet de réduire les biais dans un modèle d'IA utilisé pour l'aide à la décision dans une collectivité ?"
+        answers:
+          - "Augmenter la puissance de calcul allouée à l'entraînement du modèle de détection"
+          - "Auditer régulièrement les données d'entraînement et les résultats pour détecter les déséquilibres"
+          - "Utiliser exclusivement des modèles propriétaires développés par de grandes entreprises"
+          - "Réduire le nombre de variables d'entrée pour simplifier le fonctionnement du modèle"
+        correct: 1
+        explanation: "L'audit régulier des données et des résultats permet d'identifier les biais avant qu'ils n'impactent les décisions. C'est une pratique essentielle de gouvernance responsable de l'IA dans le secteur public."
+
+      - id: q1_15
+        question: "Pourquoi la notion de responsabilité est-elle complexe dans le cas d'une décision prise avec l'aide d'une IA ?"
+        answers:
+          - "Parce que l'IA possède une personnalité juridique propre qui la rend responsable de ses actes"
+          - "Parce que la chaîne de décision implique plusieurs acteurs : concepteur, opérateur, utilisateur"
+          - "Parce que les décisions de l'IA sont toujours aléatoires et donc imprévisibles par nature"
+          - "Parce que la loi interdit formellement d'utiliser l'IA pour des décisions administratives"
+        correct: 1
+        explanation: "La responsabilité est diffuse car plusieurs acteurs interviennent : le concepteur du modèle, l'organisation qui le déploie, et l'utilisateur final. Le cadre juridique européen cherche à clarifier ces responsabilités."
+
+      - id: q1_16
+        question: "Quel impact environnemental est spécifiquement associé à la phase d'inférence des modèles d'IA en production ?"
+        answers:
+          - "Une consommation énergétique proportionnelle au nombre de requêtes traitées quotidiennement"
+          - "Une pollution des sols liée à l'extraction des terres rares pour fabriquer les serveurs"
+          - "Une émission de gaz à effet de serre uniquement lors du refroidissement des centres de données"
+          - "Un impact nul car seule la phase d'entraînement consomme de l'énergie de manière significative"
+        correct: 0
+        explanation: "Chaque requête d'inférence consomme de l'énergie. Avec des millions de requêtes quotidiennes, l'impact cumulé devient significatif. La sobriété consiste aussi à limiter les requêtes inutiles."
+
+      - id: q1_17
+        question: "Dans une architecture d'IA, quel rôle joue la fonction de perte (loss function) pendant l'entraînement ?"
+        answers:
+          - "Elle détermine la vitesse de transfert des données entre le stockage et la mémoire vive"
+          - "Elle mesure l'écart entre les prédictions du modèle et les résultats attendus pour guider l'apprentissage"
+          - "Elle contrôle le nombre maximum d'utilisateurs pouvant interroger le modèle simultanément"
+          - "Elle définit la politique de conservation des logs générés par le système d'IA"
+        correct: 1
+        explanation: "La fonction de perte quantifie l'erreur du modèle. L'entraînement consiste à minimiser cette erreur en ajustant les paramètres. Une fonction de perte bien choisie est cruciale pour obtenir un modèle performant."
+
+      - id: q1_18
+        question: "Quelle limite des LLM actuels est particulièrement problématique pour une utilisation en contexte administratif ?"
+        answers:
+          - "L'incapacité à traiter des requêtes formulées avec des fautes d'orthographe ou de grammaire"
+          - "L'absence de connaissance des événements postérieurs à la date de fin d'entraînement du modèle"
+          - "L'obligation de reformuler chaque requête exactement trois fois pour obtenir une réponse"
+          - "L'impossibilité de fonctionner sur un réseau local déconnecté d'Internet de manière permanente"
+        correct: 1
+        explanation: "Les LLM ont une date de coupure de connaissances. Ils ignorent les évolutions réglementaires, les nouvelles procédures ou les événements récents, ce qui peut conduire à des réponses obsolètes dans un contexte administratif."
+
+      - id: q1_19
+        question: "Quel principe éthique impose qu'une IA utilisée par une collectivité ne discrimine pas certaines catégories de citoyens ?"
+        answers:
+          - "Le principe de performance maximale garantissant le meilleur taux de précision possible"
+          - "Le principe d'équité assurant un traitement juste et non discriminatoire pour tous les usagers"
+          - "Le principe de rapidité imposant un temps de réponse inférieur à une seconde par requête"
+          - "Le principe d'économie minimisant les coûts d'infrastructure pour la collectivité territoriale"
+        correct: 1
+        explanation: "L'équité algorithmique est un principe fondamental pour les services publics. Une IA doit traiter tous les citoyens de manière juste, sans reproduire ou amplifier des discriminations existantes."
+
+      - id: q1_20
+        question: "Concernant la confidentialité des données, quelle pratique est essentielle avant d'utiliser des données internes pour entraîner un modèle ?"
+        answers:
+          - "Convertir toutes les données au format PDF pour garantir leur intégrité pendant l'entraînement"
+          - "Évaluer la sensibilité des données et appliquer des techniques d'anonymisation ou de pseudonymisation"
+          - "Stocker les données sur un disque dur externe déconnecté du réseau pendant toute la durée du projet"
+          - "Demander une autorisation écrite à chaque citoyen concerné par les données utilisées"
+        correct: 1
+        explanation: "Avant tout entraînement, il faut évaluer la sensibilité des données et appliquer des mesures de protection adaptées (anonymisation, pseudonymisation) pour respecter le RGPD et protéger la vie privée des citoyens."
+
+  - id: chap2_ia_cybersecurite
+    title: "Chapitre 2 — IA et cybersécurité dans une DSI territoriale : menaces, usages et bénéfices"
+    questions:
+      - id: q2_1
+        question: "Quel enjeu de cybersécurité est spécifiquement critique pour une collectivité territoriale gérant des services aux citoyens ?"
+        answers:
+          - "La maximisation du débit réseau pour améliorer l'expérience utilisateur des applications internes"
+          - "La protection des données personnelles des administrés et la continuité des services publics essentiels"
+          - "La réduction des coûts de licence des logiciels de sécurité utilisés par la DSI"
+          - "L'optimisation de la consommation électrique des équipements informatiques de la collectivité"
+        correct: 1
+        explanation: "Les collectivités gèrent des données sensibles (état civil, social, fiscal) et fournissent des services essentiels. Une cyberattaque peut compromettre la vie privée des citoyens et paralyser des services critiques."
+
+      - id: q2_2
+        question: "Comment un deepfake peut-il être utilisé dans une attaque ciblant une DSI territoriale ?"
+        answers:
+          - "En saturant les serveurs web de la collectivité par des requêtes automatisées massives"
+          - "En usurpant l'identité d'un élu ou dirigeant pour ordonner un virement frauduleux urgent"
+          - "En chiffrant les fichiers des postes de travail pour demander une rançon en cryptomonnaie"
+          - "En interceptant les communications réseau entre les différents sites de la collectivité"
+        correct: 1
+        explanation: "Les deepfakes audio ou vidéo peuvent simuler la voix ou l'image d'un décideur pour des fraudes au président. Cette menace est amplifiée par l'IA générative qui rend ces contenus très réalistes."
+
+      - id: q2_3
+        question: "Quelle menace émergente est directement liée à l'utilisation d'assistants de codage IA par les développeurs d'une DSI ?"
+        answers:
+          - "L'augmentation de la consommation de bande passante due aux requêtes vers les API cloud"
+          - "L'introduction de vulnérabilités dans le code suggéré sans vérification de sécurité appropriée"
+          - "La violation des licences logicielles des outils de développement utilisés en interne"
+          - "L'incompatibilité des formats de fichiers générés avec les systèmes existants de la DSI"
+        correct: 1
+        explanation: "Les assistants IA peuvent suggérer du code contenant des failles de sécurité (injections, mauvaises pratiques). Sans revue de code rigoureuse, ces vulnérabilités peuvent être déployées en production."
+
+      - id: q2_4
+        question: "Dans le contexte de la détection d'incidents, que permet la corrélation d'événements assistée par IA ?"
+        answers:
+          - "D'éliminer complètement le besoin d'analystes humains dans le centre opérationnel de sécurité"
+          - "De relier des signaux faibles provenant de sources multiples pour identifier des attaques complexes"
+          - "De garantir qu'aucune alerte de sécurité ne sera jamais un faux positif dans le système"
+          - "De remplacer entièrement les pare-feux et antivirus par une solution unifiée basée sur l'IA"
+        correct: 1
+        explanation: "L'IA peut analyser simultanément logs, flux réseau et comportements utilisateurs pour détecter des patterns d'attaque invisibles individuellement. C'est particulièrement utile contre les APT (menaces persistantes avancées)."
+
+      - id: q2_5
+        question: "Concernant l'ingénierie sociale augmentée par l'IA, quelle technique est devenue plus dangereuse pour les agents d'une collectivité ?"
+        answers:
+          - "Le phishing personnalisé généré automatiquement avec des informations contextuelles précises et crédibles"
+          - "L'installation de keyloggers matériels sur les claviers des postes de travail des agents"
+          - "Le piratage des bornes Wi-Fi publiques installées dans les bâtiments de la collectivité"
+          - "La récupération de mots de passe par force brute sur les comptes de messagerie professionnelle"
+        correct: 0
+        explanation: "L'IA permet de générer des emails de phishing ultra-personnalisés, exploitant des informations publiques pour créer des messages crédibles. La qualité rédactionnelle et le ciblage rendent ces attaques plus efficaces."
+
+      - id: q2_6
+        question: "Quel est l'avantage principal de l'automatisation raisonnée des alertes de sécurité dans une DSI territoriale ?"
+        answers:
+          - "L'élimination totale des faux positifs grâce à l'intelligence artificielle parfaitement entraînée"
+          - "La priorisation intelligente permettant aux analystes de se concentrer sur les menaces réelles critiques"
+          - "La suppression du besoin de former les équipes aux nouvelles techniques d'attaque informatique"
+          - "La garantie contractuelle de détection de toutes les intrusions dans un délai de cinq minutes"
+        correct: 1
+        explanation: "Face au volume d'alertes, l'IA aide à trier et prioriser. Les analystes peuvent ainsi se concentrer sur les incidents critiques plutôt que de s'épuiser sur des milliers de faux positifs quotidiens."
+
+      - id: q2_7
+        question: "Dans le cadre européen sur l'IA (AI Act), comment sont classés les systèmes d'IA utilisés pour la notation sociale des citoyens ?"
+        answers:
+          - "Comme systèmes à risque minimal ne nécessitant aucune obligation particulière de conformité"
+          - "Comme systèmes interdits car présentant un risque inacceptable pour les droits fondamentaux"
+          - "Comme systèmes à risque limité soumis uniquement à des obligations de transparence légère"
+          - "Comme systèmes à haut risque nécessitant une certification avant mise sur le marché"
+        correct: 1
+        explanation: "L'AI Act interdit certains usages de l'IA jugés contraires aux valeurs européennes, dont la notation sociale. Les collectivités doivent s'assurer de ne pas déployer de systèmes entrant dans cette catégorie."
+
+      - id: q2_8
+        question: "Quelle obligation future l'AI Act imposera-t-il aux collectivités déployant des systèmes d'IA à haut risque ?"
+        answers:
+          - "L'obligation de développer tous les modèles d'IA en interne sans recourir à des prestataires"
+          - "La mise en place d'une documentation technique complète et d'une évaluation de conformité régulière"
+          - "L'interdiction totale d'utiliser des données personnelles même anonymisées pour l'entraînement"
+          - "Le remplacement de tous les systèmes existants par des solutions certifiées avant 2025"
+        correct: 1
+        explanation: "Les systèmes à haut risque devront être documentés, testés et audités régulièrement. Les collectivités devront démontrer leur conformité aux exigences de transparence, robustesse et gouvernance."
+
+      - id: q2_9
+        question: "Concernant la classification d'incidents de sécurité par l'IA, quelle limite doit être prise en compte par une DSI ?"
+        answers:
+          - "L'impossibilité pour l'IA de traiter plus de cent incidents par jour de manière fiable"
+          - "Le risque de mauvaise classification nécessitant une supervision humaine des décisions critiques"
+          - "L'obligation légale de valider chaque classification par un vote majoritaire du comité de direction"
+          - "L'incompatibilité technique avec les formats de logs générés par les équipements réseau standards"
+        correct: 1
+        explanation: "L'IA peut se tromper dans sa classification, surtout face à des attaques nouvelles. Une supervision humaine reste indispensable pour les décisions critiques comme l'isolation d'un système ou l'escalade."
+
+      - id: q2_10
+        question: "Quel signal faible peut indiquer une compromission en cours sur le SI d'une collectivité ?"
+        answers:
+          - "Une augmentation normale du trafic réseau pendant les heures de bureau habituelles"
+          - "Des connexions inhabituelles depuis un poste administratif vers des serveurs internes sensibles la nuit"
+          - "La mise à jour automatique des signatures antivirus sur l'ensemble du parc informatique"
+          - "L'envoi régulier de sauvegardes vers le datacenter de secours selon la procédure établie"
+        correct: 1
+        explanation: "Les connexions nocturnes atypiques depuis des postes normalement inactifs peuvent signaler un attaquant explorant le réseau. L'IA peut détecter ces anomalies comportementales difficiles à repérer manuellement."
+
+      - id: q2_11
+        question: "Quelle est la principale valeur ajoutée de l'IA dans la supervision de sécurité d'une DSI territoriale par rapport aux outils traditionnels ?"
+        answers:
+          - "La capacité à remplacer entièrement l'équipe de sécurité informatique de la collectivité"
+          - "L'analyse en temps réel de volumes massifs de données pour détecter des patterns anormaux complexes"
+          - "La garantie contractuelle d'une protection à 100% contre toutes les cyberattaques connues"
+          - "L'élimination du besoin de mettre à jour les équipements de sécurité périmétrique existants"
+        correct: 1
+        explanation: "L'IA excelle dans l'analyse de grandes quantités de données en temps réel, détectant des corrélations et patterns impossibles à identifier manuellement. Elle complète les outils traditionnels sans les remplacer."
+
+      - id: q2_12
+        question: "Face à une campagne de phishing ciblant les agents d'une collectivité, quelle mesure préventive l'IA peut-elle renforcer ?"
+        answers:
+          - "Le blocage systématique de tous les emails provenant d'expéditeurs externes à la collectivité"
+          - "L'analyse comportementale des emails pour détecter les tentatives d'usurpation d'identité sophistiquées"
+          - "La désactivation automatique de la messagerie professionnelle pendant les périodes de congés"
+          - "Le remplacement des mots de passe par une authentification basée uniquement sur la biométrie"
+        correct: 1
+        explanation: "L'IA peut analyser le style d'écriture, les métadonnées et le comportement d'envoi pour détecter les emails frauduleux, même ceux contournant les filtres traditionnels basés sur des signatures."
+
+      - id: q2_13
+        question: "Concernant la continuité de service dans une collectivité, quel apport spécifique l'IA peut-elle fournir en cas d'incident ?"
+        answers:
+          - "La reconstruction automatique et immédiate de toutes les données perdues sans sauvegarde préalable"
+          - "L'aide à la priorisation des systèmes à restaurer selon leur criticité métier analysée dynamiquement"
+          - "La garantie que les services aux citoyens ne seront jamais interrompus quelle que soit l'attaque"
+          - "Le remplacement temporaire des applications métier par des solutions génériques automatisées"
+        correct: 1
+        explanation: "L'IA peut analyser les dépendances entre systèmes et leur impact métier pour recommander un ordre de restauration optimal, accélérant ainsi le retour à la normale après un incident."
+
+      - id: q2_14
+        question: "Quel risque spécifique le code généré par une IA représente-t-il pour les applications développées en interne par une DSI ?"
+        answers:
+          - "L'impossibilité de compiler le code sur les serveurs de la collectivité territoriale"
+          - "L'inclusion potentielle de dépendances obsolètes ou de patterns de code connus pour être vulnérables"
+          - "L'obligation légale de reverser le code source à la communauté open source européenne"
+          - "L'incompatibilité automatique avec les frameworks utilisés dans l'administration publique française"
+        correct: 1
+        explanation: "L'IA peut suggérer du code utilisant des bibliothèques obsolètes ou des pratiques non sécurisées apprises sur des exemples anciens. Une revue de sécurité du code généré reste indispensable."
+
+      - id: q2_15
+        question: "Dans le contexte de l'AI Act européen, quelle catégorie de risque s'applique à un système d'IA utilisé pour l'accès aux services publics essentiels ?"
+        answers:
+          - "Risque minimal sans obligation particulière de conformité réglementaire spécifique"
+          - "Haut risque nécessitant une évaluation de conformité et une documentation technique détaillée"
+          - "Risque inacceptable entraînant une interdiction totale d'utilisation dans le secteur public"
+          - "Risque limité soumis uniquement à des obligations de transparence envers les utilisateurs"
+        correct: 1
+        explanation: "Les systèmes IA impactant l'accès aux services publics essentiels sont classés à haut risque par l'AI Act. Ils requièrent documentation, tests, audit et supervision humaine."
+
+      - id: q2_16
+        question: "Quelle approche permet de limiter les risques liés aux deepfakes dans les communications officielles d'une collectivité ?"
+        answers:
+          - "L'interdiction totale de publier des vidéos ou enregistrements audio sur les canaux officiels"
+          - "La mise en place de procédures de vérification multi-canal pour les demandes sensibles inhabituelles"
+          - "Le recours exclusif aux communications écrites par courrier postal recommandé avec accusé de réception"
+          - "L'obligation pour tous les élus de porter un badge électronique visible dans toutes leurs apparitions"
+        correct: 1
+        explanation: "Face aux deepfakes, la vérification par un second canal (rappel téléphonique, confirmation en personne) permet de valider l'authenticité des demandes inhabituelles, notamment financières."
+
+      - id: q2_17
+        question: "Concernant l'automatisation des réponses aux incidents, quelle limite critique doit être anticipée par une DSI ?"
+        answers:
+          - "Le coût prohibitif des licences logicielles pour les outils d'automatisation de la sécurité"
+          - "Le risque qu'une réponse automatisée inappropriée amplifie l'impact d'un incident ou crée de nouveaux problèmes"
+          - "L'impossibilité technique d'intégrer des outils automatisés dans l'infrastructure existante de la collectivité"
+          - "L'obligation réglementaire d'obtenir l'accord du préfet avant toute action de remédiation automatisée"
+        correct: 1
+        explanation: "Une action automatisée mal calibrée (isolation d'un système critique, blocage massif) peut aggraver la situation. Les règles d'automatisation doivent être soigneusement conçues et testées."
+
+      - id: q2_18
+        question: "Quel bénéfice concret apporte la priorisation intelligente des alertes de sécurité pour une équipe SOC de collectivité ?"
+        answers:
+          - "La suppression totale des faux positifs garantissant que chaque alerte représente une menace réelle"
+          - "La réduction de la fatigue des analystes en concentrant leur attention sur les alertes réellement critiques"
+          - "L'élimination du besoin de compétences en cybersécurité pour les membres de l'équipe opérationnelle"
+          - "La garantie d'une réponse automatique à tous les incidents sans intervention humaine nécessaire"
+        correct: 1
+        explanation: "La fatigue d'alerte est un problème majeur des SOC. En priorisant intelligemment, l'IA permet aux analystes de se concentrer sur les vraies menaces plutôt que de se noyer dans les faux positifs."
+
+      - id: q2_19
+        question: "Face à une attaque par rançongiciel, comment l'IA peut-elle contribuer à la phase de détection précoce ?"
+        answers:
+          - "En restaurant automatiquement les fichiers chiffrés grâce à une clé de déchiffrement universelle intégrée"
+          - "En identifiant les comportements suspects précurseurs comme le chiffrement massif anormal de fichiers"
+          - "En négociant directement avec les attaquants pour obtenir une réduction de la rançon demandée"
+          - "En désactivant préventivement tous les comptes utilisateurs pour empêcher la propagation du malware"
+        correct: 1
+        explanation: "L'IA peut détecter les signes avant-coureurs d'un ransomware : accès inhabituels aux fichiers, chiffrement rapide, communications vers des serveurs suspects. Cette détection précoce limite l'impact."
+
+      - id: q2_20
+        question: "Quelle obligation de transparence l'AI Act impose-t-il pour les systèmes d'IA interagissant avec les citoyens dans une collectivité ?"
+        answers:
+          - "La publication du code source complet de l'algorithme sur le site internet officiel de la collectivité"
+          - "L'information claire aux usagers qu'ils interagissent avec un système d'intelligence artificielle automatisé"
+          - "L'obtention d'un consentement écrit préalable avant chaque interaction avec le système automatisé"
+          - "La mise à disposition d'un opérateur humain physiquement présent pendant les horaires d'ouverture"
+        correct: 1
+        explanation: "L'AI Act exige que les personnes soient informées lorsqu'elles interagissent avec une IA. Cette transparence est fondamentale pour maintenir la confiance des citoyens envers les services publics."
+
+  - id: chap3_donnees_si
+    title: "Chapitre 3 — Données du SI territorial : collecte, préparation et analyse par l'IA"
+    questions:
+      - id: q3_1
+        question: "Parmi les types de données exploitables par l'IA dans une DSI publique, lesquels sont les plus pertinents pour la détection d'intrusions ?"
+        answers:
+          - "Les données RH anonymisées concernant les congés et absences des agents de la collectivité"
+          - "Les logs d'authentification, les traces réseau et les événements système des serveurs critiques"
+          - "Les statistiques de fréquentation du site web institutionnel de la collectivité territoriale"
+          - "Les données budgétaires consolidées issues du logiciel de comptabilité publique de la mairie"
+        correct: 1
+        explanation: "Les logs d'authentification, traces réseau et événements système contiennent les informations nécessaires pour détecter des comportements anormaux, tentatives d'intrusion ou mouvements latéraux d'attaquants."
+
+      - id: q3_2
+        question: "Quelle étape de préparation des données est indispensable avant d'entraîner un modèle de détection d'anomalies sur des logs ?"
+        answers:
+          - "La traduction automatique de tous les messages de logs en langue anglaise uniquement"
+          - "Le nettoyage et la normalisation des formats pour assurer la cohérence des données analysées"
+          - "La compression des fichiers de logs pour réduire l'espace de stockage nécessaire à l'analyse"
+          - "L'impression papier des logs critiques pour conservation dans les archives physiques"
+        correct: 1
+        explanation: "Les logs proviennent de sources hétérogènes avec des formats différents. La normalisation (dates, identifiants, structure) est essentielle pour que l'IA puisse les analyser de manière cohérente."
+
+      - id: q3_3
+        question: "Concernant la classification des incidents par l'IA, quel indicateur permet d'évaluer la fiabilité du modèle ?"
+        answers:
+          - "Le nombre total d'incidents traités depuis la mise en production du système de classification"
+          - "Le taux de faux positifs et faux négatifs mesuré sur un jeu de données de test indépendant"
+          - "La vitesse de traitement exprimée en nombre d'incidents classifiés par seconde par le système"
+          - "Le coût de la licence annuelle du logiciel de classification utilisé par la DSI territoriale"
+        correct: 1
+        explanation: "Les taux de faux positifs (alertes injustifiées) et faux négatifs (menaces manquées) mesurent la qualité réelle du modèle. Un équilibre adapté au contexte doit être trouvé."
+
+      - id: q3_4
+        question: "Quelle technique de détection d'anomalies est particulièrement adaptée pour identifier des comportements utilisateurs suspects ?"
+        answers:
+          - "L'analyse comportementale établissant un profil normal et détectant les écarts significatifs"
+          - "Le blocage systématique de toutes les connexions provenant d'adresses IP inconnues du système"
+          - "La vérification manuelle quotidienne de l'ensemble des sessions utilisateurs par un administrateur"
+          - "L'obligation pour chaque utilisateur de justifier par écrit chaque connexion au système"
+        correct: 0
+        explanation: "L'analyse comportementale (UEBA) apprend le comportement normal de chaque utilisateur et détecte les anomalies : horaires inhabituels, accès à des ressources atypiques, volumes de données anormaux."
+
+      - id: q3_5
+        question: "Quelle limite des modèles de détection doit être prise en compte lors de l'interprétation des résultats ?"
+        answers:
+          - "L'impossibilité pour les modèles de fonctionner sur des données datant de plus de 24 heures"
+          - "Le risque d'erreurs nécessitant une validation humaine avant toute action de remédiation critique"
+          - "L'obligation de redémarrer le modèle après chaque détection pour libérer les ressources mémoire"
+          - "L'incompatibilité des résultats avec les outils de reporting utilisés par la direction générale"
+        correct: 1
+        explanation: "Aucun modèle n'est parfait. Les faux positifs et faux négatifs sont inévitables. La validation humaine reste indispensable pour les décisions critiques comme l'isolation d'un système."
+
+      - id: q3_6
+        question: "Concernant la corrélation d'événements de sécurité, quel avantage apporte l'IA par rapport aux règles statiques traditionnelles ?"
+        answers:
+          - "L'élimination totale du besoin de définir des règles de corrélation dans le système SIEM"
+          - "La capacité à découvrir des patterns d'attaque non anticipés en analysant de multiples sources de données"
+          - "La garantie d'une corrélation parfaite sans aucun faux positif ni faux négatif possible"
+          - "La réduction à zéro du temps de latence entre la détection et l'alerte de sécurité"
+        correct: 1
+        explanation: "Les règles statiques ne détectent que les patterns connus. L'IA peut identifier des corrélations inédites entre événements disparates, révélant des attaques sophistiquées non anticipées."
+
+      - id: q3_7
+        question: "Quelle méthode de structuration des données est recommandée pour faciliter l'analyse par l'IA des flux réseau ?"
+        answers:
+          - "La conversion de tous les flux en format vidéo pour une analyse visuelle par les opérateurs"
+          - "L'extraction des métadonnées pertinentes et leur organisation en séries temporelles indexées"
+          - "Le stockage brut de tous les paquets réseau sans aucun prétraitement ni indexation"
+          - "La suppression des en-têtes de paquets pour ne conserver que les données utiles"
+        correct: 1
+        explanation: "L'extraction de métadonnées (IP source/destination, ports, volumes, timing) et leur structuration en séries temporelles permet à l'IA d'analyser efficacement les patterns de trafic."
+
+      - id: q3_8
+        question: "Pour détecter les signaux faibles dans une infrastructure, quelle approche d'analyse est la plus pertinente ?"
+        answers:
+          - "L'analyse de tendances sur des périodes longues pour identifier les dérives progressives subtiles"
+          - "La vérification ponctuelle hebdomadaire des indicateurs de performance des serveurs principaux"
+          - "L'envoi automatique d'alertes uniquement lorsqu'un seuil critique prédéfini est dépassé"
+          - "La consultation mensuelle des rapports de synthèse générés par les outils de monitoring"
+        correct: 0
+        explanation: "Les signaux faibles se manifestent souvent comme des dérives lentes : légère augmentation du trafic, connexions sporadiques inhabituelles. L'analyse de tendances sur le long terme les révèle."
+
+      - id: q3_9
+        question: "Concernant la catégorisation automatique des données dans une DSI, quel risque doit être anticipé ?"
+        answers:
+          - "L'impossibilité de catégoriser des données créées après la mise en production du modèle"
+          - "Les erreurs de classification pouvant exposer des données sensibles ou masquer des menaces réelles"
+          - "La saturation des espaces de stockage due à la duplication des données catégorisées"
+          - "L'obligation légale de faire valider chaque catégorisation par la CNIL avant utilisation"
+        correct: 1
+        explanation: "Une mauvaise catégorisation peut avoir des conséquences graves : données sensibles mal protégées, menaces non détectées car mal classifiées. Une supervision humaine des cas limites est nécessaire."
+
+      - id: q3_10
+        question: "Quelle source de données est particulièrement utile pour détecter les tentatives d'exfiltration de données ?"
+        answers:
+          - "Les logs des imprimantes indiquant le nombre de pages imprimées par chaque utilisateur"
+          - "L'analyse des flux sortants inhabituels en volume, destination ou horaire par rapport aux patterns normaux"
+          - "Les statistiques de consommation électrique des équipements informatiques de la collectivité"
+          - "Le registre des visiteurs externes accédant aux locaux de la direction informatique"
+        correct: 1
+        explanation: "L'exfiltration se manifeste par des flux sortants anormaux : gros volumes vers des destinations inhabituelles, transferts nocturnes. L'IA peut détecter ces écarts par rapport au comportement normal."
+
+      - id: q3_11
+        question: "Quel indicateur de risque peut être calculé automatiquement par l'IA à partir des données d'authentification ?"
+        answers:
+          - "Le montant des économies budgétaires réalisables par la suppression des comptes inactifs"
+          - "Un score de risque basé sur le nombre d'échecs de connexion et les anomalies géographiques détectées"
+          - "Le niveau de satisfaction des utilisateurs concernant la politique de mots de passe"
+          - "La conformité des mots de passe aux recommandations de longueur minimale définies"
+        correct: 1
+        explanation: "L'IA peut agréger plusieurs signaux (échecs multiples, connexions depuis des localisations inhabituelles, horaires atypiques) pour calculer un score de risque dynamique par compte utilisateur."
+
+      - id: q3_12
+        question: "Concernant la fiabilité d'un modèle de classification d'incidents, quelle mesure permet d'évaluer sa capacité à détecter les vraies menaces ?"
+        answers:
+          - "Le taux de rappel (recall) mesurant la proportion de menaces réelles correctement identifiées par le modèle"
+          - "Le temps de réponse moyen du système en millisecondes pour traiter chaque requête"
+          - "Le nombre total de règles de détection configurées dans le moteur de classification"
+          - "La taille en gigaoctets de la base de données d'entraînement utilisée pour le modèle"
+        correct: 0
+        explanation: "Le recall mesure la capacité du modèle à ne pas manquer de vraies menaces (minimiser les faux négatifs). Un recall élevé est crucial en cybersécurité où rater une attaque peut être catastrophique."
+
+      - id: q3_13
+        question: "Quelle technique de préparation des données permet de réduire le bruit dans les logs avant analyse par l'IA ?"
+        answers:
+          - "La duplication systématique de tous les enregistrements pour renforcer leur poids dans l'analyse"
+          - "Le filtrage des événements récurrents connus comme non pertinents et la normalisation des formats"
+          - "L'ajout d'horodatages aléatoires pour anonymiser les données temporelles sensibles"
+          - "La conversion de tous les logs au format image pour une analyse visuelle par les opérateurs"
+        correct: 1
+        explanation: "Filtrer les événements de routine (heartbeat, logs de maintenance) et normaliser les formats réduit le bruit et permet à l'IA de se concentrer sur les événements potentiellement significatifs."
+
+      - id: q3_14
+        question: "Quelle limitation technique affecte la détection d'anomalies comportementales dans un environnement en constante évolution ?"
+        answers:
+          - "L'impossibilité d'analyser plus de 1000 événements par seconde sur les systèmes standards"
+          - "La nécessité de réentraîner régulièrement le modèle pour s'adapter aux nouveaux patterns normaux"
+          - "L'obligation de stocker l'intégralité des données brutes pendant une durée minimale de 10 ans"
+          - "L'incompatibilité des algorithmes de détection avec les systèmes d'exploitation Windows Server"
+        correct: 1
+        explanation: "Les patterns normaux évoluent (nouveaux services, réorganisations, changements de pratiques). Sans réentraînement, le modèle génère des faux positifs sur les nouveaux comportements légitimes."
+
+      - id: q3_15
+        question: "Pour améliorer l'interprétabilité des résultats d'un modèle de détection d'anomalies, quelle information complémentaire est essentielle ?"
+        answers:
+          - "Le nom du data scientist ayant développé le modèle et sa certification professionnelle"
+          - "Les facteurs ayant contribué à la détection de l'anomalie avec leur poids relatif"
+          - "La liste complète des paramètres techniques de l'algorithme utilisé pour l'entraînement"
+          - "Le coût de calcul en euros par anomalie détectée selon la tarification du cloud"
+        correct: 1
+        explanation: "L'explicabilité (XAI) est cruciale pour que les analystes comprennent pourquoi une alerte est levée. Connaître les facteurs contributifs aide à valider ou invalider rapidement la détection."
+
+      - id: q3_16
+        question: "Quelle approche permet de gérer efficacement les données hétérogènes provenant de multiples sources dans une DSI ?"
+        answers:
+          - "La suppression des sources de données incompatibles avec le format principal utilisé"
+          - "La mise en place d'un lac de données avec schéma flexible et pipelines de transformation"
+          - "L'obligation pour tous les fournisseurs d'utiliser un format propriétaire unique imposé"
+          - "Le stockage séparé de chaque source sans aucune tentative d'intégration ou de corrélation"
+        correct: 1
+        explanation: "Un data lake avec schéma flexible permet d'ingérer des données hétérogènes. Les pipelines de transformation normalisent ensuite les données pour l'analyse, préservant la richesse des sources."
+
+      - id: q3_17
+        question: "Concernant la détection de comportements suspects sur un poste de travail, quel type de données est le plus pertinent ?"
+        answers:
+          - "Les données de géolocalisation GPS du téléphone personnel de l'utilisateur connecté"
+          - "Les événements système locaux comme les exécutions de processus et les accès aux fichiers sensibles"
+          - "Les statistiques d'utilisation de la climatisation dans le bureau de l'utilisateur concerné"
+          - "Les données de badge d'accès au parking de la collectivité territoriale"
+        correct: 1
+        explanation: "Les événements EDR (Endpoint Detection and Response) capturent les activités locales : processus lancés, fichiers accédés, connexions réseau. Ces données révèlent les comportements malveillants sur le poste."
+
+      - id: q3_18
+        question: "Quelle erreur courante dans l'interprétation des résultats d'un modèle de détection peut conduire à des faux positifs massifs ?"
+        answers:
+          - "L'utilisation d'un seuil de détection trop sensible générant des alertes sur des variations normales"
+          - "La consultation des résultats uniquement pendant les heures de bureau de la collectivité"
+          - "Le stockage des résultats dans une base de données plutôt que dans des fichiers texte"
+          - "La traduction automatique des alertes en plusieurs langues pour les équipes internationales"
+        correct: 0
+        explanation: "Un seuil trop bas génère des alertes sur des variations normales (bruit). Calibrer correctement le seuil en fonction du contexte opérationnel est essentiel pour un taux de faux positifs acceptable."
+
+      - id: q3_19
+        question: "Quelle méthode analytique permet d'identifier des groupes de comportements similaires dans les données d'usage du SI ?"
+        answers:
+          - "Le clustering non supervisé regroupant les patterns similaires sans étiquettes préalables"
+          - "La sauvegarde incrémentale quotidienne de l'ensemble des données d'usage collectées"
+          - "L'archivage des données sur bandes magnétiques pour conservation à long terme"
+          - "La compression des fichiers de logs pour réduire l'espace de stockage nécessaire"
+        correct: 0
+        explanation: "Le clustering identifie automatiquement des groupes de comportements similaires sans supervision. Cela permet de découvrir des profils d'usage ou des patterns d'attaque non anticipés."
+
+      - id: q3_20
+        question: "Quelle précaution est essentielle avant de déployer un modèle de détection entraîné sur des données historiques ?"
+        answers:
+          - "La validation sur un jeu de données récent pour vérifier sa pertinence dans le contexte actuel"
+          - "L'obtention d'une certification ISO 27001 spécifique pour le modèle de détection déployé"
+          - "La traduction du modèle dans au moins trois langues officielles de l'Union européenne"
+          - "La publication du code source du modèle sur un dépôt GitHub public accessible à tous"
+        correct: 0
+        explanation: "Les patterns d'attaque et les comportements normaux évoluent. Valider le modèle sur des données récentes avant déploiement garantit qu'il reste pertinent et efficace dans le contexte actuel."
+
+  - id: chap4_deploiement_ia
+    title: "Chapitre 4 — Déployer l'IA dans une DSI régionale : intégration, sécurité et gouvernance"
+    questions:
+      - id: q4_1
+        question: "Quelle contrainte technique spécifique aux collectivités territoriales impacte le déploiement d'outils d'IA nécessitant des ressources cloud ?"
+        answers:
+          - "L'obligation d'utiliser exclusivement des langages de programmation open source pour tous les projets"
+          - "Les restrictions de connectivité et les exigences de souveraineté limitant l'accès aux clouds publics étrangers"
+          - "L'interdiction légale d'utiliser tout service informatique facturé à l'usage par la collectivité"
+          - "La nécessité de former l'ensemble des agents au développement Python avant tout déploiement"
+        correct: 1
+        explanation: "Les collectivités sont soumises à des contraintes de souveraineté et de protection des données. L'accès aux clouds publics étrangers peut être restreint, imposant des solutions hébergées en France ou en Europe."
+
+      - id: q4_2
+        question: "Quelle approche d'intégration progressive de l'IA est recommandée pour une DSI souhaitant renforcer sa supervision de sécurité ?"
+        answers:
+          - "Remplacer immédiatement tous les outils de supervision existants par une solution IA complète et intégrée"
+          - "Commencer par des cas d'usage ciblés à faible risque avant d'étendre progressivement le périmètre couvert"
+          - "Externaliser l'intégralité de la supervision de sécurité auprès d'un prestataire spécialisé en IA"
+          - "Attendre que les technologies IA soient totalement matures avant d'envisager tout déploiement"
+        correct: 1
+        explanation: "L'intégration progressive permet de valider les bénéfices sur des cas simples, de former les équipes et d'ajuster avant d'étendre. Cette approche réduit les risques d'échec et facilite l'acceptation."
+
+      - id: q4_3
+        question: "Dans la gouvernance d'un projet IA, quel rôle est essentiel pour garantir l'alignement avec les contraintes réglementaires de la collectivité ?"
+        answers:
+          - "Un développeur senior maîtrisant les derniers frameworks de machine learning disponibles sur le marché"
+          - "Un référent capable de valider la conformité RGPD, AI Act et réglementations sectorielles applicables"
+          - "Un ingénieur réseau expert en configuration des pare-feux et équipements de sécurité périmétrique"
+          - "Un graphiste chargé de concevoir les interfaces utilisateurs des applications intégrant de l'IA"
+        correct: 1
+        explanation: "La conformité réglementaire (RGPD, AI Act, règles sectorielles) est critique pour les collectivités. Un référent dédié assure que le projet respecte ces contraintes dès sa conception."
+
+      - id: q4_4
+        question: "Concernant la gestion des risques liés à l'IA, quelle dérive doit être particulièrement surveillée dans un contexte de service public ?"
+        answers:
+          - "L'augmentation du temps de réponse des applications au-delà de 500 millisecondes par requête"
+          - "La production de décisions biaisées ou discriminatoires impactant l'équité de traitement des usagers"
+          - "La diminution du nombre de tickets traités par le support informatique de la collectivité"
+          - "L'incompatibilité des rapports générés avec le format de présentation PowerPoint de la direction"
+        correct: 1
+        explanation: "Les services publics doivent garantir l'équité de traitement. Une IA produisant des décisions biaisées peut entraîner des discriminations contraires aux principes du service public."
+
+      - id: q4_5
+        question: "Quelle méthode d'audit permet de vérifier qu'une application intégrant de l'IA ne présente pas de vulnérabilités spécifiques ?"
+        answers:
+          - "La vérification annuelle du renouvellement des licences logicielles par le service achats"
+          - "Les tests d'adversarial machine learning et l'analyse des vecteurs d'attaque propres aux systèmes IA"
+          - "L'inspection visuelle des serveurs hébergeant l'application dans le datacenter de la collectivité"
+          - "La consultation des avis utilisateurs publiés sur les forums spécialisés en intelligence artificielle"
+        correct: 1
+        explanation: "Les systèmes IA ont des vulnérabilités spécifiques : injection de prompts, empoisonnement de données, extraction de modèle. Des tests dédiés sont nécessaires pour les identifier."
+
+      - id: q4_6
+        question: "Pour documenter correctement un système d'IA déployé dans une collectivité, quel élément est indispensable selon l'AI Act ?"
+        answers:
+          - "La liste exhaustive des noms et prénoms de tous les utilisateurs ayant accédé au système"
+          - "La description des données d'entraînement, des finalités du système et des mesures de gestion des risques"
+          - "Le curriculum vitae détaillé de chaque data scientist ayant contribué au développement du modèle"
+          - "Les captures d'écran de toutes les interfaces utilisateur dans leurs différentes versions successives"
+        correct: 1
+        explanation: "L'AI Act impose une documentation technique incluant les données utilisées, les finalités, les performances attendues et les mesures de mitigation des risques pour les systèmes à haut risque."
+
+      - id: q4_7
+        question: "Quelle pratique permet de limiter l'exposition des données internes lors de l'utilisation d'un LLM externe par les agents ?"
+        answers:
+          - "L'interdiction totale de tout usage de l'IA générative par l'ensemble des agents de la collectivité"
+          - "La mise en place de guidelines claires sur les données autorisées et d'outils de filtrage des requêtes"
+          - "L'obligation de chiffrer manuellement chaque requête avant de l'envoyer au service externe"
+          - "La création d'un compte utilisateur unique partagé par tous les agents pour anonymiser les usages"
+        correct: 1
+        explanation: "Des guidelines précisant ce qui peut être partagé, combinées à des outils de filtrage/anonymisation automatique, permettent un usage encadré sans exposer de données sensibles."
+
+      - id: q4_8
+        question: "Concernant le suivi des usages d'IA dans une DSI, quel indicateur permet d'évaluer l'adoption par les équipes ?"
+        answers:
+          - "Le coût total des licences IA rapporté au budget informatique annuel de la collectivité"
+          - "Le nombre d'utilisateurs actifs, la fréquence d'utilisation et les retours qualitatifs des agents"
+          - "La superficie en mètres carrés des locaux dédiés aux équipes travaillant sur les projets IA"
+          - "Le nombre de communiqués de presse publiés par la collectivité concernant ses initiatives IA"
+        correct: 1
+        explanation: "L'adoption se mesure par des indicateurs d'usage réel : utilisateurs actifs, fréquence, satisfaction. Ces métriques permettent d'ajuster le déploiement et la formation."
+
+      - id: q4_9
+        question: "Quelle contrainte réseau spécifique peut impacter les performances d'un outil d'IA déployé dans une collectivité multi-sites ?"
+        answers:
+          - "La latence et la bande passante limitée des liaisons inter-sites impactant les temps de réponse"
+          - "L'obligation légale de chiffrer toutes les communications avec l'algorithme AES-256 uniquement"
+          - "L'incompatibilité des protocoles réseau avec les navigateurs web utilisés par les agents"
+          - "La couleur des câbles réseau ne respectant pas la charte graphique de la collectivité territoriale"
+        correct: 0
+        explanation: "Les collectivités multi-sites ont souvent des liaisons WAN avec bande passante limitée. Un outil IA centralisé peut souffrir de latence, nécessitant parfois un déploiement distribué."
+
+      - id: q4_10
+        question: "Quelle approche de gestion des erreurs d'un système IA est recommandée dans un contexte de service public ?"
+        answers:
+          - "Masquer les erreurs pour ne pas inquiéter les usagers et maintenir la confiance dans le service"
+          - "Prévoir des mécanismes de recours humain et informer clairement les usagers des limites du système"
+          - "Transférer automatiquement toutes les erreurs à l'éditeur du logiciel sans intervention locale"
+          - "Désactiver définitivement le système dès la première erreur détectée par un utilisateur final"
+        correct: 1
+        explanation: "La transparence et le droit au recours sont essentiels dans le service public. Les usagers doivent pouvoir contester une décision IA et obtenir une révision humaine."
+
+      - id: q4_11
+        question: "Quel type de test de sécurité est spécifiquement pertinent pour une application intégrant un modèle de langage ?"
+        answers:
+          - "Le test de charge mesurant le nombre maximum d'utilisateurs simultanés supportés par l'application"
+          - "Le test d'injection de prompts malveillants visant à contourner les restrictions du système"
+          - "Le test de compatibilité vérifiant l'affichage correct sur différents navigateurs web standards"
+          - "Le test d'accessibilité évaluant la conformité aux normes RGAA pour les personnes handicapées"
+        correct: 1
+        explanation: "L'injection de prompts est une vulnérabilité spécifique aux LLM. Un attaquant peut tenter de faire ignorer les consignes système ou d'extraire des informations confidentielles."
+
+      - id: q4_12
+        question: "Dans le cadre de la gouvernance IA, quelle documentation est essentielle pour assurer la traçabilité des décisions ?"
+        answers:
+          - "Les captures d'écran de toutes les interfaces utilisateurs dans leurs versions successives"
+          - "Le registre des traitements IA incluant finalités, données utilisées et mesures de contrôle"
+          - "La liste des fournisseurs de matériel informatique avec leurs certifications commerciales"
+          - "Les procès-verbaux des réunions du conseil municipal mentionnant les projets informatiques"
+        correct: 1
+        explanation: "Le registre des traitements IA permet de tracer les décisions, de démontrer la conformité et de faciliter les audits. C'est une exigence croissante avec l'AI Act."
+
+      - id: q4_13
+        question: "Quelle stratégie permet de gérer le risque de dépendance à un fournisseur d'IA externe ?"
+        answers:
+          - "Signer un contrat de licence perpétuelle garantissant l'accès au service sans limite de durée"
+          - "Prévoir des clauses de réversibilité et documenter les alternatives en cas de changement de prestataire"
+          - "Interdire tout recours à des solutions externes en développant uniquement des outils en interne"
+          - "Confier l'intégralité de la stratégie IA à un seul prestataire pour simplifier la gouvernance"
+        correct: 1
+        explanation: "La réversibilité (export des données, documentation des processus) permet de changer de fournisseur si nécessaire. C'est essentiel pour éviter le verrouillage technologique."
+
+      - id: q4_14
+        question: "Concernant l'intégration de l'IA dans les outils de supervision existants, quelle approche minimise les risques ?"
+        answers:
+          - "Remplacer simultanément tous les outils de supervision par une plateforme IA unifiée complète"
+          - "Ajouter progressivement des fonctionnalités IA en conservant les outils existants en parallèle"
+          - "Désactiver les anciennes alertes pour éviter les doublons avec les nouvelles détections IA"
+          - "Externaliser l'intégralité de la supervision auprès d'un prestataire spécialisé en intelligence artificielle"
+        correct: 1
+        explanation: "L'intégration progressive avec maintien des outils existants permet de valider l'apport de l'IA, de former les équipes et de revenir en arrière si nécessaire."
+
+      - id: q4_15
+        question: "Quel rôle la DSI doit-elle jouer dans la définition des cas d'usage IA au sein de la collectivité ?"
+        answers:
+          - "Imposer les solutions techniques sans consultation des métiers pour garantir la cohérence du SI"
+          - "Accompagner les métiers dans l'identification des besoins et valider la faisabilité technique sécurisée"
+          - "Se limiter à l'exécution des demandes formulées par les directions métiers sans les questionner"
+          - "Déléguer entièrement la décision aux élus sans apporter d'expertise technique particulière"
+        correct: 1
+        explanation: "La DSI doit jouer un rôle de conseil et d'accompagnement, aidant les métiers à identifier des cas d'usage pertinents tout en garantissant la sécurité et la faisabilité technique."
+
+      - id: q4_16
+        question: "Quelle mesure permet de détecter une dérive d'un modèle d'IA en production dans une collectivité ?"
+        answers:
+          - "La mise en place d'indicateurs de performance surveillés régulièrement avec alertes sur les écarts"
+          - "La vérification annuelle du renouvellement du contrat de maintenance avec l'éditeur du logiciel"
+          - "L'organisation de sessions de formation continue pour tous les utilisateurs du système"
+          - "La publication trimestrielle d'un rapport d'activité dans le bulletin municipal de la collectivité"
+        correct: 0
+        explanation: "Le monitoring continu des performances (précision, taux d'erreur, temps de réponse) permet de détecter les dérives avant qu'elles n'impactent significativement les usagers."
+
+      - id: q4_17
+        question: "Concernant l'exposition des données internes lors de l'usage d'IA, quel risque est souvent sous-estimé ?"
+        answers:
+          - "La fuite d'informations via les requêtes envoyées à des services IA externes hébergés hors Europe"
+          - "La saturation des espaces de stockage due à l'accumulation des réponses générées par l'IA"
+          - "L'incompatibilité des formats de fichiers générés avec les logiciels bureautiques de la collectivité"
+          - "L'augmentation de la facture électrique liée à l'utilisation intensive des postes de travail"
+        correct: 0
+        explanation: "Les requêtes envoyées à des services externes contiennent souvent des informations sensibles. Ces données peuvent être stockées, analysées ou utilisées pour l'entraînement par le fournisseur."
+
+      - id: q4_18
+        question: "Quelle pratique de test est recommandée avant de déployer une mise à jour d'un système IA en production ?"
+        answers:
+          - "Déployer directement en production pour bénéficier rapidement des améliorations apportées"
+          - "Valider sur un environnement de recette avec des données représentatives avant mise en production"
+          - "Demander aux utilisateurs de tester eux-mêmes la nouvelle version sur leurs postes personnels"
+          - "Attendre que le fournisseur garantisse par écrit l'absence totale de régression dans la mise à jour"
+        correct: 1
+        explanation: "Un environnement de recette permet de valider les mises à jour sans risquer d'impacter la production. Les tests avec données représentatives révèlent les régressions potentielles."
+
+      - id: q4_19
+        question: "Dans la feuille de route IA d'une collectivité, quel élément est prioritaire pour assurer le succès des projets ?"
+        answers:
+          - "L'achat immédiat des licences pour les outils IA les plus avancés disponibles sur le marché"
+          - "L'identification des cas d'usage à forte valeur ajoutée avec des objectifs mesurables et réalistes"
+          - "Le recrutement massif de data scientists sans définition préalable des besoins métiers spécifiques"
+          - "La communication externe sur les ambitions IA de la collectivité avant tout déploiement concret"
+        correct: 1
+        explanation: "Une feuille de route efficace commence par identifier des cas d'usage concrets avec des bénéfices mesurables. Cela permet de démontrer la valeur et de sécuriser le soutien."
+
+      - id: q4_20
+        question: "Quelle obligation de transparence s'applique à une collectivité déployant un chatbot IA pour l'accueil des usagers ?"
+        answers:
+          - "La publication du code source complet du chatbot sur le site internet officiel de la collectivité"
+          - "L'information claire aux usagers qu'ils interagissent avec un système automatisé et non un humain"
+          - "L'obtention d'un consentement écrit préalable de chaque usager avant toute interaction avec le chatbot"
+          - "La garantie que le chatbot répondra correctement à 100% des questions posées par les usagers"
+        correct: 1
+        explanation: "L'AI Act impose d'informer les personnes lorsqu'elles interagissent avec une IA. Cette transparence est fondamentale pour maintenir la confiance des citoyens envers les services publics."
+
+  - id: chap5_rag_embeddings
+    title: "Chapitre 5 — Architectures RAG et embeddings : exploiter la documentation interne en toute sécurité"
+    questions:
+      - id: q5_1
+        question: "Dans une architecture RAG, quel est le rôle principal de la phase d'indexation ?"
+        answers:
+          - "Générer automatiquement des résumés de tous les documents pour réduire leur taille de stockage"
+          - "Transformer les documents en représentations vectorielles permettant une recherche sémantique efficace"
+          - "Traduire automatiquement tous les documents dans les langues officielles de l'Union européenne"
+          - "Compresser les fichiers pour optimiser l'espace disque utilisé par la base documentaire"
+        correct: 1
+        explanation: "L'indexation transforme les documents en vecteurs (embeddings) stockés dans une base vectorielle. Cette représentation permet ensuite de retrouver les passages pertinents par similarité sémantique."
+
+      - id: q5_2
+        question: "Quel avantage principal apporte l'architecture RAG par rapport à un LLM utilisé seul ?"
+        answers:
+          - "Une réduction significative du coût des licences logicielles pour la collectivité territoriale"
+          - "La possibilité de fournir des réponses contextualisées basées sur la documentation interne actualisée"
+          - "L'élimination totale du risque d'hallucination dans les réponses générées par le système"
+          - "La suppression du besoin de former les utilisateurs aux outils d'intelligence artificielle"
+        correct: 1
+        explanation: "Le RAG enrichit les réponses du LLM avec des informations issues de sources internes actuelles. Cela permet des réponses pertinentes et à jour, basées sur la documentation de la collectivité."
+
+      - id: q5_3
+        question: "Qu'est-ce qu'un embedding dans le contexte d'une architecture RAG pour une DSI ?"
+        answers:
+          - "Un format de fichier propriétaire utilisé pour stocker les documents confidentiels de manière sécurisée"
+          - "Une représentation vectorielle numérique capturant le sens sémantique d'un texte ou d'un document"
+          - "Un protocole de communication chiffré entre le serveur IA et les postes clients de la collectivité"
+          - "Un type de licence logicielle permettant d'intégrer des composants tiers dans une application"
+        correct: 1
+        explanation: "Un embedding est un vecteur numérique représentant le sens d'un texte. Deux textes sémantiquement proches auront des embeddings similaires, permettant la recherche par similarité."
+
+      - id: q5_4
+        question: "Quel cas d'application du RAG est particulièrement pertinent pour améliorer le support aux agents d'une collectivité ?"
+        answers:
+          - "La génération automatique de contenus marketing pour promouvoir les services de la collectivité"
+          - "Un assistant capable de répondre aux questions en s'appuyant sur les procédures internes documentées"
+          - "La traduction simultanée des conversations téléphoniques avec les usagers en langue étrangère"
+          - "La création automatique de portraits photographiques pour les badges d'accès des nouveaux agents"
+        correct: 1
+        explanation: "Un assistant RAG peut aider les agents en retrouvant les procédures pertinentes dans la documentation interne et en formulant des réponses contextualisées à leurs questions."
+
+      - id: q5_5
+        question: "Concernant la confidentialité dans un système RAG, quel type de document ne devrait généralement PAS être indexé ?"
+        answers:
+          - "Les procédures administratives standard accessibles à tous les agents de la collectivité"
+          - "Les dossiers individuels nominatifs contenant des données personnelles sensibles des administrés"
+          - "Les guides d'utilisation des logiciels métiers déployés dans les différents services"
+          - "Les organigrammes et annuaires internes de la collectivité territoriale concernée"
+        correct: 1
+        explanation: "Les données personnelles sensibles ne doivent pas être indexées dans un RAG généraliste. Le risque de fuite via les réponses générées est trop important pour ce type de données."
+
+      - id: q5_6
+        question: "Quelle bonne pratique de conception permet de sécuriser un assistant RAG interne ?"
+        answers:
+          - "Héberger le système sur un cloud public américain pour bénéficier des meilleures performances"
+          - "Implémenter un contrôle d'accès vérifiant les droits de l'utilisateur avant de retourner les documents"
+          - "Indexer l'intégralité des données de la collectivité pour maximiser la pertinence des réponses"
+          - "Désactiver les logs d'utilisation pour protéger la vie privée des agents utilisant le système"
+        correct: 1
+        explanation: "Le contrôle d'accès garantit que l'utilisateur ne reçoit que des informations auxquelles il a droit. C'est essentiel pour respecter les principes du besoin d'en connaître."
+
+      - id: q5_7
+        question: "Dans un pipeline RAG, que se passe-t-il lors de la phase de recherche (retrieval) ?"
+        answers:
+          - "Le système génère une nouvelle version du document demandé avec les dernières informations disponibles"
+          - "La requête utilisateur est transformée en vecteur puis comparée aux embeddings pour trouver les passages pertinents"
+          - "Le modèle de langage est réentraîné avec les nouvelles données fournies par l'utilisateur"
+          - "Les documents sont automatiquement traduits dans la langue préférée de l'utilisateur connecté"
+        correct: 1
+        explanation: "La recherche transforme la question en embedding et calcule la similarité avec les documents indexés. Les passages les plus proches sémantiquement sont retournés comme contexte."
+
+      - id: q5_8
+        question: "Quel risque spécifique doit être géré lors de l'indexation de documentation technique hétérogène ?"
+        answers:
+          - "L'impossibilité de stocker des documents de plus de 10 pages dans la base vectorielle"
+          - "La perte de contexte si les documents sont découpés sans respecter leur structure logique"
+          - "L'obligation légale de convertir tous les documents au format PDF/A avant indexation"
+          - "La nécessité d'obtenir l'accord écrit de chaque auteur avant d'indexer son document"
+        correct: 1
+        explanation: "Le découpage (chunking) des documents doit respecter leur structure pour préserver le sens. Un mauvais découpage peut conduire à des réponses incohérentes ou incomplètes."
+
+      - id: q5_9
+        question: "Pour un assistant métier local dans une DSI, quel avantage offre un déploiement on-premise du RAG ?"
+        answers:
+          - "Une garantie de performance supérieure à toute solution cloud quelle que soit la configuration"
+          - "Le contrôle total sur les données qui ne quittent jamais l'infrastructure de la collectivité"
+          - "L'absence totale de maintenance nécessaire une fois le système déployé et configuré"
+          - "La compatibilité automatique avec tous les formats de documents existants sans configuration"
+        correct: 1
+        explanation: "Le déploiement on-premise garantit que les données sensibles restent dans l'infrastructure de la collectivité. C'est crucial pour la conformité et la souveraineté des données."
+
+      - id: q5_10
+        question: "Quelle limite technique des embeddings peut affecter la qualité des réponses d'un système RAG ?"
+        answers:
+          - "L'impossibilité de générer des embeddings pour des documents contenant des tableaux ou des images"
+          - "La difficulté à capturer les nuances de sens pour des termes techniques spécifiques au métier"
+          - "L'obligation d'utiliser uniquement des documents rédigés en langue anglaise pour l'indexation"
+          - "La nécessité de redémarrer le serveur après chaque nouvelle indexation de document ajouté"
+        correct: 1
+        explanation: "Les modèles d'embeddings généralistes peuvent mal représenter le vocabulaire métier spécifique. Un fine-tuning ou l'utilisation de modèles spécialisés peut améliorer la pertinence."
+
+      - id: q5_11
+        question: "Dans un système RAG, comment le contexte récupéré est-il utilisé par le modèle de langage ?"
+        answers:
+          - "Il est stocké définitivement dans la mémoire du modèle pour enrichir ses connaissances futures"
+          - "Il est injecté dans le prompt pour que le LLM génère une réponse basée sur ces informations"
+          - "Il est affiché directement à l'utilisateur sans aucun traitement par le modèle de langage"
+          - "Il est utilisé pour réentraîner automatiquement le modèle avec les nouvelles informations"
+        correct: 1
+        explanation: "Le RAG injecte les passages pertinents dans le prompt du LLM qui les utilise comme contexte pour générer une réponse. Le modèle n'est pas modifié, seul le prompt est enrichi."
+
+      - id: q5_12
+        question: "Quelle stratégie de chunking est recommandée pour des documents de procédures administratives ?"
+        answers:
+          - "Découper en blocs de taille fixe de 100 caractères sans tenir compte de la structure"
+          - "Respecter la structure logique du document en découpant par sections ou paragraphes cohérents"
+          - "Fusionner tous les documents en un seul fichier avant de les découper aléatoirement"
+          - "Supprimer les titres et sous-titres pour ne conserver que le texte brut avant découpage"
+        correct: 1
+        explanation: "Le découpage par structure logique préserve le sens et le contexte. Un chunk contenant une procédure complète sera plus utile qu'un morceau arbitraire coupé au milieu d'une phrase."
+
+      - id: q5_13
+        question: "Concernant la mise à jour d'une base RAG, quelle pratique garantit la fraîcheur des informations ?"
+        answers:
+          - "Réindexer manuellement tous les documents une fois par an lors de la revue budgétaire"
+          - "Mettre en place un pipeline automatisé détectant les modifications et réindexant les documents concernés"
+          - "Supprimer entièrement la base et la recréer à chaque nouvelle version d'un document"
+          - "Désactiver les mises à jour pour garantir la stabilité des réponses fournies aux utilisateurs"
+        correct: 1
+        explanation: "Un pipeline automatisé de réindexation garantit que les modifications de documents sont rapidement reflétées dans les réponses, sans intervention manuelle fastidieuse."
+
+      - id: q5_14
+        question: "Quel mécanisme permet de tracer l'origine des informations dans les réponses d'un assistant RAG ?"
+        answers:
+          - "L'obligation pour l'utilisateur de citer manuellement ses sources après chaque réponse"
+          - "L'inclusion des références aux documents sources utilisés pour générer chaque réponse"
+          - "La signature électronique automatique de toutes les réponses par le responsable de la DSI"
+          - "L'enregistrement vidéo de l'écran pendant toute la durée de l'interaction avec le système"
+        correct: 1
+        explanation: "Inclure les références (document, page, section) permet à l'utilisateur de vérifier l'information et renforce la confiance. C'est une bonne pratique de transparence."
+
+      - id: q5_15
+        question: "Quelle considération de sécurité est spécifique aux bases vectorielles utilisées dans les systèmes RAG ?"
+        answers:
+          - "L'impossibilité technique de chiffrer les vecteurs stockés dans la base de données vectorielle"
+          - "Le risque d'inversion des embeddings permettant de reconstituer partiellement le contenu original"
+          - "L'obligation de stocker les bases vectorielles sur des serveurs physiquement séparés du réseau"
+          - "La nécessité d'obtenir une certification spécifique de l'ANSSI pour tout déploiement vectoriel"
+        correct: 1
+        explanation: "Bien que difficile, l'inversion d'embeddings est théoriquement possible. Les données sensibles ne doivent pas être indexées, même sous forme vectorielle, sans mesures de protection."
+
+      - id: q5_16
+        question: "Pour améliorer la pertinence d'un RAG sur la documentation métier d'une collectivité, quelle approche est efficace ?"
+        answers:
+          - "Utiliser exclusivement des documents rédigés en anglais technique pour l'indexation"
+          - "Enrichir les métadonnées des documents avec des tags métiers et utiliser le filtrage lors de la recherche"
+          - "Réduire la taille de tous les documents à une page maximum pour simplifier l'indexation"
+          - "Indexer uniquement les titres des documents sans leur contenu pour accélérer les recherches"
+        correct: 1
+        explanation: "Les métadonnées (service, thème, date, type) permettent de filtrer la recherche et d'améliorer la pertinence. Un agent du service RH obtiendra des résultats ciblés sur son domaine."
+
+      - id: q5_17
+        question: "Quel indicateur permet d'évaluer la qualité des réponses d'un assistant RAG en production ?"
+        answers:
+          - "Le nombre total de requêtes traitées par le système depuis son déploiement initial"
+          - "Le taux de satisfaction utilisateur et la fréquence des retours négatifs sur les réponses"
+          - "La consommation électrique du serveur hébergeant le système d'intelligence artificielle"
+          - "Le nombre de documents indexés dans la base vectorielle de l'assistant déployé"
+        correct: 1
+        explanation: "La satisfaction utilisateur et les retours négatifs sont des indicateurs directs de la qualité perçue. Ils permettent d'identifier les axes d'amélioration prioritaires."
+
+      - id: q5_18
+        question: "Concernant les assistants métiers locaux basés sur RAG, quel périmètre d'indexation est recommandé ?"
+        answers:
+          - "L'intégralité des documents de la collectivité pour maximiser la couverture des réponses"
+          - "Un corpus ciblé sur le domaine métier concerné pour garantir pertinence et confidentialité"
+          - "Uniquement les documents publiés sur le site internet officiel de la collectivité territoriale"
+          - "Les documents personnels des agents stockés sur leurs postes de travail individuels"
+        correct: 1
+        explanation: "Un corpus ciblé améliore la pertinence (moins de bruit) et réduit les risques de fuite de données sensibles hors périmètre métier."
+
+      - id: q5_19
+        question: "Quelle fonctionnalité renforce la fiabilité d'un assistant RAG face aux hallucinations du LLM ?"
+        answers:
+          - "L'augmentation de la température du modèle pour générer des réponses plus créatives"
+          - "L'instruction au modèle de répondre uniquement à partir du contexte fourni et de signaler l'absence d'information"
+          - "La désactivation complète du modèle de langage pour n'afficher que les documents bruts"
+          - "L'obligation pour l'utilisateur de reformuler sa question au moins trois fois"
+        correct: 1
+        explanation: "Instruire le LLM de se baser uniquement sur le contexte et d'admettre son ignorance réduit les hallucinations. Le modèle ne doit pas inventer d'informations."
+
+      - id: q5_20
+        question: "Pour un déploiement RAG sécurisé dans une collectivité, quelle architecture est recommandée ?"
+        answers:
+          - "Hébergement sur un cloud public américain avec chiffrement des données au repos uniquement"
+          - "Infrastructure hébergée en France ou en Europe avec contrôle d'accès, logs et chiffrement bout en bout"
+          - "Utilisation des postes de travail des agents comme serveurs distribués pour le stockage vectoriel"
+          - "Externalisation complète chez un prestataire sans exigence de localisation géographique spécifique"
+        correct: 1
+        explanation: "Pour les données publiques sensibles, un hébergement souverain avec sécurité complète (accès, logs, chiffrement) est indispensable pour la conformité et la confiance."
+
+  - id: chap6_prompt_engineering
+    title: "Chapitre 6 — Maîtriser le Prompt Engineering pour travailler efficacement avec l'IA"
+    questions:
+      - id: q6_1
+        question: "Dans la structure d'un prompt efficace, quel élément permet de définir l'expertise attendue de l'IA ?"
+        answers:
+          - "La contrainte de formatage imposant un nombre maximum de mots dans la réponse"
+          - "Le persona ou rôle assigné à l'IA pour orienter son expertise et son ton"
+          - "La liste des sources bibliographiques à consulter avant de répondre à la requête"
+          - "Le délai maximum accordé au modèle pour générer une réponse complète"
+        correct: 1
+        explanation: "Le persona définit le rôle de l'IA (expert cybersécurité, juriste, rédacteur). Cela oriente le vocabulaire, le niveau de détail et l'angle de la réponse."
+
+      - id: q6_2
+        question: "Quel élément de contexte améliore significativement la pertinence des réponses d'un LLM pour une DSI ?"
+        answers:
+          - "La mention de la marque et du modèle du poste de travail utilisé pour la requête"
+          - "La description précise du contexte métier et des contraintes spécifiques de la collectivité"
+          - "L'indication de l'heure exacte à laquelle la requête est formulée par l'utilisateur"
+          - "Le nombre de caractères souhaité pour la réponse du modèle de langage"
+        correct: 1
+        explanation: "Le contexte métier (type d'organisation, contraintes réglementaires, objectifs) permet à l'IA de personnaliser sa réponse. Sans contexte, les réponses restent génériques."
+
+      - id: q6_3
+        question: "Quelle technique avancée de prompt engineering permet d'obtenir un raisonnement étape par étape ?"
+        answers:
+          - "L'utilisation exclusive de phrases interrogatives dans la formulation de la requête"
+          - "La demande explicite de décomposer le raisonnement avant de fournir la conclusion finale"
+          - "La répétition de la même question trois fois pour renforcer l'importance de la demande"
+          - "L'ajout de points d'exclamation pour exprimer l'urgence de la réponse attendue"
+        correct: 1
+        explanation: "Le chain-of-thought prompting demande au modèle d'expliciter son raisonnement. Cela améliore la qualité des réponses complexes et permet de détecter les erreurs de logique."
+
+      - id: q6_4
+        question: "Concernant le formatage des réponses, quelle instruction permet d'obtenir une sortie structurée exploitable ?"
+        answers:
+          - "Demander une réponse la plus longue possible pour maximiser la quantité d'informations"
+          - "Spécifier le format attendu avec un exemple de structure dans le prompt fourni"
+          - "Laisser l'IA choisir librement le format qu'elle juge le plus approprié pour répondre"
+          - "Exiger que la réponse soit rédigée entièrement en majuscules pour la lisibilité"
+        correct: 1
+        explanation: "Fournir un exemple de format (JSON, tableau, liste à puces) guide le modèle vers une sortie structurée, directement exploitable sans reformatage manuel."
+
+      - id: q6_5
+        question: "Pour obtenir des réponses vérifiables d'un LLM, quelle instruction est recommandée ?"
+        answers:
+          - "Demander au modèle de garantir l'exactitude de toutes les informations fournies"
+          - "Exiger que l'IA cite ses sources ou indique clairement ses limites de connaissance"
+          - "Interdire toute mention de doute ou d'incertitude dans la réponse générée"
+          - "Imposer un vocabulaire technique exclusivement composé d'acronymes professionnels"
+        correct: 1
+        explanation: "Demander des sources ou l'aveu d'incertitude permet à l'utilisateur de vérifier les informations. L'IA doit signaler ce qu'elle ne sait pas plutôt qu'inventer."
+
+      - id: q6_6
+        question: "Dans le contexte du travail multi-agents, quel bénéfice apporte la comparaison des réponses de plusieurs LLM ?"
+        answers:
+          - "Une réduction automatique des coûts de licence pour chaque modèle utilisé en parallèle"
+          - "La possibilité de croiser les perspectives et d'identifier les points de consensus ou de divergence"
+          - "L'élimination totale du risque d'hallucination grâce à la multiplication des sources"
+          - "La génération automatique de code source compatible avec tous les langages de programmation"
+        correct: 1
+        explanation: "Comparer les réponses de plusieurs modèles révèle les consensus (fiabilité accrue) et les divergences (nécessité de vérification). C'est une forme de validation croisée."
+
+      - id: q6_7
+        question: "Quelle pratique responsable doit être appliquée avant de partager des données avec un LLM externe ?"
+        answers:
+          - "Demander l'autorisation écrite du fournisseur du LLM avant chaque utilisation quotidienne"
+          - "Vérifier que les données ne contiennent pas d'informations personnelles ou confidentielles sensibles"
+          - "Convertir tous les documents au format PDF avant de les soumettre au modèle de langage"
+          - "Chiffrer la requête avec une clé symétrique connue uniquement de l'utilisateur"
+        correct: 1
+        explanation: "Avant d'envoyer des données à un service externe, il faut vérifier qu'elles ne contiennent pas d'informations sensibles pouvant être stockées ou utilisées par le fournisseur."
+
+      - id: q6_8
+        question: "Quel enchaînement d'instructions permet d'améliorer la qualité d'un prompt complexe ?"
+        answers:
+          - "Poser toutes les questions en une seule phrase sans ponctuation pour la fluidité"
+          - "Décomposer la tâche en étapes numérotées avec des instructions claires pour chaque phase"
+          - "Répéter la même instruction en utilisant des synonymes pour chaque occurrence"
+          - "Demander au modèle de deviner les intentions de l'utilisateur sans les expliciter"
+        correct: 1
+        explanation: "La décomposition en étapes numérotées clarifie les attentes et guide le modèle. Chaque instruction précise permet un meilleur contrôle sur la sortie finale."
+
+      - id: q6_9
+        question: "Pour améliorer continuellement l'efficacité des prompts, quelle approche est recommandée ?"
+        answers:
+          - "Utiliser toujours exactement le même prompt sans modification pour garantir la cohérence"
+          - "Analyser les réponses obtenues et itérer sur la formulation pour affiner les résultats"
+          - "Changer de modèle de langage à chaque nouvelle requête pour diversifier les approches"
+          - "Demander à l'IA de noter elle-même la qualité de ses propres réponses précédentes"
+        correct: 1
+        explanation: "L'amélioration continue passe par l'analyse des résultats et l'ajustement itératif des prompts. Documenter ce qui fonctionne permet de capitaliser sur l'expérience."
+
+      - id: q6_10
+        question: "Concernant la confidentialité dans le prompt engineering, quelle règle doit guider la rédaction des requêtes ?"
+        answers:
+          - "Inclure le maximum de détails contextuels pour obtenir les réponses les plus précises possibles"
+          - "Ne partager que les informations strictement nécessaires à la tâche sans données sensibles"
+          - "Masquer toutes les informations contextuelles pour protéger la confidentialité du projet"
+          - "Utiliser des pseudonymes pour tous les noms propres mentionnés dans la requête"
+        correct: 1
+        explanation: "Le principe de minimisation s'applique : ne partager que le nécessaire. Les données personnelles, stratégiques ou confidentielles ne doivent pas être incluses dans les prompts."
+
+      - id: q6_11
+        question: "Quelle technique permet d'obtenir des réponses plus explicables d'un LLM ?"
+        answers:
+          - "Réduire la longueur maximale de la réponse à 50 caractères pour forcer la concision"
+          - "Demander au modèle de justifier chaque affirmation et d'expliquer son raisonnement étape par étape"
+          - "Utiliser exclusivement des questions fermées nécessitant une réponse par oui ou non"
+          - "Interdire l'utilisation de termes techniques dans les réponses générées par le modèle"
+        correct: 1
+        explanation: "Demander des justifications force le modèle à expliciter son raisonnement. Cela permet de détecter les erreurs de logique et de mieux comprendre les conclusions."
+
+      - id: q6_12
+        question: "Dans le cadre de la validation croisée avec plusieurs agents IA, quelle méthodologie est efficace ?"
+        answers:
+          - "Choisir systématiquement la réponse la plus longue parmi celles proposées par les différents agents"
+          - "Soumettre la même question à plusieurs modèles et analyser les convergences et divergences"
+          - "Utiliser un seul modèle mais lui poser la question plusieurs fois en espérant des réponses différentes"
+          - "Fusionner automatiquement toutes les réponses en un seul texte sans analyse critique"
+        correct: 1
+        explanation: "La validation croisée consiste à comparer les réponses de plusieurs modèles. Les convergences renforcent la confiance, les divergences signalent un besoin de vérification."
+
+      - id: q6_13
+        question: "Quel élément de contrainte dans un prompt permet de contrôler le format de sortie ?"
+        answers:
+          - "La mention du nom de l'utilisateur au début de chaque requête envoyée au modèle"
+          - "L'exemple de structure attendue avec des instructions explicites sur le format à respecter"
+          - "L'utilisation exclusive de la langue anglaise pour toutes les communications avec le LLM"
+          - "La limitation du nombre de mots dans la question posée à l'intelligence artificielle"
+        correct: 1
+        explanation: "Fournir un exemple de format (JSON, Markdown, tableau) et des instructions explicites guide le modèle vers une sortie structurée et directement exploitable."
+
+      - id: q6_14
+        question: "Concernant les sources dans les réponses d'un LLM, quelle pratique renforce la fiabilité ?"
+        answers:
+          - "Accepter toutes les informations sans vérification car le modèle est toujours factuel"
+          - "Demander au modèle de citer ses sources ou d'indiquer quand une information nécessite vérification"
+          - "Ignorer les sources mentionnées car elles sont toujours inventées par les modèles de langage"
+          - "Exiger que le modèle ne réponde qu'avec des citations exactes de textes existants"
+        correct: 1
+        explanation: "Demander des sources permet de vérifier les informations. Quand le modèle signale une incertitude, l'utilisateur sait qu'une vérification externe est nécessaire."
+
+      - id: q6_15
+        question: "Quelle approche permet de gérer efficacement les limites de contexte d'un LLM pour des tâches complexes ?"
+        answers:
+          - "Envoyer l'intégralité des documents en une seule requête pour maximiser le contexte disponible"
+          - "Décomposer la tâche en sous-tâches et synthétiser les résultats intermédiaires progressivement"
+          - "Utiliser uniquement des modèles avec une fenêtre de contexte illimitée pour éviter les contraintes"
+          - "Répéter la même requête plusieurs fois en espérant une meilleure gestion du contexte"
+        correct: 1
+        explanation: "La décomposition en sous-tâches avec synthèses intermédiaires permet de traiter des problèmes complexes malgré les limites de contexte. Chaque étape reste gérable."
+
+      - id: q6_16
+        question: "Pour éviter les biais dans les réponses d'un LLM, quelle formulation de prompt est recommandée ?"
+        answers:
+          - "Inclure des opinions personnelles dans la question pour orienter la réponse du modèle"
+          - "Formuler des questions neutres et demander explicitement plusieurs perspectives sur le sujet"
+          - "Utiliser un ton autoritaire pour forcer le modèle à adopter un point de vue unique"
+          - "Éviter toute mention du contexte pour laisser le modèle répondre de manière totalement libre"
+        correct: 1
+        explanation: "Les questions neutres évitent d'orienter la réponse. Demander plusieurs perspectives permet d'obtenir une vision équilibrée et de détecter les biais potentiels."
+
+      - id: q6_17
+        question: "Quelle pratique de prompt engineering favorise la cohérence des réponses sur une série de tâches ?"
+        answers:
+          - "Changer de formulation à chaque requête pour éviter la monotonie des réponses"
+          - "Utiliser un template de prompt standardisé avec des variables pour les éléments spécifiques"
+          - "Laisser le modèle choisir librement son format de réponse à chaque nouvelle question"
+          - "Supprimer tout contexte entre les requêtes pour garantir l'indépendance des réponses"
+        correct: 1
+        explanation: "Un template standardisé garantit la cohérence du format et de la qualité des réponses. Les variables permettent d'adapter le contenu tout en maintenant la structure."
+
+      - id: q6_18
+        question: "Dans le contexte d'une DSI, quel usage du prompt engineering peut améliorer la productivité des équipes ?"
+        answers:
+          - "La génération automatique de mots de passe pour tous les comptes utilisateurs du SI"
+          - "La création de prompts réutilisables pour l'analyse de logs ou la rédaction de documentation technique"
+          - "Le remplacement complet des procédures écrites par des interactions verbales avec l'IA"
+          - "La suppression de toutes les formations techniques au profit de l'assistance IA uniquement"
+        correct: 1
+        explanation: "Des prompts optimisés et réutilisables pour des tâches récurrentes (analyse, rédaction, synthèse) permettent aux équipes de gagner du temps sur les activités répétitives."
+
+      - id: q6_19
+        question: "Quelle méthode permet de tester l'efficacité d'un nouveau prompt avant son déploiement ?"
+        answers:
+          - "Déployer immédiatement le prompt en production pour obtenir des retours utilisateurs réels"
+          - "Tester le prompt sur un échantillon de cas représentatifs et évaluer la qualité des réponses"
+          - "Demander au modèle de noter lui-même la qualité du prompt avant de l'utiliser"
+          - "Compter le nombre de mots dans le prompt pour estimer sa qualité potentielle"
+        correct: 1
+        explanation: "Tester sur un échantillon représentatif permet d'évaluer la qualité avant déploiement. Les cas de test doivent couvrir les situations courantes et les cas limites."
+
+      - id: q6_20
+        question: "Concernant l'amélioration continue des prompts, quelle documentation est utile à maintenir ?"
+        answers:
+          - "Un historique de toutes les conversations avec le modèle depuis sa première utilisation"
+          - "Une bibliothèque de prompts efficaces avec leur contexte d'usage et les résultats obtenus"
+          - "La liste de tous les utilisateurs ayant interagi avec le système d'intelligence artificielle"
+          - "Un rapport quotidien du nombre de requêtes envoyées à chaque modèle de langage"
+        correct: 1
+        explanation: "Une bibliothèque de prompts documentés permet de capitaliser sur l'expérience, de partager les bonnes pratiques et d'éviter de réinventer des solutions déjà trouvées."
+
+meta:
+  formation_title: "Cybersécurité et Intelligence Artificielle pour DSI territoriale"
+  qcm_title: "QCM sur Cybersécurité et Intelligence Artificielle pour DSI territoriale"
+  output_file: "qcm-cyber-ia.yaml"
+  language: "fr"
+  difficulty: "difficile"
+  questions_per_chapter: 20
+  options_original:
+    language: "fr"
+    questions_per_chapter: 20
+    difficulty: "difficile"
+    qcm_title: "QCM sur Cybersécurité et Intelligence Artificielle pour DSI territoriale"
+    output_file: "qcm-cyber-ia.yaml"
+    new_questions: 10
+  options_last_run:
+    language: "fr"
+    questions_per_chapter: 20
+    difficulty: "difficile"
+    qcm_title: "QCM sur Cybersécurité et Intelligence Artificielle pour DSI territoriale"
+    output_file: "qcm-cyber-ia.yaml"
+    new_questions: 10
+
+plan:
+  plan_chapters:
+    - id: chap1_ia_moderne
+      title: "Chapitre 1 — Comprendre l'intelligence artificielle moderne : concepts, technologies et enjeux éthiques"
+      notions:
+        - Architecture générale d'un système d'IA: modèles, données, entraînement et limites
+        - Différences entre IA générative, modèles prédictifs et algorithmes de détection
+        - Fonctionnement des grands modèles de langage et implications sur les usages en DSI
+        - Enjeux d'éthique: transparence, biais, responsabilité, souveraineté numérique
+        - Impacts écologiques et respect des données: empreinte énergétique, confidentialité, minimisation
+    - id: chap2_ia_cybersecurite
+      title: "Chapitre 2 — IA et cybersécurité dans une DSI territoriale : menaces, usages et bénéfices"
+      notions:
+        - Enjeux majeurs pour les collectivités: protection des données publiques, continuité de service
+        - Menaces émergentes: deepfakes, campagnes d'ingénierie sociale augmentées, code vulnérable généré par IA
+        - Analyse et détection: corrélation d'événements, classification d'incidents, signaux faibles
+        - Automatisation raisonnée: supervision renforcée, priorisation intelligente des alertes
+        - Introduction au cadre européen: règles, catégories de systèmes, obligations futures
+    - id: chap3_donnees_si
+      title: "Chapitre 3 — Données du SI territorial : collecte, préparation et analyse par l'IA"
+      notions:
+        - Typologie des données exploitables dans une DSI publique: logs, traces, flux réseau
+        - Méthodes de préparation: nettoyage, structuration, catégorisation des données
+        - Méthodes analytiques: classification, corrélation, indicateurs de risque
+        - Détection d'anomalies: comportements suspects, signaux faibles dans les infrastructures
+        - Fiabilité des modèles: limites, erreurs possibles, interprétation des résultats
+    - id: chap4_deploiement_ia
+      title: "Chapitre 4 — Déployer l'IA dans une DSI régionale : intégration, sécurité et gouvernance"
+      notions:
+        - Contraintes techniques propres aux réseaux et environnements des collectivités
+        - Intégration progressive de l'IA dans les outils actuels: supervision, analyse, assistance
+        - Gouvernance: rôles, responsabilités, documentation, suivi des usages
+        - Gestion des risques: fiabilité, erreurs, dérives, exposition des données internes
+        - Méthodes d'audit et de tests de sécurité pour applications intégrant de l'IA
+    - id: chap5_rag_embeddings
+      title: "Chapitre 5 — Architectures RAG et embeddings : exploiter la documentation interne en toute sécurité"
+      notions:
+        - Principes de l'architecture RAG: indexation, recherche pertinente, réponse contextualisée
+        - Embeddings: représentation vectorielle de données, usages métiers pour une DSI
+        - Cas d'application: amélioration de la documentation interne, assistants métiers locaux
+        - Contraintes de confidentialité: ce qu'on peut indexer ou non dans un contexte public
+        - Vers un assistant IA interne sécurisé: bonnes pratiques de conception
+    - id: chap6_prompt_engineering
+      title: "Chapitre 6 — Maîtriser le Prompt Engineering pour travailler efficacement avec l'IA"
+      notions:
+        - Rôle, contexte, persona: structurer une requête pour améliorer la qualité des réponses
+        - Techniques avancées: enchaînement d'instructions, contraintes, formatage
+        - Méthodes pour obtenir des réponses fiables, vérifiées et explicables
+        - Travail multi-agents: comparaison, validation croisée, amélioration continue
+        - Pratiques responsables: données partagées, confidentialité, sources
+
+progress:
+  status: "complete"
+  total_chapters: 6
+  completed_chapters: 6
+  questions_per_chapter: 20
+  chapters:
+    - id: chap1_ia_moderne
+      questions_generated: 20
+      questions_remaining: 0
+    - id: chap2_ia_cybersecurite
+      questions_generated: 20
+      questions_remaining: 0
+    - id: chap3_donnees_si
+      questions_generated: 20
+      questions_remaining: 0
+    - id: chap4_deploiement_ia
+      questions_generated: 20
+      questions_remaining: 0
+    - id: chap5_rag_embeddings
+      questions_generated: 20
+      questions_remaining: 0
+    - id: chap6_prompt_engineering
+      questions_generated: 20
+      questions_remaining: 0

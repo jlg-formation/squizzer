@@ -43,6 +43,10 @@ const PREDEFINED_QCMS = [
     name: "QCM Dataviz",
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-dataviz.yaml",
   },
+  {
+    name: "QCM CyberIA",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-cyber-ia.yaml",
+  },
   { name: "Autre", url: "" },
 ];
 
