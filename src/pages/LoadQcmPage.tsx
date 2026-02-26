@@ -47,6 +47,10 @@ const PREDEFINED_QCMS = [
     name: "QCM CyberIA",
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-cyber-ia.yaml",
   },
+  {
+    name: "QCM Kotlin",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-kotlin.yaml",
+  },
   { name: "Autre", url: "" },
 ];
 

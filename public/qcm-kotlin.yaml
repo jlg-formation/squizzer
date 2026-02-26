@@ -1,0 +1,1743 @@
+# FILE: /dist/qcm-kotlin.yaml
+
+title: "QCM sur Kotlin et Android"
+
+chapters:
+  - id: syntaxe-kotlin
+    title: "Syntaxe et concepts de base de Kotlin"
+    questions:
+      - id: q1_kotlin_val_var
+        question: "Quelle est la différence fondamentale entre `val` et `var` en Kotlin ?"
+        answers:
+          - "`val` déclare une variable immuable (lecture seule), `var` une variable mutable"
+          - "`val` est pour les types primitifs, `var` pour les objets complexes"
+          - "`var` est plus performant car il évite la création d'objets temporaires"
+          - "`val` et `var` sont interchangeables selon les préférences du développeur"
+        correct: 0
+        explanation: "En Kotlin, `val` (value) crée une référence immuable qui ne peut être réassignée après initialisation, tandis que `var` (variable) permet la réassignation. C'est un concept clé pour la programmation fonctionnelle et la sécurité du code."
+
+      - id: q2_kotlin_null_safety
+        question: "Comment Kotlin gère-t-il la null safety par défaut ?"
+        answers:
+          - "Tous les types peuvent être null comme en Java, il faut utiliser des annotations"
+          - "Les types sont non-nullable par défaut ; il faut ajouter `?` pour autoriser null"
+          - "Kotlin interdit totalement l'utilisation de null dans le code"
+          - "La null safety est désactivée par défaut et doit être activée dans le compilateur"
+        correct: 1
+        explanation: "Kotlin distingue les types nullable (String?) des types non-nullable (String). Par défaut, une variable ne peut pas contenir null. Cette approche élimine les NullPointerException à la compilation plutôt qu'à l'exécution."
+
+      - id: q3_kotlin_data_class
+        question: "Qu'est-ce qu'une data class génère automatiquement en Kotlin ?"
+        answers:
+          - "Uniquement les getters et setters pour chaque propriété déclarée"
+          - "equals(), hashCode(), toString(), copy() et les fonctions componentN()"
+          - "Un constructeur vide et une méthode clone() pour la sérialisation"
+          - "Les annotations @Entity et @Table pour la persistance automatique"
+        correct: 1
+        explanation: "Une data class génère automatiquement equals(), hashCode(), toString(), copy() et les fonctions componentN() pour la déstructuration. Cela évite le boilerplate code typique des POJOs Java."
+
+      - id: q4_kotlin_extension_function
+        question: "Que permet une fonction d'extension en Kotlin ?"
+        answers:
+          - "D'ajouter des méthodes à une classe existante sans modifier son code source ni en hériter"
+          - "De remplacer dynamiquement une méthode existante d'une classe au runtime"
+          - "D'étendre automatiquement les permissions d'accès aux membres privés d'une classe"
+          - "De créer un alias pour une fonction existante avec un nom différent"
+        correct: 0
+        explanation: "Les fonctions d'extension permettent d'ajouter de nouvelles fonctionnalités à des classes existantes (même des classes finales ou de bibliothèques tierces) sans héritage ni modification du code source original."
+
+      - id: q5_kotlin_when_expression
+        question: "Quelle affirmation est correcte concernant l'expression `when` en Kotlin ?"
+        answers:
+          - "`when` ne peut être utilisé qu'avec des types entiers comme le switch Java"
+          - "`when` est une expression qui retourne une valeur et couvre tous les cas possibles"
+          - "`when` nécessite obligatoirement un case `else` dans tous les contextes"
+          - "`when` ne supporte pas les conditions avec des plages de valeurs (ranges)"
+        correct: 1
+        explanation: "`when` est une expression (pas une instruction) qui peut retourner une valeur. Elle fonctionne avec tous les types, supporte les ranges, les conditions complexes, et le compilateur vérifie l'exhaustivité pour les sealed classes."
+
+      - id: q6_kotlin_sealed_class
+        question: "Quel est l'avantage principal d'une sealed class par rapport à une classe abstraite ?"
+        answers:
+          - "Elle permet de définir des méthodes statiques directement dans la classe"
+          - "Le compilateur connaît toutes les sous-classes, permettant un `when` exhaustif"
+          - "Elle offre de meilleures performances car elle est compilée en inline"
+          - "Elle autorise l'instanciation directe sans passer par les sous-classes"
+        correct: 1
+        explanation: "Une sealed class restreint l'héritage aux classes définies dans le même fichier. Le compilateur connaît donc toutes les sous-classes possibles, ce qui permet de vérifier l'exhaustivité des expressions `when` sans clause `else`."
+
+      - id: q7_kotlin_coroutine_scope
+        question: "Dans le contexte des coroutines Kotlin, que représente un `CoroutineScope` ?"
+        answers:
+          - "Un pool de threads dédié à l'exécution parallèle des tâches asynchrones"
+          - "Un contexte qui définit le cycle de vie et le dispatcher des coroutines lancées"
+          - "Une interface obligatoire que toute classe utilisant des coroutines doit implémenter"
+          - "Un mécanisme de synchronisation pour éviter les race conditions entre coroutines"
+        correct: 1
+        explanation: "Un CoroutineScope définit le cycle de vie des coroutines qu'il lance. Quand le scope est annulé, toutes ses coroutines enfants sont automatiquement annulées. Il permet une gestion structurée de la concurrence."
+
+      - id: q8_kotlin_inline_function
+        question: "Quel est l'effet du mot-clé `inline` sur une fonction Kotlin ?"
+        answers:
+          - "La fonction est compilée une seule fois et mise en cache pour les appels suivants"
+          - "Le corps de la fonction est copié à chaque site d'appel, évitant l'overhead d'appel"
+          - "La fonction devient thread-safe et peut être appelée depuis plusieurs threads"
+          - "La fonction est automatiquement optimisée pour les appels tail-recursive"
+        correct: 1
+        explanation: "Le mot-clé `inline` indique au compilateur de copier le corps de la fonction à chaque site d'appel. Cela élimine l'overhead des appels de fonction et permet l'utilisation de lambdas sans allocation d'objets."
+
+      - id: q9_kotlin_companion_object
+        question: "Comment accède-t-on aux membres d'un companion object depuis Java ?"
+        answers:
+          - "Directement comme des méthodes statiques sans syntaxe particulière"
+          - "Via la syntaxe `ClassName.Companion.methodName()` ou avec @JvmStatic"
+          - "Il faut créer une instance du companion object avant d'accéder aux membres"
+          - "Les companion objects ne sont pas accessibles depuis le code Java"
+        correct: 1
+        explanation: "Depuis Java, les membres d'un companion object s'accèdent via `ClassName.Companion.member()`. L'annotation @JvmStatic génère une vraie méthode statique Java, permettant l'accès direct `ClassName.member()`."
+
+      - id: q10_kotlin_lazy_delegate
+        question: "Que garantit le délégué `lazy` en Kotlin concernant l'initialisation ?"
+        answers:
+          - "La valeur est initialisée au démarrage de l'application pour optimiser l'accès"
+          - "L'initialisation est retardée au premier accès et thread-safe par défaut"
+          - "La valeur peut être réinitialisée à chaque accès selon une condition"
+          - "L'initialisation se fait en parallèle sur un thread dédié au background"
+        correct: 1
+        explanation: "Le délégué `lazy` retarde l'initialisation d'une propriété jusqu'au premier accès. Par défaut (LazyThreadSafetyMode.SYNCHRONIZED), l'initialisation est thread-safe, garantissant qu'elle ne se produit qu'une seule fois."
+
+      - id: q11_kotlin_higher_order
+        question: "Qu'est-ce qu'une fonction d'ordre supérieur (higher-order function) en Kotlin ?"
+        answers:
+          - "Une fonction qui prend une autre fonction en paramètre ou retourne une fonction"
+          - "Une fonction déclarée dans une classe parente et héritée par les sous-classes"
+          - "Une fonction optimisée par le compilateur pour des performances supérieures"
+          - "Une fonction qui ne peut être appelée que depuis le scope d'une autre fonction"
+        correct: 0
+        explanation: "Une higher-order function accepte des fonctions comme paramètres ou en retourne. C'est un pilier de la programmation fonctionnelle en Kotlin, permettant des abstractions puissantes comme map, filter, ou fold."
+
+      - id: q12_kotlin_elvis_operator
+        question: 'Que fait l''opérateur Elvis `?:` dans l''expression `val name = user?.name ?: "Anonyme"` ?'
+        answers:
+          - "Il convertit automatiquement le type nullable en type non-nullable"
+          - "Il retourne la valeur à droite si l'expression à gauche est null"
+          - "Il lance une exception si user est null pour signaler l'erreur"
+          - "Il assigne null à name si user.name est une chaîne vide"
+        correct: 1
+        explanation: "L'opérateur Elvis `?:` fournit une valeur par défaut quand l'expression à sa gauche est null. C'est une alternative concise au if-else pour gérer les cas null de manière élégante."
+
+      - id: q13_kotlin_destructuring
+        question: "Quelle syntaxe permet la déstructuration d'une data class `Person(name, age)` ?"
+        answers:
+          - "`val Person(n, a) = person` avec les noms des paramètres de la data class"
+          - "`val (n, a) = person` qui utilise les fonctions componentN() générées"
+          - "`val [n, a] = person.toArray()` après conversion en tableau"
+          - "`person.destruct { n, a -> }` via une lambda de déstructuration"
+        correct: 1
+        explanation: "La déstructuration `val (n, a) = person` utilise les fonctions component1(), component2()... générées automatiquement par les data classes. L'ordre correspond à l'ordre des propriétés dans le constructeur primaire."
+
+      - id: q14_kotlin_scope_functions
+        question: "Quelle est la différence principale entre `let` et `run` en Kotlin ?"
+        answers:
+          - "`let` passe l'objet en paramètre `it`, `run` utilise `this` comme receveur"
+          - "`let` est pour les types nullable, `run` uniquement pour les non-nullable"
+          - "`run` est plus performant car il évite la création d'une closure"
+          - "`let` retourne l'objet original, `run` retourne le résultat du bloc"
+        correct: 0
+        explanation: "Avec `let`, l'objet est accessible via `it` (paramètre lambda). Avec `run`, l'objet devient `this` (receveur). Les deux retournent le résultat du bloc. Le choix dépend du style souhaité et de la clarté du code."
+
+      - id: q15_kotlin_lateinit
+        question: "Quand utiliser `lateinit var` plutôt que `val` avec délégué `lazy` ?"
+        answers:
+          - "Quand l'initialisation sera faite manuellement après la construction de l'objet"
+          - "Quand on veut une initialisation automatique au premier accès à la propriété"
+          - "Quand la propriété doit être immuable mais initialisée tardivement"
+          - "Quand on a besoin d'une initialisation thread-safe synchronized"
+        correct: 0
+        explanation: "`lateinit` est pour les propriétés mutables (`var`) initialisées manuellement plus tard (ex: injection de dépendances). `lazy` est pour les propriétés immuables (`val`) initialisées automatiquement au premier accès. `lateinit` ne fonctionne pas avec les types primitifs."
+
+      - id: q16_kotlin_object_declaration
+        question: "Que crée une déclaration `object MySingleton { }` en Kotlin ?"
+        answers:
+          - "Un singleton thread-safe initialisé de manière lazy lors du premier accès"
+          - "Une classe abstraite qui ne peut pas être instanciée directement"
+          - "Un template d'objet qui doit être instancié avec le mot-clé `new`"
+          - "Une interface avec une implémentation par défaut de toutes les méthodes"
+        correct: 0
+        explanation: "Une object declaration crée un singleton thread-safe. Kotlin garantit qu'une seule instance existe et qu'elle est initialisée de manière lazy et thread-safe lors du premier accès. C'est l'équivalent sécurisé du pattern Singleton."
+
+      - id: q17_kotlin_reified_type
+        question: "À quoi sert le mot-clé `reified` dans une fonction inline générique ?"
+        answers:
+          - "À conserver l'information de type générique accessible à l'exécution"
+          - "À empêcher l'effacement du type pour des raisons de compatibilité Java"
+          - "À optimiser les performances en évitant le boxing des types primitifs"
+          - "À permettre l'héritage multiple de types génériques dans une classe"
+        correct: 0
+        explanation: "Normalement, les types génériques sont effacés à la compilation (type erasure). Avec `reified` dans une fonction `inline`, le type est préservé et accessible via `T::class`. Cela permet des opérations comme `is T` ou `T::class.java`."
+
+      - id: q18_kotlin_infix_function
+        question: "Quelle condition une fonction doit-elle remplir pour être déclarée `infix` ?"
+        answers:
+          - "Elle doit être une fonction membre ou extension avec exactement un paramètre"
+          - "Elle doit retourner un Boolean pour être utilisée dans des expressions logiques"
+          - "Elle doit être déclarée dans un companion object pour l'accès statique"
+          - "Elle doit avoir le même type pour son receveur et son paramètre unique"
+        correct: 0
+        explanation: 'Une fonction `infix` doit être soit membre soit extension, et avoir exactement un paramètre (sans valeur par défaut ni vararg). Elle s''appelle alors sans point ni parenthèses : `1 to "one"` au lieu de `1.to("one")`.'
+
+      - id: q19_kotlin_Nothing_type
+        question: "Quel est le rôle du type `Nothing` en Kotlin ?"
+        answers:
+          - "C'est le type de retour des fonctions qui ne terminent jamais normalement"
+          - "C'est l'équivalent de `void` en Java pour les fonctions sans valeur de retour"
+          - "C'est un alias pour `null` utilisé dans les contexts nullable"
+          - "C'est le type par défaut des variables non initialisées"
+        correct: 0
+        explanation: "`Nothing` est le sous-type de tous les types. Il représente une valeur qui n'existe jamais : fonctions qui lancent toujours une exception, boucles infinies, ou `TODO()`. `Nothing?` n'a qu'une seule valeur possible : `null`."
+
+      - id: q20_kotlin_operator_overloading
+        question: "Comment surcharger l'opérateur `+` pour une classe `Point` en Kotlin ?"
+        answers:
+          - "En déclarant `operator fun plus(other: Point): Point` dans la classe"
+          - "En implémentant l'interface `Addable<Point>` fournie par la stdlib"
+          - 'En utilisant l''annotation `@Operator("+")` sur une méthode add'
+          - "En étendant la classe `Arithmetic` et en redéfinissant la méthode sum"
+        correct: 0
+        explanation: "La surcharge d'opérateurs en Kotlin utilise des conventions de nommage. Pour `+`, on déclare `operator fun plus(...)`. Le mot-clé `operator` est obligatoire. Kotlin traduit `a + b` en `a.plus(b)` automatiquement."
+
+  - id: plateforme-android
+    title: "La plateforme Android"
+    questions:
+      - id: q1_android_architecture
+        question: "Sur quel noyau système est basé Android et pourquoi ce choix a-t-il été fait ?"
+        answers:
+          - "Sur le noyau Linux pour bénéficier de sa gestion mémoire, sécurité et pilotes matériels"
+          - "Sur le noyau Windows CE pour assurer la compatibilité avec les applications desktop"
+          - "Sur un noyau propriétaire Google optimisé spécifiquement pour les appareils mobiles"
+          - "Sur le noyau BSD pour profiter de sa licence permissive sans obligations de partage"
+        correct: 0
+        explanation: "Android utilise le noyau Linux qui fournit les fonctions système de bas niveau : gestion mémoire, sécurité, gestion des processus, pile réseau et pilotes matériels. Ce choix permet de bénéficier d'un écosystème mature et éprouvé."
+
+      - id: q2_android_dalvik_art
+        question: "Quelle est la différence principale entre Dalvik et ART (Android Runtime) ?"
+        answers:
+          - "Dalvik utilise la compilation JIT, ART utilise la compilation AOT à l'installation"
+          - "Dalvik est pour les applications Java, ART uniquement pour Kotlin"
+          - "ART est réservé aux appareils haut de gamme avec plus de 4 Go de RAM"
+          - "Dalvik supporte le multithreading, ART fonctionne en mode single-thread"
+        correct: 0
+        explanation: "Dalvik compilait le bytecode en code natif au runtime (JIT). ART, introduit avec Android 5.0, compile à l'installation (AOT - Ahead Of Time), améliorant les performances au détriment d'un temps d'installation plus long."
+
+      - id: q3_android_api_level
+        question: "Que représente le niveau d'API (API level) dans le développement Android ?"
+        answers:
+          - "Un identifiant unique qui correspond à une version du framework Android"
+          - "Le nombre maximum d'appels API autorisés par minute pour une application"
+          - "Le niveau de privilèges accordés à une application certifiée Google Play"
+          - "La priorité d'exécution d'une application par rapport aux autres processus"
+        correct: 0
+        explanation: "Chaque version d'Android a un API level (ex: API 34 = Android 14). Il définit les fonctionnalités disponibles. minSdk indique la version minimale supportée, targetSdk la version pour laquelle l'app est optimisée."
+
+      - id: q4_android_sandbox
+        question: "Comment fonctionne le modèle de sécurité sandbox d'Android ?"
+        answers:
+          - "Chaque application s'exécute dans son propre processus avec un UID Linux unique"
+          - "Toutes les applications partagent un espace mémoire commun surveillé par le système"
+          - "Les applications sont exécutées dans des conteneurs Docker isolés du système"
+          - "Le sandbox est désactivé pour les applications signées par Google"
+        correct: 0
+        explanation: "Android attribue à chaque application un User ID Linux unique. L'application s'exécute dans son propre processus avec ses propres fichiers. Elle ne peut accéder aux données des autres apps sans permissions explicites."
+
+      - id: q5_android_hal
+        question: "Quel est le rôle de la couche HAL (Hardware Abstraction Layer) dans l'architecture Android ?"
+        answers:
+          - "Fournir une interface standard entre le framework Android et les drivers matériels"
+          - "Gérer l'interface utilisateur et les animations graphiques de l'appareil"
+          - "Compiler le code Kotlin en bytecode compatible avec la machine virtuelle"
+          - "Chiffrer les communications entre l'application et les serveurs distants"
+        correct: 0
+        explanation: "HAL définit une interface standard que les fabricants implémentent pour leur matériel. Cela permet au framework Android d'interagir avec la caméra, les capteurs, le GPS, etc., sans connaître les spécificités de chaque composant."
+
+      - id: q6_android_versions_fragmentation
+        question: "Pourquoi la fragmentation des versions Android pose-t-elle un défi aux développeurs ?"
+        answers:
+          - "Les utilisateurs sont répartis sur plusieurs versions avec des APIs différentes"
+          - "Chaque fabricant utilise un langage de programmation différent pour ses appareils"
+          - "Google impose des frais de licence différents selon la version Android ciblée"
+          - "Les anciennes versions ne permettent pas de télécharger des applications depuis le Play Store"
+        correct: 0
+        explanation: "La fragmentation oblige les développeurs à supporter plusieurs API levels simultanément. Ils doivent utiliser des bibliothèques de compatibilité (AndroidX) et tester sur différentes versions pour garantir un fonctionnement cohérent."
+
+      - id: q7_android_intent_system
+        question: "Quel mécanisme Android permet la communication inter-applications de manière sécurisée ?"
+        answers:
+          - "Les Intents qui permettent de démarrer des composants et d'échanger des données"
+          - "Un système de fichiers partagé accessible en lecture/écriture par toutes les apps"
+          - "Les WebSockets qui établissent des connexions directes entre applications"
+          - "Un bus de messages global où chaque application publie et consomme des événements"
+        correct: 0
+        explanation: "Les Intents sont le mécanisme principal de communication Android. Un Intent peut démarrer une Activity, un Service, ou envoyer un Broadcast. Le système vérifie les permissions et filtre les composants autorisés à répondre."
+
+      - id: q8_android_form_factors
+        question: "Quels types de terminaux Android un développeur doit-il considérer pour une application moderne ?"
+        answers:
+          - "Smartphones, tablettes, montres Wear OS, téléviseurs Android TV, et automobiles"
+          - "Uniquement les smartphones, les autres appareils utilisant des OS différents"
+          - "Les smartphones et tablettes, les montres utilisant un SDK complètement séparé"
+          - "Tous les appareils IoT car Android est le seul système embarqué disponible"
+        correct: 0
+        explanation: "Android s'exécute sur de nombreux form factors : smartphones, tablettes, Wear OS (montres), Android TV, Android Auto, et appareils IoT. Chaque plateforme a ses guidelines spécifiques mais partage le même SDK de base."
+
+      - id: q9_android_play_services
+        question: "Quel est le rôle de Google Play Services dans l'écosystème Android ?"
+        answers:
+          - "Fournir des APIs Google actualisables indépendamment de la version Android de l'appareil"
+          - "Gérer uniquement le téléchargement et la mise à jour des applications depuis le Play Store"
+          - "Remplacer l'Android Runtime par une machine virtuelle optimisée par Google"
+          - "Bloquer les applications non certifiées pour protéger la sécurité de l'utilisateur"
+        correct: 0
+        explanation: "Google Play Services est une couche entre les apps et Android. Elle fournit des APIs (Maps, Auth, Firebase...) mises à jour via le Play Store, permettant d'accéder aux dernières fonctionnalités sans mettre à jour Android."
+
+      - id: q10_android_aosp
+        question: "Qu'est-ce que AOSP et quel est son rapport avec Android commercial ?"
+        answers:
+          - "Le projet open source d'Android, base que les fabricants personnalisent avec leurs surcouches"
+          - "Une certification obligatoire que chaque application doit obtenir avant publication"
+          - "L'outil officiel de Google pour analyser les performances des applications Android"
+          - "Un fork communautaire d'Android incompatible avec les applications du Play Store"
+        correct: 0
+        explanation: "AOSP (Android Open Source Project) est le code source ouvert d'Android. Les fabricants partent d'AOSP et ajoutent leurs modifications (surcouches comme One UI, MIUI). Google y ajoute ses services propriétaires (GMS)."
+
+      - id: q11_android_zygote
+        question: "Quel est le rôle du processus Zygote dans le démarrage des applications Android ?"
+        answers:
+          - "Il précharge les classes et ressources communes pour accélérer le lancement des apps"
+          - "Il vérifie les signatures des applications avant de les autoriser à s'exécuter"
+          - "Il gère la communication entre le noyau Linux et l'interface utilisateur"
+          - "Il compile le bytecode Kotlin en code natif lors de l'installation"
+        correct: 0
+        explanation: "Zygote est un processus démon qui précharge les classes Java/Kotlin et les ressources Android. Quand une app démarre, elle est forkée depuis Zygote, héritant de ce contexte préchargé pour un démarrage rapide."
+
+      - id: q12_android_permissions_runtime
+        question: "Comment fonctionnent les permissions runtime introduites avec Android 6.0 (API 23) ?"
+        answers:
+          - "Les permissions dangereuses doivent être demandées à l'utilisateur au moment de l'utilisation"
+          - "Toutes les permissions sont accordées automatiquement si l'app est signée par Google"
+          - "L'utilisateur accorde toutes les permissions en bloc lors de l'installation"
+          - "Les permissions sont gérées uniquement par le Play Store sans intervention utilisateur"
+        correct: 0
+        explanation: "Depuis Android 6.0, les permissions « dangereuses » (caméra, contacts, localisation...) doivent être demandées au runtime. L'utilisateur peut les accorder, refuser, ou révoquer ultérieurement dans les paramètres."
+
+      - id: q13_android_bionic
+        question: "Qu'est-ce que Bionic dans l'architecture Android ?"
+        answers:
+          - "La bibliothèque C personnalisée d'Android, optimisée pour les contraintes mobiles"
+          - "Le système de rendu graphique utilisé pour les animations de l'interface"
+          - "Le protocole de communication entre les applications et Google Play Services"
+          - "L'outil de diagnostic qui analyse les performances des applications en production"
+        correct: 0
+        explanation: "Bionic est la libc d'Android, une bibliothèque C légère et optimisée pour les appareils mobiles. Elle remplace la glibc Linux standard pour réduire l'empreinte mémoire et améliorer les performances."
+
+      - id: q14_android_treble
+        question: "Quel problème le projet Treble résout-il dans l'écosystème Android ?"
+        answers:
+          - "Il sépare le framework Android des implémentations matérielles pour faciliter les mises à jour"
+          - "Il unifie les interfaces utilisateur de tous les fabricants Android"
+          - "Il remplace le système de build Gradle par un outil plus performant"
+          - "Il oblige tous les appareils à utiliser la même version d'Android simultanément"
+        correct: 0
+        explanation: "Project Treble introduit une interface stable (HAL Interface Definition Language) entre Android et les couches basses. Les fabricants peuvent mettre à jour Android sans modifier leurs drivers, accélérant le déploiement des mises à jour."
+
+      - id: q15_android_jetpack
+        question: "Que représente Android Jetpack dans le développement Android moderne ?"
+        answers:
+          - "Un ensemble de bibliothèques, outils et guides pour simplifier le développement"
+          - "Un émulateur nouvelle génération remplaçant l'AVD Manager traditionnel"
+          - "Un framework JavaScript permettant de créer des apps Android multiplateformes"
+          - "Un service cloud de Google pour héberger les backends des applications"
+        correct: 0
+        explanation: "Jetpack est une suite de bibliothèques (Room, ViewModel, LiveData, Navigation...) et guidelines qui aident à écrire du code de qualité, rétrocompatible, et suivant les bonnes pratiques d'architecture."
+
+      - id: q16_android_doze_mode
+        question: "Comment le mode Doze affecte-t-il les applications en arrière-plan ?"
+        answers:
+          - "Il restreint l'accès réseau, les jobs et les alarmes pour économiser la batterie"
+          - "Il force la fermeture complète de toutes les applications non utilisées"
+          - "Il augmente la priorité CPU des apps en background pour terminer leurs tâches"
+          - "Il désactive uniquement le GPS et le Bluetooth pour les apps inactives"
+        correct: 0
+        explanation: "Doze mode, introduit avec Android 6.0, limite les activités en arrière-plan quand l'écran est éteint et l'appareil immobile. Les jobs, alarmes standard et accès réseau sont différés par fenêtres de maintenance."
+
+      - id: q17_android_scoped_storage
+        question: "Quels changements le Scoped Storage (Android 10+) apporte-t-il au stockage ?"
+        answers:
+          - "Les apps accèdent uniquement à leur répertoire dédié sans permission spéciale"
+          - "Toutes les apps partagent un espace de stockage commun chiffré par le système"
+          - "Le stockage externe est totalement interdit aux applications tierces"
+          - "Les fichiers sont automatiquement synchronisés avec Google Drive"
+        correct: 0
+        explanation: "Scoped Storage limite l'accès au système de fichiers. Chaque app a son répertoire privé. L'accès aux médias partagés (photos, vidéos) passe par MediaStore avec des permissions granulaires."
+
+      - id: q18_android_app_bundles
+        question: "Quel avantage offre le format Android App Bundle (.aab) par rapport à l'APK ?"
+        answers:
+          - "Google Play génère des APKs optimisés pour chaque configuration d'appareil"
+          - "Le format permet d'inclure du code iOS pour une publication cross-platform"
+          - "Les bundles sont exemptés des contrôles de sécurité du Play Store"
+          - "Le téléchargement est plus lent mais la stabilité est garantie par Google"
+        correct: 0
+        explanation: "L'App Bundle contient tout le code et ressources. Google Play génère des APKs optimisés (split APKs) pour chaque appareil : seuls les ressources et le code natif nécessaires sont téléchargés, réduisant la taille."
+
+      - id: q19_android_mainline
+        question: "Qu'est-ce que Project Mainline apporté par Android 10 ?"
+        answers:
+          - "La mise à jour de composants système via le Play Store sans mise à jour OS complète"
+          - "Un nouveau langage de programmation remplaçant Kotlin pour Android"
+          - "Un système de déploiement continu intégré à Android Studio"
+          - "Une interface commune pour tous les fabricants de terminaux Android"
+        correct: 0
+        explanation: "Project Mainline permet de mettre à jour des modules système critiques (DNS, codecs médias, permissions...) directement via Google Play, sans attendre une mise à jour complète de l'OS du fabricant."
+
+      - id: q20_android_backward_compat
+        question: "Comment AndroidX assure-t-il la rétrocompatibilité des applications ?"
+        answers:
+          - "Il fournit des implémentations des APIs récentes fonctionnant sur d'anciennes versions"
+          - "Il force le système à émuler la version Android la plus récente disponible"
+          - "Il convertit automatiquement le code Kotlin en Java pour les vieux appareils"
+          - "Il bloque l'installation sur les appareils qui ne supportent pas les APIs utilisées"
+        correct: 0
+        explanation: "AndroidX (anciennement Support Library) fournit des implémentations backportées des fonctionnalités récentes. Par exemple, Fragment, RecyclerView ou ConstraintLayout fonctionnent sur d'anciennes versions d'Android."
+
+  - id: dev-android-studio
+    title: "Développement Android sous Android Studio"
+    questions:
+      - id: q1_studio_project_structure
+        question: "Quelle est la structure standard d'un projet Android Studio avec Gradle ?"
+        answers:
+          - "Un module app/ contenant src/main/java, src/main/res, et un fichier build.gradle"
+          - "Un dossier unique src/ avec tous les fichiers Java et XML mélangés"
+          - "Plusieurs dossiers bin/, lib/, obj/ comme dans un projet Visual Studio"
+          - "Un fichier project.xml à la racine définissant tous les chemins et dépendances"
+        correct: 0
+        explanation: "Un projet Android utilise Gradle avec un module app/ contenant src/main/java (code), src/main/res (ressources), AndroidManifest.xml, et build.gradle pour la configuration. settings.gradle définit les modules inclus."
+
+      - id: q2_studio_build_gradle
+        question: "Quelle est la différence entre build.gradle (Project) et build.gradle (Module) ?"
+        answers:
+          - "Project définit les repositories et plugins globaux, Module les dépendances et config de l'app"
+          - "Project contient le code source, Module uniquement les tests unitaires"
+          - "Les deux fichiers sont identiques et synchronisés automatiquement par Android Studio"
+          - "Project est pour la version debug, Module pour la version release"
+        correct: 0
+        explanation: "build.gradle (Project) configure les repositories (mavenCentral, google), versions de plugins et dépendances communes. build.gradle (Module:app) définit compileSdk, dépendances spécifiques, et build types du module."
+
+      - id: q3_studio_avd_manager
+        question: "Que permet l'AVD Manager dans Android Studio ?"
+        answers:
+          - "Créer et gérer des appareils virtuels Android pour tester les applications"
+          - "Analyser les vulnérabilités de sécurité dans le code de l'application"
+          - "Versionner automatiquement les builds et générer les changelogs"
+          - "Connecter l'IDE aux services cloud de Google pour le déploiement"
+        correct: 0
+        explanation: "L'AVD (Android Virtual Device) Manager permet de créer des émulateurs avec différentes configurations : version Android, taille d'écran, RAM, stockage. Ces émulateurs utilisent HAXM ou Hypervisor pour des performances accrues."
+
+      - id: q4_studio_logcat
+        question: "Comment filtrer efficacement les logs dans Logcat pour déboguer une application ?"
+        answers:
+          - "En utilisant le nom du package, le niveau de log (Debug, Error) ou des tags personnalisés"
+          - "En modifiant le fichier proguard-rules.pro pour activer les logs spécifiques"
+          - "Les logs ne peuvent pas être filtrés, il faut les exporter vers un fichier externe"
+          - "En ajoutant l'annotation @LogEnabled sur chaque classe à surveiller"
+        correct: 0
+        explanation: "Logcat permet de filtrer par package (Show only selected application), niveau (Verbose à Assert), texte libre, ou tags définis via Log.d(TAG, message). Les expressions régulières sont également supportées."
+
+      - id: q5_studio_manifest_permissions
+        question: "Où et comment déclare-t-on les permissions requises par une application ?"
+        answers:
+          - 'Dans AndroidManifest.xml avec des balises <uses-permission android:name="..." />'
+          - "Dans le fichier build.gradle sous la section permissions { } du module"
+          - "Dans un fichier permissions.xml séparé dans le dossier res/values/"
+          - "Directement dans le code Kotlin avec l'annotation @RequiresPermission"
+        correct: 0
+        explanation: "Les permissions sont déclarées dans AndroidManifest.xml via <uses-permission>. Depuis Android 6.0, les permissions dangereuses nécessitent aussi une demande runtime via requestPermissions()."
+
+      - id: q6_studio_profiler
+        question: "Quelles métriques le Profiler d'Android Studio permet-il d'analyser en temps réel ?"
+        answers:
+          - "CPU, mémoire, réseau et consommation d'énergie de l'application en cours d'exécution"
+          - "Uniquement le temps de build et la taille des fichiers APK générés"
+          - "Les statistiques de téléchargement depuis le Google Play Store"
+          - "Le nombre d'utilisateurs actifs et les crashs en production"
+        correct: 0
+        explanation: "Le Profiler affiche en temps réel l'utilisation CPU (threads, méthodes), mémoire (heap, allocations, GC), réseau (requêtes, payload) et énergie. Il permet d'enregistrer des traces et détecter les fuites mémoire."
+
+      - id: q7_studio_signing_config
+        question: "Pourquoi configurer un signingConfig dans build.gradle pour les builds release ?"
+        answers:
+          - "Android exige que chaque APK/AAB soit signé avec une clé pour identifier le développeur"
+          - "La signature améliore les performances de l'application en production"
+          - "C'est optionnel mais recommandé pour activer les analytics Google"
+          - "La configuration permet d'obfusquer automatiquement le code source"
+        correct: 0
+        explanation: "Toute application Android doit être signée. signingConfig spécifie le keystore, l'alias et les mots de passe. La même clé doit être utilisée pour les mises à jour. Google Play App Signing peut gérer la clé de distribution."
+
+      - id: q8_studio_build_variants
+        question: "À quoi servent les build variants (debug, release) et les product flavors ?"
+        answers:
+          - "À générer différentes versions d'une app avec des configurations et ressources distinctes"
+          - "À compiler l'application pour différentes architectures processeur uniquement"
+          - "À séparer le code Kotlin du code Java dans le même projet"
+          - "À tester l'application sur différents émulateurs simultanément"
+        correct: 0
+        explanation: "Les build types (debug/release) définissent les options de build (minification, signature). Les product flavors créent des variantes (free/paid, demo/full) avec des ressources, code ou configurations distincts. Variant = buildType + flavor."
+
+      - id: q9_studio_sdk_manager
+        question: "Quel est le rôle du SDK Manager dans le cycle de développement Android ?"
+        answers:
+          - "Télécharger et gérer les versions du SDK Android, tools, et images système"
+          - "Publier automatiquement les applications sur le Google Play Store"
+          - "Convertir le code Kotlin en bytecode compatible avec toutes les versions Android"
+          - "Synchroniser le projet avec les repositories Git distants"
+        correct: 0
+        explanation: "Le SDK Manager télécharge les platform SDKs (Android 14, 13...), build tools, platform tools (adb), images système pour émulateurs, et extras (Google Play services). Il gère les mises à jour et licences."
+
+      - id: q10_studio_instant_run
+        question: "Comment Apply Changes améliore-t-il le workflow de développement Android ?"
+        answers:
+          - "Il applique les modifications de code sans réinstaller complètement l'application"
+          - "Il génère automatiquement des tests unitaires pour chaque changement"
+          - "Il déploie l'application sur tous les appareils connectés simultanément"
+          - "Il compile le projet en arrière-plan pendant que le développeur code"
+        correct: 0
+        explanation: "Apply Changes (successeur d'Instant Run) pousse les changements de code et ressources vers l'app en cours d'exécution. Apply Code Changes redémarre l'Activity, Apply Changes and Restart redémarre l'app si nécessaire."
+
+      - id: q11_studio_adb
+        question: "Quelles fonctionnalités l'outil adb (Android Debug Bridge) offre-t-il au développeur ?"
+        answers:
+          - "Installer des apps, copier des fichiers, exécuter des commandes shell sur l'appareil"
+          - "Uniquement visualiser les logs de l'application en mode debug"
+          - "Compiler le code source Kotlin en APK signé prêt pour publication"
+          - "Gérer les achats in-app et les abonnements Google Play"
+        correct: 0
+        explanation: "adb est un outil en ligne de commande polyvalent : adb install (installer APK), adb push/pull (transfert fichiers), adb shell (commandes Linux), adb logcat (logs), adb devices (lister appareils connectés)."
+
+      - id: q12_studio_lint
+        question: "Quel est le rôle de l'outil Lint intégré à Android Studio ?"
+        answers:
+          - "Analyser le code pour détecter bugs potentiels, problèmes de performance et d'accessibilité"
+          - "Formater automatiquement le code selon les conventions Google"
+          - "Générer la documentation Javadoc/KDoc à partir des commentaires"
+          - "Compresser les ressources images pour réduire la taille de l'APK"
+        correct: 0
+        explanation: "Lint analyse statiquement le code et ressources pour détecter : bugs, failles de sécurité, problèmes de performance, erreurs d'internationalisation, violations d'accessibilité. Les règles sont configurables via lint.xml."
+
+      - id: q13_studio_r8_proguard
+        question: "Que fait R8 lors de la génération d'un build release Android ?"
+        answers:
+          - "Minifie, obfusque et optimise le code pour réduire la taille et protéger le code"
+          - "Compile le code Kotlin en code natif ARM pour de meilleures performances"
+          - "Génère automatiquement les captures d'écran pour le listing Play Store"
+          - "Chiffre les communications entre l'application et les serveurs backend"
+        correct: 0
+        explanation: "R8 (successeur de ProGuard) effectue le shrinking (suppression code mort), obfuscation (renommage classes/méthodes), optimization. Les règles proguard-rules.pro préservent les classes nécessaires (réflexion, sérialisation)."
+
+      - id: q14_studio_activity_lifecycle
+        question: "Quelle classe de base du framework définit le cycle de vie d'un écran Android ?"
+        answers:
+          - "Activity avec ses callbacks onCreate, onStart, onResume, onPause, onStop, onDestroy"
+          - "Screen qui gère automatiquement l'affichage et la navigation entre vues"
+          - "Window responsable du rendu graphique et des interactions tactiles"
+          - "Controller qui orchestre la logique métier et les événements utilisateur"
+        correct: 0
+        explanation: "Activity est le composant fondamental représentant un écran. Son cycle de vie (onCreate → onStart → onResume → onPause → onStop → onDestroy) permet de gérer les ressources selon l'état visible/actif de l'écran."
+
+      - id: q15_studio_view_binding
+        question: "Quel avantage offre View Binding par rapport à findViewById() ?"
+        answers:
+          - "Génère des classes typées avec accès null-safe aux vues, vérifié à la compilation"
+          - "Améliore les performances de rendu en cachant les références aux vues"
+          - "Permet de créer des layouts dynamiques sans fichiers XML"
+          - "Active automatiquement les animations de transition entre les vues"
+        correct: 0
+        explanation: "View Binding génère une classe de binding par layout XML. Les propriétés correspondent aux vues avec ID, typées correctement. Null-safety garanti : erreur de compilation si vue absente, pas de crash runtime."
+
+      - id: q16_studio_gradle_sync
+        question: "Que se passe-t-il lors d'un Gradle Sync dans Android Studio ?"
+        answers:
+          - "Le projet est analysé, les dépendances téléchargées et la configuration appliquée"
+          - "Le code est compilé et l'APK généré prêt pour le déploiement"
+          - "Les tests unitaires sont exécutés et un rapport de couverture est généré"
+          - "Les fichiers sont synchronisés avec le repository Git distant"
+        correct: 0
+        explanation: "Gradle Sync lit les fichiers build.gradle, résout et télécharge les dépendances depuis les repositories, configure le projet dans l'IDE. C'est nécessaire après modification des build.gradle ou mise à jour des plugins."
+
+      - id: q17_studio_debugger_breakpoints
+        question: "Quels types de breakpoints le débogueur Android Studio supporte-t-il ?"
+        answers:
+          - "Line breakpoints, conditional breakpoints, exception breakpoints et method breakpoints"
+          - "Uniquement les breakpoints sur les lignes de code Kotlin"
+          - "Les breakpoints ne fonctionnent qu'avec les émulateurs, pas les appareils physiques"
+          - "Seuls les breakpoints dans les fichiers de test sont supportés"
+        correct: 0
+        explanation: "Le débogueur offre plusieurs types de breakpoints : ligne (arrêt à une ligne), conditionnel (condition booléenne), exception (arrêt sur exception), méthode (entrée/sortie). On peut aussi évaluer des expressions et modifier des valeurs."
+
+      - id: q18_studio_play_console
+        question: "Quelles étapes sont nécessaires pour publier une app sur le Google Play Store ?"
+        answers:
+          - "Créer un compte développeur, préparer le listing, uploader l'AAB signé, soumettre"
+          - "Simplement uploader l'APK, le Play Store génère automatiquement le listing"
+          - "Envoyer le code source à Google qui compile et publie l'application"
+          - "Publier via Android Studio sans aucune intervention sur le site Play Console"
+        correct: 0
+        explanation: "La publication nécessite : compte Google Play ($25), création d'app dans Play Console, préparation du store listing (descriptions, screenshots), upload de l'AAB signé, configuration du rollout, et revue par Google."
+
+      - id: q19_studio_emulator_features
+        question: "Quelles fonctionnalités avancées l'émulateur Android permet-il de simuler ?"
+        answers:
+          - "GPS, appels téléphoniques, SMS, rotation d'écran, niveau de batterie et réseau"
+          - "Uniquement l'affichage de l'interface sans interaction avec les capteurs"
+          - "La simulation nécessite des appareils physiques, l'émulateur affiche seulement"
+          - "Seuls les tests d'interface graphique sont possibles sur l'émulateur"
+        correct: 0
+        explanation: "L'Extended Controls de l'émulateur simule : localisation GPS, appels/SMS entrants, état batterie, qualité réseau (3G, edge, perte), capteurs (accéléromètre, gyroscope), empreintes digitales, et camera virtuelle."
+
+      - id: q20_studio_version_catalog
+        question: "Quel est l'avantage d'utiliser un Version Catalog (libs.versions.toml) dans Gradle ?"
+        answers:
+          - "Centraliser les versions des dépendances pour faciliter la maintenance multi-modules"
+          - "Générer automatiquement le code de gestion des versions de l'application"
+          - "Compiler les dépendances en code natif pour améliorer les performances"
+          - "Synchroniser les versions avec celles recommandées par Google automatiquement"
+        correct: 0
+        explanation: "Version Catalog (libs.versions.toml) centralise les déclarations de dépendances et versions. Les modules référencent libs.androidx.core au lieu de hardcoder les versions. Cela facilite les mises à jour et assure la cohérence."
+
+  - id: interfaces-utilisateurs
+    title: "Les interfaces utilisateurs"
+    questions:
+      - id: q1_ui_constraint_layout
+        question: "Quel avantage principal offre ConstraintLayout par rapport aux layouts imbriqués ?"
+        answers:
+          - "Il permet de créer des interfaces complexes avec une hiérarchie plate, optimisant le rendu"
+          - "Il génère automatiquement des animations de transition entre les vues"
+          - "Il supporte uniquement les orientations portrait, simplifiant le développement"
+          - "Il convertit le XML en code Kotlin pour de meilleures performances"
+        correct: 0
+        explanation: "ConstraintLayout utilise des contraintes pour positionner les vues sans imbrication. Une hiérarchie plate réduit les passes de mesure/layout, améliorant les performances par rapport aux LinearLayouts ou RelativeLayouts imbriqués."
+
+      - id: q2_ui_linear_layout_weight
+        question: "Comment fonctionne l'attribut layout_weight dans un LinearLayout ?"
+        answers:
+          - "Il distribue l'espace restant proportionnellement entre les vues selon leurs poids"
+          - "Il définit la priorité d'affichage des vues lors du rendu graphique"
+          - "Il spécifie le poids physique de la vue pour les animations de gravité"
+          - "Il contrôle l'ordre de tabulation lors de la navigation au clavier"
+        correct: 0
+        explanation: "layout_weight distribue l'espace excédentaire proportionnellement. Avec layout_width=0dp et weight=1, les vues partagent équitablement. Des poids différents (1 et 2) donnent des proportions 1/3 et 2/3."
+
+      - id: q3_ui_relative_layout
+        question: "Quelle est la caractéristique principale de RelativeLayout pour positionner les vues ?"
+        answers:
+          - "Les vues sont positionnées relativement au parent ou à d'autres vues du layout"
+          - "Les vues sont empilées automatiquement les unes sur les autres par ordre de déclaration"
+          - "Les vues s'adaptent dynamiquement à la taille de l'écran sans contraintes"
+          - "Les vues sont affichées dans une grille avec un nombre fixe de colonnes"
+        correct: 0
+        explanation: "RelativeLayout positionne les vues par rapport au parent (alignParentTop, centerInParent) ou à d'autres vues (toRightOf, below). C'est flexible mais peut être complexe avec de nombreuses dépendances."
+
+      - id: q4_ui_drawable_resources
+        question: "Pourquoi utiliser des dossiers drawable-hdpi, drawable-xhdpi, drawable-xxhdpi ?"
+        answers:
+          - "Pour fournir des images adaptées à chaque densité d'écran et éviter le scaling flou"
+          - "Pour organiser les images par thème de couleur de l'application"
+          - "Pour séparer les images bitmap des images vectorielles dans le projet"
+          - "Pour permettre le chargement lazy des images selon la mémoire disponible"
+        correct: 0
+        explanation: "Android sélectionne automatiquement le drawable correspondant à la densité d'écran (ldpi, mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi). Cela évite le scaling qui dégrade la qualité et assure une apparence nette sur tous les appareils."
+
+      - id: q5_ui_strings_xml
+        question: "Quelle est la bonne pratique concernant les textes affichés dans une application Android ?"
+        answers:
+          - "Les stocker dans res/values/strings.xml pour faciliter l'internationalisation"
+          - "Les écrire directement dans les fichiers XML de layout pour plus de clarté"
+          - "Les définir comme constantes dans le code Kotlin de chaque Activity"
+          - "Les charger depuis un fichier JSON embarqué dans l'APK"
+        correct: 0
+        explanation: "strings.xml centralise les textes. Pour l'internationalisation, on crée values-fr/, values-es/ avec des strings.xml traduits. Android sélectionne automatiquement selon la langue du système. Cela facilite aussi la maintenance."
+
+      - id: q6_ui_styles_themes
+        question: "Quelle est la différence entre un style et un thème dans Android ?"
+        answers:
+          - "Un style s'applique à une vue, un thème à une Activity ou Application entière"
+          - "Un style définit les couleurs, un thème définit les dimensions des vues"
+          - "Un style est pour le mode clair, un thème pour le mode sombre"
+          - "Un style utilise XML, un thème est défini programmatiquement en Kotlin"
+        correct: 0
+        explanation: 'Un style est un ensemble d''attributs appliqué à une vue spécifique via style="@style/...". Un thème est appliqué à une Activity ou Application dans le manifest, affectant toutes les vues (colorPrimary, textAppearance...).'
+
+      - id: q7_ui_click_listener
+        question: "Quelle est la manière idiomatique en Kotlin de gérer un clic sur un bouton ?"
+        answers:
+          - "button.setOnClickListener { /* action */ } utilisant une lambda"
+          - "button.onClick = fun() { /* action */ } avec une fonction anonyme"
+          - "override fun onButtonClick() dans l'Activity avec annotation @OnClick"
+          - "button.addClickHandler(this::handleClick) via une référence de méthode"
+        correct: 0
+        explanation: "setOnClickListener avec une lambda Kotlin est concis et idiomatique. La lambda reçoit la View cliquée en paramètre optionnel. C'est équivalent à implémenter l'interface OnClickListener mais plus lisible."
+
+      - id: q8_ui_view_visibility
+        question: "Quelle est la différence entre View.GONE et View.INVISIBLE ?"
+        answers:
+          - "GONE retire la vue du layout (aucun espace), INVISIBLE la masque mais garde l'espace"
+          - "GONE masque la vue temporairement, INVISIBLE la supprime définitivement"
+          - "GONE fonctionne sur les ViewGroups, INVISIBLE sur les vues simples uniquement"
+          - "GONE anime la disparition, INVISIBLE la masque immédiatement"
+        correct: 0
+        explanation: "INVISIBLE rend la vue transparente mais elle occupe toujours son espace dans le layout. GONE la retire complètement : les autres vues se repositionnent comme si elle n'existait pas. VISIBLE la réaffiche."
+
+      - id: q9_ui_recycler_view_adapter
+        question: "Quel est le rôle du pattern ViewHolder dans RecyclerView ?"
+        answers:
+          - "Mettre en cache les références aux vues pour éviter des appels répétés à findViewById"
+          - "Gérer la pagination automatique lors du défilement de longues listes"
+          - "Convertir les données du modèle en format JSON pour le stockage"
+          - "Synchroniser l'état de la liste avec une base de données distante"
+        correct: 0
+        explanation: "ViewHolder stocke les références aux vues d'un item (onCreateViewHolder). Lors du binding (onBindViewHolder), on accède directement aux vues sans findViewById coûteux. RecyclerView réutilise les ViewHolders pour le recyclage."
+
+      - id: q10_ui_dimen_resources
+        question: "Pourquoi utiliser des ressources dimens plutôt que des valeurs hardcodées dans les layouts ?"
+        answers:
+          - "Pour centraliser les dimensions, faciliter la maintenance et supporter différents écrans"
+          - "Pour améliorer les performances de rendu en précompilant les valeurs"
+          - "Pour activer automatiquement les animations lors des changements de taille"
+          - "Pour permettre à Android Studio de générer les previews des layouts"
+        correct: 0
+        explanation: "dimens.xml centralise les marges, paddings, tailles. On peut créer values-sw600dp/ pour tablettes avec des valeurs différentes. Cela évite la duplication et facilite les ajustements globaux de l'UI."
+
+      - id: q11_ui_compose_basics
+        question: "Quelle est la différence fondamentale entre Jetpack Compose et les layouts XML traditionnels ?"
+        answers:
+          - "Compose utilise des fonctions Kotlin annotées @Composable pour décrire l'UI de façon déclarative"
+          - "Compose génère automatiquement le code XML à partir des annotations Kotlin"
+          - "Compose ne fonctionne que sur les appareils Android 12 et supérieurs"
+          - "Compose remplace uniquement les RecyclerViews, les autres layouts restent en XML"
+        correct: 0
+        explanation: "Jetpack Compose est un toolkit UI déclaratif. L'UI est décrite par des fonctions @Composable qui retournent des éléments d'interface. Lors d'un changement d'état, seuls les composables affectés sont recomposés, pas toute l'UI."
+
+      - id: q12_ui_touch_events
+        question: "Comment intercepter et gérer les gestes tactiles complexes (swipe, pinch) sur une vue ?"
+        answers:
+          - "En utilisant GestureDetector ou ScaleGestureDetector avec les callbacks onTouchEvent"
+          - "En déclarant les gestes supportés dans le fichier AndroidManifest.xml"
+          - "En implémentant l'interface TouchListener qui gère automatiquement tous les gestes"
+          - "En activant le mode gesture dans les propriétés de la vue via XML"
+        correct: 0
+        explanation: "GestureDetector (fling, scroll, tap) et ScaleGestureDetector (pinch zoom) analysent les MotionEvents. On override onTouchEvent et délègue au detector. SimpleOnGestureListener simplifie l'implémentation des callbacks."
+
+      - id: q13_ui_toolbar_actionbar
+        question: "Comment remplacer l'ActionBar par défaut par une Toolbar personnalisable ?"
+        answers:
+          - "Utiliser un thème NoActionBar et appeler setSupportActionBar(toolbar) dans l'Activity"
+          - "Supprimer l'ActionBar dans le manifest et ajouter une Toolbar dans le layout principal"
+          - "Définir toolbar=true dans les attributs de l'Activity dans le manifest"
+          - "Créer une classe héritant d'ActionBar et l'enregistrer dans Application.onCreate()"
+        correct: 0
+        explanation: "On utilise Theme.MaterialComponents.*.NoActionBar, on ajoute une Toolbar dans le layout XML, puis setSupportActionBar(toolbar) dans onCreate. La Toolbar offre plus de flexibilité pour la navigation et les actions."
+
+      - id: q14_ui_dp_sp_units
+        question: "Quelle est la différence entre dp (density-independent pixels) et sp (scale-independent pixels) ?"
+        answers:
+          - "dp s'adapte à la densité d'écran, sp s'adapte aussi aux préférences de taille de texte"
+          - "dp est pour les dimensions horizontales, sp pour les dimensions verticales"
+          - "dp est obsolète et remplacé par sp dans les versions récentes d'Android"
+          - "sp offre de meilleures performances car il utilise des entiers au lieu de floats"
+        correct: 0
+        explanation: "dp garantit des tailles visuelles cohérentes quelle que soit la densité d'écran. sp fait de même mais prend aussi en compte les paramètres d'accessibilité de taille de police. Utiliser sp pour les textes, dp pour tout le reste."
+
+      - id: q15_ui_fragment_layout
+        question: "Comment inclure un Fragment dans un layout XML ?"
+        answers:
+          - "Via <androidx.fragment.app.FragmentContainerView> avec l'attribut android:name"
+          - "En déclarant <fragment> dans le manifest et référençant son ID dans le layout"
+          - "Via une balise <include> pointant vers le layout du Fragment"
+          - "Les Fragments ne peuvent être ajoutés que programmatiquement, jamais en XML"
+        correct: 0
+        explanation: "FragmentContainerView (recommandé) ou la balise <fragment> permettent d'inclure un Fragment statiquement. android:name spécifie la classe. Pour les Fragments dynamiques, on utilise FragmentManager avec une transaction."
+
+      - id: q16_ui_material_components
+        question: "Quel avantage offrent les Material Components (MDC) par rapport aux widgets Android standard ?"
+        answers:
+          - "Ils implémentent Material Design avec des animations, états et thématisation avancés"
+          - "Ils sont compilés en code natif pour de meilleures performances sur tous les appareils"
+          - "Ils remplacent automatiquement les widgets standard sans modification de code"
+          - "Ils sont obligatoires pour publier sur le Google Play Store depuis Android 12"
+        correct: 0
+        explanation: "Material Components (MaterialButton, TextInputLayout, etc.) implémentent les guidelines Material Design : ripple effects, états visuels, shape theming, couleurs dynamiques. Ils étendent les widgets AndroidX avec des fonctionnalités avancées."
+
+      - id: q17_ui_motion_layout
+        question: "À quoi sert MotionLayout dans la création d'interfaces Android ?"
+        answers:
+          - "À créer des animations complexes entre deux états de layout de manière déclarative"
+          - "À détecter les mouvements de l'appareil et adapter l'interface en conséquence"
+          - "À optimiser les performances de rendu lors des animations de transition"
+          - "À gérer la navigation par gestes entre les différentes activités de l'app"
+        correct: 0
+        explanation: "MotionLayout étend ConstraintLayout pour les animations. Un MotionScene définit les états (start/end) et les transitions. Il gère automatiquement l'interpolation, supporte le swipe et les keyframes pour des animations fluides."
+
+      - id: q18_ui_color_resources
+        question: "Comment définir une couleur qui s'adapte au mode clair/sombre dans une application ?"
+        answers:
+          - "En créant res/values/colors.xml et res/values-night/colors.xml avec les mêmes noms"
+          - "En utilisant l'attribut android:darkModeColor sur chaque élément du layout"
+          - "En définissant deux thèmes distincts et les alternant programmatiquement"
+          - "En préfixant le nom de la couleur par light_ ou dark_ dans colors.xml"
+        correct: 0
+        explanation: "Android sélectionne automatiquement les ressources selon le mode. values-night/ contient les couleurs alternatives pour le mode sombre. On référence @color/myColor partout, le système choisit la bonne variante."
+
+      - id: q19_ui_accessibility
+        question: "Quelle propriété XML est essentielle pour l'accessibilité des éléments interactifs ?"
+        answers:
+          - "contentDescription pour fournir une description vocale aux lecteurs d'écran"
+          - "accessibilityLabel pour définir le texte affiché en mode accessibilité"
+          - "talkbackEnabled pour activer la lecture vocale sur l'élément"
+          - "screenReaderText pour personnaliser le texte lu par les services d'accessibilité"
+        correct: 0
+        explanation: 'contentDescription fournit un texte alternatif lu par TalkBack. C''est obligatoire pour les ImageViews sans texte et les boutons avec icônes. Pour les vues décoratives, on utilise importantForAccessibility="no".'
+
+      - id: q20_ui_navigation_component
+        question: "Quel avantage offre Navigation Component pour gérer les transitions entre écrans ?"
+        answers:
+          - "Un graphe visuel des destinations avec gestion automatique du back stack et animations"
+          - "Le remplacement automatique des Activities par des Fragments plus performants"
+          - "La génération de code pour toutes les transitions entre écrans de l'application"
+          - "La synchronisation de la navigation entre l'application mobile et Wear OS"
+        correct: 0
+        explanation: "Navigation Component utilise un NavGraph XML définissant destinations et actions. NavController gère la navigation, le back stack, les deep links. Safe Args génère du code type-safe pour passer des arguments entre destinations."
+
+  - id: modele-composants
+    title: "Le modèle de composants"
+    questions:
+      - id: q1_comp_activity_lifecycle
+        question: "Dans quel ordre sont appelées les méthodes du cycle de vie lors du passage d'une Activity A à une Activity B ?"
+        answers:
+          - "A.onPause → B.onCreate → B.onStart → B.onResume → A.onStop"
+          - "A.onStop → A.onPause → B.onCreate → B.onStart → B.onResume"
+          - "B.onCreate → B.onStart → B.onResume → A.onPause → A.onStop"
+          - "A.onPause → A.onStop → B.onCreate → B.onStart → B.onResume"
+        correct: 0
+        explanation: "Android garantit que A.onPause est appelé avant que B ne devienne visible. Ensuite B passe par ses callbacks de création. Seulement après B.onResume, A.onStop est appelé car A n'est plus visible."
+
+      - id: q2_comp_fragment_transaction
+        question: "Pourquoi utiliser addToBackStack() lors d'une FragmentTransaction ?"
+        answers:
+          - "Pour permettre à l'utilisateur de revenir au Fragment précédent avec le bouton retour"
+          - "Pour sauvegarder l'état du Fragment dans les SharedPreferences"
+          - "Pour empiler les Fragments et améliorer les performances de rendu"
+          - "Pour synchroniser les transactions avec le ViewModel de l'Activity"
+        correct: 0
+        explanation: "addToBackStack() ajoute la transaction à la pile de retour. Quand l'utilisateur appuie sur Back, FragmentManager annule la transaction et restaure le Fragment précédent au lieu de fermer l'Activity."
+
+      - id: q3_comp_intent_explicit
+        question: "Quelle est la différence entre un Intent explicite et un Intent implicite ?"
+        answers:
+          - "L'explicite spécifie le composant cible par classe, l'implicite décrit l'action à accomplir"
+          - "L'explicite est pour les Services, l'implicite uniquement pour les Activities"
+          - "L'explicite est synchrone et bloquant, l'implicite est asynchrone"
+          - "L'explicite ne peut pas transporter d'extras, l'implicite le permet"
+        correct: 0
+        explanation: "Un Intent explicite nomme la classe cible (Intent(this, DetailActivity::class.java)). Un Intent implicite déclare une action (ACTION_VIEW) et laisse le système trouver les composants capables de répondre via les intent-filters."
+
+      - id: q4_comp_service_started
+        question: "Comment arrêter correctement un Service démarré avec startService() ?"
+        answers:
+          - "Le Service doit appeler stopSelf() ou l'appelant utilise stopService()"
+          - "Le Service s'arrête automatiquement quand l'Activity qui l'a démarré est détruite"
+          - "Il faut appeler finish() sur le Service depuis l'Activity parente"
+          - "Les Services démarrés ne peuvent pas être arrêtés, ils tournent jusqu'au reboot"
+        correct: 0
+        explanation: "Un started Service continue indéfiniment. Il s'arrête via stopSelf() (depuis le Service) ou stopService(intent) (depuis l'appelant). Le système peut le tuer si la mémoire manque, d'où l'importance de onStartCommand returnValue."
+
+      - id: q5_comp_bound_service
+        question: "Quel avantage offre un bound Service par rapport à un started Service ?"
+        answers:
+          - "Il permet une communication bidirectionnelle via une interface IBinder"
+          - "Il consomme moins de mémoire car il ne garde pas de référence à l'appelant"
+          - "Il survit aux changements de configuration de l'Activity"
+          - "Il peut accéder aux ressources système réservées comme le réseau en background"
+        correct: 0
+        explanation: "bindService() retourne un IBinder permettant aux clients d'appeler des méthodes sur le Service. Le Service vit tant qu'au moins un client est bindé. unbindService() libère la connexion."
+
+      - id: q6_comp_fragment_lifecycle
+        question: "Quels callbacks supplémentaires un Fragment possède-t-il par rapport à une Activity ?"
+        answers:
+          - "onAttach, onCreateView, onViewCreated, onDestroyView, onDetach"
+          - "onBind, onUnbind, onRebind pour la communication avec l'Activity"
+          - "onFragmentResult, onBackPressed pour la gestion de la navigation"
+          - "onConfigurationChanged, onLowMemory propres aux Fragments"
+        correct: 0
+        explanation: "Un Fragment a des callbacks liés à son attachement à l'Activity (onAttach/onDetach) et à la création de sa vue (onCreateView/onViewCreated/onDestroyView). Son cycle de vie est lié mais distinct de celui de l'Activity hôte."
+
+      - id: q7_comp_intent_filter
+        question: "Quels éléments compose-t-on dans un intent-filter pour déclarer les capacités d'un composant ?"
+        answers:
+          - "action, category et optionnellement data (scheme, host, mimeType)"
+          - "permission, exported et priority pour la résolution des conflits"
+          - "name, label et icon pour l'affichage dans le launcher"
+          - "process, taskAffinity et launchMode pour l'exécution"
+        correct: 0
+        explanation: "Un intent-filter déclare les Intents implicites auxquels le composant répond. <action> définit l'opération, <category> le contexte (DEFAULT, LAUNCHER), <data> le type de données (URI scheme, MIME type)."
+
+      - id: q8_comp_activity_result
+        question: "Comment récupérer un résultat d'une Activity lancée avec la nouvelle API Activity Result ?"
+        answers:
+          - "En utilisant registerForActivityResult avec un ActivityResultContract"
+          - "En implémentant l'interface OnActivityResultListener dans l'Activity"
+          - "En déclarant android:resultCallback dans le manifest"
+          - "En overridant onNewIntent avec un ResultCode en paramètre"
+        correct: 0
+        explanation: "registerForActivityResult() prend un Contract (ex: StartActivityForResult) et un callback. On appelle launch() sur le launcher retourné. Le callback reçoit le résultat de façon type-safe, remplaçant l'ancien onActivityResult."
+
+      - id: q9_comp_viewmodel_fragment
+        question: "Comment partager des données entre plusieurs Fragments d'une même Activity via un ViewModel ?"
+        answers:
+          - "En créant le ViewModel avec activityViewModels() pour qu'il soit scopé à l'Activity"
+          - "En passant le ViewModel en argument lors de la création de chaque Fragment"
+          - "En stockant le ViewModel dans les SharedPreferences de l'application"
+          - "En déclarant le ViewModel comme singleton dans le module Dagger/Hilt"
+        correct: 0
+        explanation: "activityViewModels() crée ou récupère un ViewModel scopé à l'Activity parente. Tous les Fragments enfants accèdent à la même instance, permettant le partage d'état. Le VM survit aux recreations de Fragments."
+
+      - id: q10_comp_pending_intent
+        question: "À quoi sert un PendingIntent dans le système Android ?"
+        answers:
+          - "À permettre à une autre application d'exécuter un Intent avec les permissions du créateur"
+          - "À retarder l'exécution d'un Intent jusqu'à ce qu'une condition soit remplie"
+          - "À grouper plusieurs Intents pour une exécution séquentielle automatique"
+          - "À crypter les données de l'Intent pour une transmission sécurisée"
+        correct: 0
+        explanation: "PendingIntent encapsule un Intent et les permissions de l'app créatrice. Le récepteur (NotificationManager, AlarmManager, autre app) peut l'exécuter plus tard avec ces permissions, sans les posséder lui-même."
+
+      - id: q11_comp_broadcast_receiver
+        question: "Quelle est la différence entre un BroadcastReceiver enregistré statiquement et dynamiquement ?"
+        answers:
+          - "Le statique (manifest) reçoit même app morte, le dynamique vit avec le composant enregistrant"
+          - "Le statique est pour les broadcasts système, le dynamique pour les broadcasts custom"
+          - "Le dynamique a une priorité plus haute et peut bloquer les autres receivers"
+          - "Le statique nécessite une permission spéciale absente du dynamique"
+        correct: 0
+        explanation: "Un receiver dans le manifest peut recevoir des broadcasts même si l'app n'est pas lancée (limité depuis Android 8). registerReceiver() lie le receiver au cycle de vie du composant et doit être unregister pour éviter les fuites."
+
+      - id: q12_comp_launch_mode
+        question: 'Quel effet a le launchMode="singleTop" sur une Activity ?'
+        answers:
+          - "Si l'Activity est déjà au sommet de la pile, onNewIntent est appelé sans recréation"
+          - "Il garantit qu'une seule instance de l'Activity existe dans tout le système"
+          - "Il force l'Activity à s'ouvrir dans une nouvelle tâche séparée"
+          - "Il empêche l'Activity d'apparaître dans la liste des apps récentes"
+        correct: 0
+        explanation: "singleTop évite de recréer l'Activity si elle est déjà au sommet du back stack. Un nouvel Intent déclenche onNewIntent(). Utile pour les écrans de recherche ou notifications pour éviter les doublons."
+
+      - id: q13_comp_foreground_service
+        question: "Pourquoi un Service doit-il appeler startForeground() pour les opérations longues ?"
+        answers:
+          - "Pour afficher une notification persistante et éviter que le système ne le tue"
+          - "Pour obtenir la permission d'accéder à Internet en arrière-plan"
+          - "Pour permettre au Service de communiquer avec d'autres applications"
+          - "Pour augmenter la priorité CPU et accélérer le traitement des tâches"
+        correct: 0
+        explanation: "Un Foreground Service affiche une notification visible par l'utilisateur. En échange, le système lui accorde une priorité élevée et ne le tue pas lors du nettoyage mémoire. Obligatoire pour les tâches longues (upload, musique)."
+
+      - id: q14_comp_workmanager
+        question: "Quand utiliser WorkManager plutôt qu'un Service pour des tâches en arrière-plan ?"
+        answers:
+          - "Pour des tâches reportables qui doivent s'exécuter même après redémarrage"
+          - "Pour des tâches nécessitant une réponse immédiate à l'utilisateur"
+          - "Pour des opérations réseau simples sans contraintes particulières"
+          - "Pour du traitement en temps réel comme le streaming audio ou vidéo"
+        correct: 0
+        explanation: "WorkManager gère les tâches différables et persistantes. Il survit aux redémarrages, respecte les contraintes (réseau, batterie) et choisit automatiquement l'API appropriée (JobScheduler, AlarmManager) selon la version Android."
+
+      - id: q15_comp_savedinstancestate
+        question: "Dans quel cas onSaveInstanceState() est-il appelé par le système ?"
+        answers:
+          - "Quand l'Activity peut être détruite par le système, comme lors d'une rotation d'écran"
+          - "Uniquement quand l'utilisateur appuie sur le bouton Home pour quitter l'app"
+          - "À chaque appel de onPause() pour sauvegarder automatiquement l'état"
+          - "Quand l'application est mise à jour depuis le Play Store"
+        correct: 0
+        explanation: "onSaveInstanceState() est appelé avant une destruction potentielle par le système (rotation, multitâche, mémoire faible). Le Bundle est restauré dans onCreate/onRestoreInstanceState. Ce n'est PAS appelé quand l'utilisateur ferme volontairement (Back)."
+
+      - id: q16_comp_task_affinity
+        question: "À quoi sert l'attribut taskAffinity dans le manifest Android ?"
+        answers:
+          - "À regrouper des Activities dans une même tâche ou les séparer dans des tâches distinctes"
+          - "À définir la priorité d'exécution de l'Activity par rapport aux autres apps"
+          - "À spécifier les permissions requises pour lancer l'Activity"
+          - "À configurer le comportement de l'Activity lors du mode picture-in-picture"
+        correct: 0
+        explanation: "taskAffinity définit la tâche préférée d'une Activity. Par défaut, c'est le package de l'app. Combiné avec FLAG_ACTIVITY_NEW_TASK ou launchMode, il permet de créer des tâches séparées (ex: fenêtre de composition email)."
+
+      - id: q17_comp_fragment_communication
+        question: "Quelle est la méthode recommandée pour qu'un Fragment communique avec son Activity hôte ?"
+        answers:
+          - "Définir une interface dans le Fragment et la faire implémenter par l'Activity"
+          - "Appeler getActivity() et caster vers la classe concrète de l'Activity"
+          - "Utiliser des variables statiques partagées entre le Fragment et l'Activity"
+          - "Envoyer des Intents broadcast entre le Fragment et l'Activity"
+        correct: 0
+        explanation: "Le pattern interface (callback) découple le Fragment de l'Activity concrète. Le Fragment définit une interface, l'Activity l'implémente. onAttach vérifie que l'hôte implémente l'interface. Moderne : SharedViewModel ou Fragment Result API."
+
+      - id: q18_comp_intent_extras
+        question: "Comment passer des données complexes (objet custom) via un Intent entre Activities ?"
+        answers:
+          - "En implémentant Parcelable ou Serializable sur l'objet et utilisant putExtra()"
+          - "En convertissant l'objet en JSON string et le passant comme extra String"
+          - "En stockant l'objet dans un singleton accessible par les deux Activities"
+          - "En sauvegardant l'objet dans SharedPreferences avant de lancer l'Intent"
+        correct: 0
+        explanation: "Parcelable (performant, recommandé) ou Serializable permettent de sérialiser l'objet. putExtra(key, parcelable) ajoute l'objet à l'Intent. @Parcelize (Kotlin) génère automatiquement l'implémentation Parcelable."
+
+      - id: q19_comp_lifecycle_observer
+        question: "Quel avantage offre LifecycleObserver par rapport aux callbacks de cycle de vie traditionnels ?"
+        answers:
+          - "Il permet à des composants externes de réagir au cycle de vie sans surcharger l'Activity"
+          - "Il optimise les performances en parallélisant les appels de cycle de vie"
+          - "Il garantit que les callbacks sont appelés dans l'ordre exact de leur enregistrement"
+          - "Il permet de modifier le cycle de vie standard d'une Activity ou Fragment"
+        correct: 0
+        explanation: "LifecycleObserver (via lifecycle.addObserver) permet à des classes externes (repos, managers) d'observer le cycle de vie. Cela évite le code boilerplate dans l'Activity et améliore la séparation des responsabilités."
+
+      - id: q20_comp_deep_link
+        question: "Comment configurer une Activity pour répondre à un deep link (URL personnalisée) ?"
+        answers:
+          - "En ajoutant un intent-filter avec action VIEW, category BROWSABLE et une data URI"
+          - 'En déclarant android:deepLink="true" sur l''Activity dans le manifest'
+          - "En enregistrant l'URL dans la Google Search Console pour l'application"
+          - "En créant un BroadcastReceiver qui intercepte les URLs et lance l'Activity"
+        correct: 0
+        explanation: 'Un intent-filter avec ACTION_VIEW, CATEGORY_DEFAULT + BROWSABLE, et <data android:scheme="myapp" android:host="..."/> permet à l''Activity de répondre aux liens. App Links (HTTPS vérifié) évitent le dialogue de choix d''app.'
+
+  - id: gestion-donnees
+    title: "La gestion des données"
+    questions:
+      - id: q1_data_shared_preferences
+        question: "Quel type de données est approprié pour SharedPreferences ?"
+        answers:
+          - "Des paires clé-valeur simples comme des paramètres utilisateur ou des flags"
+          - "Des objets complexes avec des relations comme des listes de contacts"
+          - "Des fichiers binaires volumineux comme des images ou des vidéos"
+          - "Des données structurées nécessitant des requêtes SQL complexes"
+        correct: 0
+        explanation: "SharedPreferences stocke des primitives (String, Int, Boolean, Float, Long, Set<String>) sous forme clé-valeur. Idéal pour les préférences utilisateur, tokens, flags. Pour les données complexes, utiliser Room ou DataStore."
+
+      - id: q2_data_shared_prefs_commit
+        question: "Quelle est la différence entre commit() et apply() sur SharedPreferences.Editor ?"
+        answers:
+          - "commit() est synchrone et retourne un booléen, apply() est asynchrone et ne bloque pas"
+          - "commit() sauvegarde en mémoire uniquement, apply() persiste sur le disque"
+          - "apply() est déprécié et remplacé par commit() dans les versions récentes"
+          - "commit() fonctionne uniquement en mode debug, apply() en production"
+        correct: 0
+        explanation: "apply() écrit en mémoire immédiatement puis persiste en background de façon asynchrone. commit() est synchrone et bloquant, retourne true/false. Préférer apply() sauf si le résultat d'écriture est nécessaire."
+
+      - id: q3_data_internal_storage
+        question: "Où sont stockés les fichiers créés via openFileOutput() avec MODE_PRIVATE ?"
+        answers:
+          - "Dans le répertoire privé de l'application, inaccessible aux autres apps"
+          - "Dans le stockage externe partagé, visible par toutes les applications"
+          - "Dans un répertoire temporaire supprimé à chaque redémarrage de l'appareil"
+          - "Dans le cache système accessible uniquement avec permissions root"
+        correct: 0
+        explanation: "openFileOutput() crée des fichiers dans /data/data/<package>/files/, privé à l'application. MODE_PRIVATE (par défaut) empêche l'accès par d'autres apps. Ces fichiers sont supprimés à la désinstallation."
+
+      - id: q4_data_external_storage
+        question: "Comment accéder au stockage externe spécifique à l'application sans permission ?"
+        answers:
+          - "Via getExternalFilesDir() qui retourne un répertoire dédié à l'app"
+          - "En utilisant Environment.getExternalStorageDirectory() directement"
+          - "En déclarant WRITE_EXTERNAL_STORAGE dans le manifest uniquement"
+          - "Le stockage externe requiert toujours une permission utilisateur explicite"
+        correct: 0
+        explanation: "getExternalFilesDir(type) retourne un répertoire sur le stockage externe dédié à l'app (/storage/emulated/0/Android/data/<package>/). Aucune permission requise depuis API 19. Supprimé à la désinstallation."
+
+      - id: q5_data_sqlite_helper
+        question: "Quel est le rôle de la méthode onUpgrade() dans SQLiteOpenHelper ?"
+        answers:
+          - "Migrer le schéma de la base quand la version augmente (ALTER TABLE, migrations)"
+          - "Optimiser les performances de la base en réorganisant les index"
+          - "Sauvegarder automatiquement les données avant une mise à jour de l'app"
+          - "Vérifier l'intégrité des données et réparer les corruptions éventuelles"
+        correct: 0
+        explanation: "onUpgrade() est appelé quand le numéro de version passé au constructeur est supérieur à celui stocké. On y exécute les migrations (ALTER TABLE, création de nouvelles tables, migration de données) entre les versions."
+
+      - id: q6_data_room_entity
+        question: "Comment définir une table avec Room Database ?"
+        answers:
+          - "En annotant une data class Kotlin avec @Entity et ses colonnes avec @PrimaryKey"
+          - "En créant un fichier XML décrivant le schéma dans res/database/"
+          - "En implémentant l'interface RoomTable et ses méthodes abstraites"
+          - "En appelant createTable() dans la méthode onCreate() du Repository"
+        correct: 0
+        explanation: "Room utilise les annotations : @Entity sur la classe, @PrimaryKey sur l'ID, @ColumnInfo pour personnaliser les colonnes. La data class devient une table. Room génère le code SQL automatiquement."
+
+      - id: q7_data_room_dao
+        question: "Que représente un DAO (Data Access Object) dans l'architecture Room ?"
+        answers:
+          - "Une interface annotée définissant les méthodes d'accès aux données (@Query, @Insert)"
+          - "Une classe singleton gérant le cycle de vie de la connexion à la base"
+          - "Un observateur notifiant les changements de données aux composants UI"
+          - "Un convertisseur transformant les objets Kotlin en format JSON pour stockage"
+        correct: 0
+        explanation: "Le DAO est une interface avec @Dao contenant des méthodes annotées @Query, @Insert, @Update, @Delete. Room génère l'implémentation. Les méthodes peuvent retourner LiveData ou Flow pour l'observation réactive."
+
+      - id: q8_data_content_provider
+        question: "Quel est le principal cas d'usage d'un ContentProvider ?"
+        answers:
+          - "Partager des données de façon sécurisée avec d'autres applications"
+          - "Améliorer les performances d'accès aux données SQLite locales"
+          - "Synchroniser automatiquement les données avec un serveur distant"
+          - "Chiffrer les données sensibles avant leur stockage sur le disque"
+        correct: 0
+        explanation: "ContentProvider expose les données via une URI standardisée, permettant à d'autres apps d'y accéder de façon contrôlée (CRUD via ContentResolver). C'est le mécanisme derrière Contacts, MediaStore, Calendar."
+
+      - id: q9_data_content_uri
+        question: "Comment est structurée une URI de ContentProvider ?"
+        answers:
+          - "content://authority/path où authority identifie le provider et path les données"
+          - "file://package/table/id pour accéder directement aux fichiers de la base"
+          - "data://app.database/query pour exécuter des requêtes SQL arbitraires"
+          - "provider://name@host:port/resource selon le protocole réseau standard"
+        correct: 0
+        explanation: "L'URI content:// suit le format : content://<authority>/<path>/<id>. L'authority identifie le provider (souvent le package), le path la table/collection, l'id optionnel un enregistrement spécifique."
+
+      - id: q10_data_room_migration
+        question: "Comment gérer une migration de schéma avec Room sans perdre les données ?"
+        answers:
+          - "En fournissant un objet Migration avec le SQL de transformation entre versions"
+          - "Room gère automatiquement toutes les migrations sans intervention"
+          - "En exportant les données en JSON, recréant la base, puis réimportant"
+          - "En incrémentant simplement le numéro de version dans le constructeur"
+        correct: 0
+        explanation: "Room.databaseBuilder().addMigrations(Migration(1, 2) { db -> db.execSQL(...) }) définit les transformations SQL. Sans migration explicite, Room lance une exception ou détruit/recrée la base (fallbackToDestructiveMigration)."
+
+      - id: q11_data_datastore
+        question: "Quel est l'avantage principal de DataStore par rapport à SharedPreferences ?"
+        answers:
+          - "Opérations asynchrones avec coroutines et Flow, évitant le blocage du main thread"
+          - "Capacité de stocker des fichiers binaires volumineux comme des images"
+          - "Synchronisation automatique avec Firebase Realtime Database"
+          - "Cryptage natif de toutes les données sans configuration supplémentaire"
+        correct: 0
+        explanation: "DataStore utilise les coroutines Kotlin et expose les données via Flow. Contrairement à SharedPreferences (synchrone sur le main thread pour la lecture), DataStore garantit des opérations non-bloquantes et type-safe."
+
+      - id: q12_data_type_converter
+        question: "À quoi sert l'annotation @TypeConverter dans Room ?"
+        answers:
+          - "Convertir des types complexes (Date, List) en types primitifs stockables par SQLite"
+          - "Transformer automatiquement les entités en JSON pour l'export"
+          - "Convertir les requêtes SQL en code Kotlin optimisé à la compilation"
+          - "Mapper les colonnes de la base vers des propriétés avec des noms différents"
+        correct: 0
+        explanation: "@TypeConverter définit des méthodes de conversion bidirectionnelle pour les types non supportés nativement par SQLite (Date↔Long, List↔String JSON). Déclarés dans une classe annotée @TypeConverters sur le Database."
+
+      - id: q13_data_room_relation
+        question: "Comment modéliser une relation one-to-many avec Room ?"
+        answers:
+          - "Avec @Relation dans une data class englobante liant parent et liste d'enfants"
+          - "En créant une foreign key qui génère automatiquement les joins"
+          - "Via @OneToMany annotation directement sur la propriété List dans l'Entity"
+          - "Room ne supporte pas les relations, il faut faire les jointures manuellement"
+        correct: 0
+        explanation: "On crée une data class avec @Embedded pour le parent et @Relation(parentColumn, entityColumn) pour la liste d'enfants. Le DAO utilise @Transaction pour charger les deux en une opération cohérente."
+
+      - id: q14_data_encrypted_prefs
+        question: "Comment sécuriser les SharedPreferences avec la bibliothèque Security de Jetpack ?"
+        answers:
+          - "En utilisant EncryptedSharedPreferences avec un MasterKey généré par Android Keystore"
+          - "En appelant setEncrypted(true) sur le SharedPreferences standard"
+          - "En hashant manuellement les valeurs avant de les stocker avec SHA-256"
+          - "Les SharedPreferences sont automatiquement chiffrées depuis Android 10"
+        correct: 0
+        explanation: "EncryptedSharedPreferences.create() avec MasterKey.Builder() chiffre clés et valeurs via AES256. Les clés de chiffrement sont stockées dans Android Keystore, rendant les données illisibles sans le contexte de l'app."
+
+      - id: q15_data_room_flow
+        question: "Quel est l'avantage de retourner un Flow depuis une méthode DAO Room ?"
+        answers:
+          - "Observation réactive : le Flow émet automatiquement à chaque modification des données"
+          - "Les requêtes sont exécutées en parallèle sur plusieurs threads"
+          - "Le résultat est mis en cache indéfiniment évitant les requêtes répétées"
+          - "Flow permet d'annuler la requête si elle prend trop de temps"
+        correct: 0
+        explanation: "Un DAO retournant Flow<List<Entity>> émet une nouvelle liste à chaque INSERT/UPDATE/DELETE sur la table. L'UI collecte le Flow et se met à jour automatiquement, implémentant le pattern observable sans code manuel."
+
+      - id: q16_data_sqlite_transaction
+        question: "Comment garantir l'atomicité de plusieurs opérations SQLite avec Room ?"
+        answers:
+          - "En annotant la méthode DAO avec @Transaction pour grouper les opérations"
+          - "Room enveloppe automatiquement chaque méthode dans une transaction"
+          - "En appelant beginTransaction() et endTransaction() manuellement"
+          - "L'atomicité n'est possible qu'avec les requêtes @RawQuery"
+        correct: 0
+        explanation: "@Transaction sur une méthode DAO garantit que toutes les opérations s'exécutent dans une seule transaction. En cas d'erreur, tout est rollback. Essentiel pour les opérations multi-tables ou lecture cohérente de relations."
+
+      - id: q17_data_content_provider_permission
+        question: "Comment restreindre l'accès à un ContentProvider à certaines applications ?"
+        answers:
+          - "En définissant readPermission/writePermission custom dans le manifest"
+          - "Les ContentProviders sont toujours accessibles à toutes les applications"
+          - "En chiffrant les données avec une clé partagée uniquement avec les apps autorisées"
+          - "En vérifiant le package name de l'appelant dans chaque méthode query()"
+        correct: 0
+        explanation: "Le manifest permet de définir android:readPermission et android:writePermission sur le <provider>. Seules les apps déclarant ces permissions (et approuvées par l'utilisateur si dangerous) peuvent accéder aux données."
+
+      - id: q18_data_cache_strategy
+        question: "Quelle stratégie de cache est recommandée pour les données réseau avec Room ?"
+        answers:
+          - "Single Source of Truth : UI observe Room, le repository sync avec le réseau en arrière-plan"
+          - "Double cache : mémoire pour la rapidité, Room pour la persistance, synchronisés manuellement"
+          - "Cache-aside : l'UI interroge le réseau d'abord, Room sert de fallback hors ligne"
+          - "Write-through : toutes les écritures vont au réseau, Room est en lecture seule"
+        correct: 0
+        explanation: "Le pattern Single Source of Truth fait de Room la seule source de données pour l'UI. Le repository récupère les données réseau et les insère dans Room. L'UI observe Room via Flow/LiveData, garantissant cohérence et mode offline."
+
+      - id: q19_data_backup_rules
+        question: "Comment exclure certaines données de la sauvegarde automatique Android ?"
+        answers:
+          - "En définissant des règles dans un fichier XML référencé par fullBackupContent"
+          - "En stockant les données dans getNoBackupFilesDir() uniquement"
+          - "Android exclut automatiquement les bases de données et SharedPreferences"
+          - "La sauvegarde automatique ne peut pas être configurée, seulement désactivée"
+        correct: 0
+        explanation: "android:fullBackupContent dans le manifest pointe vers un XML définissant <include>/<exclude> par chemin. getNoBackupFilesDir() est aussi une option. Utile pour exclure tokens, caches, ou données sensibles non chiffrées."
+
+      - id: q20_data_room_inspector
+        question: "Quel outil Android Studio permet d'inspecter le contenu d'une base Room en temps réel ?"
+        answers:
+          - "Database Inspector dans App Inspection, permettant de voir et modifier les données"
+          - "Room Debugger accessible via le menu Build > Inspect Database"
+          - "SQLite Viewer nécessitant l'export préalable du fichier .db"
+          - "Layout Inspector qui affiche aussi les données bindées depuis Room"
+        correct: 0
+        explanation: "Database Inspector (View > Tool Windows > App Inspection) permet de visualiser les tables, exécuter des requêtes SQL, et modifier les données en direct sur un appareil/émulateur API 26+. Les changements sont reflétés immédiatement dans l'app."
+
+  - id: gestion-reseau
+    title: "La gestion réseau"
+    questions:
+      - id: q1_net_coroutine_dispatcher
+        question: "Quel Dispatcher Kotlin est recommandé pour les opérations réseau (I/O bloquant) ?"
+        answers:
+          - "Dispatchers.IO optimisé pour les opérations d'entrée/sortie bloquantes"
+          - "Dispatchers.Main pour garantir la mise à jour immédiate de l'UI"
+          - "Dispatchers.Default conçu pour les calculs intensifs en CPU"
+          - "Dispatchers.Unconfined pour éviter tout changement de thread"
+        correct: 0
+        explanation: "Dispatchers.IO utilise un pool de threads extensible optimisé pour le I/O bloquant (réseau, fichiers). Main est pour l'UI, Default pour le CPU. Les appels réseau sur Main provoquent NetworkOnMainThreadException."
+
+      - id: q2_net_suspend_function
+        question: "Que signifie le mot-clé `suspend` devant une fonction Kotlin ?"
+        answers:
+          - "La fonction peut suspendre son exécution sans bloquer le thread appelant"
+          - "La fonction s'exécute automatiquement dans un thread séparé"
+          - "La fonction est mise en pause jusqu'à un signal externe explicite"
+          - "La fonction devient thread-safe et peut être appelée en parallèle"
+        correct: 0
+        explanation: "Une fonction suspend peut suspendre son exécution à des points de suspension (appels suspend) et reprendre plus tard, potentiellement sur un autre thread. Elle ne bloque pas le thread pendant l'attente, contrairement aux appels synchrones."
+
+      - id: q3_net_connectivity_manager
+        question: "Comment vérifier la disponibilité réseau sur Android API 23+ ?"
+        answers:
+          - "Via ConnectivityManager.getActiveNetwork() et getNetworkCapabilities()"
+          - "En testant une connexion HTTP vers un serveur de référence"
+          - "Avec NetworkInfo.isConnected() qui retourne l'état actuel"
+          - "En écoutant le broadcast android.net.conn.CONNECTIVITY_CHANGE"
+        correct: 0
+        explanation: "Depuis API 23, on utilise getActiveNetwork() puis getNetworkCapabilities(network) pour vérifier NET_CAPABILITY_INTERNET. NetworkInfo est deprecated. Le broadcast implicite est restreint depuis API 24."
+
+      - id: q4_net_okhttp_interceptor
+        question: "À quoi sert un Interceptor dans OkHttp ?"
+        answers:
+          - "Intercepter et modifier les requêtes/réponses HTTP (headers, logging, retry)"
+          - "Bloquer les requêtes non autorisées selon des règles de sécurité"
+          - "Convertir automatiquement les réponses JSON en objets Kotlin"
+          - "Mettre en cache les réponses pour une utilisation hors ligne"
+        correct: 0
+        explanation: "Les Interceptors forment une chaîne permettant d'observer/modifier requêtes et réponses. Cas d'usage : ajouter des headers (auth token), logging, retry sur erreur, modification d'URL. Deux types : application et network interceptors."
+
+      - id: q5_net_retrofit_annotation
+        question: "Quelle annotation Retrofit définit une requête GET avec paramètre de chemin dynamique ?"
+        answers:
+          - '@GET("users/{id}") avec @Path("id") sur le paramètre de la fonction'
+          - "@GET avec @PathVariable pour injecter la valeur dans l'URL"
+          - '@Request(method=GET, path="users/:id") avec @Param'
+          - '@GetMapping("users/{id}") hérité de Spring dans Retrofit'
+        correct: 0
+        explanation: 'Retrofit utilise @GET("endpoint/{param}") avec @Path("param") pour les segments d''URL dynamiques. @Query pour les query parameters (?key=value), @Body pour le corps POST/PUT, @Header pour les en-têtes.'
+
+      - id: q6_net_gson_serialization
+        question: "Comment personnaliser le nom d'un champ lors de la sérialisation JSON avec Gson ?"
+        answers:
+          - 'Avec l''annotation @SerializedName("json_field_name") sur la propriété'
+          - "En implémentant l'interface JsonNamingStrategy sur la data class"
+          - "Via la configuration globale Gson.setFieldNamingPolicy() uniquement"
+          - "Gson utilise automatiquement snake_case pour tous les champs"
+        correct: 0
+        explanation: '@SerializedName("name") mappe une propriété Kotlin vers un nom JSON différent. Utile quand l''API utilise snake_case et le code Kotlin camelCase. GsonBuilder peut aussi définir une politique globale de nommage.'
+
+      - id: q7_net_retrofit_suspend
+        question: "Quel est l'avantage de déclarer une méthode Retrofit comme `suspend` ?"
+        answers:
+          - "L'appel réseau s'intègre naturellement aux coroutines sans callback"
+          - "Retrofit exécute automatiquement l'appel sur le main thread"
+          - "La réponse est mise en cache pour les appels ultérieurs identiques"
+          - "Les erreurs réseau sont automatiquement converties en exceptions Kotlin"
+        correct: 0
+        explanation: "Une méthode suspend Retrofit retourne directement le résultat (ou lance une exception). Plus besoin de Call<T> et enqueue(). On l'appelle dans une coroutine : val user = api.getUser(id). Code plus lisible et séquentiel."
+
+      - id: q8_net_json_moshi_kotlin
+        question: "Pourquoi préférer Moshi avec KotlinJsonAdapterFactory à Gson pour Kotlin ?"
+        answers:
+          - "Moshi gère correctement les types nullable et valeurs par défaut Kotlin"
+          - "Moshi est significativement plus rapide que Gson sur toutes les opérations"
+          - "Gson ne supporte pas du tout les data classes Kotlin"
+          - "Moshi génère automatiquement le code de sérialisation à la compilation"
+        correct: 0
+        explanation: "Moshi avec kotlin-reflect ou codegen respecte la null-safety Kotlin et les valeurs par défaut des propriétés. Gson peut créer des objets avec des propriétés non-nullable à null via réflexion, causant des NPE inattendus."
+
+      - id: q9_net_volley_request_queue
+        question: "Quel est le rôle de la RequestQueue dans Volley ?"
+        answers:
+          - "Gérer une file d'attente de requêtes avec dispatch automatique sur les threads"
+          - "Stocker les réponses en cache pour une consultation ultérieure"
+          - "Sérialiser les objets Kotlin en JSON avant l'envoi"
+          - "Établir et maintenir une connexion persistante avec le serveur"
+        correct: 0
+        explanation: "RequestQueue dispatche les requêtes vers des threads worker, gère les priorités, le cache, et délivre les réponses sur le main thread. Une seule instance (singleton) suffit généralement pour toute l'application."
+
+      - id: q10_net_timeout_config
+        question: "Comment configurer les timeouts de connexion avec OkHttp ?"
+        answers:
+          - "Via OkHttpClient.Builder() avec connectTimeout(), readTimeout(), writeTimeout()"
+          - "En définissant les valeurs dans le fichier AndroidManifest.xml"
+          - "Les timeouts sont fixés par le système et non configurables"
+          - "En passant un objet TimeoutConfig à chaque requête individuelle"
+        correct: 0
+        explanation: "OkHttpClient.Builder().connectTimeout(30, SECONDS).readTimeout(30, SECONDS).writeTimeout(30, SECONDS).build() configure les délais. Des valeurs trop courtes causent des échecs sur réseaux lents, trop longues dégradent l'UX."
+
+      - id: q11_net_withcontext
+        question: "Quelle est la différence entre `launch` et `withContext` pour changer de Dispatcher ?"
+        answers:
+          - "`withContext` suspend et retourne un résultat, `launch` crée une coroutine enfant fire-and-forget"
+          - "`launch` est synchrone tandis que `withContext` est asynchrone"
+          - "`withContext` crée un nouveau scope, `launch` utilise le scope parent"
+          - "Les deux sont équivalents, seule la syntaxe diffère légèrement"
+        correct: 0
+        explanation: "`withContext(Dispatchers.IO) { ... }` suspend la coroutine actuelle, exécute le bloc sur IO, et retourne le résultat. `launch` crée une nouvelle coroutine concurrente sans retour direct. withContext est idéal pour les appels séquentiels."
+
+      - id: q12_net_cache_okhttp
+        question: "Comment activer le cache HTTP avec OkHttp pour les réponses GET ?"
+        answers:
+          - "En configurant un Cache avec taille et répertoire sur OkHttpClient.Builder()"
+          - "OkHttp met automatiquement en cache toutes les réponses par défaut"
+          - "En ajoutant le header Cache-Control à chaque requête manuellement"
+          - "Le cache HTTP n'est supporté que via une bibliothèque tierce"
+        correct: 0
+        explanation: "OkHttpClient.Builder().cache(Cache(cacheDir, maxSize)).build() active le cache. OkHttp respecte alors les headers Cache-Control, ETag, Last-Modified. Utile pour réduire la latence et la consommation data."
+
+      - id: q13_net_error_handling
+        question: "Comment gérer proprement les erreurs réseau avec Retrofit et coroutines ?"
+        answers:
+          - "Avec try-catch autour de l'appel suspend et vérification de Response.isSuccessful"
+          - "En implémentant un ErrorCallback global sur le client Retrofit"
+          - "Retrofit convertit automatiquement les erreurs en sealed classes Result"
+          - "Les erreurs réseau sont ignorées et retournent des valeurs par défaut"
+        correct: 0
+        explanation: "try { val response = api.getData(); if (response.isSuccessful) ... else handleError(response.code()) } catch (e: IOException) { handleNetworkError() }. IOException pour les erreurs réseau, HttpException ou code de réponse pour les erreurs serveur."
+
+      - id: q14_net_ssl_pinning
+        question: "À quoi sert le SSL/Certificate Pinning dans une application Android ?"
+        answers:
+          - "Vérifier que le certificat serveur correspond à un certificat attendu, évitant les attaques MITM"
+          - "Accélérer les connexions HTTPS en mémorisant les certificats validés"
+          - "Permettre les connexions HTTPS vers des serveurs avec certificats auto-signés"
+          - "Chiffrer les données locales avec le certificat du serveur distant"
+        correct: 0
+        explanation: "Le pinning compare le certificat ou sa clé publique avec une valeur connue. Même si un attaquant obtient un certificat valide d'une CA compromise, la connexion échoue. OkHttp supporte le pinning via CertificatePinner."
+
+      - id: q15_net_retrofit_converter
+        question: "Quel est le rôle d'un Converter.Factory dans Retrofit ?"
+        answers:
+          - "Transformer les objets Kotlin en corps de requête et les réponses en objets typés"
+          - "Convertir les URLs relatives en URLs absolues selon la base URL"
+          - "Adapter les en-têtes de requête au format attendu par le serveur"
+          - "Compresser les données avant envoi pour économiser la bande passante"
+        correct: 0
+        explanation: "Converter.Factory (GsonConverterFactory, MoshiConverterFactory) sérialise les @Body en JSON et désérialise les réponses JSON en data classes. Plusieurs converters peuvent être chaînés pour différents content-types."
+
+      - id: q16_net_flow_collect
+        question: "Pourquoi utiliser `collectLatest` plutôt que `collect` pour des données réseau fréquentes ?"
+        answers:
+          - "collectLatest annule le traitement précédent si une nouvelle valeur arrive avant la fin"
+          - "collectLatest est plus performant car il utilise moins de mémoire"
+          - "collect ne fonctionne pas avec les données réseau, uniquement les données locales"
+          - "collectLatest permet de collecter plusieurs valeurs simultanément en parallèle"
+        correct: 0
+        explanation: "collectLatest cancelle le bloc de traitement si une nouvelle émission arrive avant qu'il termine. Idéal pour les recherches en temps réel : on n'affiche que le dernier résultat, ignorant les résultats intermédiaires obsolètes."
+
+      - id: q17_net_network_bound_resource
+        question: "Que représente le pattern NetworkBoundResource dans l'architecture Android ?"
+        answers:
+          - "Un algorithme décidant de charger depuis le cache ou le réseau selon la fraîcheur des données"
+          - "Une classe abstraite de Room pour synchroniser automatiquement avec un serveur"
+          - "Un composant Jetpack gérant la pagination des données réseau"
+          - "Un interceptor OkHttp redirigeant vers un serveur de secours en cas d'erreur"
+        correct: 0
+        explanation: "NetworkBoundResource charge d'abord les données du cache (Room), vérifie si un refresh est nécessaire, fetch depuis le réseau, sauvegarde en base, et émet les nouvelles données. Pattern clé pour offline-first."
+
+      - id: q18_net_coil_image
+        question: "Quel est l'avantage principal de Coil par rapport à Glide pour le chargement d'images ?"
+        answers:
+          - "Coil est écrit en Kotlin avec support natif des coroutines et extensions Compose"
+          - "Coil offre un cache d'images significativement plus grand que Glide"
+          - "Glide ne supporte pas le chargement d'images depuis des URLs HTTPS"
+          - "Coil compile les images en ressources statiques à la compilation"
+        correct: 0
+        explanation: "Coil (Coroutine Image Loader) est 100% Kotlin, léger, utilise OkHttp/coroutines, et s'intègre parfaitement avec Compose via AsyncImage. Glide reste excellent mais a une API Java et des dépendances plus lourdes."
+
+      - id: q19_net_websocket
+        question: "Comment implémenter une connexion WebSocket avec OkHttp ?"
+        answers:
+          - "En créant un WebSocket via newWebSocket() avec un WebSocketListener pour les callbacks"
+          - "WebSocket nécessite une bibliothèque séparée, OkHttp ne supporte que HTTP"
+          - "En configurant le header Upgrade: websocket sur une requête GET standard"
+          - "Via Retrofit avec l'annotation @WebSocket sur les méthodes de l'interface"
+        correct: 0
+        explanation: "OkHttpClient().newWebSocket(request, listener) établit la connexion. WebSocketListener reçoit onOpen(), onMessage(), onClosing(), onFailure(). send() pour émettre, close() pour fermer. Idéal pour le temps réel."
+
+      - id: q20_net_exponential_backoff
+        question: "Qu'est-ce que l'exponential backoff dans le contexte des retry réseau ?"
+        answers:
+          - "Augmenter le délai entre chaque retry de façon exponentielle pour éviter la surcharge serveur"
+          - "Réduire progressivement le timeout à chaque tentative pour échouer plus vite"
+          - "Multiplier le nombre de connexions parallèles pour améliorer les chances de succès"
+          - "Compresser exponentiellement les données à chaque retry pour économiser la bande passante"
+        correct: 0
+        explanation: "Exponential backoff: retry après 1s, 2s, 4s, 8s... (souvent avec jitter aléatoire). Évite de surcharger un serveur déjà en difficulté. Pattern standard pour les appels réseau résilients implémentable avec delay() dans les coroutines."
+
+  - id: complements
+    title: "Compléments"
+    questions:
+      - id: q1_comp_telephony_manager
+        question: "Comment obtenir le numéro de téléphone de la SIM avec TelephonyManager ?"
+        answers:
+          - "Via getLine1Number() avec la permission READ_PHONE_STATE ou READ_PHONE_NUMBERS"
+          - "En appelant getPhoneNumber() sans permission spécifique requise"
+          - "Le numéro est toujours disponible dans Build.SERIAL sans permission"
+          - "Android interdit l'accès au numéro de téléphone pour raison de confidentialité"
+        correct: 0
+        explanation: "TelephonyManager.getLine1Number() retourne le numéro (si disponible via l'opérateur). Requiert READ_PHONE_STATE (API <29) ou READ_PHONE_NUMBERS (API 29+). Peut retourner null selon l'opérateur."
+
+      - id: q2_comp_sms_manager
+        question: "Quelle classe utiliser pour envoyer un SMS programmatiquement ?"
+        answers:
+          - "SmsManager avec sendTextMessage() et la permission SEND_SMS"
+          - "TelephonyManager avec sendSms() sans permission supplémentaire"
+          - "Intent.ACTION_SENDTO qui envoie directement sans interaction utilisateur"
+          - "MessageService.send() disponible depuis Android 10 uniquement"
+        correct: 0
+        explanation: "SmsManager.getDefault().sendTextMessage(dest, null, msg, sentPI, deliveredPI) envoie le SMS. Permission SEND_SMS requise (dangerous). Les PendingIntent permettent de suivre l'envoi et la réception."
+
+      - id: q3_comp_media_player
+        question: "Comment lire un fichier audio avec MediaPlayer ?"
+        answers:
+          - "MediaPlayer.create(context, uri) puis start(), pause(), release() pour le cycle de vie"
+          - "AudioManager.play(uri) avec gestion automatique du cycle de vie"
+          - "SoundPool exclusivement, MediaPlayer est deprecated depuis API 21"
+          - "ExoPlayer est obligatoire, MediaPlayer ne supporte pas les formats modernes"
+        correct: 0
+        explanation: "MediaPlayer.create() pour ressources/URIs, ou new MediaPlayer() avec setDataSource(). Appeler prepare()/prepareAsync() avant start(). release() libère les ressources. SoundPool pour sons courts, ExoPlayer pour streaming avancé."
+
+      - id: q4_comp_exoplayer
+        question: "Quel est l'avantage principal d'ExoPlayer par rapport à MediaPlayer ?"
+        answers:
+          - "Support DASH/HLS, streaming adaptatif, extensibilité et meilleur contrôle"
+          - "ExoPlayer est intégré au système et ne nécessite pas de dépendance"
+          - "MediaPlayer ne supporte que les fichiers locaux, pas les URLs"
+          - "ExoPlayer consomme significativement moins de batterie que MediaPlayer"
+        correct: 0
+        explanation: "ExoPlayer supporte DASH, HLS, SmoothStreaming avec adaptation de qualité.Architecture modulaire permettant d'ajouter des codecs, DRM (Widevine), analytics. Plus de contrôle sur la mise en buffer et la lecture."
+
+      - id: q5_comp_camera_api
+        question: "Quelle API est recommandée pour l'accès caméra sur les applications modernes ?"
+        answers:
+          - "CameraX de Jetpack qui simplifie l'utilisation et gère les différences entre appareils"
+          - "Camera (deprecated API 1) pour la meilleure compatibilité avec tous les appareils"
+          - "Camera2 directement pour toutes les applications grand public"
+          - "Intent ACTION_IMAGE_CAPTURE exclusivement, l'accès direct est interdit"
+        correct: 0
+        explanation: "CameraX abstrait Camera2 avec une API simplifiée : ImageCapture, Preview, VideoCapture, ImageAnalysis. Gère automatiquement les rotations, le lifecycle, et les quirks des différents OEMs. Recommandé par Google."
+
+      - id: q6_comp_sensor_manager
+        question: "Comment écouter les données d'un capteur (accéléromètre, gyroscope) ?"
+        answers:
+          - "SensorManager.registerListener() avec un SensorEventListener et un délai de sampling"
+          - "En déclarant un BroadcastReceiver pour android.hardware.SENSOR_DATA"
+          - "Via ContentProvider avec l'URI content://sensors/ pour interroger l'état"
+          - "Les capteurs sont accessibles uniquement via des bibliothèques natives en C++"
+        correct: 0
+        explanation: "SensorManager.registerListener(listener, sensor, delay) s'abonne aux événements. onSensorChanged(event) reçoit les valeurs. unregisterListener() dans onPause() économise la batterie. SENSOR_DELAY_GAME/UI/NORMAL pour la fréquence."
+
+      - id: q7_comp_sensor_types
+        question: "Quelle est la différence entre un capteur TYPE_ACCELEROMETER et TYPE_LINEAR_ACCELERATION ?"
+        answers:
+          - "LINEAR_ACCELERATION exclut la gravité, ACCELEROMETER inclut la gravité terrestre"
+          - "ACCELEROMETER mesure en m/s², LINEAR_ACCELERATION en G (9.81 m/s²)"
+          - "LINEAR_ACCELERATION est un capteur virtuel moins précis qu'ACCELEROMETER"
+          - "Les deux sont identiques, LINEAR_ACCELERATION est juste un alias"
+        correct: 0
+        explanation: "TYPE_ACCELEROMETER inclut la gravité (~9.81 sur l'axe vertical au repos). TYPE_LINEAR_ACCELERATION (capteur composite) soustrait la gravité pour ne mesurer que le mouvement réel de l'appareil."
+
+      - id: q8_comp_fused_location
+        question: "Quel est l'avantage du FusedLocationProviderClient par rapport au LocationManager ?"
+        answers:
+          - "Fusion GPS/réseau/capteurs automatisée avec optimisation batterie intégrée"
+          - "FusedLocationProvider fonctionne sans permission de localisation"
+          - "LocationManager est deprecated et ne fonctionne plus sur Android 10+"
+          - "FusedLocationProvider offre une précision centimétrique garantie"
+        correct: 0
+        explanation: "FusedLocationProviderClient (Google Play Services) fusionnesources (GPS, WiFi, cellulaire, capteurs) intelligemment. Gère automatiquement la bascule entre sources selon la priorité demandée et optimise la batterie."
+
+      - id: q9_comp_location_request
+        question: "Comment configurer une demande de localisationéquilibrée précision/batterie ?"
+        answers:
+          - "LocationRequest avec setPriority(PRIORITY_BALANCED_POWER_ACCURACY) et intervalle raisonnable"
+          - "Toujours utiliser PRIORITY_HIGH_ACCURACY car Android optimise automatiquement"
+          - "En alternant manuellement entre GPS_PROVIDER et NETWORK_PROVIDER"
+          - "La configuration batterie se fait uniquement dans les paramètres système"
+        correct: 0
+        explanation: "PRIORITY_BALANCED_POWER_ACCURACY utilise le WiFi/cellulaire (~100m). setInterval()/setFastestInterval() contrôlent la fréquence. setSmallestDisplacement() pour mise à jour sur distance. HIGH_ACCURACY active le GPS (énergivore)."
+
+      - id: q10_comp_geofence
+        question: "À quoi sert l'API Geofencing dans les services de localisation Google ?"
+        answers:
+          - "Déclencher des actions quand l'utilisateur entre/sort d'une zone géographique définie"
+          - "Afficher une carte avec des zones de restriction pour l'utilisateur"
+          - "Bloquer l'application si l'utilisateur quitte une zone autorisée"
+          - "Générer automatiquement des itinéraires entre plusieurs points d'intérêt"
+        correct: 0
+        explanation: "GeofencingClient.addGeofences() définit des zones circulaires. Un PendingIntent/BroadcastReceiver reçoit les transitions ENTER/EXIT/DWELL. Utile pour rappels contextuels, marketing local, automatisations domotiques."
+
+      - id: q11_comp_background_location
+        question: "Quelle permission supplémentaire est requise pour la localisation en arrière-plan sur Android 10+ ?"
+        answers:
+          - "ACCESS_BACKGROUND_LOCATION demandée séparément de ACCESS_FINE_LOCATION"
+          - "BACKGROUND_SERVICE déclarée uniquement dans le manifest"
+          - "ACCESS_FINE_LOCATION suffit pour tous les cas d'usage"
+          - "La localisation en arrière-plan est interdite depuis Android 10"
+        correct: 0
+        explanation: "Android 10 (API 29) sépare ACCESS_BACKGROUND_LOCATION. L'utilisateur doit explicitement choisir 'Toujours autoriser'. Android 11 force une demande progressive : d'abord foreground, puis background dans les paramètres."
+
+      - id: q12_comp_activity_recognition
+        question: "Que permet l'API Activity Recognition de détecter ?"
+        answers:
+          - "Le type d'activité physique de l'utilisateur (marche, course, véhicule, immobile)"
+          - "Les applications utilisées par l'utilisateur en temps réel"
+          - "Le niveau de stress de l'utilisateur via les capteurs biométriques"
+          - "Les interactions sociales détectées par le microphone"
+        correct: 0
+        explanation: "ActivityRecognitionClient détecte STILL, WALKING, RUNNING, ON_BICYCLE, IN_VEHICLE, etc. via fusion des capteurs. Permission ACTIVITY_RECOGNITION requise (API 29+). Utile pour fitness apps, adaptation UI contextuelle."
+
+      - id: q13_comp_notification_channel
+        question: "Pourquoi les NotificationChannels sont-ils obligatoires depuis Android 8 (Oreo) ?"
+        answers:
+          - "Permettre à l'utilisateur de contrôler les notifications par catégorie"
+          - "Améliorer les performances en regroupant les notifications"
+          - "Chiffrer les notifications pour protéger les données sensibles"
+          - "Synchroniser les notifications entre plusieurs appareils du même compte"
+        correct: 0
+        explanation: "Les channels permettent à l'utilisateur de gérer importance, son, vibration par catégorie (messages, promos...) sans désactiver toutes les notifs de l'app. Sans channel sur API 26+, les notifications ne s'affichent pas."
+
+      - id: q14_comp_audio_focus
+        question: "Pourquoi demander l'AudioFocus avant de jouer un son ?"
+        answers:
+          - "Coordonner la lecture audio entre applications en pausant/duck les autres"
+          - "Augmenter automatiquement le volume au maximum pour l'utilisateur"
+          - "Empêcher les autres applications d'accéder au matériel audio"
+          - "Enregistrer les statistiques d'utilisation audio pour Google Analytics"
+        correct: 0
+        explanation: "AudioManager.requestAudioFocus() signale aux autres apps de réagir (pause, duck). Types : GAIN exclusif, GAIN_TRANSIENT temporaire, GAIN_TRANSIENT_MAY_DUCK pour baisser le volume sans pause. Bonne étiquette audio."
+
+      - id: q15_comp_video_surface
+        question: "Quelle est la différence entre SurfaceView et TextureView pour la vidéo ?"
+        answers:
+          - "TextureView supporte les transformations/animations, SurfaceView est plus performant"
+          - "SurfaceView est deprecated, TextureView est la seule option moderne"
+          - "TextureView fonctionne uniquement en mode portrait, SurfaceView en paysage"
+          - "Les deux sont identiques, seule l'API d'initialisation diffère"
+        correct: 0
+        explanation: "SurfaceView dessine sur une surface séparée (meilleure perf, pas de transforms). TextureView s'intègre à la hiérarchie View (animations, alpha, rotation possibles) mais plus gourmand. PlayerView d'ExoPlayer abstrait ce choix."
+
+      - id: q16_comp_step_counter
+        question: "Quelle est la différence entre TYPE_STEP_COUNTER et TYPE_STEP_DETECTOR ?"
+        answers:
+          - "STEP_COUNTER cumule les pas depuis le boot, STEP_DETECTOR émet à chaque pas"
+          - "STEP_DETECTOR est plus précis car il utilise le GPS en complément"
+          - "STEP_COUNTER fonctionne uniquement quand l'écran est allumé"
+          - "Les deux capteurs retournent exactement les mêmes données"
+        correct: 0
+        explanation: "TYPE_STEP_COUNTER retourne le cumul total depuis le dernier reboot (persist même app en background). TYPE_STEP_DETECTOR envoie un événement à chaque pas détecté. Combiner les deux pour comptage et réactivité."
+
+      - id: q17_comp_maps_sdk
+        question: "Comment intégrer Google Maps dans une application Android avec Compose ?"
+        answers:
+          - "Via la bibliothèque maps-compose avec GoogleMap composable et clé API"
+          - "En utilisant WebView avec l'URL maps.google.com exclusivement"
+          - "MapFragment uniquement, Maps n'est pas compatible avec Jetpack Compose"
+          - "En téléchargeant les tuiles manuellement et en les affichant dans Canvas"
+        correct: 0
+        explanation: "com.google.maps.android:maps-compose fournit GoogleMap() composable. Clé API requise dans google-services.json ou manifest. CameraPositionState pour la position, Marker(), Polyline() pour les éléments sur la carte."
+
+      - id: q18_comp_biometric
+        question: "Comment implémenter l'authentification biométrique (empreinte, visage) ?"
+        answers:
+          - "BiometricPrompt de Jetpack avec BiometricManager pour vérifier la disponibilité"
+          - "FingerprintManager directement pour une compatibilité maximale"
+          - "Intent ACTION_BIOMETRIC_AUTH qui délègue à l'application système"
+          - "KeyguardManager.authenticate() avec les credentials du compte Google"
+        correct: 0
+        explanation: "BiometricPrompt (androidx.biometric) abstrait les méthodes biométriques. BiometricManager.canAuthenticate(BIOMETRIC_STRONG) vérifie le support. Callback onAuthenticationSucceeded pour le résultat. FingerprintManager est deprecated."
+
+      - id: q19_comp_workmanager
+        question: "Quand utiliser WorkManager plutôt qu'un Service pour le travail en arrière-plan ?"
+        answers:
+          - "Pour des tâches différables devant s'exécuter même après redémarrage de l'app/appareil"
+          - "Pour des tâches nécessitant une exécution immédiate avec UI visible"
+          - "WorkManager est exclusif aux tâches réseau, Service pour le calcul local"
+          - "Service est deprecated depuis Android 12, WorkManager est obligatoire"
+        correct: 0
+        explanation: "WorkManager garantit l'exécution (même après reboot) de tâches différables avec contraintes (réseau, batterie). Utilise JobScheduler/AlarmManager selon l'API. Foreground Service pour tâches immédiates ininterruptibles."
+
+      - id: q20_comp_permissions_rationale
+        question: "Quand shouldShowRequestPermissionRationale() retourne-t-il true ?"
+        answers:
+          - "Quand l'utilisateur a refusé la permission précédemment sans 'Ne plus demander'"
+          - "Toujours avant la première demande de permission pour préparer l'utilisateur"
+          - "Quand la permission est accordée mais nécessite une confirmation supplémentaire"
+          - "Uniquement pour les permissions de type dangerous au niveau système"
+        correct: 0
+        explanation: "shouldShowRequestPermissionRationale() retourne true après un premier refus (sans 'Don't ask again'). Opportunité d'expliquer pourquoi la permission est nécessaire avant de redemander. False la première fois ou après 'Ne plus demander'."
+
+meta:
+  formation_title: "Kotlin, développer des applications pour Android"
+  qcm_title: "QCM sur Kotlin et Android"
+  output_file: "qcm-kotlin.yaml"
+  language: "fr"
+  difficulty: "difficile"
+  questions_per_chapter: 20
+  options_original:
+    language: "fr"
+    questions_per_chapter: 20
+    difficulty: "difficile"
+    qcm_title: "QCM sur Kotlin et Android"
+    output_file: "qcm-kotlin.yaml"
+    new_questions: 10
+  options_last_run:
+    language: "fr"
+    questions_per_chapter: 20
+    difficulty: "difficile"
+    qcm_title: "QCM sur Kotlin et Android"
+    output_file: "qcm-kotlin.yaml"
+    new_questions: 10
+
+plan:
+  plan_chapters:
+    - id: syntaxe-kotlin
+      title: "Syntaxe et concepts de base de Kotlin"
+      notions:
+        - Syntaxe de base et conventions
+        - Organisation du code et types
+        - Packages et flux de contrôle
+        - Classes et objets
+        - Fonctions et compléments de syntaxe
+    - id: plateforme-android
+      title: "La plateforme Android"
+      notions:
+        - Architecture Android et Linux
+        - Historique et fonctionnalités
+        - Terminaux cibles
+    - id: dev-android-studio
+      title: "Développement Android sous Android Studio"
+      notions:
+        - Concepts de base et cycle de développement
+        - Classes de base du framework
+        - Projet sous Android Studio
+        - Émulateur SDK et outils
+        - Débogueur et profiler
+        - Manifest et publication
+    - id: interfaces-utilisateurs
+      title: "Les interfaces utilisateurs"
+      notions:
+        - Organisation générale des layouts
+        - LinearLayout et RelativeLayout
+        - ConstraintLayout
+        - Ressources drawables, strings, styles
+        - Gestion événementielle
+    - id: modele-composants
+      title: "Le modèle de composants"
+      notions:
+        - Relation activité mère-fille
+        - Fragments et services
+        - IntentServices
+        - Intents et gestion
+    - id: gestion-donnees
+      title: "La gestion des données"
+      notions:
+        - Préférences
+        - Fichiers et stockage interne/externe
+        - SQLite
+        - Content Provider
+    - id: gestion-reseau
+      title: "La gestion réseau"
+      notions:
+        - Asynchrone avec coroutines Kotlin
+        - Connectivité et HTTP
+        - JSON parsing
+        - Web Services Volley et Retrofit
+    - id: complements
+      title: "Compléments"
+      notions:
+        - Téléphonie et SMS
+        - Multimédia audio/vidéo
+        - Capteurs
+        - API Google de localisation
+
+progress:
+  status: "complete"
+  total_chapters: 8
+  completed_chapters: 8
+  questions_per_chapter: 20
+  chapters:
+    - id: syntaxe-kotlin
+      questions_generated: 20
+      questions_remaining: 0
+    - id: plateforme-android
+      questions_generated: 20
+      questions_remaining: 0
+    - id: dev-android-studio
+      questions_generated: 20
+      questions_remaining: 0
+    - id: interfaces-utilisateurs
+      questions_generated: 20
+      questions_remaining: 0
+    - id: modele-composants
+      questions_generated: 20
+      questions_remaining: 0
+    - id: gestion-donnees
+      questions_generated: 20
+      questions_remaining: 0
+    - id: gestion-reseau
+      questions_generated: 20
+      questions_remaining: 0
+    - id: complements
+      questions_generated: 20
+      questions_remaining: 0
