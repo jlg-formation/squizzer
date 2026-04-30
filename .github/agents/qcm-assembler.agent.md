@@ -113,7 +113,7 @@ S'il existe, retourne une erreur à l'orchestrateur sans rien écrire.
 - Vérifie qu'il commence par `title:` et contient `chapters:`.
 - Compte le nombre total de `- id: q` (lignes commençant à 6 espaces) : doit
   être égal à `nombre_de_chapitres * 20`.
-- Lance #tool:runCommands pour exécuter `npm run format` puis vérifie que le
+- Lance #tool:runCommands pour exécuter `bun run format` puis vérifie que le
   fichier reste un YAML valide.
 
 ### 6. Nettoyage du répertoire temporaire

@@ -115,7 +115,7 @@ Note : `- id:` commence à 6 espaces ; `question:`, `answers:`, `correct:`,
 6. **Écris** le fragment YAML dans `outputPath` via #tool:editFiles. Le fichier
    doit contenir **uniquement** le fragment (pas de frontmatter, pas de
    commentaire, pas de balises ```).
-7. **N'invoque jamais** de formateur (Prettier, `npm run format`, etc.) sur le
+7. **N'invoque jamais** de formateur (Prettier, `bun run format`, etc.) sur le
    fragment écrit : un reformatage automatique pourrait recasser le YAML. Le
    fragment doit rester tel que tu l'as produit.
 8. Réponds dans le chat par **une seule ligne exactement** : `OK: <outputPath>`

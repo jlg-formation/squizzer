@@ -10,9 +10,14 @@ specifications avant de générer du code.
 Lancer les commandes suivantes pour vérifier la qualité du code :
 
 ```bash
-npm run format
-npm run lint
+bun run format
+bun run lint
 ```
+
+Le projet utilise **Bun** comme gestionnaire de paquets et runner. Ne pas
+utiliser `npm` (ni `npx`, ni `node` directement) : préférer `bun`, `bunx` et
+`bun run`. Pour installer une dépendance : `bun add` (ou `bun add -d` pour une
+dev dependency).
 
 ## Commit
 

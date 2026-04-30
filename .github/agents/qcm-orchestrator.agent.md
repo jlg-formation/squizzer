@@ -125,15 +125,16 @@ Une fois les 24 fragments écrits, **avant** de déléguer à `qcm-assembler`, t
 regex). Cela détecte au plus tôt les bugs de quoting, de flow-vs-block, ou de
 réponses cassées par une virgule interne.
 
-Utilise #tool:runCommands pour exécuter une commande Node qui parse chaque
+Utilise #tool:runCommands pour exécuter une commande Bun qui parse chaque
 fragment et vérifie sa structure. Exemple sur Windows / pwsh :
 
 ```powershell
-node -e "const fs=require('fs'),yaml=require('js-yaml'),path=require('path');const dir='.tmp/qcm/<slug>';let ok=true;for(const f of fs.readdirSync(dir).filter(n=>n.endsWith('.yaml'))){const p=path.join(dir,f);try{const arr=yaml.load(fs.readFileSync(p,'utf8'));if(!Array.isArray(arr)||arr.length!==5){console.log('KO',f,'len='+(arr&&arr.length));ok=false;continue;}for(const q of arr){if(!q.id||!q.question||!Array.isArray(q.answers)||q.answers.length!==4||!Number.isInteger(q.correct)||q.correct<0||q.correct>3||!q.explanation){console.log('KO',f,q.id,'answers='+(q.answers&&q.answers.length),'correct='+q.correct);ok=false;}}}catch(e){console.log('PARSE_KO',f,e.message);ok=false;}}process.exit(ok?0:1);"
+bun -e "const fs=require('fs'),yaml=require('js-yaml'),path=require('path');const dir='.tmp/qcm/<slug>';let ok=true;for(const f of fs.readdirSync(dir).filter(n=>n.endsWith('.yaml'))){const p=path.join(dir,f);try{const arr=yaml.load(fs.readFileSync(p,'utf8'));if(!Array.isArray(arr)||arr.length!==5){console.log('KO',f,'len='+(arr&&arr.length));ok=false;continue;}for(const q of arr){if(!q.id||!q.question||!Array.isArray(q.answers)||q.answers.length!==4||!Number.isInteger(q.correct)||q.correct<0||q.correct>3||!q.explanation){console.log('KO',f,q.id,'answers='+(q.answers&&q.answers.length),'correct='+q.correct);ok=false;}}}catch(e){console.log('PARSE_KO',f,e.message);ok=false;}}process.exit(ok?0:1);"
 ```
 
-Le module `js-yaml` doit être installé en dev (`npm i -D js-yaml`) si ce n'est
-pas déjà fait.
+Le module `js-yaml` doit être installé en dev (`bun add -d js-yaml`) si ce n'est
+pas déjà fait. Le projet utilise **Bun** comme gestionnaire de paquets et runner
+; n'utilise jamais `npm` ni `node` directement.
 
 Pour chaque fragment signalé `KO` ou `PARSE_KO` :
 
@@ -171,7 +172,7 @@ Après l'écriture du fichier :
    (vérification par #tool:search, sans charger le fichier complet en mémoire).
 4. Tous les `correct` sont des entiers entre 0 et 3.
 5. Toutes les questions ont exactement 4 réponses.
-6. Lance #tool:runCommands pour exécuter `npm run format` puis `npm run lint` et
+6. Lance #tool:runCommands pour exécuter `bun run format` puis `bun run lint` et
    corrige les éventuelles erreurs de formatage YAML signalées.
 7. Vérifie que le répertoire `.tmp/qcm/<slug>/` a bien été supprimé par
    l'assembleur. Sinon, supprime-le toi-même.
