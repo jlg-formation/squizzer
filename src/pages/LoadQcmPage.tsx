@@ -51,6 +51,14 @@ const PREDEFINED_QCMS = [
     name: "QCM Kotlin",
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-kotlin.yaml",
   },
+  {
+    name: "IA pour les développeurs",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/ia-developpeurs.yaml",
+  },
+  {
+    name: "Agents intelligents (RAG, RIG, GraphRAG, StructRAG)",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/agents-intelligents-rag.yaml",
+  },
   { name: "Autre", url: "" },
 ];
 
