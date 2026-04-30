@@ -62,6 +62,43 @@ Si une anomalie est détectée, retourne une erreur explicite à l'orchestrateur
 précisant le chapitre, le `fragmentPath`, l'`id` de question et la nature du
 problème.
 
+### 1.bis Détection de doublons sémantiques au sein d'un chapitre
+
+En complément des contrôles structurels, tu **dois** détecter les questions
+quasi-identiques au sein d'un même chapitre (les 4 lots étant générés en
+parallèle, ils peuvent converger vers les mêmes angles malgré le plan d'angles
+imposé par l'orchestrateur).
+
+Pour chaque chapitre, calcule une **signature normalisée** de chaque `question`
+:
+
+- minuscules,
+- suppression des accents (NFD + filtre des marques diacritiques),
+- suppression de la ponctuation et des guillemets,
+- compactage des espaces,
+- suppression des mots vides courts (`le`, `la`, `les`, `un`, `une`, `des`,
+  `de`, `du`, `et`, `ou`, `que`, `qui`, `quoi`, `est`, `ce`, `cette`, `ces`,
+  `dans`, `pour`, `par`, `sur`, `au`, `aux`).
+
+Deux questions du même chapitre sont considérées comme doublons si :
+
+- leur signature normalisée est **identique**, ou
+- leur similarité de Jaccard sur les ensembles de tokens normalisés est ≥ 0.8.
+
+Si un doublon est détecté, retourne immédiatement à l'orchestrateur :
+
+```
+ERROR: doublon dans <chapter.id> : <qA> ≈ <qB>
+  fragmentA: <fragmentPath de qA>
+  fragmentB: <fragmentPath de qB>
+  questionA: "<texte qA>"
+  questionB: "<texte qB>"
+```
+
+**N'écris pas** le fichier final et **ne supprime pas** le répertoire
+temporaire. L'orchestrateur régénérera le ou les lots fautifs avec un angle de
+substitution.
+
 ### 2. Construction et **normalisation** du document YAML final
 
 À partir de la structure parsée, construis l'objet JS final :

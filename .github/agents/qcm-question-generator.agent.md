@@ -30,6 +30,10 @@ l'orchestrateur. Le contenu reste sur disque ; seul le chemin est échangé.
 - `Chapitre` : `id` (kebab-case), `titre`, et un résumé du contenu pédagogique.
 - `Plage` : 5 identifiants consécutifs (`q1..q5`, `q6..q10`, `q11..q15` ou
   `q16..q20`).
+- `Angles imposés` : 5 angles ordonnés (un par id de la plage) que les questions
+  **doivent** couvrir, dans l'ordre. Cette contrainte est imposée par
+  l'orchestrateur pour garantir la non-redondance entre les 4 lots d'un même
+  chapitre.
 - `outputPath` : chemin du fichier temporaire dans lequel écrire le fragment
   (ex. `.tmp/qcm/<slug>/<chapter-id>-q1-q5.yaml`).
 
@@ -97,11 +101,18 @@ Note : `- id:` commence à 6 espaces ; `question:`, `answers:`, `correct:`,
 11. Aucun doublon de question dans le lot produit.
 12. **Interdiction absolue** d'utiliser le flow style `[ … ]` pour `answers`,
     même pour des chaînes courtes.
+13. **Respect strict des angles imposés** : la question `qN` couvre l'angle
+    fourni pour `qN`, et **uniquement** celui-ci. Tu n'as pas le droit de
+    paraphraser un autre angle de la liste, même proche. Si l'angle te semble
+    inadapté au contenu du chapitre, retourne `ERROR: <message>` au lieu de
+    dévier.
 
 ## Méthode
 
-1. Analyse le contenu pédagogique du chapitre fourni.
-2. Choisis 5 angles différents et complémentaires couverts par ce chapitre.
+1. Analyse le contenu pédagogique du chapitre fourni et la liste des 5 angles
+   imposés.
+2. Pour chaque id de la plage, prends l'angle correspondant et **uniquement**
+   celui-ci comme sujet précis de la question.
 3. Pour chacun, formule la question, génère 4 réponses dont une seule correcte,
    et rédige une explication courte.
 4. Vérifie l'indentation (6 / 8 / 10 espaces) et le respect des contraintes

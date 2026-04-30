@@ -71,6 +71,34 @@ poursuivre.
    répertoire est jetable et **ne doit pas** être commité (il est ignoré via
    `.gitignore` à la racine — ajoute la règle `.tmp/` si elle manque).
 
+## 2.bis Plan d'angles par chapitre (anti-doublon)
+
+Les 4 lots d'un même chapitre étant générés **en parallèle** et indépendamment
+par `qcm-question-generator`, ils convergent spontanément vers les mêmes angles
+épidagogiques évidents (définition, comparaison, intérêt principal…) et
+produisent des questions quasi-identiques. Pour éviter cela, **avant** toute
+délégation de génération, tu **dois** établir, pour **chaque chapitre**, un plan
+ordonné de **20 angles distincts** (un par question), couvrant le chapitre de
+manière progressive (fondamentaux → application → cas avancés).
+
+Règles pour le plan d'angles :
+
+- Exactement 20 entrées par chapitre, indexées de 1 à 20 (alignées sur
+  `q1`..`q20`).
+- Chaque angle est une phrase courte en français (≤ 12 mots) décrivant le
+  concept précis testé (pas la formulation de la question).
+- **Aucune redondance sémantique** entre deux angles d'un même chapitre : pas de
+  paraphrase (« Définition de l'IA générative » et « Qu'est-ce que l'IA
+  générative » comptent comme un seul angle).
+- Évite aussi de redoubler les angles d'**autres chapitres** quand c'est
+  raisonnable, pour limiter la redondance globale du QCM.
+- Varier les types : définition, compréhension, comparaison, application, cas
+  pratique, piège classique, limite, bonne pratique.
+
+Stocke ce plan en mémoire de travail (ou dans un fichier
+`.tmp/qcm/<slug>/_angles.json` si utile pour ta propre traçabilité). Il sera
+passé aux sous-agents générateurs au lot par lot.
+
 ## 3. Génération des questions (délégation via fichiers temporaires)
 
 Pour chaque chapitre et chaque lot de 5 questions, délègue au sous-agent
@@ -99,9 +127,16 @@ Chapitre :
   - titre: <chapter.title>
   - description / contenu pédagogique : <extrait du plan ou résumé>
 Plage de questions à produire : <q1..q5 | q6..q10 | q11..q15 | q16..q20>
+Angles imposés (un par question, dans l'ordre) :
+  - qX : <angle X issu du plan d'angles du chapitre>
+  - qX+1 : <angle X+1>
+  - ...
+  - qY : <angle Y>
 outputPath : <.tmp/qcm/<slug>/<chapter.id>-qX-qY.yaml>
 Contraintes : voir l'agent qcm-question-generator (schéma YAML, 4 réponses,
 correct entre 0 et 3, explanation courte, français, indentation 6 espaces).
+Chaque question DOIT couvrir l'angle imposé correspondant à son id, sans dévier
+vers un angle voisin.
 Écris le fragment dans outputPath et réponds uniquement par `OK: <outputPath>`.
 Ne recopie PAS le contenu du fragment dans ta réponse.
 ```
@@ -161,6 +196,24 @@ Une fois tous les fragments écrits sur disque, délègue au sous-agent
 
 Le sous-agent assembleur lit les fichiers, produit le YAML final, l'écrit, puis
 nettoie le répertoire temporaire.
+
+### 4.bis Gestion des doublons signalés par l'assembleur
+
+Si `qcm-assembler` retourne une erreur du type
+`ERROR: doublon dans <chapter.id> : <qA> ≈ <qB>`, c'est que deux questions d'un
+même chapitre se recouvrent sémantiquement malgré le plan d'angles. Procède
+ainsi :
+
+1. Identifie le lot contenant `qB` (la deuxième question dans l'ordre).
+2. Choisis un **angle de remplacement** distinct des 19 autres angles du
+   chapitre (et des angles déjà utilisés dans les autres chapitres si possible).
+   Mets à jour le plan d'angles du chapitre en mémoire.
+3. Supprime le fragment fautif et redemande au sous-agent
+   `qcm-question-generator` de régénérer **uniquement ce lot** avec la nouvelle
+   liste d'angles (les 4 autres positions du lot conservent leur angle
+   d'origine).
+4. Relance la validation YAML (3.bis) puis re-délègue à `qcm-assembler`.
+5. Boucle jusqu'à ce que l'assembleur retourne `OK: <outputPath>`.
 
 ## 5. Vérifications finales
 
