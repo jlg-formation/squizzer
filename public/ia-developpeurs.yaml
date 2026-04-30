@@ -1,0 +1,1783 @@
+title: "L'intelligence artificielle au service des développeurs"
+chapters:
+  - id: introduction-ia
+    title: "Introduction à l'intelligence artificielle"
+    questions:
+      - id: q1
+        question:
+          "Quelle est la relation entre l'intelligence artificielle, le machine
+          learning et le deep learning ?"
+        answers:
+          [
+            Ce sont trois domaines indépendants sans lien entre eux,
+            Le deep learning englobe le machine learning qui englobe l'IA,
+            Le machine learning est un sous-domaine de l'IA et le deep learning
+            un sous-domaine du machine learning,
+            Le machine learning et le deep learning sont des synonymes opposés à
+            l'IA,
+          ]
+        correct: 2
+        explanation:
+          "L'IA est le domaine global ; le machine learning en est un
+          sous-ensemble fondé sur l'apprentissage à partir de données, et le
+          deep learning est lui-même un sous-ensemble du machine learning
+          utilisant des réseaux de neurones profonds."
+      - id: q2
+        question:
+          "Qu'est-ce qui distingue l'approche symbolique de l'approche
+          statistique en IA ?"
+        answers:
+          [
+            "L'approche symbolique repose sur des règles et de la logique
+            explicites, tandis que l'approche statistique apprend des motifs à
+            partir de données",
+            Les deux approches utilisent uniquement des réseaux de neurones,
+            L'approche symbolique est plus récente que l'approche statistique,
+            L'approche statistique n'utilise jamais de mathématiques,
+          ]
+        correct: 0
+        explanation:
+          "L'IA symbolique manipule des symboles et des règles logiques définies
+          par des humains, alors que l'IA statistique infère des modèles à
+          partir de grands volumes de données."
+      - id: q3
+        question: "Que désigne un Large Language Model (LLM) ?"
+        answers:
+          [
+            Un logiciel de traduction automatique basé sur des dictionnaires,
+            Un modèle statistique de langage entraîné sur de très grands corpus
+            de texte capable de générer du langage naturel,
+            Une base de données relationnelle stockant des phrases,
+            Un format de fichier audio pour la reconnaissance vocale,
+          ]
+        correct: 1
+        explanation:
+          "Un LLM est un modèle de langage de grande taille, entraîné sur
+          d'énormes corpus textuels, capable de comprendre et de générer du
+          texte en langage naturel."
+      - id: q4
+        question:
+          "À quoi servent les text embeddings dans le traitement du langage
+          naturel ?"
+        answers:
+          [
+            À compresser les fichiers texte pour le stockage,
+            À chiffrer les messages échangés entre utilisateurs,
+            À représenter du texte sous forme de vecteurs numériques capturant
+            le sens sémantique,
+            À traduire automatiquement un texte d'une langue à une autre,
+          ]
+        correct: 2
+        explanation:
+          "Les embeddings transforment des mots ou phrases en vecteurs
+          numériques dans un espace où la proximité reflète la similarité
+          sémantique, ce qui facilite la recherche, le clustering et l'analyse."
+      - id: q5
+        question:
+          "Quel est le rôle principal d'une Vector Database dans une
+          architecture IA ?"
+        answers:
+          [
+            Stocker des images au format binaire,
+            Indexer et rechercher efficacement des vecteurs d'embeddings par
+            similarité,
+            Exécuter des modèles de deep learning sur GPU,
+            Convertir des fichiers GGUF en JSON,
+          ]
+        correct: 1
+        explanation:
+          "Une base de données vectorielle est conçue pour stocker des
+          embeddings et effectuer des recherches de similarité (par ex. cosinus)
+          très rapides, ce qui est essentiel pour les systèmes RAG et la
+          recherche sémantique."
+      - id: q6
+        question: "Qu'est-ce qu'un token dans le contexte d'un LLM ?"
+        answers:
+          [
+            Une unité de texte (mot ou fragment de mot) traitée par le modèle,
+            Un identifiant de session utilisateur,
+            Une clé d'authentification de l'API,
+            Un paramètre du réseau de neurones,
+          ]
+        correct: 0
+        explanation:
+          "Un token est l'unité élémentaire (mot, sous-mot ou caractère) que le
+          LLM manipule en entrée et en sortie."
+      - id: q7
+        question:
+          "À quoi sert principalement une base de données vectorielle (Vector
+          Database) ?"
+        answers:
+          [
+            Stocker des fichiers binaires volumineux,
+            Indexer et rechercher des embeddings par similarité sémantique,
+            Remplacer une base SQL relationnelle classique,
+            Compresser les modèles de langage,
+          ]
+        correct: 1
+        explanation:
+          "Une Vector Database stocke des vecteurs (embeddings) et permet la
+          recherche par similarité, base du RAG."
+      - id: q8
+        question: "Que désigne le format GGUF ?"
+        answers:
+          [
+            Un protocole de communication entre agents IA,
+            Un format de fichier unifié pour distribuer des modèles de LLM
+            exécutables localement,
+            Un langage de prompt structuré,
+            Une API standardisée de chat,
+          ]
+        correct: 1
+        explanation:
+          "GGUF (GPT-Generated Unified Format) est un format de fichier conçu
+          pour stocker et charger efficacement des modèles LLM en local."
+      - id: q9
+        question:
+          "Quel outil d'IA générative est proposé en mode SaaS par OpenAI ?"
+        answers: [ChatGPT, Llama, Mistral 7B, Stable Diffusion local]
+        correct: 0
+        explanation:
+          "ChatGPT est le service SaaS d'OpenAI ; Llama et Mistral sont des
+          modèles ouverts souvent exécutés en local."
+      - id: q10
+        question: "Que vise le prompt engineering ?"
+        answers:
+          [
+            Optimiser le code source du modèle,
+            Concevoir des instructions efficaces pour obtenir de meilleures
+            réponses du LLM,
+            Réduire le nombre de paramètres du modèle,
+            Chiffrer les échanges avec l'API,
+          ]
+        correct: 1
+        explanation:
+          "Le prompt engineering consiste à formuler les requêtes de manière à
+          maximiser la pertinence des réponses générées."
+      - id: q11
+        question: "Que désigne le terme « token » dans le contexte d'un LLM ?"
+        answers:
+          [
+            Une unité élémentaire de texte traitée par le modèle,
+            Un identifiant de session utilisateur,
+            Une clé d'API permettant d'appeler le modèle,
+            Un vecteur stocké dans une base vectorielle,
+          ]
+        correct: 0
+        explanation:
+          "Un token est l'unité de base (mot, sous-mot ou caractère) que le
+          modèle manipule en entrée et en sortie."
+      - id: q12
+        question:
+          "À quoi sert principalement une base vectorielle (vector database)
+          dans une architecture IA ?"
+        answers:
+          [
+            Stocker des embeddings pour effectuer des recherches par similarité
+            sémantique,
+            Héberger les poids d'un modèle de langage,
+            Conserver l'historique des conversations utilisateur,
+            Compiler le code source des applications IA,
+          ]
+        correct: 0
+        explanation:
+          "Une base vectorielle indexe des embeddings afin de retrouver
+          rapidement les contenus sémantiquement proches d'une requête."
+      - id: q13
+        question: "Que représente le format GGUF ?"
+        answers:
+          [
+            Un format de fichier unifié pour distribuer et exécuter des modèles
+            de langage localement,
+            Un protocole réseau pour interroger des LLM en SaaS,
+            Un langage de requête pour bases vectorielles,
+            Une norme de compression vidéo générée par IA,
+          ]
+        correct: 0
+        explanation:
+          "GGUF (GPT-Generated Unified Format) est un format conçu pour stocker
+          et charger efficacement des modèles, notamment pour l'inférence
+          locale."
+      - id: q14
+        question: "Quelle approche caractérise le « prompt engineering » ?"
+        answers:
+          [
+            Concevoir et affiner les instructions envoyées à un LLM pour obtenir
+            de meilleures réponses,
+            Réentraîner un modèle sur de nouvelles données,
+            Optimiser le code source du moteur d'inférence,
+            Compresser les poids du modèle pour réduire sa taille,
+          ]
+        correct: 0
+        explanation:
+          "Le prompt engineering consiste à formuler les requêtes de manière à
+          orienter le modèle vers des réponses plus pertinentes, sans modifier
+          ses poids."
+      - id: q15
+        question: "Quel est le rôle des « text embeddings » ?"
+        answers:
+          [
+            Représenter du texte sous forme de vecteurs numériques capturant son
+            sens,
+            Chiffrer le texte avant son envoi au modèle,
+            Traduire automatiquement un texte d'une langue à une autre,
+            Compresser le texte pour réduire le nombre de tokens facturés,
+          ]
+        correct: 0
+        explanation:
+          "Les embeddings projettent un texte dans un espace vectoriel où la
+          proximité géométrique reflète la similarité sémantique."
+      - id: q16
+        question:
+          "Qu'est-ce qu'une base de données vectorielle (vector database) ?"
+        answers:
+          [
+            Une base relationnelle optimisée pour les jointures,
+            Une base stockant des embeddings et permettant la recherche par
+            similarité,
+            Un cache mémoire pour les requêtes SQL,
+            Un système de fichiers distribué pour les modèles GGUF,
+          ]
+        correct: 1
+        explanation:
+          "Une vector database stocke des vecteurs (embeddings) et permet de
+          retrouver les contenus les plus proches sémantiquement via une
+          recherche de similarité."
+      - id: q17
+        question: "À quoi sert principalement le format GGUF ?"
+        answers:
+          [
+            Échanger des prompts entre applications,
+            Stocker et distribuer des modèles LLM quantifiés exécutables
+            localement,
+            Représenter des graphes de connaissances,
+            Sérialiser des bases vectorielles,
+          ]
+        correct: 1
+        explanation:
+          "GGUF (GPT-Generated Unified Format) est un format de fichier conçu
+          pour distribuer des modèles LLM, souvent quantifiés, et les exécuter
+          en local efficacement."
+      - id: q18
+        question:
+          "Parmi ces outils, lequel est un service d'IA générative en mode SaaS
+          ?"
+        answers: [PostgreSQL, ChatGPT, Nginx, Docker]
+        correct: 1
+        explanation:
+          "ChatGPT est un service d'IA générative accessible en SaaS via le web
+          ou une API, contrairement aux autres outils cités."
+      - id: q19
+        question: "Que désigne le prompt engineering ?"
+        answers:
+          [
+            La conception matérielle des GPU pour l'IA,
+            L'art de formuler des requêtes pour obtenir des réponses pertinentes
+            d'un LLM,
+            L'entraînement initial d'un modèle de langage,
+            La compression des modèles au format GGUF,
+          ]
+        correct: 1
+        explanation:
+          "Le prompt engineering consiste à formuler et structurer les requêtes
+          envoyées à un LLM afin d'optimiser la qualité et la pertinence des
+          réponses générées."
+      - id: q20
+        question:
+          "Dans une architecture web intégrant un LLM via une API, quel est le
+          rôle typique du backend ?"
+        answers:
+          [
+            "Exécuter le modèle LLM directement dans le navigateur",
+            "Recevoir les requêtes utilisateur, construire le prompt et appeler
+            l'API du LLM",
+            "Stocker uniquement les fichiers statiques HTML et CSS",
+            "Remplacer le LLM par des règles symboliques",
+          ]
+        correct: 1
+        explanation:
+          "Le backend reçoit les demandes du client, prépare le prompt (avec
+          contexte éventuel issu d'une vector DB), interroge l'API du LLM puis
+          renvoie la réponse au frontend."
+  - id: vscode-copilot
+    title: "Visual Studio Code (VSCode) et GitHub Copilot"
+    questions:
+      - id: q1
+        question: "Qu'est-ce que GitHub Copilot ?"
+        answers:
+          [
+            Un éditeur de code open source,
+            Un assistant de programmation basé sur l'IA intégré à l'éditeur,
+            Un système de gestion de versions concurrent de Git,
+            Un service d'hébergement de dépôts,
+          ]
+        correct: 1
+        explanation:
+          "GitHub Copilot est un assistant de programmation propulsé par un LLM,
+          qui s'intègre à l'éditeur pour suggérer du code."
+      - id: q2
+        question:
+          "Quel est un prérequis indispensable pour utiliser GitHub Copilot dans
+          VSCode ?"
+        answers:
+          [
+            Disposer d'un compte GitHub avec un abonnement Copilot actif,
+            Installer Docker sur la machine,
+            Configurer un serveur SSH local,
+            Utiliser exclusivement le langage Python,
+          ]
+        correct: 0
+        explanation:
+          "Copilot nécessite un compte GitHub avec une licence Copilot active et
+          l'extension installée dans VSCode."
+      - id: q3
+        question: "À quoi sert le chat de GitHub Copilot dans VSCode ?"
+        answers:
+          [
+            "Discuter avec d'autres développeurs en temps réel",
+            "Dialoguer en langage naturel avec l'IA pour expliquer, générer ou
+            corriger du code",
+            "Remplacer le terminal intégré",
+            "Gérer les pull requests sur GitHub",
+          ]
+        correct: 1
+        explanation:
+          "Le chat Copilot permet de poser des questions en langage naturel et
+          d'obtenir des explications ou du code généré par l'IA."
+      - id: q4
+        question:
+          "Comment déclencher une suggestion de Copilot directement dans un
+          fichier de code ?"
+        answers:
+          [
+            En écrivant un commentaire ou une signature de fonction décrivant
+            l'intention,
+            En appuyant sur la touche Échap,
+            En lançant un build du projet,
+            En ouvrant un terminal intégré,
+          ]
+        correct: 0
+        explanation:
+          "Copilot s'appuie sur le contexte du fichier : un commentaire
+          descriptif ou une signature de fonction suffit à déclencher une
+          suggestion d'implémentation."
+      - id: q5
+        question:
+          "Dans le TP générant des pages web à partir d'un prompt, quel est le
+          rôle du LLM ?"
+        answers:
+          [
+            Héberger les pages web produites,
+            Compiler le code TypeScript de l'application,
+            Produire le contenu HTML/CSS à partir du prompt fourni par
+            l'utilisateur,
+            Gérer l'authentification des utilisateurs,
+          ]
+        correct: 2
+        explanation:
+          "Le LLM reçoit le prompt utilisateur et renvoie le contenu de la page
+          (HTML/CSS) que l'application affiche ensuite."
+      - id: q6
+        question:
+          "Quel est le prérequis indispensable pour utiliser GitHub Copilot dans
+          VSCode ?"
+        answers:
+          [
+            Disposer d'un compte GitHub avec un abonnement Copilot actif,
+            Installer Node.js sur la machine,
+            Créer un dépôt Git public,
+            Activer le mode développeur de Windows,
+          ]
+        correct: 0
+        explanation:
+          "GitHub Copilot nécessite un compte GitHub associé à un abonnement
+          Copilot (gratuit ou payant) pour être authentifié dans VSCode."
+      - id: q7
+        question: "Comment ouvrir le chat de GitHub Copilot dans VSCode ?"
+        answers:
+          [
+            En cliquant sur l'icône Copilot Chat de la barre d'activité ou via
+            le raccourci dédié,
+            En ouvrant un terminal intégré,
+            En lançant la commande \"git chat\",
+            En installant une extension tierce de messagerie,
+          ]
+        correct: 0
+        explanation:
+          "Le chat Copilot est accessible depuis l'icône dédiée dans la barre
+          d'activité de VSCode ou via un raccourci clavier configurable."
+      - id: q8
+        question:
+          "Comment déclencher Copilot directement depuis un fichier de code
+          ouvert dans VSCode ?"
+        answers:
+          [
+            En commençant à écrire du code ou un commentaire pour obtenir une
+            suggestion en ligne,
+            En envoyant le fichier par e-mail à GitHub,
+            En compilant le projet avec un flag spécial,
+            En renommant le fichier avec l'extension .copilot,
+          ]
+        correct: 0
+        explanation:
+          "Copilot propose automatiquement des suggestions en ligne (ghost text)
+          au fur et à mesure que l'on écrit du code ou des commentaires dans
+          l'éditeur."
+      - id: q9
+        question:
+          "Quelle pratique facilite la génération d'une implémentation
+          pertinente par Copilot ?"
+        answers:
+          [
+            Définir clairement la signature de la fonction et un commentaire
+            décrivant son rôle,
+            Écrire uniquement le nom du fichier sans contenu,
+            Désactiver la coloration syntaxique,
+            Utiliser exclusivement des noms de variables d'une seule lettre,
+          ]
+        correct: 0
+        explanation:
+          "Une signature explicite accompagnée d'un commentaire descriptif
+          fournit à Copilot le contexte nécessaire pour proposer une
+          implémentation cohérente."
+      - id: q10
+        question:
+          "Une fois qu'une fonction a été générée par Copilot, comment
+          l'utiliser dans le reste du code ?"
+        answers:
+          [
+            "En l'appelant comme n'importe quelle fonction du langage, en lui
+            passant les arguments attendus",
+            "En la copiant dans le chat Copilot à chaque appel",
+            "En l'exécutant uniquement via le terminal Copilot",
+            "En la déclarant à nouveau avant chaque utilisation",
+          ]
+        correct: 0
+        explanation:
+          "Le code généré par Copilot est du code standard : la fonction
+          s'appelle normalement avec ses arguments, comme toute autre fonction
+          du langage."
+      - id: q11
+        question:
+          "Quel est le prérequis principal pour utiliser GitHub Copilot dans
+          VSCode ?"
+        answers:
+          [
+            Disposer d'un compte GitHub avec un abonnement Copilot actif,
+            Installer Node.js sur sa machine,
+            Configurer un dépôt Git local,
+            Posséder une carte graphique compatible CUDA,
+          ]
+        correct: 0
+        explanation:
+          "GitHub Copilot nécessite un compte GitHub associé à un abonnement
+          (gratuit pour certains profils ou payant) et l'installation de
+          l'extension dans VSCode."
+      - id: q12
+        question: "À quoi sert le chat de GitHub Copilot intégré à VSCode ?"
+        answers:
+          [
+            "Compiler automatiquement le code du projet",
+            "Dialoguer en langage naturel avec l'IA pour poser des questions ou
+            demander du code",
+            "Remplacer le terminal système de VSCode",
+            "Synchroniser les fichiers avec un dépôt distant",
+          ]
+        correct: 1
+        explanation:
+          "Le chat Copilot permet d'interagir en langage naturel avec l'IA pour
+          obtenir des explications, générer du code ou refactorer, sans quitter
+          l'éditeur."
+      - id: q13
+        question:
+          "Comment déclencher Copilot directement depuis un fichier de code
+          ouvert dans VSCode ?"
+        answers:
+          [
+            "En écrivant un commentaire ou une signature de fonction décrivant
+            l'intention",
+            "En cliquant sur le bouton Run de la barre d'état",
+            "En lançant la commande npm install copilot",
+            "En ouvrant un nouvel onglet de navigateur",
+          ]
+        correct: 0
+        explanation:
+          "Copilot analyse le contexte du fichier et propose des suggestions
+          inline lorsque l'on rédige un commentaire descriptif ou une signature
+          de fonction."
+      - id: q14
+        question:
+          "Lorsque l'on définit une fonction avec l'aide de Copilot, quelle
+          bonne pratique facilite une suggestion pertinente ?"
+        answers:
+          [
+            "Donner un nom de fonction explicite et décrire son rôle en
+            commentaire",
+            "Utiliser uniquement des noms de variables d'une seule lettre",
+            "Désactiver la coloration syntaxique",
+            "Écrire le code en majuscules",
+          ]
+        correct: 0
+        explanation:
+          "Un nom explicite et un commentaire décrivant l'objectif fournissent à
+          Copilot un contexte clair pour générer une implémentation pertinente."
+      - id: q15
+        question:
+          "Après avoir généré une fonction avec Copilot, quelle étape est
+          indispensable avant de l'utiliser en production ?"
+        answers:
+          [
+            "Publier la fonction sur GitHub Marketplace",
+            "Relire et tester le code proposé pour valider son comportement",
+            "Renommer automatiquement tous les fichiers du projet",
+            "Désinstaller l'extension Copilot",
+          ]
+        correct: 1
+        explanation:
+          "Les suggestions de Copilot ne sont pas garanties exactes : il est
+          essentiel de relire, tester et adapter le code avant toute mise en
+          production."
+      - id: q16
+        question:
+          "Quel est un prérequis indispensable pour utiliser GitHub Copilot dans
+          VSCode ?"
+        answers:
+          [
+            Disposer d'un compte GitHub avec un abonnement Copilot actif,
+            Installer Docker Desktop sur sa machine,
+            Activer le mode hors-ligne de VSCode,
+            Compiler VSCode depuis ses sources,
+          ]
+        correct: 0
+        explanation:
+          "GitHub Copilot nécessite un compte GitHub associé à une licence
+          Copilot active et l'extension installée dans VSCode."
+      - id: q17
+        question: "À quoi sert le chat de GitHub Copilot intégré à VSCode ?"
+        answers:
+          [
+            "Dialoguer avec Copilot pour poser des questions, expliquer ou
+            générer du code",
+            Remplacer le terminal système de VSCode,
+            Gérer les branches Git à la place de l'utilisateur,
+            Compiler automatiquement le projet à chaque message,
+          ]
+        correct: 0
+        explanation:
+          "Le chat Copilot permet d'échanger en langage naturel avec l'IA pour
+          obtenir des explications, des suggestions ou du code généré."
+      - id: q18
+        question:
+          "Comment invoquer Copilot directement depuis un fichier de code ouvert
+          dans VSCode ?"
+        answers:
+          [
+            En écrivant un commentaire décrivant l'intention puis en acceptant
+            la suggestion proposée en ligne,
+            En renommant le fichier avec l'extension .copilot,
+            En désactivant l'extension Copilot avant d'écrire,
+            En exécutant la commande git commit,
+          ]
+        correct: 0
+        explanation:
+          "Copilot lit le contexte du fichier et propose des complétions inline
+          à partir d'un commentaire ou d'un début de code."
+      - id: q19
+        question:
+          "Quelle bonne pratique permet à Copilot de générer une implémentation
+          pertinente pour une fonction ?"
+        answers:
+          [
+            Définir une signature explicite et un commentaire décrivant le
+            comportement attendu,
+            Laisser le fichier vide et attendre une suggestion,
+            Utiliser uniquement des noms de variables d'une seule lettre,
+            Désactiver la coloration syntaxique,
+          ]
+        correct: 0
+        explanation:
+          "Une signature claire et un commentaire descriptif fournissent à
+          Copilot le contexte nécessaire pour proposer une implémentation
+          cohérente."
+      - id: q20
+        question:
+          "Lorsqu'on utilise une fonction suggérée par Copilot, quelle
+          vérification est recommandée ?"
+        answers:
+          [
+            Relire le code généré et le tester pour s'assurer qu'il répond au
+            besoin,
+            Accepter la suggestion sans la lire pour gagner du temps,
+            Supprimer tous les tests unitaires existants,
+            Publier immédiatement le code en production,
+          ]
+        correct: 0
+        explanation:
+          "Copilot peut produire du code incorrect ou inadapté ; une relecture
+          et des tests restent indispensables avant utilisation."
+  - id: programmation-prompt
+    title: "La programmation par prompt"
+    questions:
+      - id: q1
+        question:
+          "Pourquoi est-il recommandé de rédiger des prompts complets et
+          détaillés lorsqu'on s'adresse à un LLM ?"
+        answers:
+          [
+            Pour réduire la consommation de tokens du modèle,
+            Pour fournir suffisamment de contexte et obtenir une réponse précise
+            et exploitable,
+            Pour forcer le modèle à utiliser une langue particulière,
+            Pour empêcher le modèle de générer du code,
+          ]
+        correct: 1
+        explanation:
+          "Un prompt complet et détaillé fournit le contexte, les contraintes et
+          le format attendu, ce qui améliore nettement la pertinence et la
+          qualité de la réponse du LLM."
+      - id: q2
+        question: "En quoi consiste la technique du « role prompting » ?"
+        answers:
+          [
+            "Demander au modèle d'incarner un rôle ou une expertise spécifique
+            pour orienter son style et son contenu",
+            Fournir plusieurs exemples de questions-réponses dans le prompt,
+            Demander au modèle d'expliquer son raisonnement étape par étape,
+            Générer plusieurs réponses puis voter pour la plus fréquente,
+          ]
+        correct: 0
+        explanation:
+          "Le role prompting consiste à attribuer un rôle au modèle (par exemple
+          « Tu es un expert en cybersécurité ») afin d'adapter le ton, le
+          vocabulaire et la profondeur de la réponse."
+      - id: q3
+        question: "Que désigne le « Few-Shot Prompting » ?"
+        answers:
+          [
+            Donner un seul exemple détaillé au modèle,
+            Ne donner aucun exemple et laisser le modèle improviser,
+            Fournir quelques exemples représentatifs dans le prompt pour guider
+            la réponse du modèle,
+            Limiter la taille du prompt à quelques mots,
+          ]
+        correct: 2
+        explanation:
+          "Le Few-Shot Prompting fournit au modèle un petit nombre d'exemples
+          (entrée/sortie) pour qu'il infère le format et le style attendus de sa
+          réponse."
+      - id: q4
+        question:
+          "Quel est l'objectif principal du « Chain-of-Thought » (CoT) ?"
+        answers:
+          [
+            Réduire le coût d'inférence du modèle,
+            Inciter le modèle à expliciter son raisonnement étape par étape pour
+            améliorer la qualité des réponses complexes,
+            Empêcher le modèle d'utiliser des exemples,
+            Forcer le modèle à répondre en une seule phrase,
+          ]
+        correct: 1
+        explanation:
+          "Le Chain-of-Thought encourage le modèle à décomposer son raisonnement
+          en étapes intermédiaires, ce qui augmente la fiabilité sur les tâches
+          de logique ou de calcul."
+      - id: q5
+        question:
+          "Que permet le couplage d'un LLM puissant et d'un LLM plus faible dans
+          une application ?"
+        answers:
+          [
+            Garantir une confidentialité totale des données,
+            Optimiser le rapport coût/performance en réservant le modèle
+            puissant aux tâches complexes,
+            Supprimer le besoin de prompts détaillés,
+            Éviter toute hallucination du modèle,
+          ]
+        correct: 1
+        explanation:
+          "Coupler un LLM faible (rapide et peu coûteux) pour les tâches simples
+          et un LLM puissant pour les tâches complexes permet de maîtriser les
+          coûts tout en conservant une bonne qualité globale."
+      - id: q6
+        question:
+          "Quelle technique consiste à fournir au LLM quelques exemples
+          d'entrées et de sorties attendues avant la requête réelle ?"
+        answers:
+          [
+            Role prompting,
+            Few-Shot Prompting,
+            Chain-of-thought,
+            Self-Consistency,
+          ]
+        correct: 1
+        explanation:
+          "Le Few-Shot Prompting fournit plusieurs exemples (paires
+          entrée/sortie) pour guider le modèle vers le format et le style
+          attendus."
+      - id: q7
+        question:
+          "À quoi sert principalement la technique du Chain-of-thought (CoT) ?"
+        answers:
+          - "Demander au modèle de répondre le plus brièvement possible"
+          - "Forcer le modèle à expliciter son raisonnement étape par étape"
+          - "Attribuer un rôle précis au modèle"
+          - "Générer plusieurs réponses puis voter la majoritaire"
+        correct: 1
+        explanation:
+          "Le Chain-of-thought encourage le LLM à dérouler son raisonnement
+          étape par étape, ce qui améliore la fiabilité sur les tâches
+          complexes."
+      - id: q8
+        question: "En quoi consiste la stratégie de Self-Consistency ?"
+        answers:
+          - "Reformuler le prompt jusqu'à obtenir une réponse plus courte"
+          - "Générer plusieurs réponses et retenir la plus fréquente ou
+            cohérente"
+          - "Faire valider la réponse par un humain"
+          - "Demander au modèle de citer ses sources"
+        correct: 1
+        explanation:
+          "La Self-Consistency consiste à échantillonner plusieurs réponses au
+          même prompt et à sélectionner la plus cohérente (souvent par vote
+          majoritaire)."
+      - id: q9
+        question:
+          "Pourquoi coupler un LLM puissant avec un LLM plus faible dans un même
+          workflow ?"
+        answers:
+          - "Pour obscurcir le raisonnement du modèle"
+          - "Pour optimiser le rapport coût/qualité en déléguant les tâches
+            simples au modèle faible"
+          - "Pour empêcher toute hallucination"
+          - "Pour contourner les limites de contexte"
+        correct: 1
+        explanation:
+          "Les tâches simples sont confiées au modèle faible (rapide et peu
+          coûteux) et seules les étapes complexes mobilisent le modèle puissant,
+          optimisant coût et latence."
+      - id: q10
+        question:
+          "Quelle bonne pratique de rédaction de prompt est recommandée ?"
+        answers:
+          - "Multiplier les négations pour cadrer la réponse"
+          - "Privilégier la clarté, la concision et une structure modulaire"
+          - "Laisser le format de sortie totalement libre"
+          - "Éviter de préciser le rôle ou le contexte"
+        correct: 1
+        explanation:
+          "Un bon prompt est clair, concis, modulaire et précise le format de
+          sortie ; les formulations négatives sont à limiter car elles induisent
+          des erreurs."
+      - id: q11
+        question: "En quoi consiste la technique du « Role prompting » ?"
+        answers:
+          [
+            Assigner un rôle ou une persona au modèle pour orienter son style et
+            son expertise,
+            Demander au modèle de jouer un jeu de rôle narratif sans contrainte,
+            Limiter les droits d'accès du modèle à certaines API,
+            Forcer le modèle à répondre uniquement par oui ou non,
+          ]
+        correct: 0
+        explanation:
+          "Le role prompting consiste à donner un rôle au modèle (ex. « Tu es un
+          expert en sécurité ») afin d'orienter le ton, le vocabulaire et la
+          profondeur de la réponse."
+      - id: q12
+        question:
+          "Quelle est la caractéristique principale du « Few-Shot Prompting » ?"
+        answers:
+          [
+            Fournir quelques exemples d'entrées et de sorties attendues dans le
+            prompt,
+            Envoyer le prompt à plusieurs modèles en parallèle,
+            Réduire la taille du contexte à quelques tokens,
+            Désactiver l'historique de la conversation,
+          ]
+        correct: 0
+        explanation:
+          "Le few-shot prompting fournit dans le prompt quelques exemples
+          illustrant la tâche, ce qui aide le modèle à comprendre le format et
+          le style attendus."
+      - id: q13
+        question: "À quoi sert la technique du « Chain-of-Thought » (CoT) ?"
+        answers:
+          [
+            Inciter le modèle à expliciter son raisonnement étape par étape,
+            Chaîner plusieurs prompts indépendants en une seule requête,
+            Réduire la consommation de tokens en compressant la réponse,
+            Empêcher le modèle de raisonner pour gagner en vitesse,
+          ]
+        correct: 0
+        explanation:
+          "Le Chain-of-Thought encourage le modèle à décomposer son raisonnement
+          en étapes intermédiaires, ce qui améliore la qualité des réponses sur
+          les problèmes complexes."
+      - id: q14
+        question:
+          "Quel est l'intérêt principal du couplage d'un LLM puissant et d'un
+          LLM faible ?"
+        answers:
+          [
+            Optimiser le coût et la latence en réservant le modèle puissant aux
+            tâches complexes,
+            Doubler la précision en faisant voter les deux modèles à parts
+            égales,
+            Garantir l'absence d'hallucinations grâce à la redondance,
+            Contourner les limites de contexte en additionnant les fenêtres,
+          ]
+        correct: 0
+        explanation:
+          "Le couplage permet de déléguer les tâches simples au modèle faible
+          (rapide et peu coûteux) et de réserver le modèle puissant aux tâches
+          complexes, optimisant ainsi coût et performance."
+      - id: q15
+        question:
+          "Pourquoi recommande-t-on de spécifier explicitement le format de
+          sortie attendu dans un prompt ?"
+        answers:
+          [
+            "Pour obtenir une réponse structurée exploitable par une application
+            (JSON, tableau, etc.)",
+            "Pour réduire automatiquement la facturation à l'API",
+            "Pour empêcher le modèle de répondre en français",
+            "Pour activer la génération d'images",
+          ]
+        correct: 0
+        explanation:
+          "Préciser le format de sortie (JSON, Markdown, tableau…) rend la
+          réponse prévisible et facilement exploitable par un programme ou une
+          interface."
+      - id: q16
+        question:
+          "Pourquoi est-il généralement recommandé d'écrire des prompts complets
+          et détaillés plutôt que des prompts courts et vagues ?"
+        answers:
+          [
+            "Cela réduit le coût d'inférence du modèle",
+            "Cela fournit au modèle le contexte nécessaire pour produire une
+            réponse pertinente et précise",
+            "Cela force le modèle à utiliser un LLM plus puissant",
+            "Cela garantit une réponse déterministe à chaque exécution",
+          ]
+        correct: 1
+        explanation:
+          "Un prompt détaillé apporte le contexte, les contraintes et les
+          attentes nécessaires au modèle, ce qui améliore significativement la
+          pertinence et la précision de la réponse."
+      - id: q17
+        question: "En quoi consiste la technique du Few-Shot Prompting ?"
+        answers:
+          [
+            "Limiter la longueur du prompt à quelques mots",
+            "Fournir au modèle quelques exemples de paires entrée/sortie pour
+            illustrer la tâche attendue",
+            "Interroger plusieurs LLM différents et comparer leurs réponses",
+            "Demander au modèle d'expliquer son raisonnement étape par étape",
+          ]
+        correct: 1
+        explanation:
+          "Le Few-Shot Prompting consiste à inclure dans le prompt quelques
+          exemples représentatifs de la tâche, afin de guider le modèle vers le
+          format et le style de réponse souhaités."
+      - id: q18
+        question: "Que vise la technique du Chain-of-Thought (CoT) prompting ?"
+        answers:
+          [
+            "Enchaîner plusieurs prompts dans un pipeline automatisé",
+            "Demander au modèle d'expliciter son raisonnement étape par étape
+            avant de conclure",
+            "Forcer le modèle à répondre en une seule phrase",
+            "Utiliser plusieurs modèles en parallèle pour voter sur la réponse",
+          ]
+        correct: 1
+        explanation:
+          "Le Chain-of-Thought invite le modèle à décomposer son raisonnement en
+          étapes intermédiaires, ce qui améliore notablement ses performances
+          sur les tâches complexes ou de raisonnement."
+      - id: q19
+        question:
+          "Quel est l'intérêt principal de coupler un LLM puissant et un LLM
+          plus faible dans une même application ?"
+        answers:
+          [
+            "Garantir l'absence totale d'hallucinations",
+            "Optimiser le compromis coût/performance en réservant le modèle
+            puissant aux tâches complexes",
+            "Augmenter la taille de la fenêtre de contexte disponible",
+            "Permettre au modèle faible de superviser le modèle puissant",
+          ]
+        correct: 1
+        explanation:
+          "Coupler les deux modèles permet de déléguer les tâches simples au LLM
+          faible (rapide et peu coûteux) et de réserver le LLM puissant aux
+          tâches complexes, optimisant ainsi le rapport coût/performance."
+      - id: q20
+        question:
+          "Dans le cadre d'un projet de développement assisté par IA, à quelles
+          étapes peut-on utiliser des prompts ?"
+        answers:
+          [
+            "Uniquement à l'étape de codage",
+            "Uniquement aux étapes de test et de déploiement",
+            "À toutes les étapes : idéation, spécification, conception, codage,
+            test et déploiement",
+            "Uniquement à l'étape d'idéation initiale",
+          ]
+        correct: 2
+        explanation:
+          "Les prompts peuvent assister le développeur tout au long du cycle de
+          vie d'un projet, depuis l'idéation et la spécification jusqu'au
+          codage, aux tests et au déploiement."
+  - id: outils-cloud
+    title: "Les outils du cloud"
+    questions:
+      - id: q1
+        question:
+          "Parmi les services suivants, lequel est un fournisseur de modèles de
+          langage accessibles via une API cloud ?"
+        answers: [OpenAI, Docker, Jenkins, Kubernetes]
+        correct: 0
+        explanation:
+          "OpenAI propose ses modèles (GPT-4, GPT-4o, etc.) via une API cloud
+          payante, contrairement aux autres outils cités qui concernent la
+          conteneurisation ou l'intégration continue."
+      - id: q2
+        question:
+          "Quelle est la bonne pratique principale pour gérer une clé d'API d'un
+          service cloud comme Claude ou OpenAI ?"
+        answers:
+          [
+            "La stocker dans une variable d'environnement hors du dépôt Git",
+            "La copier en dur dans le code source",
+            "La publier dans le README pour faciliter l'onboarding",
+            "La transmettre dans l'URL de chaque requête",
+          ]
+        correct: 0
+        explanation:
+          "Les clés d'API doivent rester secrètes : on les place dans des
+          variables d'environnement ou un gestionnaire de secrets, jamais dans
+          le code versionné."
+      - id: q3
+        question:
+          "Quel modèle tarifaire est le plus répandu pour les API de modèles de
+          langage cloud ?"
+        answers:
+          [
+            "Une facturation au nombre de tokens consommés (entrée et sortie)",
+            "Un forfait illimité gratuit à vie",
+            "Un paiement unique à l'installation",
+            "Une facturation à la ligne de code générée",
+          ]
+        correct: 0
+        explanation:
+          "Les fournisseurs comme OpenAI ou Anthropic facturent généralement à
+          l'usage, en comptant les tokens d'entrée (prompt) et de sortie
+          (réponse)."
+      - id: q4
+        question:
+          "Parmi ces outils, lesquels sont des plateformes permettant de générer
+          une application web complète à partir d'un prompt en langage naturel ?"
+        answers:
+          [
+            "Lovable et Bolt",
+            "ESLint et Prettier",
+            "Webpack et Vite",
+            "Git et GitHub Actions",
+          ]
+        correct: 0
+        explanation:
+          "Lovable et Bolt sont des assistants IA de type « no-code/low-code »
+          qui génèrent et déploient des applications web à partir d'instructions
+          en langage naturel."
+      - id: q5
+        question:
+          "Lequel de ces outils est un assistant IA intégré à l'éditeur de code,
+          capable de proposer des complétions et de dialoguer avec le
+          développeur ?"
+        answers: [GitHub Copilot, PostgreSQL, Nginx, OBS Studio]
+        correct: 0
+        explanation:
+          "GitHub Copilot (comme Windsurf ou Continue.dev) est un assistant IA
+          intégré à l'IDE qui suggère du code et permet un dialogue contextuel
+          avec le développeur."
+      - id: q6
+        question: "Quel fournisseur propose le modèle de langage Claude ?"
+        answers: [OpenAI, Anthropic, Google, Meta]
+        correct: 1
+        explanation:
+          "Claude est la famille de modèles développée par Anthropic,
+          concurrente de GPT (OpenAI) et Gemini (Google)."
+      - id: q7
+        question:
+          "Quelle est la bonne pratique pour gérer une clé d'API d'un service
+          cloud d'IA dans un projet ?"
+        answers:
+          [
+            "La coder en dur dans le code source",
+            "La stocker dans une variable d'environnement hors du dépôt",
+            "La publier dans le README pour faciliter l'usage",
+            "La partager via un commit pour l'équipe",
+          ]
+        correct: 1
+        explanation:
+          "Une clé d'API ne doit jamais être versionnée ; on la place dans une
+          variable d'environnement ou un gestionnaire de secrets."
+      - id: q8
+        question:
+          "Quel modèle tarifaire est le plus courant pour les API des
+          fournisseurs d'IA générative comme OpenAI ou Anthropic ?"
+        answers:
+          [
+            "Forfait mensuel illimité",
+            "Facturation au nombre de tokens consommés",
+            "Licence perpétuelle à l'achat",
+            "Gratuit sans limite",
+          ]
+        correct: 1
+        explanation:
+          "Ces APIs facturent généralement à l'usage, au nombre de tokens en
+          entrée et en sortie."
+      - id: q9
+        question:
+          "Parmi ces outils, lequel est un assistant de génération
+          d'applications web complètes à partir d'un prompt ?"
+        answers: [Lovable, ESLint, Webpack, Prettier]
+        correct: 0
+        explanation:
+          "Lovable (comme Bolt) est une plateforme qui génère des applications
+          web entières à partir d'instructions en langage naturel."
+      - id: q10
+        question:
+          "Lequel de ces outils est un assistant de code intégré à l'IDE, basé
+          sur des modèles d'IA ?"
+        answers: [Docker, GitHub Copilot, Kubernetes, Jenkins]
+        correct: 1
+        explanation:
+          "GitHub Copilot, comme Windsurf ou Continue.dev, s'intègre à l'éditeur
+          pour suggérer du code en temps réel."
+      - id: q11
+        question:
+          "Quel fournisseur est à l'origine du modèle de langage Claude ?"
+        answers: [OpenAI, Anthropic, Google DeepMind, Meta]
+        correct: 1
+        explanation:
+          "Claude est développé et commercialisé par la société Anthropic,
+          concurrente d'OpenAI."
+      - id: q12
+        question:
+          "Quelle est la bonne pratique pour gérer une clé d'API d'un service
+          cloud d'IA dans un projet ?"
+        answers:
+          [
+            "La coder en dur dans le code source",
+            "La stocker dans une variable d'environnement hors du dépôt",
+            "La publier dans le README pour faciliter l'onboarding",
+            "La partager par e-mail à toute l'équipe",
+          ]
+        correct: 1
+        explanation:
+          "Une clé d'API doit rester secrète : on l'injecte via une variable
+          d'environnement (ou un gestionnaire de secrets) et on l'exclut du
+          dépôt Git."
+      - id: q13
+        question:
+          "Comment sont généralement facturés les appels aux APIs de modèles de
+          langage comme OpenAI ou Claude ?"
+        answers:
+          [
+            "Au nombre de requêtes uniquement",
+            "À l'abonnement mensuel forfaitaire fixe sans limite",
+            "Au nombre de tokens consommés en entrée et en sortie",
+            "Au temps CPU du serveur",
+          ]
+        correct: 2
+        explanation:
+          "La tarification dominante des LLM cloud est basée sur les tokens : on
+          paie séparément les tokens d'entrée (prompt) et de sortie (réponse)."
+      - id: q14
+        question:
+          "Parmi ces outils, lequel est une plateforme de création
+          d'applications web assistée par IA à partir d'un prompt ?"
+        answers: [Lovable, Continue.dev, GitHub Copilot, Windsurf]
+        correct: 0
+        explanation:
+          "Lovable (comme Bolt) génère des applications web complètes à partir
+          d'une description en langage naturel, alors que Copilot, Continue.dev
+          et Windsurf assistent l'écriture de code dans l'IDE."
+      - id: q15
+        question:
+          "Quelle est la particularité de Continue.dev par rapport à GitHub
+          Copilot ?"
+        answers:
+          [
+            "C'est un service uniquement disponible en SaaS payant",
+            "C'est une extension open source qui permet de brancher différents
+            modèles, y compris locaux",
+            "Il ne fonctionne qu'avec les modèles d'OpenAI",
+            "Il remplace entièrement l'IDE",
+          ]
+        correct: 1
+        explanation:
+          "Continue.dev est une extension open source pour VS Code et JetBrains
+          qui permet de connecter divers fournisseurs de modèles, y compris des
+          modèles exécutés localement."
+      - id: q16
+        question:
+          "Parmi les services suivants, lequel est un fournisseur de modèles de
+          langage accessibles via une API cloud ?"
+        answers: [OpenAI, Docker, Jenkins, Kubernetes]
+        correct: 0
+        explanation:
+          "OpenAI propose des modèles comme GPT via une API cloud, alors que
+          Docker, Jenkins et Kubernetes sont des outils d'infrastructure et de
+          CI/CD."
+      - id: q17
+        question:
+          "Quelle est la meilleure pratique pour gérer une clé d'API d'un
+          service cloud d'IA dans un projet ?"
+        answers:
+          [
+            "La stocker dans une variable d'environnement ou un gestionnaire de
+            secrets",
+            "La committer dans le dépôt Git pour la partager avec l'équipe",
+            "La coder en dur dans le code source de l'application",
+            "La publier dans un fichier README pour la documentation",
+          ]
+        correct: 0
+        explanation:
+          "Les clés d'API doivent rester confidentielles : on les place dans des
+          variables d'environnement ou un coffre de secrets, jamais dans le
+          dépôt ou le code."
+      - id: q18
+        question:
+          "Comment est généralement facturée l'utilisation des APIs de modèles
+          de langage comme OpenAI ou Claude ?"
+        answers:
+          [
+            "Au nombre de tokens consommés en entrée et en sortie",
+            "Au nombre d'utilisateurs déclarés dans l'organisation",
+            "Forfaitairement, indépendamment de l'usage",
+            "Au nombre de fichiers stockés sur leurs serveurs",
+          ]
+        correct: 0
+        explanation:
+          "La tarification de ces APIs repose principalement sur le nombre de
+          tokens traités en entrée (prompt) et en sortie (réponse)."
+      - id: q19
+        question:
+          "Lovable et Bolt appartiennent à quelle catégorie d'outils d'IA ?"
+        answers:
+          [
+            "Plateformes de génération d'applications web assistée par IA",
+            "Systèmes d'exploitation orientés IA",
+            "Bases de données vectorielles",
+            "Outils de monitoring de production",
+          ]
+        correct: 0
+        explanation:
+          "Lovable et Bolt sont des plateformes qui génèrent des applications
+          web complètes à partir de prompts en langage naturel."
+      - id: q20
+        question:
+          "Parmi ces outils, lequel est un assistant de code open source que
+          l'on peut connecter à différents fournisseurs de modèles ?"
+        answers: [Continue.dev, GitHub Copilot, Windsurf, Lovable]
+        correct: 0
+        explanation:
+          "Continue.dev est une extension open source qui permet de brancher
+          divers modèles (OpenAI, Anthropic, locaux, etc.), contrairement aux
+          autres qui sont des produits propriétaires."
+  - id: llm
+    title: "Les LLM"
+    questions:
+      - id: q1
+        question:
+          "Dans un LLM, à quoi sert le paramètre temperature lors de la
+          génération de texte ?"
+        answers:
+          [
+            À contrôler le degré d'aléa et de créativité des sorties,
+            À limiter la longueur maximale de la réponse générée,
+            À définir la taille de la fenêtre de contexte du modèle,
+            À choisir la langue utilisée pour la réponse,
+          ]
+        correct: 0
+        explanation:
+          "La temperature module la distribution de probabilité des tokens : une
+          valeur basse rend la sortie plus déterministe, une valeur haute la
+          rend plus créative et variée."
+      - id: q2
+        question:
+          "Que permet de faire l'architecture RAG (Retrieval-Augmented
+          Generation) ?"
+        answers:
+          [
+            Réentraîner automatiquement le LLM à chaque requête utilisateur,
+            Enrichir le prompt du LLM avec des documents récupérés depuis une
+            base de connaissances,
+            Compresser les poids du modèle pour l'exécuter en local,
+            Réduire la température du modèle pour limiter les hallucinations,
+          ]
+        correct: 1
+        explanation:
+          "Le RAG combine un moteur de recherche (souvent vectoriel) et un LLM :
+          les documents pertinents sont récupérés puis injectés dans le contexte
+          du prompt pour produire une réponse fondée sur ces sources."
+      - id: q3
+        question:
+          "À quoi correspond la cosine similarity dans le contexte des text
+          embeddings ?"
+        answers:
+          [
+            Une mesure de la longueur en tokens d'un texte,
+            Une fonction de perte utilisée pour entraîner le LLM,
+            Une mesure de similarité sémantique entre deux vecteurs d'embedding,
+            Un algorithme de réduction de dimension comme t-SNE,
+          ]
+        correct: 2
+        explanation:
+          "La similarité cosinus mesure l'angle entre deux vecteurs : appliquée
+          à des embeddings, elle indique à quel point deux textes sont
+          sémantiquement proches, indépendamment de leur norme."
+      - id: q4
+        question: "Quel est le principal intérêt du format de fichier GGUF ?"
+        answers:
+          [
+            Stocker un modèle LLM quantifié et ses métadonnées dans un seul
+            fichier exécutable localement,
+            Définir un format standard d'échange de prompts entre fournisseurs
+            SaaS,
+            Servir de format de sortie structurée à la place du JSON,
+            Décrire l'architecture d'un pipeline RAG,
+          ]
+        correct: 0
+        explanation:
+          "GGUF est un format conçu pour distribuer des modèles (souvent
+          quantifiés) prêts à être chargés par des runtimes comme llama.cpp ou
+          LM Studio, avec leurs poids et métadonnées regroupés."
+      - id: q5
+        question:
+          "Parmi les usages suivants, lequel n'est pas une fonctionnalité
+          typique d'un LLM ?"
+        answers:
+          [
+            Résumer automatiquement un long document (summarization),
+            Classer un texte dans une catégorie (classification),
+            Extraire des entités nommées d'un texte,
+            Garantir mathématiquement l'exactitude d'un calcul numérique
+            complexe,
+          ]
+        correct: 3
+        explanation:
+          "Les LLM excellent en summarization, classification et extraction
+          d'information, mais ne garantissent pas l'exactitude des calculs :
+          pour cela, on les couple à des outils externes (calculatrice, code)."
+      - id: q6
+        question:
+          "À quoi sert principalement le format de fichier GGUF dans
+          l'écosystème des LLM ?"
+        answers:
+          [
+            Stocker les poids quantifiés d'un modèle pour une exécution locale
+            efficace,
+            Décrire le jeu de données d'entraînement d'un modèle,
+            Définir un protocole réseau pour interroger un LLM en SaaS,
+            Stocker les prompts et leurs réponses dans une base vectorielle,
+          ]
+        correct: 0
+        explanation:
+          "GGUF est un format binaire conçu pour distribuer des modèles (souvent
+          quantifiés) prêts à être chargés et exécutés en local par des moteurs
+          comme llama.cpp ou LM Studio."
+      - id: q7
+        question:
+          "Quelle est la finalité d'une architecture RAG (Retrieval-Augmented
+          Generation) ?"
+        answers:
+          [
+            Réduire automatiquement la taille des modèles par quantification,
+            Enrichir le prompt du LLM avec des documents pertinents récupérés
+            dans une base de connaissances,
+            Réentraîner le LLM en continu sur les questions des utilisateurs,
+            Accélérer l'inférence en mettant en cache les réponses précédentes,
+          ]
+        correct: 1
+        explanation:
+          "Dans une architecture RAG, on récupère des documents pertinents
+          (souvent via une recherche vectorielle) et on les injecte dans le
+          contexte du LLM afin qu'il génère une réponse fondée sur ces sources."
+      - id: q8
+        question:
+          "Pourquoi utilise-t-on la similarité cosinus sur des embeddings de
+          texte ?"
+        answers:
+          [
+            Pour compresser les vecteurs avant stockage,
+            Pour mesurer la proximité sémantique entre deux textes via l'angle
+            entre leurs vecteurs,
+            Pour chiffrer les embeddings avant transmission,
+            Pour entraîner le modèle d'embedding lui-même,
+          ]
+        correct: 1
+        explanation:
+          "La similarité cosinus compare l'orientation de deux vecteurs
+          d'embedding : plus l'angle est petit, plus les textes sont
+          sémantiquement proches, indépendamment de leur norme."
+      - id: q9
+        question:
+          "Quel est l'intérêt de demander à un LLM une sortie au format JSON
+          structuré ?"
+        answers:
+          [
+            Réduire le coût de l'inférence sur le serveur,
+            Améliorer la créativité des réponses générées,
+            Permettre une exploitation programmatique fiable du résultat par une
+            application,
+            Forcer le modèle à répondre toujours en anglais,
+          ]
+        correct: 2
+        explanation:
+          "Une sortie JSON structurée respecte un schéma prévisible, ce qui
+          permet à une application de parser et d'utiliser directement les
+          champs sans recourir à du traitement de texte fragile."
+      - id: q10
+        question:
+          "Quel outil est principalement utilisé pour télécharger et exécuter
+          facilement des LLM open source en local sur un poste de développeur ?"
+        answers: [LM Studio, Microsoft Excel, Postman, Wireshark]
+        correct: 0
+        explanation:
+          "LM Studio fournit une interface graphique pour rechercher des modèles
+          (souvent depuis Hugging Face), les télécharger au format GGUF et les
+          exécuter localement."
+      - id: q11
+        question:
+          "Dans un LLM, à quoi sert le paramètre 'temperature' lors de la
+          génération de texte ?"
+        answers:
+          [
+            À limiter la longueur maximale de la réponse générée,
+            À contrôler le caractère aléatoire et la créativité des sorties,
+            À définir la taille du contexte en tokens,
+            À choisir la langue de la réponse,
+          ]
+        correct: 1
+        explanation:
+          "La temperature ajuste l'aléa du tirage des tokens : une valeur basse
+          rend les réponses plus déterministes, une valeur haute les rend plus
+          variées et créatives."
+      - id: q12
+        question:
+          "Quel format de fichier est couramment utilisé pour distribuer des
+          modèles LLM quantifiés exécutables en local (notamment avec llama.cpp)
+          ?"
+        answers: [ONNX, GGUF, Parquet, SafeTensors uniquement]
+        correct: 1
+        explanation:
+          "Le format GGUF est conçu pour stocker des modèles LLM quantifiés et
+          leurs métadonnées, et il est largement utilisé par llama.cpp et les
+          outils dérivés."
+      - id: q13
+        question:
+          "Quel outil permet de télécharger et d'exécuter facilement des LLM en
+          local sur un poste de travail via une interface graphique ?"
+        answers: [LM Studio, Kubernetes, Grafana, Postman]
+        correct: 0
+        explanation:
+          "LM Studio est une application de bureau qui permet de rechercher,
+          télécharger depuis Hugging Face puis exécuter des LLM en local avec
+          une interface graphique."
+      - id: q14
+        question:
+          "À quoi sert la cosine similarity appliquée à des text embeddings ?"
+        answers:
+          [
+            À compresser les vecteurs pour réduire leur dimension,
+            À mesurer la proximité sémantique entre deux textes représentés par
+            des vecteurs,
+            À entraîner le modèle d'embedding,
+            À chiffrer les vecteurs avant stockage,
+          ]
+        correct: 1
+        explanation:
+          "La similarité cosinus compare l'orientation de deux vecteurs
+          d'embedding : plus elle est proche de 1, plus les textes sont
+          sémantiquement similaires."
+      - id: q15
+        question:
+          "Dans une architecture RAG (Retrieval-Augmented Generation), quel est
+          le rôle de l'étape de retrieval ?"
+        answers:
+          [
+            Réentraîner le LLM sur de nouvelles données,
+            Récupérer des passages pertinents dans une base documentaire pour
+            enrichir le prompt envoyé au LLM,
+            Quantifier le modèle pour l'exécuter en local,
+            Convertir la réponse du LLM en JSON structuré,
+          ]
+        correct: 1
+        explanation:
+          "Le retrieval recherche, généralement via des embeddings et une
+          similarité cosinus, les documents pertinents qui sont ensuite ajoutés
+          au contexte du LLM pour fonder sa réponse."
+      - id: q16
+        question:
+          "Dans un LLM, à quoi sert principalement le paramètre 'temperature'
+          lors de la génération ?"
+        answers:
+          [
+            Contrôler la créativité et l'aléa des réponses,
+            Limiter le nombre de tokens générés,
+            Définir la taille du contexte,
+            Choisir le modèle utilisé,
+          ]
+        correct: 0
+        explanation:
+          "La température ajuste la distribution de probabilité des tokens :
+          basse, elle rend les sorties plus déterministes ; haute, plus
+          créatives et variées."
+      - id: q17
+        question:
+          "Que désigne le paramètre 'top_p' (nucleus sampling) dans un LLM ?"
+        answers:
+          [
+            "Le nombre maximal de tokens en sortie",
+            "La probabilité cumulée des tokens candidats retenus pour
+            l'échantillonnage",
+            "Le seuil minimal de confiance du modèle",
+            "La pondération des tokens du prompt",
+          ]
+        correct: 1
+        explanation:
+          "Le top_p restreint l'échantillonnage au plus petit ensemble de tokens
+          dont la somme des probabilités atteint p, filtrant les choix peu
+          probables."
+      - id: q18
+        question:
+          "À quoi correspond un fichier au format GGUF dans l'écosystème des LLM
+          ?"
+        answers:
+          [
+            "Un format de dataset d'entraînement",
+            "Un format de prompt structuré",
+            "Un format binaire de stockage de modèles quantisés exécutables en
+            local",
+            "Un protocole d'API pour LLM SaaS",
+          ]
+        correct: 2
+        explanation:
+          "GGUF est un format de fichier (successeur de GGML) utilisé notamment
+          par llama.cpp pour distribuer des modèles quantisés exécutables
+          localement."
+      - id: q19
+        question:
+          "Dans une architecture RAG (Retrieval-Augmented Generation), quel est
+          le rôle des embeddings ?"
+        answers:
+          [
+            "Compresser les poids du modèle",
+            "Représenter les documents et la requête sous forme de vecteurs pour
+            rechercher les passages pertinents",
+            "Chiffrer les données envoyées au LLM",
+            "Générer directement la réponse finale",
+          ]
+        correct: 1
+        explanation:
+          "Le RAG transforme documents et requête en vecteurs (embeddings) puis
+          utilise une similarité (souvent cosinus) pour retrouver les passages à
+          fournir au LLM."
+      - id: q20
+        question:
+          "Quel outil permet de télécharger et exécuter facilement des LLM open
+          source en local sur son poste ?"
+        answers: [LM Studio, Google Colab, Postman, Figma]
+        correct: 0
+        explanation:
+          "LM Studio est une application de bureau permettant de rechercher (via
+          Hugging Face), télécharger et exécuter des LLM locaux, notamment au
+          format GGUF."
+  - id: outils-developpement-ia
+    title: "Les outils pour développer avec l'IA"
+    questions:
+      - id: q1
+        question:
+          "À quoi sert principalement l'API d'OpenAI dans une application ?"
+        answers:
+          [
+            Héberger des bases de données SQL,
+            Appeler des modèles d'IA comme GPT depuis son code,
+            Compiler du code TypeScript,
+            Gérer l'authentification des utilisateurs,
+          ]
+        correct: 1
+        explanation:
+          "L'API d'OpenAI permet d'envoyer des requêtes à des modèles d'IA (GPT,
+          embeddings, etc.) depuis une application via HTTP."
+      - id: q2
+        question:
+          "Pourquoi Hugging Face est-il souvent surnommé « le GitHub de l'IA » ?"
+        answers:
+          [
+            "Parce qu'il appartient à GitHub",
+            "Parce qu'il héberge et partage des modèles, datasets et espaces de
+            démonstration",
+            "Parce qu'il sert uniquement à versionner du code Python",
+            "Parce qu'il remplace Git pour les projets de machine learning",
+          ]
+        correct: 1
+        explanation:
+          "Hugging Face est une plateforme de partage collaborative de modèles,
+          de jeux de données et de démos, à la manière de GitHub pour le code."
+      - id: q3
+        question:
+          "Dans l'écosystème de l'IA, à quoi correspond un « transformer » ?"
+        answers:
+          [
+            Un type de base de données vectorielle,
+            Une architecture de réseau de neurones basée sur l'attention,
+            Un format de fichier pour datasets,
+            Un outil de conversion de modèles ONNX,
+          ]
+        correct: 1
+        explanation:
+          "Le transformer est une architecture de réseau de neurones reposant
+          sur le mécanisme d'attention, à la base des LLM modernes."
+      - id: q4
+        question: "Quel est le rôle principal de LangChain ?"
+        answers:
+          [
+            "Entraîner des modèles de langage depuis zéro",
+            "Orchestrer des LLM avec des outils, mémoires et sources de données",
+            "Fournir une interface graphique pour ChatGPT",
+            "Compresser des modèles pour mobile",
+          ]
+        correct: 1
+        explanation:
+          "LangChain est un framework qui facilite la composition d'applications
+          LLM en chaînant prompts, outils, mémoires et sources de données."
+      - id: q5
+        question: "Quel est l'intérêt principal de LM Studio ?"
+        answers:
+          [
+            Déployer des modèles dans le cloud AWS,
+            Exécuter des LLM localement sur sa propre machine,
+            Annoter des datasets d'images,
+            Générer des clés API OpenAI,
+          ]
+        correct: 1
+        explanation:
+          "LM Studio permet de télécharger et d'exécuter des LLM en local, sans
+          dépendre d'une API externe, ce qui préserve la confidentialité des
+          données."
+      - id: q6
+        question: "Que permet principalement l'API d'OpenAI ?"
+        answers:
+          [
+            Héberger gratuitement des modèles open source,
+            Accéder à des modèles d'IA via des requêtes HTTP,
+            Compiler du code Python en binaire,
+            Gérer un dépôt Git distant,
+          ]
+        correct: 1
+        explanation:
+          "L'API d'OpenAI expose des modèles (GPT, embeddings, etc.) via des
+          requêtes HTTP authentifiées par clé."
+      - id: q7
+        question: 'Pourquoi qualifie-t-on Hugging Face de "GitHub de l''IA" ?'
+        answers:
+          [
+            "Parce qu'il appartient à GitHub",
+            "Parce qu'il héberge et partage des modèles, datasets et démos d'IA",
+            "Parce qu'il sert uniquement à versionner du code Python",
+            "Parce qu'il remplace npm pour JavaScript",
+          ]
+        correct: 1
+        explanation:
+          "Hugging Face est une plateforme communautaire qui centralise modèles,
+          datasets et Spaces, à la manière d'un GitHub dédié à l'IA."
+      - id: q8
+        question: "À quoi sert principalement la bibliothèque LangChain ?"
+        answers:
+          [
+            "Entraîner des modèles de vision par ordinateur",
+            "Orchestrer des LLM avec des outils, mémoires et chaînes d'appels",
+            "Compresser des datasets volumineux",
+            "Déployer des conteneurs Docker",
+          ]
+        correct: 1
+        explanation:
+          "LangChain fournit une API pour composer des applications basées sur
+          des LLM en chaînant prompts, outils, mémoires et sources de données."
+      - id: q9
+        question: "Quel est l'intérêt principal de LM Studio ?"
+        answers:
+          [
+            Exécuter des LLM localement sur sa propre machine,
+            Publier automatiquement des modèles sur Hugging Face,
+            Fournir une API cloud payante d'OpenAI,
+            Convertir du code Java en Python,
+          ]
+        correct: 0
+        explanation:
+          "LM Studio permet de télécharger et faire tourner des LLM en local,
+          sans dépendre d'une API distante."
+      - id: q10
+        question:
+          "Quelle est une bonne pratique lors de l'utilisation d'une API d'IA
+          comme OpenAI ?"
+        answers:
+          [
+            Stocker la clé API en clair dans le dépôt Git,
+            Partager la clé API sur un canal public d'équipe,
+            Conserver la clé API dans une variable d'environnement hors du dépôt,
+            Coder la clé API directement dans le HTML,
+          ]
+        correct: 2
+        explanation:
+          "Les clés API doivent être conservées dans des variables
+          d'environnement ou un coffre de secrets, jamais commitées dans le code
+          source."
+      - id: q11
+        question: "Que permet principalement l'API d'OpenAI ?"
+        answers:
+          [
+            Héberger des dépôts Git,
+            Interroger des modèles de langage via des requêtes HTTP,
+            Compiler du code Python en binaire,
+            Gérer des bases de données relationnelles,
+          ]
+        correct: 1
+        explanation:
+          "L'API d'OpenAI expose ses modèles (GPT, embeddings, etc.) via des
+          appels HTTP afin de les intégrer dans des applications."
+      - id: q12
+        question:
+          "Pourquoi Hugging Face est-il souvent surnommé « le GitHub de l'IA » ?"
+        answers:
+          [
+            "C'est une plateforme de partage de modèles, de datasets et de démos
+            d'IA",
+            "C'est un outil de gestion de versions exclusivement pour Python",
+            "C'est un service de déploiement de conteneurs Docker",
+            "C'est un éditeur de code en ligne dédié au machine learning",
+          ]
+        correct: 0
+        explanation:
+          "Hugging Face héberge et partage publiquement des modèles, datasets et
+          Spaces, à la manière de GitHub pour le code."
+      - id: q13
+        question: "À quoi sert principalement la bibliothèque LangChain ?"
+        answers:
+          [
+            Entraîner des modèles de vision par ordinateur,
+            Orchestrer des LLM avec des sources de données et des outils
+            externes,
+            Remplacer les frameworks web comme React,
+            Compresser les poids des modèles transformers,
+          ]
+        correct: 1
+        explanation:
+          "LangChain fournit une API pour chaîner des appels à des LLM avec de
+          la mémoire, des outils et des sources de données (RAG, agents, etc.)."
+      - id: q14
+        question: "Quel est l'intérêt principal de LM Studio ?"
+        answers:
+          [
+            Annoter des datasets en ligne,
+            Exécuter des modèles de langage en local sur sa machine,
+            Déployer des modèles sur le cloud OpenAI,
+            Convertir du code Java en Python,
+          ]
+        correct: 1
+        explanation:
+          "LM Studio permet de télécharger et d'exécuter localement des LLM open
+          source, sans dépendre d'une API distante."
+      - id: q15
+        question:
+          "Quelle est une bonne pratique lors de l'utilisation d'outils d'IA
+          générative dans le développement ?"
+        answers:
+          [
+            Envoyer systématiquement des secrets et clés d'API dans les prompts,
+            Relire et tester le code généré avant de l'intégrer,
+            Désactiver toute revue de code humaine,
+            Considérer les réponses du LLM comme toujours exactes,
+          ]
+        correct: 1
+        explanation:
+          "Le code généré par un LLM peut contenir des erreurs ou des failles :
+          il doit être relu, testé et validé comme tout autre code."
+      - id: q16
+        question:
+          "À quoi sert principalement l'API d'OpenAI pour un développeur ?"
+        answers:
+          [
+            Héberger des dépôts de code source,
+            Accéder par requêtes HTTP à des modèles d'IA comme GPT,
+            Compiler du code Python en binaire,
+            Gérer des bases de données relationnelles,
+          ]
+        correct: 1
+        explanation:
+          "L'API d'OpenAI expose via HTTP des modèles (GPT, embeddings, etc.)
+          que les applications peuvent appeler pour intégrer des fonctionnalités
+          d'IA."
+      - id: q17
+        question:
+          "Pourquoi Hugging Face est-il souvent surnommé « le GitHub de l'IA » ?"
+        answers:
+          [
+            "Parce qu'il appartient à GitHub",
+            "Parce qu'il héberge et partage des modèles, datasets et espaces de
+            démonstration",
+            "Parce qu'il ne propose que du code source sans modèles",
+            "Parce qu'il remplace les systèmes de gestion de versions",
+          ]
+        correct: 1
+        explanation:
+          "Hugging Face est une plateforme communautaire qui centralise modèles,
+          jeux de données et démos, à la manière de GitHub pour le code."
+      - id: q18
+        question:
+          "Dans l'écosystème Hugging Face, qu'est-ce qu'un « transformer » ?"
+        answers:
+          [
+            Un format de fichier pour stocker des datasets,
+            Une architecture de réseau de neurones basée sur l'attention,
+            Un outil de conversion de modèles en ONNX,
+            Un type de licence open source,
+          ]
+        correct: 1
+        explanation:
+          "Les transformers sont une architecture de réseaux de neurones
+          reposant sur le mécanisme d'attention, à la base de la majorité des
+          LLM modernes."
+      - id: q19
+        question: "Quel est l'objectif principal du framework LangChain ?"
+        answers:
+          [
+            "Entraîner des modèles de langage à partir de zéro",
+            "Orchestrer des LLM avec des outils, sources de données et chaînes
+            de traitement",
+            "Fournir une interface graphique pour annoter des datasets",
+            "Remplacer les API HTTP par du gRPC",
+          ]
+        correct: 1
+        explanation:
+          "LangChain facilite la construction d'applications utilisant des LLM
+          en orchestrant prompts, mémoire, outils externes et sources de
+          données."
+      - id: q20
+        question: "Quel est l'intérêt principal d'utiliser LM Studio ?"
+        answers:
+          [
+            Déployer des modèles uniquement dans le cloud public,
+            Exécuter et tester des modèles de langage en local sur sa machine,
+            Annoter manuellement des images pour la vision par ordinateur,
+            Convertir automatiquement du code JavaScript en Python,
+          ]
+        correct: 1
+        explanation:
+          "LM Studio permet de télécharger et faire tourner des LLM en local, ce
+          qui préserve la confidentialité des données et évite les coûts d'API."
