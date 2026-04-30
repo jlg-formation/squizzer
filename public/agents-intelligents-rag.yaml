@@ -1,1100 +1,2574 @@
-title: "Développer ses propres agents intelligents (RAG, RIG, GraphRAG, StructRAG)"
+title:
+  "Développer ses propres agents intelligents (RAG, RIG, GraphRAG, StructRAG) —
+  ORSYS IAW"
 chapters:
-  - id: introduction-ia-generative
+  - id: introduction-ia-generative-agents
     title: "Introduction à l'IA générative et aux agents intelligents"
     questions:
       - id: q1
-        question: "Qu'est-ce qu'un modèle d'IA générative ?"
+        question: "Qu'est-ce que l'IA générative ?"
         answers:
-          - "Un modèle qui produit de nouveaux contenus (texte, image, code) à partir d'un prompt"
-          - "Un moteur de recherche full-text basé sur des index inversés"
-          - "Un système expert codé manuellement avec des règles métier"
-          - "Une base de données relationnelle optimisée pour l'analyse"
+          - "Une branche de l'IA capable de produire de nouveaux contenus
+            (texte, image, audio, code) à partir de données d'entraînement"
+          - "Un système expert basé exclusivement sur des règles écrites par des
+            humains"
+          - "Une méthode statistique limitée à la classification d'éléments
+            existants"
+          - "Un moteur de recherche qui se contente d'indexer des documents
+            existants"
         correct: 0
-        explanation: "Une IA générative produit du contenu original (texte, image, audio, code) à partir d'une distribution apprise."
+        explanation:
+          "L'IA générative désigne les modèles capables de générer de nouveaux
+          contenus originaux (texte, image, son, code) en s'appuyant sur des
+          distributions apprises lors de l'entraînement."
       - id: q2
-        question: "Quel est le principal mécanisme de fonctionnement d'un grand modèle de langage (LLM) ?"
+        question:
+          "Quelle est la différence fondamentale entre IA générative et IA
+          discriminative ?"
         answers:
-          - "La prédiction du prochain token la plus probable étant donné un contexte"
-          - "L'application de règles grammaticales codées par des linguistes"
-          - "La recherche exacte de la réponse dans une base SQL"
-          - "Le calcul d'un score TF-IDF sur les documents disponibles"
-        correct: 0
-        explanation: "Un LLM est un modèle auto-régressif qui prédit le token suivant à partir des tokens précédents."
-      - id: q3
-        question: "Quelle est la différence essentielle entre IA discriminative et IA générative ?"
-        answers:
-          - "La discriminative classe ou prédit, la générative produit de nouveaux échantillons"
-          - "La générative est toujours supervisée, la discriminative non supervisée"
-          - "La discriminative ne fonctionne que sur des images, la générative sur du texte"
+          - "L'IA discriminative génère de nouveaux contenus, l'IA générative se
+            contente de classer"
+          - "L'IA générative apprend à produire de nouvelles données, l'IA
+            discriminative apprend à séparer ou classer des données existantes"
           - "Il n'y a aucune différence, ce sont deux noms pour la même approche"
-        correct: 0
-        explanation: "Discriminative modélise P(y|x) (classification), générative modélise P(x) ou P(x|y) pour générer de nouveaux x."
+          - "L'IA générative ne fonctionne qu'avec du texte, l'IA discriminative
+            qu'avec des images"
+        correct: 1
+        explanation:
+          "Un modèle discriminatif apprend une frontière de décision pour
+          classer des entrées, tandis qu'un modèle génératif apprend la
+          distribution des données afin d'en produire de nouveaux échantillons."
+      - id: q3
+        question:
+          "Parmi les exemples suivants, lequel illustre une application typique
+          de l'IA générative en entreprise ?"
+        answers:
+          - "La détection d'anomalies binaires dans des logs réseau"
+          - "Le tri automatique d'e-mails entrants en spam ou non-spam"
+          - "La rédaction assistée de comptes rendus, e-mails et synthèses de
+            documents"
+          - "Le calcul déterministe de la paie mensuelle des salariés"
+        correct: 2
+        explanation:
+          "La rédaction et la synthèse automatisées de documents (comptes
+          rendus, e-mails, résumés) sont des cas d'usage emblématiques de l'IA
+          générative en entreprise."
       - id: q4
-        question: "Qu'est-ce qu'un agent conversationnel classique (chatbot à règles) ?"
+        question: "Qu'est-ce qu'un agent intelligent ?"
         answers:
-          - "Un système qui répond via un arbre de décision et des intentions prédéfinies"
-          - "Un LLM entraîné sur des milliards de paramètres"
-          - "Un agent qui apprend par renforcement en continu"
-          - "Un système qui génère librement du texte sans contrainte"
-        correct: 0
-        explanation: "Les chatbots classiques s'appuient sur des intents, entités et arbres de dialogue scriptés."
+          - "Un programme figé qui exécute toujours la même séquence
+            d'instructions"
+          - "Une entité logicielle capable de percevoir son environnement,
+            raisonner et agir de façon autonome pour atteindre un objectif"
+          - "Une interface graphique permettant de visualiser des données"
+          - "Un simple formulaire web qui collecte des informations utilisateur"
+        correct: 1
+        explanation:
+          "Un agent intelligent est un système autonome qui perçoit son
+          environnement, prend des décisions en fonction d'un objectif, et agit
+          en conséquence, souvent à l'aide d'outils."
       - id: q5
-        question: "Quelle est la caractéristique principale d'un agent basé sur l'IA générative ?"
+        question:
+          "Quelle différence essentielle distingue un agent conversationnel
+          classique d'un agent basé sur l'IA générative ?"
         answers:
-          - "Il formule des réponses originales en langage naturel à partir d'un LLM"
-          - "Il ne fonctionne que sur des questions présentes dans sa base de règles"
-          - "Il nécessite de programmer chaque réponse possible à l'avance"
-          - "Il ne peut pas être combiné avec une base de connaissances externe"
+          - "L'agent conversationnel classique repose souvent sur des scénarios
+            et règles prédéfinis, alors que l'agent basé sur l'IA générative
+            produit des réponses dynamiques à partir d'un modèle de langage"
+          - "L'agent basé sur l'IA générative ne peut pas dialoguer avec un
+            utilisateur"
+          - "L'agent conversationnel classique comprend mieux le langage naturel
+            qu'un modèle génératif"
+          - "Il n'existe aucune différence, les deux utilisent les mêmes
+            mécanismes internes"
         correct: 0
-        explanation: "Un agent basé sur un LLM génère ses réponses dynamiquement, sans script de dialogue exhaustif."
+        explanation:
+          "Les chatbots traditionnels s'appuient sur des arbres de dialogue ou
+          des règles, tandis qu'un agent basé sur l'IA générative s'appuie sur
+          un LLM pour produire des réponses contextuelles et flexibles."
       - id: q6
-        question: "Quelle est la principale différence entre un agent conversationnel classique et un agent basé sur l'IA générative ?"
+        question:
+          "Quels sont les trois composants fondamentaux d'un agent intelligent ?"
         answers:
-          - "L'agent IA générative comprend des formulations inédites alors que le chatbot classique dépend d'intents prédéfinis"
-          - "Le chatbot classique parle plusieurs langues, l'agent IA non"
-          - "Seul le chatbot classique peut afficher du texte"
-          - "L'agent IA générative ne peut traiter que des chiffres"
+          - "Perception, raisonnement, action"
+          - "Entrée, sortie, mémoire"
+          - "Capteur, base de données, interface"
+          - "Prompt, modèle, réponse"
         correct: 0
-        explanation: "Le LLM généralise à des formulations non vues, le chatbot scripté est limité à ses intents."
+        explanation:
+          "Un agent intelligent perçoit son environnement, raisonne sur les
+          informations recueillies, puis agit en conséquence."
       - id: q7
-        question: "Quelle est une limite intrinsèque d'un LLM utilisé seul, sans augmentation ?"
+        question:
+          "Quel type d'agent combine réactivité immédiate et planification à
+          long terme ?"
         answers:
-          - "Il peut halluciner et sa connaissance est figée à sa date d'entraînement"
-          - "Il ne peut pas comprendre le langage naturel"
-          - "Il consomme zéro ressource de calcul"
-          - "Il garantit toujours une réponse vérifiée et sourcée"
-        correct: 0
-        explanation: "Un LLM seul peut produire des affirmations fausses (hallucinations) et ignore les faits postérieurs à son entraînement."
+          - "Agent réactif"
+          - "Agent délibératif"
+          - "Agent hybride"
+          - "Agent stochastique"
+        correct: 2
+        explanation:
+          "L'agent hybride associe la rapidité d'un agent réactif à la capacité
+          de planification d'un agent délibératif."
       - id: q8
-        question: "À quoi sert un prompt système (system prompt) ?"
+        question:
+          "Quel est le rôle principal du LLM au sein d'un agent intelligent ?"
         answers:
-          - "Définir le rôle, le ton et les contraintes globales de l'agent"
-          - "Stocker les mots de passe utilisateurs"
-          - "Compiler le code source du modèle"
-          - "Choisir la version du GPU utilisée"
-        correct: 0
-        explanation: "Le system prompt cadre le comportement de l'agent (persona, règles, format de sortie)."
+          - "Stocker durablement les données métier de l'entreprise"
+          - "Assurer le raisonnement et la génération de langage naturel"
+          - "Exécuter directement les appels réseau et systèmes"
+          - "Fournir l'interface graphique utilisateur"
+        correct: 1
+        explanation:
+          "Le LLM sert de moteur de raisonnement et de compréhension/génération
+          du langage, orchestrant les décisions de l'agent."
       - id: q9
-        question: "Que désigne la « fenêtre de contexte » d'un LLM ?"
+        question:
+          "Quelle est une limite majeure des agents purement conversationnels
+          par rapport aux agents IA générative ?"
         answers:
-          - "Le nombre maximum de tokens que le modèle peut traiter en entrée et sortie"
-          - "L'espace disque alloué au modèle"
-          - "Le temps de réponse maximum autorisé"
-          - "Le nombre de paramètres du modèle"
-        correct: 0
-        explanation: "La context window limite la quantité de texte (en tokens) qu'un LLM peut prendre en compte simultanément."
+          - "Ils ne peuvent pas comprendre le langage naturel"
+          - "Ils ne peuvent pas exécuter d'actions concrètes ni utiliser
+            d'outils externes"
+          - "Ils consomment trop de ressources GPU"
+          - "Ils ne savent pas afficher de texte à l'écran"
+        correct: 1
+        explanation:
+          "Les agents conversationnels se limitent au dialogue, alors que les
+          agents IA générative peuvent appeler des outils et accomplir des
+          tâches concrètes."
       - id: q10
-        question: "Que signifie « génération augmentée » dans le contexte de l'IA ?"
+        question:
+          "Que désigne globalement l'architecture RAG (Retrieval-Augmented
+          Generation) ?"
         answers:
-          - "Enrichir la génération du LLM avec des informations externes récupérées au moment de la requête"
-          - "Augmenter le nombre de paramètres du modèle"
-          - "Doubler la taille du jeu de données d'entraînement"
-          - "Compresser le modèle pour le faire tenir sur mobile"
-        correct: 0
-        explanation: "L'augmentation consiste à fournir au LLM du contexte externe (documents, données) pour qu'il génère une réponse mieux ancrée."
+          - "Un modèle de langage entraîné sans données externes"
+          - "Une approche qui récupère des documents pertinents pour enrichir le
+            contexte du LLM avant la génération"
+          - "Un protocole réseau pour interconnecter plusieurs LLM"
+          - "Une technique de compression des poids d'un modèle"
+        correct: 1
+        explanation:
+          "Le RAG combine une étape de recherche d'information dans une base
+          documentaire avec la génération par un LLM, qui s'appuie sur le
+          contexte récupéré."
       - id: q11
-        question: "Que signifie l'acronyme RAG ?"
+        question:
+          "Quelle est la particularité de l'architecture RIG
+          (Retrieval-Interleaved Generation) par rapport au RAG classique ?"
         answers:
-          - "Retrieval-Augmented Generation"
-          - "Random Access Generation"
-          - "Recurrent Adversarial Graph"
-          - "Reinforced Agent Gateway"
+          - "Elle entrelace plusieurs étapes de récupération et de génération au
+            cours de la réponse"
+          - "Elle remplace le modèle de langage par un moteur de règles
+            symboliques"
+          - "Elle interdit toute récupération externe et s'appuie uniquement sur
+            le modèle"
+          - "Elle se limite à indexer des images au lieu de documents textuels"
         correct: 0
-        explanation: "RAG = Retrieval-Augmented Generation : récupérer puis générer."
+        explanation:
+          "Le RIG alterne récupération et génération de manière itérative, au
+          lieu de récupérer une seule fois en amont comme le RAG classique."
       - id: q12
-        question: "Que signifie l'acronyme RIG ?"
+        question:
+          "Sur quoi repose principalement l'architecture GraphRAG pour organiser
+          les connaissances ?"
         answers:
-          - "Retrieval Interleaved Generation"
-          - "Recursive Inference Graph"
-          - "Real-time Indexing Gateway"
-          - "Robust Iterative Grounding"
+          - "Sur un graphe de connaissances reliant entités et relations
+            extraites des documents"
+          - "Sur une base de données purement relationnelle sans index
+            sémantique"
+          - "Sur un simple cache clé-valeur des dernières requêtes utilisateur"
+          - "Sur un modèle de diffusion d'images conditionné par le texte"
         correct: 0
-        explanation: "RIG = Retrieval Interleaved Generation : la récupération est entrelacée pendant la génération."
+        explanation:
+          "GraphRAG construit un graphe d'entités et de relations à partir du
+          corpus, ce qui permet des requêtes structurées et un raisonnement
+          multi-sauts."
       - id: q13
-        question: "Que désigne GraphRAG en quelques mots ?"
+        question: "Que vise principalement l'architecture StructRAG ?"
         answers:
-          - "Une approche RAG qui exploite un graphe de connaissances pour structurer la récupération"
-          - "Un format binaire de stockage des images"
-          - "Un protocole réseau de transfert de fichiers"
-          - "Un éditeur visuel de prompts"
+          - "Structurer les informations récupérées dans un format adapté à la
+            tâche avant la génération"
+          - "Supprimer toute étape de récupération pour accélérer les réponses"
+          - "Forcer le modèle à ne répondre qu'en JSON brut sans contexte"
+          - "Remplacer le LLM par un moteur SQL classique"
         correct: 0
-        explanation: "GraphRAG s'appuie sur un knowledge graph pour relier entités et améliorer le raisonnement multi-hop."
+        explanation:
+          "StructRAG met l'accent sur la structuration intermédiaire des
+          connaissances récupérées (tables, arbres, graphes, etc.) afin
+          d'améliorer le raisonnement du modèle."
       - id: q14
-        question: "Que désigne StructRAG en quelques mots ?"
+        question:
+          "Dans quel cas d'usage un agent intelligent surpasse-t-il typiquement
+          un chatbot conversationnel classique ?"
         answers:
-          - "Une approche RAG qui privilégie l'exploitation de données structurées (tableaux, schémas)"
-          - "Un langage de requête concurrent de SQL"
-          - "Un compilateur LLM pour Rust"
-          - "Une bibliothèque CSS pour les dashboards"
+          - "Exécuter une suite d'actions outillées pour résoudre une tâche
+            complexe en plusieurs étapes"
+          - "Répondre à une simple question de culture générale sans contexte"
+          - "Reformuler un texte court sans accéder à des données externes"
+          - "Traduire une phrase isolée d'une langue à une autre"
         correct: 0
-        explanation: "StructRAG vise à mieux exploiter des données structurées pour des réponses précises et organisées."
+        explanation:
+          "Un agent excelle quand il faut planifier, appeler des outils et
+          enchaîner plusieurs étapes, là où un chatbot classique se limite à une
+          réponse textuelle directe."
       - id: q15
-        question: "Quel est un cas d'usage typique d'un agent intelligent en entreprise ?"
+        question:
+          "Quelle est la différence entre un prompt utilisateur et une
+          instruction système (system prompt) ?"
         answers:
-          - "Assistant interne qui répond aux questions RH à partir de la documentation officielle"
-          - "Compilation du code source vers du binaire"
-          - "Sauvegarde automatique des disques durs"
-          - "Configuration du firewall réseau"
+          - "L'instruction système définit le rôle et les règles du modèle, le
+            prompt utilisateur exprime la demande ponctuelle"
+          - "Le prompt utilisateur est toujours ignoré au profit de
+            l'instruction système"
+          - "Les deux sont strictement équivalents et interchangeables"
+          - "L'instruction système est générée automatiquement par le modèle
+            après la réponse"
         correct: 0
-        explanation: "Les assistants internes (RH, IT, juridique) basés sur RAG sont un cas d'usage emblématique."
+        explanation:
+          "L'instruction système cadre le comportement global de l'agent
+          (persona, contraintes, style), tandis que le prompt utilisateur
+          correspond à la requête courante."
       - id: q16
-        question: "Qu'est-ce qu'un embedding (plongement vectoriel) ?"
+        question: "Qu'entend-on par autonomie d'un agent intelligent ?"
         answers:
-          - "Une représentation numérique dense d'un texte capturant sa sémantique"
-          - "Un fichier image au format PNG"
-          - "Un script shell d'installation"
-          - "Une signature cryptographique d'un document"
+          - "Sa capacité à décider et à enchaîner des actions pour atteindre un
+            objectif sans intervention humaine permanente"
+          - "Sa capacité à fonctionner sans connexion réseau ni dépendance à un
+            modèle distant"
+          - "Sa capacité à apprendre seul de nouvelles compétences pendant
+            l'exécution sans données ni outils"
+          - "Sa capacité à générer du texte plus rapidement qu'un humain"
         correct: 0
-        explanation: "Un embedding est un vecteur (souvent de plusieurs centaines de dimensions) qui encode le sens d'un fragment de texte."
+        explanation:
+          "L'autonomie désigne la capacité de l'agent à planifier, choisir des
+          outils et enchaîner des étapes vers un but, avec une supervision
+          humaine réduite."
       - id: q17
-        question: "Quelle est la différence essentielle entre RAG et fine-tuning ?"
+        question: "Qu'est-ce qu'une hallucination d'un modèle génératif ?"
         answers:
-          - "RAG ajoute du contexte à l'inférence, le fine-tuning modifie les poids du modèle"
-          - "RAG nécessite un GPU, pas le fine-tuning"
-          - "Le fine-tuning ajoute du contexte à l'inférence, RAG modifie les poids"
-          - "Ils désignent exactement la même technique"
+          - "Une réponse plausible en apparence mais factuellement fausse ou
+            inventée"
+          - "Un plantage du modèle qui renvoie une erreur technique"
+          - "Une réponse volontairement biaisée par le fournisseur du modèle"
+          - "Un dépassement de la fenêtre de contexte qui tronque la réponse"
         correct: 0
-        explanation: "RAG injecte des documents au moment de la requête ; le fine-tuning ré-entraîne le modèle sur des exemples."
+        explanation:
+          "Une hallucination est une production fluide et crédible mais
+          incorrecte, car le modèle génère statistiquement sans vérifier la
+          véracité des faits."
       - id: q18
-        question: "Qu'est-ce que le « tool calling » (appel d'outils) pour un agent ?"
+        question:
+          "Pourquoi adosser un agent à une base de connaissances dédiée ?"
         answers:
-          - "La capacité de l'agent à invoquer des fonctions externes (API, calculatrice, recherche) durant un raisonnement"
-          - "L'utilisation d'un IDE pour éditer le code"
-          - "Le téléchargement d'un binaire depuis un dépôt"
-          - "L'ouverture d'un ticket de support"
+          - "Pour ancrer ses réponses sur des sources vérifiées et réduire les
+            hallucinations"
+          - "Pour accélérer l'inférence du modèle de langage sous-jacent"
+          - "Pour supprimer toute nécessité de prompt engineering"
+          - "Pour éviter d'avoir à mettre à jour le modèle de langage lui-même"
         correct: 0
-        explanation: "Le tool calling permet au LLM d'agir sur le monde via des fonctions exposées (recherche web, BDD, exécution de code)."
+        explanation:
+          "Une base de connaissances fournit un contexte factuel et à jour, ce
+          qui fiabilise les réponses et limite les inventions du modèle."
       - id: q19
-        question: "Que désigne l'autonomie d'un agent intelligent ?"
+        question:
+          "Quelle place occupent typiquement les agents intelligents dans la
+          chaîne de productivité en entreprise ?"
         answers:
-          - "Sa capacité à enchaîner des étapes et prendre des décisions sans intervention humaine"
-          - "Le fait qu'il fonctionne hors ligne uniquement"
-          - "Le nombre d'utilisateurs qu'il peut servir simultanément"
-          - "Sa capacité à fonctionner sans GPU"
+          - "Ils automatisent des tâches à forte composante informationnelle en
+            complément des collaborateurs"
+          - "Ils remplacent intégralement les systèmes d'information existants"
+          - "Ils se substituent totalement aux équipes métier sur tous les
+            processus"
+          - "Ils servent uniquement à produire des contenus marketing"
         correct: 0
-        explanation: "Un agent autonome planifie, exécute des outils et boucle jusqu'à atteindre l'objectif sans guidage pas-à-pas."
+        explanation:
+          "Les agents s'intègrent comme assistants ou exécutants de tâches
+          (recherche, synthèse, rédaction, orchestration) en appui des équipes
+          et des outils existants."
       - id: q20
-        question: "Quel est un risque majeur d'un agent IA générative non encadré ?"
+        question:
+          "Quel critère oriente le choix entre RAG, RIG, GraphRAG et StructRAG ?"
         answers:
-          - "Produire des réponses fausses ou biaisées présentées comme certaines"
-          - "Consommer trop peu de mémoire vive"
-          - "Refuser systématiquement de répondre"
-          - "Devenir incapable de comprendre le français"
+          - "La nature et la structure des connaissances à exploiter (documents,
+            données, relations, schémas)"
+          - "La langue de l'interface utilisateur de l'agent"
+          - "Le nombre d'utilisateurs simultanés attendus sur l'agent"
+          - "La marque du modèle de langage utilisé"
         correct: 0
-        explanation: "Sans garde-fous (sourcing, filtrage, supervision), un agent peut halluciner, biaiser ou diffuser du contenu inapproprié."
-  - id: rag-rig-fondamentaux
+        explanation:
+          "Le choix dépend principalement du type de sources : RAG pour des
+          documents, RIG pour de la génération guidée par récupération, GraphRAG
+          pour des relations, StructRAG pour des données structurées."
+  - id: fondamentaux-rag-rig
     title: "Fondamentaux des architectures RAG et RIG"
     questions:
       - id: q1
-        question: "Quelle définition correspond le mieux à RAG (Retrieval-Augmented Generation) ?"
+        question: "Que désigne l'acronyme RAG dans le domaine des LLM ?"
         answers:
-          - "Récupérer des documents pertinents puis les fournir au LLM pour qu'il génère une réponse ancrée"
-          - "Réentraîner le LLM en continu sur les documents internes"
-          - "Compresser les documents en un vecteur unique avant génération"
-          - "Générer du texte sans aucun accès à des sources externes"
-        correct: 0
-        explanation: "RAG = retrieval (recherche de passages pertinents) puis generation (LLM conditionné sur ces passages)."
+          - "Recursive Answer Generation"
+          - "Retrieval Augmented Generation"
+          - "Random Access Grounding"
+          - "Reinforced Adaptive Generation"
+        correct: 1
+        explanation:
+          "RAG signifie Retrieval Augmented Generation : on enrichit le prompt
+          du modèle avec des informations récupérées dans une base de
+          connaissances externe."
       - id: q2
-        question: "Quel est l'ordre des étapes principales d'un pipeline RAG à l'inférence ?"
+        question:
+          "Quel est l'ordre des étapes du pipeline classique d'un système RAG ?"
         answers:
-          - "Embedding de la requête → recherche vectorielle → assemblage du prompt → génération"
-          - "Génération → recherche vectorielle → embedding → réponse"
-          - "Compilation → exécution → recherche → génération"
-          - "Indexation → entraînement → fine-tuning → génération"
-        correct: 0
-        explanation: "À l'inférence : on encode la requête, on récupère les top-k passages, on les injecte dans le prompt, puis on génère."
+          - "Génération, puis indexation, puis retrieval"
+          - "Retrieval, puis indexation, puis génération"
+          - "Indexation hors-ligne, puis retrieval, puis génération"
+          - "Indexation, puis génération, puis retrieval de validation"
+        correct: 2
+        explanation:
+          "Un RAG indexe d'abord les documents hors-ligne, puis pour chaque
+          requête effectue un retrieval des passages pertinents avant de les
+          fournir au LLM pour la génération."
       - id: q3
-        question: "Quel est le rôle d'une base vectorielle dans un système RAG ?"
+        question:
+          "Quel est le rôle principal des embeddings dans un système RAG ?"
         answers:
-          - "Stocker et rechercher efficacement des embeddings pour retrouver les passages les plus proches sémantiquement"
-          - "Compiler le code source du LLM"
-          - "Servir d'interface utilisateur graphique"
-          - "Authentifier les utilisateurs de l'agent"
-        correct: 0
-        explanation: "Une base vectorielle (Pinecone, Chroma, FAISS…) indexe les embeddings et fait de la recherche par similarité."
+          - "Compresser les réponses du LLM pour réduire les coûts"
+          - "Représenter textes et requêtes sous forme de vecteurs numériques
+            permettant une recherche sémantique"
+          - "Chiffrer les documents stockés dans la base de connaissances"
+          - "Traduire automatiquement les documents en anglais avant indexation"
+        correct: 1
+        explanation:
+          "Les embeddings transforment textes et requêtes en vecteurs denses de
+          sorte que la proximité géométrique reflète la proximité sémantique, ce
+          qui rend possible le retrieval par similarité."
       - id: q4
-        question: "Qu'est-ce que le « chunking » dans un pipeline RAG ?"
+        question:
+          "Qu'est-ce qu'une base de données vectorielle dans le contexte d'un
+          RAG ?"
         answers:
-          - "Découper les documents en segments de taille adaptée pour les embedder et les indexer"
-          - "Compresser les documents au format zip"
-          - "Chiffrer les documents avant indexation"
-          - "Convertir les documents en images"
-        correct: 0
-        explanation: "Le chunking découpe les documents (par paragraphe, taille fixe, sémantique) afin de produire des unités indexables par le retriever."
+          - "Une base relationnelle classique stockant uniquement du texte brut"
+          - "Un système de fichiers distribué pour les modèles de langage"
+          - "Une base spécialisée dans le stockage et la recherche efficace de
+            vecteurs de grande dimension"
+          - "Un cache mémoire des dernières réponses générées par le LLM"
+        correct: 2
+        explanation:
+          "Une base vectorielle (ex. FAISS, Qdrant, Pinecone, Chroma) indexe des
+          vecteurs de haute dimension et permet de retrouver rapidement les plus
+          proches voisins d'une requête."
       - id: q5
-        question: "Quelle métrique de similarité est la plus utilisée pour comparer deux embeddings ?"
+        question:
+          "Pourquoi la similarité cosinus est-elle couramment utilisée pour la
+          recherche sémantique sur des embeddings ?"
         answers:
-          - "La similarité cosinus"
-          - "La distance de Levenshtein"
-          - "Le coefficient de Jaccard sur les caractères"
-          - "Le hash MD5"
+          - "Elle mesure l'angle entre deux vecteurs et est insensible à leur
+            norme, ce qui convient bien à la comparaison de directions
+            sémantiques"
+          - "Elle calcule la différence exacte de longueur entre deux chaînes de
+            caractères"
+          - "Elle compte le nombre de mots-clés communs entre deux documents"
+          - "Elle garantit mathématiquement la pertinence factuelle des passages
+            retrouvés"
         correct: 0
-        explanation: "La similarité cosinus mesure l'angle entre vecteurs et est la métrique standard pour les embeddings sémantiques."
+        explanation:
+          "La similarité cosinus compare l'orientation de deux vecteurs
+          indépendamment de leur magnitude, ce qui correspond bien à la notion
+          de proximité sémantique entre embeddings."
       - id: q6
-        question: "Quel est un cas d'usage emblématique de RAG ?"
+        question:
+          "Dans un pipeline RAG, pourquoi le découpage (chunking) des documents
+          en segments de taille adaptée est-il déterminant pour la qualité des
+          réponses ?"
         answers:
-          - "Un assistant qui répond à partir de la documentation technique interne d'une entreprise"
-          - "L'entraînement d'un modèle de vision sur ImageNet"
-          - "La compilation Just-In-Time du JavaScript"
-          - "Le rendu 3D d'une scène vidéoludique"
-        correct: 0
-        explanation: "Les FAQ d'entreprise et assistants documentaires sont les cas d'usage canoniques de RAG."
+          - "Il accélère uniquement l'entraînement du modèle de langage
+            sous-jacent."
+          - "Il conditionne la pertinence des passages récupérés et la cohérence
+            du contexte fourni au LLM."
+          - "Il supprime la nécessité d'utiliser une base vectorielle pour la
+            recherche."
+          - "Il garantit que le modèle n'hallucinera jamais, quel que soit le
+            contenu indexé."
+        correct: 1
+        explanation:
+          "Des chunks trop grands diluent l'information pertinente, des chunks
+          trop petits perdent le contexte ; un découpage adapté améliore
+          directement la précision du retrieval et la qualité de la génération."
       - id: q7
-        question: "Quel est l'avantage principal de RAG par rapport au réentraînement complet d'un LLM ?"
+        question:
+          "À quoi correspond le paramètre top-k dans la phase de retrieval d'un
+          système RAG ?"
         answers:
-          - "Mettre à jour la connaissance de l'agent sans modifier les poids du modèle, à coût bien moindre"
-          - "Réduire de moitié le nombre de paramètres du modèle"
-          - "Supprimer totalement les hallucinations sans autre garde-fou"
-          - "Permettre au modèle de fonctionner sans GPU"
-        correct: 0
-        explanation: "RAG met à jour la base documentaire, beaucoup moins coûteux que de ré-entraîner un LLM sur de nouvelles données."
+          - "Au nombre de tokens maximum générés par le LLM dans sa réponse
+            finale."
+          - "Au nombre de passages les plus similaires à la requête qui sont
+            sélectionnés et envoyés au modèle."
+          - "Au seuil minimal de température utilisé lors de la génération."
+          - "Au nombre de documents indexés dans la base vectorielle."
+        correct: 1
+        explanation:
+          "Le top-k désigne les k passages les plus proches de la requête selon
+          le score de similarité ; ils constituent le contexte transmis au LLM
+          pour générer la réponse."
       - id: q8
-        question: "Que désigne RIG (Retrieval Interleaved Generation) ?"
+        question:
+          "Comment définit-on l'architecture RIG (Retrieval Interleaved
+          Generation) ?"
         answers:
-          - "Une approche où la récupération d'informations est entrelacée avec les étapes de génération du modèle"
-          - "Une variante de RAG sans aucune base de connaissances"
-          - "Un protocole d'interconnexion entre serveurs"
-          - "Une technique de quantisation des poids du modèle"
-        correct: 0
-        explanation: "Dans RIG, le modèle peut déclencher des recherches au cours même de la génération, pas seulement avant."
+          - "Une approche où l'on récupère tous les documents avant de lancer
+            une seule génération finale."
+          - "Une approche où le modèle alterne, pendant la génération, des
+            étapes de récupération et des étapes de production de texte."
+          - "Une technique de fine-tuning supervisé du LLM sur la base de
+            connaissances."
+          - "Un protocole réseau dédié à l'indexation des bases vectorielles."
+        correct: 1
+        explanation:
+          "Dans RIG, les phases de retrieval sont entrelacées avec la génération
+          : le modèle peut déclencher de nouvelles recherches au fil du
+          raisonnement plutôt qu'une seule fois en amont."
       - id: q9
-        question: "Quelle est la différence essentielle entre RAG et RIG ?"
+        question: "Quelle est la différence clé entre RAG et RIG ?"
         answers:
-          - "Dans RAG la récupération est faite une fois avant la génération, dans RIG elle est intercalée pendant la génération"
-          - "RAG fonctionne sur du texte, RIG uniquement sur des images"
-          - "RIG ne peut pas utiliser de base vectorielle"
-          - "RAG produit des réponses sans citation, RIG jamais"
-        correct: 0
-        explanation: "RAG = retrieve-then-generate (one-shot). RIG = retrieval entrelacée pendant la génération."
+          - "RAG utilise un LLM, alors que RIG s'en passe complètement."
+          - "RAG effectue généralement une seule récupération en amont, tandis
+            que RIG entrelace plusieurs récupérations avec la génération."
+          - "RAG est destiné aux images, RIG est réservé au texte."
+          - "RIG ne nécessite aucune base de connaissances, contrairement à RAG."
+        correct: 1
+        explanation:
+          "La différence structurante est l'interleaving : RAG fait un retrieval
+          puis une génération, alors que RIG enchaîne dynamiquement plusieurs
+          cycles retrieval/génération."
       - id: q10
-        question: "Quelle est une force majeure de l'approche RIG ?"
+        question:
+          "Parmi les forces souvent mises en avant pour l'architecture RAG,
+          laquelle est correcte ?"
         answers:
-          - "Permettre une vérification factuelle ciblée et continue au fil de la génération"
-          - "Éliminer le besoin d'une base de connaissances"
-          - "Supprimer toute latence à l'inférence"
-          - "Rendre le modèle déterministe à 100 %"
-        correct: 0
-        explanation: "RIG cherche au moment où l'information précise est nécessaire, ce qui améliore la fidélité factuelle ponctuelle."
+          - "Elle impose un réentraînement complet du LLM à chaque mise à jour
+            de la base."
+          - "Elle est relativement simple à mettre en œuvre et permet
+            d'exploiter des données fraîches sans réentraîner le modèle."
+          - "Elle élimine totalement le besoin d'une base de connaissances
+            externe."
+          - "Elle garantit des temps de réponse inférieurs à ceux d'un appel
+            direct au LLM seul."
+        correct: 1
+        explanation:
+          "Un atout majeur de RAG est sa simplicité de mise en œuvre et la
+          possibilité d'actualiser les connaissances en modifiant la base
+          indexée, sans réentraîner le LLM."
       - id: q11
-        question: "Quelle est une faiblesse fréquente de RIG par rapport à RAG ?"
+        question:
+          "Quelle est une faiblesse caractéristique d'une architecture RAG
+          classique ?"
         answers:
-          - "Une latence et une complexité d'orchestration accrues"
-          - "Une consommation mémoire systématiquement nulle"
-          - "L'impossibilité d'utiliser des LLM modernes"
-          - "L'absence totale de cas d'usage industriels"
-        correct: 0
-        explanation: "Les retrievals multiples au sein d'une même génération augmentent latence et complexité du pipeline."
+          - "Elle ne peut jamais citer ses sources documentaires"
+          - "La qualité de la réponse dépend fortement du bruit et de la
+            pertinence des passages récupérés"
+          - "Elle nécessite obligatoirement un fine-tuning du modèle de langage"
+          - "Elle ne peut fonctionner qu'avec des documents structurés en JSON"
+        correct: 1
+        explanation:
+          "Un RAG est limité par la fenêtre de contexte du LLM et très sensible
+          au bruit du retrieval : si les passages récupérés sont peu pertinents,
+          la réponse se dégrade."
       - id: q12
-        question: "Quel cas d'usage est particulièrement bien servi par RIG ?"
+        question:
+          "Quelle force distingue une architecture RIG (Retrieval-Interleaved
+          Generation) d'un RAG classique ?"
         answers:
-          - "Une réponse contenant plusieurs faits chiffrés précis à vérifier individuellement"
-          - "Une discussion libre sans contrainte factuelle"
-          - "La traduction d'un poème"
-          - "La génération artistique d'images abstraites"
-        correct: 0
-        explanation: "RIG excelle quand la réponse mêle plusieurs faits ponctuels qu'il faut vérifier au fur et à mesure."
+          - "Elle supprime totalement le besoin d'une base de connaissances"
+          - "Elle entrelace plusieurs étapes de récupération et de génération
+            pour soutenir un raisonnement multi-étapes"
+          - "Elle garantit une latence inférieure à celle d'un RAG en une seule
+            passe"
+          - "Elle remplace le LLM par un moteur de règles symboliques"
+        correct: 1
+        explanation:
+          "Le RIG intercale récupération et génération à chaque étape du
+          raisonnement, ce qui permet de traiter des questions complexes
+          nécessitant plusieurs sauts d'information."
       - id: q13
-        question: "Quel est le rôle d'une base de connaissances structurée dans un système RAG/RIG ?"
+        question:
+          "Quelle est une faiblesse typique d'une architecture RIG par rapport à
+          un RAG simple ?"
         answers:
-          - "Fournir des informations fiables, organisées et mises à jour comme source de vérité pour l'agent"
-          - "Remplacer totalement le LLM"
-          - "Servir uniquement de cache pour les réponses précédentes"
-          - "Stocker exclusivement les logs d'erreur"
-        correct: 0
-        explanation: "La base de connaissances est la source d'informations factuelles que l'agent récupère et cite."
+          - "Elle ne peut pas accéder à des sources externes"
+          - "Elle augmente la latence et la complexité opérationnelle à cause
+            des appels itératifs au retriever et au LLM"
+          - "Elle dégrade systématiquement la pertinence des réponses"
+          - "Elle interdit l'usage de bases vectorielles"
+        correct: 1
+        explanation:
+          "Le RIG enchaîne plusieurs cycles retrieval/generation, ce qui
+          multiplie les appels coûteux, augmente la latence et rend
+          l'orchestration plus complexe à maintenir."
       - id: q14
-        question: "Que désigne le terme « information retrieval » (IR) dans ce contexte ?"
+        question:
+          "Quel cas d'usage est le plus naturellement adapté à une architecture
+          RAG classique ?"
         answers:
-          - "L'ensemble des techniques pour retrouver des documents pertinents à partir d'une requête"
-          - "La sauvegarde régulière des fichiers utilisateurs"
-          - "La récupération des paramètres d'un modèle après crash"
-          - "La transmission TCP/IP des données"
+          - "Une FAQ d'entreprise répondant à des questions factuelles à partir
+            d'une base documentaire"
+          - "La planification d'un itinéraire impliquant plusieurs réservations
+            interdépendantes"
+          - "La résolution d'énigmes mathématiques nécessitant un raisonnement
+            en plusieurs étapes"
+          - "Le pilotage temps réel d'un robot industriel"
         correct: 0
-        explanation: "L'information retrieval recouvre les méthodes (lexicales, vectorielles, hybrides) de recherche d'information."
+        explanation:
+          "Un RAG est idéal pour répondre à des questions factuelles bien
+          ciblées en s'appuyant sur une base documentaire interne, comme une FAQ
+          ou un assistant de support."
       - id: q15
-        question: "Que signifie « top-k retrieval » ?"
+        question:
+          "Quel cas d'usage justifie particulièrement le recours à une
+          architecture RIG plutôt qu'à un RAG simple ?"
         answers:
-          - "Sélectionner les k passages les plus pertinents selon le score de similarité"
-          - "Conserver uniquement les k derniers tokens du prompt"
-          - "Garder seulement k modèles dans un ensemble"
-          - "Limiter à k le nombre d'utilisateurs simultanés"
-        correct: 0
-        explanation: "Top-k retrieval retourne les k meilleurs résultats classés par score (typiquement k entre 3 et 20)."
+          - "Retrouver la définition d'un terme dans un glossaire"
+          - "Afficher le contenu brut d'un document PDF"
+          - "Répondre à une question complexe nécessitant un raisonnement
+            multi-étapes avec récupérations successives d'informations"
+          - "Compter le nombre de mots d'un texte fourni en entrée"
+        correct: 2
+        explanation:
+          "Le RIG brille sur les questions multi-sauts où chaque étape du
+          raisonnement requiert de nouvelles recherches ciblées, par exemple
+          croiser plusieurs sources pour bâtir une réponse argumentée."
       - id: q16
-        question: "Qu'est-ce que le « reranking » après une recherche vectorielle ?"
+        question:
+          "Quel est le rôle principal d'une base de connaissances dans une
+          architecture RAG ?"
         answers:
-          - "Re-classer les passages récupérés via un modèle plus précis (cross-encoder) pour améliorer la pertinence"
-          - "Réindexer toute la base à chaque requête"
-          - "Appliquer un tri alphabétique sur les résultats"
-          - "Supprimer les doublons exacts dans la base"
+          - "Stocker les documents et leurs représentations vectorielles afin de
+            fournir un contexte pertinent au LLM lors de la génération"
+          - "Remplacer le LLM en générant directement les réponses à partir des
+            documents bruts"
+          - "Servir uniquement à journaliser les requêtes des utilisateurs pour
+            audit"
+          - "Entraîner le modèle de langage en mettant à jour ses poids à chaque
+            requête"
         correct: 0
-        explanation: "Le reranker (souvent un cross-encoder) re-score finement les top-k pour ne garder que les plus pertinents."
+        explanation:
+          "La base de connaissances (souvent un vector store) indexe les
+          documents et leurs embeddings pour permettre au composant retrieval de
+          fournir au LLM un contexte factuel pertinent."
       - id: q17
-        question: "Dans quel cas RAG est-il généralement préférable à RIG ?"
+        question:
+          "Quelle est la différence fondamentale entre le fine-tuning et le RAG
+          ?"
         answers:
-          - "Quand le contexte nécessaire peut être identifié dès le départ et tient dans la fenêtre du LLM"
-          - "Quand chaque mot généré doit déclencher une nouvelle recherche"
-          - "Quand on n'a aucune base documentaire"
-          - "Quand on ne dispose d'aucun budget GPU"
+          - "Le fine-tuning modifie les poids du modèle, tandis que le RAG
+            laisse le modèle inchangé et lui fournit un contexte externe au
+            moment de l'inférence"
+          - "Le fine-tuning et le RAG produisent exactement le même résultat,
+            seul le coût diffère"
+          - "Le RAG modifie les poids du modèle alors que le fine-tuning se
+            contente d'ajouter un prompt système"
+          - "Le fine-tuning ne fonctionne que sur des modèles open source,
+            contrairement au RAG"
         correct: 0
-        explanation: "RAG suffit quand un retrieval initial fournit l'essentiel du contexte ; pas besoin d'entrelacement."
+        explanation:
+          "Le fine-tuning ajuste les paramètres internes du modèle sur un
+          corpus, alors que le RAG conserve le modèle figé et injecte des
+          documents récupérés dynamiquement dans le prompt."
       - id: q18
-        question: "Dans quel cas RIG est-il généralement préférable à RAG ?"
+        question: "À quoi sert l'étape de re-ranking dans un pipeline RAG ?"
         answers:
-          - "Quand la réponse implique plusieurs faits ponctuels qu'il faut récupérer au moment où on les cite"
-          - "Quand la requête est triviale et ne nécessite aucun contexte"
-          - "Quand on souhaite minimiser à tout prix la latence"
-          - "Quand on veut désactiver le retrieval"
+          - "Réordonner les documents récupérés selon leur pertinence réelle,
+            généralement avec un modèle plus précis qu'au premier retrieval"
+          - "Compresser les embeddings pour réduire la taille de la base
+            vectorielle"
+          - "Traduire automatiquement les documents dans la langue de la requête"
+          - "Supprimer définitivement les documents jugés non pertinents de la
+            base de connaissances"
         correct: 0
-        explanation: "RIG est utile lorsque les besoins informationnels apparaissent en cours de génération."
+        explanation:
+          "Le re-ranking affine le classement des candidats issus du premier
+          retrieval, souvent via un cross-encoder, afin de placer en tête les
+          documents les plus pertinents pour la requête."
       - id: q19
-        question: "Quelle est une limite commune à RAG et RIG ?"
+        question: "Que désigne la notion de hybrid search dans un système RAG ?"
         answers:
-          - "La qualité des réponses dépend fortement de la qualité et de la couverture du corpus indexé"
-          - "Ils ne peuvent pas utiliser de modèles de langage"
-          - "Ils interdisent toute citation de sources"
-          - "Ils suppriment automatiquement les biais des données"
+          - "La combinaison d'une recherche lexicale (type BM25) et d'une
+            recherche sémantique (par embeddings) pour améliorer le rappel"
+          - "L'utilisation simultanée de plusieurs LLM pour générer la réponse
+            finale"
+          - "Le mélange entre recherche locale sur disque et recherche distante
+            via API"
+          - "L'alternance aléatoire entre une recherche par mots-clés et une
+            recherche full-text"
         correct: 0
-        explanation: "Si le corpus est lacunaire ou biaisé, le retrieval ramène du bruit et la génération en pâtit."
+        explanation:
+          "La hybrid search fusionne les scores d'une recherche lexicale
+          (mots-clés exacts, BM25) et d'une recherche sémantique (vecteurs),
+          tirant parti des forces complémentaires des deux approches."
       - id: q20
-        question: "Quelle stratégie aide à réduire les hallucinations dans un système RAG ?"
+        question:
+          "Parmi les métriques suivantes, laquelle évalue la fidélité
+          (faithfulness) d'un RAG ?"
         answers:
-          - "Imposer dans le prompt de citer des sources et de répondre « je ne sais pas » si le contexte est insuffisant"
-          - "Augmenter la température du modèle au maximum"
-          - "Désactiver complètement la base de connaissances"
-          - "Supprimer le system prompt"
+          - "La mesure de l'ancrage de la réponse générée dans les documents
+            récupérés, sans hallucination"
+          - "Le temps de réponse moyen du pipeline en millisecondes"
+          - "La taille en tokens du contexte injecté dans le LLM"
+          - "Le coût d'appel API du modèle de génération"
         correct: 0
-        explanation: "Forcer le modèle à s'appuyer sur le contexte fourni et à signaler son incertitude réduit les hallucinations."
+        explanation:
+          "La faithfulness évalue dans quelle mesure la réponse générée s'appuie
+          fidèlement sur le contexte récupéré, par opposition au recall et à la
+          precision qui mesurent la qualité du retrieval."
   - id: graphrag-structrag
     title: "Exploration des architectures GraphRAG et StructRAG"
     questions:
       - id: q1
-        question: "Quelle est la définition la plus précise de GraphRAG ?"
+        question: "Qu'est-ce que GraphRAG ?"
         answers:
-          - "Une variante de RAG qui s'appuie sur un graphe de connaissances pour structurer la récupération et le raisonnement"
-          - "Un format graphique de présentation des prompts"
-          - "Un type de réseau de neurones convolutionnel"
-          - "Une bibliothèque de visualisation 2D"
+          - "Une variante du RAG qui s'appuie sur un graphe de connaissances
+            pour structurer et enrichir le contexte fourni au modèle"
+          - "Un algorithme de compression vectorielle remplaçant les bases
+            d'embeddings"
+          - "Une interface graphique permettant de visualiser les réponses d'un
+            LLM"
+          - "Un protocole réseau dédié à l'échange de prompts entre agents"
         correct: 0
-        explanation: "GraphRAG (Microsoft Research) construit un graphe d'entités et de relations à partir du corpus pour mieux raisonner."
+        explanation:
+          "GraphRAG est une approche de Retrieval-Augmented Generation qui
+          exploite un graphe de connaissances (entités, relations, communautés)
+          pour enrichir le contexte transmis au LLM."
       - id: q2
-        question: "Quelle structure de données fonde GraphRAG ?"
+        question:
+          "Comment construit-on typiquement le graphe de connaissances utilisé
+          par GraphRAG ?"
         answers:
-          - "Un graphe de connaissances (entités reliées par des relations typées)"
-          - "Un tableau Excel à plat"
-          - "Une simple liste chaînée de documents"
-          - "Un cube OLAP"
+          - "En extrayant automatiquement entités et relations depuis les
+            documents sources, souvent à l'aide d'un LLM"
+          - "En convertissant directement les embeddings vectoriels en nœuds de
+            graphe sans traitement"
+          - "En important uniquement des bases SQL existantes sans
+            transformation"
+          - "En demandant à l'utilisateur final de saisir manuellement chaque
+            nœud"
         correct: 0
-        explanation: "GraphRAG modélise la connaissance sous forme de nœuds (entités) et d'arêtes (relations)."
+        explanation:
+          "Le graphe est généralement construit en faisant analyser les
+          documents par un LLM qui en extrait les entités et leurs relations,
+          parfois enrichies de résumés."
       - id: q3
-        question: "Quel est l'avantage d'un graphe de connaissances par rapport à un index vectoriel pur ?"
+        question:
+          "Dans un graphe de connaissances pour GraphRAG, que représentent les
+          entités et les relations ?"
         answers:
-          - "Il rend explicites les relations entre entités, ce qui aide au raisonnement multi-étapes"
-          - "Il occupe systématiquement moins de stockage"
-          - "Il supprime tout besoin de LLM"
-          - "Il garantit l'absence d'erreurs de génération"
+          - "Les entités sont les nœuds (personnes, lieux, concepts) et les
+            relations sont les arêtes décrivant les liens entre ces nœuds"
+          - "Les entités sont les arêtes et les relations sont les nœuds du
+            graphe"
+          - "Les entités sont des vecteurs numériques et les relations des
+            scores de similarité cosinus"
+          - "Les entités sont des fichiers et les relations des chemins d'accès
+            dans le système de fichiers"
         correct: 0
-        explanation: "Le graphe explicite les liens (qui-fait-quoi-avec-qui), facilitant les raisonnements multi-hop difficiles pour la similarité vectorielle seule."
+        explanation:
+          "Dans un graphe de connaissances, les entités constituent les nœuds
+          (objets du domaine) et les relations forment les arêtes orientées qui
+          les relient avec un libellé sémantique."
       - id: q4
-        question: "Quels sont les composants élémentaires d'un graphe de connaissances ?"
+        question:
+          "À quoi servent les communautés (clusters) détectées dans le graphe
+          par GraphRAG ?"
         answers:
-          - "Des nœuds (entités), des arêtes (relations) et éventuellement des propriétés"
-          - "Des classes, méthodes et constructeurs"
-          - "Des tables, colonnes et index"
-          - "Des images, vidéos et sons"
+          - "À regrouper des entités fortement liées et à produire des résumés
+            thématiques exploités lors de la recherche"
+          - "À supprimer les entités isolées du graphe pour réduire sa taille"
+          - "À chiffrer les relations sensibles entre entités"
+          - "À convertir le graphe en une simple liste plate de documents"
         correct: 0
-        explanation: "Un knowledge graph se compose d'entités (nœuds) reliées par des relations typées (arêtes), porteuses ou non de propriétés."
+        explanation:
+          "GraphRAG applique un algorithme de détection de communautés pour
+          regrouper les entités liées, puis génère des résumés par communauté
+          qui servent à répondre aux questions de portée globale."
       - id: q5
-        question: "Comment construit-on typiquement un graphe à partir de textes en GraphRAG ?"
+        question:
+          "Quel avantage majeur GraphRAG apporte-t-il par rapport à un RAG
+          vectoriel pur sur des questions globales ?"
         answers:
-          - "En utilisant un LLM pour extraire automatiquement entités et relations à partir des documents"
-          - "En écrivant manuellement chaque triplet sujet-verbe-objet"
-          - "En convertissant les fichiers en images PNG"
-          - "En appliquant un simple split par espaces"
+          - "Il permet de répondre à des questions transversales qui nécessitent
+            d'agréger l'information dispersée dans tout le corpus"
+          - "Il supprime totalement le besoin d'un LLM pour générer la réponse
+            finale"
+          - "Il garantit des temps de réponse toujours inférieurs à ceux d'un
+            RAG vectoriel"
+          - "Il rend inutile toute étape d'indexation préalable des documents"
         correct: 0
-        explanation: "Les pipelines GraphRAG modernes utilisent un LLM pour faire l'extraction d'entités/relations à grande échelle."
+        explanation:
+          "Le RAG vectoriel classique récupère des passages locaux et peine sur
+          les questions globales ; GraphRAG, grâce aux résumés de communautés,
+          agrège l'information à l'échelle du corpus pour y répondre."
       - id: q6
-        question: "Pour quel type de question GraphRAG est-il particulièrement adapté ?"
+        question:
+          "Quelle est une limite majeure de GraphRAG par rapport à un RAG
+          vectoriel classique ?"
         answers:
-          - "Les questions multi-hop reliant plusieurs entités (ex. « qui dirige une filiale fondée par X ? »)"
-          - "Les calculs de matrices de pixels"
-          - "La compression d'images JPEG"
-          - "Le tri rapide d'un tableau"
-        correct: 0
-        explanation: "Les questions nécessitant de chaîner plusieurs relations bénéficient grandement de la structure du graphe."
+          - "Il ne fonctionne qu'avec des modèles open source"
+          - "Le coût élevé d'indexation et de construction du graphe de
+            connaissances"
+          - "Il est incapable de traiter des documents textuels"
+          - "Il ne supporte pas la recherche sémantique"
+        correct: 1
+        explanation:
+          "GraphRAG nécessite une phase d'extraction d'entités, de relations et
+          de construction du graphe, ce qui est coûteux en calcul et en appels
+          LLM."
       - id: q7
-        question: "Quelle est une limite reconnue de GraphRAG ?"
+        question: "Qu'est-ce que StructRAG ?"
         answers:
-          - "Le coût et la complexité de construction et de maintenance du graphe à grande échelle"
-          - "L'impossibilité d'utiliser des LLM"
-          - "L'absence totale de cas d'usage industriels"
-          - "L'interdiction d'utiliser des embeddings"
+          - "Une variante de RAG qui structure l'information sous une forme
+            adaptée à la tâche avant le raisonnement"
+          - "Un protocole réseau pour interroger des bases vectorielles"
+          - "Un format de fichier propriétaire pour stocker des embeddings"
+          - "Une technique de fine-tuning supervisé des LLM"
         correct: 0
-        explanation: "Construire et maintenir un graphe (extraction, déduplication, mises à jour) est coûteux et exigeant."
+        explanation:
+          "StructRAG identifie le type de structure le plus adapté (table,
+          graphe, arbre, etc.) puis reformate les informations récupérées dans
+          cette structure pour faciliter le raisonnement du LLM."
       - id: q8
-        question: "Quelle est la définition la plus précise de StructRAG ?"
+        question:
+          "Comment StructRAG organise-t-il les données récupérées avant de les
+          transmettre au LLM ?"
         answers:
-          - "Une approche RAG centrée sur la structuration des données récupérées (tableaux, schémas) pour améliorer la précision"
-          - "Une variante de RAG qui ignore toute structure"
-          - "Un format de fichier propriétaire de Google"
-          - "Un protocole de chiffrement de bout en bout"
-        correct: 0
-        explanation: "StructRAG met l'accent sur des représentations structurées (JSON, tables) pour mieux exploiter des données complexes."
+          - "Il les concatène brutes sans transformation"
+          - "Il les convertit systématiquement en embeddings binaires"
+          - "Il les reformate dans des structures comme des tableaux, des
+            schémas ou des arbres adaptés à la question"
+          - "Il les compresse via un algorithme de hachage"
+        correct: 2
+        explanation:
+          "StructRAG choisit dynamiquement une structure (tableau, schéma,
+          graphe, arbre…) et y range les informations récupérées pour rendre le
+          raisonnement du LLM plus fiable."
       - id: q9
-        question: "Quel type de données StructRAG exploite-t-il le mieux ?"
+        question:
+          "Quelle différence essentielle distingue GraphRAG de StructRAG ?"
         answers:
-          - "Les données tabulaires et semi-structurées (JSON, CSV, schémas)"
-          - "Les images médicales 3D"
-          - "Les flux audio bruts"
-          - "Les jeux vidéo"
+          - "GraphRAG s'appuie sur un graphe de connaissances pré-construit,
+            tandis que StructRAG choisit la structure la mieux adaptée à chaque
+            requête"
+          - "StructRAG n'utilise jamais de LLM, contrairement à GraphRAG"
+          - "GraphRAG est uniquement destiné aux images, StructRAG uniquement au
+            texte"
+          - "Il n'existe aucune différence fonctionnelle entre les deux
+            approches"
         correct: 0
-        explanation: "StructRAG est particulièrement performant sur des données structurées ou converties en structures intermédiaires."
+        explanation:
+          "GraphRAG repose sur un graphe construit en amont à partir du corpus,
+          alors que StructRAG sélectionne au moment de la requête la structure
+          (tableau, graphe, arbre…) la plus pertinente pour la tâche."
       - id: q10
-        question: "Quel est l'avantage clé de StructRAG ?"
+        question: "Quel cas d'usage est typiquement bien adressé par GraphRAG ?"
         answers:
-          - "Une plus grande précision et une meilleure organisation des réponses sur des données chiffrées ou structurées"
-          - "L'abandon complet de tout retrieval"
-          - "L'indépendance totale vis-à-vis des LLM"
-          - "L'absence de tout besoin de validation"
-        correct: 0
-        explanation: "En s'appuyant sur des structures explicites, StructRAG limite les erreurs sur les chiffres et les attributs."
+          - "La traduction automatique mot-à-mot d'un texte court"
+          - "La génération de synthèses transverses reliant des informations
+            dispersées dans un large corpus"
+          - "Le calcul de hash cryptographiques sur des fichiers"
+          - "La compression sans perte d'images"
+        correct: 1
+        explanation:
+          "Grâce à son graphe d'entités et de relations, GraphRAG excelle pour
+          produire des synthèses globales et relier des éléments dispersés dans
+          de nombreux documents."
       - id: q11
-        question: "Quel cas d'usage est emblématique de StructRAG ?"
+        question: "Quel est un cas d'usage typique de StructRAG ?"
         answers:
-          - "L'analyse et la synthèse de rapports financiers contenant de nombreux tableaux chiffrés"
-          - "La génération aléatoire de poésie"
-          - "La détection de visages dans une vidéo"
-          - "La compilation d'un programme C"
-        correct: 0
-        explanation: "Les rapports financiers et tableaux d'indicateurs sont un terrain de prédilection pour StructRAG."
+          - "Générer des images à partir d'un prompt textuel libre"
+          - "Extraire des informations structurées et produire des comparatifs à
+            partir de documents hétérogènes"
+          - "Compresser des fichiers binaires pour réduire leur taille de
+            stockage"
+          - "Convertir un fichier audio en transcription brute non annotée"
+        correct: 1
+        explanation:
+          "StructRAG est conçu pour l'extraction d'informations structurées
+          (tableaux, comparatifs) à partir de sources hétérogènes, là où le RAG
+          vectoriel classique se contente de passages bruts."
       - id: q12
-        question: "Quelle est la différence essentielle entre GraphRAG et StructRAG ?"
+        question:
+          "Quel framework est directement associé à l'approche GraphRAG ?"
         answers:
-          - "GraphRAG modélise des relations entre entités, StructRAG exploite des structures tabulaires/schémas"
-          - "Aucune, ce sont deux noms du même produit"
-          - "GraphRAG ne fonctionne qu'en local, StructRAG uniquement en cloud"
-          - "GraphRAG est gratuit, StructRAG payant"
+          - "Microsoft GraphRAG"
+          - "TensorFlow Lite"
+          - "Apache Kafka"
+          - "Selenium WebDriver"
         correct: 0
-        explanation: "Graph = relations entre entités ; Struct = données structurées (tables, JSON)."
+        explanation:
+          "Microsoft GraphRAG est le framework open source de référence qui
+          implémente l'approche GraphRAG en construisant un graphe de
+          connaissances à partir d'un corpus."
       - id: q13
-        question: "À quoi sert une ontologie dans un projet GraphRAG ?"
+        question:
+          "Sous quelle forme un graphe de connaissances est-il typiquement
+          stocké ?"
         answers:
-          - "Définir les types d'entités et de relations admis pour homogénéiser le graphe"
-          - "Spécifier le style CSS du dashboard"
-          - "Compresser les fichiers de logs"
-          - "Choisir la couleur des nœuds"
-        correct: 0
-        explanation: "L'ontologie pose un schéma : quels types d'entités, quelles relations possibles, avec quelles contraintes."
+          - "Sous forme de matrices denses de pixels"
+          - "Sous forme de triplets (sujet, prédicat, objet) ou de nœuds et
+            arêtes avec propriétés"
+          - "Sous forme d'un unique blob JSON non indexé"
+          - "Sous forme de fichiers WAV compressés"
+        correct: 1
+        explanation:
+          "Un graphe de connaissances est généralement représenté soit par des
+          triplets RDF (sujet, prédicat, objet), soit par un modèle property
+          graph composé de nœuds et d'arêtes portant des propriétés."
       - id: q14
-        question: "Quel format intermédiaire est très utilisé en StructRAG pour structurer les sorties du LLM ?"
+        question:
+          "Qu'est-ce qui distingue une requête Cypher ou SPARQL d'une requête
+          vectorielle ?"
         answers:
-          - "JSON conforme à un schéma (par exemple JSON Schema ou Pydantic)"
-          - "Une chaîne binaire non typée"
-          - "Un fichier .exe Windows"
-          - "Un PDF scanné non OCR-isé"
-        correct: 0
-        explanation: "Le JSON validé par un schéma est le format pivot pour des sorties structurées fiables."
+          - "Cypher et SPARQL retournent toujours des images, contrairement aux
+            requêtes vectorielles"
+          - "Les requêtes vectorielles parcourent explicitement les arêtes d'un
+            graphe, contrairement à Cypher et SPARQL"
+          - "Cypher et SPARQL exploitent la structure du graphe (relations,
+            chemins), alors qu'une requête vectorielle compare des embeddings
+            par similarité"
+          - "Il n'y a aucune différence, ce sont des synonymes du même langage
+            de requête"
+        correct: 2
+        explanation:
+          "Cypher (Neo4j) et SPARQL (RDF) interrogent la structure relationnelle
+          d'un graphe via des motifs et des chemins, tandis qu'une requête
+          vectorielle calcule une similarité (ex. cosinus) entre embeddings."
       - id: q15
-        question: "Quel outil est emblématique pour stocker et requêter un graphe dans un projet GraphRAG ?"
+        question:
+          "Quel est l'intérêt principal d'hybrider GraphRAG avec un RAG
+          vectoriel ?"
         answers:
-          - "Neo4j"
-          - "MySQL"
-          - "Redis"
-          - "Elasticsearch"
-        correct: 0
-        explanation: "Neo4j est la base de données de graphes la plus emblématique ; d'autres existent (NebulaGraph, JanusGraph)."
+          - "Supprimer définitivement le besoin d'un LLM dans la chaîne de
+            réponse"
+          - "Combiner la richesse relationnelle du graphe avec la recherche
+            sémantique par similarité pour améliorer la pertinence des réponses"
+          - "Réduire la mémoire à zéro octet en supprimant les embeddings et le
+            graphe"
+          - "Forcer le modèle à ne répondre qu'en langage SQL"
+        correct: 1
+        explanation:
+          "L'hybridation tire parti des relations explicites du graphe (contexte
+          structuré, traversées) et de la recherche vectorielle (proximité
+          sémantique sur du texte libre) pour obtenir des réponses à la fois
+          précises et contextualisées."
       - id: q16
-        question: "Que peut-on dire d'une approche hybride combinant RAG vectoriel et GraphRAG ?"
+        question:
+          "En quoi StructRAG améliore-t-il la précision des réponses par rapport
+          à un RAG vectoriel classique ?"
         answers:
-          - "Elle combine la couverture sémantique du vectoriel et la précision relationnelle du graphe"
-          - "Elle est techniquement impossible"
-          - "Elle dégrade systématiquement les performances"
-          - "Elle supprime tout besoin de LLM"
+          - "Il exploite la structure explicite des données (tables, schémas,
+            champs) pour cibler précisément l'information pertinente."
+          - "Il augmente la taille de la fenêtre de contexte du LLM pour réduire
+            les hallucinations."
+          - "Il remplace l'embedding sémantique par une recherche plein texte de
+            type BM25."
+          - "Il entraîne automatiquement un nouveau modèle de langage spécialisé
+            sur le corpus."
         correct: 0
-        explanation: "Les approches hybrides exploitent la complémentarité du retrieval sémantique et du raisonnement relationnel."
+        explanation:
+          "StructRAG s'appuie sur la structure des données (tableaux, schémas
+          relationnels, documents structurés) pour extraire des réponses plus
+          précises que la simple similarité vectorielle d'un RAG classique."
       - id: q17
-        question: "Quel langage est typiquement utilisé pour interroger un graphe dans Neo4j ?"
+        question:
+          "Dans le pipeline GraphRAG, à quoi sert l'étape d'extraction des
+          entités réalisée par un LLM ?"
         answers:
-          - "Cypher"
-          - "SQL standard"
-          - "XPath"
-          - "GraphQL"
-        correct: 0
-        explanation: "Cypher est le langage natif de Neo4j (SPARQL est l'équivalent pour les graphes RDF)."
+          - "À compresser les documents sources pour réduire le coût de stockage
+            vectoriel."
+          - "À identifier les nœuds (personnes, lieux, concepts) et leurs
+            relations afin de construire le graphe de connaissances."
+          - "À reformuler la question de l'utilisateur dans un langage formel
+            type SPARQL."
+          - "À générer directement la réponse finale sans passer par une étape
+            de récupération."
+        correct: 1
+        explanation:
+          "L'extraction d'entités par LLM repère les entités nommées et leurs
+          relations dans les documents, ce qui permet de peupler les nœuds et
+          arêtes du graphe de connaissances utilisé par GraphRAG."
       - id: q18
-        question: "Comment GraphRAG aide-t-il à répondre à une question reliant plusieurs entités peu connectées dans le texte brut ?"
+        question:
+          "Quel est le principal défi de la maintenance d'un graphe de
+          connaissances dans une architecture GraphRAG ?"
         answers:
-          - "En parcourant les chemins du graphe pour relier explicitement les entités via des relations intermédiaires"
-          - "En augmentant la température du LLM"
-          - "En supprimant les entités peu fréquentes"
-          - "En convertissant la question en image"
-        correct: 0
-        explanation: "Le graphe permet un parcours multi-hop reliant des entités via des chemins de relations explicites."
+          - "Le graphe est figé après création et ne peut plus jamais être
+            modifié."
+          - "Il faut réentraîner le LLM à chaque ajout d'un nouveau document
+            source."
+          - "Les ajouts, suppressions et fusions d'entités doivent être propagés
+            de façon cohérente pour éviter les doublons et les liens obsolètes."
+          - "Le graphe doit être stocké uniquement en mémoire vive et ne peut
+            pas être persisté."
+        correct: 2
+        explanation:
+          "Mettre à jour un graphe de connaissances impose de gérer la
+          déduplication des entités, la réconciliation des relations et la
+          cohérence globale au fil des ingestions, ce qui constitue le principal
+          coût de maintenance."
       - id: q19
-        question: "Quelle est une limite typique de StructRAG ?"
+        question:
+          "Pour une question nécessitant de relier plusieurs entités à travers
+          de multiples documents, quelle architecture est généralement la plus
+          adaptée ?"
         answers:
-          - "Il est moins adapté au texte libre non structuré sans étape préalable de structuration"
-          - "Il interdit l'usage de tout LLM"
-          - "Il ne fonctionne que sur Windows"
-          - "Il nécessite obligatoirement Neo4j"
-        correct: 0
-        explanation: "StructRAG suppose que les données sont (ou peuvent être) structurées ; sur du texte libre il faut une étape d'extraction."
+          - "StructRAG, car il interroge directement les colonnes d'une table
+            relationnelle."
+          - "GraphRAG, car son graphe permet de naviguer explicitement entre
+            entités liées et de raisonner sur des chemins multi-documents."
+          - "Un RAG vectoriel simple, car la similarité cosinus suffit toujours."
+          - "Aucune architecture RAG, il faut obligatoirement un fine-tuning du
+            modèle."
+        correct: 1
+        explanation:
+          "GraphRAG est particulièrement pertinent pour les questions
+          multi-sauts impliquant plusieurs entités reliées, là où StructRAG
+          cible plutôt des données fortement structurées comme des tables."
       - id: q20
-        question: "Sur quel critère choisir entre GraphRAG et StructRAG pour un projet ?"
+        question:
+          "Parmi les métriques suivantes, laquelle est spécifiquement utile pour
+          évaluer la qualité d'une réponse produite par GraphRAG ?"
         answers:
-          - "Selon la nature des données : relationnelles (graphe) vs tabulaires/schématisables (struct)"
-          - "Selon la couleur préférée du chef de projet"
-          - "Selon le système d'exploitation du serveur"
-          - "Selon la version de Python utilisée"
-        correct: 0
-        explanation: "Le choix dépend de la structure naturelle des données : un domaine très relationnel appelle GraphRAG, des données tabulaires StructRAG."
-  - id: conception-agents
+          - "La latence réseau du serveur web hébergeant l'application."
+          - "Le taux de compression des embeddings vectoriels stockés."
+          - "La couverture et la justesse des entités et relations du graphe
+            mobilisées dans la réponse."
+          - "Le nombre total de tokens présents dans le corpus initial."
+        correct: 2
+        explanation:
+          "Évaluer GraphRAG passe notamment par la mesure de la pertinence des
+          entités et relations effectivement utilisées pour construire la
+          réponse, en plus des métriques RAG classiques de précision et de
+          rappel."
+  - id: conception-agents-rag-rig
     title: "Conception et programmation d'agents avec RAG et RIG"
     questions:
       - id: q1
-        question: "Quelle est la première étape essentielle dans la conception d'un agent RAG ?"
+        question:
+          "Quelle séquence reflète correctement les grandes étapes de conception
+          d'un agent RAG ?"
         answers:
-          - "Définir précisément le cas d'usage, les utilisateurs cibles et les sources documentaires"
-          - "Acheter immédiatement un GPU haut de gamme"
-          - "Choisir la couleur de l'interface utilisateur"
-          - "Écrire le code de l'API REST avant tout"
+          - "Ingestion et indexation des documents, puis récupération
+            contextuelle, puis génération augmentée par le LLM"
+          - "Entraînement complet du LLM sur le corpus, puis déploiement direct
+            sans index"
+          - "Génération libre par le LLM, puis vérification manuelle a
+            posteriori des sources"
+          - "Compression du corpus en un seul prompt envoyé systématiquement au
+            LLM"
         correct: 0
-        explanation: "Cadrer le cas d'usage et identifier les sources de données fiables est le prérequis indispensable."
+        explanation:
+          "Un agent RAG suit un pipeline standard : ingestion et indexation du
+          corpus, récupération des passages pertinents à la requête, puis
+          génération conditionnée par ce contexte."
       - id: q2
-        question: "Parmi ces solutions, laquelle est une base vectorielle utilisée pour RAG ?"
+        question:
+          "Quel critère est déterminant pour choisir le modèle de génération
+          (LLM) d'un agent RAG ?"
+        answers:
+          - "La taille de la fenêtre de contexte, la qualité du suivi
+            d'instructions et le coût par token"
+          - "La couleur de l'interface du fournisseur"
+          - "Le nombre de paramètres uniquement, sans considérer la latence ni
+            le coût"
+          - "La capacité du LLM à se passer totalement de tout contexte récupéré"
+        correct: 0
+        explanation:
+          "Le choix d'un LLM pour du RAG repose principalement sur la taille de
+          contexte (pour ingérer les passages récupérés), la qualité du suivi
+          d'instructions et l'équilibre coût/latence."
+      - id: q3
+        question:
+          "Quel critère principal guide le choix d'un modèle d'embeddings pour
+          un agent RAG ?"
+        answers:
+          - "La pertinence sémantique sur la langue et le domaine visés, la
+            dimension des vecteurs et le coût d'inférence"
+          - "La capacité du modèle à générer du texte long de façon créative"
+          - "Le nombre de couleurs supportées par l'interface du fournisseur"
+          - "La compatibilité exclusive avec un seul moteur SQL relationnel"
+        correct: 0
+        explanation:
+          "Un modèle d'embeddings se choisit selon sa qualité sémantique sur la
+          langue et le domaine cibles, la dimension produite et le coût ou la
+          latence d'inférence, car il conditionne la qualité de la recherche."
+      - id: q4
+        question:
+          "Parmi les bases vectorielles suivantes, laquelle est typiquement un
+          service managé hébergé dans le cloud ?"
         answers:
           - "Pinecone"
-          - "Apache Kafka"
-          - "Nginx"
-          - "Docker Compose"
+          - "FAISS"
+          - "Chroma en mode embarqué local"
+          - "SQLite"
         correct: 0
-        explanation: "Pinecone, Chroma, Weaviate, Qdrant et FAISS sont des bases vectorielles courantes pour RAG."
-      - id: q3
-        question: "Que choisit-on en priorité quand on sélectionne un modèle d'embeddings ?"
-        answers:
-          - "Sa qualité sémantique sur la langue cible et la dimension du vecteur produit"
-          - "Sa couleur d'affichage par défaut"
-          - "Le nombre de licences Windows incluses"
-          - "Le poids physique du serveur"
-        correct: 0
-        explanation: "On compare les modèles via des benchmarks (MTEB) sur la langue et le domaine, et on regarde dimension/coût."
-      - id: q4
-        question: "Quel est l'ordre logique d'un pipeline d'ingestion documentaire pour RAG ?"
-        answers:
-          - "Charger → découper en chunks → embedder → stocker dans la base vectorielle"
-          - "Stocker → embedder → charger → découper"
-          - "Embedder → charger → stocker → découper"
-          - "Découper → stocker → charger → embedder"
-        correct: 0
-        explanation: "Pipeline standard : load → split (chunk) → embed → upsert dans le vector store."
+        explanation:
+          "Pinecone est un service vectoriel managé dans le cloud, alors que
+          FAISS est une bibliothèque locale et Chroma s'utilise couramment en
+          mode embarqué."
       - id: q5
-        question: "Quelle est une bibliothèque Python populaire pour construire des agents RAG ?"
+        question:
+          "Dans un pipeline d'ingestion de documents pour un agent RAG, à quoi
+          servent les loaders ?"
         answers:
-          - "LangChain (ou LlamaIndex)"
-          - "TensorFlow Lite Micro"
-          - "OpenCV"
-          - "Pygame"
+          - "À lire et convertir des sources hétérogènes (PDF, HTML, Markdown,
+            etc.) en documents textuels exploitables par la suite du pipeline"
+          - "À générer directement les réponses finales de l'agent à
+            l'utilisateur"
+          - "À entraîner le LLM de génération sur les documents"
+          - "À chiffrer les vecteurs stockés dans la base vectorielle"
         correct: 0
-        explanation: "LangChain et LlamaIndex sont les frameworks de référence pour bâtir des pipelines RAG/agents."
+        explanation:
+          "Les loaders sont les composants chargés d'extraire le contenu textuel
+          depuis des formats hétérogènes pour produire des documents normalisés,
+          qui seront ensuite découpés, encodés puis indexés."
       - id: q6
-        question: "Que désigne le « retriever » dans une architecture RAG ?"
+        question:
+          "Pour un corpus de textes juridiques aux articles longs et structurés,
+          quelle stratégie de chunking est la plus adaptée ?"
         answers:
-          - "Le composant chargé de retrouver les passages pertinents pour une requête donnée"
-          - "Le composant qui génère la réponse finale"
-          - "L'interface utilisateur de l'application"
-          - "Le système de sauvegarde des logs"
-        correct: 0
-        explanation: "Le retriever est le module qui interroge l'index pour fournir les top-k passages au générateur."
+          - "Découper en chunks fixes de 100 caractères sans recouvrement"
+          - "Découper en respectant la structure (articles, alinéas) avec un
+            léger recouvrement sémantique"
+          - "Indexer chaque document entier comme un seul chunk, quelle que soit
+            sa taille"
+          - "Découper aléatoirement le texte pour maximiser la diversité des
+            embeddings"
+        correct: 1
+        explanation:
+          "Une stratégie de chunking adaptée au domaine respecte la structure
+          logique des documents (sections, articles) et utilise un recouvrement
+          pour préserver le contexte entre chunks."
       - id: q7
-        question: "Comment compose-t-on classiquement le retriever et le LLM dans un agent RAG ?"
+        question:
+          "Dans un pipeline RAG, comment construit-on typiquement le prompt
+          envoyé au LLM après l'étape de récupération ?"
         answers:
-          - "Le retriever fournit le contexte injecté dans le prompt envoyé au LLM"
-          - "Le LLM remplace le retriever et fait lui-même la recherche SQL"
-          - "Le retriever génère la réponse et le LLM la classe"
-          - "Les deux fonctionnent en parallèle sans communiquer"
-        correct: 0
-        explanation: "Pattern standard : retrieve → assembler prompt (instructions + contexte + question) → générer."
+          - "On envoie uniquement la question de l'utilisateur, sans les
+            documents récupérés"
+          - "On insère les passages récupérés dans un template qui combine
+            instructions, contexte et question utilisateur"
+          - "On concatène brutalement tous les documents de la base sans
+            filtrage"
+          - "On demande au LLM de générer lui-même les documents à utiliser
+            comme contexte"
+        correct: 1
+        explanation:
+          "Un prompt template RAG structure l'entrée du LLM en assemblant des
+          instructions système, les passages récupérés (contexte) et la
+          question, afin de guider la génération sur les sources."
       - id: q8
-        question: "Que signifie le « conditionnement contextuel » d'un LLM dans un agent RAG ?"
+        question:
+          "Comment intègre-t-on typiquement un agent RIG (Retrieval-Interleaved
+          Generation) dans un workflow ?"
         answers:
-          - "Influencer la génération en injectant dans le prompt les passages récupérés et des instructions ciblées"
-          - "Modifier physiquement la température du serveur"
-          - "Réduire le nombre de paramètres du modèle"
-          - "Désactiver le retrieval"
-        correct: 0
-        explanation: "On conditionne la sortie du LLM via le contenu et la formulation du contexte injecté."
+          - "L'agent récupère tout le contexte une seule fois avant de générer
+            la réponse complète"
+          - "L'agent alterne dynamiquement, pendant la génération, des étapes de
+            recherche et de production de tokens"
+          - "L'agent ne fait que de la recherche et délègue la génération à un
+            service externe"
+          - "L'agent désactive la recherche et s'appuie uniquement sur sa
+            mémoire paramétrique"
+        correct: 1
+        explanation:
+          "Le RIG entrelace récupération et génération : l'agent déclenche de
+          nouvelles recherches au fil de la production de la réponse, ce qui
+          permet d'aller chercher des informations à la demande."
       - id: q9
-        question: "Comment gère-t-on un contexte qui dépasserait la fenêtre du LLM ?"
+        question:
+          "Que désigne le conditionnement contextuel d'un agent intelligent ?"
         answers:
-          - "On filtre, résume ou compresse les passages pour tenir dans la limite de tokens"
-          - "On augmente magiquement la fenêtre du modèle sans rien faire"
-          - "On supprime le LLM"
-          - "On répond toujours « je ne sais pas »"
-        correct: 0
-        explanation: "Stratégies : top-k réduit, reranking, résumé, ou modèle à long contexte."
+          - "Le réentraînement complet des poids du modèle sur des données
+            métier"
+          - "Le fait d'orienter le comportement du modèle en injectant dans son
+            contexte des informations, instructions ou exemples pertinents"
+          - "La compression du modèle pour le faire tenir sur un appareil
+            embarqué"
+          - "Le chiffrement des messages échangés entre l'agent et l'utilisateur"
+        correct: 1
+        explanation:
+          "Le conditionnement contextuel consiste à influencer les réponses d'un
+          LLM via le contenu de son prompt (instructions, contexte, exemples)
+          sans modifier ses paramètres internes."
       - id: q10
-        question: "Quelle pratique de prompt aide un agent RAG à citer ses sources ?"
+        question:
+          "Parmi les techniques suivantes, lesquelles relèvent du
+          conditionnement contextuel d'un agent ?"
         answers:
-          - "Demander explicitement dans les instructions de référencer chaque affirmation par l'identifiant du passage"
-          - "Interdire toute citation"
-          - "Cacher le contexte au modèle"
-          - "Augmenter la température à 2.0"
-        correct: 0
-        explanation: "On instruit le modèle de produire des citations [doc_id] liées au contexte injecté."
+          - "Le fine-tuning supervisé et la quantification des poids"
+          - "Les instructions système et le few-shot prompting (exemples dans le
+            prompt)"
+          - "L'augmentation du nombre de paramètres et le pruning"
+          - "Le RLHF et la distillation de modèle"
+        correct: 1
+        explanation:
+          "Les instructions système et le few-shot prompting sont des techniques
+          de conditionnement contextuel : elles agissent uniquement via le
+          prompt, contrairement au fine-tuning ou à la quantification qui
+          modifient le modèle."
       - id: q11
-        question: "Comment implémente-t-on concrètement un agent RIG ?"
+        question:
+          "Parmi ces frameworks, lesquels sont couramment utilisés comme
+          orchestrateurs pour construire des agents RAG ?"
         answers:
-          - "On laisse le LLM générer puis déclencher des appels de retrieval (souvent via tool calling) au cours de la réponse"
-          - "On désactive complètement le retrieval"
-          - "On fait un seul retrieval avant la génération"
-          - "On remplace le LLM par un moteur de règles"
+          - "LangChain et LlamaIndex"
+          - "TensorFlow et PyTorch"
+          - "NumPy et Pandas"
+          - "Django et Flask"
         correct: 0
-        explanation: "RIG s'appuie typiquement sur du tool calling : le modèle invoque le retriever quand il a besoin d'un fait."
+        explanation:
+          "LangChain et LlamaIndex sont les deux frameworks de référence pour
+          orchestrer des agents LLM, gérer les chaînes d'appels, l'indexation et
+          la récupération documentaire."
       - id: q12
-        question: "Que désigne le « function calling » (ou tool calling) côté LLM ?"
+        question:
+          "Que désigne la notion d'« outils » (tools) dans le contexte d'un
+          agent intelligent ?"
         answers:
-          - "La capacité du modèle à émettre un appel structuré à une fonction externe (avec ses arguments JSON)"
-          - "Le fait de copier-coller du code source"
-          - "La compilation du modèle en binaire natif"
-          - "L'envoi d'un email"
+          - "Des fonctions externes que l'agent peut décider d'appeler pour
+            accomplir une tâche (recherche web, calcul, requête API, etc.)"
+          - "Les bibliothèques Python installées dans l'environnement de
+            développement"
+          - "Les paramètres de configuration du modèle de langage utilisé"
+          - "Les fichiers journaux générés pendant l'exécution de l'agent"
         correct: 0
-        explanation: "Le LLM produit un objet structuré décrivant la fonction à appeler et ses paramètres ; l'hôte exécute la fonction."
+        explanation:
+          "Un tool est une fonction exposée à l'agent (avec un nom et une
+          description) que le LLM peut choisir d'invoquer pour étendre ses
+          capacités au-delà de la simple génération de texte."
       - id: q13
         question: "À quoi sert la mémoire conversationnelle d'un agent ?"
         answers:
-          - "Conserver l'historique du dialogue pour maintenir cohérence et contexte au fil des tours"
-          - "Stocker uniquement les mots de passe"
-          - "Remplacer la base vectorielle"
-          - "Régler la couleur du chat"
+          - "À conserver le contexte des échanges précédents pour assurer la
+            cohérence des réponses au fil de la conversation"
+          - "À sauvegarder définitivement les poids du modèle de langage"
+          - "À chiffrer les communications réseau entre l'agent et l'utilisateur"
+          - "À accélérer les calculs matriciels du GPU"
         correct: 0
-        explanation: "La mémoire (court ou long terme) permet à l'agent de tenir compte des échanges précédents."
+        explanation:
+          "La mémoire conversationnelle stocke les tours de dialogue passés afin
+          que l'agent puisse s'y référer et maintenir la continuité du contexte
+          avec l'utilisateur."
       - id: q14
-        question: "Comment gérer un échec de retrieval (aucun passage pertinent retourné) ?"
+        question:
+          "Quelle stratégie est couramment employée pour gérer l'historique d'un
+          agent quand la fenêtre de contexte du LLM devient trop petite ?"
         answers:
-          - "Prévoir une stratégie de fallback : reformuler la requête, élargir la recherche ou répondre « je ne sais pas »"
-          - "Faire planter l'application brutalement"
-          - "Inventer une réponse au hasard"
-          - "Renvoyer l'utilisateur vers Wikipedia sans contrôle"
+          - "Résumer ou tronquer les échanges anciens (summary/window memory)
+            pour ne conserver que l'essentiel"
+          - "Augmenter automatiquement la taille de la fenêtre de contexte du
+            modèle"
+          - "Supprimer le prompt système pour libérer des tokens"
+          - "Ignorer toute nouvelle question tant que l'historique n'est pas
+            vide"
         correct: 0
-        explanation: "Un agent robuste prévoit la reformulation, l'escalade ou l'aveu d'ignorance plutôt que d'halluciner."
+        explanation:
+          "Pour rester sous la limite de tokens, on applique des stratégies
+          comme la fenêtre glissante ou le résumé progressif (summary memory)
+          qui condensent l'historique tout en préservant le contexte utile."
       - id: q15
-        question: "Comment teste-t-on unitairement un agent RAG ?"
+        question:
+          "Quel est l'intérêt principal du streaming de la réponse générée par
+          un agent LLM ?"
         answers:
-          - "À partir d'un jeu de questions/réponses de référence et de métriques (faithfulness, recall) automatisées"
-          - "En cliquant manuellement à chaque déploiement"
-          - "En supprimant la base vectorielle"
-          - "En désactivant le LLM"
+          - "Afficher progressivement la réponse token par token pour améliorer
+            la perception de réactivité côté utilisateur"
+          - "Réduire la consommation mémoire RAM du serveur de moitié"
+          - "Garantir que la réponse soit factuellement correcte"
+          - "Chiffrer la réponse pendant son transfert réseau"
         correct: 0
-        explanation: "On constitue une golden dataset et on évalue l'agent automatiquement (RAGAS, DeepEval, etc.)."
+        explanation:
+          "Le streaming permet d'envoyer les tokens au fur et à mesure de leur
+          génération, ce qui réduit la latence perçue et offre une expérience
+          utilisateur plus fluide, notamment dans les interfaces de chat."
       - id: q16
-        question: "Pourquoi versionner les prompts d'un agent ?"
+        question:
+          "Quelle stratégie de fallback est la plus pertinente lorsqu'un appel à
+          un outil externe échoue dans un agent RAG ?"
         answers:
-          - "Pour pouvoir comparer leurs performances, revenir en arrière et auditer les changements en production"
-          - "Parce que les prompts pèsent très lourd en mémoire"
-          - "Pour les chiffrer obligatoirement"
-          - "Pour les rendre invisibles aux développeurs"
-        correct: 0
-        explanation: "Le prompt est un artefact critique ; le versionner permet reproductibilité, A/B testing et audit."
+          - "Interrompre immédiatement la session et renvoyer une exception
+            brute à l'utilisateur"
+          - "Réessayer avec un backoff exponentiel puis basculer sur une réponse
+            dégradée signalée comme telle"
+          - "Ignorer silencieusement l'erreur et générer une réponse à partir
+            des connaissances internes du LLM"
+          - "Relancer l'outil en boucle jusqu'à obtenir un succès, sans limite
+            de tentatives"
+        correct: 1
+        explanation:
+          "Un agent robuste combine retries avec backoff et un mode dégradé
+          explicite, afin de préserver l'expérience tout en signalant la
+          limitation."
       - id: q17
-        question: "Quel est l'effet d'une température élevée sur la génération du LLM ?"
+        question:
+          "Quelle pratique réduit efficacement le risque de prompt injection
+          dans un agent intelligent ?"
         answers:
-          - "Réponses plus variées et créatives mais aussi plus risquées en termes de factualité"
-          - "Diminution stricte de la variabilité"
-          - "Suppression des hallucinations"
-          - "Amélioration garantie de la précision"
-        correct: 0
-        explanation: "La température contrôle l'aléatoire ; haute = créatif/instable, basse = déterministe/factuel."
+          - "Concaténer directement le contenu récupéré par le RAG au prompt
+            système sans transformation"
+          - "Faire confiance aux instructions présentes dans les documents
+            externes si la source semble fiable"
+          - "Isoler les données utilisateur et les contenus récupérés dans des
+            sections délimitées et neutraliser les instructions qu'ils
+            contiennent"
+          - "Augmenter la température du modèle pour qu'il ignore les
+            instructions malveillantes"
+        correct: 2
+        explanation:
+          "La séparation stricte entre instructions de confiance et données
+          externes, avec neutralisation des instructions injectées, est la
+          défense de base contre la prompt injection."
       - id: q18
-        question: "Qu'est-ce que la « prompt injection » ?"
+        question:
+          "Comment tester unitairement de manière fiable la logique
+          d'orchestration d'un agent qui appelle un LLM ?"
         answers:
-          - "Une attaque où un contenu hostile dans l'entrée détourne les instructions de l'agent"
-          - "Un format de fichier image"
-          - "Une manière d'accélérer la génération"
-          - "Un type de licence open source"
-        correct: 0
-        explanation: "La prompt injection consiste à introduire des instructions malveillantes (dans la requête ou un document) pour faire dévier l'agent."
+          - "Appeler le vrai LLM à chaque test pour garantir un comportement
+            réaliste"
+          - "Mocker les appels au LLM et aux outils externes afin d'isoler la
+            logique de l'agent"
+          - "Supprimer les tests unitaires et se contenter de tests manuels en
+            production"
+          - "Tester uniquement le prompt système sans exécuter le code de
+            l'agent"
+        correct: 1
+        explanation:
+          "Mocker le LLM et les outils rend les tests déterministes, rapides et
+          reproductibles, ce qui est indispensable pour valider l'orchestration."
       - id: q19
-        question: "Quel est l'intérêt du streaming de la réponse d'un agent ?"
+        question:
+          "Quel mode de déploiement est le plus adapté pour un agent intelligent
+          à charge très variable et à exécutions courtes ?"
         answers:
-          - "Afficher les tokens au fur et à mesure pour améliorer la perception de réactivité"
-          - "Réduire à zéro la consommation GPU"
-          - "Augmenter la précision des réponses"
-          - "Supprimer toute latence réseau"
+          - "Une fonction serverless exposée derrière une API HTTP"
+          - "Un script lancé manuellement sur le poste du développeur"
+          - "Un démon installé sur un poste utilisateur sans supervision"
+          - "Un cron exécutant l'agent toutes les minutes quoi qu'il arrive"
         correct: 0
-        explanation: "Le streaming améliore l'UX en affichant la réponse token par token sans attendre la fin de la génération."
+        explanation:
+          "Le serverless s'adapte automatiquement à la charge et facture à
+          l'usage, ce qui convient parfaitement aux charges intermittentes des
+          agents."
       - id: q20
-        question: "Comment expose-t-on couramment un agent RAG/RIG aux applications ?"
+        question:
+          "Quel élément doit être systématiquement journalisé pour assurer la
+          traçabilité des décisions d'un agent ?"
         answers:
-          - "Via une API HTTP/REST (ou gRPC, WebSocket pour le streaming)"
-          - "En recompilant le navigateur de l'utilisateur"
-          - "En modifiant directement la base de données métier sans contrat"
-          - "Via un partage de fichiers FTP anonyme"
-        correct: 0
-        explanation: "Le déploiement standard expose une API HTTP (REST ou WebSocket pour le streaming) consommée par les applications."
-  - id: applications-avancees
+          - "Uniquement la réponse finale renvoyée à l'utilisateur"
+          - "Les clés d'API et les secrets utilisés lors de l'appel"
+          - "La chaîne de raisonnement, les outils invoqués, leurs paramètres et
+            les documents récupérés"
+          - "Seulement la durée totale de l'exécution de l'agent"
+        correct: 2
+        explanation:
+          "Tracer les étapes de raisonnement, les outils, les paramètres et les
+          sources permet d'auditer et de reproduire les décisions de l'agent,
+          sans jamais journaliser de secrets."
+  - id: applications-graphrag-structrag
     title: "Applications avancées avec GraphRAG et StructRAG"
     questions:
       - id: q1
-        question: "Que désigne un graphe de connaissances métier dans un projet GraphRAG ?"
+        question:
+          "Lors de la conception d'un agent exploitant un graphe de
+          connaissances (GraphRAG), quelle étape est spécifique par rapport à un
+          RAG classique ?"
         answers:
-          - "Une représentation typée des entités et relations propres au domaine de l'entreprise"
-          - "Un simple diagramme PowerPoint statique"
-          - "Une base de logs applicatifs"
-          - "Un dépôt Git de documentation"
-        correct: 0
-        explanation: "Un knowledge graph métier modélise produits, clients, processus, etc. selon une ontologie spécifique."
+          - "Découper les documents en chunks de texte puis les vectoriser sans
+            relation entre eux"
+          - "Construire un graphe de nœuds (entités) et d'arêtes (relations) à
+            partir du corpus, puis interroger ce graphe"
+          - "Indexer uniquement les titres des documents dans une base SQL"
+          - "Entraîner un modèle de langage à partir de zéro sur le corpus
+            métier"
+        correct: 1
+        explanation:
+          "GraphRAG repose sur l'extraction d'entités et de relations pour
+          construire un graphe de connaissances que l'agent interroge, là où un
+          RAG classique se contente d'embeddings de chunks de texte."
       - id: q2
-        question: "Comment automatise-t-on l'extraction d'entités à partir de textes pour alimenter un graphe ?"
+        question:
+          "Dans un workflow type StructRAG pour générer un rapport dynamique,
+          quelle séquence d'étapes est correcte ?"
         answers:
-          - "En invoquant un LLM avec un schéma cible (entités/relations) et en validant les sorties JSON"
-          - "En recopiant manuellement chaque mot du document"
-          - "En utilisant un compilateur C++"
-          - "En appliquant un simple grep sur les fichiers"
-        correct: 0
-        explanation: "Les pipelines modernes utilisent un LLM avec function calling/JSON Schema pour extraire entités et relations."
+          - "Génération libre du rapport, puis structuration manuelle a
+            posteriori"
+          - "Identification du schéma cible, récupération structurée des
+            données, remplissage du gabarit, puis rendu du rapport"
+          - "Vectorisation du rapport final, puis recherche des sources
+            correspondantes"
+          - "Entraînement d'un modèle dédié au format de sortie avant toute
+            interrogation"
+        correct: 1
+        explanation:
+          "StructRAG impose d'abord de définir un schéma structuré, puis de
+          récupérer les données conformes à ce schéma avant de remplir le
+          gabarit du rapport, ce qui garantit un rendu reproductible."
       - id: q3
-        question: "Quelle stratégie permet de mettre à jour incrémentalement un graphe de connaissances ?"
+        question:
+          "Pourquoi GraphRAG est-il particulièrement adapté à la génération de
+          synthèses transverses portant sur plusieurs documents ?"
         answers:
-          - "Détecter les documents nouveaux/modifiés et n'extraire/mettre à jour que les triplets concernés"
-          - "Reconstruire intégralement le graphe à chaque ajout"
-          - "Supprimer le graphe et passer à une base SQL"
-          - "Ne jamais mettre à jour le graphe"
-        correct: 0
-        explanation: "Une approche incrémentale (delta) évite des recalculs coûteux et préserve la fraîcheur du graphe."
+          - "Parce qu'il ignore les relations entre entités pour aller plus vite"
+          - "Parce qu'il exploite les liens du graphe pour relier des
+            informations issues de documents distincts autour d'une même entité"
+          - "Parce qu'il limite la réponse à un seul document source à la fois"
+          - "Parce qu'il remplace systématiquement le LLM par une requête SQL"
+        correct: 1
+        explanation:
+          "Le graphe de connaissances relie les entités mentionnées dans des
+          documents différents, ce qui permet à l'agent d'agréger et de
+          synthétiser des informations transverses autour d'un même nœud."
       - id: q4
-        question: "Que désigne un requêtage hybride combinant graphe et embeddings vectoriels ?"
+        question:
+          "Pour extraire des informations structurées telles que des tableaux
+          financiers depuis des rapports d'entreprise, quelle approche StructRAG
+          est la plus appropriée ?"
         answers:
-          - "Un retrieval qui croise navigation dans le graphe et similarité sémantique pour de meilleurs résultats"
-          - "Une recherche purement SQL"
-          - "Un parcours aléatoire dans le graphe"
-          - "Une simple jointure entre deux tables"
-        correct: 0
-        explanation: "L'hybride exploite la structure du graphe ET la couverture sémantique des embeddings."
+          - "Demander au LLM une réponse en texte libre sans schéma"
+          - "Définir un schéma typé (colonnes, unités, périodes) et contraindre
+            la sortie du LLM à le respecter"
+          - "Stocker les PDF bruts sans extraction préalable"
+          - "Utiliser uniquement la similarité cosinus sur des embeddings de
+            phrases"
+        correct: 1
+        explanation:
+          "StructRAG s'appuie sur un schéma explicite (colonnes, types, unités)
+          qui contraint la sortie du modèle, ce qui est indispensable pour
+          extraire des tableaux financiers exploitables."
       - id: q5
-        question: "Quel est l'intérêt de StructRAG pour la génération de rapports dynamiques ?"
+        question:
+          "Dans un cas d'usage finance d'analyse de risques avec GraphRAG, quel
+          apport principal du graphe est mis en avant ?"
         answers:
-          - "Produire des rapports cohérents en exploitant des données structurées (tableaux, KPI) avec une faible marge d'erreur factuelle"
-          - "Générer uniquement des images décoratives"
-          - "Désactiver toute personnalisation"
-          - "Supprimer les données structurées avant la génération"
-        correct: 0
-        explanation: "StructRAG ancre la génération sur des structures fiables, idéal pour les rapports périodiques chiffrés."
+          - "Réduire le coût des appels au LLM en supprimant la phase de
+            récupération"
+          - "Mettre en évidence les chaînes d'exposition entre contreparties,
+            filiales et instruments via les relations du graphe"
+          - "Garantir l'absence d'hallucinations sans aucune vérification"
+          - "Remplacer les modèles de scoring de risque internes de la banque"
+        correct: 1
+        explanation:
+          "Le graphe permet de tracer explicitement les liens entre
+          contreparties, filiales et instruments financiers, révélant des
+          chaînes d'exposition au risque qu'une recherche vectorielle classique
+          ne capterait pas."
       - id: q6
-        question: "Comment obtient-on une sortie tabulaire fiable d'un agent StructRAG ?"
+        question:
+          "Dans un cas d'usage relation client, comment StructRAG facilite-t-il
+          la segmentation des clients ?"
         answers:
-          - "En spécifiant un schéma JSON/Pydantic et en validant la sortie du LLM contre ce schéma"
-          - "En laissant le LLM totalement libre sans contrainte de format"
-          - "En convertissant la sortie en image"
-          - "En supprimant la validation"
+          - "En imposant un schéma structuré (profil, historique, scores) qui
+            rend les segments calculables et requêtables de façon fiable"
+          - "En remplaçant la base CRM par un index vectoriel unique sans schéma
+            préalable"
+          - "En générant aléatoirement des segments à partir d'embeddings non
+            typés"
+          - "En supprimant toute donnée structurée pour ne garder que du texte
+            libre"
         correct: 0
-        explanation: "On force la sortie structurée via un schéma et on rejette/réessaie en cas de non-conformité."
+        explanation:
+          "StructRAG s'appuie sur un schéma explicite des données client, ce qui
+          permet d'agréger, filtrer et segmenter les profils de manière
+          déterministe et reproductible."
       - id: q7
-        question: "Dans le secteur financier, à quoi peut servir StructRAG ?"
+        question:
+          "En quoi un schéma StructRAG bien défini optimise-t-il un workflow
+          d'agent ?"
         answers:
-          - "Synthétiser des bilans, comparer des KPI et générer des analyses chiffrées documentées"
-          - "Compresser les vidéos de réunions"
-          - "Gérer le réseau Wi-Fi des locaux"
-          - "Imprimer les bulletins de paie"
+          - "Il garantit des sorties typées et validables, ce qui réduit les
+            erreurs de parsing et les boucles de correction"
+          - "Il supprime le besoin de tout LLM dans le pipeline"
+          - "Il rend le workflow plus lent en imposant des validations inutiles"
+          - "Il oblige à régénérer l'intégralité du schéma à chaque appel
+            d'outil"
         correct: 0
-        explanation: "Sur les bilans, comptes de résultat et tableaux d'indicateurs, StructRAG fournit des analyses structurées et précises."
+        explanation:
+          "Un schéma strict (par exemple JSON Schema) permet de valider chaque
+          étape, d'enchaîner les outils sans ambiguïté et d'éviter les reprises
+          dues à des sorties mal formées."
       - id: q8
-        question: "Dans la relation client, quel apport typique d'un GraphRAG ?"
+        question:
+          "Pourquoi est-il pertinent de combiner GraphRAG avec des appels
+          d'outils externes (API, bases métier) ?"
         answers:
-          - "Construire une vue 360° en reliant explicitement client, produits, contrats, tickets et interactions"
-          - "Imprimer les factures papier"
-          - "Configurer le standard téléphonique"
-          - "Gérer les badges d'accès"
+          - "Le graphe fournit le contexte relationnel, et les outils externes
+            apportent des données fraîches ou des actions impossibles à figer
+            dans le graphe"
+          - "Les outils externes remplacent complètement le graphe, qui devient
+            inutile"
+          - "GraphRAG interdit par conception tout appel d'outil externe"
+          - "Cela permet de se passer du LLM puisque les outils répondent
+            directement"
         correct: 0
-        explanation: "Le graphe relie les entités liées au client pour des recommandations et un support contextualisé."
+        explanation:
+          "GraphRAG excelle pour naviguer des relations connues, tandis que les
+          outils externes (API temps réel, calculs, actions) complètent le
+          contexte avec des données dynamiques ou des effets de bord."
       - id: q9
-        question: "Quel est l'intérêt d'un workflow multi-agents partageant un graphe commun ?"
+        question:
+          "Quel atout principal apporte StructRAG pour la génération de rapports
+          comparatifs ?"
         answers:
-          - "Permettre à plusieurs agents spécialisés (recherche, synthèse, validation) de coopérer sur une base de connaissances unifiée"
-          - "Augmenter le coût sans aucun bénéfice"
-          - "Supprimer la nécessité d'avoir des LLM"
-          - "Empêcher toute collaboration"
+          - "La sortie structurée permet d'aligner automatiquement les mêmes
+            champs entre plusieurs entités et de produire des tableaux
+            comparatifs cohérents"
+          - "Elle empêche toute mise en forme tabulaire des résultats"
+          - "Elle force le rapport à être généré uniquement en texte libre non
+            comparable"
+          - "Elle rend impossible la comparaison entre deux sources distinctes"
         correct: 0
-        explanation: "Le graphe sert de mémoire partagée et de contrat sémantique entre agents spécialisés."
+        explanation:
+          "Comme chaque entité est extraite selon le même schéma, les champs
+          sont directement comparables, ce qui simplifie la production de
+          tableaux et de synthèses homogènes."
       - id: q10
-        question: "Pourquoi visualiser interactivement un graphe de connaissances ?"
+        question:
+          "Quelle bonne pratique caractérise la mise à jour incrémentale d'un
+          graphe GraphRAG en production ?"
         answers:
-          - "Pour explorer les relations, valider la qualité du graphe et expliquer le raisonnement de l'agent"
-          - "Pour décorer les présentations"
-          - "Pour augmenter la latence"
-          - "Pour empêcher l'audit"
+          - "Détecter les nouveaux documents et mettre à jour uniquement les
+            nœuds et relations impactés, sans reconstruire tout le graphe"
+          - "Reconstruire intégralement le graphe à chaque nouveau document
+            ingéré"
+          - "Ne jamais mettre à jour le graphe une fois déployé en production"
+          - "Supprimer le graphe existant avant chaque ajout pour éviter les
+            conflits"
         correct: 0
-        explanation: "La visualisation est un outil d'audit et d'explication critique en GraphRAG."
+        explanation:
+          "Une mise à jour incrémentale cible les entités et relations affectées
+          par les nouveaux contenus, ce qui préserve la performance et évite le
+          coût d'une reconstruction complète."
       - id: q11
-        question: "Comment évalue-t-on la couverture d'un graphe de connaissances ?"
+        question:
+          "Quel intérêt principal apporte la visualisation interactive du graphe
+          à l'utilisateur final d'un agent GraphRAG ?"
         answers:
-          - "En mesurant la proportion d'entités et de relations attendues effectivement présentes par rapport à un référentiel"
-          - "En comptant les couleurs utilisées"
-          - "En comparant la taille du fichier .png"
-          - "En lançant un benchmark CPU"
-        correct: 0
-        explanation: "On mesure la couverture par rapport à un gold standard ou à une ontologie cible."
+          - "Elle accélère mécaniquement l'inférence du modèle de langage
+            sous-jacent"
+          - "Elle rend explicites les entités et relations utilisées pour
+            construire la réponse, facilitant la vérification"
+          - "Elle remplace totalement le besoin de citer les sources
+            documentaires"
+          - "Elle chiffre automatiquement les données sensibles avant affichage"
+        correct: 1
+        explanation:
+          "Visualiser le sous-graphe mobilisé permet à l'utilisateur de
+          comprendre le cheminement logique et de contrôler la pertinence des
+          entités et relations utilisées."
       - id: q12
-        question: "Quel outil/format est typique pour définir un schéma de sortie en StructRAG ?"
+        question:
+          "Comment sélectionne-t-on typiquement les sous-graphes pertinents pour
+          répondre à une requête dans GraphRAG ?"
         answers:
-          - "Pydantic (Python) ou JSON Schema"
-          - "Le format Markdown libre"
-          - "Le HTML4 brut"
-          - "Le format BMP"
-        correct: 0
-        explanation: "Pydantic et JSON Schema permettent une validation forte des sorties structurées."
+          - "En chargeant systématiquement la totalité du graphe dans le
+            contexte du LLM"
+          - "En tirant au hasard un nombre fixe de nœuds pour limiter le coût"
+          - "En identifiant les entités citées dans la requête puis en explorant
+            leur voisinage par parcours guidé"
+          - "En ne conservant que les nœuds créés le plus récemment dans le
+            graphe"
+        correct: 2
+        explanation:
+          "On extrait les entités de la question pour ancrer la recherche, puis
+          on explore leur voisinage (k-hop, communautés) afin de constituer un
+          sous-graphe ciblé et compact."
       - id: q13
-        question: "Que fait-on quand la sortie structurée d'un LLM ne respecte pas le schéma attendu ?"
+        question:
+          "Quel pré-traitement est généralement nécessaire avant d'ingérer des
+          documents dans un pipeline StructRAG ?"
         answers:
-          - "On rejette la réponse, on signale l'erreur et on réessaie avec un message correctif (retry/repair)"
-          - "On accepte silencieusement n'importe quelle sortie"
-          - "On modifie le schéma à la volée pour qu'il corresponde"
-          - "On désactive la validation"
-        correct: 0
-        explanation: "Pattern courant : valider, et en cas d'échec, demander au LLM de corriger sa sortie selon le schéma."
+          - "Convertir les documents en images bitmap haute résolution"
+          - "Détecter et extraire la structure (sections, tableaux, listes,
+            métadonnées) pour produire une représentation structurée"
+          - "Traduire systématiquement tous les contenus en anglais"
+          - "Supprimer toute ponctuation et tout caractère accentué"
+        correct: 1
+        explanation:
+          "StructRAG s'appuie sur une structure explicite : il faut donc parser
+          les documents pour en extraire sections, tableaux et métadonnées avant
+          indexation."
       - id: q14
-        question: "Que désigne LangGraph dans l'écosystème des agents ?"
+        question:
+          "Quelle est une limitation connue de GraphRAG face à des questions
+          très ciblées sur un fait précis ?"
         answers:
-          - "Un framework d'orchestration d'agents et de workflows en graphe d'états"
-          - "Une base de données NoSQL pour les emails"
-          - "Un éditeur d'images vectorielles"
-          - "Un protocole de transport sécurisé"
+          - "Le coût d'agrégation et de parcours du graphe peut être
+            disproportionné par rapport à un simple RAG vectoriel"
+          - "Il est incapable de traiter des questions formulées en français"
+          - "Il ne peut fonctionner qu'avec des modèles de langage open source"
+          - "Il exige obligatoirement un GPU dédié à l'inférence finale"
         correct: 0
-        explanation: "LangGraph (LangChain) modélise les workflows d'agents comme des graphes d'états/arêtes contrôlables."
+        explanation:
+          "Pour une question factuelle pointue, un RAG vectoriel classique
+          suffit souvent ; GraphRAG ajoute une surcharge de construction et
+          d'exploration de graphe peu rentable dans ce cas."
       - id: q15
-        question: "Comment génère-t-on des insights à partir d'un graphe de connaissances ?"
+        question:
+          "Quel pattern d'agent multi-étapes est typiquement utilisé avec
+          StructRAG pour produire un rapport ?"
         answers:
-          - "En requêtant des motifs récurrents (centralité, communautés, chemins) puis en les résumant via un LLM"
-          - "En supprimant aléatoirement des nœuds"
-          - "En convertissant le graphe en image floue"
-          - "En reformatant les fichiers de log"
-        correct: 0
-        explanation: "On combine algorithmes de graphes (analytics) et LLM pour transformer des motifs en explications."
+          - "Une unique requête au LLM qui génère le rapport complet sans étape
+            intermédiaire"
+          - "Une planification décomposant la demande en sous-questions,
+            interrogations ciblées sur la structure, puis synthèse et mise en
+            forme"
+          - "Un simple appel à une API de traduction suivi d'un export PDF"
+          - "Une exécution aléatoire d'outils jusqu'à obtenir une sortie de
+            longueur suffisante"
+        correct: 1
+        explanation:
+          "Un agent StructRAG efficace planifie les sous-questions, interroge
+          les fragments structurés pertinents, puis agrège et met en forme les
+          résultats pour produire un rapport cohérent."
       - id: q16
-        question: "Comment détecter des contradictions au sein d'un graphe de connaissances ?"
+        question:
+          "Pourquoi intégrer un data warehouse à un pipeline StructRAG ?"
         answers:
-          - "En appliquant des règles d'intégrité (contraintes ontologiques) et en signalant les triplets incompatibles"
-          - "En supprimant tout le graphe"
-          - "En augmentant la température du LLM"
-          - "En ignorant les contradictions"
+          - "Pour exposer au LLM des données structurées agrégées et historisées
+            via des requêtes SQL"
+          - "Pour remplacer le modèle d'embeddings utilisé par le RAG"
+          - "Pour héberger les poids du modèle de langage en production"
+          - "Pour stocker les prompts utilisateurs à des fins d'archivage légal"
         correct: 0
-        explanation: "Les contraintes ontologiques (cardinalités, types, exclusions) permettent de détecter et signaler les incohérences."
+        explanation:
+          "StructRAG s'appuie sur des sources structurées : un data warehouse
+          fournit des tables consolidées interrogeables en SQL pour répondre à
+          des questions analytiques."
       - id: q17
-        question: "Dans le e-commerce, comment GraphRAG améliore-t-il les recommandations ?"
+        question:
+          "En quoi GraphRAG est-il pertinent pour un cas d'usage juridique sur
+          la jurisprudence ?"
         answers:
-          - "En reliant utilisateurs, produits, catégories et comportements pour des suggestions explicables"
-          - "En supprimant le catalogue produit"
-          - "En augmentant les prix automatiquement"
-          - "En désactivant le moteur de recherche"
+          - "Il modélise les liens entre décisions, articles de loi et parties
+            pour suivre les chaînes de citations"
+          - "Il garantit automatiquement la confidentialité des données
+            personnelles des justiciables"
+          - "Il remplace l'expertise d'un avocat en produisant des conclusions
+            opposables"
+          - "Il supprime le besoin d'indexer les textes juridiques sources"
         correct: 0
-        explanation: "Le graphe enrichit les recommandations par des chemins de relations explicites et explicables."
+        explanation:
+          "GraphRAG exploite un graphe de connaissances reliant arrêts, textes
+          et entités, ce qui permet de naviguer dans les chaînes de citations et
+          la jurisprudence connexe."
       - id: q18
-        question: "Dans le domaine juridique, quelle tâche se prête bien à StructRAG ?"
+        question:
+          "Comment StructRAG facilite-t-il la génération de tableaux de bord ?"
         answers:
-          - "Extraire des clauses contractuelles dans un schéma normalisé pour comparaison ou audit"
-          - "Imprimer les actes notariés"
-          - "Compresser les vidéos de plaidoirie"
-          - "Réserver les salles d'audience"
+          - "En traduisant la demande en requêtes structurées dont les résultats
+            alimentent des visualisations"
+          - "En générant directement des images PNG sans accéder aux données
+            sous-jacentes"
+          - "En remplaçant l'outil de BI par le LLM qui calcule lui-même les
+            agrégats"
+          - "En supprimant la nécessité de définir des indicateurs métier"
         correct: 0
-        explanation: "L'extraction structurée de clauses (parties, durée, pénalités) facilite l'analyse comparative à grande échelle."
+        explanation:
+          "StructRAG transforme la question en requêtes sur des données
+          structurées ; les résultats tabulaires servent ensuite à produire des
+          graphiques et tableaux de bord."
       - id: q19
-        question: "Pourquoi mettre en cache les résultats des sous-requêtes dans un workflow GraphRAG/StructRAG ?"
+        question:
+          "Quel est un facteur clé de coût et de performance d'un déploiement
+          GraphRAG ?"
         answers:
-          - "Pour réduire la latence et le coût en évitant de recalculer des extractions identiques"
-          - "Pour augmenter le coût des appels LLM"
-          - "Pour supprimer la cohérence des résultats"
-          - "Pour empêcher la mise à jour du graphe"
+          - "La construction et la mise à jour du graphe de connaissances,
+            coûteuses en calcul et en stockage"
+          - "Le choix de la police d'affichage dans l'interface utilisateur"
+          - "La couleur du thème graphique de l'application cliente"
+          - "Le nombre de langues parlées par les utilisateurs finaux"
         correct: 0
-        explanation: "Le caching évite de relancer les mêmes extractions/recherches coûteuses à chaque appel."
+        explanation:
+          "Construire le graphe (extraction d'entités, relations, communautés)
+          et le maintenir à jour représente un coût significatif en calcul LLM
+          et en stockage, qui impacte directement la performance globale."
       - id: q20
-        question: "Comment combine-t-on un rapport StructRAG avec des commentaires en langage naturel d'un LLM ?"
+        question:
+          "Quel critère permet de juger du succès d'un projet GraphRAG ou
+          StructRAG ?"
         answers:
-          - "On génère d'abord les tableaux structurés validés, puis on demande au LLM un commentaire ancré sur ces données"
-          - "On laisse le LLM inventer librement les chiffres"
-          - "On supprime les tableaux avant le commentaire"
-          - "On ignore systématiquement les commentaires"
+          - "La qualité, la traçabilité et l'utilité métier des réponses
+            produites par rapport au besoin initial"
+          - "Le nombre total de tokens consommés par mois, indépendamment des
+            résultats"
+          - "La taille en gigaoctets de la base vectorielle déployée"
+          - "Le nombre de bibliothèques open source importées dans le projet"
         correct: 0
-        explanation: "Pattern : produire la structure validée, puis l'utiliser comme contexte pour la rédaction du commentaire."
+        explanation:
+          "Un projet RAG avancé se mesure à la pertinence métier, à la fiabilité
+          et à la traçabilité de ses réponses, pas à des métriques techniques
+          brutes décorrélées de la valeur livrée."
   - id: optimisation-performance
     title: "Optimisation et performance des agents intelligents"
     questions:
       - id: q1
-        question: "Que mesure la métrique « recall@k » dans un système de retrieval ?"
+        question:
+          "Quelle métrique mesure la proportion de réponses correctes fournies
+          par un agent intelligent sur l'ensemble des requêtes évaluées ?"
         answers:
-          - "La proportion de documents pertinents effectivement présents dans les k premiers résultats"
-          - "Le temps moyen de réponse du serveur"
-          - "Le nombre de tokens consommés par requête"
-          - "La taille du modèle en gigaoctets"
+          - "L'accuracy (taux de bonnes réponses)"
+          - "La latence moyenne par requête"
+          - "Le nombre de tokens consommés"
+          - "Le taux de rafraîchissement de l'index"
         correct: 0
-        explanation: "Recall@k = (docs pertinents retrouvés dans top-k) / (total docs pertinents)."
+        explanation:
+          "L'accuracy quantifie la part de réponses jugées correctes parmi
+          toutes les requêtes évaluées et constitue une métrique de précision
+          standard pour un agent."
       - id: q2
-        question: "Que mesure la métrique « precision@k » ?"
+        question:
+          "Que mesure la métrique de faithfulness appliquée à un agent RAG ?"
         answers:
-          - "La proportion de documents pertinents parmi les k premiers résultats"
-          - "Le temps de calcul du retriever"
-          - "Le nombre de paramètres du modèle"
-          - "La consommation électrique du serveur"
-        correct: 0
-        explanation: "Precision@k = (docs pertinents dans top-k) / k."
+          - "La rapidité avec laquelle l'agent renvoie une réponse"
+          - "Le degré de fidélité de la réponse aux sources documentaires
+            récupérées"
+          - "Le coût d'inférence du modèle de langage utilisé"
+          - "La diversité lexicale des réponses générées"
+        correct: 1
+        explanation:
+          "La faithfulness évalue si la réponse générée est fidèlement étayée
+          par les passages récupérés, sans hallucination ni ajout d'informations
+          non sourcées."
       - id: q3
-        question: "Que représente la métrique MRR (Mean Reciprocal Rank) ?"
+        question:
+          "Que représente la métrique recall@k utilisée pour évaluer le
+          retrieval d'un agent RAG ?"
         answers:
-          - "La moyenne des inverses du rang du premier document pertinent retourné"
-          - "Le nombre moyen de mots par document"
-          - "La latence médiane du LLM"
-          - "Le coût mensuel d'hébergement"
-        correct: 0
-        explanation: "MRR récompense le fait que le premier résultat pertinent apparaisse haut dans le classement."
+          - "Le temps moyen pour récupérer k documents"
+          - "Le nombre de tokens présents dans les k premiers résultats"
+          - "La proportion de documents pertinents présents parmi les k premiers
+            résultats retournés"
+          - "Le coût financier de k appels au modèle"
+        correct: 2
+        explanation:
+          "Le recall@k indique la fraction des documents pertinents
+          effectivement présents dans les k premiers résultats du retriever,
+          mesurant ainsi la pertinence du retrieval."
       - id: q4
-        question: "Que mesure la « faithfulness » (fidélité) d'une réponse RAG ?"
+        question:
+          "Quelle approche permet de mesurer correctement la latence d'un agent
+          intelligent ?"
         answers:
-          - "Le degré auquel les affirmations de la réponse sont effectivement supportées par le contexte récupéré"
-          - "Le nombre de fautes d'orthographe"
-          - "La rapidité du retriever"
-          - "Le coût d'entraînement initial du modèle"
-        correct: 0
-        explanation: "Faithfulness = aucune affirmation hors-contexte ; mesure clé contre les hallucinations."
+          - "Compter le nombre de documents indexés dans la base de
+            connaissances"
+          - "Mesurer la taille en octets du prompt envoyé au modèle"
+          - "Évaluer la précision des réponses sur un jeu de test"
+          - "Chronométrer le temps écoulé entre l'envoi de la requête et la
+            réception de la réponse complète"
+        correct: 3
+        explanation:
+          "La latence se mesure en chronométrant la durée entre l'émission de la
+          requête utilisateur et la réception de la réponse finale de l'agent,
+          généralement en millisecondes ou secondes."
       - id: q5
-        question: "Que mesure « answer relevancy » dans l'évaluation RAG ?"
+        question:
+          "Comment estime-t-on usuellement le coût d'une requête traitée par un
+          agent basé sur un LLM ?"
         answers:
-          - "L'adéquation de la réponse à la question posée par l'utilisateur"
-          - "La taille du fichier de log"
-          - "Le débit réseau du serveur"
-          - "Le nombre de chunks indexés"
+          - "En multipliant le nombre de tokens en entrée et en sortie par le
+            tarif unitaire du modèle"
+          - "En comptant uniquement le nombre de caractères de la question
+            utilisateur"
+          - "En mesurant la taille du fichier de configuration de l'agent"
+          - "En évaluant le score de faithfulness de la réponse"
         correct: 0
-        explanation: "Answer relevancy évalue à quel point la réponse répond effectivement à la question."
+        explanation:
+          "Le coût par requête s'obtient en additionnant les tokens d'entrée et
+          de sortie consommés, multipliés par le tarif unitaire facturé par le
+          fournisseur du modèle."
       - id: q6
-        question: "Quel framework open source est dédié à l'évaluation des pipelines RAG ?"
+        question:
+          "Quel est l'impact principal attendu d'un agent intelligent bien conçu
+          sur la productivité d'un collaborateur ?"
         answers:
-          - "RAGAS"
-          - "JUnit"
-          - "Selenium"
-          - "Mocha"
+          - "Réduire le temps consacré à la recherche d'information et aux
+            tâches répétitives, afin de recentrer le collaborateur sur les
+            activités à forte valeur ajoutée"
+          - "Remplacer intégralement le collaborateur sur l'ensemble de ses
+            missions métier"
+          - "Augmenter mécaniquement le nombre d'heures travaillées par jour"
+          - "Supprimer le besoin de toute validation humaine sur les décisions
+            critiques"
         correct: 0
-        explanation: "RAGAS propose des métriques (faithfulness, answer relevancy, context precision/recall) pensées pour RAG."
+        explanation:
+          "Un agent intelligent automatise la recherche documentaire et les
+          tâches répétitives, ce qui libère du temps pour les activités à valeur
+          ajoutée tout en conservant l'humain dans la boucle décisionnelle."
       - id: q7
-        question: "Comment optimiser la latence end-to-end d'un agent RAG ?"
+        question:
+          "À quoi sert la technique de re-ranking dans un pipeline RAG ?"
         answers:
-          - "Réduire le top-k, paralléliser embedding/retrieval, mettre en cache et utiliser le streaming"
-          - "Augmenter à l'infini la taille des chunks"
-          - "Désactiver toute mise en cache"
-          - "Recharger le modèle à chaque requête"
-        correct: 0
-        explanation: "On joue sur top-k, parallélisme, caching, streaming et choix du modèle pour réduire la latence."
+          - "À chiffrer les documents stockés dans la base vectorielle"
+          - "À réordonner les documents candidats récupérés selon leur
+            pertinence réelle vis-à-vis de la requête, avant transmission au LLM"
+          - "À générer de nouvelles questions à partir de la requête initiale"
+          - "À compresser les embeddings pour réduire la taille de l'index"
+        correct: 1
+        explanation:
+          "Le re-ranking applique un modèle de scoring fin (souvent un
+          cross-encoder) sur les top-k documents retournés par la recherche
+          vectorielle, afin d'améliorer la précision du contexte fourni au LLM."
       - id: q8
-        question: "Quelle est la principale variable de coût d'un agent RAG en production ?"
+        question:
+          "En quoi consiste la technique de query rewriting dans un agent RAG ?"
         answers:
-          - "Le nombre de tokens consommés par requête (entrée + sortie)"
-          - "Le nombre de couleurs de l'interface"
-          - "La quantité de fichiers HTML statiques"
-          - "Le nom de domaine choisi"
+          - "Réécrire ou reformuler la requête utilisateur pour la rendre plus
+            précise, plus complète ou mieux adaptée à la recherche documentaire"
+          - "Réécrire le contenu des documents indexés pour les uniformiser"
+          - "Traduire automatiquement la réponse finale dans la langue de
+            l'utilisateur"
+          - "Réécrire le prompt système du LLM à chaque interaction"
         correct: 0
-        explanation: "Les coûts d'API LLM sont dominés par le volume de tokens en entrée et en sortie."
+        explanation:
+          "Le query rewriting transforme la requête initiale, parfois ambiguë ou
+          incomplète, en une formulation enrichie ou clarifiée afin d'améliorer
+          la qualité des résultats retournés par le retriever."
       - id: q9
-        question: "Quel est l'impact d'une taille de chunk trop grande sur le retrieval ?"
+        question:
+          "Quel est le principe de la technique HyDE (Hypothetical Document
+          Embeddings) ?"
         answers:
-          - "Précision en baisse car les chunks contiennent plus de bruit non pertinent"
-          - "Le retrieval devient parfait à coup sûr"
-          - "Le LLM n'est plus utile"
-          - "Aucun impact, c'est neutre"
-        correct: 0
-        explanation: "Des chunks trop larges diluent le signal pertinent et dégradent la précision."
+          - "Indexer uniquement les documents qui contiennent des hypothèses
+            scientifiques"
+          - "Générer un embedding directement à partir de la question, sans
+            passer par un document"
+          - "Demander au LLM de générer un document hypothétique qui répondrait
+            à la requête, puis utiliser l'embedding de ce document pour la
+            recherche vectorielle"
+          - "Stocker plusieurs versions hypothétiques de chaque document dans
+            l'index vectoriel"
+        correct: 2
+        explanation:
+          "HyDE fait générer par le LLM une réponse hypothétique à la question,
+          dont l'embedding est ensuite utilisé pour la recherche : ce vecteur,
+          plus proche sémantiquement des documents pertinents, améliore le
+          rappel."
       - id: q10
-        question: "À quoi sert le « chunk overlap » entre segments adjacents ?"
+        question: "Quel est l'objectif principal du multi-query retrieval ?"
         answers:
-          - "Préserver le contexte aux frontières de découpage et éviter de couper des informations en deux"
-          - "Augmenter artificiellement le coût"
-          - "Compresser les fichiers source"
-          - "Désactiver le retrieval"
-        correct: 0
-        explanation: "Un overlap (10-20 %) limite les pertes d'information aux jointures entre chunks."
+          - "Limiter le nombre de requêtes envoyées au retriever pour réduire
+            les coûts"
+          - "Générer plusieurs reformulations de la requête initiale et
+            fusionner les résultats afin d'améliorer le rappel et la robustesse"
+          - "Interroger plusieurs LLM différents en parallèle pour comparer
+            leurs réponses"
+          - "Exécuter la même requête plusieurs fois pour mesurer la latence
+            moyenne"
+        correct: 1
+        explanation:
+          "Le multi-query retrieval consiste à générer plusieurs variantes de la
+          requête utilisateur, à exécuter chaque variante contre l'index puis à
+          fusionner les résultats, ce qui réduit la dépendance à une formulation
+          unique et améliore le rappel."
       - id: q11
-        question: "Que désigne une recherche hybride BM25 + vectoriel ?"
+        question:
+          "Quel est le principal bénéfice du caching des réponses fréquentes
+          dans un agent intelligent ?"
         answers:
-          - "Combiner un retrieval lexical (BM25) et un retrieval sémantique (embeddings) pour de meilleurs résultats"
-          - "Mixer deux LLM différents au hasard"
-          - "Utiliser deux serveurs de bases de données"
-          - "Empiler deux frameworks JavaScript"
+          - "Réduire la latence et le coût en évitant de réinterroger le LLM
+            pour des requêtes identiques ou similaires"
+          - "Améliorer la qualité sémantique des réponses générées par le modèle"
+          - "Augmenter la taille de la fenêtre de contexte du LLM utilisé"
+          - "Garantir que chaque requête déclenche un nouvel appel au modèle
+            pour plus de fraîcheur"
         correct: 0
-        explanation: "L'hybride profite de la précision lexicale (mots-clés exacts) et de la couverture sémantique (synonymes, paraphrases)."
+        explanation:
+          "Le cache stocke les réponses déjà calculées et les renvoie
+          directement pour des requêtes récurrentes, ce qui diminue la latence
+          et les appels payants au LLM."
       - id: q12
-        question: "Quel est l'intérêt d'ajouter une étape de reranking après la recherche vectorielle ?"
+        question:
+          "Que permet la quantization d'un modèle de langage pour améliorer la
+          performance d'un agent ?"
         answers:
-          - "Améliorer la précision finale en re-classant les top-k via un modèle plus coûteux mais plus précis"
-          - "Diviser par dix le coût total"
-          - "Supprimer l'étape de retrieval"
-          - "Rendre le système non déterministe"
+          - "Réduire la précision numérique des poids (par ex. en INT8 ou INT4)
+            pour diminuer la mémoire et accélérer l'inférence"
+          - "Augmenter le nombre de paramètres du modèle pour le rendre plus
+            précis"
+          - "Chiffrer les poids du modèle afin de protéger la propriété
+            intellectuelle"
+          - "Convertir le modèle en un format vectoriel adapté à la recherche
+            sémantique"
         correct: 0
-        explanation: "Un cross-encoder reranker score finement les top-k pour améliorer la précision en tête de classement."
+        explanation:
+          "La quantization réduit la précision des poids (FP16 vers INT8/INT4
+          par exemple), ce qui diminue l'empreinte mémoire et accélère
+          l'inférence avec une perte de qualité limitée."
       - id: q13
-        question: "Pourquoi mettre en cache les embeddings calculés ?"
+        question:
+          "Comment choisir un top-k optimal lors de la récupération de documents
+          dans un pipeline RAG ?"
         answers:
-          - "Éviter de recalculer les vecteurs des documents inchangés et économiser temps et coût"
-          - "Pour augmenter la latence"
-          - "Pour rendre les résultats incohérents"
-          - "Pour saturer le disque"
+          - "Trouver un compromis entre rappel suffisant et bruit/contexte
+            limité, en évaluant la qualité des réponses sur un jeu de test"
+          - "Choisir systématiquement la valeur la plus élevée possible pour
+            maximiser le rappel"
+          - "Fixer k=1 pour garantir la réponse la plus pertinente"
+          - "Utiliser une valeur aléatoire à chaque requête pour diversifier les
+            sources"
         correct: 0
-        explanation: "Les embeddings de documents stables n'ont pas besoin d'être recalculés à chaque requête ou indexation."
+        explanation:
+          "Un top-k trop petit dégrade le rappel, un top-k trop grand introduit
+          du bruit et sature le contexte. On l'ajuste empiriquement via des
+          métriques de qualité sur un jeu d'évaluation."
       - id: q14
-        question: "Quel est l'intérêt de mettre en cache les réponses de l'agent ?"
+        question:
+          "En quoi consiste l'A/B testing d'un agent intelligent en production ?"
         answers:
-          - "Servir instantanément les requêtes identiques (ou sémantiquement proches) sans rappeler le LLM"
-          - "Faire grossir indéfiniment la base sans bénéfice"
-          - "Empêcher toute mise à jour"
-          - "Désactiver les métriques"
+          - "Router une partie du trafic vers une variante B de l'agent et
+            comparer ses métriques à celles de la variante A en conditions
+            réelles"
+          - "Tester l'agent uniquement en environnement de développement avant
+            tout déploiement"
+          - "Exécuter deux fois la même requête sur le même agent pour vérifier
+            la reproductibilité"
+          - "Comparer deux LLM différents en local sans exposer aucune variante
+            aux utilisateurs"
         correct: 0
-        explanation: "Le caching de réponses (exact ou sémantique) réduit latence et coûts pour les requêtes récurrentes."
+        explanation:
+          "L'A/B testing consiste à exposer en parallèle deux versions de
+          l'agent à des sous-ensembles d'utilisateurs et à comparer des
+          métriques (qualité, latence, satisfaction) pour décider de la
+          meilleure variante."
       - id: q15
-        question: "Pourquoi pratiquer de l'A/B testing sur les prompts d'un agent ?"
+        question:
+          "Quelle pratique relève de l'apprentissage continu d'un agent RAG ?"
         answers:
-          - "Comparer objectivement plusieurs versions de prompt sur des métriques de qualité et d'engagement"
-          - "Doubler le coût sans raison"
-          - "Empêcher toute évolution"
-          - "Cacher les performances réelles"
+          - "Mettre à jour régulièrement la base de connaissances et réindexer
+            les nouveaux documents pour refléter l'état actuel de l'information"
+          - "Geler définitivement la base vectorielle après le premier
+            déploiement"
+          - "Réentraîner le LLM de base à chaque nouvelle requête utilisateur"
+          - "Supprimer l'historique des interactions pour éviter tout biais
+            d'apprentissage"
         correct: 0
-        explanation: "L'A/B testing permet d'itérer scientifiquement sur les prompts en conditions réelles."
+        explanation:
+          "L'apprentissage continu d'un agent RAG passe avant tout par
+          l'actualisation et la réindexation régulière de la base de
+          connaissances afin que les réponses restent à jour."
       - id: q16
-        question: "Que désigne l'apprentissage continu d'un agent RAG ?"
+        question:
+          "À quoi sert une boucle de feedback utilisateur dans le cycle de vie
+          d'un agent intelligent ?"
         answers:
-          - "Mettre à jour régulièrement le corpus indexé pour intégrer les nouvelles informations"
-          - "Ré-entraîner le LLM à chaque requête utilisateur"
-          - "Bloquer toute mise à jour des données"
-          - "Supprimer la base de connaissances"
+          - "À collecter les signaux explicites et implicites des utilisateurs
+            pour ajuster prompts, retrieval ou fine-tuning de l'agent"
+          - "À chiffrer les échanges entre l'utilisateur et l'agent de bout en
+            bout"
+          - "À répliquer la base vectorielle sur plusieurs régions pour la haute
+            disponibilité"
+          - "À compresser les logs de production avant archivage"
         correct: 0
-        explanation: "Pour un agent RAG, l'apprentissage continu passe surtout par la mise à jour de la base documentaire."
+        explanation:
+          "La boucle de feedback (pouces, notes, corrections, reformulations)
+          alimente l'amélioration continue de l'agent : ajustement des prompts,
+          du retrieval ou ré-entraînement ciblé."
       - id: q17
-        question: "À quoi sert un mécanisme de feedback utilisateur (thumbs up/down) ?"
+        question:
+          "Qu'est-ce que la dérive (drift) d'un agent intelligent en production
+          ?"
         answers:
-          - "Identifier les mauvaises réponses pour améliorer le pipeline (corpus, prompts, retrieval)"
-          - "Décorer l'interface graphique"
-          - "Augmenter aléatoirement la température du LLM"
-          - "Supprimer toute traçabilité"
+          - "Une dégradation progressive des performances due à l'évolution des
+            données d'entrée ou du contexte d'usage par rapport aux données de
+            référence"
+          - "Une panne matérielle du GPU hébergeant le modèle"
+          - "Un changement de licence imposé par le fournisseur du LLM"
+          - "Une perte de connexion réseau entre l'agent et la base vectorielle"
         correct: 0
-        explanation: "Le feedback alimente l'amélioration continue : analyse d'erreurs, fine-tuning du retriever, prompt engineering."
+        explanation:
+          "Le drift désigne l'écart croissant entre la distribution des données
+          vues en production et celle utilisée à la conception, entraînant une
+          baisse de qualité des réponses."
       - id: q18
-        question: "Que désigne le « drift » du corpus dans un système RAG en production ?"
+        question:
+          "Quel indicateur est typiquement suivi en monitoring temps réel d'un
+          agent intelligent ?"
         answers:
-          - "L'évolution progressive du contenu qui rend l'index obsolète si non mis à jour"
-          - "Une faille de sécurité réseau"
-          - "Une panne matérielle aléatoire"
-          - "Un bug d'affichage CSS"
+          - "La latence des réponses, le taux d'erreur et le coût en tokens par
+            requête"
+          - "La température ambiante du datacenter mesurée par capteur"
+          - "Le nombre de commits Git poussés sur le dépôt de l'agent"
+          - "La taille du logo affiché dans l'interface utilisateur"
         correct: 0
-        explanation: "Le drift correspond à la dérive du corpus (nouveaux documents, contenu modifié) qui dégrade la pertinence si l'index n'est pas rafraîchi."
+        explanation:
+          "Le monitoring temps réel d'un agent surveille des métriques
+          opérationnelles comme la latence, le taux d'erreur, la consommation de
+          tokens et la qualité des réponses."
       - id: q19
-        question: "Quelle technique réduit la taille et le coût d'un LLM tout en conservant la majorité de ses capacités ?"
+        question:
+          "Quelle est la fonction principale d'outils comme LangSmith ou
+          Langfuse ?"
         answers:
-          - "La quantisation (par exemple en INT8 ou INT4) ou la distillation"
-          - "L'augmentation du nombre de paramètres"
-          - "La désactivation totale du modèle"
-          - "L'ajout de couleurs au logo"
+          - "Fournir l'observabilité des agents LLM : traces, évaluations, suivi
+            des prompts, des coûts et des performances"
+          - "Héberger des modèles open source en remplacement de Hugging Face"
+          - "Générer automatiquement le code source d'une application React"
+          - "Servir de base de données relationnelle pour les embeddings"
         correct: 0
-        explanation: "Quantisation et distillation réduisent l'empreinte mémoire et le coût d'inférence en limitant la perte de qualité."
+        explanation:
+          "LangSmith et Langfuse sont des plateformes d'observabilité
+          spécialisées LLM : elles tracent les exécutions de chaînes/agents,
+          évaluent la qualité et suivent coûts et latences."
       - id: q20
-        question: "Quel indicateur métier mesure l'impact réel d'un agent intelligent sur les collaborateurs ?"
+        question:
+          "Comment se présente le trade-off classique entre précision, coût et
+          latence pour un agent LLM ?"
         answers:
-          - "Le gain de temps (ou de productivité) sur les tâches ciblées par l'agent"
-          - "Le nombre de couleurs du dashboard"
-          - "La taille du logo en pixels"
-          - "La marque du clavier des utilisateurs"
+          - "Augmenter la précision (modèle plus gros, plus de retrieval,
+            reasoning étendu) tend à accroître coût et latence ; il faut
+            arbitrer selon le cas d'usage"
+          - "Précision, coût et latence évoluent toujours indépendamment et ne
+            s'influencent pas"
+          - "Réduire la latence améliore mécaniquement la précision sans impact
+            sur le coût"
+          - "Le coût n'a aucun lien avec le choix du modèle ou la taille du
+            contexte"
         correct: 0
-        explanation: "On mesure le ROI métier : temps gagné, satisfaction, taux de résolution, etc."
+        explanation:
+          "Améliorer la précision (modèle plus puissant, contexte enrichi,
+          étapes de raisonnement) augmente généralement le coût en tokens et la
+          latence ; l'arbitrage dépend des exigences métier."
+  - id: ethique-conformite
+    title: "Gestion des enjeux éthiques et de la conformité"
+    questions:
+      - id: q1
+        question:
+          "Qu'est-ce qu'un biais algorithmique dans le contexte d'un agent
+          intelligent ?"
+        answers:
+          - "Une erreur ponctuelle de calcul provoquée par une panne matérielle"
+          - "Une distorsion systématique des résultats produits par le modèle,
+            défavorisant certains profils ou points de vue"
+          - "Une optimisation volontaire visant à accélérer l'inférence du
+            modèle"
+          - "Un défaut de connexion réseau entre l'agent et sa base de retrieval"
+        correct: 1
+        explanation:
+          "Un biais algorithmique est une distorsion systématique et
+          reproductible des sorties d'un système, qui peut désavantager certains
+          groupes ou favoriser certaines représentations."
+      - id: q2
+        question:
+          "Quelle est une source fréquente de biais dans la base documentaire
+          utilisée pour le retrieval d'un système RAG ?"
+        answers:
+          - "Le choix du moteur d'indexation vectorielle utilisé"
+          - "La taille de la fenêtre de contexte du modèle de génération"
+          - "Une sur-représentation de certaines sources, langues ou points de
+            vue dans le corpus indexé"
+          - "La latence du serveur hébergeant la base vectorielle"
+        correct: 2
+        explanation:
+          "Les biais en RAG proviennent souvent du corpus lui-même : si
+          certaines sources, langues ou opinions y sont sur-représentées, le
+          retrieval renverra majoritairement ces contenus."
+      - id: q3
+        question:
+          "Quelle pratique permet d'identifier des biais dans les réponses
+          produites par un agent RAG ?"
+        answers:
+          - "Augmenter uniquement la température du modèle de génération"
+          - "Évaluer les sorties sur un jeu de tests ciblé couvrant des profils,
+            sujets et formulations variés"
+          - "Réduire la taille des chunks indexés dans la base vectorielle"
+          - "Désactiver la journalisation des requêtes utilisateur"
+        correct: 1
+        explanation:
+          "L'identification des biais passe par une évaluation systématique sur
+          un jeu de tests représentatif et diversifié, permettant de comparer
+          les réponses selon différents profils ou formulations."
+      - id: q4
+        question:
+          "Parmi les stratégies suivantes, laquelle contribue à mitiger les
+          biais dans un système RAG ?"
+        answers:
+          - "Diversifier les sources du corpus et rééquilibrer leur
+            représentation lors de l'indexation"
+          - "Supprimer toutes les métadonnées associées aux documents indexés"
+          - "Augmenter le nombre de tokens générés par réponse"
+          - "Utiliser un seul fournisseur de contenu pour garantir la cohérence"
+        correct: 0
+        explanation:
+          "Diversifier les sources et rééquilibrer leur poids dans l'index
+          réduit la sur-représentation de certains points de vue et limite ainsi
+          les biais transmis au modèle de génération."
+      - id: q5
+        question:
+          "Quelle bonne pratique protège la confidentialité des données
+          utilisateur dans un agent RAG en production ?"
+        answers:
+          - "Stocker les requêtes en clair dans des logs publics pour faciliter
+            le débogage"
+          - "Transmettre systématiquement les données brutes à des modèles tiers
+            sans contrôle"
+          - "Minimiser les données collectées, anonymiser les requêtes et
+            restreindre l'accès aux logs"
+          - "Indexer les données personnelles des utilisateurs dans la base
+            vectorielle partagée"
+        correct: 2
+        explanation:
+          "La protection de la confidentialité repose sur la minimisation des
+          données, l'anonymisation des requêtes sensibles et un contrôle strict
+          des accès aux journaux et aux index."
+      - id: q6
+        question:
+          "Pourquoi anonymiser les données avant leur ingestion dans la base
+          vectorielle d'un agent RAG ?"
+        answers:
+          - "Pour réduire la taille des embeddings générés"
+          - "Pour empêcher la fuite de données personnelles via les réponses du
+            modèle"
+          - "Pour accélérer la recherche par similarité cosinus"
+          - "Pour améliorer la précision sémantique des chunks"
+        correct: 1
+        explanation:
+          "L'anonymisation supprime ou pseudonymise les données personnelles, ce
+          qui évite qu'elles soient restituées par l'agent dans ses réponses ou
+          exposées via les documents récupérés."
+      - id: q7
+        question:
+          "Quelle obligation RGPD s'applique spécifiquement à un agent
+          intelligent qui traite des données personnelles d'utilisateurs
+          européens ?"
+        answers:
+          - "Stocker obligatoirement toutes les données dans des serveurs hors
+            UE"
+          - "Disposer d'une base légale de traitement et informer les personnes
+            concernées"
+          - "Chiffrer uniquement les embeddings, pas les documents sources"
+          - "Limiter l'agent à un usage strictement commercial"
+        correct: 1
+        explanation:
+          "Le RGPD impose une base légale (consentement, intérêt légitime, etc.)
+          pour tout traitement de données personnelles ainsi qu'une information
+          claire des personnes concernées sur l'usage de leurs données."
+      - id: q8
+        question:
+          "Selon l'AI Act européen, comment est généralement classé un agent
+          intelligent utilisé pour le tri automatisé de candidatures à
+          l'embauche ?"
+        answers:
+          - "Système à risque minimal, sans obligation particulière"
+          - "Système à risque limité, soumis seulement à transparence"
+          - "Système à haut risque, soumis à des obligations renforcées"
+          - "Système interdit en toutes circonstances"
+        correct: 2
+        explanation:
+          "L'AI Act classe les systèmes d'IA utilisés en gestion des ressources
+          humaines (tri de CV, évaluation de candidats) comme à haut risque, ce
+          qui impose documentation, supervision humaine et évaluation de
+          conformité."
+      - id: q9
+        question:
+          "Que recouvre le droit à l'explication appliqué à une décision prise
+          par un agent intelligent ?"
+        answers:
+          - "Le droit d'obtenir le code source complet du modèle utilisé"
+          - "Le droit de recevoir une information compréhensible sur la logique
+            de la décision"
+          - "Le droit d'exiger la suppression définitive de l'agent"
+          - "Le droit d'accéder gratuitement aux poids du modèle"
+        correct: 1
+        explanation:
+          "Le droit à l'explication, notamment issu du RGPD pour les décisions
+          automatisées, garantit à la personne concernée une information
+          intelligible sur la logique sous-jacente de la décision, sans imposer
+          la divulgation du code ou des poids."
+      - id: q10
+        question:
+          "Pourquoi un agent RAG doit-il citer les sources des extraits utilisés
+          dans sa réponse ?"
+        answers:
+          - "Pour augmenter artificiellement la longueur de la réponse"
+          - "Pour permettre à l'utilisateur de vérifier l'information et
+            renforcer la transparence"
+          - "Pour réduire la consommation de tokens du modèle"
+          - "Pour contourner les limitations du contexte du LLM"
+        correct: 1
+        explanation:
+          "Citer les sources permet à l'utilisateur de vérifier la véracité des
+          affirmations de l'agent et constitue un pilier de la transparence,
+          condition essentielle de la confiance et de la conformité."
+      - id: q11
+        question:
+          "Pourquoi journaliser les étapes de raisonnement et les appels
+          d'outils d'un agent intelligent ?"
+        answers:
+          - "Pour réduire la latence des réponses de l'agent"
+          - "Pour assurer la traçabilité des décisions et permettre un audit a
+            posteriori"
+          - "Pour augmenter automatiquement la taille de la fenêtre de contexte"
+          - "Pour entraîner le modèle de fondation en continu"
+        correct: 1
+        explanation:
+          "La journalisation des prompts, étapes intermédiaires et outils
+          invoqués permet de reconstituer le cheminement d'une décision et de
+          l'auditer en cas d'incident ou de contestation."
+      - id: q12
+        question:
+          "Quelle pratique respecte le mieux le consentement de l'utilisateur
+          lorsqu'un agent collecte ses données pour personnaliser ses réponses ?"
+        answers:
+          - "Activer la collecte par défaut et proposer un opt-out caché dans
+            les paramètres"
+          - "Demander un consentement explicite, éclairé et révocable avant
+            toute collecte"
+          - "Considérer que l'usage du service vaut consentement implicite à
+            toute exploitation"
+          - "Anonymiser les données après coup sans informer l'utilisateur"
+        correct: 1
+        explanation:
+          "Le RGPD impose un consentement libre, spécifique, éclairé et
+          univoque, que l'utilisateur doit pouvoir retirer aussi facilement
+          qu'il l'a donné."
+      - id: q13
+        question:
+          "Quelle mesure contribue le plus à sécuriser le stockage des prompts
+          et historiques de conversation d'un agent ?"
+        answers:
+          - "Conserver les historiques en clair pour faciliter le débogage"
+          - "Chiffrer les données au repos et en transit, et restreindre les
+            accès via des rôles"
+          - "Stocker les historiques côté client uniquement, sans aucune
+            sauvegarde"
+          - "Partager les historiques avec tous les développeurs pour accélérer
+            l'amélioration"
+        correct: 1
+        explanation:
+          "Le chiffrement au repos et en transit, combiné à un contrôle d'accès
+          basé sur les rôles, limite fortement le risque de fuite des prompts et
+          historiques sensibles."
+      - id: q14
+        question:
+          "Comment limiter le risque d'hallucinations d'un agent et clarifier la
+          responsabilité associée ?"
+        answers:
+          - "Faire entièrement confiance au modèle et publier ses sorties sans
+            relecture"
+          - "Ancrer les réponses sur des sources vérifiables (RAG), citer les
+            sources et prévoir une revue humaine pour les usages sensibles"
+          - "Augmenter la température du modèle pour diversifier les réponses"
+          - "Désactiver toute traçabilité afin de diluer la responsabilité"
+        correct: 1
+        explanation:
+          "Ancrer les réponses sur des sources vérifiables, exposer les
+          citations et maintenir un humain dans la boucle pour les décisions à
+          risque réduit les hallucinations et clarifie la chaîne de
+          responsabilité."
+      - id: q15
+        question:
+          "Quel dispositif est le plus adapté pour filtrer les contenus toxiques
+          produits par un agent avant leur affichage à l'utilisateur ?"
+        answers:
+          - "Un simple filtre par mots-clés appliqué en amont du prompt"
+          - "Une couche de modération en sortie (classifieur de toxicité,
+            garde-fous) couplée à des règles de blocage et de reformulation"
+          - "Un avertissement légal affiché dans les conditions d'utilisation"
+          - "La désactivation pure et simple des journaux de sortie"
+        correct: 1
+        explanation:
+          "Une couche de modération en sortie, basée sur un classifieur de
+          toxicité et des garde-fous, permet de bloquer ou reformuler les
+          contenus problématiques avant qu'ils n'atteignent l'utilisateur."
+      - id: q16
+        question:
+          "Quel est l'objectif principal d'une politique de modération des
+          prompts utilisateurs dans un agent IA ?"
+        answers:
+          - "Optimiser la latence des réponses du modèle"
+          - "Filtrer les requêtes abusives, illégales ou hors périmètre avant
+            traitement"
+          - "Compresser les prompts pour réduire le coût en tokens"
+          - "Traduire automatiquement les prompts dans la langue du modèle"
+        correct: 1
+        explanation:
+          "Une politique de modération des prompts vise à détecter et bloquer
+          les entrées abusives, illégales ou hors périmètre avant qu'elles
+          n'atteignent le modèle, afin de protéger les utilisateurs et
+          l'organisation."
+      - id: q17
+        question:
+          "Que cherche-t-on principalement à vérifier lors de l'audit d'un agent
+          IA ?"
+        answers:
+          - "La popularité de l'agent auprès des utilisateurs finaux"
+          - "Le coût marketing du déploiement de l'agent"
+          - "La conformité, la sécurité, la traçabilité et la qualité des
+            réponses produites"
+          - "La vitesse de connexion réseau entre l'agent et ses bases
+            vectorielles"
+        correct: 2
+        explanation:
+          "Un audit d'agent IA évalue notamment la conformité réglementaire, la
+          sécurité, la traçabilité des décisions et la qualité des réponses,
+          afin de maîtriser les risques liés à son usage."
+      - id: q18
+        question:
+          "À quoi sert principalement une model card associée à un modèle d'IA ?"
+        answers:
+          - "Documenter l'usage prévu, les limites, les performances et les
+            risques connus du modèle"
+          - "Fournir la clé d'API permettant d'appeler le modèle"
+          - "Stocker les poids entraînés du modèle de manière chiffrée"
+          - "Définir le tarif facturé par appel au modèle"
+        correct: 0
+        explanation:
+          "Une model card est un document standardisé qui décrit l'usage prévu,
+          les données d'entraînement, les performances, les limites et les
+          risques d'un modèle, afin d'en favoriser un usage responsable."
+      - id: q19
+        question:
+          "Que désigne la notion de fairness inter-groupes appliquée à un
+          système d'IA ?"
+        answers:
+          - "La capacité du modèle à répondre rapidement à plusieurs
+            utilisateurs en parallèle"
+          - "L'équité des performances et des décisions du modèle entre
+            différents groupes démographiques"
+          - "La répartition équitable de la charge GPU entre plusieurs instances
+            du modèle"
+          - "La compatibilité du modèle avec plusieurs langues naturelles"
+        correct: 1
+        explanation:
+          "La fairness inter-groupes vise à garantir que les performances et
+          décisions d'un modèle ne désavantagent pas systématiquement certains
+          groupes démographiques par rapport à d'autres."
+      - id: q20
+        question:
+          "Parmi les pratiques suivantes, laquelle relève de la transparence
+          vis-à-vis des utilisateurs d'un agent IA ?"
+        answers:
+          - "Masquer le fait qu'un agent automatisé est impliqué dans la
+            conversation"
+          - "Indiquer clairement à l'utilisateur qu'il interagit avec une IA et
+            préciser ses limites"
+          - "Conserver secrètes les sources utilisées pour générer les réponses"
+          - "Empêcher l'utilisateur de signaler une réponse jugée problématique"
+        correct: 1
+        explanation:
+          "La transparence consiste notamment à informer explicitement
+          l'utilisateur qu'il dialogue avec une IA, à préciser ses limites et,
+          lorsque c'est pertinent, à exposer les sources utilisées."
+  - id: perspectives-futures
+    title: "Perspectives futures et innovations dans les agents intelligents"
+    questions:
+      - id: q1
+        question:
+          "Quelle tendance désigne l'orchestration de plusieurs agents
+          spécialisés collaborant pour résoudre une tâche complexe ?"
+        answers:
+          - "Les systèmes multi-agents"
+          - "Le fine-tuning supervisé"
+          - "La quantification des poids"
+          - "Le prompt engineering statique"
+        correct: 0
+        explanation:
+          "Les systèmes multi-agents font collaborer plusieurs agents aux rôles
+          complémentaires (planificateur, exécutant, critique) pour traiter des
+          problèmes complexes."
+      - id: q2
+        question:
+          "Que sont AutoGPT et BabyAGI, souvent cités comme précurseurs d'une
+          tendance majeure ?"
+        answers:
+          - "Des bases de données vectorielles open source"
+          - "Des agents autonomes capables de planifier et d'exécuter des tâches
+            sans intervention humaine continue"
+          - "Des frameworks de fine-tuning de LLM"
+          - "Des protocoles de chiffrement pour LLM"
+        correct: 1
+        explanation:
+          "AutoGPT et BabyAGI sont des agents autonomes qui décomposent un
+          objectif en sous-tâches et les exécutent en boucle avec un minimum de
+          supervision humaine."
+      - id: q3
+        question:
+          "Que désigne l'évolution des LLM vers des modèles multimodaux ?"
+        answers:
+          - "La capacité à traiter conjointement plusieurs types de données
+            (texte, image, audio, vidéo)"
+          - "L'utilisation simultanée de plusieurs GPU"
+          - "La gestion de plusieurs langues humaines uniquement"
+          - "Le passage du cloud à l'edge computing"
+        correct: 0
+        explanation:
+          "Un modèle multimodal sait ingérer et produire plusieurs modalités
+          (texte, image, audio, vidéo), élargissant les usages des agents
+          intelligents."
+      - id: q4
+        question:
+          "Quelle est la promesse principale des SLM (Small Language Models)
+          dans l'évolution future des agents ?"
+        answers:
+          - "Remplacer totalement les LLM dans toutes les tâches"
+          - "Offrir des modèles plus petits, économes et déployables localement,
+            adaptés à des tâches ciblées"
+          - "Supprimer le besoin de données d'entraînement"
+          - "Garantir une précision toujours supérieure aux LLM généralistes"
+        correct: 1
+        explanation:
+          "Les SLM visent un meilleur compromis coût/latence/confidentialité en
+          s'exécutant localement et en se spécialisant sur des tâches ciblées au
+          sein d'agents."
+      - id: q5
+        question: 'En quoi consiste l''innovation appelée "adaptive RAG" ?'
+        answers:
+          - "Indexer toujours l'intégralité du corpus avant chaque requête"
+          - "Utiliser un seul retriever fixe quel que soit le contexte"
+          - "Adapter dynamiquement la stratégie de récupération (sources,
+            profondeur, méthode) en fonction de la question posée"
+          - "Désactiver la récupération pour s'appuyer uniquement sur le LLM"
+        correct: 2
+        explanation:
+          "L'adaptive RAG ajuste à la volée la stratégie de récupération selon
+          la complexité et la nature de la requête, plutôt que d'appliquer un
+          pipeline figé."
+      - id: q6
+        question:
+          "Qu'apporte l'approche self-RAG par rapport à un RAG classique ?"
+        answers:
+          - "Le modèle apprend à décider lui-même quand récupérer des documents
+            et à critiquer ses propres réponses"
+          - "Il supprime totalement l'étape de récupération pour ne garder que
+            le LLM"
+          - "Il remplace le LLM par une base vectorielle interrogée directement"
+          - "Il impose une récupération systématique avant chaque token généré"
+        correct: 0
+        explanation:
+          "Self-RAG entraîne le modèle à émettre des tokens de réflexion qui
+          décident de la pertinence d'une récupération et évaluent la qualité
+          des passages et de la réponse."
+      - id: q7
+        question:
+          "Que désigne l'évolution de GraphRAG vers des graphes dynamiques ?"
+        answers:
+          - "Des graphes de connaissances mis à jour en continu à partir de
+            nouvelles sources, avec ajout et révision d'entités et de relations"
+          - "Des graphes figés générés une seule fois lors de l'indexation
+            initiale"
+          - "Des graphes purement visuels destinés à l'affichage dans
+            l'interface utilisateur"
+          - "Des graphes stockés uniquement en mémoire vive et jamais persistés"
+        correct: 0
+        explanation:
+          "Les graphes dynamiques évoluent dans le temps : de nouvelles entités,
+          relations et communautés sont ajoutées, modifiées ou supprimées au fil
+          des mises à jour des sources."
+      - id: q8
+        question:
+          "Qu'apportent les schémas auto-générés dans l'évolution de StructRAG ?"
+        answers:
+          - "Le système infère automatiquement la structure adaptée aux
+            documents au lieu de la définir manuellement à l'avance"
+          - "Le schéma de la base relationnelle est figé pour toujours dès la
+            première requête"
+          - "Les utilisateurs doivent décrire à la main chaque champ avant toute
+            indexation"
+          - "Tous les documents sont forcés dans un unique schéma JSON universel"
+        correct: 0
+        explanation:
+          "L'auto-génération de schémas permet à StructRAG d'adapter
+          dynamiquement la structure (tables, listes, graphes) au type de
+          contenu rencontré, sans modélisation préalable manuelle."
+      - id: q9
+        question:
+          "Que désigne RAFT, à la convergence du RAG et du fine-tuning ?"
+        answers:
+          - "Une méthode de fine-tuning qui entraîne le modèle à exploiter des
+            documents récupérés, y compris des distracteurs, pour mieux répondre"
+          - "Une technique qui supprime le fine-tuning au profit du seul RAG"
+          - "Un format de fichier dédié au stockage des embeddings vectoriels"
+          - "Un protocole réseau pour synchroniser plusieurs bases vectorielles"
+        correct: 0
+        explanation:
+          "RAFT (Retrieval-Augmented Fine-Tuning) spécialise un modèle sur un
+          domaine en l'entraînant à raisonner sur des documents pertinents et à
+          ignorer les distracteurs fournis au moment de l'inférence."
+      - id: q10
+        question:
+          "Quel est l'intérêt principal d'un agent spécialisé par domaine face à
+          un agent généraliste ?"
+        answers:
+          - "Une meilleure précision et fiabilité sur les tâches du domaine,
+            grâce à des données et outils ciblés"
+          - "Une couverture universelle de tous les sujets sans aucune limite"
+          - "L'absence totale de besoin en données ou en évaluation métier"
+          - "La suppression de toute hallucination, garantie par construction"
+        correct: 0
+        explanation:
+          "Un agent spécialisé exploite un corpus, des outils et des évaluations
+          propres à son domaine, ce qui améliore la pertinence des réponses au
+          prix d'une portée plus restreinte qu'un agent généraliste."
+      - id: q11
+        question:
+          "Que désigne le standard émergent MCP (Model Context Protocol) dans
+          l'écosystème des agents intelligents ?"
+        answers:
+          - "Un protocole ouvert standardisant la connexion entre les modèles de
+            langage et les sources de données ou outils externes"
+          - "Un format de compression propriétaire pour réduire la taille des
+            modèles de langage"
+          - "Une norme de chiffrement des prompts envoyés aux LLM"
+          - "Un langage de requête dédié aux bases vectorielles"
+        correct: 0
+        explanation:
+          'MCP, introduit par Anthropic, est un protocole ouvert qui standardise
+          la manière dont les applications fournissent du contexte (données,
+          outils) aux LLM, à la manière d''un "USB-C de l''IA".'
+      - id: q12
+        question:
+          "Quel impact les agents intelligents sont-ils principalement attendus
+          d'avoir sur les métiers de la connaissance ?"
+        answers:
+          - "Une automatisation des tâches répétitives d'analyse et de synthèse,
+            recentrant les experts sur la décision et la supervision"
+          - "Le remplacement intégral et immédiat de tous les analystes et
+            consultants"
+          - "Une disparition totale du besoin de compétences humaines en
+            rédaction"
+          - "Une stagnation des métiers, sans modification notable des pratiques"
+        correct: 0
+        explanation:
+          "Les agents prennent en charge la collecte, la synthèse et la
+          rédaction de premier niveau, ce qui transforme les métiers de la
+          connaissance vers des rôles de pilotage, de validation et d'expertise
+          critique."
+      - id: q13
+        question:
+          "Quelle évolution réglementaire majeure encadre désormais les systèmes
+          d'IA, y compris les agents intelligents, dans l'Union européenne ?"
+        answers:
+          - "L'AI Act, qui impose des obligations graduées selon le niveau de
+            risque du système d'IA"
+          - "Le RGPD, qui remplace toute autre réglementation spécifique à l'IA"
+          - "Une directive interdisant tout usage d'agents intelligents en
+            production"
+          - "Un règlement limitant l'IA aux seuls acteurs publics européens"
+        correct: 0
+        explanation:
+          "L'AI Act européen catégorise les systèmes d'IA par niveau de risque
+          (inacceptable, élevé, limité, minimal) et impose des obligations
+          spécifiques, notamment pour les modèles à usage général et les agents
+          autonomes."
+      - id: q14
+        question: 'Que désigne la notion d''agents "on-device" (edge AI) ?'
+        answers:
+          - "Des agents dont les modèles s'exécutent localement sur l'appareil
+            de l'utilisateur, sans dépendance systématique au cloud"
+          - "Des agents hébergés exclusivement dans des data centers
+            hyperscalers"
+          - "Des agents accessibles uniquement via une interface web centralisée"
+          - "Des agents qui ne fonctionnent qu'en mode batch sur serveur"
+        correct: 0
+        explanation:
+          "Les agents on-device exécutent les inférences directement sur le
+          terminal (smartphone, PC, objet connecté), ce qui améliore la latence,
+          la confidentialité des données et permet un fonctionnement hors ligne."
+      - id: q15
+        question:
+          "Quel est un avantage généralement reconnu aux solutions d'agents
+          intelligents open-source par rapport aux solutions propriétaires ?"
+        answers:
+          - "Une plus grande transparence du code et une maîtrise accrue du
+            déploiement, notamment pour la souveraineté des données"
+          - "Une garantie contractuelle de support 24/7 systématiquement
+            supérieure"
+          - "Une qualité de modèle toujours strictement supérieure à celle des
+            solutions propriétaires"
+          - "L'absence totale de coûts d'infrastructure et d'exploitation"
+        correct: 0
+        explanation:
+          "L'open-source offre transparence, auditabilité et possibilité
+          d'auto-hébergement, ce qui favorise la souveraineté et la
+          personnalisation, même si les coûts d'infrastructure et d'expertise
+          restent à la charge de l'organisation."
+      - id: q16
+        question:
+          "Concernant la sustainability (durabilité) des agents IA, quel facteur
+          contribue le plus à leur empreinte carbone ?"
+        answers:
+          - "La consommation énergétique des GPU lors de l'entraînement et de
+            l'inférence à grande échelle"
+          - "Le poids des fichiers de configuration YAML stockés sur disque"
+          - "Le nombre de lignes de code Python du framework d'agent utilisé"
+          - "La couleur d'arrière-plan de l'interface utilisateur de l'agent"
+        correct: 0
+        explanation:
+          "L'empreinte carbone des agents IA provient majoritairement de
+          l'énergie consommée par les GPU des centres de données, à la fois
+          pendant l'entraînement des modèles et pendant les très nombreux appels
+          d'inférence."
+      - id: q17
+        question:
+          'Que désigne le "chain-of-thought avancé" dans les agents capables de
+          raisonnement long ?'
+        answers:
+          - "Une technique permettant à l'agent de décomposer un problème
+            complexe en étapes intermédiaires explicites avant de produire la
+            réponse finale"
+          - "Un mécanisme de chiffrement des prompts envoyés au LLM"
+          - "Un protocole réseau dédié à l'échange de tokens entre agents"
+          - "Une base de données vectorielle spécialisée dans le stockage des
+            embeddings"
+        correct: 0
+        explanation:
+          "Le chain-of-thought avancé consiste à faire raisonner le modèle étape
+          par étape, ce qui améliore sa capacité à résoudre des problèmes longs
+          et multi-étapes en explicitant ses étapes de réflexion."
+      - id: q18
+        question:
+          "Quelle est la tendance attendue concernant l'évolution des coûts
+          d'inférence des LLM utilisés par les agents ?"
+        answers:
+          - "Une baisse continue grâce à l'optimisation matérielle, à la
+            quantization et à des modèles plus efficaces"
+          - "Une hausse exponentielle qui rendra les agents inaccessibles dès
+            l'année prochaine"
+          - "Une stabilité parfaite imposée par une régulation internationale
+            unique"
+          - "Une suppression totale des coûts dès que les modèles deviendront
+            open source"
+        correct: 0
+        explanation:
+          "La tendance observée et anticipée est une baisse régulière des coûts
+          d'inférence, portée par l'amélioration du matériel, la quantization,
+          la distillation et l'arrivée de modèles plus petits mais performants."
+      - id: q19
+        question:
+          "Quel risque systémique est lié à la généralisation massive des agents
+          intelligents autonomes ?"
+        answers:
+          - "La propagation rapide d'erreurs ou de biais en cascade lorsque de
+            nombreux agents s'appuient sur les mêmes modèles ou sources"
+          - "Une diminution garantie de toutes les cybermenaces dans le monde"
+          - "L'impossibilité technique pour deux agents de communiquer entre eux"
+          - "La disparition complète des bases de données relationnelles"
+        correct: 0
+        explanation:
+          "Quand de nombreux agents partagent les mêmes modèles, données ou
+          outils, une erreur, un biais ou une vulnérabilité peut se propager en
+          cascade à grande échelle, créant un véritable risque systémique."
+      - id: q20
+        question:
+          "Parmi les compétences suivantes, laquelle sera clé pour un
+          développeur d'agents intelligents demain ?"
+        answers:
+          - "Maîtriser le prompt engineering, l'orchestration d'outils et
+            l'évaluation rigoureuse des agents"
+          - "Savoir uniquement écrire des requêtes SQL sur une base unique"
+          - "Connaître exclusivement un seul framework propriétaire fermé"
+          - "Refuser toute veille technologique pour rester concentré sur un
+            outil"
+        correct: 0
+        explanation:
+          "Le développeur d'agents de demain devra combiner prompt engineering,
+          orchestration d'outils (RAG, function calling, multi-agents) et
+          méthodes d'évaluation rigoureuses pour fiabiliser ses systèmes."
