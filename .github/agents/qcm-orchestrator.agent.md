@@ -118,6 +118,34 @@ Pour chaque lot, après réponse du sous-agent :
 Tu ne dois **jamais** lire l'intégralité d'un fragment dans le chat ; ils
 restent sur disque jusqu'à l'assemblage.
 
+### 3.bis Validation YAML réelle (parser) avant assemblage
+
+Une fois les 24 fragments écrits, **avant** de déléguer à `qcm-assembler`, tu
+**dois** valider chaque fragment avec un parser YAML réel (pas seulement des
+regex). Cela détecte au plus tôt les bugs de quoting, de flow-vs-block, ou de
+réponses cassées par une virgule interne.
+
+Utilise #tool:runCommands pour exécuter une commande Node qui parse chaque
+fragment et vérifie sa structure. Exemple sur Windows / pwsh :
+
+```powershell
+node -e "const fs=require('fs'),yaml=require('js-yaml'),path=require('path');const dir='.tmp/qcm/<slug>';let ok=true;for(const f of fs.readdirSync(dir).filter(n=>n.endsWith('.yaml'))){const p=path.join(dir,f);try{const arr=yaml.load(fs.readFileSync(p,'utf8'));if(!Array.isArray(arr)||arr.length!==5){console.log('KO',f,'len='+(arr&&arr.length));ok=false;continue;}for(const q of arr){if(!q.id||!q.question||!Array.isArray(q.answers)||q.answers.length!==4||!Number.isInteger(q.correct)||q.correct<0||q.correct>3||!q.explanation){console.log('KO',f,q.id,'answers='+(q.answers&&q.answers.length),'correct='+q.correct);ok=false;}}}catch(e){console.log('PARSE_KO',f,e.message);ok=false;}}process.exit(ok?0:1);"
+```
+
+Le module `js-yaml` doit être installé en dev (`npm i -D js-yaml`) si ce n'est
+pas déjà fait.
+
+Pour chaque fragment signalé `KO` ou `PARSE_KO` :
+
+1. Identifie la / les question(s) fautive(s) à partir de la sortie.
+2. Redemande au sous-agent `qcm-question-generator` de **régénérer uniquement ce
+   fragment** (pas les autres), en lui rappelant explicitement les règles :
+   block style pour `answers`, double-quotes systématiques.
+3. Relance la validation jusqu'à ce qu'elle passe sur les 24 fragments.
+
+Tant que cette validation n'est pas verte sur l'intégralité des fragments, **ne
+délègue pas** à `qcm-assembler`.
+
 ## 4. Assemblage final (délégation)
 
 Une fois tous les fragments écrits sur disque, délègue au sous-agent

@@ -46,21 +46,42 @@ Indentation du fichier : **6 espaces** en tête de chaque entrée (alignée sous
 clé `questions:` d'un chapitre du schéma de référence
 [public/securite.yaml](../../public/securite.yaml)).
 
-Format exact d'une entrée :
+### Style YAML imposé : block style + double-quotes systématiques
+
+Pour éviter tout bug de parsing (notamment avec Prettier qui peut casser les
+séquences en flux `[...]` sur les virgules internes), tu **dois** :
+
+- Utiliser **uniquement le block style** pour `answers` (un tiret par ligne). Le
+  flow style `[A, B, C, D]` est **interdit**.
+- Mettre **systématiquement** entre guillemets doubles `"…"` les chaînes de
+  caractères suivantes : `question`, chaque entrée de `answers`, et
+  `explanation`. Pas de chaînes nues, pas de quotes simples.
+- Échapper les guillemets internes par `\"`.
+- N'utiliser que des espaces, jamais de tabulation.
+
+Format exact d'une entrée (à reproduire à l'identique) :
 
 ```yaml
 - id: q1
   question: "Énoncé clair de la question ?"
-  answers: [Réponse A, Réponse B, Réponse C, Réponse D]
+  answers:
+    - "Réponse A"
+    - "Réponse B, avec une virgule, sans souci"
+    - "Réponse C"
+    - "Réponse D"
   correct: 0
   explanation: "Justification courte de la bonne réponse."
 ```
+
+Note : `- id:` commence à 6 espaces ; `question:`, `answers:`, `correct:`,
+`explanation:` à 8 espaces ; `- "Réponse …"` à 10 espaces.
 
 ## Contraintes impératives
 
 1. **Exactement 5 entrées**, dont les `id` correspondent à la plage demandée (ni
    plus, ni moins, ni renumérotées).
-2. **Exactement 4 réponses** dans le tableau `answers`.
+2. **Exactement 4 réponses** dans le tableau `answers` (block style, un tiret
+   par ligne).
 3. `correct` est un entier **entre 0 et 3** désignant l'index (base 0) de la
    bonne réponse.
 4. **Une seule** bonne réponse par question.
@@ -71,10 +92,11 @@ Format exact d'une entrée :
 8. Distracteurs **plausibles** ; pas de réponses absurdes.
 9. Pas de questions à formulation négative ("Laquelle n'est pas…") sauf si
    réellement nécessaire et non ambigu.
-10. Si une `question`, une `answer` ou une `explanation` contient `:`, `"`, `'`,
-    `#`, `[`, `]`, `,` ou commence par un caractère spécial YAML, mets-la entre
-    guillemets doubles `"…"` et échappe les guillemets internes par `\"`.
+10. **Toutes** les chaînes (`question`, chaque `answer`, `explanation`) sont
+    encadrées de guillemets doubles `"…"`. Pas d'exception.
 11. Aucun doublon de question dans le lot produit.
+12. **Interdiction absolue** d'utiliser le flow style `[ … ]` pour `answers`,
+    même pour des chaînes courtes.
 
 ## Méthode
 
@@ -82,10 +104,21 @@ Format exact d'une entrée :
 2. Choisis 5 angles différents et complémentaires couverts par ce chapitre.
 3. Pour chacun, formule la question, génère 4 réponses dont une seule correcte,
    et rédige une explication courte.
-4. Vérifie l'indentation (6 espaces avant chaque `- id:`) et le respect des
-   contraintes ci-dessus.
-5. **Écris** le fragment YAML dans `outputPath` via #tool:editFiles. Le fichier
+4. Vérifie l'indentation (6 / 8 / 10 espaces) et le respect des contraintes
+   ci-dessus.
+5. **Auto-validation avant écriture** : pour chacune des 5 questions, vérifie
+   mentalement que :
+   - `answers` contient exactement 4 entrées en block style ;
+   - `correct` est un entier entre 0 et 3 ;
+   - `question`, `answers[*]` et `explanation` sont entre guillemets doubles ;
+   - aucune ligne ne commence par `[` ou ne contient `, ` à un niveau non quoté.
+6. **Écris** le fragment YAML dans `outputPath` via #tool:editFiles. Le fichier
    doit contenir **uniquement** le fragment (pas de frontmatter, pas de
    commentaire, pas de balises ```).
-6. Réponds dans le chat par une seule ligne : `OK: <outputPath>`. **Ne recopie
-   pas** le contenu du fragment dans la réponse.
+7. **N'invoque jamais** de formateur (Prettier, `npm run format`, etc.) sur le
+   fragment écrit : un reformatage automatique pourrait recasser le YAML. Le
+   fragment doit rester tel que tu l'as produit.
+8. Réponds dans le chat par **une seule ligne exactement** : `OK: <outputPath>`
+   (ou `ERROR: <message>` en cas d'échec). Pas de balises ```, pas de ligne
+   vide, pas de texte additionnel. **Ne recopie pas** le contenu du fragment
+   dans la réponse.

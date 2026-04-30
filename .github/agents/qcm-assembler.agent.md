@@ -39,50 +39,63 @@ sans tout charger en une seule fois.
 
 ## Travail à effectuer
 
-### 1. Vérifications pré-assemblage
+### 1. Parsing et validation sémantique des fragments
+
+Tu **dois** travailler à partir de la **structure de données parsée**, pas du
+texte brut des fragments. Cela élimine d'office les bugs de quoting, de flow
+style cassé par une virgule, ou d'indentation aléatoire selon le générateur.
 
 Pour chaque chapitre, dans l'ordre :
 
 - Vérifie que les 4 fichiers `fragmentPaths` existent et ne sont pas vides.
-- Lis-les via #tool:editFiles (lecture) et concatène les 4 fragments dans
-  l'ordre.
-- Vérifie que la concaténation contient **exactement 20 entrées** `- id: qN`.
-- Vérifie que les `id` sont `q1`, `q2`, …, `q20` dans l'ordre, sans doublon ni
-  trou.
-- Vérifie l'indentation (6 espaces avant chaque `- id:`).
+- **Parse** chaque fragment avec un parser YAML réel via #tool:runCommands
+  (`node -e "..."` avec `js-yaml`), sans le recopier dans le contexte du chat.
+- Concatène les 4 tableaux de questions du chapitre dans l'ordre.
+- Vérifie pour chaque chapitre :
+  - exactement 20 questions ;
+  - `id` séquentiels `q1`, `q2`, …, `q20` sans doublon ni trou ;
+  - chaque question a `question` (string), `answers` (tableau de 4 strings),
+    `correct` (entier 0..3) et `explanation` (string).
 
 Si une anomalie est détectée, retourne une erreur explicite à l'orchestrateur
 **sans écrire le fichier final ni supprimer le répertoire temporaire**, en
-précisant le chapitre et la nature du problème.
+précisant le chapitre, le `fragmentPath`, l'`id` de question et la nature du
+problème.
 
-### 2. Construction du document YAML
+### 2. Construction et **normalisation** du document YAML final
 
-Construis le document selon ce gabarit exact :
+À partir de la structure parsée, construis l'objet JS final :
 
-```yaml
-title: <title global>
-chapters:
-  - id: <chapter[0].id>
-    title: <chapter[0].title>
-    questions:
-<fragments concaténés du chapitre 0, déjà indentés à 6 espaces>
-  - id: <chapter[1].id>
-    title: <chapter[1].title>
-    questions:
-<fragments concaténés du chapitre 1>
-  # ... etc.
+```js
+{
+  title: "<title global>",
+  chapters: [
+    { id, title, questions: [ { id, question, answers, correct, explanation }, ... ] },
+    ...
+  ]
+}
 ```
 
-Règles d'indentation :
+Puis **sérialise-le toi-même** dans un style YAML canonique unique, quel que
+soit le style des fragments d'origine. Règles de sortie :
 
-- 0 espace : `title:`, `chapters:`.
-- 2 espaces : `- id:` et `title:` et `questions:` des chapitres.
-- 6 espaces : `- id:` des questions (déjà géré par les fragments).
-- 8 espaces : `question:`, `answers:`, `correct:`, `explanation:`.
-- **Uniquement des espaces**, jamais de tabulation.
+- **Block style partout**, jamais de flow `[…]` ni `{…}`.
+- **Toutes** les strings (`title` global, `title` de chapitre, `question`,
+  chaque `answer`, `explanation`) sont **encadrées de guillemets doubles**.
+- Échappement des guillemets internes par `\"`.
+- Indentation par espaces uniquement :
+  - 0 espace : `title:`, `chapters:`.
+  - 2 espaces : `- id:`, `title:`, `questions:` des chapitres.
+  - 6 espaces : `- id:` des questions.
+  - 8 espaces : `question:`, `answers:`, `correct:`, `explanation:`.
+  - 10 espaces : `- "Réponse"` sous `answers:`.
+- Pas de tabulation, pas de ligne vide superflue, fichier terminé par `\n`.
 
-Si `title` global ou `chapter.title` contient des caractères spéciaux YAML (`:`,
-`#`, `'`, `"`, etc.), entoure-le de guillemets doubles.
+Recommandation d'implémentation : utiliser `js-yaml` (`yaml.dump`) avec les
+options
+`{ lineWidth: -1, quotingType: '"', forceQuotes: true, noCompatMode: true, indent: 2 }`,
+puis indenter le bloc `questions` au bon niveau si nécessaire. Vérifier ensuite
+par re-`yaml.load` que le fichier produit est valide.
 
 ### 3. Vérification d'unicité du fichier
 
@@ -130,8 +143,16 @@ Retourne à l'orchestrateur un récapitulatif court :
 
 - **Jamais** d'écrasement d'un fichier existant dans `public/`.
 - **Jamais** modifier le contenu sémantique des fragments (questions, réponses,
-  explications) ; uniquement leur agencement.
+  explications) ; uniquement leur **style YAML** (normalisation block + quotes).
 - **Jamais** de balises de code ` ``` ` dans le fichier YAML produit.
 - **Jamais** supprimer les fichiers temporaires si une vérification a échoué.
 - En cas de doute sur l'indentation, se référer à
   [public/securite.yaml](../../public/securite.yaml).
+
+## Format de réponse à l'orchestrateur
+
+- En cas de succès : une seule ligne `OK: <outputPath>` suivie, optionnellement,
+  d'un récapitulatif court (chapitres, total questions, statut nettoyage).
+- En cas d'échec : une seule ligne `ERROR: <message court>` suivie d'un détail
+  diagnostic (chapitre, fragment, `id` de question, nature du problème). Pas de
+  balises ```, pas de tableau markdown verbeux.
