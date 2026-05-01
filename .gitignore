@@ -25,3 +25,5 @@ dist-ssr
 
 # Temporary work directory used by the QCM generation agents
 .tmp/
+.skills-tmp-scripts/
+squizzer-qcm/

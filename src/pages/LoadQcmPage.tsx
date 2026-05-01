@@ -52,6 +52,14 @@ const PREDEFINED_QCMS = [
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-kotlin.yaml",
   },
   {
+    name: "Architecture du Patrimoine Français",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-architecture-patrimoine-francais.yaml",
+  },
+  {
+    name: "QCM sur TailwindCSS",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-tailwindcss.yaml",
+  },
+  {
     name: "IA pour les développeurs",
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/ia-developpeurs.yaml",
   },
