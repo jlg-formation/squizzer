@@ -1,0 +1,188 @@
+title: QCM sur TailwindCSS
+chapters:
+  - id: basics
+    title: Fondamentaux de TailwindCSS
+    questions:
+      - id: q1
+        question: Quelle est l'approche principale de TailwindCSS ?
+        answers:
+          - Framework utility-first basé sur des classes atomiques
+          - Bibliothèque de composants prêts à l'emploi stylés
+          - Préprocesseur CSS similaire à Sass ou Less
+          - Moteur de templates HTML avec styles intégrés
+        correct: 0
+        explanation: TailwindCSS est un framework utility-first qui fournit des classes utilitaires atomiques.
+      - id: q2
+        question: Quelle commande installe TailwindCSS via npm ?
+        answers:
+          - npm install tailwind-framework --save-dev
+          - npm install tailwindcss postcss autoprefixer
+          - npm create tailwind-app@latest my-project
+          - npm add @tailwind/core @tailwind/cli
+        correct: 1
+        explanation: L'installation classique se fait avec npm install tailwindcss postcss autoprefixer.
+      - id: q3
+        question: Quelle classe Tailwind applique une couleur de texte rouge moyenne ?
+        answers:
+          - color-red-500
+          - txt-red-medium
+          - text-red-500
+          - font-red-500
+        correct: 2
+        explanation: La classe text-red-500 applique une couleur de texte rouge à l'intensité 500.
+      - id: q4
+        question: À quoi sert le moteur JIT (Just-In-Time) de TailwindCSS ?
+        answers:
+          - Compresser automatiquement le CSS final en production
+          - Générer les classes CSS à la demande pendant le développement
+          - Convertir le code JavaScript en CSS dynamiquement
+          - Charger les composants Tailwind via un CDN distant
+        correct: 1
+        explanation: Le JIT génère uniquement les classes CSS utilisées, à la demande, pour des builds rapides.
+      - id: q5
+        question: Quel rôle joue le fichier `tailwind.config.js` dans un projet ?
+        answers:
+          - Lister les composants HTML utilisés par l'application
+          - Définir les routes et le rendu côté serveur du projet
+          - Configurer le thème, les chemins de contenu et les plugins
+          - Exporter les classes CSS finales vers le navigateur
+        correct: 2
+        explanation: tailwind.config.js permet de personnaliser le thème, le contenu scanné et les plugins.
+      - id: q6
+        question: Quel préfixe TailwindCSS applique un style à partir d'un écran moyen (≥ 768px) ?
+        answers:
+          - "sm:"
+          - "md:"
+          - "lg:"
+          - "xl:"
+        correct: 1
+        explanation: "Le préfixe md: cible par défaut les écrans à partir de 768px de largeur."
+      - id: q7
+        question: Quelle classe applique un fond bleu uniquement au survol de la souris ?
+        answers:
+          - focus:bg-blue-500
+          - active:bg-blue-500
+          - hover:bg-blue-500
+          - group:bg-blue-500
+        correct: 2
+        explanation: "Le variant hover: applique le style lorsque l'élément est survolé par le pointeur."
+      - id: q8
+        question: Quelle stratégie de dark mode permet d'activer le thème sombre via une classe sur le HTML ?
+        answers:
+          - "darkMode: 'media'"
+          - "darkMode: 'class'"
+          - "darkMode: 'toggle'"
+          - "darkMode: 'auto'"
+        correct: 1
+        explanation: "La stratégie 'class' active dark: quand la classe dark est présente sur un ancêtre."
+      - id: q9
+        question: À quelle valeur correspond la classe d'espacement p-4 dans la spacing scale par défaut ?
+        answers:
+          - 4 pixels
+          - 0.4 rem
+          - 1 rem
+          - 4 rem
+        correct: 2
+        explanation: Chaque unité vaut 0.25rem, donc p-4 équivaut à 1rem (16px) de padding.
+      - id: q10
+        question: Que fait la classe container de TailwindCSS par défaut ?
+        answers:
+          - Centre l'élément automatiquement sur la page
+          - Fixe la largeur max au breakpoint courant
+          - Applique une largeur de 100% en permanence
+          - Ajoute des marges horizontales fluides
+        correct: 1
+        explanation: La classe container fixe la largeur maximale à celle du breakpoint actif sans centrer par défaut.
+  - id: advanced
+    title: Concepts avancés et personnalisation
+    questions:
+      - id: q1
+        question: Dans tailwind.config.js, quelle est la différence entre définir des valeurs dans `theme` directement et dans `theme.extend` ?
+        answers:
+          - "`theme.extend` ajoute aux valeurs par défaut, alors que `theme` directement les remplace entièrement"
+          - "`theme` ajoute aux valeurs par défaut, alors que `theme.extend` les remplace entièrement"
+          - Les deux ajoutent aux valeurs par défaut, seule la syntaxe diffère selon la version
+          - Les deux remplacent les valeurs par défaut, mais `extend` accepte des fonctions
+        correct: 0
+        explanation: "`extend` fusionne avec le thème par défaut tandis que définir directement dans `theme` écrase complètement la clé concernée."
+      - id: q2
+        question: À quoi sert la clé `content` (anciennement `purge`) dans la configuration Tailwind ?
+        answers:
+          - À indiquer les fichiers où chercher les classes utilisées afin de générer un CSS final minimal
+          - À supprimer manuellement certaines classes du build de production via une liste noire
+          - À déclarer le contenu HTML à injecter automatiquement dans chaque page du projet
+          - À configurer le cache du compilateur pour accélérer les builds en développement
+        correct: 0
+        explanation: Tailwind scanne les fichiers listés dans `content` pour ne conserver que les classes réellement utilisées dans le CSS final.
+      - id: q3
+        question: Comment crée-t-on un plugin Tailwind personnalisé qui ajoute de nouveaux utilitaires ?
+        answers:
+          - En utilisant la fonction `plugin()` importée depuis `tailwindcss/plugin` et en appelant `addUtilities`
+          - En exportant une fonction nommée `tailwindPlugin` depuis un fichier dans le dossier `plugins/`
+          - En ajoutant un objet `customUtilities` directement dans la clé `theme` du fichier de configuration
+          - En déclarant les utilitaires dans un fichier CSS via la directive `@plugin`
+        correct: 0
+        explanation: On importe `plugin` depuis `tailwindcss/plugin` puis on utilise les helpers comme `addUtilities` à l'intérieur de la fonction passée.
+      - id: q4
+        question: Quel est le rôle de la directive `@tailwind components` dans un fichier CSS ?
+        answers:
+          - Injecter les classes de composants de Tailwind ainsi que celles enregistrées par les plugins
+          - Importer uniquement les composants React préconfigurés fournis par Tailwind UI
+          - Activer le mode composant qui regroupe automatiquement les classes utilitaires similaires
+          - Compiler les fichiers `.component.css` situés dans le répertoire `src/components`
+        correct: 0
+        explanation: Cette directive est remplacée à la compilation par les styles de la couche `components`, incluant ceux des plugins.
+      - id: q5
+        question: Dans tailwind.config.js, à quoi servent respectivement les options `prefix` et `important` ?
+        answers:
+          - "`prefix` ajoute un préfixe à toutes les classes générées, et `important` rend toutes les utilitaires `!important`"
+          - "`prefix` change le nom du fichier de sortie, et `important` force la régénération à chaque build"
+          - "`prefix` définit un namespace JavaScript, et `important` priorise certaines classes listées explicitement"
+          - "`prefix` et `important` font la même chose mais s'appliquent l'un au CSS et l'autre au HTML"
+        correct: 0
+        explanation: "`prefix` namespace les classes utilitaires (ex. `tw-flex`) et `important` force l'application en `!important` pour gagner en spécificité."
+      - id: q6
+        question: Que permet la directive @apply dans une feuille CSS Tailwind ?
+        answers:
+          - Composer une classe CSS à partir de classes utilitaires Tailwind existantes
+          - Importer dynamiquement un plugin Tailwind dans le navigateur client
+          - Activer le mode JIT pour générer les classes à la volée en production
+          - Déclarer une nouvelle variante personnalisée applicable aux utilitaires
+        correct: 0
+        explanation: "@apply permet de réutiliser des utilitaires Tailwind à l'intérieur d'une règle CSS personnalisée."
+      - id: q7
+        question: Quelle classe du plugin @tailwindcss/typography applique un style typographique soigné à du contenu HTML ?
+        answers:
+          - La classe text-rich appliquée au conteneur principal du contenu
+          - La classe prose appliquée à l'élément qui englobe le contenu
+          - La classe typography ajoutée directement sur la balise body
+          - La classe content-style appliquée à chaque paragraphe individuellement
+        correct: 1
+        explanation: Le plugin typography fournit la classe prose pour styliser élégamment un bloc de contenu HTML.
+      - id: q8
+        question: Que produit la classe arbitraire bg-[#1da1f2] en Tailwind ?
+        answers:
+          - Une erreur de compilation car les couleurs hexadécimales sont interdites
+          - Un fond utilisant la couleur la plus proche définie dans le thème
+          - Un fond avec exactement la couleur hexadécimale indiquée entre crochets
+          - Un fond transparent, les crochets étant ignorés par le compilateur
+        correct: 2
+        explanation: Les valeurs arbitraires entre crochets permettent d'utiliser une valeur exacte non définie dans le thème.
+      - id: q9
+        question: "Quel est le rôle du variant group-hover: en Tailwind ?"
+        answers:
+          - Appliquer un style à l'élément quand un parent marqué group est survolé
+          - Appliquer un style à tous les enfants quand l'élément lui-même est survolé
+          - Grouper plusieurs hovers successifs en une seule transition fluide
+          - Appliquer un style à un élément frère marqué peer lorsqu'il est survolé
+        correct: 0
+        explanation: "group-hover: stylise un élément en fonction du survol d'un ancêtre portant la classe group."
+      - id: q10
+        question: Que fait la combinaison de classes transition duration-300 sur un élément ?
+        answers:
+          - Déclenche une animation infinie de rotation pendant 300 millisecondes
+          - Retarde l'affichage de l'élément de 300 millisecondes au chargement
+          - Active les transitions CSS avec une durée fixée à 300 millisecondes
+          - Limite la durée totale d'affichage de l'élément à 300 millisecondes
+        correct: 2
+        explanation: transition active les transitions CSS et duration-300 fixe leur durée à 300 ms.
