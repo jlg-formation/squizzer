@@ -11,135 +11,215 @@ chapters:
           - Un hébergeur distant qui exécute les applications en production
           - Un tableau de bord graphique réservé au suivi des tickets
         correct: 0
-        explanation: Claude Code est d'abord un agent orienté code, pas un service d'hébergement ni un compilateur.
+        explanation:
+          Claude Code est d'abord un agent orienté code, pas un service
+          d'hébergement ni un compilateur.
       - id: q2
-        question: Au début d'une session, quel réflexe est le plus pertinent pour bien cadrer le travail ?
+        question:
+          Au début d'une session, quel réflexe est le plus pertinent pour bien
+          cadrer le travail ?
         answers:
           - Identifier la demande précise et le point d'ancrage le plus concret
           - Réécrire toute l'architecture avant de lire la consigne utilisateur
-          - Changer immédiatement les dépendances pour anticiper tous les besoins
+          - Changer immédiatement les dépendances pour anticiper tous les
+            besoins
           - Parcourir chaque fichier du dépôt sans distinguer les priorités
         correct: 0
-        explanation: Un bon démarrage consiste à partir d'une cible concrète liée à la demande.
+        explanation:
+          Un bon démarrage consiste à partir d'une cible concrète liée à la
+          demande.
       - id: q3
-        question: Dans Claude Code, à quoi sert principalement le contexte fourni par l'environnement ?
+        question:
+          Dans Claude Code, à quoi sert principalement le contexte fourni par
+          l'environnement ?
         answers:
           - À situer la tâche dans le bon projet et avec les bonnes contraintes
           - À remplacer entièrement les instructions données par l'utilisateur
           - À générer des réponses identiques quel que soit le dépôt ouvert
-          - À ignorer les fichiers présents pour se concentrer sur des exemples génériques
+          - À ignorer les fichiers présents pour se concentrer sur des exemples
+            génériques
         correct: 0
-        explanation: Le contexte aide l'agent à agir dans le bon cadre technique et documentaire.
+        explanation:
+          Le contexte aide l'agent à agir dans le bon cadre technique et
+          documentaire.
       - id: q4
-        question: Pourquoi Claude Code doit-il lire attentivement les consignes de projet avant d'agir ?
+        question:
+          Pourquoi Claude Code doit-il lire attentivement les consignes de
+          projet avant d'agir ?
         answers:
-          - Pour respecter les conventions locales et éviter des changements hors cadre
+          - Pour respecter les conventions locales et éviter des changements
+            hors cadre
           - Pour allonger la session afin de produire davantage de texte
-          - Pour contourner les préférences du dépôt quand elles semblent secondaires
+          - Pour contourner les préférences du dépôt quand elles semblent
+            secondaires
           - Pour répondre plus vite sans tenir compte des règles déjà définies
         correct: 0
-        explanation: Les consignes de projet fixent le cadre attendu pour les fichiers, outils et styles.
+        explanation:
+          Les consignes de projet fixent le cadre attendu pour les fichiers,
+          outils et styles.
       - id: q5
-        question: Quel comportement correspond à un bon agent de code dans une tâche simple ?
+        question:
+          Quel comportement correspond à un bon agent de code dans une tâche
+          simple ?
         answers:
-          - Rester ciblé, concret et aligné sur la demande sans élargir le périmètre
-          - Multiplier les hypothèses générales avant même d'identifier le besoin réel
-          - Répondre surtout par des considérations théoriques sans lien avec le dépôt
-          - Traiter plusieurs sujets voisins pour rentabiliser la même intervention
+          - Rester ciblé, concret et aligné sur la demande sans élargir le
+            périmètre
+          - Multiplier les hypothèses générales avant même d'identifier le
+            besoin réel
+          - Répondre surtout par des considérations théoriques sans lien avec le
+            dépôt
+          - Traiter plusieurs sujets voisins pour rentabiliser la même
+            intervention
         correct: 0
-        explanation: Un bon agent reste focalisé sur l'objectif demandé et limite les écarts de périmètre.
+        explanation:
+          Un bon agent reste focalisé sur l'objectif demandé et limite les
+          écarts de périmètre.
       - id: q6
-        question: Quand Claude Code doit s'orienter dans un dépôt avant toute modification, quel point de départ est le plus pertinent ?
+        question:
+          Quand Claude Code doit s'orienter dans un dépôt avant toute
+          modification, quel point de départ est le plus pertinent ?
         answers:
-          - Un ancrage concret comme un fichier, un symbole ou un comportement ciblé
-          - Une lecture complète de l'arborescence pour comprendre tout le projet
+          - Un ancrage concret comme un fichier, un symbole ou un comportement
+            ciblé
+          - Une lecture complète de l'arborescence pour comprendre tout le
+            projet
           - Le plus gros module du dépôt, car il influence souvent le reste
           - La configuration globale, même sans lien direct avec la demande
         correct: 0
         explanation: Claude Code doit partir d'un point local et vérifiable.
       - id: q7
-        question: Pour retrouver rapidement des fichiers ou des occurrences dans le code, quelle pratique correspond le mieux aux consignes ?
+        question:
+          Pour retrouver rapidement des fichiers ou des occurrences dans le
+          code, quelle pratique correspond le mieux aux consignes ?
         answers:
           - Utiliser une recherche ciblée de type rg pour limiter l'exploration
-          - Parcourir manuellement les dossiers jusqu'à tomber sur le bon fichier
-          - Ouvrir d'abord chaque fichier principal pour construire une vue globale
-          - Lister tous les fichiers du dépôt puis lire les plus longs en priorité
+          - Parcourir manuellement les dossiers jusqu'à tomber sur le bon
+            fichier
+          - Ouvrir d'abord chaque fichier principal pour construire une vue
+            globale
+          - Lister tous les fichiers du dépôt puis lire les plus longs en
+            priorité
         correct: 0
-        explanation: La recherche ciblée réduit le coût et garde l'enquête locale.
+        explanation:
+          La recherche ciblée réduit le coût et garde l'enquête locale.
       - id: q8
-        question: Si le fichier trouvé ne fait que relier ou enregistrer le comportement sans le décider, que doit faire Claude Code ?
+        question:
+          Si le fichier trouvé ne fait que relier ou enregistrer le comportement
+          sans le décider, que doit faire Claude Code ?
         answers:
-          - Passer à l'abstraction voisine qui calcule ou contrôle directement le comportement
+          - Passer à l'abstraction voisine qui calcule ou contrôle directement
+            le comportement
           - Rester dans ce fichier et déduire le reste sans lire le code voisin
           - Revenir à la racine du dépôt pour reprendre l'analyse depuis zéro
-          - Explorer plusieurs couches à la fois pour éviter de manquer un détail
+          - Explorer plusieurs couches à la fois pour éviter de manquer un
+            détail
         correct: 0
-        explanation: Il faut viser l'endroit où le comportement est réellement décidé.
+        explanation:
+          Il faut viser l'endroit où le comportement est réellement décidé.
       - id: q9
-        question: Avant une première action concrète, quelle formulation montre que Claude Code a assez de contexte local ?
+        question:
+          Avant une première action concrète, quelle formulation montre que
+          Claude Code a assez de contexte local ?
         answers:
-          - Une hypothèse locale falsifiable et une vérification rapide capable de l'infirmer
-          - Une compréhension générale du produit et de ses choix historiques majeurs
-          - Une carte détaillée des modules voisins et de leurs dépendances indirectes
-          - Une intuition sur la cause probable, même sans moyen simple de la contrôler
+          - Une hypothèse locale falsifiable et une vérification rapide capable
+            de l'infirmer
+          - Une compréhension générale du produit et de ses choix historiques
+            majeurs
+          - Une carte détaillée des modules voisins et de leurs dépendances
+            indirectes
+          - Une intuition sur la cause probable, même sans moyen simple de la
+            contrôler
         correct: 0
-        explanation: L'objectif est une hypothèse testable, pas une vue exhaustive.
+        explanation:
+          L'objectif est une hypothèse testable, pas une vue exhaustive.
       - id: q10
-        question: Quand plusieurs chemins de code proches semblent plausibles, quel choix est le plus conforme à la méthode attendue ?
+        question:
+          Quand plusieurs chemins de code proches semblent plausibles, quel
+          choix est le plus conforme à la méthode attendue ?
         answers:
-          - Choisir celui qui offre la vérification la plus discriminante avec le moindre détour
-          - Explorer tous les chemins voisins pour maximiser la confiance avant d'avancer
-          - Privilégier le chemin le plus ancien, car il reflète souvent l'intention initiale
-          - Sélectionner au hasard un fichier central puis élargir si nécessaire ensuite
+          - Choisir celui qui offre la vérification la plus discriminante avec
+            le moindre détour
+          - Explorer tous les chemins voisins pour maximiser la confiance avant
+            d'avancer
+          - Privilégier le chemin le plus ancien, car il reflète souvent
+            l'intention initiale
+          - Sélectionner au hasard un fichier central puis élargir si nécessaire
+            ensuite
         correct: 0
-        explanation: Claude Code doit minimiser l'exploration et favoriser le signal local.
+        explanation:
+          Claude Code doit minimiser l'exploration et favoriser le signal local.
       - id: q11
-        question: Une fois une hypothèse locale formulée, quelle doit être l'action suivante la plus conforme à la méthode attendue ?
+        question:
+          Une fois une hypothèse locale formulée, quelle doit être l'action
+          suivante la plus conforme à la méthode attendue ?
         answers:
-          - Faire immédiatement une petite modification testable sur le code visé
+          - Faire immédiatement une petite modification testable sur le code
+            visé
           - Relire largement le module pour mieux comprendre tout son historique
           - Explorer plusieurs dossiers voisins avant de toucher au comportement
           - Rédiger un long plan théorique avant toute action dans le dépôt
         correct: 0
-        explanation: Dès que l'hypothèse est assez précise, il faut passer à une édition locale.
+        explanation:
+          Dès que l'hypothèse est assez précise, il faut passer à une édition
+          locale.
       - id: q12
-        question: Après une première modification substantielle, quelle suite est prioritaire si une vérification ciblée existe ?
+        question:
+          Après une première modification substantielle, quelle suite est
+          prioritaire si une vérification ciblée existe ?
         answers:
           - Étendre la correction à des zones adjacentes pour gagner du temps
-          - Lancer d'abord la vérification la plus étroite liée à la zone modifiée
+          - Lancer d'abord la vérification la plus étroite liée à la zone
+            modifiée
           - Reprendre une phase de lecture large pour confirmer l'architecture
           - Inspecter seulement le diff Git sans exécuter de contrôle concret
         correct: 1
-        explanation: La première suite attendue est une validation ciblée du comportement touché.
+        explanation:
+          La première suite attendue est une validation ciblée du comportement
+          touché.
       - id: q13
-        question: Quand la compréhension reste incomplète mais qu'un test simple peut trancher, quelle première édition est la plus adaptée ?
+        question:
+          Quand la compréhension reste incomplète mais qu'un test simple peut
+          trancher, quelle première édition est la plus adaptée ?
         answers:
           - Une réécriture complète du flux pour éliminer tous les doutes
           - Un changement global de structure pour préparer d'autres cas proches
           - Une sonde locale réversible qui révèle clairement le point bloquant
           - Un renommage large des symboles pour rendre le code plus lisible
         correct: 2
-        explanation: Une petite sonde réversible permet de discriminer vite sans élargir le périmètre.
+        explanation:
+          Une petite sonde réversible permet de discriminer vite sans élargir le
+          périmètre.
       - id: q14
-        question: Si une dépendance voisine empêche encore d'identifier le bon contrôle local, quelle lecture supplémentaire convient ?
+        question:
+          Si une dépendance voisine empêche encore d'identifier le bon contrôle
+          local, quelle lecture supplémentaire convient ?
         answers:
           - Une lecture voisine unique pour lever précisément cette incertitude
           - Une revue exhaustive de tous les appels similaires dans le projet
           - Une exploration des conventions globales avant de revenir au code
           - Une documentation générale sur le framework pour éviter les erreurs
         correct: 0
-        explanation: La méthode autorise une seule triangulation proche pour débloquer la décision.
+        explanation:
+          La méthode autorise une seule triangulation proche pour débloquer la
+          décision.
       - id: q15
-        question: Dans un périmètre simple, quelle correction reflète le mieux l'objectif de qualité attendu ?
+        question:
+          Dans un périmètre simple, quelle correction reflète le mieux
+          l'objectif de qualité attendu ?
         answers:
           - Contourner l'échec visible avec une condition temporaire très locale
           - Masquer le symptôme par un traitement défensif sans revoir la cause
           - Corriger directement la logique qui produit l'erreur dans ce chemin
-          - Reporter le vrai problème et ajouter seulement un commentaire d'alerte
+          - Reporter le vrai problème et ajouter seulement un commentaire
+            d'alerte
         correct: 2
-        explanation: La cible prioritaire est la cause racine, pas seulement son symptôme visible.
+        explanation:
+          La cible prioritaire est la cause racine, pas seulement son symptôme
+          visible.
       - id: q16
-        question: Après une première modification substantielle, quel contrôle faut-il lancer en priorité lorsqu'il existe ?
+        question:
+          Après une première modification substantielle, quel contrôle faut-il
+          lancer en priorité lorsqu'il existe ?
         answers:
           - La vérification la plus étroite qui peut invalider l'hypothèse
           - Un balayage manuel des fichiers proches pour mieux comprendre
@@ -148,16 +228,21 @@ chapters:
         correct: 0
         explanation: La priorité va au contrôle le plus ciblé et falsifiable.
       - id: q17
-        question: Si plusieurs validations sont possibles juste après un edit, quel ordre respecte la méthode attendue ?
+        question:
+          Si plusieurs validations sont possibles juste après un edit, quel
+          ordre respecte la méthode attendue ?
         answers:
           - Test ciblé, puis compilation ou lint local si nécessaire
           - Lint global, puis exploration du dépôt, puis test ciblé
           - Diff Git, puis lecture annexe, puis compilation complète
           - Refactorisation locale, puis test large, puis revue visuelle
         correct: 0
-        explanation: On commence par le contrôle le plus proche du comportement touché.
+        explanation:
+          On commence par le contrôle le plus proche du comportement touché.
       - id: q18
-        question: Que faire si le premier contrôle ciblé échoue tout en confirmant l'hypothèse générale mais révèle un défaut local ?
+        question:
+          Que faire si le premier contrôle ciblé échoue tout en confirmant
+          l'hypothèse générale mais révèle un défaut local ?
         answers:
           - Corriger immédiatement la même zone puis relancer ce contrôle
           - Étendre l'analyse aux modules voisins avant de retenter
@@ -166,127 +251,188 @@ chapters:
         correct: 0
         explanation: Il faut réparer localement et rejouer le même test.
       - id: q19
-        question: Que faire si le premier contrôle ciblé réussit mais qu'un ajustement adjacent reste nécessaire ?
+        question:
+          Que faire si le premier contrôle ciblé réussit mais qu'un ajustement
+          adjacent reste nécessaire ?
         answers:
           - Faire le plus petit ajustement voisin puis revalider de façon ciblée
           - Passer directement à une vérification globale pour gagner du temps
           - Élargir le périmètre au reste du composant avant de retester
           - Considérer le travail terminé puisque le premier contrôle passe
         correct: 0
-        explanation: Un succès n'autorise pas à élargir sans revalidation locale.
+        explanation:
+          Un succès n'autorise pas à élargir sans revalidation locale.
       - id: q20
-        question: Quelle attitude est correcte entre la première modification substantielle et sa première validation exécutable ?
+        question:
+          Quelle attitude est correcte entre la première modification
+          substantielle et sa première validation exécutable ?
         answers:
-          - Éviter d'élargir le périmètre tant qu'aucun blocage concret ne l'impose
+          - Éviter d'élargir le périmètre tant qu'aucun blocage concret ne
+            l'impose
           - Profiter de l'élan pour corriger aussi les zones proches suspectes
-          - Multiplier les lectures autour pour renforcer la confiance avant test
+          - Multiplier les lectures autour pour renforcer la confiance avant
+            test
           - Préparer une série de changements connexes avant toute exécution
         correct: 0
-        explanation: Il ne faut pas ouvrir un second front avant le premier contrôle.
+        explanation:
+          Il ne faut pas ouvrir un second front avant le premier contrôle.
   - id: avance
     title: Automatisation, revue et travail multi-fichiers
     questions:
       - id: q21
-        question: Dans un agent de code moderne, quel usage d'un sous-agent est le plus pertinent ?
+        question:
+          Dans un agent de code moderne, quel usage d'un sous-agent est le plus
+          pertinent ?
         answers:
-          - Explorer rapidement une zone précise du dépôt sans bloquer le flux principal
+          - Explorer rapidement une zone précise du dépôt sans bloquer le flux
+            principal
           - Remplacer définitivement l'agent principal dans toute la session
           - Modifier silencieusement tous les fichiers liés sans validation
           - Contourner les limites de contexte en supprimant l'historique
         correct: 0
-        explanation: Un sous-agent sert surtout à déléguer une exploration ciblée ou une tâche bornée.
+        explanation:
+          Un sous-agent sert surtout à déléguer une exploration ciblée ou une
+          tâche bornée.
       - id: q22
-        question: Pourquoi paralléliser plusieurs lectures de fichiers lors d'une exploration de repo ?
+        question:
+          Pourquoi paralléliser plusieurs lectures de fichiers lors d'une
+          exploration de repo ?
         answers:
-          - Pour réduire le temps d'attente quand plusieurs vérifications indépendantes sont nécessaires
+          - Pour réduire le temps d'attente quand plusieurs vérifications
+            indépendantes sont nécessaires
           - Pour garantir automatiquement que tous les fichiers sont cohérents
           - Pour éviter toute nécessité de formuler une hypothèse locale
-          - Pour fusionner en une seule réponse des tâches dépendantes entre elles
+          - Pour fusionner en une seule réponse des tâches dépendantes entre
+            elles
         correct: 0
-        explanation: La parallélisation est utile quand les lectures sont indépendantes et peuvent avancer en même temps.
+        explanation:
+          La parallélisation est utile quand les lectures sont indépendantes et
+          peuvent avancer en même temps.
       - id: q23
-        question: Lors d'un travail en vagues sur plusieurs fichiers, quelle approche est la plus rigoureuse ?
+        question:
+          Lors d'un travail en vagues sur plusieurs fichiers, quelle approche
+          est la plus rigoureuse ?
         answers:
-          - Traiter un petit groupe cohérent, valider, puis passer à la vague suivante
-          - Modifier tout le dépôt d'un coup puis réfléchir à la validation après
-          - Commencer par les fichiers les plus longs même s'ils sont périphériques
+          - Traiter un petit groupe cohérent, valider, puis passer à la vague
+            suivante
+          - Modifier tout le dépôt d'un coup puis réfléchir à la validation
+            après
+          - Commencer par les fichiers les plus longs même s'ils sont
+            périphériques
           - Alterner sans ordre entre recherche large et changements non liés
         correct: 0
-        explanation: Le travail par vagues limite le risque et garde une progression vérifiable.
+        explanation:
+          Le travail par vagues limite le risque et garde une progression
+          vérifiable.
       - id: q24
-        question: Quelle est la meilleure manière de rechercher une information précise dans un grand dépôt ?
+        question:
+          Quelle est la meilleure manière de rechercher une information précise
+          dans un grand dépôt ?
         answers:
-          - Partir d'un motif ciblé ou d'un symbole proche du comportement étudié
+          - Partir d'un motif ciblé ou d'un symbole proche du comportement
+            étudié
           - Lire séquentiellement tous les fichiers jusqu'à trouver un indice
           - Chercher d'abord dans les fichiers les plus anciens du projet
           - Parcourir uniquement les fichiers ouverts récemment dans l'éditeur
         correct: 0
-        explanation: Une recherche ciblée réduit le bruit et aide à atteindre rapidement le chemin de code utile.
+        explanation:
+          Une recherche ciblée réduit le bruit et aide à atteindre rapidement le
+          chemin de code utile.
       - id: q25
-        question: Quand plusieurs pistes existent pour comprendre un comportement multi-fichiers, quel choix est le plus efficace ?
+        question:
+          Quand plusieurs pistes existent pour comprendre un comportement
+          multi-fichiers, quel choix est le plus efficace ?
         answers:
-          - Suivre d'abord le chemin qui contrôle directement le comportement observé
+          - Suivre d'abord le chemin qui contrôle directement le comportement
+            observé
           - Cartographier tout le dépôt avant de toucher à la moindre hypothèse
           - Comparer exhaustivement toutes les alternatives avant toute action
-          - Se concentrer sur les fichiers de configuration même sans lien direct
+          - Se concentrer sur les fichiers de configuration même sans lien
+            direct
         correct: 0
-        explanation: Il faut privilégier le chemin de contrôle le plus direct pour formuler et tester une hypothèse locale.
+        explanation:
+          Il faut privilégier le chemin de contrôle le plus direct pour formuler
+          et tester une hypothèse locale.
       - id: q26
-        question: Dans Claude Code, quelle approche est la plus juste pour modifier un fichier déjà bien structuré ?
+        question:
+          Dans Claude Code, quelle approche est la plus juste pour modifier un
+          fichier déjà bien structuré ?
         answers:
           - Appliquer un patch minimal sur la zone concernée uniquement
           - Réécrire tout le fichier pour homogénéiser le style complet
           - Déplacer plusieurs blocs voisins pour clarifier la lecture globale
           - Profiter du changement pour renommer largement les symboles
         correct: 0
-        explanation: La modification ciblée réduit le risque de régression et de bruit.
+        explanation:
+          La modification ciblée réduit le risque de régression et de bruit.
       - id: q27
-        question: Quand un bug est localisé dans une fonction précise, quelle intervention correspond le mieux à une édition rigoureuse ?
+        question:
+          Quand un bug est localisé dans une fonction précise, quelle
+          intervention correspond le mieux à une édition rigoureuse ?
         answers:
           - Corriger uniquement la branche fautive sans toucher au reste
           - Reformater toutes les fonctions du module avant de corriger
           - Fusionner les helpers proches pour simplifier le fichier entier
           - Remplacer la logique par une nouvelle abstraction plus large
         correct: 0
-        explanation: Une correction locale facilite la revue et limite les effets de bord.
+        explanation:
+          Une correction locale facilite la revue et limite les effets de bord.
       - id: q28
-        question: Face à un fichier contenant déjà des conventions nettes, que doit privilégier Claude Code pendant l'édition ?
+        question:
+          Face à un fichier contenant déjà des conventions nettes, que doit
+          privilégier Claude Code pendant l'édition ?
         answers:
           - Respecter le style existant même si un autre style paraît préférable
           - Introduire un style personnel plus moderne sur les lignes modifiées
-          - Standardiser immédiatement tout le fichier selon une nouvelle convention
+          - Standardiser immédiatement tout le fichier selon une nouvelle
+            convention
           - Ajouter des commentaires partout pour expliciter chaque instruction
         correct: 0
-        explanation: La cohérence locale du fichier prime sur une refonte non demandée.
+        explanation:
+          La cohérence locale du fichier prime sur une refonte non demandée.
       - id: q29
-        question: Après une première modification substantielle, quelle suite de travail est la plus correcte ?
+        question:
+          Après une première modification substantielle, quelle suite de travail
+          est la plus correcte ?
         answers:
           - Lancer tout de suite une validation ciblée liée au code modifié
-          - Continuer plusieurs autres changements avant toute vérification locale
+          - Continuer plusieurs autres changements avant toute vérification
+            locale
           - Relire longuement les fichiers voisins sans exécuter de contrôle
           - Attendre la fin de la session pour tester l'ensemble du projet
         correct: 0
-        explanation: Une validation immédiate vérifie rapidement l'hypothèse de correction.
+        explanation:
+          Une validation immédiate vérifie rapidement l'hypothèse de correction.
       - id: q30
-        question: Quel comportement illustre le mieux une stratégie de patch minimal dans Claude Code ?
+        question:
+          Quel comportement illustre le mieux une stratégie de patch minimal
+          dans Claude Code ?
         answers:
-          - Changer seulement les lignes nécessaires puis revérifier ce périmètre
+          - Changer seulement les lignes nécessaires puis revérifier ce
+            périmètre
           - Réorganiser le fichier au passage pour préparer d'éventuels besoins
           - Ajouter des nettoyages annexes tant que le contexte est ouvert
           - Profiter du correctif pour modifier aussi les conventions de nommage
         correct: 0
-        explanation: Le patch minimal garde une portée claire et un contrôle rapide.
+        explanation:
+          Le patch minimal garde une portée claire et un contrôle rapide.
       - id: q31
-        question: Pendant une tâche longue, quel usage de la mémoire de travail aide le plus à garder le cap ?
+        question:
+          Pendant une tâche longue, quel usage de la mémoire de travail aide le
+          plus à garder le cap ?
         answers:
-          - Noter les hypothèses actives, décisions prises et prochaines vérifications
+          - Noter les hypothèses actives, décisions prises et prochaines
+            vérifications
           - Mémoriser surtout les détails esthétiques des réponses précédentes
           - Réécrire entièrement le contexte après chaque petite action
           - Ignorer les étapes passées pour rester spontané jusqu'à la fin
         correct: 0
-        explanation: La mémoire utile conserve l'état de travail et les prochaines actions.
+        explanation:
+          La mémoire utile conserve l'état de travail et les prochaines actions.
       - id: q32
-        question: Quel plan d'action est le plus solide avant d'entamer une tâche complexe ?
+        question:
+          Quel plan d'action est le plus solide avant d'entamer une tâche
+          complexe ?
         answers:
           - Découper en étapes vérifiables avec un objectif concret pour chacune
           - Lister beaucoup d'idées générales sans ordre ni critère de succès
@@ -295,74 +441,123 @@ chapters:
         correct: 0
         explanation: Un bon plan rend l'exécution testable et facile à ajuster.
       - id: q33
-        question: Quel type de mise à jour intermédiaire est le plus utile pour l'utilisateur ?
+        question:
+          Quel type de mise à jour intermédiaire est le plus utile pour
+          l'utilisateur ?
         answers:
-          - Un point bref sur l'avancement, le constat actuel et l'étape suivante
+          - Un point bref sur l'avancement, le constat actuel et l'étape
+            suivante
           - Un long monologue technique sur toutes les possibilités imaginées
           - Une répétition régulière du même plan sans information nouvelle
           - Une conclusion prématurée avant toute vérification intermédiaire
         correct: 0
-        explanation: La meilleure mise à jour informe clairement sans noyer l'utilisateur.
+        explanation:
+          La meilleure mise à jour informe clairement sans noyer l'utilisateur.
       - id: q34
-        question: Quand une tâche dure longtemps, quelle coordination avec l'utilisateur est la plus correcte ?
+        question:
+          Quand une tâche dure longtemps, quelle coordination avec l'utilisateur
+          est la plus correcte ?
         answers:
-          - Rendre les progrès visibles et signaler rapidement les blocages réels
+          - Rendre les progrès visibles et signaler rapidement les blocages
+            réels
           - Attendre la fin complète avant de mentionner le moindre doute
           - Changer souvent d'objectif sans expliquer l'impact sur le résultat
           - Multiplier les détails secondaires au lieu des décisions importantes
         correct: 0
-        explanation: La coordination repose sur la transparence utile et les points de blocage.
+        explanation:
+          La coordination repose sur la transparence utile et les points de
+          blocage.
       - id: q35
-        question: Comment maintenir le contexte correctement au fil d'une tâche multi-étapes ?
+        question:
+          Comment maintenir le contexte correctement au fil d'une tâche
+          multi-étapes ?
         answers:
-          - Relier chaque nouvelle action à l'objectif courant et aux résultats déjà obtenus
+          - Relier chaque nouvelle action à l'objectif courant et aux résultats
+            déjà obtenus
           - Traiter chaque étape comme indépendante pour éviter toute influence
           - Redémarrer le raisonnement complet après chaque changement mineur
           - Accumuler des informations sans trier ce qui reste pertinent
         correct: 0
-        explanation: Le contexte se maintient en reliant les actions à l'objectif et à l'historique utile.
+        explanation:
+          Le contexte se maintient en reliant les actions à l'objectif et à
+          l'historique utile.
       - id: q36
-        question: Dans un dépôt avec des changements locaux non liés à la tâche, quelle conduite est la plus correcte ?
+        question:
+          Dans un dépôt avec des changements locaux non liés à la tâche, quelle
+          conduite est la plus correcte ?
         answers:
-          - Ignorer ces changements, travailler autour, et ne rien revert sans demande explicite
-          - Nettoyer tout le dépôt pour repartir d'un état strictement uniforme avant édition
-          - Écraser les fichiers modifiés pour éviter toute interaction pendant la correction
-          - Déplacer tous les changements existants dans un commit temporaire sans prévenir
+          - Ignorer ces changements, travailler autour, et ne rien revert sans
+            demande explicite
+          - Nettoyer tout le dépôt pour repartir d'un état strictement uniforme
+            avant édition
+          - Écraser les fichiers modifiés pour éviter toute interaction pendant
+            la correction
+          - Déplacer tous les changements existants dans un commit temporaire
+            sans prévenir
         correct: 0
-        explanation: Un dépôt sale n'autorise pas à annuler des modifications non demandées.
+        explanation:
+          Un dépôt sale n'autorise pas à annuler des modifications non
+          demandées.
       - id: q37
-        question: Quelle commande Git reste conforme à une pratique non destructive pendant une tâche courante ?
+        question:
+          Quelle commande Git reste conforme à une pratique non destructive
+          pendant une tâche courante ?
         answers:
-          - Consulter l'état avec git status avant de modifier les fichiers concernés
-          - Réinitialiser le dépôt avec git reset --hard avant toute vérification locale
+          - Consulter l'état avec git status avant de modifier les fichiers
+            concernés
+          - Réinitialiser le dépôt avec git reset --hard avant toute
+            vérification locale
           - Restaurer chaque fichier avec git checkout -- pour repartir de zéro
-          - Réécrire l'historique avec git rebase -i pour simplifier le contexte actuel
+          - Réécrire l'historique avec git rebase -i pour simplifier le contexte
+            actuel
         correct: 0
-        explanation: git status informe sans altérer l'arbre de travail ni l'historique.
+        explanation:
+          git status informe sans altérer l'arbre de travail ni l'historique.
       - id: q38
-        question: Si des changements inattendus apparaissent dans un fichier lié à ta zone de travail, que faut-il faire ?
+        question:
+          Si des changements inattendus apparaissent dans un fichier lié à ta
+          zone de travail, que faut-il faire ?
         answers:
-          - S'arrêter et demander comment gérer ce conflit potentiel avant de poursuivre
-          - Supprimer ces lignes sans commentaire pour restaurer le comportement attendu
-          - Fusionner automatiquement les versions en conservant uniquement la tienne
-          - Déplacer le fichier hors du dépôt pour éviter un blocage pendant l'édition
+          - S'arrêter et demander comment gérer ce conflit potentiel avant de
+            poursuivre
+          - Supprimer ces lignes sans commentaire pour restaurer le comportement
+            attendu
+          - Fusionner automatiquement les versions en conservant uniquement la
+            tienne
+          - Déplacer le fichier hors du dépôt pour éviter un blocage pendant
+            l'édition
         correct: 0
-        explanation: Un conflit direct avec des changements inattendus doit être clarifié.
+        explanation:
+          Un conflit direct avec des changements inattendus doit être clarifié.
       - id: q39
-        question: Lors d'une revue de code demandée par l'utilisateur, quel angle doit dominer la réponse ?
+        question:
+          Lors d'une revue de code demandée par l'utilisateur, quel angle doit
+          dominer la réponse ?
         answers:
-          - Les bugs, régressions, risques et tests manquants, avec références précises
-          - Le style général du code et les préférences d'écriture les plus personnelles
-          - La reformulation complète du code pour montrer une variante plus élégante
-          - Le résumé du fonctionnement métier sans insister sur les défauts observés
+          - Les bugs, régressions, risques et tests manquants, avec références
+            précises
+          - Le style général du code et les préférences d'écriture les plus
+            personnelles
+          - La reformulation complète du code pour montrer une variante plus
+            élégante
+          - Le résumé du fonctionnement métier sans insister sur les défauts
+            observés
         correct: 0
-        explanation: Une revue utile priorise les risques concrets avant le reste.
+        explanation:
+          Une revue utile priorise les risques concrets avant le reste.
       - id: q40
-        question: Avant de clore une tâche après des modifications, quelle vérification finale est la plus correcte ?
+        question:
+          Avant de clore une tâche après des modifications, quelle vérification
+          finale est la plus correcte ?
         answers:
-          - Exécuter au moins un contrôle ciblé sur la zone modifiée quand c'est possible
-          - S'arrêter dès que les fichiers semblent cohérents à la lecture sans exécution
+          - Exécuter au moins un contrôle ciblé sur la zone modifiée quand c'est
+            possible
+          - S'arrêter dès que les fichiers semblent cohérents à la lecture sans
+            exécution
           - Vérifier uniquement le diff Git même si un test rapide existe déjà
-          - Reporter toute validation à plus tard pour ne pas ralentir la livraison
+          - Reporter toute validation à plus tard pour ne pas ralentir la
+            livraison
         correct: 0
-        explanation: Une validation exécutable ciblée vaut mieux qu'une simple inspection visuelle.
+        explanation:
+          Une validation exécutable ciblée vaut mieux qu'une simple inspection
+          visuelle.

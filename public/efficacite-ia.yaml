@@ -1,0 +1,1919 @@
+title: "QCM Améliorer son efficacité professionnelle avec l'IA"
+chapters:
+  - id: "panorama-ia"
+    title: "Panorama de l'intelligence artificielle et prompting avancé"
+    questions:
+      - id: "q1"
+        question:
+          "Quel énoncé décrit le mieux le fonctionnement général d'une IA
+          générative ?"
+        answers:
+          - "Elle prédit la suite la plus probable à partir de données
+            d'entraînement et du prompt reçu."
+          - "Elle recopie mot pour mot un document unique stocké dans sa
+            mémoire."
+          - "Elle applique uniquement des règles fixes écrites à la main pour
+            chaque question."
+          - "Elle se connecte toujours en direct à Internet pour fabriquer
+            chaque réponse."
+        correct: 0
+        explanation:
+          "Une IA générative produit une sortie en s'appuyant sur des
+          régularités apprises dans ses données d'entraînement et sur
+          l'instruction fournie. Elle ne se limite ni à une base de réponses
+          figées ni à Internet."
+      - id: "q2"
+        question:
+          "Quelle différence caractérise le mieux une IA analytique par rapport
+          à une IA générative ?"
+        answers:
+          - "L'IA analytique sert surtout à classer, prédire ou détecter, alors
+            que l'IA générative crée du contenu nouveau."
+          - "L'IA analytique produit uniquement des images, alors que l'IA
+            générative produit uniquement du texte."
+          - "L'IA analytique fonctionne sans données, alors que l'IA générative
+            exige des capteurs physiques."
+          - "L'IA analytique est forcément plus récente que l'IA générative."
+        correct: 0
+        explanation:
+          "L'IA analytique exploite des données pour reconnaître, prévoir ou
+          décider. L'IA générative, elle, produit de nouveaux contenus comme du
+          texte, des images ou des résumés."
+      - id: "q3"
+        question:
+          "Quelle est la spécificité principale d'un grand modèle de langage ?"
+        answers:
+          - "Il est conçu pour modéliser le langage à grande échelle afin de
+            comprendre et générer du texte."
+          - "Il est spécialisé uniquement dans le calcul comptable et la paie."
+          - "Il repose exclusivement sur des formulaires à choix multiples
+            préparés à l'avance."
+          - "Il ne traite que des bases de données chiffrées sans mots ni
+            phrases."
+        correct: 0
+        explanation:
+          "Un grand modèle de langage apprend des régularités sur d'immenses
+          volumes de texte. Cela lui permet de reformuler, résumer, expliquer ou
+          rédiger en langage naturel."
+      - id: "q4"
+        question:
+          "Quel cas d'usage de l'IA est particulièrement utile dans un centre de
+          formation ?"
+        answers:
+          - "Rédiger une relance claire et professionnelle pour un dossier
+            d'inscription incomplet."
+          - "Remplacer définitivement l'entretien pédagogique avec chaque
+            apprenti."
+          - "Signer automatiquement les conventions à la place du centre."
+          - "Supprimer la vérification humaine des informations administratives."
+        correct: 0
+        explanation:
+          "L'IA peut faire gagner du temps sur des tâches de rédaction comme une
+          relance de dossier incomplet. En revanche, elle ne remplace ni la
+          validation humaine ni les responsabilités du centre."
+      - id: "q5"
+        question:
+          "Quelle limite importante découle du caractère probabiliste d'une
+          réponse générée par IA ?"
+        answers:
+          - "Elle peut sembler convaincante tout en contenant une information
+            fausse ou inventée."
+          - "Elle ne peut répondre qu'à des questions déjà posées exactement de
+            la même façon."
+          - "Elle refuse systématiquement les sujets administratifs ou
+            pédagogiques."
+          - "Elle fournit toujours plusieurs réponses contradictoires à la fois."
+        correct: 0
+        explanation:
+          "Une réponse probabiliste est produite selon ce qui paraît le plus
+          plausible pour le modèle. Elle peut donc être fluide et crédible tout
+          en étant inexacte, ce qui impose une vérification."
+      - id: "q6"
+        question:
+          "Dans un prompt adressé à une IA, à quoi sert principalement un
+          contexte précis sur la situation de l'utilisateur ?"
+        answers:
+          - "A guider la réponse vers un besoin concret et à réduire les
+            ambiguïtés"
+          - "A obliger l'IA à répondre plus vite, quel que soit le sujet"
+          - "A remplacer complètement la consigne principale du prompt"
+          - "A garantir que la réponse sera toujours juridiquement conforme"
+        correct: 0
+        explanation:
+          "Le contexte aide l'IA à comprendre la situation, le public et
+          l'objectif. Cela permet de produire une réponse plus pertinente et
+          moins générique."
+      - id: "q7"
+        question:
+          "Quel ensemble correspond le mieux aux éléments d'un prompt structuré
+          ?"
+        answers:
+          - "Un objectif, un contexte, des contraintes et un format de sortie
+            attendu"
+          - "Un sujet, une blague, une signature et un mot-clé secret"
+          - "Une question isolée, sans précision, suivie de plusieurs relances
+            vagues"
+          - "Un lien web, une image, un délai et une note de service"
+        correct: 0
+        explanation:
+          "Un prompt structuré précise ce qu'il faut faire, dans quel contexte,
+          avec quelles limites et sous quelle forme. Cette structure améliore la
+          qualité de la réponse."
+      - id: "q8"
+        question:
+          "Pourquoi est-il utile d'indiquer des contraintes explicites dans un
+          prompt ?"
+        answers:
+          - "Parce qu'elles empêchent totalement l'IA de se tromper"
+          - "Parce qu'elles définissent clairement les limites et les critères
+            de la réponse attendue"
+          - "Parce qu'elles rendent inutile toute relecture humaine"
+          - "Parce qu'elles obligent l'IA à citer des sources vérifiées"
+        correct: 1
+        explanation:
+          "Des contraintes explicites cadrent la production de l'IA, par exemple
+          sur la longueur, le ton ou le format. Elles réduisent les écarts entre
+          la demande et la réponse obtenue."
+      - id: "q9"
+        question:
+          "Quel est l'intérêt principal d'ajouter un exemple dans un prompt ?"
+        answers:
+          - "Montrer à l'IA le type de réponse attendu en termes de forme ou de
+            style"
+          - "Éviter d'avoir à formuler une consigne précise"
+          - "Garantir que l'IA produira exactement le même contenu à chaque fois"
+          - "Empêcher l'IA d'utiliser ses connaissances générales"
+        correct: 0
+        explanation:
+          "Un exemple sert de repère concret pour orienter la structure ou le
+          niveau de détail attendu. Il aide l'IA à mieux aligner sa sortie sur
+          le besoin."
+      - id: "q10"
+        question:
+          "Quelle démarche illustre le mieux l'itération pour améliorer un
+          prompt ?"
+        answers:
+          - "Réutiliser le même prompt plusieurs fois en espérant une meilleure
+            réponse"
+          - "Changer totalement de sujet dès que la première réponse est
+            imparfaite"
+          - "Analyser la réponse obtenue puis ajuster progressivement le prompt"
+          - "Supprimer toutes les précisions pour laisser plus de liberté à l'IA"
+        correct: 2
+        explanation:
+          "L'itération consiste à évaluer le résultat puis à modifier le prompt
+          de manière ciblée. Cette amélioration progressive permet d'obtenir une
+          réponse plus adaptée."
+      - id: "q11"
+        question:
+          "Quelle pratique protège le mieux les données d'apprentis lors d'une
+          demande à une IA générative ?"
+        answers:
+          - "Remplacer les noms, adresses et numéros de dossier par des éléments
+            fictifs avant d'envoyer la demande"
+          - "Envoyer le dossier complet si l'outil promet des réponses plus
+            précises"
+          - "Partager les données uniquement le matin pour limiter les risques"
+          - "Ajouter davantage de détails personnels pour obtenir une réponse
+            contextualisée"
+        correct: 0
+        explanation:
+          "La pseudonymisation ou l'anonymisation réduit l'exposition de données
+          personnelles. C'est la pratique la plus adaptée avant d'utiliser une
+          IA avec des informations d'apprentis."
+      - id: "q12"
+        question:
+          "Pour éviter une fuite d'informations partenaires, quelle consigne est
+          la plus sûre avant d'utiliser une IA pour rédiger un message ?"
+        answers:
+          - "Copier l'ensemble du mail du partenaire pour que l'IA comprenne
+            tout le contexte"
+          - "Ne transmettre à l'IA que les éléments non sensibles et retirer
+            noms, montants ou clauses confidentielles"
+          - "Utiliser une IA différente pour chaque partenaire sans modifier le
+            contenu"
+          - "Envoyer la pièce jointe confidentielle puis supprimer la
+            conversation après coup"
+        correct: 1
+        explanation:
+          "Retirer les informations sensibles limite le risque de divulgation de
+          données commerciales ou contractuelles. Changer d'outil ou supprimer
+          après coup ne supprime pas le risque initial d'exposition."
+      - id: "q13"
+        question:
+          "Quel principe du RGPD applique-t-on lorsqu'on ne fournit à une IA que
+          les données strictement nécessaires à la tâche demandée ?"
+        answers:
+          - "La portabilité des données"
+          - "La limitation de la conservation"
+          - "La minimisation des données"
+          - "Le droit d'opposition"
+        correct: 2
+        explanation:
+          "Le principe de minimisation impose de ne traiter que les données
+          adéquates, pertinentes et limitées à ce qui est nécessaire. Il
+          s'applique directement lors de la préparation d'un prompt."
+      - id: "q14"
+        question:
+          "Quelle méthode est la plus fiable pour vérifier un fait fourni par
+          une IA dans une réponse métier ?"
+        answers:
+          - "Le comparer à des sources officielles ou documentées et récentes"
+          - "Le conserver si la formulation semble professionnelle"
+          - "Le valider si l'IA l'a répété deux fois de la même manière"
+          - "Le considérer exact si plusieurs collègues l'ont trouvé plausible"
+        correct: 0
+        explanation:
+          "Une information générée par l'IA doit être contrôlée par des sources
+          fiables, traçables et à jour. La plausibilité perçue ne constitue pas
+          une preuve."
+      - id: "q15"
+        question:
+          "Quel indice permet le mieux de détecter une hallucination plausible
+          dans une réponse d'IA ?"
+        answers:
+          - "La réponse utilise un vocabulaire simple et direct"
+          - "La réponse cite un règlement, une date ou un organisme précis
+            qu'aucune source vérifiable ne confirme"
+          - "La réponse est plus courte que d'habitude"
+          - "La réponse contient une liste à puces bien structurée"
+        correct: 1
+        explanation:
+          "Une hallucination plausible ressemble souvent à une information
+          précise et crédible, mais introuvable dans des sources vérifiables. Le
+          niveau de détail apparent ne garantit pas la vérité."
+      - id: "q16"
+        question:
+          "Quel indice montre le plus clairement qu'une réponse d'IA contient un
+          biais de généralisation ?"
+        answers:
+          - "Elle affirme qu'un public agit toujours de la même manière sans
+            nuance ni source vérifiable"
+          - "Elle propose plusieurs hypothèses et précise ses limites"
+          - "Elle demande des précisions avant de conclure"
+          - "Elle distingue les faits observés des suppositions"
+        correct: 0
+        explanation:
+          "Un biais de généralisation apparaît quand l'IA transforme des cas
+          particuliers en règle générale sans preuve. Les formulations absolues
+          et non sourcées sont un signal d'alerte."
+      - id: "q17"
+        question:
+          "Un apprenti écrit qu'il risque de perdre son logement dans les 48
+          heures. Quelle consigne de prompting est la plus adaptée pour obtenir
+          une aide immédiatement exploitable et prudente ?"
+        answers:
+          - "Demander un message empathique sans autre précision"
+          - "Demander une réponse structurée avec priorités immédiates, contacts
+            utiles, limites juridiques et ton rassurant"
+          - "Demander une réponse très courte pour gagner du temps"
+          - "Demander à l'IA de décider seule de la meilleure aide financière à
+            accorder"
+        correct: 1
+        explanation:
+          "Dans une situation urgente, le prompt doit cadrer la priorité, le
+          format attendu et les limites de l'IA. Cela aide à produire une
+          réponse actionnable sans surpromettre."
+      - id: "q18"
+        question:
+          "Pour répondre à une entreprise partenaire qui demande des
+          informations sur un apprenti, quelle utilisation de l'IA est la plus
+          conforme ?"
+        answers:
+          - "Faire rédiger par l'IA une réponse complète en incluant toutes les
+            données du dossier interne"
+          - "Demander à l'IA un brouillon neutre à partir d'informations
+            minimisées, puis vérifier les faits avant envoi"
+          - "Copier l'historique intégral des échanges avec l'apprenti pour
+            donner du contexte à l'IA"
+          - "Laisser l'IA répondre directement à l'entreprise sans relecture
+            humaine"
+        correct: 1
+        explanation:
+          "La bonne pratique consiste à minimiser les données partagées avec
+          l'IA et à garder une validation humaine avant envoi. Cela réduit le
+          risque de fuite d'information et d'erreur."
+      - id: "q19"
+        question:
+          "Pour relancer efficacement un dossier incomplet avec l'IA, quel
+          élément doit absolument figurer dans le prompt ?"
+        answers:
+          - "La demande d'un ton plus autoritaire pour accélérer la réponse"
+          - "La liste précise des pièces manquantes et l'action attendue de la
+            personne relancée"
+          - "Le maximum d'informations personnelles disponibles sur le
+            bénéficiaire"
+          - "Une formulation volontairement vague pour laisser l'IA improviser"
+        correct: 1
+        explanation:
+          "Une relance utile doit indiquer exactement ce qui manque et ce qui
+          est attendu. Sans cette précision, l'IA risque de produire un message
+          flou ou incomplet."
+      - id: "q20"
+        question:
+          "Quel critère caractérise le mieux un prompt réutilisable dans un
+          contexte professionnel ?"
+        answers:
+          - "Il repose sur des formulations implicites comprises seulement par
+            son auteur"
+          - "Il dépend d'un seul cas particulier pour rester concret"
+          - "Il décrit le rôle, l'objectif, les entrées attendues et le format
+            de sortie de manière stable"
+          - "Il reste très court, même s'il oublie les contraintes essentielles"
+        correct: 2
+        explanation:
+          "Un prompt réutilisable explicite son cadre d'usage et ses variables
+          d'entrée. Il peut ainsi être repris sur plusieurs cas sans perdre en
+          qualité ni en cohérence."
+  - id: "organisation-ia"
+    title:
+      "Identifier ses pertes de temps et optimiser son organisation avec l'IA"
+    questions:
+      - id: "q1"
+        question:
+          "Quelle tâche doit être repérée en priorité comme chronophage pour
+          envisager un gain de temps avec l'IA ?"
+        answers:
+          - "Une activité répétitive, fréquente et à faible valeur ajoutée"
+          - "Une réunion mensuelle déjà cadrée et courte"
+          - "Une pause informelle entre deux rendez-vous"
+          - "Une tâche exceptionnelle réalisée une fois par an"
+        correct: 0
+        explanation:
+          "Une tâche répétitive et peu stratégique est le meilleur point de
+          départ pour gagner du temps avec l'IA. Son automatisation ou son
+          accélération produit un bénéfice régulier."
+      - id: "q2"
+        question:
+          "Pour trier rapidement les emails urgents avec l'IA, quel critère
+          faut-il demander d'identifier en premier ?"
+        answers:
+          - "La longueur exacte de chaque message"
+          - "La présence d'un ton chaleureux dans la signature"
+          - "Les messages qui demandent une action immédiate ou ont une échéance
+            proche"
+          - "Les emails reçus le plus tôt dans la semaine"
+        correct: 2
+        explanation:
+          "L'urgence se repère surtout par une action attendue rapidement ou une
+          échéance proche. Ce critère permet un tri opérationnel immédiat."
+      - id: "q3"
+        question:
+          "Quelle consigne donne le plus de chances d'obtenir avec l'IA une
+          réponse email professionnelle et adaptée ?"
+        answers:
+          - "Rédige un message court sans contexte"
+          - "Réponds librement comme tu veux"
+          - "Écris une réponse polie"
+          - "Rédige une réponse professionnelle en précisant le destinataire,
+            l'objectif, le ton attendu et les éléments à inclure"
+        correct: 3
+        explanation:
+          "Plus la consigne précise le contexte, le ton et les informations
+          attendues, plus la réponse générée est exploitable. L'IA a besoin
+          d'instructions cadrées pour produire un email professionnel."
+      - id: "q4"
+        question:
+          "Pour générer une note de synthèse utile à partir d'informations
+          brutes, quelle demande est la plus pertinente ?"
+        answers:
+          - "Recopie toutes les informations sans les organiser"
+          - "Résume les idées clés en les classant par thèmes avec les points
+            d'action essentiels"
+          - "Supprime les détails et garde uniquement les dates"
+          - "Transforme les informations en texte long sans titre"
+        correct: 1
+        explanation:
+          "Une note de synthèse doit faire ressortir les idées principales de
+          manière structurée. Le classement par thèmes et les points d'action la
+          rendent directement utile."
+      - id: "q5"
+        question:
+          "Pour créer un document structuré à partir d'un brouillon, quelle
+          utilisation de l'IA est la plus efficace ?"
+        answers:
+          - "Lui demander de conserver le brouillon tel quel"
+          - "Lui demander d'ajouter du texte au hasard pour remplir la page"
+          - "Lui demander d'organiser le brouillon en sections claires avec
+            titres et formulation finalisée"
+          - "Lui demander uniquement de corriger les fautes sans revoir la
+            structure"
+        correct: 2
+        explanation:
+          "L'IA est utile pour transformer des idées brutes en document lisible
+          et organisé. Une structure en sections avec des titres rend le contenu
+          directement exploitable."
+      - id: "q6"
+        question:
+          "Pour produire rapidement un courrier type personnalisé avec l'IA,
+          quelle information faut-il fournir en priorité dans le prompt ?"
+        answers:
+          - "Le contexte du destinataire, l'objectif du courrier et les éléments
+            variables à intégrer"
+          - "Uniquement le nom du destinataire, car l'IA devine le reste"
+          - "Une consigne très courte sans préciser le ton ni le but"
+          - "Le logo de l'organisation, sans autre détail"
+        correct: 0
+        explanation:
+          "Un courrier type personnalisé reste pertinent si l'IA connaît le
+          destinataire, le but du message et les données à adapter. Sans ces
+          éléments, le texte risque d'être trop générique."
+      - id: "q7"
+        question:
+          "Vous disposez de notes éparses, d'emails et de points de réunion.
+          Quel usage de l'IA correspond le mieux à une synthèse en compte-rendu
+          ?"
+        answers:
+          - "Lui demander de reformuler chaque phrase séparément sans structure
+            finale"
+          - "Lui fournir les informations brutes et demander un compte-rendu
+            structuré avec décisions, actions et points clés"
+          - "Lui demander uniquement de corriger l'orthographe des notes"
+          - "Lui faire générer un nouveau sujet sans tenir compte des
+            informations sources"
+        correct: 1
+        explanation:
+          "L'IA est utile pour transformer des informations dispersées en un
+          compte-rendu organisé. La demande doit préciser la structure attendue
+          et s'appuyer sur les éléments bruts fournis."
+      - id: "q8"
+        question:
+          "Pour prioriser ses tâches quotidiennes avec l'IA, quel critère est le
+          plus pertinent à faire analyser en premier ?"
+        answers:
+          - "La longueur du titre de chaque tâche"
+          - "L'ordre alphabétique des dossiers concernés"
+          - "Le niveau d'urgence et d'impact de chaque tâche"
+          - "La préférence personnelle pour les tâches faciles"
+        correct: 2
+        explanation:
+          "La priorisation efficace repose d'abord sur l'urgence et l'impact.
+          L'IA peut alors aider à distinguer ce qui doit être traité
+          immédiatement de ce qui peut attendre."
+      - id: "q9"
+        question:
+          "Un besoin doit être traité dans les cinq minutes. Quel choix d'outil
+          IA est le plus adapté à cette urgence ?"
+        answers:
+          - "Un outil de présentation pour concevoir des slides détaillées"
+          - "Un assistant conversationnel capable de produire immédiatement une
+            réponse ou un brouillon exploitable"
+          - "Un outil d'analyse statistique nécessitant l'import complet d'un
+            jeu de données"
+          - "Un générateur d'images pour illustrer un document ultérieur"
+        correct: 1
+        explanation:
+          "En situation d'urgence, il faut un outil qui donne un résultat
+          textuel immédiat et directement réutilisable. Les outils plus lourds
+          ou spécialisés font perdre du temps dans ce cas."
+      - id: "q10"
+        question:
+          "Quelle méthode permet le mieux de mesurer le temps réellement gagné
+          grâce à l'IA sur des tâches répétitives ?"
+        answers:
+          - "Comparer la durée moyenne avant et après usage de l'IA sur une même
+            catégorie de tâches"
+          - "Se fier à une impression générale en fin de semaine"
+          - "Compter seulement le nombre de messages envoyés dans la journée"
+          - "Mesurer uniquement le temps passé à ouvrir l'outil IA"
+        correct: 0
+        explanation:
+          "La comparaison de durées sur des tâches comparables permet une mesure
+          concrète du gain de temps. Une simple impression ne suffit pas pour
+          évaluer l'effet réel de l'IA."
+      - id: "q11"
+        question:
+          "Dans le cas d'un contrat d'apprentissage incomplet, quel usage de
+          l'IA aide le mieux à gagner du temps sans oublier une pièce
+          essentielle ?"
+        answers:
+          - "Lui demander une checklist des informations et justificatifs
+            manquants a partir du dossier disponible"
+          - "Lui demander de signer le contrat a la place de l'employeur"
+          - "Lui demander de transmettre automatiquement le dossier a tous les
+            organismes"
+          - "Lui demander de remplacer la verification finale humaine"
+        correct: 0
+        explanation:
+          "L'IA peut structurer les elements manquants et proposer une checklist
+          exploitable rapidement. En revanche, elle ne remplace ni la signature
+          ni le controle final humain."
+      - id: "q12"
+        question:
+          "Pour suivre plusieurs dossiers administratifs en meme temps, quelle
+          aide de l'IA est la plus pertinente ?"
+        answers:
+          - "Generer un tableau de suivi avec statut, prochaine action, pieces
+            manquantes et echeances pour chaque dossier"
+          - "Cloturer automatiquement les dossiers les plus anciens sans
+            verification"
+          - "Supprimer les dossiers sans reponse depuis une semaine"
+          - "Fusionner tous les dossiers dans un seul document non classe"
+        correct: 0
+        explanation:
+          "L'IA est utile pour consolider et prioriser l'information entre
+          plusieurs dossiers. Elle fait gagner du temps en proposant un suivi
+          structure et actionnable."
+      - id: "q13"
+        question:
+          "Pour repondre a une demande d'aide sociale a partir d'elements bruts,
+          quel resultat de l'IA est le plus adapte ?"
+        answers:
+          - "Un brouillon de reponse clair, empathique et structure, a relire
+            avant envoi"
+          - "Une decision definitive d'attribution de l'aide sans validation"
+          - "Une suppression des informations personnelles du demandeur sans
+            controle"
+          - "Une reponse identique envoyee a tous les demandeurs, quel que soit
+            leur cas"
+        correct: 0
+        explanation:
+          "L'IA peut aider a rediger rapidement une reponse personnalisee et
+          bien structuree. La decision et la validation finale doivent rester
+          humaines."
+      - id: "q14"
+        question:
+          "Pour produire une synthese de situation d'un apprenti a partir de
+          notes dispersees, quel usage de l'IA est le plus efficace ?"
+        answers:
+          - "Transformer les notes en synthese concise avec faits, points
+            d'attention et actions a suivre"
+          - "Inventer les informations manquantes pour rendre la synthese plus
+            complete"
+          - "Remplacer l'entretien avec l'apprenti par un resume automatique"
+          - "Conserver les notes brutes sans les reorganiser"
+        correct: 0
+        explanation:
+          "L'IA est pertinente pour restructurer des informations eparses en
+          synthese lisible. Elle ne doit ni inventer des faits ni se substituer
+          aux echanges necessaires."
+      - id: "q15"
+        question:
+          "Lors de la redaction d'un courrier a un organisme externe, quelle
+          contribution de l'IA apporte le plus de valeur ?"
+        answers:
+          - "Proposer un courrier formel, clair et adapte au destinataire a
+            partir des informations fournies"
+          - "Envoyer le courrier sans validation des faits ni du ton"
+          - "Choisir seule l'organisme destinataire sans consigne"
+          - "Remplacer toutes les pieces jointes par un simple resume"
+        correct: 0
+        explanation:
+          "L'IA fait gagner du temps en produisant un brouillon de courrier
+          professionnel adapte au contexte. Le contenu, le destinataire et
+          l'envoi doivent ensuite etre verifies."
+      - id: "q16"
+        question:
+          "Pour utiliser l'IA afin de préparer une prospection d'entreprises
+          ciblées, quel résultat est le plus utile ?"
+        answers:
+          - "Une liste d'entreprises correspondant à des critères précis avec
+            une brève justification de leur pertinence"
+          - "Un texte générique sur l'importance de la prospection commerciale"
+          - "Un tableau des congés de l'équipe relations entreprises"
+          - "Une réponse unique proposant de contacter toutes les entreprises
+            locales"
+        correct: 0
+        explanation:
+          "Pour une prospection ciblée, l'IA doit aider à sélectionner des
+          entreprises selon des critères explicites. Une justification rapide
+          permet ensuite de prioriser les prises de contact."
+      - id: "q17"
+        question:
+          "Pour le suivi d'un partenariat entreprise, quelle sortie générée par
+          l'IA est la plus adaptée ?"
+        answers:
+          - "Un message promotionnel standard sans lien avec les échanges passés"
+          - "Un suivi structuré avec historique des échanges, actions en cours,
+            échéances et prochain contact"
+          - "Une liste de citations inspirantes sur la collaboration"
+          - "Un résumé limité au nom de l'entreprise et à son secteur"
+        correct: 1
+        explanation:
+          "Le suivi d'un partenariat repose sur des informations opérationnelles
+          et datées. Une vue structurée aide à relancer au bon moment et à ne
+          rien oublier."
+      - id: "q18"
+        question:
+          "Pour produire un bilan de collaboration synthétique avec l'IA, quelle
+          structure est la plus pertinente ?"
+        answers:
+          - "Un paragraphe libre sans résultats ni perspectives"
+          - "Une suite de notes brutes recopiées sans tri"
+          - "Un bilan centré sur les objectifs, actions menées, résultats
+            observés, points de vigilance et suites à donner"
+          - "Une liste des adresses email de tous les interlocuteurs"
+        correct: 2
+        explanation:
+          "Un bilan synthétique doit faire ressortir l'essentiel de la
+          collaboration et déboucher sur des suites concrètes. Une structure
+          claire évite de noyer les résultats dans des détails secondaires."
+      - id: "q19"
+        question:
+          "Dans ce contexte professionnel, quelle qualité attend-on en priorité
+          d'une sortie générative produite par l'IA ?"
+        answers:
+          - "Qu'elle soit longue pour paraître complète, même si elle reste
+            vague"
+          - "Qu'elle soit immédiatement exploitable, structurée, contextualisée
+            et vérifiable"
+          - "Qu'elle utilise un vocabulaire très technique dans tous les cas"
+          - "Qu'elle reprenne mot pour mot les formulations les plus courantes
+            du web"
+        correct: 1
+        explanation:
+          "Une bonne sortie générative n'est pas seulement fluide : elle doit
+          être utile dans le travail réel. Elle doit donc être claire, adaptée
+          au besoin et suffisamment fiable pour être contrôlée rapidement."
+      - id: "q20"
+        question:
+          "Avant d'envoyer un message ou un document rédigé avec l'IA, pourquoi
+          une relecture humaine reste-t-elle indispensable ?"
+        answers:
+          - "Parce que l'IA ne sait jamais écrire en français"
+          - "Parce qu'il faut vérifier l'exactitude, le ton, la confidentialité
+            et la cohérence avec la situation"
+          - "Parce qu'une sortie de l'IA doit toujours être raccourcie à une
+            seule phrase"
+          - "Parce qu'il est interdit d'utiliser l'IA pour préparer des
+            documents professionnels"
+        correct: 1
+        explanation:
+          "La relecture humaine permet de repérer les erreurs factuelles, les
+          formulations maladroites et les informations sensibles. Elle garantit
+          que l'envoi final correspond bien à l'objectif et au destinataire."
+  - id: "automatisation-ia"
+    title: "Automatiser ses tâches avec l'IA"
+    questions:
+      - id: "q1"
+        question:
+          "Quelle est la finalité principale d'une automatisation avec l'IA dans
+          un contexte professionnel ?"
+        answers:
+          - "Exécuter automatiquement des tâches répétitives pour gagner du
+            temps et réduire les oublis"
+          - "Remplacer toute prise de décision humaine dans l'entreprise"
+          - "Augmenter le nombre de réunions de suivi"
+          - "Supprimer la nécessité de contrôler les données sensibles"
+        correct: 0
+        explanation:
+          "L'automatisation avec l'IA sert d'abord à traiter des tâches
+          récurrentes de façon plus rapide et plus fiable. Elle complète le
+          travail humain au lieu de supprimer tout contrôle."
+      - id: "q2"
+        question:
+          "Quelle différence caractérise le mieux une automatisation IA par
+          rapport à une assistance ponctuelle ?"
+        answers:
+          - "L'automatisation se lance selon des règles ou événements définis,
+            alors que l'assistance ponctuelle répond à une demande au cas par
+            cas"
+          - "L'automatisation nécessite toujours un appel téléphonique,
+            contrairement à l'assistance ponctuelle"
+          - "L'assistance ponctuelle traite uniquement des données internes,
+            alors que l'automatisation traite uniquement des données externes"
+          - "Il n'existe aucune différence pratique entre les deux"
+        correct: 0
+        explanation:
+          "Une automatisation fonctionne de manière récurrente ou déclenchée
+          sans nouvelle demande manuelle à chaque fois. Une assistance
+          ponctuelle intervient en réponse à un besoin immédiat et isolé."
+      - id: "q3"
+        question:
+          "Quel déclencheur est le plus adapté pour lancer un workflow de
+          relance sur des pièces manquantes dans un CFA ?"
+        answers:
+          - "La réception d'un dossier incomplet détectée dans le système"
+          - "Le choix aléatoire d'un dossier chaque vendredi"
+          - "L'ouverture manuelle d'un tableur par un collaborateur"
+          - "La modification de la couleur du logo de l'établissement"
+        correct: 0
+        explanation:
+          "Un bon déclencheur de workflow doit être directement lié à
+          l'événement métier à traiter. La détection d'un dossier incomplet
+          permet une relance rapide et pertinente."
+      - id: "q4"
+        question:
+          "Pour mettre en place une veille automatisée sur les aides à
+          l'apprentissage, quelle approche est la plus pertinente ?"
+        answers:
+          - "Configurer une surveillance de sources fiables avec alertes sur les
+            changements concernant les aides et réglementations"
+          - "Attendre qu'un collègue signale oralement les nouveautés
+            importantes"
+          - "Consulter uniquement une fois par an les réseaux sociaux
+            généralistes"
+          - "Bloquer toutes les notifications afin d'éviter les mises à jour
+            fréquentes"
+        correct: 0
+        explanation:
+          "Une veille automatisée efficace repose sur des sources identifiées et
+          des alertes ciblées. Cela permet de suivre les évolutions métier sans
+          surveillance manuelle constante."
+      - id: "q5"
+        question:
+          "Dans quel cas des réponses personnalisées générées par l'IA
+          sont-elles particulièrement utiles pour des tâches récurrentes ?"
+        answers:
+          - "Pour envoyer automatiquement des messages adaptés à la situation de
+            chaque dossier, par exemple selon une échéance ou une pièce
+            manquante"
+          - "Pour répondre avec exactement le même texte à tous les
+            destinataires sans tenir compte du contexte"
+          - "Pour éviter toute validation humaine même sur des cas sensibles"
+          - "Pour remplacer l'ensemble des échanges entre formateurs et
+            apprenants"
+        correct: 0
+        explanation:
+          "Les réponses personnalisées sont utiles lorsqu'un même type d'action
+          doit être adapté à des informations variables d'un dossier à l'autre.
+          Elles améliorent la pertinence du message tout en gardant un cadre
+          récurrent."
+      - id: "q6"
+        question:
+          "Quel est l'intérêt principal de connecter une boîte mail à un tableur
+          dans un workflow d'automatisation avec l'IA ?"
+        answers:
+          - "Centraliser automatiquement des informations reçues par email pour
+            les exploiter et les suivre"
+          - "Remplacer totalement la messagerie par un tableur collaboratif"
+          - "Bloquer les emails contenant des pièces jointes"
+          - "Supprimer automatiquement tous les anciens messages"
+        correct: 0
+        explanation:
+          "La connexion entre une boîte mail et un tableur permet de récupérer
+          et structurer automatiquement des données utiles. Cela facilite le
+          suivi et le traitement sans ressaisie manuelle."
+      - id: "q7"
+        question:
+          "Dans un workflow automatisé avec l'IA, à quoi sert l'enchaînement
+          d'étapes ?"
+        answers:
+          - "À lancer plusieurs tâches dans un ordre logique à partir d'un même
+            déclencheur"
+          - "À exécuter une seule action isolée sans condition"
+          - "À remplacer toute validation humaine dans tous les cas"
+          - "À stocker les données sans jamais les transformer"
+        correct: 0
+        explanation:
+          "L'enchaînement d'étapes permet de relier plusieurs actions cohérentes
+          dans un même processus. Chaque étape s'appuie sur la précédente pour
+          automatiser le traitement complet."
+      - id: "q8"
+        question:
+          "Quel réglage est indispensable pour paramétrer correctement une
+          alerte intelligente ?"
+        answers:
+          - "Définir des critères précis de détection correspondant à la
+            situation à surveiller"
+          - "Augmenter au maximum le nombre de notifications envoyées"
+          - "Désactiver toute personnalisation des messages d'alerte"
+          - "Envoyer les alertes à tous les collaborateurs sans distinction"
+        correct: 0
+        explanation:
+          "Une alerte intelligente repose d'abord sur des critères de détection
+          clairs et pertinents. Sans ces paramètres, elle risque d'être trop
+          bruyante ou de manquer l'information utile."
+      - id: "q9"
+        question:
+          "Dans le cas pratique étudié, quelle action doit être automatisée
+          lorsqu'un email critique est identifié ?"
+        answers:
+          - "Envoyer immédiatement une notification à la personne concernée"
+          - "Archiver automatiquement l'email sans prévenir personne"
+          - "Supprimer l'email après analyse par l'IA"
+          - "Le transférer à toute l'entreprise"
+        correct: 0
+        explanation:
+          "Le cas pratique vise à avertir rapidement la bonne personne dès qu'un
+          email critique est reconnu. La valeur de l'automatisation vient ici de
+          la rapidité de la notification."
+      - id: "q10"
+        question:
+          "Dans un processus automatisé, à quoi sert un rappel automatique de
+          pièce manquante ?"
+        answers:
+          - "À relancer automatiquement un interlocuteur lorsqu'un document
+            attendu n'a pas été fourni"
+          - "À supprimer définitivement les dossiers incomplets"
+          - "À empêcher toute réception de nouveaux fichiers"
+          - "À transformer une pièce jointe en tableur"
+        correct: 0
+        explanation:
+          "Le rappel automatique permet de signaler qu'un document attendu
+          manque encore et d'accélérer le suivi. Il évite les oublis et réduit
+          les relances manuelles."
+      - id: "q11"
+        question:
+          "Quel workflow automatisé est le plus adapté pour prévenir une
+          échéance de contrat ?"
+        answers:
+          - "Déclencher une alerte quelques jours avant la date de fin
+            enregistrée dans le dossier"
+          - "Attendre qu'un collaborateur consulte manuellement chaque contrat
+            en fin de mois"
+          - "Supprimer automatiquement le contrat dès que sa date approche"
+          - "Envoyer chaque jour tous les contrats à toute l'équipe sans
+            filtrage"
+        correct: 0
+        explanation:
+          "Une alerte programmée avant l'échéance permet d'anticiper le
+          renouvellement ou la clôture. C'est l'usage attendu d'un workflow
+          d'automatisation sur une date de fin de contrat."
+      - id: "q12"
+        question:
+          "Dans un suivi d'apprenti, quelle date clé peut utilement déclencher
+          une notification automatisée ?"
+        answers:
+          - "La date prévue d'un entretien ou d'une étape administrative
+            importante"
+          - "La couleur préférée de l'apprenti"
+          - "Le numéro de série de l'ordinateur du tuteur"
+          - "Le mot de passe de la messagerie de l'entreprise"
+        correct: 0
+        explanation:
+          "Une date d'entretien, de bilan ou d'échéance administrative est une
+          vraie date clé de suivi. La notification sert à ne pas manquer cette
+          étape importante pour l'apprenti."
+      - id: "q13"
+        question:
+          "Quel est l'intérêt principal d'un suivi automatisé des demandes
+          d'aides ?"
+        answers:
+          - "Être informé automatiquement des changements d'état et des actions
+            à relancer"
+          - "Remplacer totalement toute vérification humaine des dossiers"
+          - "Archiver les demandes sans jamais relancer les pièces attendues"
+          - "Diffuser les demandes d'aides à l'ensemble de l'entreprise"
+        correct: 0
+        explanation:
+          "Le suivi automatisé permet de détecter les dossiers en attente,
+          validés ou à compléter. Il améliore la réactivité sans supprimer le
+          besoin de contrôle humain."
+      - id: "q14"
+        question:
+          "Dans un flux automatisé lié à des dossiers, quelle donnée sensible
+          faut-il exclure si elle n'est pas nécessaire au traitement ?"
+        answers:
+          - "Le numéro de sécurité sociale complet"
+          - "La date d'échéance d'un document à relancer"
+          - "Le statut d'avancement d'une demande"
+          - "Le nom du dossier dans l'outil de suivi"
+        correct: 0
+        explanation:
+          "Le numéro de sécurité sociale est une donnée hautement sensible qui
+          ne doit pas circuler inutilement dans un flux. Un workflow sécurisé
+          limite les données au strict nécessaire."
+      - id: "q15"
+        question:
+          "Quelle pratique renforce la confidentialité dans un workflow
+          automatisé avec l'IA ?"
+        answers:
+          - "Limiter l'accès aux informations et aux notifications aux seules
+            personnes autorisées"
+          - "Partager automatiquement tous les dossiers avec toute l'équipe pour
+            gagner du temps"
+          - "Conserver les données sensibles dans des messages non protégés"
+          - "Désactiver toute règle d'autorisation pour éviter les blocages"
+        correct: 0
+        explanation:
+          "La confidentialité repose sur le contrôle des accès et la diffusion
+          minimale des informations. Un workflow automatisé doit appliquer le
+          principe du besoin d'en connaître."
+      - id: "q16"
+        question:
+          "Dans un workflow IA, quelle mesure réduit le mieux le risque avant
+          une action critique comme l'envoi d'un contrat ou la suppression d'un
+          fichier ?"
+        answers:
+          - "Imposer une validation humaine explicite avant l'exécution finale"
+          - "Laisser l'IA décider seule si sa confiance dépasse 60 %"
+          - "Programmer l'action critique uniquement la nuit"
+          - "Masquer l'étape critique dans l'interface utilisateur"
+        correct: 0
+        explanation:
+          "Une validation humaine avant une action critique ajoute un contrôle
+          final sur une conséquence potentiellement importante. C'est une mesure
+          de sécurité simple et efficace pour limiter les erreurs graves."
+      - id: "q17"
+        question:
+          "À quoi sert en priorité la journalisation d'une automatisation
+          pilotée par l'IA ?"
+        answers:
+          - "À remplacer les tests par un historique détaillé"
+          - "À conserver une trace des entrées, décisions et actions pour
+            pouvoir auditer le processus"
+          - "À accélérer automatiquement toutes les étapes du workflow"
+          - "À empêcher toute intervention humaine sur le scénario"
+        correct: 1
+        explanation:
+          "La journalisation permet de comprendre ce qui a été fait, quand et
+          sur quelle base. Elle facilite l'audit, le diagnostic d'erreur et
+          l'amélioration du workflow."
+      - id: "q18"
+        question:
+          "Quel indicateur est le plus pertinent pour juger la fiabilité d'un
+          workflow automatisé avec l'IA ?"
+        answers:
+          - "Le nombre d'écrans affichés pendant l'exécution"
+          - "La longueur du prompt utilisé au départ"
+          - "La capacité du workflow à produire des résultats corrects et
+            reproductibles sur des cas variés"
+          - "Le nombre d'outils connectés dans le scénario"
+        correct: 2
+        explanation:
+          "Un workflow fiable donne des résultats justes de manière stable, y
+          compris sur plusieurs situations comparables. La reproductibilité et
+          le faible taux d'erreur sont des critères centraux."
+      - id: "q19"
+        question:
+          "Quelle est une limite typique d'une automatisation mal cadrée ?"
+        answers:
+          - "Elle documente trop précisément les étapes exécutées"
+          - "Elle peut traiter des cas hors périmètre et produire des actions
+            inadaptées"
+          - "Elle demande systématiquement moins de supervision humaine"
+          - "Elle réduit toujours la variabilité des résultats"
+        correct: 1
+        explanation:
+          "Quand le cadrage est flou, l'automatisation peut s'appliquer à des
+          situations qu'elle ne sait pas gérer correctement. Cela augmente le
+          risque d'erreurs ou d'actions non pertinentes."
+      - id: "q20"
+        question:
+          "Quelle pratique relève de l'amélioration continue d'un scénario
+          automatisé avec l'IA ?"
+        answers:
+          - "Geler définitivement le workflow dès qu'il fonctionne une première
+            fois"
+          - "Supprimer les contrôles pour gagner du temps"
+          - "Éviter de recueillir les retours des utilisateurs afin de ne pas
+            perturber le système"
+          - "Analyser les erreurs réelles, ajuster les règles et retester
+            régulièrement le scénario"
+        correct: 3
+        explanation:
+          "L'amélioration continue consiste à observer les usages et les
+          incidents, puis à corriger le scénario de manière mesurée. Les
+          ajustements doivent être validés par de nouveaux tests."
+  - id: "productivite-ia"
+    title: "Optimiser sa productivité avec l'IA"
+    questions:
+      - id: "q1"
+        question:
+          "Quel usage de l'IA aide le plus à planifier intelligemment une
+          semaine de travail ?"
+        answers:
+          - "Transformer une liste de tâches, contraintes de calendrier et
+            échéances en planning hebdomadaire réaliste"
+          - "Remplacer tous les rendez-vous par des créneaux libres pour garder
+            de la flexibilité"
+          - "Répartir le même temps sur toutes les tâches pour éviter les
+            arbitrages"
+          - "Supprimer les marges de sécurité afin de remplir chaque heure
+            disponible"
+        correct: 0
+        explanation:
+          "Une planification intelligente combine charge, contraintes et
+          échéances pour proposer un agenda réaliste. L'objectif n'est pas de
+          saturer le temps, mais de l'organiser efficacement."
+      - id: "q2"
+        question:
+          "Pour prioriser par impact et urgence avec l'IA, quel critère doit
+          être appliqué en premier ?"
+        answers:
+          - "Le nombre de messages reçus sur le sujet"
+          - "La durée estimée de la tâche uniquement"
+          - "La valeur produite et l'échéance associée à chaque action"
+          - "L'ordre d'arrivée des demandes dans la journée"
+        correct: 2
+        explanation:
+          "La priorisation par impact et urgence consiste à croiser la valeur
+          attendue et la contrainte temporelle. L'IA peut aider à classer les
+          actions selon ces deux dimensions."
+      - id: "q3"
+        question:
+          "Dans le découpage d'un projet en actions, que doit produire l'IA pour
+          être réellement utile ?"
+        answers:
+          - "Une liste d'étapes concrètes, ordonnées et attribuables avec des
+            livrables clairs"
+          - "Un résumé général du projet sans détail opérationnel"
+          - "Un planning finalisé sans passer par des sous-tâches"
+          - "Une estimation budgétaire sans description des travaux à mener"
+        correct: 0
+        explanation:
+          "Découper un projet consiste à passer d'un objectif global à des
+          actions exécutables. Des tâches concrètes, ordonnées et associées à
+          des livrables facilitent le suivi."
+      - id: "q4"
+        question:
+          "Pour automatiser un rapport d'activité périodique, quelle entrée est
+          la plus pertinente à fournir à l'IA ?"
+        answers:
+          - "Des impressions générales non structurées sur la période"
+          - "Un jeu de données comprenant actions réalisées, résultats, écarts
+            et indicateurs clés"
+          - "Uniquement la liste des réunions tenues durant la période"
+          - "Le rapport précédent sans aucune mise à jour factuelle"
+        correct: 1
+        explanation:
+          "Un rapport automatisé fiable dépend de données structurées et
+          récentes. Les réalisations, résultats et indicateurs permettent à l'IA
+          de synthétiser l'activité sans inventer."
+      - id: "q5"
+        question:
+          "Dans une consolidation de sources multiples, quel est le principal
+          rôle de l'IA ?"
+        answers:
+          - "Fusionner automatiquement des données hétérogènes en repérant les
+            recouvrements et les écarts"
+          - "Choisir une source au hasard pour accélérer la production"
+          - "Ignorer les contradictions afin d'obtenir une synthèse plus courte"
+          - "Remplacer les données manquantes par des hypothèses non signalées"
+        correct: 0
+        explanation:
+          "La consolidation de sources multiples vise à rassembler, comparer et
+          structurer plusieurs informations. L'IA aide à détecter les doublons,
+          les divergences et les éléments à harmoniser."
+      - id: "q6"
+        question:
+          "Quel est l'apport principal de l'IA lors de la génération d'un
+          tableau de bord professionnel ?"
+        answers:
+          - "Structurer automatiquement les indicateurs et les visualisations à
+            partir des données disponibles"
+          - "Remplacer systématiquement la collecte des données à la source"
+          - "Garantir sans vérification l'exactitude de tous les chiffres
+            affichés"
+          - "Supprimer le besoin de définir les objectifs du suivi"
+        correct: 0
+        explanation:
+          "L'IA aide à organiser les données, suggérer des indicateurs et
+          produire une première structure de tableau de bord. La validation
+          métier et la vérification des données restent nécessaires."
+      - id: "q7"
+        question:
+          "Pour créer une présentation qualitative avec l'IA, quelle pratique
+          est la plus pertinente ?"
+        answers:
+          - "Laisser l'IA générer les diapositives sans fournir de contexte ni
+            relire le résultat"
+          - "Donner à l'IA un objectif, le public visé et les messages clés à
+            mettre en avant"
+          - "Demander uniquement des animations complexes pour rendre la
+            présentation plus convaincante"
+          - "Utiliser l'IA seulement pour traduire le texte final sans
+            travailler la structure"
+        correct: 1
+        explanation:
+          "Une présentation qualitative dépend d'un cadrage clair : objectif,
+          audience et messages essentiels. L'IA devient alors un assistant utile
+          pour structurer et reformuler le contenu."
+      - id: "q8"
+        question:
+          "Lors de la sélection d'images pertinentes avec l'IA, quel critère
+          doit rester prioritaire ?"
+        answers:
+          - "Le nombre d'images proposées par l'outil"
+          - "La rapidité de téléchargement des visuels"
+          - "L'adéquation entre l'image, le message à transmettre et le contexte
+            professionnel"
+          - "La préférence esthétique personnelle de l'utilisateur, sans lien
+            avec le sujet"
+        correct: 2
+        explanation:
+          "Une image pertinente doit avant tout servir le message et
+          correspondre au contexte d'usage. L'IA peut accélérer la recherche,
+          mais le choix final doit rester aligné avec l'objectif de
+          communication."
+      - id: "q9"
+        question:
+          "Dans une mise en page assistée par l'IA, quelle est la fonction la
+          plus utile ?"
+        answers:
+          - "Proposer automatiquement une hiérarchie visuelle cohérente entre
+            titres, textes et visuels"
+          - "Imposer un modèle unique pour tous les documents de l'entreprise"
+          - "Transformer tout document en affiche marketing, quel que soit
+            l'usage"
+          - "Éviter toute intervention humaine sur l'organisation finale du
+            contenu"
+        correct: 0
+        explanation:
+          "L'IA peut suggérer une composition plus lisible en organisant les
+          éléments selon leur importance. Elle assiste la mise en page, sans
+          remplacer le jugement final sur le rendu attendu."
+      - id: "q10"
+        question:
+          "Pour informer automatiquement les parties prenantes avec l'IA, quel
+          bénéfice est le plus direct ?"
+        answers:
+          - "Envoyer le même message détaillé à tous, sans distinction de rôle"
+          - "Automatiser l'envoi de synthèses adaptées aux besoins d'information
+            de chaque destinataire"
+          - "Supprimer toute validation avant diffusion d'une information
+            sensible"
+          - "Remplacer toutes les réunions de suivi par des messages générés"
+        correct: 1
+        explanation:
+          "L'IA peut aider à produire et diffuser des synthèses ciblées selon le
+          profil des destinataires. Cela améliore la réactivité, tout en
+          conservant des règles de validation pour les informations importantes."
+      - id: "q11"
+        question:
+          "Quel usage de l'IA aide le plus à suivre l'avancement d'un projet
+          semaine après semaine ?"
+        answers:
+          - "Comparer automatiquement les tâches prévues, réalisées et en retard
+            dans un tableau de suivi"
+          - "Remplacer toutes les réunions d'équipe par un chatbot"
+          - "Supprimer les jalons pour aller plus vite"
+          - "Mesurer uniquement le coût global du projet"
+        correct: 0
+        explanation:
+          "Le suivi d'avancement repose sur la comparaison entre le planifié et
+          le réalisé. L'IA peut aider à consolider rapidement ces informations
+          pour repérer les écarts."
+      - id: "q12"
+        question:
+          "Pour piloter un projet avec des indicateurs simples, lequel est le
+          plus pertinent à suivre avec l'aide de l'IA ?"
+        answers:
+          - "Le nombre de couleurs utilisées dans les supports"
+          - "Le taux de tâches terminées dans les délais"
+          - "Le prénom des membres de l'équipe"
+          - "La taille des fichiers partagés"
+        correct: 1
+        explanation:
+          "Un bon indicateur simple est directement lié à l'objectif de
+          pilotage. Le taux de tâches terminées dans les délais permet de voir
+          rapidement si le projet reste maîtrisé."
+      - id: "q13"
+        question:
+          "Quelle méthode permet de mesurer concrètement le temps économisé
+          grâce à l'IA sur une activité récurrente ?"
+        answers:
+          - "Comparer la durée moyenne avant et après l'usage de l'IA sur la
+            même tâche"
+          - "Demander une impression générale sans relever de durée"
+          - "Compter uniquement le nombre d'e-mails envoyés dans la journée"
+          - "Mesurer le temps de pause de l'équipe"
+        correct: 0
+        explanation:
+          "La mesure du temps économisé se fait par comparaison entre une
+          situation de référence et une situation après usage de l'IA. Cela
+          donne un gain observable et exploitable."
+      - id: "q14"
+        question:
+          "Quel critère est le plus adapté pour mesurer l'amélioration de la
+          qualité des livrables avec l'IA ?"
+        answers:
+          - "Le nombre de polices différentes dans le document"
+          - "Le nombre d'erreurs ou de corrections relevées avant validation
+            finale"
+          - "La vitesse de connexion internet de l'auteur"
+          - "La durée de la réunion de lancement"
+        correct: 1
+        explanation:
+          "La qualité d'un livrable se mesure notamment par le niveau d'erreurs
+          restantes ou de corrections nécessaires. Une baisse de ces défauts
+          indique une amélioration réelle."
+      - id: "q15"
+        question:
+          "Quel indicateur aide le mieux à mesurer la réactivité obtenue grâce à
+          l'IA dans le traitement des demandes ?"
+        answers:
+          - "Le nombre total de dossiers archivés l'an dernier"
+          - "La couleur du tableau de bord de l'équipe"
+          - "Le délai moyen de réponse entre la demande reçue et la première
+            action utile"
+          - "Le nombre de pages imprimées chaque semaine"
+        correct: 2
+        explanation:
+          "La réactivité se mesure par le temps nécessaire pour réagir à une
+          sollicitation. Le délai moyen de réponse est donc un indicateur direct
+          et simple à suivre."
+      - id: "q16"
+        question:
+          "Quel usage de l'IA est le plus pertinent pour le suivi des apprentis
+          par indicateurs ?"
+        answers:
+          - "Consolider automatiquement des données comme l'assiduité,
+            l'avancement et les alertes dans un tableau de bord synthétique"
+          - "Remplacer les entretiens individuels par un score unique généré
+            chaque mois"
+          - "Supprimer les commentaires des tuteurs pour ne conserver que des
+            chiffres"
+          - "Évaluer uniquement la rapidité de réponse aux e-mails"
+        correct: 0
+        explanation:
+          "L'IA peut aider à agréger plusieurs indicateurs utiles dans une vue
+          exploitable. Elle ne doit pas réduire le suivi à un score unique ni
+          éliminer l'analyse humaine."
+      - id: "q17"
+        question:
+          "Pour préparer un bilan d'activité destiné aux équipes pédagogiques,
+          quelle contribution de l'IA est la plus adaptée ?"
+        answers:
+          - "Générer une synthèse structurée à partir des faits marquants, des
+            difficultés observées et des actions menées"
+          - "Rédiger automatiquement un bilan positif identique pour tous les
+            groupes"
+          - "Remplacer les données de terrain par des hypothèses pour gagner du
+            temps"
+          - "Éviter toute validation humaine avant diffusion du bilan"
+        correct: 0
+        explanation:
+          "L'usage pertinent consiste à structurer et résumer des informations
+          réelles pour faciliter la communication. Le contenu doit rester
+          contextualisé et vérifié avant envoi."
+      - id: "q18"
+        question:
+          "Quel indicateur de placement est le plus pertinent pour évaluer
+          l'insertion après une formation ?"
+        answers:
+          - "Le nombre total de CV envoyés par les apprenants"
+          - "Le taux d'apprenants effectivement placés en emploi ou en
+            alternance sur une période définie"
+          - "Le volume d'e-mails échangés avec les entreprises partenaires"
+          - "Le nombre de connexions hebdomadaires à la plateforme de formation"
+        correct: 1
+        explanation:
+          "Un indicateur de placement pertinent mesure un résultat concret
+          d'insertion, sur un périmètre et une période clairs. Les autres
+          options décrivent de l'activité, pas le placement lui-même."
+      - id: "q19"
+        question:
+          "Quel est un risque majeur d'une sur-automatisation du reporting avec
+          l'IA ?"
+        answers:
+          - "Obtenir plus rapidement des tableaux homogènes"
+          - "Réduire le temps consacré à la mise en forme"
+          - "Diffuser des synthèses apparemment cohérentes mais déconnectées de
+            la réalité du terrain"
+          - "Faciliter le regroupement de données issues de plusieurs sources"
+        correct: 2
+        explanation:
+          "Une automatisation excessive peut produire des rapports convaincants
+          en apparence mais incomplets ou erronés si personne ne contrôle le
+          fond. Le risque principal est la perte de fiabilité décisionnelle."
+      - id: "q20"
+        question:
+          "Lors de la revue finale d'un livrable piloté par IA, quel contrôle
+          est prioritaire ?"
+        answers:
+          - "Vérifier que la mise en page est moderne, même si le contenu reste
+            approximatif"
+          - "S'assurer que le livrable correspond aux objectifs, que les données
+            sont exactes et que les conclusions sont justifiées"
+          - "Conserver toutes les formulations générées par l'IA pour gagner du
+            temps"
+          - "Mesurer uniquement la longueur du document produit"
+        correct: 1
+        explanation:
+          "La revue finale doit d'abord valider la conformité au besoin, la
+          fiabilité des informations et la solidité des conclusions. L'IA
+          assiste la production, mais ne remplace pas cette validation."
+  - id: "impact-creativite"
+    title: "Gagner en impact et en créativité"
+    questions:
+      - id: "q1"
+        question:
+          "Quelle demande adressée à une IA correspond le mieux à une réécriture
+          guidée d'un texte sans changer le fond ?"
+        answers:
+          - "Réécris ce paragraphe pour le rendre plus fluide et plus concis,
+            tout en conservant les idées et les informations clés."
+          - "Résume ce paragraphe en une seule phrase très générale."
+          - "Traduis ce paragraphe en anglais en ajoutant des exemples."
+          - "Transforme ce paragraphe en liste d'arguments contradictoires."
+        correct: 0
+        explanation:
+          "La réécriture guidée consiste à améliorer la forme d'un texte tout en
+          gardant son sens initial. Ici, la consigne encadre clairement le
+          niveau de transformation attendu."
+      - id: "q2"
+        question:
+          "Pour simplifier un message complexe destiné à un public pressé,
+          quelle consigne est la plus adaptée ?"
+        answers:
+          - "Ajoute davantage de détails techniques pour éviter toute
+            approximation."
+          - "Réécris ce message en phrases courtes, avec des mots simples et une
+            idée principale par phrase."
+          - "Conserve toutes les formulations d'origine pour ne rien perdre."
+          - "Transforme ce message en argumentaire commercial très persuasif."
+        correct: 1
+        explanation:
+          "Simplifier consiste à alléger la structure et le vocabulaire sans
+          perdre le message essentiel. Des phrases courtes et un lexique simple
+          améliorent la compréhension rapide."
+      - id: "q3"
+        question:
+          "Quelle instruction permet le mieux de reformuler un texte selon un
+          ton professionnel ?"
+        answers:
+          - "Réécris ce message avec un ton professionnel, courtois et factuel,
+            adapté à un échange avec un client."
+          - "Rends ce message plus drôle pour détendre l'atmosphère."
+          - "Transforme ce texte en fiche technique détaillée."
+          - "Réduis ce message à trois mots-clés."
+        correct: 0
+        explanation:
+          "La reformulation selon un ton professionnel demande de préciser le
+          registre attendu et le destinataire. La bonne consigne encadre donc le
+          style, la posture et le contexte de communication."
+      - id: "q4"
+        question:
+          "Dans un brainstorming assisté par IA, quelle utilisation aide le plus
+          à faire émerger des idées nouvelles sur un sujet donné ?"
+        answers:
+          - "Demander une unique réponse définitive dès le départ."
+          - "Demander à l'IA de proposer plusieurs pistes variées, classées par
+            thèmes ou approches."
+          - "Lui demander de corriger uniquement l'orthographe d'une idée
+            existante."
+          - "Limiter la réponse à une reformulation du problème initial."
+        correct: 1
+        explanation:
+          "Le brainstorming assisté vise la divergence contrôlée, pas la
+          conclusion immédiate. Demander plusieurs pistes variées favorise
+          l'exploration et stimule la créativité."
+      - id: "q5"
+        question:
+          "Pour vulgariser un contenu technique auprès d'un public non
+          spécialiste, quelle demande est la plus pertinente ?"
+        answers:
+          - "Explique ce concept avec le vocabulaire métier complet pour
+            habituer le public."
+          - "Développe tous les détails d'implémentation sans analogie."
+          - "Vulgarise ce contenu en langage simple, avec un exemple concret
+            compréhensible par un débutant."
+          - "Transforme ce contenu en procédure experte destinée à des
+            ingénieurs."
+        correct: 2
+        explanation:
+          "La vulgarisation consiste à rendre un sujet accessible sans supposer
+          de connaissances préalables. Un langage simple et un exemple concret
+          facilitent l'appropriation du contenu."
+      - id: "q6"
+        question:
+          "Quel est le meilleur critere pour verifier qu'un resume d'un document
+          dense reste fidele au contenu d'origine ?"
+        answers:
+          - "Il conserve les idees principales, les nuances importantes et
+            l'intention generale sans ajouter d'interpretation personnelle"
+          - "Il remplace les notions complexes par des exemples inventes pour
+            faciliter la lecture"
+          - "Il reprend mot pour mot les phrases les plus techniques du document"
+          - "Il reduit le texte au maximum, meme si certaines precisions
+            disparaissent"
+        correct: 0
+        explanation:
+          "Un resume fidele preserve les idees essentielles et les nuances
+          utiles sans deformer le message initial. Il ne cherche ni a inventer
+          ni a simplifier au point de trahir le contenu."
+      - id: "q7"
+        question:
+          "Pour adapter un message a un public apprenti, quelle approche est la
+          plus pertinente ?"
+        answers:
+          - "Employer un vocabulaire expert pour habituer rapidement les
+            apprentis au langage du metier"
+          - "Presenter les idees avec des mots simples, des exemples concrets et
+            une progression etape par etape"
+          - "Supprimer toutes les explications detaillees afin d'aller droit au
+            but"
+          - "Utiliser le meme ton qu'avec un comite de direction pour valoriser
+            le sujet"
+        correct: 1
+        explanation:
+          "Un public apprenti comprend mieux un message progressif, concret et
+          accessible. L'objectif est de faciliter l'appropriation, pas
+          d'impressionner par la technicite."
+      - id: "q8"
+        question:
+          "Dans une communication destinee a une entreprise, quel ajustement est
+          le plus adapte ?"
+        answers:
+          - "Mettre surtout en avant l'aspect theorique et historique du sujet"
+          - "Adopter un ton scolaire avec de longues definitions avant d'aborder
+            les usages"
+          - "Insister sur les usages concrets, les gains attendus et les
+            conditions de mise en oeuvre"
+          - "Multiplier les formulations inspirees et abstraites pour stimuler
+            l'imagination"
+        correct: 2
+        explanation:
+          "Une entreprise attend une communication utile a l'action, centree sur
+          les benefices, les cas d'usage et la faisabilite. Le registre doit
+          rester pratique et oriente resultat."
+      - id: "q9"
+        question:
+          "Pour un public de direction, quelle formulation est la plus
+          appropriee ?"
+        answers:
+          - "Un message synthetique centre sur les enjeux, les decisions a
+            prendre et les impacts prioritaires"
+          - "Une explication detaillee des manipulations techniques a realiser
+            au quotidien"
+          - "Une suite d'exemples pedagogiques pour debutants sans mise en
+            perspective"
+          - "Un texte long qui explore toutes les variantes possibles sans
+            conclusion nette"
+        correct: 0
+        explanation:
+          "La direction attend une vision concise, orientee arbitrage et impact.
+          Il faut donc privilegier les enjeux, les options utiles et les
+          consequences business ou organisationnelles."
+      - id: "q10"
+        question:
+          "Quel element renforce le plus la clarte persuasive d'une
+          communication professionnelle ?"
+        answers:
+          - "Accumuler de nombreux arguments secondaires pour montrer l'etendue
+            du sujet"
+          - "Structurer le message autour d'une idee centrale, de preuves
+            claires et d'un appel a l'action explicite"
+          - "Employer un style tres general afin que chacun y projette sa propre
+            interpretation"
+          - "Multiplier les slogans percutants sans expliquer les raisons ni les
+            effets attendus"
+        correct: 1
+        explanation:
+          "Une communication persuasive est plus efficace quand son fil
+          directeur est net, appuye par des preuves et oriente vers une action.
+          La clarte renforce la comprehension et l'adhesion."
+      - id: "q11"
+        question:
+          "Pour créer un visuel percutant avec une IA, quelle consigne est la
+          plus efficace ?"
+        answers:
+          - "Décrire le public visé, le message central, le style visuel et le
+            format attendu"
+          - "Demander simplement une image jolie et moderne"
+          - "Lister un maximum de mots-clés sans préciser l'objectif"
+          - "Laisser l'IA choisir seule le contenu et la mise en page"
+        correct: 0
+        explanation:
+          "Une consigne précise aide l'IA à produire un visuel adapté à
+          l'objectif de communication. Le public, le message et le format sont
+          des éléments déterminants."
+      - id: "q12"
+        question:
+          "Quel support de communication est le plus pertinent pour présenter
+          rapidement une information clé à une équipe en réunion ?"
+        answers:
+          - "Un tableau comptable détaillé sur plusieurs pages"
+          - "Une affiche synthétique ou une diapositive claire avec les points
+            essentiels"
+          - "Un long mode d'emploi technique sans visuels"
+          - "Une base de données brute exportée en CSV"
+        correct: 1
+        explanation:
+          "Un support synthétique et visuel facilite la compréhension immédiate
+          en réunion. Il met en avant l'information essentielle sans noyer
+          l'auditoire dans les détails."
+      - id: "q13"
+        question:
+          "Pour rédiger avec l'IA une note de synthèse intégrant des données
+          chiffrées, quelle pratique est la plus fiable ?"
+        answers:
+          - "Fournir les chiffres sources et demander une synthèse structurée
+            avec mise en contexte"
+          - "Demander une note générale sans transmettre les données exactes"
+          - "Remplacer les chiffres par des impressions globales"
+          - "Multiplier les exemples fictifs pour enrichir le texte"
+        correct: 0
+        explanation:
+          "Une note de synthèse fiable repose sur des données explicites et
+          vérifiables. L'IA peut alors organiser l'information sans inventer ni
+          déformer les résultats."
+      - id: "q14"
+        question:
+          "Si un document indique que les délais ont baissé de 20 % en passant
+          de 10 jours à 8 jours, quelle interprétation est correcte ?"
+        answers:
+          - "Les délais ont diminué de 2 jours, soit 20 % par rapport à la
+            valeur initiale"
+          - "Les délais ont diminué de 20 jours"
+          - "Les délais ont été divisés par 2"
+          - "Les délais ont augmenté de 20 %"
+        correct: 0
+        explanation:
+          "Passer de 10 à 8 jours correspond bien à une baisse de 2 jours.
+          Rapportée aux 10 jours initiaux, cette baisse représente 20 %."
+      - id: "q15"
+        question:
+          "Pour expliquer clairement une procédure administrative avec l'aide de
+          l'IA, quelle formulation de demande est la plus adaptée ?"
+        answers:
+          - "Résume ce sujet en une phrase très générale"
+          - "Explique la procédure étape par étape, avec les documents
+            nécessaires et les points de vigilance"
+          - "Donne uniquement la liste des formulaires sans explication"
+          - "Réécris le texte réglementaire mot pour mot"
+        correct: 1
+        explanation:
+          "Une explication structurée par étapes rend une procédure
+          administrative plus compréhensible et exploitable. Mentionner les
+          documents et les points de vigilance aide à éviter les erreurs."
+      - id: "q16"
+        question:
+          "Quel est l'objectif principal d'une reformulation d'email sensible
+          avec l'aide de l'IA avant envoi ?"
+        answers:
+          - "Adoucir le ton tout en conservant l'intention et les faits
+            essentiels"
+          - "Rendre le message plus long pour montrer davantage de sérieux"
+          - "Supprimer tous les éléments de contexte pour aller plus vite"
+          - "Employer un vocabulaire plus technique pour impressionner le
+            destinataire"
+        correct: 0
+        explanation:
+          "Dans un email sensible, la reformulation doit préserver le fond du
+          message tout en réduisant les risques de tension ou de malentendu.
+          L'IA aide à ajuster le ton, pas à déformer l'intention initiale."
+      - id: "q17"
+        question:
+          "Pour préparer une présentation destinée à des partenaires, que doit
+          prioritairement apporter l'IA ?"
+        answers:
+          - "Une série d'effets visuels complexes pour capter l'attention"
+          - "Un discours structuré, adapté aux attentes et aux enjeux du public
+            visé"
+          - "Une réduction du contenu à trois slogans uniquement"
+          - "Un texte générique identique pour tous les types d'interlocuteurs"
+        correct: 1
+        explanation:
+          "Une présentation utile à des partenaires doit être structurée et
+          ciblée. L'IA peut aider à adapter le message au public, aux objectifs
+          et au contexte de la rencontre."
+      - id: "q18"
+        question:
+          "Dans un support de communication, que signifie assurer la cohérence
+          entre texte et visuel ?"
+        answers:
+          - "Utiliser beaucoup d'images pour alléger la lecture, même si elles
+            sont décoratives"
+          - "Choisir un visuel marquant, même s'il transmet une idée différente
+            du texte"
+          - "Faire en sorte que le visuel renforce précisément le message
+            exprimé par le texte"
+          - "Séparer totalement le texte de l'image pour éviter toute influence
+            mutuelle"
+        correct: 2
+        explanation:
+          "La cohérence texte-visuel consiste à faire converger les deux
+          éléments vers le même message. Un visuel pertinent renforce la
+          compréhension au lieu de créer une contradiction ou une distraction."
+      - id: "q19"
+        question:
+          "Quel est le principal risque d'une simplification excessive d'un
+          message généré avec l'IA ?"
+        answers:
+          - "Le message devient plus difficile à mémoriser"
+          - "Le message perd des nuances importantes et peut devenir trompeur"
+          - "Le message prend automatiquement un ton trop formel"
+          - "Le message nécessite toujours davantage d'illustrations"
+        correct: 1
+        explanation:
+          "Simplifier ne doit pas supprimer les nuances utiles. Si l'on retire
+          trop d'éléments, le message peut devenir incomplet, imprécis ou
+          induire une mauvaise interprétation."
+      - id: "q20"
+        question:
+          "Avant la diffusion finale d'un message préparé avec l'IA, quelle
+          vérification est la plus pertinente ?"
+        answers:
+          - "Vérifier que le message est fidèle à l'objectif, au contexte et au
+            public destinataire"
+          - "Confirmer que le texte contient au moins une formulation produite
+            mot pour mot par l'IA"
+          - "S'assurer que toutes les phrases sont plus courtes que la version
+            initiale"
+          - "Contrôler uniquement l'orthographe, car le fond est déjà garanti
+            par l'outil"
+        correct: 0
+        explanation:
+          "La validation finale porte d'abord sur l'adéquation du message avec
+          son intention de communication. L'IA assiste la rédaction, mais la
+          responsabilité de la pertinence reste humaine."
+  - id: "assistant-ia-metier"
+    title: "Personnaliser son assistant IA selon son métier"
+    questions:
+      - id: "q1"
+        question: "Qu'est-ce qu'un agent autonome en IA ?"
+        answers:
+          - "Un systeme capable d'executer des actions ou des etapes de maniere
+            semi-autonome pour atteindre un objectif defini"
+          - "Un simple moteur de recherche qui affiche des liens sans traitement"
+          - "Un fichier de configuration qui stocke uniquement des mots de passe"
+          - "Un logiciel de visioconference sans capacite de raisonnement"
+        correct: 0
+        explanation:
+          "Un agent autonome ne se limite pas a dialoguer. Il peut enchainer des
+          etapes ou des actions en fonction d'un objectif et de regles definies."
+      - id: "q2"
+        question:
+          "Quelle difference distingue le mieux un agent IA d'un assistant
+          conversationnel classique ?"
+        answers:
+          - "L'agent se limite a repondre en une phrase, tandis que l'assistant
+            produit des rapports longs"
+          - "L'agent peut suivre un objectif avec des actions ou des etapes,
+            alors que l'assistant conversationnel repond surtout aux messages de
+            l'utilisateur"
+          - "L'agent fonctionne uniquement hors ligne, alors que l'assistant
+            conversationnel exige Internet"
+          - "L'agent sert uniquement au support client, alors que l'assistant
+            conversationnel sert uniquement a la formation"
+        correct: 1
+        explanation:
+          "La difference centrale porte sur l'action et l'autonomie. Un
+          assistant conversationnel echange surtout par messages, alors qu'un
+          agent peut orchestrer une tache pour atteindre un resultat."
+      - id: "q3"
+        question:
+          "Quel est l'interet principal de personnaliser un agent IA pour un
+          metier donne ?"
+        answers:
+          - "Supprimer completement le besoin de verifier les resultats produits"
+          - "Obtenir des reponses et des actions mieux adaptees aux taches, au
+            vocabulaire et aux contraintes du metier"
+          - "Remplacer automatiquement tous les outils deja utilises par
+            l'entreprise"
+          - "Eviter toute saisie d'instructions par les utilisateurs"
+        correct: 1
+        explanation:
+          "Un agent personnalise gagne en pertinence lorsqu'il connait le
+          contexte metier. Il peut ainsi produire des sorties plus utiles et
+          plus directement exploitables."
+      - id: "q4"
+        question:
+          "Pour definir un agent IA utile, quel besoin utilisateur faut-il
+          couvrir en priorite ?"
+        answers:
+          - "Un besoin concret, recurrent et clairement delimite dans l'activite
+            quotidienne"
+          - "Un besoin tres large pour que l'agent traite tous les sujets
+            possibles"
+          - "Un besoin exceptionnel qui n'apparait qu'une fois par an"
+          - "Un besoin choisi uniquement parce qu'il est a la mode"
+        correct: 0
+        explanation:
+          "Un bon point de depart est un besoin precis et frequent. Cela
+          facilite le cadrage de l'agent, l'evaluation de sa valeur et son
+          adoption par les utilisateurs."
+      - id: "q5"
+        question:
+          "Quelle source d'information est la plus fiable pour alimenter un
+          agent IA metier ?"
+        answers:
+          - "Des publications anonymes trouvees au hasard sur les reseaux
+            sociaux"
+          - "Des documents internes valides, des procedures a jour et des
+            references officielles du domaine"
+          - "Des opinions personnelles non verifiees recueillies oralement"
+          - "Des contenus anciens sans date ni auteur identifiable"
+        correct: 1
+        explanation:
+          "La fiabilite de l'agent depend de la qualite de ses sources. Des
+          documents valides et a jour reduisent les erreurs et renforcent la
+          confiance dans ses reponses."
+      - id: "q6"
+        question:
+          "Quel élément décrit le mieux le rôle de l'instruction système dans un
+          agent métier ?"
+        answers:
+          - "Elle fixe le rôle, le ton et les règles générales que l'agent doit
+            suivre en permanence"
+          - "Elle sert uniquement à mémoriser les réponses précédentes de
+            l'utilisateur"
+          - "Elle remplace les données métier nécessaires à l'agent"
+          - "Elle permet seulement de choisir la langue de sortie"
+        correct: 0
+        explanation:
+          "L'instruction système définit le cadre stable de l'agent, comme son
+          rôle, ses priorités et ses limites. Elle guide tous les échanges, pas
+          seulement un aspect isolé comme la langue."
+      - id: "q7"
+        question:
+          "Dans un agent métier, à quoi servent principalement les garde-fous ?"
+        answers:
+          - "À accélérer automatiquement toutes les réponses sans contrôle"
+          - "À empêcher les réponses hors périmètre, risquées ou non conformes
+            aux consignes métier"
+          - "À supprimer le besoin de vérifier les informations sensibles"
+          - "À rendre l'agent plus créatif dans tous les contextes"
+        correct: 1
+        explanation:
+          "Les garde-fous encadrent l'agent pour limiter les dérives et les
+          usages inadaptés. Ils aident à maintenir des réponses sûres,
+          pertinentes et conformes au métier."
+      - id: "q8"
+        question:
+          "Quelle tâche est la plus adaptée à un agent IA configuré pour un
+          gestionnaire administratif ?"
+        answers:
+          - "Composer une musique d'attente pour le standard"
+          - "Élaborer un logo pour une campagne de communication"
+          - "Rédiger un brouillon de courriel de relance pour un dossier
+            incomplet à partir d'un modèle interne"
+          - "Créer une animation vidéo de présentation d'un service"
+        correct: 2
+        explanation:
+          "La rédaction d'un brouillon de relance à partir de règles et modèles
+          internes correspond à un besoin typique de gestion administrative. Les
+          autres propositions relèvent d'activités de création graphique ou
+          multimédia."
+      - id: "q9"
+        question:
+          "Pour un agent IA dédié à l'accompagnement des usagers ou apprenants,
+          quelle tâche est la plus pertinente ?"
+        answers:
+          - "Générer un planning de maintenance informatique du bâtiment"
+          - "Proposer une reformulation claire et bienveillante d'une consigne
+            selon le niveau de la personne accompagnée"
+          - "Négocier automatiquement des clauses contractuelles avec un
+            fournisseur"
+          - "Mettre à jour un inventaire comptable annuel"
+        correct: 1
+        explanation:
+          "L'accompagnement demande d'adapter le message au niveau et aux
+          besoins de la personne. La reformulation pédagogique et bienveillante
+          correspond directement à cet usage."
+      - id: "q10"
+        question:
+          "Quelle tâche convient le mieux à un agent IA personnalisé pour les
+          relations entreprises ?"
+        answers:
+          - "Préparer un premier message de prise de contact avec une entreprise
+            à partir de son secteur et de ses besoins potentiels"
+          - "Classer automatiquement des archives papier sans numérisation"
+          - "Calculer la paie mensuelle de tous les salariés"
+          - "Corriger un problème réseau sur un poste distant"
+        correct: 0
+        explanation:
+          "En relations entreprises, l'agent peut aider à préparer des messages
+          ciblés et contextualisés pour initier un échange. Les autres tâches
+          appartiennent à d'autres domaines métier."
+      - id: "q11"
+        question:
+          "Quel indicateur permet le mieux d'évaluer la performance d'un agent
+          IA utilisé dans un métier ?"
+        answers:
+          - "Le taux de réponses utiles validées par l'utilisateur sur des
+            tâches réelles"
+          - "Le nombre total de couleurs dans l'interface de l'outil"
+          - "La taille du logo de la solution choisie"
+          - "Le nombre de comptes créés le premier jour sans usage effectif"
+        correct: 0
+        explanation:
+          "Un bon indicateur de performance mesure l'utilité réelle de l'agent
+          dans le travail. Le taux de réponses utiles validées est directement
+          lié à la valeur produite."
+      - id: "q12"
+        question:
+          "Dans un plan d'intégration de l'IA au quotidien, quelle approche est
+          la plus adaptée pour démarrer durablement ?"
+        answers:
+          - "Déployer tous les usages possibles en une seule semaine"
+          - "Choisir quelques tâches récurrentes, définir des rituels d'usage et
+            suivre les résultats"
+          - "Réserver l'IA aux situations d'urgence uniquement"
+          - "Supprimer immédiatement les méthodes de travail existantes"
+        correct: 1
+        explanation:
+          "Un plan d'intégration efficace commence par des usages concrets et
+          réguliers. Des rituels clairs et un suivi des résultats facilitent
+          l'ancrage dans le quotidien."
+      - id: "q13"
+        question:
+          "Quel critère doit guider en priorité le déploiement d'un usage IA
+          dans une équipe ?"
+        answers:
+          - "L'usage le plus impressionnant en démonstration, même sans besoin
+            métier clair"
+          - "L'usage qui demande le plus de fonctionnalités avancées"
+          - "L'usage qui apporte rapidement de la valeur sur une tâche fréquente
+            et coûteuse en temps"
+          - "L'usage choisi au hasard pour aller plus vite"
+        correct: 2
+        explanation:
+          "La priorité doit aller aux usages à fort impact métier et à mise en
+          oeuvre raisonnable. Gagner du temps sur une tâche fréquente crée
+          rapidement de la valeur visible."
+      - id: "q14"
+        question:
+          "Quelle mesure reflète le mieux l'adoption d'un assistant IA par
+          l'équipe ?"
+        answers:
+          - "Le pourcentage de membres qui l'utilisent régulièrement dans leurs
+            tâches prévues"
+          - "Le nombre de slides de présentation diffusées lors du lancement"
+          - "Le volume de messages promotionnels envoyés par la direction"
+          - "La durée de la réunion d'annonce du projet"
+        correct: 0
+        explanation:
+          "L'adoption se mesure par l'usage réel et répété dans le travail. Un
+          taux d'utilisation régulière sur les cas prévus est un signal concret
+          d'appropriation."
+      - id: "q15"
+        question:
+          "Quelle pratique aide le mieux à maintenir les compétences IA d'une
+          équipe dans le temps ?"
+        answers:
+          - "Éviter toute évolution des pratiques pour garder des repères
+            stables"
+          - "Prévoir une veille, des retours d'expérience et des mises à jour
+            régulières des usages"
+          - "Limiter l'IA à une seule personne pour centraliser le savoir"
+          - "Changer d'outil chaque semaine sans formation associée"
+        correct: 1
+        explanation:
+          "Les compétences IA se maintiennent par l'apprentissage continu et le
+          partage d'expérience. Une veille organisée et des ajustements
+          réguliers évitent l'obsolescence des pratiques."
+      - id: "q16"
+        question:
+          "Quelle pratique permet le mieux d'assurer une veille utile sur les
+          évolutions des outils d'IA de son métier ?"
+        answers:
+          - "Suivre les notes de version, tester les nouveautés sur un cas
+            métier et noter leur impact"
+          - "Attendre que l'outil change d'interface pour regarder ce qui a été
+            ajouté"
+          - "Se limiter aux publicités des éditeurs pour connaître les
+            nouveautés"
+          - "Changer d'outil tous les mois pour rester à jour"
+        correct: 0
+        explanation:
+          "Une veille utile combine information fiable et expérimentation sur
+          des cas réels. Cela permet d'évaluer l'intérêt concret des évolutions
+          pour son métier."
+      - id: "q17"
+        question:
+          "Quelle est une limite majeure d'un agent IA utilisé sans supervision
+          humaine dans un contexte professionnel ?"
+        answers:
+          - "Il devient automatiquement plus lent avec le temps"
+          - "Il peut produire ou exécuter des résultats erronés sans qu'ils
+            soient détectés à temps"
+          - "Il ne peut plus traiter que des demandes très courtes"
+          - "Il perd forcément l'accès aux données internes de l'entreprise"
+        correct: 1
+        explanation:
+          "Sans supervision, une erreur plausible peut passer inaperçue et être
+          réutilisée ou appliquée. La validation humaine reste nécessaire pour
+          sécuriser l'usage."
+      - id: "q18"
+        question:
+          "Après plusieurs retours utilisateurs signalant des réponses trop
+          vagues d'un agent, quelle amélioration est la plus pertinente ?"
+        answers:
+          - "Supprimer les retours pour éviter de biaiser l'évaluation de
+            l'agent"
+          - "Ajouter davantage de questions à l'agent sans modifier son cadrage"
+          - "Analyser les retours, préciser les consignes de réponse et retester
+            sur des cas similaires"
+          - "Conserver le fonctionnement actuel pour mesurer si les utilisateurs
+            s'habituent"
+        correct: 2
+        explanation:
+          "Les retours utilisateurs servent à identifier un défaut concret puis
+          à ajuster l'agent. Le retest sur des cas comparables vérifie que
+          l'amélioration est réelle."
+      - id: "q19"
+        question:
+          "Quel exemple correspond à un plan d'action personnel réaliste pour
+          progresser avec l'IA dans son métier ?"
+        answers:
+          - "Automatiser tout son travail en une semaine sans phase de test"
+          - "Prévoir chaque semaine un créneau court pour tester un usage précis
+            et en mesurer le gain"
+          - "Attendre la prochaine refonte complète des outils avant de
+            commencer"
+          - "Se fixer comme objectif d'utiliser dix nouveaux outils par jour"
+        correct: 1
+        explanation:
+          "Un plan réaliste est progressif, mesurable et compatible avec le
+          temps disponible. Il vise des usages ciblés plutôt qu'une
+          transformation brutale."
+      - id: "q20"
+        question:
+          "Quelle démarche favorise le mieux la pérennisation des usages de l'IA
+          dans un métier ?"
+        answers:
+          - "Réserver l'usage de l'IA à une seule personne experte sans partage"
+          - "Changer régulièrement de méthode sans documenter ce qui fonctionne"
+          - "Formaliser les bonnes pratiques, suivre les bénéfices obtenus et
+            les réviser dans le temps"
+          - "Utiliser l'IA uniquement lors des urgences pour éviter d'en
+            dépendre"
+        correct: 2
+        explanation:
+          "La pérennisation repose sur des pratiques explicites, réutilisables
+          et évaluées. Documenter et revoir les usages permet de les maintenir
+          dans la durée."
