@@ -76,9 +76,9 @@ const QcmPassPage: React.FC = () => {
                       value={idx}
                       checked={isSelected}
                       onChange={() => handleChoice(idx)}
-                      className="mr-3 h-5 w-5 accent-gray-800"
+                      className="mr-3 h-5 w-5 shrink-0 accent-gray-800"
                     />
-                    {answer}
+                    <span className="text-left">{answer}</span>
                   </label>
                 );
               })}
