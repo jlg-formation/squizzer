@@ -1,0 +1,1903 @@
+title: "QCM React moderne : développer une application Web progressive"
+chapters:
+  - id: react-vite
+    title: "Chapitre 1 — Démarrer avec React et Vite"
+    questions:
+      - id: q1
+        question:
+          "Quel est le rôle principal de React dans une application front-end
+          moderne ?"
+        answers:
+          - "Structurer l'interface en composants réutilisables et mettre à jour
+            la vue selon l'état"
+          - "Remplacer le navigateur pour exécuter le code côté client"
+          - "Héberger automatiquement l'application sur un serveur distant"
+          - "Compiler le CSS en images optimisées"
+        correct: 0
+        explanation:
+          "React sert à construire l'interface utilisateur à partir de
+          composants. Il met à jour l'affichage quand l'état de l'application
+          change."
+      - id: q2
+        question: "Dans React, qu'est-ce qu'un composant ?"
+        answers:
+          - "Un serveur local utilisé pour afficher l'application pendant le
+            développement"
+          - "Une fonction ou une unité d'interface qui décrit une partie de la
+            vue à afficher"
+          - "Un fichier de configuration obligatoire pour installer les
+            dépendances"
+          - "Un navigateur intégré à Vite pour tester les pages"
+        correct: 1
+        explanation:
+          "Un composant React décrit une portion d'interface. Il peut recevoir
+          des données et être composé avec d'autres composants."
+      - id: q3
+        question:
+          "Quelle différence caractérise le mieux une SPA par rapport à un site
+          multipage ?"
+        answers:
+          - "Une SPA recharge entièrement le navigateur à chaque clic,
+            contrairement à un site multipage"
+          - "Une SPA fonctionne sans JavaScript, contrairement à un site
+            multipage"
+          - "Une SPA met à jour l'interface sans recharger toute la page à
+            chaque navigation interne"
+          - "Une SPA impose l'utilisation d'un serveur Node.js en production"
+        correct: 2
+        explanation:
+          "Dans une SPA, la navigation interne met à jour l'interface côté
+          client sans rechargement complet de la page. Un site multipage
+          déclenche en général un nouveau chargement du document à chaque page."
+      - id: q4
+        question:
+          "Pourquoi Node.js est-il utile pour lancer un projet Vite en
+          développement ?"
+        answers:
+          - "Parce qu'il remplace React pour afficher les composants dans le
+            navigateur"
+          - "Parce qu'il fournit l'environnement d'exécution permettant
+            d'utiliser Vite et ses outils de développement"
+          - "Parce qu'il transforme automatiquement une SPA en application
+            mobile native"
+          - "Parce qu'il stocke les composants dans la mémoire du navigateur"
+        correct: 1
+        explanation:
+          "Vite s'exécute avec Node.js pendant le développement. Node.js permet
+          de lancer le serveur de développement et les outils associés."
+      - id: q5
+        question: "Quel est le rôle principal de npm dans un projet React ?"
+        answers:
+          - "Dessiner les composants JSX directement dans le navigateur"
+          - "Créer automatiquement la charte graphique de l'application"
+          - "Gérer les paquets du projet et exécuter les scripts définis pour le
+            développement ou le build"
+          - "Remplacer Vite pour afficher les pages HTML finales"
+        correct: 2
+        explanation:
+          "npm sert à installer et mettre à jour les dépendances du projet. Il
+          permet aussi d'exécuter les scripts de développement, de test ou de
+          build."
+      - id: q6
+        question:
+          "Quelle commande correspond à la création officielle d'un projet React
+          avec Vite dans le chapitre ?"
+        answers:
+          - "npm create vite@latest"
+          - "npm init react-app"
+          - "vite create react-app"
+          - "npx react-vite new"
+        correct: 0
+        explanation:
+          'La commande officielle présentée est "npm create vite@latest". Elle
+          lance le générateur de projet Vite avec le choix du framework et du
+          template.'
+      - id: q7
+        question:
+          "À quoi sert principalement le dossier src dans un projet généré par
+          Vite ?"
+        answers:
+          - "À stocker les dépendances téléchargées depuis npm"
+          - "À contenir le code source de l'application, comme les composants et
+            la logique front-end"
+          - "À héberger les fichiers de configuration système de Node.js"
+          - "À enregistrer les builds de production prêts à être déployés"
+        correct: 1
+        explanation:
+          "Le dossier src regroupe le code source de l'application. On y place
+          notamment les composants React, les styles et la logique de
+          l'interface."
+      - id: q8
+        question:
+          "Quel est le rôle principal du fichier package.json dans un projet
+          React créé avec Vite ?"
+        answers:
+          - "Décrire les dépendances et les scripts du projet"
+          - "Compiler automatiquement le JSX en JavaScript"
+          - "Afficher la page d'accueil dans le navigateur"
+          - "Stocker les composants React réutilisables"
+        correct: 0
+        explanation:
+          "Le fichier package.json centralise les dépendances, les métadonnées
+          et les scripts du projet. Il sert notamment à lancer le développement
+          ou le build."
+      - id: q9
+        question:
+          "Comment le JSX est-il compris par l'application alors que le
+          navigateur ne le lit pas directement ?"
+        answers:
+          - "Le navigateur exécute nativement le JSX sans transformation"
+          - "Node.js convertit le JSX au moment de l'affichage dans le DOM"
+          - "L'outil de build transforme le JSX en JavaScript exploitable"
+          - "Le fichier package.json traduit le JSX en HTML final"
+        correct: 2
+        explanation:
+          "Le JSX est transformé par l'outil de build en JavaScript
+          compréhensible par l'environnement d'exécution. Le navigateur ne lit
+          pas directement la syntaxe JSX."
+      - id: q10
+        question:
+          "Quelle différence décrit correctement le rapport entre JSX et HTML ?"
+        answers:
+          - "JSX est strictement identique à HTML, sans aucune règle propre à
+            JavaScript"
+          - "JSX est un format de base de données, alors que HTML décrit une
+            page Web"
+          - "HTML sert uniquement au style, alors que JSX sert uniquement aux
+            requêtes réseau"
+          - "JSX ressemble à HTML, mais c'est une syntaxe écrite dans JavaScript
+            pour décrire l'interface"
+        correct: 3
+        explanation:
+          "JSX reprend une apparence proche de HTML, mais il s'intègre dans du
+          JavaScript. Il permet de décrire l'UI de manière déclarative dans les
+          composants React."
+      - id: q11
+        question:
+          "Pourquoi un composant React retourne-t-il une interface décrite en
+          JSX ?"
+        answers:
+          - "Parce qu'un composant a pour rôle de décrire ce qui doit être
+            affiché à l'écran."
+          - "Parce qu'il doit toujours créer une requête HTTP avant le rendu."
+          - "Parce qu'il sert uniquement à stocker des fichiers statiques."
+          - "Parce qu'il remplace automatiquement le navigateur."
+        correct: 0
+        explanation:
+          "Un composant React décrit l'interface à afficher. Le JSX exprime
+          cette structure de manière lisible et proche du HTML."
+      - id: q12
+        question:
+          "Dans React, à quoi sert un usage simple des props entre un composant
+          parent et un composant enfant ?"
+        answers:
+          - "À transmettre des données du composant enfant vers le parent sans
+            code supplémentaire."
+          - "À partager des informations du parent vers l'enfant pour
+            personnaliser son affichage."
+          - "À transformer automatiquement un composant en page distincte."
+          - "À empêcher tout rerendu de l'interface."
+        correct: 1
+        explanation:
+          "Les props permettent au parent de fournir des données ou des valeurs
+          de configuration à l'enfant. L'enfant adapte ainsi son rendu selon ce
+          qui lui est transmis."
+      - id: q13
+        question:
+          "Quel est l'effet principal de la composition de composants dans une
+          application React ?"
+        answers:
+          - "Elle oblige tous les composants à partager le même état global."
+          - "Elle permet d'assembler des briques réutilisables pour construire
+            une interface plus complexe."
+          - "Elle supprime le besoin d'écrire du JSX."
+          - "Elle convertit automatiquement une SPA en application serveur."
+        correct: 1
+        explanation:
+          "La composition consiste à imbriquer des composants pour construire
+          l'interface par assemblage. Cela favorise la réutilisation et une
+          structure plus modulaire."
+      - id: q14
+        question:
+          "Que signifie le modèle mental selon lequel l'interface dépend de
+          l'état en React ?"
+        answers:
+          - "L'interface affichée découle des données actuelles détenues par le
+            composant."
+          - "L'état ne sert qu'à styliser les composants avec du CSS."
+          - "L'interface doit être redessinée manuellement après chaque clic."
+          - "Le composant choisit son état uniquement à partir de l'URL."
+        correct: 0
+        explanation:
+          "En React, l'interface visible est déterminée par la valeur actuelle
+          de l'état. Si l'état change, le rendu calculé change lui aussi."
+      - id: q15
+        question:
+          "Quel lien existe entre l'état d'un composant React et le rendu
+          affiché à l'écran ?"
+        answers:
+          - "Le rendu reste figé même si l'état change."
+          - "L'état n'a d'effet que lors du premier chargement de la page."
+          - "Une modification de l'état provoque la mise à jour de l'affichage
+            concerné."
+          - "Le rendu dépend uniquement du nom du composant."
+        correct: 2
+        explanation:
+          "Quand l'état change, React recalcule le rendu du composant concerné.
+          L'affichage reflète alors la nouvelle valeur de cet état."
+      - id: q16
+        question:
+          "Dans le premier écran de TaskFlow, quel découpage de composants est
+          le plus pertinent pour afficher un en-tête, un formulaire d'ajout et
+          une liste de tâches ?"
+        answers:
+          - "Créer un composant racine qui compose Header, TaskForm et TaskList"
+          - "Mettre toute l'interface dans un seul fichier JSX sans
+            sous-composants"
+          - "Créer un composant TaskItem unique qui rend aussi le formulaire et
+            l'en-tête"
+          - "Séparer uniquement le CSS et laisser toute la structure dans
+            main.tsx"
+        correct: 0
+        explanation:
+          "Un premier découpage efficace isole les zones fonctionnelles
+          principales en composants dédiés. Cela rend TaskFlow plus lisible et
+          plus simple à faire évoluer."
+      - id: q17
+        question:
+          "Dans TaskFlow, où placer en priorité un état utilisé à la fois par le
+          formulaire d'ajout et par la liste des tâches ?"
+        answers:
+          - "Dans le composant enfant le plus visuel, même s'il ne partage rien"
+          - "Dans le composant parent commun aux deux enfants"
+          - "Dans chaque enfant avec deux états séparés"
+          - "Directement dans index.html pour qu'il soit global"
+        correct: 1
+        explanation:
+          "Quand plusieurs composants enfants dépendent du même état, on le
+          place dans leur parent commun. Ce choix facilite le partage des
+          données via les props."
+      - id: q18
+        question:
+          "Quel bénéfice concret Vite apporte-t-il au démarrage d'un projet
+          React ?"
+        answers:
+          - "Il remplace React par un moteur de templates statiques"
+          - "Il supprime le besoin d'écrire du JSX"
+          - "Il fournit un lancement de serveur de développement très rapide"
+          - "Il impose une architecture monolithique côté front-end"
+        correct: 2
+        explanation:
+          "Vite est conçu pour offrir un démarrage quasi immédiat du serveur de
+          développement. Cela améliore fortement la boucle de feedback au début
+          du projet React."
+      - id: q19
+        question:
+          "Quelle erreur d'écriture JSX provoque fréquemment un problème dès les
+          premiers composants React ?"
+        answers:
+          - "Retourner plusieurs éléments adjacents sans les envelopper"
+          - "Utiliser des props pour transmettre une valeur"
+          - "Écrire le nom du composant avec une majuscule"
+          - "Mettre une expression JavaScript entre accolades"
+        correct: 0
+        explanation:
+          "Un composant JSX doit retourner un seul parent logique, ou un
+          fragment. Plusieurs éléments adjacents non enveloppés déclenchent une
+          erreur courante."
+      - id: q20
+        question:
+          "Quelle bonne pratique aide à organiser les premiers composants d'une
+          application React comme TaskFlow ?"
+        answers:
+          - "Placer tous les composants dans un seul fichier pour aller plus
+            vite"
+          - "Nommer les composants de manière explicite et regrouper les
+            réutilisables dans un dossier components"
+          - "Créer un dossier par ligne JSX afin de séparer finement le rendu"
+          - "Éviter toute composition avant d'avoir vingt composants"
+        correct: 1
+        explanation:
+          "Des noms explicites et un rangement simple des composants
+          réutilisables rendent la base plus claire. Cette organisation aide dès
+          les premiers écrans sans complexifier le projet."
+  - id: interface-reactive
+    title: "Chapitre 2 — Construire une interface interactive React"
+    questions:
+      - id: q1
+        question:
+          "Quel est le rôle principal de useState dans un composant React ?"
+        answers:
+          - "Mémoriser une valeur réactive et fournir une fonction pour la
+            mettre à jour"
+          - "Déclarer une variable globale partagée entre tous les composants"
+          - "Empêcher définitivement le composant de se re-render"
+          - "Créer automatiquement un effet secondaire après chaque clic"
+        correct: 0
+        explanation:
+          "useState permet de stocker une donnée dans l'état local du composant
+          et de la modifier via un setter. Cette mise à jour informe React qu'un
+          nouveau rendu peut être nécessaire."
+      - id: q2
+        question:
+          "Pourquoi une variable locale classique ne remplace-t-elle pas un
+          state React pour piloter l'affichage ?"
+        answers:
+          - "Parce qu'une variable locale est forcément asynchrone alors que le
+            state est synchrone"
+          - "Parce qu'une variable locale ne déclenche pas de nouveau rendu
+            lorsqu'elle change"
+          - "Parce qu'une variable locale ne peut contenir que du texte"
+          - "Parce qu'une variable locale est automatiquement réinitialisée par
+            le navigateur toutes les secondes"
+        correct: 1
+        explanation:
+          "Une variable locale peut changer en JavaScript sans que React en soit
+          informé. Le state, lui, est suivi par React pour recalculer
+          l'interface quand il évolue."
+      - id: q3
+        question:
+          "Que se passe-t-il lorsqu'on appelle la fonction de mise à jour
+          renvoyée par useState, comme setCount ?"
+        answers:
+          - "React recharge toute la page dans le navigateur"
+          - "Le DOM est effacé puis reconstruit manuellement par le développeur"
+          - "React planifie un nouveau rendu du composant avec la nouvelle
+            valeur d'état"
+          - "La valeur change seulement dans la console sans effet sur
+            l'interface"
+        correct: 2
+        explanation:
+          "Après un setState, React re-exécute le composant concerné pour
+          produire un nouvel arbre d'interface. Il met ensuite à jour le DOM
+          uniquement là où c'est utile."
+      - id: q4
+        question:
+          "Quelle écriture correspond à la gestion correcte d'un clic sur un
+          bouton en React ?"
+        answers:
+          - '<button onclick="handleClick()">Valider</button>'
+          - "<button onClick={handleClick}>Valider</button>"
+          - "<button click={handleClick}>Valider</button>"
+          - "<button on-click={handleClick}>Valider</button>"
+        correct: 1
+        explanation:
+          "En React, les événements utilisent une syntaxe camelCase comme
+          onClick. On transmet une fonction JavaScript, que React appellera lors
+          du clic."
+      - id: q5
+        question:
+          "Dans un découpage en composants, pourquoi passe-t-on souvent une
+          action du parent vers l'enfant sous forme de callback ?"
+        answers:
+          - "Pour que l'enfant puisse demander au parent d'exécuter une logique
+            au bon moment"
+          - "Pour obliger l'enfant à recréer tout le state du parent"
+          - "Pour remplacer définitivement les props par des variables globales"
+          - "Pour empêcher toute remontée d'information depuis l'enfant"
+        correct: 0
+        explanation:
+          "Le callback permet à l'enfant de signaler une intention, par exemple
+          supprimer une tâche, sans posséder lui-même la logique métier. Le
+          parent garde ainsi le contrôle du state et des actions."
+      - id: q6
+        question:
+          "Dans React, quel rendu convient pour afficher un message uniquement
+          si `isLoggedIn` vaut true ?"
+        answers:
+          - "Utiliser une condition comme `{isLoggedIn && <p>Bienvenue</p>}`
+            dans le JSX"
+          - "Déclarer une variable classique `let isLoggedIn = true` sans state
+            ni props"
+          - "Ajouter le message directement dans `useEffect` pour qu'il
+            s'affiche dans le DOM"
+          - "Remplacer le composant par une boucle `for` qui teste la valeur
+            booléenne"
+        correct: 0
+        explanation:
+          "Le rendu conditionnel en React consiste à inclure ou non un fragment
+          JSX selon une expression booléenne. L'opérateur `&&` est une forme
+          courante pour afficher un élément seulement quand la condition est
+          vraie."
+      - id: q7
+        question:
+          "Quelle approche est correcte pour afficher une liste de tâches
+          stockée dans un tableau React ?"
+        answers:
+          - "Utiliser `tasks.render()` pour transformer automatiquement le
+            tableau en JSX"
+          - "Utiliser `tasks.map(task => <li>{task.title}</li>)` pour produire
+            un élément par tâche"
+          - "Utiliser `tasks.filter()` pour afficher toutes les tâches sans
+            transformation"
+          - "Utiliser `tasks.push(<li>{task.title}</li>)` directement dans le
+            JSX"
+        correct: 1
+        explanation:
+          "La méthode `map` transforme chaque élément du tableau en un élément
+          JSX. C'est le mécanisme standard pour rendre une liste en React."
+      - id: q8
+        question:
+          "À quoi sert principalement la prop `key` lorsqu'on rend une liste en
+          React ?"
+        answers:
+          - "À styliser chaque élément de la liste avec une classe CSS unique"
+          - "À indiquer à React quel élément doit être masqué par défaut"
+          - "À aider React à identifier chaque élément entre deux rendus pour
+            mettre à jour la liste correctement"
+          - "À permettre à `map` de renvoyer plusieurs types de données dans le
+            même tableau"
+        correct: 2
+        explanation:
+          "La prop `key` permet à React de suivre l'identité logique des
+          éléments d'une liste. Cela améliore la réconciliation et évite des
+          mises à jour incohérentes."
+      - id: q9
+        question:
+          "Pourquoi l'utilisation de l'index du tableau comme `key` peut-elle
+          poser problème dans une liste modifiable ?"
+        answers:
+          - "Parce que React interdit totalement les nombres comme `key`"
+          - "Parce que les index empêchent l'utilisation de `onClick` sur les
+            éléments"
+          - "Parce que l'index augmente systématiquement le temps de chargement
+            initial de la page"
+          - "Parce qu'en cas d'ajout, suppression ou réorganisation, React peut
+            associer un mauvais état au mauvais élément"
+        correct: 3
+        explanation:
+          "Si l'ordre de la liste change, l'index ne représente plus l'identité
+          réelle de l'élément. React risque alors de réutiliser un état ou un
+          rendu sur le mauvais item."
+      - id: q10
+        question:
+          "Quel énoncé décrit correctement un champ contrôlé dans un formulaire
+          React ?"
+        answers:
+          - "C'est un champ dont la valeur affichée provient du state React et
+            est mise à jour via `onChange`"
+          - "C'est un champ qui ne peut être modifié qu'avec `useRef` et jamais
+            avec `useState`"
+          - "C'est un champ HTML dont React lit la valeur uniquement au moment
+            du `onSubmit`"
+          - "C'est un champ dont la valeur est gérée exclusivement par le
+            navigateur sans intervention de React"
+        correct: 0
+        explanation:
+          "Dans un champ contrôlé, React pilote la valeur via une prop `value`
+          liée au state. L'événement `onChange` met ce state à jour à chaque
+          saisie."
+      - id: q11
+        question:
+          "Dans un champ contrôlé React, quel est le rôle combiné de `value` et
+          de `onChange` ?"
+        answers:
+          - "`value` affiche la valeur issue du state et `onChange` met ce state
+            à jour quand l'utilisateur saisit du texte"
+          - "`value` déclenche la soumission du formulaire et `onChange`
+            recharge le composant"
+          - "`value` sert uniquement de placeholder et `onChange` modifie
+            directement le DOM sans state"
+          - "`value` bloque toute saisie et `onChange` sert seulement à valider
+            le formulaire à la fin"
+        correct: 0
+        explanation:
+          "Dans un composant contrôlé, React fournit la valeur affichée via
+          `value`. L'événement `onChange` récupère la saisie pour mettre à jour
+          le state et garder l'interface synchronisée."
+      - id: q12
+        question:
+          "Quelle est la fonction principale de `onSubmit` sur un formulaire
+          React ?"
+        answers:
+          - "Changer automatiquement la valeur de tous les champs du formulaire"
+          - "Traiter l'envoi du formulaire au moment de la soumission, par
+            exemple pour exécuter une action métier"
+          - "Créer un nouveau champ de saisie après chaque frappe utilisateur"
+          - "Remplacer `onChange` pour suivre caractère par caractère le contenu
+            d'un input"
+        correct: 1
+        explanation:
+          "`onSubmit` centralise la logique déclenchée lors de la soumission du
+          formulaire. En React, on l'utilise souvent avec
+          `event.preventDefault()` pour gérer l'action sans rechargement de
+          page."
+      - id: q13
+        question:
+          "Quelle validation simple est pertinente avant d'ajouter une nouvelle
+          tâche dans TaskFlow ?"
+        answers:
+          - "Ajouter la tâche même si le champ contient seulement des espaces"
+          - "Vérifier que le texte saisi n'est pas vide après suppression des
+            espaces inutiles"
+          - "Refuser toute tâche contenant plus de trois mots"
+          - "Imposer que chaque tâche commence par une majuscule et se termine
+            par un point"
+        correct: 1
+        explanation:
+          "Une validation simple consiste à empêcher l'ajout d'une tâche vide ou
+          composée uniquement d'espaces. Cela évite de polluer la liste avec des
+          entrées sans contenu utile."
+      - id: q14
+        question:
+          "Comment représenter simplement dans React le statut terminée ou non
+          terminée d'une tâche ?"
+        answers:
+          - "Avec une propriété booléenne comme `completed` stockée pour chaque
+            tâche"
+          - "Avec une couleur CSS stockée comme seule source de vérité"
+          - "Avec une variable locale non persistée recréée à chaque rendu sans
+            state"
+          - "Avec un compteur global qui remplace la donnée de chaque tâche"
+        correct: 0
+        explanation:
+          "Un booléen comme `completed` décrit directement l'état métier de la
+          tâche. Il est facile à lire, à modifier et à utiliser pour l'affichage
+          ou les actions de bascule."
+      - id: q15
+        question:
+          "Quelle mise en place permet d'ajouter un filtre de tâches dans une
+          interface React ?"
+        answers:
+          - "Créer un state de filtre, puis afficher les tâches en appliquant ce
+            critère avant le rendu"
+          - "Dupliquer la liste complète dans trois composants sans partager de
+            state"
+          - "Supprimer définitivement du tableau toutes les tâches qui ne
+            correspondent pas au filtre sélectionné"
+          - "Utiliser uniquement du CSS pour masquer la logique de filtrage sans
+            condition JavaScript"
+        correct: 0
+        explanation:
+          "Le plus simple est de stocker le filtre courant dans le state puis de
+          calculer la liste visible selon ce critère. On conserve ainsi toutes
+          les tâches tout en adaptant l'affichage."
+      - id: q16
+        question:
+          "Dans TaskFlow, quelle approche permet d'afficher un compteur fiable
+          du nombre de tâches terminées sans dupliquer inutilement les données ?"
+        answers:
+          - "Calculer le nombre à partir de la liste des tâches à chaque rendu
+            avec un filtrage adapté"
+          - "Stocker un second tableau contenant uniquement les tâches terminées
+            et l'afficher directement"
+          - "Ajouter une variable locale modifiée à chaque clic sans utiliser le
+            state"
+          - "Enregistrer manuellement le compteur dans le DOM après chaque
+            changement"
+        correct: 0
+        explanation:
+          "Un compteur dérivé doit être recalculé à partir de la source de
+          vérité, ici la liste des tâches. Cela évite les incohérences entre
+          plusieurs états redondants."
+      - id: q17
+        question:
+          "Pour supprimer une tâche du state dans une application React, quelle
+          mise à jour est correcte ?"
+        answers:
+          - "Modifier directement le tableau avec splice, puis réutiliser la
+            même référence"
+          - "Créer un nouveau tableau sans la tâche ciblée, puis le passer au
+            setter du state"
+          - "Masquer la tâche avec du CSS sans changer le state"
+          - "Réinitialiser tout le state de la page à une liste vide"
+        correct: 1
+        explanation:
+          "React attend une nouvelle référence de state pour détecter proprement
+          la mise à jour. Produire un nouveau tableau sans l'élément supprimé
+          respecte cette règle."
+      - id: q18
+        question:
+          "Dans le découpage de TaskFlow, quelle répartition des responsabilités
+          entre un composant formulaire et un composant liste est la plus
+          pertinente ?"
+        answers:
+          - "Le formulaire affiche les tâches et la liste gère la saisie du
+            nouvel intitulé"
+          - "Le formulaire gère la saisie et la soumission, tandis que la liste
+            affiche les tâches et leurs actions"
+          - "Chaque composant conserve sa propre copie complète des tâches pour
+            être autonome"
+          - "Le formulaire décide du filtre actif et la liste valide les champs
+            saisis"
+        correct: 1
+        explanation:
+          "Un bon découpage sépare la saisie des données et leur affichage. Cela
+          rend les composants plus lisibles, réutilisables et centrés sur une
+          responsabilité claire."
+      - id: q19
+        question:
+          "Pour garder un state minimal sans doublon dans TaskFlow, quelle
+          option est la meilleure ?"
+        answers:
+          - "Conserver dans le state la liste complète des tâches et le filtre
+            actif, puis déduire le compteur et la liste visible"
+          - "Conserver la liste complète, la liste filtrée, le compteur et le
+            nombre de tâches restantes"
+          - "Conserver uniquement le compteur, puis reconstruire les tâches
+            visibles à partir de lui"
+          - "Conserver une copie différente des tâches pour chaque filtre
+            possible"
+        correct: 0
+        explanation:
+          "Un state minimal stocke seulement les données nécessaires comme
+          source de vérité. Les valeurs dérivées, comme le compteur ou la liste
+          filtrée, se calculent à partir de ce state."
+      - id: q20
+        question:
+          "Quel est le problème classique si l'on modifie directement un objet
+          ou un tableau stocké dans le state React ?"
+        answers:
+          - "React refuse systématiquement d'exécuter les gestionnaires
+            d'événements suivants"
+          - "Le navigateur supprime automatiquement les éléments mutés du DOM"
+          - "La mise à jour peut ne pas être détectée correctement, car la
+            référence du state ne change pas"
+          - "Le composant est converti en composant serveur au rendu suivant"
+        correct: 2
+        explanation:
+          "La mutation directe conserve souvent la même référence mémoire. React
+          peut alors manquer le changement attendu ou produire un comportement
+          difficile à déboguer."
+  - id: backend-node-rest
+    title: "Chapitre 3 — Créer un backend REST avec Node.js"
+    questions:
+      - id: q1
+        question:
+          "Quel est le rôle principal d'un backend dans une application React
+          comme TaskFlow ?"
+        answers:
+          - "Servir les données, appliquer la logique métier et centraliser les
+            accès aux ressources"
+          - "Remplacer entièrement l'interface React affichée dans le navigateur"
+          - "Compiler automatiquement le code CSS en production"
+          - "Stocker les composants React directement dans le navigateur"
+        correct: 0
+        explanation:
+          "Le backend expose des données et des traitements à l'application
+          front-end. Il centralise aussi les accès aux ressources et la logique
+          métier côté serveur."
+      - id: q2
+        question: "Quel énoncé décrit correctement le principe d'une API REST ?"
+        answers:
+          - "Une API qui mélange interface graphique et base de données dans le
+            même composant"
+          - "Une API qui expose des ressources identifiées par des URL et
+            manipulées via les méthodes HTTP"
+          - "Une API réservée aux applications mobiles natives sans navigateur"
+          - "Une API qui impose l'usage exclusif du format XML pour toutes les
+            réponses"
+        correct: 1
+        explanation:
+          "Une API REST organise l'accès à des ressources par des URI et utilise
+          des verbes HTTP comme GET ou POST. Elle ne dépend pas d'un format
+          unique comme XML."
+      - id: q3
+        question:
+          "Dans une API TaskFlow, quelle méthode utiliser pour lire la liste des
+          tâches sans la modifier ?"
+        answers:
+          - "POST sur /tasks"
+          - "DELETE sur /tasks"
+          - "GET sur /tasks"
+          - "PUT sur /tasks/:id"
+        correct: 2
+        explanation:
+          "La méthode GET sert à récupérer des données sans créer, modifier ni
+          supprimer de ressource. Pour lire toutes les tâches, on appelle donc
+          GET sur /tasks."
+      - id: q4
+        question:
+          "Quelle requête correspond à la création d'une nouvelle tâche dans une
+          API REST ?"
+        answers:
+          - "GET sur /tasks avec un corps JSON"
+          - "POST sur /tasks avec les données de la tâche en JSON"
+          - "PUT sur /tasks/:id sans identifiant existant"
+          - "DELETE sur /tasks pour ajouter un élément"
+        correct: 1
+        explanation:
+          "POST est la méthode utilisée pour créer une nouvelle ressource sur
+          une collection comme /tasks. Les données de la tâche sont généralement
+          envoyées dans le corps JSON de la requête."
+      - id: q5
+        question:
+          "Pour mettre à jour une tâche existante identifiée par son id, quelle
+          requête est la plus adaptée ?"
+        answers:
+          - "PUT sur /tasks/:id avec les nouvelles données de la tâche"
+          - "GET sur /tasks/:id pour remplacer la tâche"
+          - "POST sur /tasks/:id pour lire la tâche existante"
+          - "DELETE sur /tasks/:id avec un corps JSON de mise à jour"
+        correct: 0
+        explanation:
+          "PUT sert à mettre à jour une ressource existante ciblée par son
+          identifiant. Dans TaskFlow, on l'utilise sur /tasks/:id avec les
+          nouvelles données de la tâche."
+      - id: q6
+        question:
+          "Quelle méthode HTTP utilise-t-on en REST pour supprimer une ressource
+          existante, comme une tâche ?"
+        answers:
+          - "DELETE"
+          - "GET"
+          - "POST"
+          - "PATCH"
+        correct: 0
+        explanation:
+          "La méthode DELETE sert à demander la suppression d'une ressource
+          identifiée par son URL. GET lit des données et POST crée généralement
+          une nouvelle ressource."
+      - id: q7
+        question:
+          "À quoi sert principalement la commande npm init lors de la création
+          d'un backend Node.js ?"
+        answers:
+          - "À générer le fichier package.json du projet"
+          - "À lancer automatiquement le serveur Express"
+          - "À installer Node.js sur la machine"
+          - "À créer toutes les routes REST du projet"
+        correct: 0
+        explanation:
+          "npm init initialise un projet Node.js en créant son package.json. Ce
+          fichier décrit notamment le nom du projet, ses scripts et ses
+          dépendances."
+      - id: q8
+        question:
+          "Quel est le rôle principal d'Express dans un serveur Node.js ?"
+        answers:
+          - "Fournir un framework pour gérer facilement les routes et les
+            requêtes HTTP"
+          - "Compiler automatiquement le code JavaScript en TypeScript"
+          - "Remplacer entièrement le moteur Node.js"
+          - "Stocker les données en base sans configuration"
+        correct: 0
+        explanation:
+          "Express simplifie la création d'un serveur HTTP en ajoutant une
+          gestion pratique des routes, des middlewares et des réponses. Il
+          s'appuie sur Node.js, qu'il ne remplace pas."
+      - id: q9
+        question:
+          "Parmi ces propositions, quelle structure correspond au minimum
+          nécessaire pour un serveur Express opérationnel ?"
+        answers:
+          - "Créer une application avec express(), définir au moins une route,
+            puis appeler listen()"
+          - "Créer un fichier HTML, ouvrir un port, puis importer React"
+          - "Déclarer uniquement un tableau de données, sans route ni écoute
+            réseau"
+          - "Installer npm init après avoir appelé listen() dans le navigateur"
+        correct: 0
+        explanation:
+          "Un serveur Express minimal crée l'application, expose au moins une
+          route et démarre l'écoute sur un port avec listen(). Sans ces
+          éléments, le serveur ne répond pas aux requêtes HTTP."
+      - id: q10
+        question:
+          "Pourquoi utilise-t-on le middleware JSON dans un backend Express ?"
+        answers:
+          - "Pour parser automatiquement le corps des requêtes JSON et le rendre
+            disponible dans req.body"
+          - "Pour convertir toutes les réponses HTTP en pages HTML"
+          - "Pour chiffrer les données envoyées par le client"
+          - "Pour autoriser automatiquement toutes les origines CORS"
+        correct: 0
+        explanation:
+          "Le middleware JSON lit le corps JSON des requêtes entrantes et le
+          transforme en objet JavaScript exploitable via req.body. Il ne gère ni
+          le chiffrement ni la politique CORS."
+      - id: q11
+        question:
+          "Quel problème CORS résout-il lorsqu'une application React appelle une
+          API Node.js hébergée sur une autre origine ?"
+        answers:
+          - "Il autorise le navigateur à accepter des requêtes entre origines
+            différentes selon des règles définies par le serveur."
+          - "Il compresse automatiquement les réponses JSON pour réduire la
+            latence."
+          - "Il chiffre les mots de passe envoyés dans les formulaires HTTP."
+          - "Il remplace les méthodes HTTP GET et POST par un protocole unique."
+        correct: 0
+        explanation:
+          "CORS sert à contrôler les requêtes cross-origin faites par le
+          navigateur. Sans en-têtes adaptés, le frontend peut être bloqué même
+          si l'API fonctionne."
+      - id: q12
+        question:
+          "Quelle différence principale existe entre un stockage en mémoire et
+          une base de données persistante pour un backend TaskFlow ?"
+        answers:
+          - "Le stockage en mémoire conserve mieux les données après redémarrage
+            qu'une base persistante."
+          - "Une base persistante permet de retrouver les données après arrêt du
+            serveur, contrairement au stockage en mémoire."
+          - "Le stockage en mémoire impose obligatoirement l'usage de SQL."
+          - "Une base persistante ne permet pas de modifier des tâches
+            existantes."
+        correct: 1
+        explanation:
+          "Les données stockées en mémoire disparaissent quand le processus
+          s'arrête ou redémarre. Une base persistante est conçue pour conserver
+          les informations dans la durée."
+      - id: q13
+        question:
+          "Que doit renvoyer en priorité la route GET /tasks dans l'API TaskFlow
+          ?"
+        answers:
+          - "La liste des tâches au format JSON."
+          - "Uniquement le nombre total de tâches en texte brut."
+          - "Un formulaire HTML pour créer une tâche."
+          - "Un code 201 Created sans contenu."
+        correct: 0
+        explanation:
+          "La route GET /tasks sert à récupérer la collection de tâches. Dans un
+          backend REST Express, cette réponse est typiquement fournie en JSON."
+      - id: q14
+        question:
+          "Quel comportement correspond à la route POST /tasks dans TaskFlow ?"
+        answers:
+          - "Elle remplace toutes les tâches existantes par une nouvelle liste
+            complète."
+          - "Elle récupère une tâche par son identifiant dans l'URL."
+          - "Elle crée une nouvelle tâche à partir des données JSON envoyées
+            dans la requête."
+          - "Elle supprime la tâche la plus ancienne du tableau en mémoire."
+        correct: 2
+        explanation:
+          "En REST, POST sur une collection sert généralement à créer une
+          nouvelle ressource. Ici, la route lit le corps JSON et ajoute une
+          nouvelle tâche."
+      - id: q15
+        question: "À quoi sert la route PUT /tasks/:id dans l'API TaskFlow ?"
+        answers:
+          - "À récupérer toutes les tâches terminées sans modifier les autres."
+          - "À mettre à jour la tâche identifiée par :id avec les nouvelles
+            données fournies."
+          - "À créer automatiquement plusieurs tâches ayant le même identifiant."
+          - "À tester la disponibilité du serveur sans toucher aux données."
+        correct: 1
+        explanation:
+          "La méthode PUT est utilisée pour modifier une ressource existante
+          ciblée par son identifiant. La route /tasks/:id applique donc une mise
+          à jour sur la tâche concernée."
+      - id: q16
+        question:
+          "Quel comportement est attendu pour la route DELETE /tasks/:id de
+          TaskFlow lorsqu'une tâche correspondant à l'identifiant fourni existe
+          ?"
+        answers:
+          - "Elle supprime la tâche ciblée du stockage mémoire puis confirme la
+            suppression."
+          - "Elle renvoie toute la liste des tâches sans modifier les données."
+          - "Elle crée une nouvelle tâche avec le même identifiant avant de
+            répondre."
+          - "Elle remplace la tâche ciblée par une tâche vide."
+        correct: 0
+        explanation:
+          "La route DELETE sert à retirer la ressource ciblée. Dans TaskFlow,
+          elle doit donc supprimer la tâche en mémoire puis renvoyer une
+          confirmation cohérente."
+      - id: q17
+        question:
+          "Quel exemple de réponse JSON est le plus cohérent pour représenter
+          une tâche TaskFlow ?"
+        answers:
+          - '{"id": 1, "title": "Préparer la démo", "done": false}'
+          - "Tâche 1 : Préparer la démo, non terminée"
+          - "<task><id>1</id><title>Préparer la démo</title></task>"
+          - "id=1&title=Préparer la démo&done=false"
+        correct: 0
+        explanation:
+          "Une réponse JSON cohérente utilise une structure objet avec des clés
+          explicites et des types adaptés. Les autres propositions relèvent d'un
+          format texte, XML ou form-encoded."
+      - id: q18
+        question:
+          "Quel code HTTP faut-il renvoyer après une création réussie via POST
+          /tasks ?"
+        answers:
+          - "200"
+          - "201"
+          - "204"
+          - "404"
+        correct: 1
+        explanation:
+          "Le code 201 signifie qu'une ressource a été créée avec succès. C'est
+          le code standard attendu après un POST de création réussi."
+      - id: q19
+        question:
+          "Pour tester manuellement l'API TaskFlow, quel outil est adapté pour
+          envoyer une requête HTTP GET ou POST et inspecter la réponse ?"
+        answers:
+          - "Un client HTTP comme Postman ou Insomnia"
+          - "Un tableur pour trier les réponses"
+          - "Un éditeur d'images pour visualiser les routes"
+          - "Un compilateur TypeScript exécuté sans requête réseau"
+        correct: 0
+        explanation:
+          "Un client HTTP permet d'envoyer des requêtes vers l'API et d'examiner
+          le statut, les en-têtes et le JSON retourné. C'est l'outil adapté pour
+          un test manuel d'API."
+      - id: q20
+        question:
+          "Quelle est la principale limite d'un backend qui stocke les tâches
+          uniquement en mémoire lorsqu'on redémarre le serveur ?"
+        answers:
+          - "Les tâches enregistrées sont perdues après le redémarrage."
+          - "Les routes HTTP deviennent automatiquement plus rapides."
+          - "Les identifiants des tâches sont chiffrés de manière permanente."
+          - "Le navigateur conserve une copie complète des tâches côté serveur."
+        correct: 0
+        explanation:
+          "Un stockage uniquement en mémoire vive n'est pas persistant. Au
+          redémarrage du serveur, l'état est réinitialisé et les tâches
+          disparaissent."
+  - id: react-query
+    title: "Chapitre 4 — Consommer l’API avec React et TanStack Query"
+    questions:
+      - id: q1
+        question:
+          "Quel est le rôle principal de fetch dans une application React qui
+          consomme une API REST ?"
+        answers:
+          - "Envoyer une requête HTTP vers une ressource distante et récupérer
+            la réponse"
+          - "Créer automatiquement les composants d'interface à partir du JSON
+            reçu"
+          - "Mettre en cache toutes les réponses sans configuration
+            supplémentaire"
+          - "Remplacer le routeur pour naviguer entre les pages de l'application"
+        correct: 0
+        explanation:
+          "fetch sert à contacter une API via HTTP, par exemple en GET ou POST,
+          puis à exploiter la réponse reçue. Il ne gère pas à lui seul le rendu
+          de l'interface ni la navigation."
+      - id: q2
+        question:
+          "Quel avantage apporte async await par rapport à un enchaînement de
+          promesses brutes avec then ?"
+        answers:
+          - "Il force toutes les requêtes à devenir synchrones dans le
+            navigateur"
+          - "Il supprime le besoin de gérer les erreurs lors des appels réseau"
+          - "Il rend le code asynchrone plus lisible en suivant une écriture
+            proche du séquentiel"
+          - "Il transforme automatiquement une requête échouée en réponse valide"
+        correct: 2
+        explanation:
+          "async await améliore surtout la lisibilité du code asynchrone et
+          facilite le suivi des étapes. Les opérations restent non bloquantes et
+          la gestion d'erreur reste nécessaire."
+      - id: q3
+        question:
+          "Dans un chargement de données simple au montage d'un composant React,
+          quelle est la place habituelle de useEffect ?"
+        answers:
+          - "Déclencher l'effet de chargement après le rendu initial du
+            composant"
+          - "Remplacer complètement la fonction de rendu du composant"
+          - "Créer automatiquement un cache partagé entre toutes les pages"
+          - "Empêcher toute mise à jour d'état après la réponse serveur"
+        correct: 0
+        explanation:
+          "Pour un cas simple, useEffect permet de lancer un appel de chargement
+          après le premier rendu. Cette approche fonctionne, même si elle montre
+          vite ses limites pour les données serveur complexes."
+      - id: q4
+        question:
+          "Comment l'interface doit-elle gérer l'état loading pendant qu'une
+          requête est en cours ?"
+        answers:
+          - "Afficher un indicateur de chargement ou désactiver temporairement
+            certaines actions pour informer l'utilisateur"
+          - "Masquer définitivement la zone concernée pour éviter tout
+            changement visuel"
+          - "Afficher directement des données inventées pour éviter un écran
+            vide"
+          - "Déclencher une alerte navigateur à chaque nouvelle requête"
+        correct: 0
+        explanation:
+          "Un état loading doit rendre l'attente explicite, par exemple avec un
+          message, un spinner ou des contrôles désactivés. L'objectif est
+          d'éviter une interface ambiguë pendant la requête."
+      - id: q5
+        question:
+          "Quelle bonne pratique d'interface appliquer lorsque l'état error
+          indique qu'un appel API a échoué ?"
+        answers:
+          - "Ignorer l'erreur et conserver l'interface telle quelle sans message"
+          - "Afficher un message d'erreur compréhensible et proposer une action
+            de reprise si possible"
+          - "Recharger la page en boucle jusqu'à obtenir une réponse valide"
+          - "Remplacer l'erreur par un succès visuel pour ne pas inquiéter
+            l'utilisateur"
+        correct: 1
+        explanation:
+          "En cas d'erreur, l'interface doit informer clairement l'utilisateur
+          sur l'échec et, si pertinent, lui permettre de réessayer. Cela
+          améliore la compréhension et la résilience du parcours."
+      - id: q6
+        question:
+          "Quel comportement d’interface correspond à un état success après le
+          chargement d’une liste de tâches ?"
+        answers:
+          - "Afficher uniquement un spinner jusqu’au prochain clic"
+          - "Afficher les tâches récupérées avec une interface exploitable"
+          - "Masquer les données pour éviter une incohérence visuelle"
+          - "Relancer automatiquement la requête à chaque rendu"
+        correct: 1
+        explanation:
+          "L’état success signifie que les données sont disponibles côté client.
+          L’interface doit donc présenter le contenu utile, ici la liste des
+          tâches."
+      - id: q7
+        question:
+          "Quelle limite importante apparaît quand on utilise useEffect seul
+          pour gérer des données serveur ?"
+        answers:
+          - "Il interdit complètement les appels asynchrones"
+          - "Il empêche React de rendre le composant"
+          - "Il oblige à gérer manuellement cache, rechargement et
+            synchronisation"
+          - "Il transforme automatiquement chaque réponse en mutation"
+        correct: 2
+        explanation:
+          "Avec useEffect seul, il faut câbler soi-même les états, le cache et
+          les resynchronisations. Cela devient vite répétitif et fragile pour
+          des données serveur."
+      - id: q8
+        question:
+          "Quel est le rôle principal du QueryClient dans TanStack Query ?"
+        answers:
+          - "Créer les composants d’interface pour afficher les requêtes"
+          - "Centraliser le cache et piloter les requêtes de l’application"
+          - "Remplacer fetch par un protocole réseau propriétaire"
+          - "Convertir automatiquement tous les formulaires en API REST"
+        correct: 1
+        explanation:
+          "Le QueryClient est le point central de gestion des requêtes et du
+          cache. Il permet à TanStack Query de partager et mettre à jour les
+          données dans l’application."
+      - id: q9
+        question:
+          "À quoi sert useQuery dans une application React connectée à une API ?"
+        answers:
+          - "À lire des données distantes en exposant data, loading et error"
+          - "À modifier une ressource distante par POST ou PUT"
+          - "À définir le routage entre les pages"
+          - "À valider les champs d’un formulaire avant envoi"
+        correct: 0
+        explanation:
+          "useQuery est destiné à la lecture de données serveur. Il encapsule la
+          récupération et fournit les états utiles à l’affichage."
+      - id: q10
+        question:
+          "À quoi sert principalement useMutation dans un CRUD React avec
+          TanStack Query ?"
+        answers:
+          - "À lire une liste paginée sans jamais l’écrire"
+          - "À mémoriser localement le thème de l’interface"
+          - "À lancer des opérations d’écriture comme créer, modifier ou
+            supprimer"
+          - "À remplacer QueryClient pour toutes les requêtes"
+        correct: 2
+        explanation:
+          "useMutation gère les actions qui modifient les données côté serveur.
+          Il convient aux créations, mises à jour et suppressions dans un flux
+          CRUD."
+      - id: q11
+        question:
+          "Après une mutation réussie qui modifie une tâche, quel est le rôle
+          principal de l'invalidation du cache dans TanStack Query ?"
+        answers:
+          - "Signaler que les données en cache sont potentiellement périmées
+            afin de relancer un refetch de la requête concernée"
+          - "Supprimer définitivement la requête pour empêcher toute nouvelle
+            lecture côté interface"
+          - "Transformer automatiquement toutes les réponses du backend en état
+            local React"
+          - "Forcer le navigateur à vider son cache HTTP complet avant le
+            prochain rendu"
+        correct: 0
+        explanation:
+          "L'invalidation marque une query comme obsolète afin que TanStack
+          Query recharge des données fraîches. Elle évite de conserver en
+          interface un état devenu incohérent après la mutation."
+      - id: q12
+        question:
+          "Dans une application TaskFlow utilisant TanStack Query, comment
+          l'interface utilisateur reste-t-elle synchronisée avec le cache après
+          une opération serveur ?"
+        answers:
+          - "En copiant manuellement le résultat de chaque requête dans
+            plusieurs useState indépendants"
+          - "En lisant l'état exposé par les hooks de query, qui redéclenchent
+            le rendu quand le cache change"
+          - "En rechargeant toute la page après chaque réponse du backend"
+          - "En stockant les tâches uniquement dans le localStorage du
+            navigateur"
+        correct: 1
+        explanation:
+          "Les composants abonnés à une query se re-rendent lorsque le cache
+          associé est mis à jour. L'interface reflète ainsi automatiquement
+          l'état courant des données serveur."
+      - id: q13
+        question:
+          "Pour charger initialement la liste des tâches TaskFlow avec TanStack
+          Query, quelle approche est la plus adaptée ?"
+        answers:
+          - "Déclencher fetch directement dans le corps du composant sans hook
+            dédié"
+          - "Utiliser useMutation pour récupérer la liste au premier affichage"
+          - "Appeler useQuery avec une queryKey stable et une fonction
+            asynchrone qui lit l'API"
+          - "Attendre qu'un formulaire soit soumis avant de lancer la première
+            requête"
+        correct: 2
+        explanation:
+          "useQuery est conçu pour le chargement des données serveur en lecture.
+          Une clé stable et une fonction asynchrone permettent de gérer
+          automatiquement loading, error et success."
+      - id: q14
+        question:
+          "Quel enchaînement correspond à la création d'une tâche depuis un
+          formulaire connecté à TanStack Query ?"
+        answers:
+          - "Le formulaire appelle une mutation avec les valeurs saisies, puis
+            la liste est rafraîchie ou mise à jour dans le cache"
+          - "Le formulaire modifie uniquement le DOM et attend un rechargement
+            manuel pour envoyer les données"
+          - "Le formulaire écrit d'abord dans le cache, sans jamais contacter le
+            backend"
+          - "Le formulaire remplace useMutation par useEffect afin d'éviter
+            toute requête POST"
+        correct: 0
+        explanation:
+          "Un formulaire connecté envoie ses données via une mutation vers
+          l'API. Après succès, on synchronise la liste visible en invalidant ou
+          en mettant à jour la query concernée."
+      - id: q15
+        question:
+          "Dans TaskFlow, quelle action réalise effectivement la mise à jour
+          d'une tâche côté backend ?"
+        answers:
+          - "Modifier uniquement l'objet reçu par useQuery dans le composant
+            React"
+          - "Envoyer une requête de mutation vers l'API avec l'identifiant de la
+            tâche et les champs à changer"
+          - "Réinitialiser le QueryClient pour reconstruire toutes les données
+            depuis zéro"
+          - "Changer la valeur de correct dans le fichier YAML du QCM"
+        correct: 1
+        explanation:
+          "La mise à jour backend suppose un appel réseau explicite vers l'API
+          de modification. Le simple changement d'un objet côté client ne
+          persiste rien sur le serveur."
+      - id: q16
+        question:
+          "Après la suppression réussie d'une tâche dans TaskFlow avec
+          useMutation, quelle action permet de rafraîchir proprement l'interface
+          sans recharger toute la page ?"
+        answers:
+          - "Invalider la queryKey de la liste des tâches pour déclencher une
+            nouvelle récupération"
+          - "Modifier uniquement le DOM à la main pour retirer la ligne
+            supprimée"
+          - "Attendre la prochaine ouverture de session pour voir la suppression"
+          - "Forcer un rechargement complet du navigateur après chaque
+            suppression"
+        correct: 0
+        explanation:
+          "Après une suppression, l'invalidation de la requête concernée permet
+          à TanStack Query de resynchroniser l'interface avec l'état réel du
+          backend. Cela évite un rechargement complet de la page."
+      - id: q17
+        question:
+          "Pour récupérer une liste de tâches filtrée par projectId et status,
+          quelle queryKey constitue un choix stable et pertinent avec TanStack
+          Query ?"
+        answers:
+          - '["tasks", projectId, status]'
+          - '["tasks", Math.random(), projectId]'
+          - '["tasks", new Date().toISOString()]'
+          - '["tasks", () => projectId]'
+        correct: 0
+        explanation:
+          "Une bonne queryKey doit être déterministe et représenter précisément
+          les paramètres de la donnée demandée. Les valeurs aléatoires,
+          temporelles ou fonctionnelles cassent cette stabilité."
+      - id: q18
+        question:
+          "Quelle bonne pratique faut-il appliquer pour afficher une erreur API
+          dans une interface React ?"
+        answers:
+          - "Afficher un message compréhensible pour l'utilisateur, fondé sur
+            l'état d'erreur retourné"
+          - "Masquer l'erreur pour ne pas perturber l'utilisateur"
+          - "Afficher uniquement le code source complet de la stack trace dans
+            la page"
+          - "Rediriger automatiquement l'utilisateur vers la page d'accueil sans
+            explication"
+        correct: 0
+        explanation:
+          "Une erreur API doit être visible et compréhensible pour
+          l'utilisateur, avec un message clair lié à l'état error. Une stack
+          trace brute n'est pas adaptée à l'interface."
+      - id: q19
+        question:
+          "Dans une migration progressive d'un code React existant, quelle
+          approche est la plus adaptée pour passer de useEffect à useQuery ?"
+        answers:
+          - "Remplacer d'abord les fetch de données serveur écran par écran par
+            useQuery, sans réécrire tout le projet d'un coup"
+          - "Supprimer immédiatement tous les useEffect, même ceux qui ne
+            chargent pas de données serveur"
+          - "Conserver useEffect pour les fetch et ajouter useQuery en doublon
+            sur les mêmes données"
+          - "Reporter la migration jusqu'à la refonte complète de toute
+            l'application"
+        correct: 0
+        explanation:
+          "La migration progressive consiste à cibler les appels serveur qui
+          bénéficient directement de useQuery, puis à avancer par écran ou
+          fonctionnalité. Cela limite le risque et clarifie les responsabilités."
+      - id: q20
+        question:
+          "Quel problème apparaît le plus souvent lorsqu'une création ou une
+          mise à jour réussit côté serveur mais que le cache TanStack Query
+          n'est pas invalidé ?"
+        answers:
+          - "L'interface continue d'afficher des données obsolètes alors que le
+            backend a bien changé"
+          - "Le serveur supprime automatiquement toutes les autres données du
+            même écran"
+          - "Le composant React ne peut plus jamais se re-rendre"
+          - "La requête devient forcément invalide au niveau du typage
+            TypeScript"
+        correct: 0
+        explanation:
+          "Sans invalidation ni mise à jour explicite du cache, l'interface peut
+          rester sur une version périmée des données. Le backend est à jour,
+          mais l'utilisateur voit encore l'ancien état."
+  - id: bun-elysia
+    title: "Chapitre 5 — Migrer progressivement vers Bun et Elysia"
+    questions:
+      - id: q1
+        question:
+          "Pourquoi est-il pertinent de commencer par apprendre Node.js et npm
+          avant de passer à Bun ?"
+        answers:
+          - "Parce qu'ils restent la base historique de nombreux projets
+            JavaScript et aident à comprendre l'écosystème existant"
+          - "Parce que Bun ne permet pas d'exécuter du JavaScript côté serveur"
+          - "Parce que npm est obligatoire pour déployer une API Elysia en
+            production"
+          - "Parce que Node.js inclut nativement toutes les fonctionnalités
+            d'Express"
+        correct: 0
+        explanation:
+          "Node.js et npm constituent encore la référence dans beaucoup
+          d'équipes et de projets. Les connaître permet de mieux comprendre
+          ensuite ce que Bun simplifie ou accélère."
+      - id: q2
+        question:
+          "Quelle limite moderne est souvent reprochée à Node.js dans un flux de
+          développement actuel ?"
+        answers:
+          - "Il ne peut pas servir d'API REST"
+          - "Il impose souvent d'assembler plusieurs outils séparés pour
+            exécuter, tester et gérer les paquets"
+          - "Il interdit l'utilisation de TypeScript"
+          - "Il ne fonctionne que sur Linux"
+        correct: 1
+        explanation:
+          "Une critique fréquente est la multiplication des outils autour de
+          Node.js pour couvrir le runtime, le gestionnaire de paquets et
+          certains scripts. Bun cherche justement à regrouper ces usages."
+      - id: q3
+        question:
+          "Quel est le rôle principal de Bun dans une pile JavaScript moderne ?"
+        answers:
+          - "Uniquement remplacer React côté navigateur"
+          - "Servir exclusivement de framework d'API"
+          - "Agir à la fois comme runtime JavaScript et comme outil de gestion
+            du projet"
+          - "Remplacer la base de données d'une application web"
+        correct: 2
+        explanation:
+          "Bun combine plusieurs fonctions utiles dans un même outil, notamment
+          l'exécution du code et la gestion des dépendances. Cela réduit la
+          dispersion des commandes et des outils."
+      - id: q4
+        question:
+          "Quelle différence illustre correctement le passage des commandes npm
+          vers Bun ?"
+        answers:
+          - "npm install devient bun add"
+          - "npm run dev devient bun serve dev"
+          - "npm create devient bun express"
+          - "npm test devient bun check uniquement"
+        correct: 0
+        explanation:
+          "Avec Bun, l'ajout d'une dépendance se fait typiquement avec bun add
+          au lieu de npm install. La logique générale reste proche, mais la
+          syntaxe change sur plusieurs commandes courantes."
+      - id: q5
+        question:
+          "Quel est l'intérêt principal d'Elysia lors de la migration d'une API
+          REST ?"
+        answers:
+          - "Obliger à réécrire aussi tout le frontend"
+          - "Fournir un cadre léger pour définir des routes et validations
+            simplement tout en gardant le même contrat API"
+          - "Supprimer le besoin de CORS dans tous les cas"
+          - "Remplacer automatiquement la logique métier existante"
+        correct: 1
+        explanation:
+          "Elysia permet de reconstruire une API de manière concise, avec des
+          routes et une validation simples. L'objectif peut rester une migration
+          backend progressive sans casser le frontend existant."
+      - id: q6
+        question:
+          "Quelle différence de style décrit le mieux le passage d'Express à
+          Elysia ?"
+        answers:
+          - "Express repose surtout sur une accumulation de middlewares, alors
+            qu'Elysia propose une API plus déclarative et typée autour des
+            routes"
+          - "Express impose TypeScript, alors qu'Elysia interdit tout typage"
+          - "Express ne gère que GraphQL, alors qu'Elysia ne gère que REST"
+          - "Express fonctionne uniquement avec Bun, alors qu'Elysia fonctionne
+            uniquement avec Node.js"
+        correct: 0
+        explanation:
+          "Express est souvent structuré autour de middlewares successifs.
+          Elysia met davantage en avant des routes déclaratives avec un typage
+          et une validation mieux intégrés."
+      - id: q7
+        question:
+          "Quelle commande Bun permet d'installer une dépendance dans un projet
+          ?"
+        answers:
+          - "bun create dependency"
+          - "bun add nom-du-paquet"
+          - "bun install --save nom-du-paquet-global"
+          - "bun init nom-du-paquet"
+        correct: 1
+        explanation:
+          "La commande standard pour ajouter une dépendance avec Bun est bun add
+          suivi du nom du paquet. Elle met à jour le manifeste du projet."
+      - id: q8
+        question:
+          "Quelle commande Bun utilise-t-on classiquement pour lancer un projet
+          défini avec des scripts ?"
+        answers:
+          - "bun serve"
+          - "bun start project"
+          - "bun run dev"
+          - "bun launch"
+        correct: 2
+        explanation:
+          "Bun exécute les scripts du projet avec bun run, par exemple bun run
+          dev pour un démarrage en développement. La commande exacte dépend du
+          script défini."
+      - id: q9
+        question:
+          "Lors d'une migration progressive de l'API REST vers Bun et Elysia,
+          quelle approche évite de casser le frontend existant ?"
+        answers:
+          - "Réécrire d'abord tout le frontend pour l'adapter au nouveau backend"
+          - "Migrer route par route en conservant les mêmes points d'entrée et
+            les mêmes formats de réponse"
+          - "Supprimer temporairement les validations pour accélérer la bascule"
+          - "Changer les noms de routes afin de distinguer visuellement l'ancien
+            backend du nouveau"
+        correct: 1
+        explanation:
+          "Une migration progressive limite le risque en remplaçant l'API
+          morceau par morceau. Le frontend continue alors de consommer les mêmes
+          routes et les mêmes structures de données."
+      - id: q10
+        question:
+          "Pourquoi faut-il conserver le contrat API pendant la migration du
+          backend TaskFlow ?"
+        answers:
+          - "Pour éviter d'avoir à modifier le frontend tant que les routes, les
+            formats et les codes attendus restent identiques"
+          - "Pour empêcher Bun d'optimiser les réponses HTTP"
+          - "Pour supprimer le besoin de tests sur les routes REST"
+          - "Pour convertir automatiquement une API REST en WebSocket"
+        correct: 0
+        explanation:
+          "Le contrat API décrit ce que le frontend attend du backend. S'il
+          reste stable pendant la migration, l'application cliente continue de
+          fonctionner sans changement fonctionnel."
+      - id: q11
+        question:
+          "Dans Elysia, quelle écriture correspond à la définition d'une route
+          REST GET sur /tasks ?"
+        answers:
+          - 'app.get("/tasks", () => tasks)'
+          - 'app.route("GET /tasks")'
+          - 'app.listen("/tasks", "GET")'
+          - 'app.fetch("/tasks", () => tasks)'
+        correct: 0
+        explanation:
+          "Elysia définit couramment une route REST avec une méthode comme get,
+          post ou put, suivie du chemin et d'un handler. Cette forme conserve
+          une structure simple et explicite."
+      - id: q12
+        question:
+          "Quelle solution permet d'autoriser les requêtes cross-origin d'un
+          frontend vers une API Elysia ?"
+        answers:
+          - "Activer une gestion CORS côté serveur, par exemple via un plugin ou
+            des en-têtes adaptés"
+          - "Renommer toutes les routes API en HTTPS"
+          - "Forcer le frontend à utiliser uniquement des requêtes GET"
+          - "Supprimer les réponses JSON au profit de texte brut"
+        correct: 0
+        explanation:
+          "Le CORS se gère côté serveur en déclarant les origines, méthodes ou
+          en-têtes autorisés. Cela permet au navigateur d'accepter les appels du
+          frontend vers l'API."
+      - id: q13
+        question:
+          "Dans une migration d'API vers Bun et Elysia, à quoi sert une
+          validation simple d'une entrée côté serveur ?"
+        answers:
+          - "À vérifier qu'une donnée reçue respecte le format attendu avant de
+            la traiter"
+          - "À accélérer automatiquement le rendu React côté client"
+          - "À convertir toutes les requêtes POST en requêtes GET"
+          - "À éviter totalement l'usage de codes HTTP d'erreur"
+        correct: 0
+        explanation:
+          "La validation simple contrôle la présence, le type ou la forme des
+          données entrantes. Elle protège l'API contre des entrées invalides et
+          facilite des erreurs exploitables."
+      - id: q14
+        question:
+          "Dans une API Bun, quelle pratique correspond à une bonne gestion JSON
+          d'une réponse REST ?"
+        answers:
+          - "Retourner un objet sérialisé en JSON avec le bon en-tête de contenu"
+          - "Renvoyer exclusivement du HTML pour simplifier les échanges"
+          - "Envoyer les données en CSV dans toutes les routes"
+          - "Éviter toute structure d'objet pour ne transmettre que des chaînes
+            concaténées"
+        correct: 0
+        explanation:
+          "Une API REST Bun doit renvoyer des données JSON cohérentes avec le
+          contrat attendu par le frontend. Le type de contenu approprié garantit
+          une consommation correcte par le client."
+      - id: q15
+        question:
+          "Dans une comparaison de performance perçue entre Node.js et Bun, quel
+          constat est le plus juste lors d'une migration backend sans modifier
+          le frontend ?"
+        answers:
+          - "Bun peut donner une impression de démarrage et de réponse plus
+            rapides, mais le gain dépend du contexte réel"
+          - "Bun rend automatiquement l'interface React plus légère sans toucher
+            au backend"
+          - "Node.js devient incompatible avec les routes REST dès que Bun est
+            introduit"
+          - "Les performances perçues sont toujours strictement identiques entre
+            Node.js et Bun"
+        correct: 0
+        explanation:
+          "Bun est souvent perçu comme plus rapide sur certains usages,
+          notamment au démarrage ou en développement. Cependant, la performance
+          ressentie dépend toujours de l'application, de ses routes et de son
+          environnement."
+      - id: q16
+        question:
+          "Lors d'une migration progressive vers Bun, quel point de vigilance
+          concerne le plus la compatibilité de l'écosystème ?"
+        answers:
+          - "Vérifier que les dépendances Node.js utilisées sont bien supportées
+            par Bun, surtout celles qui reposent sur des API ou comportements
+            spécifiques"
+          - "Remplacer obligatoirement tout le frontend React par un rendu
+            serveur natif Bun"
+          - "Supprimer CORS, car Bun l'active automatiquement dans tous les cas"
+          - "Convertir l'API REST en GraphQL avant même d'exécuter Bun"
+        correct: 0
+        explanation:
+          "Bun vise une bonne compatibilité avec l'écosystème Node.js, mais
+          certaines dépendances ou API spécifiques peuvent poser problème. Une
+          vérification préalable des bibliothèques critiques reste donc
+          nécessaire."
+      - id: q17
+        question:
+          "Dans Elysia, quelle implémentation réécrit correctement la route GET
+          /tasks sans changer le contrat de l'API REST existante ?"
+        answers:
+          - "Définir `app.get('/tasks', () => ({ status: 'ok' }))` pour signaler
+            que le serveur répond"
+          - "Définir `app.get('/tasks', async () => tasks)` afin de renvoyer la
+            liste des tâches au même endpoint qu'avant"
+          - "Définir `app.post('/tasks', () => tasks)` pour réutiliser la même
+            logique de lecture"
+          - "Définir `app.get('/task/:id', () => tasks)` afin de centraliser
+            toutes les réponses sur une route paramétrée"
+        correct: 1
+        explanation:
+          "Pour conserver le contrat, la route doit rester `GET /tasks` et
+          renvoyer la collection attendue par le frontend. Changer l'endpoint ou
+          la structure de réponse introduirait une régression."
+      - id: q18
+        question:
+          "Pour réécrire POST /tasks avec Elysia tout en gardant un comportement
+          cohérent, que doit faire la route ?"
+        answers:
+          - "Lire le corps de requête, créer une nouvelle tâche conforme au
+            modèle attendu puis la retourner ou l'ajouter à la liste selon le
+            contrat existant"
+          - "Ignorer le corps de requête et toujours créer une tâche vide afin
+            de simplifier la migration"
+          - "Transformer automatiquement la route en `PUT /tasks` pour etre plus
+            REST"
+          - "Retourner uniquement un texte brut `created` sans aucun lien avec
+            les données de la tâche"
+        correct: 0
+        explanation:
+          "La migration ne doit pas casser l'usage du frontend. La route `POST
+          /tasks` doit donc continuer à accepter les données attendues et à
+          produire une réponse compatible avec l'API précédente."
+      - id: q19
+        question:
+          "Quel test vérifie le mieux l'absence de régression après avoir migré
+          le backend TaskFlow vers Bun et Elysia ?"
+        answers:
+          - "Comparer uniquement le temps de démarrage du serveur avant et après
+            migration"
+          - "Vérifier que le frontend existant continue d'exécuter les lectures
+            et créations de tâches sans modification de code"
+          - "Remplacer temporairement toutes les routes par des réponses
+            fictives pour isoler Elysia"
+          - "Contrôler seulement que le port HTTP a changé, ce qui prouve que la
+            migration est prise en compte"
+        correct: 1
+        explanation:
+          "Le meilleur test de non-régression consiste à confirmer que le
+          frontend consomme toujours l'API sans adaptation. Si les parcours
+          existants fonctionnent inchangés, le contrat a bien été préservé."
+      - id: q20
+        question:
+          "Dans quel cas garder Node.js plutôt que migrer immédiatement vers Bun
+          reste-t-il pertinent ?"
+        answers:
+          - "Quand le projet dépend fortement de modules natifs ou d'outils
+            d'écosystème qui ne sont pas encore validés en production avec Bun"
+          - "Quand l'application expose deja des routes REST simples, car Bun ne
+            sait pas gerer ce type d'API"
+          - "Quand on souhaite conserver JavaScript, car Bun impose de réécrire
+            le backend en un autre langage"
+          - "Quand le frontend utilise React, car Bun et React sont
+            incompatibles"
+        correct: 0
+        explanation:
+          "Garder Node.js est raisonnable si la stabilité de l'écosystème prime
+          et que certaines dépendances critiques ne sont pas encore suffisamment
+          éprouvées avec Bun. Le choix dépend alors du risque acceptable en
+          production."
+  - id: nextjs-rsc
+    title: "Chapitre 6 — Migrer vers Next.js et React Server Components"
+    questions:
+      - id: q1
+        question:
+          "Quelle limite d'une SPA React classique apparaît souvent en
+          production lorsque l'on dépend surtout du rendu côté client ?"
+        answers:
+          - "Le premier affichage peut être retardé car le navigateur doit
+            charger et exécuter beaucoup de JavaScript avant d'afficher le
+            contenu utile"
+          - "L'application ne peut plus appeler d'API REST externes"
+          - "React interdit toute navigation entre plusieurs écrans"
+          - "Le CSS ne peut pas être chargé sur mobile"
+        correct: 0
+        explanation:
+          "Une SPA pure repose fortement sur le rendu côté client. Cela peut
+          dégrader le temps d'affichage initial et le référencement si le
+          JavaScript est lourd ou tardif."
+      - id: q2
+        question:
+          "Quel rôle joue principalement Next.js dans l'écosystème React ?"
+        answers:
+          - "C'est une bibliothèque d'état concurrente qui remplace React"
+          - "C'est un framework qui structure le développement d'applications
+            React avec routage, rendu serveur et outillage intégré"
+          - "C'est un compilateur CSS dédié aux composants React"
+          - "C'est un service d'hébergement obligatoire pour toute application
+            React"
+        correct: 1
+        explanation:
+          "Next.js s'appuie sur React et ajoute un cadre complet pour le
+          routage, le rendu hybride et l'organisation applicative. Il ne
+          remplace pas React."
+      - id: q3
+        question: "Quel est le principe général de l'App Router de Next.js ?"
+        answers:
+          - "Décrire les routes à la main dans un tableau JavaScript unique"
+          - "Déduire le routage à partir de l'arborescence de dossiers et de
+            fichiers de l'application"
+          - "Créer uniquement des routes côté client via React Router"
+          - "Forcer toutes les pages à être générées statiquement au build"
+        correct: 1
+        explanation:
+          "L'App Router repose sur le système de fichiers. La structure des
+          dossiers et des fichiers détermine les segments de route et leur
+          composition."
+      - id: q4
+        question:
+          "Dans Next.js avec l'App Router, quelle est la fonction du dossier app
+          ?"
+        answers:
+          - "Stocker uniquement les images optimisées de l'application"
+          - "Définir l'espace où l'on déclare routes, pages, layouts et autres
+            fichiers liés au routage"
+          - "Remplacer le dossier public pour servir les fichiers statiques"
+          - "Centraliser seulement les tests unitaires React"
+        correct: 1
+        explanation:
+          "Le dossier app porte la structure de navigation de l'application. On
+          y place notamment les segments de route, les pages et les layouts
+          associés."
+      - id: q5
+        question:
+          "Quelle différence essentielle existe entre une page et un layout dans
+          l'App Router de Next.js ?"
+        answers:
+          - "Une page définit un contenu propre à une route, tandis qu'un layout
+            enveloppe et partage une structure commune entre plusieurs routes"
+          - "Une page sert uniquement au mobile, tandis qu'un layout sert
+            uniquement au bureau"
+          - "Une page est toujours un Client Component, tandis qu'un layout est
+            toujours interdit côté serveur"
+          - "Une page ne peut pas recevoir de données, tandis qu'un layout peut
+            seul en recevoir"
+        correct: 0
+        explanation:
+          "Une page correspond au contenu principal d'une route donnée. Un
+          layout fournit une structure persistante et réutilisable autour des
+          pages et sous-routes."
+      - id: q6
+        question:
+          "Dans l'App Router de Next.js, quel mécanisme est prévu pour naviguer
+          entre deux routes internes sans recharger entièrement la page ?"
+        answers:
+          - "Le composant Link de Next.js"
+          - 'Une balise a classique avec target="_self"'
+          - "La fonction fetch appelée dans un useEffect"
+          - "Le composant Suspense autour de la page"
+        correct: 0
+        explanation:
+          "Le composant Link est conçu pour la navigation interne dans Next.js.
+          Il permet une transition côté client sans rechargement complet du
+          document."
+      - id: q7
+        question:
+          "Dans une application Next.js, à quoi sert une route dynamique comme
+          /products/[id] ?"
+        answers:
+          - "À définir plusieurs routes statiques dans un seul fichier CSS"
+          - "À représenter une page dont une partie de l'URL varie selon une
+            valeur, comme un identifiant"
+          - "À activer automatiquement le streaming sur toutes les pages du
+            dossier"
+          - "À forcer le composant à devenir un Client Component"
+        correct: 1
+        explanation:
+          "Une route dynamique permet de capturer un segment variable de l'URL,
+          par exemple un identifiant de produit. La page peut ensuite utiliser
+          cette valeur pour afficher la ressource correspondante."
+      - id: q8
+        question:
+          "Dans Next.js avec React Server Components, quelle affirmation définit
+          correctement un Client Component ?"
+        answers:
+          - "C'est un composant rendu uniquement par une API REST externe"
+          - "C'est un composant qui peut utiliser des hooks d'état et gérer des
+            interactions dans le navigateur"
+          - "C'est un composant qui ne peut jamais être imbriqué dans un layout"
+          - "C'est un composant réservé aux routes dynamiques"
+        correct: 1
+        explanation:
+          "Un Client Component est destiné aux interactions côté navigateur. Il
+          peut utiliser useState, useEffect et les gestionnaires d'événements."
+      - id: q9
+        question:
+          "Quelle définition correspond à un Server Component dans Next.js ?"
+        answers:
+          - "Un composant exécuté côté serveur, adapté à la récupération de
+            données et qui n'embarque pas de logique interactive côté client par
+            défaut"
+          - "Un composant qui doit toujours contenir la directive use client"
+          - "Un composant qui remplace obligatoirement toutes les routes API"
+          - "Un composant limité aux formulaires HTML classiques"
+        correct: 0
+        explanation:
+          "Un Server Component s'exécute côté serveur et peut récupérer des
+          données sans envoyer inutilement du JavaScript au navigateur. Par
+          défaut, il n'est pas destiné à porter une logique interactive côté
+          client."
+      - id: q10
+        question:
+          "Quel est le rôle exact de la directive use client en tête d'un
+          fichier Next.js ?"
+        answers:
+          - "Elle indique que le composant doit être traité comme un Client
+            Component et peut utiliser les API React côté navigateur"
+          - "Elle oblige Next.js à exécuter toutes les requêtes fetch dans le
+            navigateur"
+          - "Elle transforme automatiquement la page en route dynamique"
+          - "Elle remplace la configuration du layout racine"
+        correct: 0
+        explanation:
+          "La directive use client marque explicitement le fichier comme Client
+          Component. Elle est nécessaire pour utiliser les hooks d'état, les
+          effets et les événements côté navigateur."
+      - id: q11
+        question:
+          "Dans Next.js avec l'App Router, quel est l'intérêt principal de
+          récupérer des données directement dans un Server Component ?"
+        answers:
+          - "Envoyer au navigateur un HTML déjà enrichi avec les données sans
+            attendre un chargement côté client"
+          - "Obliger tous les composants enfants à devenir des Client Components"
+          - "Remplacer automatiquement toute API externe par un fichier local"
+          - "Interdire l'utilisation de cache sur les requêtes"
+        correct: 0
+        explanation:
+          "Le chargement côté serveur permet de préparer le rendu avec les
+          données avant l'envoi au navigateur. Cela réduit le besoin de fetch
+          initial côté client pour l'affichage de la page."
+      - id: q12
+        question:
+          "Quel bénéfice apporte le streaming avec Suspense dans une page
+          Next.js ?"
+        answers:
+          - "Forcer le navigateur à attendre tous les composants avant
+            d'afficher la moindre partie de la page"
+          - "Afficher rapidement les parties prêtes de l'interface pendant que
+            les sections plus lentes continuent à se charger"
+          - "Transformer automatiquement chaque requête en WebSocket"
+          - "Désactiver les états de chargement dans les composants clients"
+        correct: 1
+        explanation:
+          "Le streaming permet d'envoyer progressivement le rendu au client.
+          Suspense encadre les zones lentes avec un fallback pendant que le
+          reste de la page s'affiche déjà."
+      - id: q13
+        question:
+          "Quel énoncé décrit correctement le principe d'une Server Action dans
+          Next.js ?"
+        answers:
+          - "C'est une fonction exécutée uniquement dans le navigateur pour
+            éviter tout aller-retour réseau"
+          - "C'est une fonction côté serveur que l'interface peut invoquer
+            directement, notamment depuis un formulaire"
+          - "C'est un composant visuel réservé aux routes dynamiques"
+          - "C'est un mécanisme qui remplace entièrement le routeur App Router"
+        correct: 1
+        explanation:
+          "Une Server Action exécute une logique sur le serveur à la demande de
+          l'interface. Elle simplifie certaines mutations sans exposer
+          nécessairement une route API dédiée pour ce cas précis."
+      - id: q14
+        question:
+          "Quel cas d'usage correspond le mieux à un formulaire serveur dans
+          Next.js ?"
+        answers:
+          - "Changer localement la couleur d'un bouton sans persistance"
+          - "Déclencher une animation CSS après un clic utilisateur"
+          - "Soumettre un formulaire de création ou de mise à jour de données
+            avec traitement direct sur le serveur"
+          - "Mesurer la largeur de la fenêtre après redimensionnement"
+        correct: 2
+        explanation:
+          "Le formulaire serveur est adapté aux opérations métier qui modifient
+          des données côté serveur. Il relie naturellement la soumission du
+          formulaire à une action exécutée sur le serveur."
+      - id: q15
+        question:
+          "Dans une architecture moderne, comment Next.js s'articule-t-il avec
+          une API REST séparée ?"
+        answers:
+          - "Next.js interdit toute consommation d'une API REST externe quand on
+            utilise l'App Router"
+          - "Next.js remplace toujours l'API REST séparée par des Server Actions"
+          - "Next.js peut rendre l'interface et appeler une API REST séparée
+            pour lire ou modifier les données selon les besoins"
+          - "Next.js impose que toute logique métier soit dupliquée à la fois
+            dans le frontend et dans l'API"
+        correct: 2
+        explanation:
+          "Next.js peut servir de couche de rendu et d'orchestration tout en
+          s'appuyant sur une API REST existante. Les Server Components ou
+          actions côté serveur peuvent consommer cette API sans remettre en
+          cause sa séparation."
+      - id: q16
+        question:
+          "Dans une page Next.js utilisant des Server Components par défaut,
+          quel élément de l'interface doit être isolé dans un Client Component ?"
+        answers:
+          - "Un sélecteur de filtres qui met à jour l'affichage en temps réel au
+            clic"
+          - "Un bloc de présentation statique décrivant le projet TaskFlow"
+          - "Une liste de tâches déjà rendue côté serveur sans interaction"
+          - "Un en-tête de page contenant uniquement un titre et un sous-titre"
+        correct: 0
+        explanation:
+          "Un composant interactif qui gère des événements navigateur ou de
+          l'état local doit être côté client. Les éléments purement statiques
+          peuvent rester en Server Components."
+      - id: q17
+        question:
+          "Pour migrer progressivement l'interface de TaskFlow depuis une SPA
+          React classique vers Next.js, quelle approche est la plus adaptée ?"
+        answers:
+          - "Réécrire toute l'application en une seule fois avant toute mise en
+            production"
+          - "Commencer par déplacer un écran autonome dans l'App Router, puis
+            migrer les zones interactives au cas par cas"
+          - "Supprimer d'abord toute logique côté client pour n'utiliser que des
+            Server Components"
+          - "Conserver le routeur SPA existant à l'intérieur d'un unique fichier
+            app/page.tsx"
+        correct: 1
+        explanation:
+          "Une migration progressive limite le risque et permet de valider
+          chaque étape. Next.js se prête bien à une adoption écran par écran
+          avec découpage entre serveur et client."
+      - id: q18
+        question:
+          "Dans l'App Router de Next.js, où faut-il créer le fichier principal
+          pour ajouter une page liste accessible sur /tasks ?"
+        answers:
+          - "app/tasks/layout.tsx"
+          - "app/tasks/route.ts"
+          - "app/tasks/page.tsx"
+          - "pages/tasks/index.tsx"
+        correct: 2
+        explanation:
+          "Avec l'App Router, un segment accessible à l'URL /tasks est défini
+          par le fichier page.tsx dans le dossier app/tasks. Les layouts servent
+          à structurer, pas à définir seuls la page."
+      - id: q19
+        question:
+          "Quelle structure faut-il utiliser pour ajouter une page détail
+          dynamique d'une tâche accessible sur /tasks/42 dans Next.js App Router
+          ?"
+        answers:
+          - "app/tasks/id/page.tsx"
+          - "app/tasks/[id]/page.tsx"
+          - "app/[tasks]/[id].tsx"
+          - "app/tasks/page/[id].tsx"
+        correct: 1
+        explanation:
+          "Les routes dynamiques de l'App Router utilisent des segments entre
+          crochets. Le dossier [id] permet de capter la valeur dynamique de
+          l'URL."
+      - id: q20
+        question:
+          "Dans une architecture moderne combinant Next.js, React Server
+          Components et une API REST séparée, quelle pratique est la plus saine
+          ?"
+        answers:
+          - "Placer toute la récupération de données dans des Client Components
+            pour uniformiser le code"
+          - "Dupliquer la logique métier à la fois dans les pages Next.js et
+            dans l'API REST"
+          - "Réserver les Client Components aux interactions, récupérer les
+            données côté serveur et garder l'API REST comme couche métier
+            indépendante"
+          - "Remplacer immédiatement toute API REST existante par des Server
+            Actions, même pour les intégrations externes"
+        correct: 2
+        explanation:
+          "Cette séparation exploite les avantages du rendu serveur tout en
+          préservant une couche métier claire et réutilisable. Les composants
+          clients restent focalisés sur l'interactivité."

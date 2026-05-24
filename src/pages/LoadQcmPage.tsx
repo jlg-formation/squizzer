@@ -71,6 +71,10 @@ const PREDEFINED_QCMS = [
     name: "QCM Claude Code",
     url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/qcm-claude-code.yaml",
   },
+  {
+    name: "QCM React moderne",
+    url: "https://raw.githubusercontent.com/jlg-formation/squizzer/refs/heads/master/public/react-moderne-progressif.yaml",
+  },
   { name: "Autre", url: "" },
 ];
 
