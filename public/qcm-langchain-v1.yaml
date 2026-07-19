@@ -1,0 +1,368 @@
+title: QCM sur LangChain version 1
+chapters:
+  - id: fondamentaux
+    title: Fondamentaux et architecture de LangChain v1
+    questions:
+      - id: q1
+        question: Quelle philosophie caractérise LangChain v1 (1.0) face aux versions antérieures ?
+        answers:
+          - Fournir une API stable engagée sur le versionnement sémantique
+          - Supprimer définitivement tout support des modèles de langage
+          - Remplacer Python par un nouveau langage propriétaire dédié
+          - Imposer une interface graphique obligatoire pour chaque agent
+        correct: 0
+        explanation: LangChain 1.0 vise une API stable et prête pour la production, en s'appuyant sur le versionnement sémantique.
+      - id: q2
+        question: En LangChain v1, comment les responsabilités sont-elles réparties entre les packages ?
+        answers:
+          - Chaque fonctionnalité obtient désormais son propre dépôt Git séparé
+          - langchain-core regroupe les abstractions et langchain-classic le code hérité
+          - Le code hérité remplace entièrement les nouvelles abstractions modernes
+          - Les abstractions de base disparaissent au profit des agents
+        correct: 1
+        explanation: En v1, langchain-core porte les abstractions, langchain les fonctionnalités principales et langchain-classic le code hérité.
+      - id: q3
+        question: Quel est le rôle du package langchain-core dans LangChain v1 ?
+        answers:
+          - Fournir les intégrations concrètes de tous les fournisseurs tiers
+          - Contenir uniquement les chaînes historiques dépréciées de LangChain
+          - Définir les abstractions de base et les interfaces communes
+          - Gérer exclusivement le déploiement en production des agents
+        correct: 2
+        explanation: langchain-core regroupe les abstractions fondamentales (messages, Runnable, interfaces) partagées par tout l'écosystème.
+      - id: q4
+        question: Que contient principalement le package langchain-classic en LangChain v1 ?
+        answers:
+          - Les toutes nouvelles abstractions introduites spécifiquement pour la v1
+          - Uniquement les interfaces fondamentales partagées par tous les packages
+          - Le moteur principal de création des agents modernes
+          - Le code hérité comme les anciennes chaînes et agents
+        correct: 3
+        explanation: langchain-classic accueille le code legacy (anciennes chaînes et agents) déplacé hors du package principal pour la compatibilité.
+      - id: q5
+        question: Comment installe-t-on LangChain v1 et quel prérequis Python s'applique ?
+        answers:
+          - Avec pip install langchain et Python 3.10 minimum requis
+          - Avec conda seulement et Python 2.7 comme version minimale
+          - En compilant les sources et Python 3.6 au minimum
+          - Via npm install langchain sans aucun prérequis Python particulier
+        correct: 0
+        explanation: LangChain v1 s'installe via pip install langchain et exige Python 3.10 ou une version supérieure.
+      - id: q6
+        question: Que permet la fonction init_chat_model en LangChain v1 ?
+        answers:
+          - Créer une base de données vectorielle locale rapidement
+          - Charger un jeu de données depuis le disque
+          - Initialiser un modèle de chat via une chaîne unifiée
+          - Compiler un graphe LangGraph en mode strict
+        correct: 2
+        explanation: init_chat_model instancie un modèle de chat de manière unifiée à partir d'une chaîne identifiant le fournisseur et le modèle.
+      - id: q7
+        question: En v1, comment le contenu multimodal d'un message est-il représenté de façon standardisée ?
+        answers:
+          - Par des content blocks typés au format standard
+          - Par une simple chaîne de caractères brute
+          - Par un dictionnaire propre à chaque fournisseur
+          - Par un fichier binaire encodé séparément toujours
+        correct: 0
+        explanation: LangChain v1 standardise le contenu des messages via des content blocks typés, permettant une représentation multimodale cohérente entre fournisseurs.
+      - id: q8
+        question: Quel type de message représente la réponse générée par le modèle dans une conversation ?
+        answers:
+          - SystemMessage définissant les instructions initiales du système
+          - HumanMessage contenant la requête de l'utilisateur final
+          - ToolMessage transportant le résultat d'un outil appelé
+          - AIMessage contenant la réponse produite par le modèle
+        correct: 3
+        explanation: AIMessage représente la réponse produite par le modèle, tandis que Human, System et Tool correspondent à d'autres rôles de la conversation.
+      - id: q9
+        question: À quoi sert l'opérateur pipe | dans LangChain Expression Language (LCEL) ?
+        answers:
+          - À exécuter les composants sur plusieurs processus parallèles
+          - À composer des composants en enchaînant leurs sorties
+          - À filtrer les messages selon leur type précis
+          - À convertir automatiquement le texte en vecteurs numériques
+        correct: 1
+        explanation: En LCEL, l'opérateur pipe compose les composants de façon déclarative en connectant la sortie de l'un à l'entrée du suivant.
+      - id: q10
+        question: Que représente l'interface Runnable dans LangChain v1 ?
+        answers:
+          - Un format de fichier pour sauvegarder les modèles
+          - Un serveur web dédié au déploiement des chaînes
+          - Un protocole commun d'exécution avec invoke, batch, stream
+          - Une base de données pour stocker les conversations
+        correct: 2
+        explanation: Runnable est le protocole commun d'exécution des composants, exposant des méthodes standard comme invoke, batch et stream.
+      - id: q11
+        question: Dans LangChain, quel est le rôle principal de RunnableParallel ?
+        answers:
+          - Enchaîner les runnables séquentiellement les uns après les autres
+          - Exécuter plusieurs runnables simultanément sur la même entrée
+          - Répéter plusieurs fois le même runnable en boucle
+          - Choisir dynamiquement un runnable selon une condition
+        correct: 1
+        explanation: RunnableParallel lance plusieurs runnables en parallèle sur la même entrée, tandis que RunnablePassthrough transmet l'entrée telle quelle.
+      - id: q12
+        question: Comment paramétrer les variables d'un ChatPromptTemplate en LangChain ?
+        answers:
+          - Avec des crochets entourant le nom des variables
+          - Avec des parenthèses entourant le nom des variables
+          - Avec des accolades entourant le nom des variables
+          - Avec des chevrons entourant le nom des variables
+        correct: 2
+        explanation: ChatPromptTemplate utilise la syntaxe f-string où les variables sont entourées d'accolades, par exemple {sujet}.
+      - id: q13
+        question: À quoi sert le few-shot prompting avec un modèle de langage ?
+        answers:
+          - Entraîner le modèle sur un nouveau jeu de données
+          - Réduire le nombre de tokens envoyés au modèle
+          - Accélérer la vitesse de génération des réponses
+          - Fournir des exemples pour guider le comportement du modèle
+        correct: 3
+        explanation: Le few-shot prompting insère des exemples dans le prompt pour guider le modèle sans le réentraîner.
+      - id: q14
+        question: Quel est le rôle d'un output parser dans LangChain ?
+        answers:
+          - Envoyer le prompt formaté vers le modèle
+          - Compter les tokens consommés par la requête
+          - Transformer le texte du modèle en structure exploitable
+          - Stocker l'historique des messages de conversation
+        correct: 2
+        explanation: Un output parser convertit la sortie textuelle brute du modèle en une structure de données exploitable.
+      - id: q15
+        question: Que garantit la méthode with_structured_output d'un modèle de chat ?
+        answers:
+          - Une sortie toujours plus rapide à générer
+          - Une sortie chiffrée pour protéger les données
+          - Une sortie traduite dans plusieurs langues cibles
+          - Une sortie conforme à un schéma Pydantic défini
+        correct: 3
+        explanation: with_structured_output force le modèle à produire une réponse respectant un schéma imposé, typiquement défini avec Pydantic.
+      - id: q16
+        question: Dans LangChain v1, que produisent les méthodes stream et astream lors d'un appel au modèle ?
+        answers:
+          - Elles exécutent le modèle une seule fois
+          - Elles renvoient la réponse par morceaux successifs
+          - Elles compilent le graphe avant chaque appel
+          - Elles mettent en cache toutes les réponses
+        correct: 1
+        explanation: stream et astream émettent la réponse de façon incrémentale, morceau par morceau, au fur et à mesure de sa génération.
+      - id: q17
+        question: À quoi servent les méthodes ainvoke et abatch dans LangChain v1 ?
+        answers:
+          - Elles bloquent le thread principal pendant l'exécution
+          - Elles convertissent automatiquement le code en synchrone
+          - Elles permettent une exécution asynchrone non bloquante
+          - Elles remplacent définitivement les méthodes synchrones classiques
+        correct: 2
+        explanation: Les variantes préfixées par « a » sont des coroutines asyncio offrant une exécution asynchrone et non bloquante.
+      - id: q18
+        question: Que permet la méthode with_config avec un RunnableConfig dans LangChain v1 ?
+        answers:
+          - Elle modifie le code source du modèle
+          - Elle supprime toutes les métadonnées existantes automatiquement
+          - Elle désactive complètement le traçage des exécutions
+          - Elle attache des tags et des métadonnées
+        correct: 3
+        explanation: with_config lie un RunnableConfig au runnable pour transmettre tags, métadonnées et paramètres à l'exécution.
+      - id: q19
+        question: Quel est le rôle principal de LangSmith avec LangChain v1 ?
+        answers:
+          - Suivre et déboguer les exécutions des chaînes
+          - Compiler le code Python en langage machine
+          - Remplacer entièrement les fournisseurs de modèles distants
+          - Chiffrer automatiquement toutes les clés API sensibles
+        correct: 0
+        explanation: LangSmith assure l'observabilité en traçant et en permettant le débogage des exécutions des chaînes et agents.
+      - id: q20
+        question: Quelle est la bonne pratique pour gérer les clés API des fournisseurs de modèles ?
+        answers:
+          - Écrire les clés directement dans le code
+          - Partager publiquement les clés dans le dépôt
+          - Utiliser des variables d'environnement pour les stocker
+          - Envoyer les clés par courriel aux collaborateurs
+        correct: 2
+        explanation: Stocker les clés dans des variables d'environnement évite de les exposer dans le code source versionné.
+  - id: agents
+    title: Agents, outils et fonctionnalités avancées
+    questions:
+      - id: q1
+        question: Dans LangChain v1, qu'est-ce qu'un agent ?
+        answers:
+          - Une base de données stockant les conversations des utilisateurs finaux
+          - Un modèle de langage choisissant ses actions de façon autonome
+          - Un simple appel unique au modèle sans aucune itération
+          - Une interface graphique pour configurer manuellement les invites textuelles
+        correct: 1
+        explanation: Un agent est un système où le modèle décide de ses actions dans une boucle décision/action autonome.
+      - id: q2
+        question: Quel est le rôle de la fonction create_agent en LangChain v1 ?
+        answers:
+          - create_agent sert uniquement à entraîner de nouveaux modèles
+          - create_agent génère automatiquement du code Python source
+          - create_agent remplace complètement la bibliothèque LangGraph sous-jacente
+          - create_agent est l'API standard pour construire des agents
+        correct: 3
+        explanation: En v1, create_agent est l'API standard et recommandée pour construire des agents.
+      - id: q3
+        question: Quel est le lien entre les agents v1 et LangGraph ?
+        answers:
+          - Les agents ignorent totalement LangGraph durant leur exécution
+          - LangGraph sert seulement à afficher des diagrammes visuels
+          - Les agents s'exécutent sur un graphe d'états LangGraph
+          - LangGraph remplace le modèle de langage de l'agent
+        correct: 2
+        explanation: Les agents v1 reposent sur LangGraph, qui fournit le graphe d'états sous-jacent à leur exécution.
+      - id: q4
+        question: Que fait le décorateur tool en LangChain v1 ?
+        answers:
+          - Le décorateur @tool transforme une fonction en outil
+          - Le décorateur @tool supprime définitivement la fonction décorée
+          - Le décorateur @tool compile la fonction en binaire
+          - Le décorateur @tool chiffre le code source Python
+        correct: 0
+        explanation: Le décorateur @tool expose une fonction Python en tant qu'outil utilisable par l'agent.
+      - id: q5
+        question: Comment fonctionne le mécanisme de tool calling ?
+        answers:
+          - Le développeur code manuellement chaque appel d'outil possible
+          - Le modèle décide quel outil appeler et ses arguments
+          - Les outils s'exécutent tous automatiquement dans l'ordre alphabétique
+          - L'utilisateur final sélectionne les outils via un menu
+        correct: 1
+        explanation: Avec le tool calling, c'est le modèle lui-même qui choisit l'outil à invoquer et ses arguments.
+      - id: q6
+        question: Dans un agent LangChain v1, quel composant exécute les outils appelés par le modèle et renvoie leurs résultats ?
+        answers:
+          - Le modèle exécute directement les outils sans intermédiaire dédié
+          - Le ToolNode exécute les outils et renvoie les résultats
+          - Le checkpointer exécute les outils et sauvegarde leurs sorties
+          - Le prompt exécute les outils via une chaîne classique
+        correct: 1
+        explanation: Le ToolNode reçoit les appels d'outils du modèle, les exécute et renvoie leurs résultats sous forme de ToolMessage.
+      - id: q7
+        question: Que permet le concept de middleware pour agents introduit dans LangChain v1 ?
+        answers:
+          - Intercepter et personnaliser les étapes du cycle de l'agent
+          - Remplacer entièrement le modèle par un moteur externe propriétaire
+          - Compiler l'agent en code natif pour plus de vitesse
+          - Chiffrer automatiquement toutes les communications entre les différents outils
+        correct: 0
+        explanation: Les middlewares permettent d'intercepter et de personnaliser les différentes étapes du cycle d'exécution de l'agent.
+      - id: q8
+        question: À quoi sert le middleware de résumé de contexte (summarization) ?
+        answers:
+          - Traduire automatiquement les messages dans plusieurs langues cibles différentes
+          - Chiffrer l'historique des conversations pour respecter les normes RGPD
+          - Compresser l'historique long en un résumé plus court
+          - Dupliquer l'historique complet vers une base de données externe
+        correct: 2
+        explanation: Ce middleware condense un historique de conversation devenu trop long en un résumé afin de tenir dans la fenêtre de contexte.
+      - id: q9
+        question: Quel est le rôle du middleware human-in-the-loop dans un agent v1 ?
+        answers:
+          - Générer automatiquement de nouveaux outils à partir du contexte
+          - Accélérer les réponses en parallélisant les appels aux outils
+          - Traduire les demandes avant de les envoyer au modèle
+          - Demander une approbation humaine avant d'exécuter certaines actions sensibles
+        correct: 3
+        explanation: Ce middleware met l'agent en pause pour obtenir une validation humaine avant d'exécuter des actions jugées sensibles.
+      - id: q10
+        question: Comment est représentée la mémoire à court terme d'un agent pendant une exécution ?
+        answers:
+          - Par un fichier journal écrit sur le disque local
+          - Par l'état de l'agent qui accumule les messages échangés
+          - Par une variable globale partagée entre tous les agents
+          - Par un cache distant hébergé sur un serveur dédié
+        correct: 1
+        explanation: La mémoire à court terme correspond à l'état de l'agent, qui accumule les messages au fil de l'exécution.
+      - id: q11
+        question: Comment un agent LangChain conserve-t-il l'état d'une conversation entre plusieurs appels ?
+        answers:
+          - En rechargeant manuellement tout l'historique brut à chaque nouvel appel
+          - En fournissant un checkpointer et un thread_id dans la configuration
+          - En stockant les messages dans une simple variable globale Python
+          - En sauvegardant automatiquement chaque échange dans un fichier texte local
+        correct: 1
+        explanation: La persistance repose sur un checkpointer combiné à un thread_id qui identifie et reprend chaque fil de conversation.
+      - id: q12
+        question: Sur quel principe repose la boucle de raisonnement ReAct d'un agent ?
+        answers:
+          - L'agent exécute tous ses outils simultanément dès la première étape
+          - L'agent génère directement la réponse sans jamais consulter d'outil
+          - L'agent alterne entre raisonner et agir jusqu'à la réponse
+          - L'agent demande systématiquement une validation humaine avant chaque action
+        correct: 2
+        explanation: ReAct fait alterner l'agent entre une phase de raisonnement et une phase d'action outillée jusqu'à obtenir la réponse.
+      - id: q13
+        question: Comment observer en direct les étapes intermédiaires d'un agent LangChain ?
+        answers:
+          - En attendant la fin complète avant de lire tout le résultat
+          - En utilisant la méthode stream qui émet chaque étape progressivement
+          - En consultant uniquement les journaux du serveur après l'exécution complète
+          - En interrogeant régulièrement une base de données externe dédiée
+        correct: 1
+        explanation: La méthode stream de l'agent émet les étapes au fil de l'exécution, permettant d'observer ses décisions en direct.
+      - id: q14
+        question: À quoi sert le paramètre response_format lors de la création d'un agent ?
+        answers:
+          - À définir le style de langage utilisé par le modèle
+          - À limiter le nombre total de jetons de la réponse
+          - À choisir automatiquement le meilleur outil disponible pour chaque tâche
+          - À obtenir une réponse finale typée selon un schéma défini
+        correct: 3
+        explanation: response_format contraint la réponse finale de l'agent à respecter un schéma structuré, produisant une sortie typée.
+      - id: q15
+        question: En quoi consiste une architecture multi-agents avec sous-agents ?
+        answers:
+          - Un seul agent gère absolument toutes les tâches sans aucune délégation
+          - Plusieurs modèles identiques répondent en même temps à l'utilisateur final
+          - Un agent principal délègue des tâches à des sous-agents spécialisés
+          - Les outils s'exécutent entre eux sans intervention d'un quelconque agent
+        correct: 2
+        explanation: Dans une architecture multi-agents, un agent principal orchestre et délègue des tâches à des sous-agents spécialisés.
+      - id: q16
+        question: Dans une application RAG avec LangChain v1, quel est le rôle principal d'un retriever ?
+        answers:
+          - Récupérer des documents pertinents pour enrichir le contexte du modèle
+          - Entraîner le modèle de langage sur de nouvelles données
+          - Compresser les poids du modèle pour accélérer l'inférence locale
+          - Traduire automatiquement les requêtes vers plusieurs langues cibles
+        correct: 0
+        explanation: Un retriever récupère les documents pertinents afin de les injecter dans le contexte fourni au modèle.
+      - id: q17
+        question: Techniquement, comment un vector store effectue-t-il une recherche sur des embeddings ?
+        answers:
+          - Trier les documents par ordre alphabétique de leur titre
+          - Exécuter une requête SQL classique sur des tables relationnelles
+          - Comparer la similarité entre les vecteurs d'embeddings des documents
+          - Filtrer les résultats selon la date de création uniquement
+        correct: 2
+        explanation: Un vector store recherche par similarité vectorielle entre l'embedding de la requête et ceux des documents.
+      - id: q18
+        question: Quelle est une bonne pratique de robustesse quand un outil lève une erreur dans un agent ?
+        answers:
+          - Arrêter définitivement l'agent dès la première erreur rencontrée
+          - Renvoyer le message d'erreur au modèle pour qu'il s'adapte
+          - Ignorer silencieusement l'erreur et poursuivre sans aucune trace
+          - Supprimer l'outil concerné de la configuration de l'agent
+        correct: 1
+        explanation: Renvoyer le message d'erreur au modèle lui permet de corriger son appel et de réessayer intelligemment.
+      - id: q19
+        question: Comment migrer un agent basé sur l'ancien AgentExecutor vers LangChain 1.0 ?
+        answers:
+          - Continuer d'utiliser AgentExecutor sans aucune modification nécessaire
+          - Réécrire manuellement toute la boucle d'exécution de l'agent
+          - Désactiver complètement les outils utilisés par l'agent legacy
+          - Remplacer AgentExecutor par la fonction create_agent fournie
+        correct: 3
+        explanation: LangChain 1.0 remplace l'ancien AgentExecutor par la fonction prebuilt create_agent.
+      - id: q20
+        question: À quoi sert principalement LangSmith lors du débogage d'un agent ?
+        answers:
+          - Tracer et inspecter les exécutions détaillées des agents
+          - Compiler le code Python de l'agent en binaire
+          - Héberger automatiquement l'agent sur un serveur cloud
+          - Générer des jeux de données d'entraînement synthétiques
+        correct: 0
+        explanation: LangSmith permet de tracer et d'inspecter en détail les runs des agents pour faciliter le débogage.
